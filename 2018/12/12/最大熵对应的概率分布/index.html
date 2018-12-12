@@ -80,7 +80,7 @@ L(p,\boldsymbol{\lambda}) = \int_S p\log p ~dx - \mu_{-1}p + \mu_0 \left(\int_S 
 \implies p = \exp\left(-1 + \mu_{-1} - \mu_0 - \sum_{j=1}^n \lambda_j f_j \right) =\displaystyle c^* e^{-\sum_{j=1}^n\lambda_j^* f_j(x)} := p^*
 \end{gathered}</script><p>其中，我们要选择 $c^<em>, \boldsymbol{\lambda}^</em>$ 使得 $p(x)$ 满足约束。到这里我们知道，在所有满足约束的概率分布当中，$p^*$ 是使得熵达到最大的那一个！</p>
 <hr>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><strong>高斯分布</strong><br>————&gt;<br>约束：</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="1-高斯分布"><a href="#1-高斯分布" class="headerlink" title="1. 高斯分布"></a>1. 高斯分布</h3><p>约束：</p>
 <ul>
 <li>$E(X) = 0 \implies f_1 = x$</li>
 <li>$E(X^2) = \sigma^2 \implies f_2 = x^2$</li>
@@ -99,7 +99,7 @@ p(x) = ce^{-\lambda_1x - \lambda_2 x^2}</script><p>再根据 KKT 条件：</p>
 <li>$\int x^2 ce^{-\lambda_2x^2} = \sigma^2$</li>
 </ol>
 <p>$\implies c = \frac{1}{\sqrt{2\pi\sigma^2}}, ~\lambda_2 = \frac{1}{2\sigma^2} \implies p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}} \sim N(0, ~\sigma^2)$</p>
-<p><strong>指数分布</strong><br>————-&gt;<br>约束：</p>
+<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2. 指数分布"></a>2. 指数分布</h3><p>约束：</p>
 <ul>
 <li>$X \ge 0$</li>
 <li>$E(X) = \frac{1}{\mu}$</li>
@@ -117,7 +117,7 @@ p(x) = ce^{-\lambda_1x}</script><p>再根据 KKT 条件：</p>
 \int_{0}^{+\infty} e^{-\lambda_1x} = \frac{1}{c} \implies \lambda_1 = c \\
 \int_{0}^{+\infty}x e^{-\lambda_1x} = \frac{1}{c\mu} = \frac{1}{\lambda_1\mu} \implies \lambda_1 = \mu
 \end{gathered}</script><p>$\implies p(x) = \mu e^{-\mu x} \sim Exp(\mu)$</p>
-<p><strong>均匀分布</strong><br>————-&gt;<br>约束：</p>
+<h3 id="3-均匀分布"><a href="#3-均匀分布" class="headerlink" title="3. 均匀分布"></a>3. 均匀分布</h3><p>约束：</p>
 <ul>
 <li>$a \le X \le b$</li>
 </ul>
@@ -127,7 +127,7 @@ p(x) = ce^{-\lambda_1x}</script><p>再根据 KKT 条件：</p>
 p(x) = ce^{- 0x} = c \\
 \int_a^b c ~dx = 1 \implies c = \frac{1}{b-a} 
 \end{gathered}</script><p>$\implies p(x) = \frac{1}{b-a} \sim Unif(a,~b)$</p>
-<p><strong>几何分布</strong><br>————-&gt;<br>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$<br>约束：</p>
+<h3 id="4-几何分布"><a href="#4-几何分布" class="headerlink" title="4. 几何分布"></a>4. 几何分布</h3><p>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$<br>约束：</p>
 <ul>
 <li>$X = 0,1,2,\dots$</li>
 <li>$E(X) = \frac{1-p}{p}$</li>
