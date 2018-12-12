@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>最大熵对应的概率分布 | A hexo test site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最大熵对应的概率分布最大熵定理设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为      h(X) = - \int p(x)\log p(x) dx其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。 考虑如下优化问题：  \begin{array}{ll} &amp;\underset{p}{\text{Maximize}} &amp; \displaystyle">
+<meta name="keywords" content="math &quot;information theory&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最大熵对应的概率分布">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/最大熵对应的概率分布/index.html">
+<meta property="og:site_name" content="A hexo test site">
+<meta property="og:description" content="最大熵对应的概率分布最大熵定理设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为      h(X) = - \int p(x)\log p(x) dx其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。 考虑如下优化问题：  \begin{array}{ll} &amp;\underset{p}{\text{Maximize}} &amp; \displaystyle">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-12-12T10:27:00.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最大熵对应的概率分布">
+<meta name="twitter:description" content="最大熵对应的概率分布最大熵定理设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为      h(X) = - \int p(x)\log p(x) dx其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。 考虑如下优化问题：  \begin{array}{ll} &amp;\underset{p}{\text{Maximize}} &amp; \displaystyle">
+  
+    <link rel="alternate" href="/atom.xml" title="A hexo test site" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">A hexo test site</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">sample subtitle</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-最大熵对应的概率分布" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/12/最大熵对应的概率分布/" class="article-date">
+  <time datetime="2018-12-12T10:02:36.000Z" itemprop="datePublished">2018-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      最大熵对应的概率分布
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="最大熵对应的概率分布"><a href="#最大熵对应的概率分布" class="headerlink" title="最大熵对应的概率分布"></a>最大熵对应的概率分布</h1><h2 id="最大熵定理"><a href="#最大熵定理" class="headerlink" title="最大熵定理"></a>最大熵定理</h2><p><em>设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为</em></p>
+<script type="math/tex; mode=display">
+    h(X) = - \int p(x)\log p(x) dx</script><p><em>其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。</em></p>
+<p>考虑如下优化问题：</p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+&\underset{p}{\text{Maximize}} & \displaystyle h(p) = - \int_S p(x)\log p(x) dx \\
+&\text{Subject to} &\displaystyle \int_S p(x) dx = 1 \\[2pt]
+&~ & p(x) \ge 0 \\[2pt]
+&~ & \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n
+\end{array}</script><p>其中，集合 $S$ 是随机变量的support，即其所有可能的取值。我们意图找到这样的概率分布 $p​$, 他满足所有的约束（前两条是概率公理的约束，最后一条叫做矩约束，在模型中有时会假设随机变量的矩为常数），并且能够使得熵最大。将上述优化问题写成标准形式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+&\underset{p}{\text{Minimize}} & \displaystyle  \int_S p(x)\log p(x) dx \\
+&\text{Subject to} &-p(x) \le 0 \\[2pt]
+&~ &\displaystyle \int_S p(x) dx = 1 \\ 
+&~ & \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n
+\end{array}</script><p>使用<a href="https://en.wikipedia.org/wiki/Lagrange_multiplier" target="_blank" rel="noopener">Lagrange乘数法</a>得到其Lagrangian</p>
+<script type="math/tex; mode=display">
+L(p,\boldsymbol{\lambda}) = \int_S p\log p ~dx - \mu_{-1}p + \mu_0 \left(\int_S p ~dx - 1\right) + \sum_{j=1}^n \lambda_j \left(\int_S pf_j~dx - \alpha_j\right)</script><p>根据KKT条件对Lagrangian求导令为0，可得最优解。</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\frac{\partial L}{\partial p} = \ln p + 1 - \mu_{-1} + \mu_0 + \sum_{j=1}^n \lambda_jf_j := 0 \\
+\implies p = \exp\left(-1 + \mu_{-1} - \mu_0 - \sum_{j=1}^n \lambda_j f_j \right) =\displaystyle c^* e^{-\sum_{j=1}^n\lambda_j^* f_j(x)} := p^*
+\end{gathered}</script><p>其中，我们要选择 $c^<em>, \boldsymbol{\lambda}^</em>$ 使得 $p(x)$ 满足约束。到这里我们知道，在所有满足约束的概率分布当中，$p^*$ 是使得熵达到最大的那一个！</p>
+<hr>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><strong>高斯分布</strong><br>————&gt;<br>约束：</p>
+<ul>
+<li>$E(X) = 0 \implies f_1 = x$</li>
+<li>$E(X^2) = \sigma^2 \implies f_2 = x^2$</li>
+</ul>
+<p>根据上面的论证，最大熵分布应具有如下形式：</p>
+<script type="math/tex; mode=display">
+p(x) = ce^{-\lambda_1x - \lambda_2 x^2}</script><p>再根据 KKT 条件：</p>
+<ol>
+<li>$\int_{-\infty}^{+\infty} p(x) = 1$</li>
+<li>$\int_{-\infty}^{+\infty} x p(x) = 0$</li>
+<li>$\int x^2 p(x) = \sigma^2$</li>
+</ol>
+<p>由条件 $(2) \implies p(x)​$ 是偶函数 $\implies \lambda_1 = 0​$, 原条件变成</p>
+<ol>
+<li>$\int_{-\infty}^{+\infty} ce^{-\lambda_2x^2} = 1$</li>
+<li>$\int x^2 ce^{-\lambda_2x^2} = \sigma^2$</li>
+</ol>
+<p>$\implies c = \frac{1}{\sqrt{2\pi\sigma^2}}, ~\lambda_2 = \frac{1}{2\sigma^2} \implies p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}} \sim N(0, ~\sigma^2)$</p>
+<p><strong>指数分布</strong><br>————-&gt;<br>约束：</p>
+<ul>
+<li>$X \ge 0$</li>
+<li>$E(X) = \frac{1}{\mu}$</li>
+</ul>
+<p>根据上面的论证，最大熵分布应具有如下形式：</p>
+<script type="math/tex; mode=display">
+p(x) = ce^{-\lambda_1x}</script><p>再根据 KKT 条件：</p>
+<ol>
+<li>$\int_{0}^{+\infty} ce^{-\lambda_1x}= 1$</li>
+<li>$\int_0^{+\infty} x ce^{-\lambda_1x} = \frac{1}{\mu}$</li>
+</ol>
+<p>推导如下：</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\int_{0}^{+\infty} e^{-\lambda_1x} = \frac{1}{c} \implies \lambda_1 = c \\
+\int_{0}^{+\infty}x e^{-\lambda_1x} = \frac{1}{c\mu} = \frac{1}{\lambda_1\mu} \implies \lambda_1 = \mu
+\end{gathered}</script><p>$\implies p(x) = \mu e^{-\mu x} \sim Exp(\mu)$</p>
+<p><strong>均匀分布</strong><br>————-&gt;<br>约束：</p>
+<ul>
+<li>$a \le X \le b$</li>
+</ul>
+<p>根据上面的论证，最大熵分布应具有如下形式：</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+p(x) = ce^{- 0x} = c \\
+\int_a^b c ~dx = 1 \implies c = \frac{1}{b-a} 
+\end{gathered}</script><p>$\implies p(x) = \frac{1}{b-a} \sim Unif(a,~b)$</p>
+<p><strong>几何分布</strong><br>————-&gt;<br>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$<br>约束：</p>
+<ul>
+<li>$X = 0,1,2,\dots$</li>
+<li>$E(X) = \frac{1-p}{p}$</li>
+</ul>
+<p>根据上面的论证，最大熵分布应具有如下形式：</p>
+<script type="math/tex; mode=display">
+P(X=k) = p_k = ce^{-\lambda_1 k}</script><p>再根据 KKT 条件：</p>
+<ol>
+<li>$\sum_{k=0}^{\infty} p_k = 1$</li>
+<li>$\sum_{k=0}^{\infty} k p_k = \frac{1-p}{p}$</li>
+</ol>
+<p>推导如下：</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\sum_{k=0}^{\infty} ce^{-\lambda_1 k} = c \sum_{k=0}^{\infty} q^k \quad(\text{where }q = e^{-\lambda_1})\\
+= \frac{c}{1-q} \implies c = 1-q \\
+\sum_{k=0}^{\infty} k ce^{-\lambda_1 k} = c\sum_{k=1}^{\infty} k (e^{-\lambda_1})^k = c\sum_{k=1}^{\infty}k q^k = cq \sum kq^{k-1} \\
+= cq \sum (q^k)' = cq \left(\sum_{k=1}^{\infty}q^k\right)' = cq \left(\frac{q}{1-q}\right)' \\
+= cq \cdot \frac{1}{(1-q)^2} = \frac{q}{1-q} = \frac{1-p}{p}
+\end{gathered}</script><p>$\implies e^{-\lambda_1} = q = 1-p, ~ c =p \implies P(X=k) = p_k = pq^k \sim Geom(p)$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/12/最大熵对应的概率分布/" data-id="cjpl0nzo50004dcqgk3ugn20k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math-information-theory/">math "information theory"</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/12/Manage-Dotfiles-by-Git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Manage Dotfiles by Git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math-information-theory/">math "information theory"</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/new-test/">new, test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math-information-theory/" style="font-size: 10px;">math "information theory"</a> <a href="/tags/new-test/" style="font-size: 10px;">new, test</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/12/最大熵对应的概率分布/">最大熵对应的概率分布</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/12/Manage-Dotfiles-by-Git/">Manage Dotfiles by Git</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/My-first-blog/">My first blog</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Hubb<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
