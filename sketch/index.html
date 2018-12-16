@@ -17,8 +17,39 @@
 <blockquote>
 <p>女人，第一需要的是尊重。<br>女人，第二需要的是诚意。</p>
 <div style="text-align:right">——《秦时明月》花影</div>
+
 </blockquote>
-</div></article><nav id="pagination"><div class="pagination"></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+<hr>
+<p><strong>高斯分布的微分熵</strong></p>
+<p>$X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$，其微分熵推导过程如下：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+h(X) &= \int_{-\infty}^{\infty}
+\frac{-1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) \cdot
+\ln \left[
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+\right] dx \\[4pt]
+&= \frac{-1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^{\infty}
+\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+\cdot
+\left(
+\ln(2\pi\sigma^2)^{-1/2} - \frac{(x-\mu)^2}{2\sigma^2}
+\right) dx \\[4pt]
+&= \frac{1}{2}\ln(2\pi\sigma^2) \int_{-\infty}^{\infty}
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \\[4pt]
+&\quad 
++ \int_{-\infty}^{\infty}
+\frac{(x-\mu)^2}{2\sigma^2} \cdot
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \\[4pt]
+&= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2\sigma^2}E(X-\mu)^2 \\[4pt]
+&= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2} = \frac{1}{2}\ln(2\pi e\sigma^2) \qquad\text{(nats)}
+\end{split}</script><p>又因为 $H_b(X) = \log_ba \cdot H_a(X)$，于是取 $b=e, ~a=2$</p>
+<script type="math/tex; mode=display">
+\implies \frac{1 \text{ nat}}{x \text{ bits}} = \ln2 \implies x = \frac{1}{\ln2} = \frac{\log e}{\log2} = \log e \text{ bits}</script><p>所以</p>
+<script type="math/tex; mode=display">
+\frac{1}{2}\ln(2\pi e\sigma^2) \text{ nats} =
+\frac{1}{2} \cdot \frac{\log(2\pi e\sigma^2)}{\log e} \cdot \log e \text{ bits} =
+\frac{1}{2}\log(2\pi e\sigma^2) \text{ bits}</script></div></article><nav id="pagination"><div class="pagination"></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
     processEscapes: true,
