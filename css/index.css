@@ -1837,7 +1837,10 @@ img:hover {
   background: #00c4b6;
 }
 @font-face {
-  font-family: 'IM FELL DW Pica', Monaco;
-  src: url("/fonts/IMFePIrm28P.ttf");
+  font-family: Monaco;
   src: url("/fonts/Monaco_Linux.ttf");
+}
+@font-face {
+  font-family: IM FELL DW Pica;
+  src: url("/fonts/IMFePIrm28P.ttf");
 }
