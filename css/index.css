@@ -21,7 +21,7 @@ body {
   min-height: 100%;
   color: #4c4948;
   font-size: 18px;
-  font-family: IM FELL DW Pica, RS_Song, Spectral, Vollkorn, Monaco, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: IM FELL DW Pica, Spectral, Vollkorn, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2;
 }
 *::-webkit-scrollbar {
@@ -264,7 +264,7 @@ blockquote {
 }
 .article-container pre,
 .article-container code {
-  font-family: Monaco, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
+  font-family: Vollkorn, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
 }
 .article-container code {
   padding: 0.1rem 0.2rem;
@@ -1837,8 +1837,8 @@ img:hover {
   background: #00c4b6;
 }
 @font-face {
-  font-family: Monaco;
-  src: url("/fonts/Monaco_Linux.ttf");
+  font-family: Vollkorn;
+  src: url("/fonts/Vollkorn-Regular.ttf");
 }
 @font-face {
   font-family: IM FELL DW Pica;
