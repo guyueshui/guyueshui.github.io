@@ -21,7 +21,7 @@ body {
   min-height: 100%;
   color: #4c4948;
   font-size: 20px;
-  font-family: IM FELL DW Pica, Spectral, Vollkorn, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: IM FELL DW Pica, RS_Song, Spectral, Vollkorn, Monaco, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2;
 }
 *::-webkit-scrollbar {
@@ -1837,6 +1837,7 @@ img:hover {
   background: #00c4b6;
 }
 @font-face {
-  font-family: IM FELL DW Pica;
+  font-family: IM FELL DW Pica, Monaco;
   src: url("/fonts/IMFePIrm28P.ttf");
+  src: url("/fonts/Monaco_Linux.ttf");
 }
