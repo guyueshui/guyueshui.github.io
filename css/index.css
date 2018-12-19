@@ -20,8 +20,8 @@ body {
   flex-direction: column;
   min-height: 100%;
   color: #4c4948;
-  font-size: 18px;
-  font-family: IM FELL DW Pica, Spectral, Vollkorn, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-family: Martel Sans, Spectral, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2;
 }
 *::-webkit-scrollbar {
@@ -264,7 +264,7 @@ blockquote {
 }
 .article-container pre,
 .article-container code {
-  font-family: Vollkorn, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
+  font-family: Monaco, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
 }
 .article-container code {
   padding: 0.1rem 0.2rem;
@@ -1837,10 +1837,15 @@ img:hover {
   background: #00c4b6;
 }
 @font-face {
-  font-family: Vollkorn;
-  src: url("/fonts/Vollkorn-Regular.ttf");
+  font-family: Martel Sans;
+  src: url("/fonts/MartelSans-Regular.ttf");
 }
 @font-face {
   font-family: IM FELL DW Pica;
   src: url("/fonts/IMFePIrm28P.ttf");
+}
+@font-face {
+  font-family: Crimson Text;
+  src: url("/fonts/CrimsonText-Regular.ttf");
+  font-weight: 600;
 }
