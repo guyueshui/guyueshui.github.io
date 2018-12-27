@@ -31,16 +31,16 @@ M_X(t) &= E(e^{tX}) = \int_0^{\infty} e^{tx} e^{-x} dx \\
 <script type="math/tex; mode=display">
 f_Y(y) = f_X(X(y))\frac{dx}{dy} = e^{-\lambda y}\cdot\lambda \sim Exp(\lambda)</script><p>or</p>
 <script type="math/tex; mode=display">
-P(Y\le y) = P(X\le \lambda y) = 1 - e^{-\lambda y} \sim Exp(\lambda)</script><p>Hence, we can get</p>
+P(Y\le y) = P(X\le \lambda y) = 1 - e^{-\lambda y} \sim Exp(\lambda).</script><p>Hence, we can get</p>
 <ul>
 <li>$E(Y) = E(X/\lambda) = 1/\lambda$</li>
 <li>$Var(Y) = Var(X/\lambda) = 1/\lambda^2$</li>
-<li><script type="math/tex; mode=display">
-\begin{gathered}
-M_Y(t) = E(e^{tY}) =E(e^{tX/\lambda}) \\
-= E(e^{\frac{t}{\lambda}X}) = M_X(\frac{t}{\lambda}) = \frac{1}{1-t/\lambda} \\
-= \frac{\lambda}{\lambda -t} \quad \text{for }t<\lambda
-\end{gathered}</script></li>
+<li>MGF (moment generating function):<script type="math/tex; mode=display">
+\begin{split}
+M_Y(t) &= E(e^{tY}) =E(e^{tX/\lambda}) \\
+  &= E(e^{\frac{t}{\lambda}X}) = M_X(\frac{t}{\lambda}) = \frac{1}{1-t/\lambda} \\
+&= \frac{\lambda}{\lambda -t} \quad \text{for }t<\lambda
+\end{split}</script></li>
 </ul>
 <h2 id="Memeoryless-Property"><a href="#Memeoryless-Property" class="headerlink" title="Memeoryless Property"></a>Memeoryless Property</h2><p>Memoryless is something like $P(X \ge s+t ~|~ X \ge s) = P(X \ge t)$, let $X \sim Exp(\lambda)$, then</p>
 <script type="math/tex; mode=display">
@@ -79,6 +79,62 @@ P(L > t) &= P\left(\min(X_1,\cdots,X_n) > t\right) \\
 <li>…</li>
 </ul>
 <p>Then $L$ is the waiting time for a car of any color (i.e., any car). So it makes sense, the rate is $\lambda_1 + \cdots + \lambda_n$.</p>
+<p><strong>eg.3</strong> (Difference of two exponetial) Let $X \sim Exp(\lambda)$ and $Y \sim Exp(\mu)$, $X \perp Y$. Then what is the PDF of $Z=X-Y$?</p>
+<p><strong>Solution</strong>:<br>Recall the story of exponential, one can think of $X$ and $Y$ as waiting times for two independent things. For example,</p>
+<ul>
+<li>$X$ as the waiting time for a red car passing by</li>
+<li>$Y$ as the waiting time for a blue car</li>
+</ul>
+<p>If we see a blue car passing by, then the further waiting time for a red car is still distributed as same distribution as $Y$, for the memoryless property of exponential. Likewise, if we see a red car passing by, then the further waiting time is distributed as same as $X$. The further waiting time is somehow what we are interested in, say $Z$.</p>
+<p>The above intuition says that, the conditional distribution of $X-Y$ given $X &gt; Y$ is the distribution of $X$, and the conditional distribution of $X-Y$ given $X \le Y$ is the distribution of $-Y$ (or in other words, the conditional distribution of $Y-X$ given $Y \ge X$ is same as the distribution of $Y$).</p>
+<blockquote>
+<p>To make full use of our intuition, we know that</p>
+<ul>
+<li>If $X&gt;Y$, which means $Z&gt;0$, then $Z~|~X&gt;Y = X$ a.s. holds, that is<script type="math/tex; mode=display">
+\begin{gathered}
+f_Z(z~|~X>Y) = \lambda e^{-\lambda z} \\
+\text{and since }P(X<Y) = 0 \\
+\implies f_Z(z) = f_Z(z~|~X>Y)P(X>Y) \\
+= \frac{\mu}{\lambda + \mu}\lambda e^{-\lambda z}.
+\end{gathered}</script></li>
+<li>If $X &lt; Y$, which means $Z &lt; 0$, then $Z~|~X&lt;Y = -Y$ a.s. holds, that is<script type="math/tex; mode=display">
+\begin{gathered}
+f_Z(z~|~X<Y) = f_Y(y(z))\left|\frac{dy}{dz}\right| = \mu e^{\mu z} \\
+\implies f_Z(z) = f_Z(z~|~X<Y)P(X<Y) \\
+= \frac{\lambda}{\lambda + \mu} \mu e^{\mu z}
+\end{gathered}</script></li>
+</ul>
+<p>However, this is just a sketch. Later we will see how to derivate the form mathematically.</p>
+</blockquote>
+<p>From the above point of view, the PDF of $Z$ had better be discussed by the sign of $Z$. </p>
+<ul>
+<li>If $Z &gt; 0$, which implies $X &gt; Y\implies P(X &lt; Y) = 0 $, then </li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{split}
+P(Z > z) &= P(X-Y>z ~|~ X>Y)P(X>Y) + P(Z>z~|~X<Y)P(X<Y) \\
+&= P(X>z)P(X>Y) + 0 \quad \text{(memoryless)} \\
+&= \frac{\mu}{\lambda + \mu} e^{-\lambda z} \quad \text{(by eg.1)}  \\
+\implies f_Z(z) &= \frac{\lambda\mu}{\lambda + \mu} e^{-\lambda z} \quad \text{for }z>0 
+\end{split}</script><ul>
+<li>If $Z \le 0$, which implies $X \le Y$, then </li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{split}
+P(Z < z) &= P(Z<z ~|~ X>Y)P(X>Y) + P(X-Y<z~|~X<Y)P(X<Y) \\
+&= 0 + P(Y-X > -z ~|~ Y>X)P(Y>X)  \\
+&= P(Y>X)P(Y > -z) \quad \text{(memoryless)}  \\
+&= \frac{\lambda}{\lambda + \mu}e^{\mu z} \quad \text{(by eg.1)} \\
+\implies f_Z(z) &= \frac{\lambda\mu}{\lambda + \mu}e^{\mu z} \quad \text{for }z<0
+\end{split}</script><p>Therefore, the PDF of $Z$ has the form</p>
+<script type="math/tex; mode=display">
+f_Z(z) = \frac{\lambda\mu}{\lambda + \mu} 
+\begin{cases}
+e^{-\lambda z} &\quad z>0 \\
+e^{\mu z} &\quad z<0
+\end{cases}</script><blockquote>
+<p>Note: $P(X=Y)=0$ since the integral domain is a line ($y=x$) whose measure is 0. That is $P(Z=0) = 0$. This is why we can give no care of the case $X=Y$.</p>
+</blockquote>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yychi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://guyueshui.github.io/2018/12/25/Exponetial-Distribution/">https://guyueshui.github.io/2018/12/25/Exponetial-Distribution/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/probability/">probability</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/26/TestSlides/"><i class="fa fa-chevron-left">  </i><span>TestSlides</span></a></div><div class="next-post pull-right"><a href="/2018/12/24/草稿/"><span>元旦聚会安排</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
