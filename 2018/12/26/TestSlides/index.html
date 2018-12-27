@@ -1,15 +1,17 @@
 <!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="TestSlides"><meta name="keywords" content=""><meta name="author" content="Yychi,undefined"><meta name="copyright" content="Yychi"><title>TestSlides | 水阙</title><link rel="shortcut icon" href="/cali.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/theme/white.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/css/zenburn.min.css"></head><body><div class="reveal"><div class="slides"><section data-markdown="" data-separator="===" data-separator-vertical="==" data-charset="utf-8"><script type="text/template">
-## hexo-theme-melody <small>v1.5</small>
+# Titile <small>subtitle?</small>
 <!-- .slide: data-background="#49B1F5" -->
+
+===
 
 Supports iframe & slides. You can use a layout called `slides` to enabled the slides layout.
 
 Also you can add a `iframe` front-matter with the `slides` layout in your `md` file to enable the iframe page.
 
 ===
+<!-- .slide: data-transition="concave" data-background="img.png" data-background-repeat="repeat" data-background-size="100px" -->
 
 ## Steps
-<!-- .slide: data-transition="concave" data-background="#C7916B" -->
 
 ### 1. Add a slides page
 
@@ -20,6 +22,7 @@ This is the first page.
 See how in https://revealjs.com/#/
 
 ==
+<!-- .slide: data-transition="concave" data-background-video="video.webm" -->
 
 The second comes here.
 ```c++
@@ -31,18 +34,61 @@ int main(){
 }
 ```
 
-===
+==
 
 ### 2. Add the layout type
-<!-- .slide: data-transition="fade" data-background="#0066FF" -->
+<!-- .slide: data-transition="concave" data-background="#0066FF" data-background-transition="zoom" -->
 
-trasition color is set to "#0066FF"
+Background color is set to "#0066FF"
 $$
-e = mc^2
+\begin{split}
+E(X) &= E(A) + E(B) \\
+&= \sigma_1^2 + \sigma_2^2 \\
+&=1
+\end{split}
 $$
+
+===
+<!-- .slide: data-transition="zoom" data-background="#095017" -->
+
+Let's see how block quote works:
+
+> "This is something blockquoted.
+> Function of revealjs slide framework si not limited there."
+
+===
+<!-- .slide: data-transition="slide" data-background="#C93499"  -->
+
+Let's see some list:
+
+- The first one
+- second
+- third
+- ...
+
+==
+<!-- .slide: data-transition="concave" data-background="#93C499"  -->
+
+2. <span class="fragment fade-in"><span class="fragment grow">Are also supported!</span></span>
+3. <p class="fragment fade-up">fade up (also down/left/right)</p>
+4. <p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
+5. <p class="fragment fade-in-then-semi-out">fades in, then obfuscate when we move to the next step</p>
+6. <p class="fragment highlight-current-blue">blue only once</p>
+7. <p class="fragment highlight-red">highlight-red</p>
+8. <p class="fragment highlight-green">highlight-green</p>
+9. <p class="fragment highlight-blue">highlight-blue</p>
+10. <p class="fragment grow">grow</p>
+
+===
+
+Let's see how a embedded video works:
+
+<video data-autoplay src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+
+<video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
 </script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/js/head.min.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/js/reveal.min.js"></script><script>Reveal.initialize({
   mouseWheel: false,
-  transition: 'zoom',
+  transition: 'slide',
   transitionSpeed: 'default',
   parallaxBackgroundImage: '',
   parallaxBackgroundSize: '',
