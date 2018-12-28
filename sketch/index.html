@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="札记"><meta name="keywords" content=""><meta name="author" content="Yychi"><meta name="copyright" content="Yychi"><title>札记 | 水阙</title><link rel="shortcut icon" href="/cali.png"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="札记"><meta name="keywords" content=""><meta name="author" content="Yychi,guyueshui002@gmail.com"><meta name="copyright" content="Yychi"><title>札记 | 水阙</title><link rel="shortcut icon" href="/cali.png"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -63,6 +63,28 @@
 <p>来获得更美观易读的输出。但是每次输入这么多肯定很烦人，使用<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.graph <span class="string">"log --graph --oneline --decorate=short"</span></span><br></pre></td></tr></table></figure></p>
 <p>增加一个全局别名，这个别名对于任何地方的 <code>git</code> 都适用。如此一来，键入 <code>git graph</code> 会等效于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --graph --oneline --decorate=short</span><br></pre></td></tr></table></figure></p>
 <p>样例输出：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git graph</span><br><span class="line"></span><br><span class="line">* 36f2d65 (HEAD -&gt; master, origin/master, origin/HEAD) Forget it</span><br><span class="line">* 9b4a6d7 Update ref list</span><br><span class="line">* 3931d4d Using relative path <span class="keyword">for</span> image</span><br><span class="line">* ba18821 Upload pics</span><br><span class="line">* ceca69a fixed reference</span><br><span class="line">* be15df2 fixed picture address</span><br><span class="line">* 97a36f3 Initial commit</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><a href="https://aria2.github.io/" target="_blank" rel="noopener">aria2c</a> 是是个好东西。</p>
+<p>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/" target="_blank" rel="noopener">aria2配置示例</a><br>webui:</p>
+<ul>
+<li><a href="http://binux.github.io/yaaw/demo/" target="_blank" rel="noopener">YAAW</a></li>
+<li><a href="https://ziahamza.github.io/webui-aria2/#" target="_blank" rel="noopener">ziahamza</a></li>
+</ul>
+<blockquote>
+<p>Note: jsonrpc 地址格式为 <code>http://token:&lt;yoursecret&gt;@hostname:port/jsonrpc</code></p>
+</blockquote>
+<p><center>
+<img src="https://i.loli.net/2018/12/28/5c263327c4214.png" width="500">
+</center></p>
+<blockquote>
+<p>令牌填写自己设置的 <code>rpc-secret</code></p>
+</blockquote>
+<p><center><img src="https://i.loli.net/2018/12/28/5c263398854c3.png" width="500"></center></p>
+<blockquote>
+<p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code></p>
+</blockquote>
+<hr>
+<p>Q: 为什么使用 <code>hexo deploy</code> 老是提示输入用户名和密码。<br>A: <a href="https://help.github.com/articles/why-is-git-always-asking-for-my-password/" target="_blank" rel="noopener">here</a> and <a href="https://stackoverflow.com/questions/7773181/git-keeps-prompting-me-for-password" target="_blank" rel="noopener">here</a>.</p>
 </div></article><nav id="pagination"><div class="pagination"></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
