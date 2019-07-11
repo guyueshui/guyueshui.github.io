@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="一份简短的面试笔记"><meta name="keywords" content=""><meta name="author" content="Yychi,guyueshui002@gmail.com"><meta name="copyright" content="Yychi"><title>一份简短的面试笔记 | 水阙</title><link rel="shortcut icon" href="/cali.png"><link rel="stylesheet" href="/css/index.css?version=1.6.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.0"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a37e52e4ac68b7bedc09537444f68899";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-132747551-1', 'auto');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-相关"><span class="toc-number">1.</span> <span class="toc-text">C++相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法相关"><span class="toc-number">2.</span> <span class="toc-text">算法相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习相关"><span class="toc-number">3.</span> <span class="toc-text">机器学习相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#纽劢面经"><span class="toc-number">4.</span> <span class="toc-text">纽劢面经</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://guyueshui.github.io/assets/avatar.png"></div><div class="author-info__name text-center">Yychi</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">34</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">34</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://ruanzz.github.io">Ryan's Blog</a><a class="author-info-links__name text-center" href="http://www.matrix67.com/blog/">Matrix67</a><a class="author-info-links__name text-center" href="/links">More...</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://s2.ax1x.com/2019/02/19/kgD6g0.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">水阙</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/sketch">札记</a><a class="site-page" href="/tricks">Tricks</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/about">About</a></span></div><div id="post-info"><div id="post-title">一份简短的面试笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-07-08</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！</p>
+<h2 id="C-相关"><a href="#C-相关" class="headerlink" title="C++相关"></a>C++相关</h2><p>Q: <code>std::vector</code> push_back 的复杂度是多少？<br>A: O(1), amortized constant.</p>
+<p>Q: vector从1到n push n个元素，假设发生扩容时按两倍增长，写出复杂度关于n的表达式？<br>A: 不会。</p>
+<p>假设第一次只分配一个元素的空间。那么发生扩容的点依次如下：</p>
+<script type="math/tex; mode=display">
+1,2,4,8,16,..., 2^{\lfloor{\log_2 n}\rfloor}</script><p>每次扩容都会copy之前内存中的所有元素，所以总共发生的拷贝次数为:</p>
+<script type="math/tex; mode=display">
+1+2+4+\cdots+2^{\lfloor{\log_2 n}\rfloor}</script><p>注意这里共有$\lfloor \log_2 n \rfloor$项相加，于是有</p>
+<script type="math/tex; mode=display">
+1+2+4+\cdots+2^{\lfloor{\log_2 n}\rfloor} = O(\lfloor \log_2 n \rfloor \cdot
+2^{\lfloor{\log_2 n}\rfloor}) = O(n\log n)</script><p>加上push_back操作的次数n，所以有</p>
+<script type="math/tex; mode=display">
+T(n) = O(n\log n + n) = O(n \log n)</script><p>Q: 对于一个vector容器，删除元素后迭代器会失效吗？<br>A: 对于删除给定元素前的迭代器不会失效，被删除元素之后的迭代器全部失效。</p>
+<blockquote>
+<p>向容器添加元素后：</p>
+<ul>
+<li>如果容器是vector或string，且存储空间重新分配，则指向容器的迭代器、指针和引用都会失效。如果存储空间未重新分配，指向插入位置之前的迭代器、指针和引用仍有效，但指向插入位置之后元素的迭代器、指针和引用将会失效。</li>
+<li>对于deque，插入到除首尾元素以外的任何位置都会导致迭代器、指针和引用失效。如果在首尾位置添加元素，迭代器会失效，但指向存在元素的指针和引用不会失效。</li>
+<li>对于list和forward_list，指向容器的迭代器（包括尾后迭代器和首前迭代）、指针和引用都有效。</li>
+</ul>
+<p>当我们从一个容器中删除元素后，指向被删除元素的迭代器、指针和引用会失效，这应该不会令人惊讶。毕竟，这些元素已经被销毁了。当我们删除一个元素后：</p>
+<ul>
+<li>对于list和forward_list，指向容器其他位置的迭代器（包括尾后和首前）、引用和指针仍有效。</li>
+<li>对于deque，如果在首尾之外的任何位置删除元素指向被删除元素外其他元素的迭代器、引用和指针也会失效。如果是删除deque的尾元素，则尾后迭代器也会失效，但其他迭代器、引用和指针不受影响；如果是删除首元素，这些也不会受影响。</li>
+<li>对于vector和string，指向被删除元素之前的元素迭代器、引用和指针仍有效。注意：当我们删除元素时，尾后迭代器总是会失效。<div style="text-align:right">──《C++ Primer》</div>
+
+</li>
+</ul>
+</blockquote>
+<p>关于迭代器失效的问题，另参阅：<a href="https://blog.csdn.net/lujiandong1/article/details/49872763" target="_blank" rel="noopener">https://blog.csdn.net/lujiandong1/article/details/49872763</a></p>
+<p>Q: 对于使用hash函数组织的unordered_map，对于给定的hash函数，假设我总能构造一个集合，使得该集合内所有元素的hash值相同，即该集合内所有的key都映射到一个桶内。这种问题该如何解决？<br>A: 不会。</p>
+<p>可以使用两个hash函数，例如h1和h2，然后将同一个key的hash值用某种方式连接起来，以此定义一个新的复杂hash函数。对于这个函数，碰撞的概率将会非常小，因此可以认为你设计不出这样的集合，使得集合内的元素都发生碰撞。</p>
+<p>Q: new/delete和malloc/free有什么区别？<br>A: new/delete在C++中是运算符，但malloc/free是继承自C的内存管理函数。malloc只负责开辟指定大小的内存，并不负责初始化，而new及开辟内存，也会构造对象，如果要为自定义的类型申请动态内存，则必须使用new，new一个类型会调用该类型的构造函数。而delete和free的区别也是类似，delete调用类的析构函数，然后在释放内存，free仅释放内存。</p>
+<p>Q: 以下调用哪个函数？<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">base</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">derived</span> :</span> <span class="keyword">public</span> base &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> b)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"derived"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">base* pb = <span class="keyword">new</span> derived();</span><br><span class="line">pb-&gt;fun(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></p>
+<p>A: derived. 虚函数的动态绑定，根据运行时类型调用对应的版本，虽然是基类指针，但实际上是派生类对象，所以调用派生类中的函数。动态绑定是C++支持多态的根本原因。关于动态绑定，参见：<a href="https://www.learncpp.com/cpp-tutorial/122-virtual-functions/" target="_blank" rel="noopener">here</a>. </p>
+<p>另外，定义虚函数会增加空间开销，一旦定义了虚函数，就会生成虚函数表和虚指针，动态绑定实际上是通过查表来确定具体调用哪个版本的函数。另外构造函数不能声明为虚函数，析构函数可以，但析构函数不能声明为纯虚函数。</p>
+<p>Q: 重载（overload）和重写（override）有什么区别？<br>A: 重载指函数签名（函数原型）不同的两个函数名字相同，重写是指子类覆盖（重写）基类的方法，签名必须相同。注意，返回值不算函数签名，const算重载！</p>
+<p>另外，还涉及到隐藏的概念。所谓隐藏，其实就是子作用域如果出现和父作用域相同的名字，那么父作用域的该名字在子作用域下被隐藏，不可见，因为被子作用域同名覆盖掉了。请看下例：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Base::f(int)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Base::g(float)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span> :</span> <span class="keyword">public</span> Base &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::f(float)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::g(float)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::g(int)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Derived dobj;</span><br><span class="line">    Base* pd = &amp;dobj;</span><br><span class="line">    pd-&gt;f(<span class="number">3</span>);       <span class="comment">// Base::f(int)</span></span><br><span class="line">    pd-&gt;g(<span class="number">3.3f</span>);    <span class="comment">// Base::g(float)</span></span><br><span class="line">    dobj.f(<span class="number">3.3f</span>);   <span class="comment">// Derived::f(float)</span></span><br><span class="line">    dobj.g(<span class="number">3.3f</span>);   <span class="comment">// Derived::g(float)</span></span><br><span class="line">    dobj.g(<span class="number">3</span>);      <span class="comment">// Derived::g(int)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>子类中g发生了重载。而基类指针调用f时，发现是虚函数，会去查表（发生动态绑定），但子类中并没有相应的重写（override），子类中的f仅仅是另一个函数，所以查表得知还是调用基类的f; 基类指针调用g时，发现不是虚函数，直接调用基类的g. 此间，子类的两个g对基类的g都是隐藏！</p>
+<h2 id="算法相关"><a href="#算法相关" class="headerlink" title="算法相关"></a>算法相关</h2><p>Q: 从一个数组中删除一个元素，复杂度是多少？如果不关心索引和值的对应关系。<br>A: O(1), 将要删除的元素与最后一个元素互换，将数组的长度减一。</p>
+<p>注意：这里他说不关心数组的索引和值的对应关系。连续存储就是数组，只不过先前通过索引i获得的值，并不一定和删除后通过索引i获得的值相同。我答的是O(n),因为要删除一个元素，还得将删除元素之后的元素前移一位，这样才是我理解的删除的语义。但是面试官说不关心索引与值的对应关系，那么假设数组长度为n，删除元素位置为i，在互换A[i]和A[n]之后，删除后数组的A[i]变成了原先的A[n], 但一般认为删除后A[i]应该是原先的A[i+1], 这就是他说的不关心索引和值的对应，和我所理解的不一样。</p>
+<p>Q: 生成50个[0, 50)间的随机整数，构成一个序列，要求不能重复？<br>A: 用一个长度为50的数组用作map，初始化全为0. 然后使用随机数发生器生成[0, 50)之间的整数，并在map对应索引位置+1. 依次生成随机整数，且判断其索引对应的值是否为0，等于0说明还未生成过，等于1说明已经生成过，应该换一个。但是这样不能保证收敛，也许它永远生成不满50个随机整数。</p>
+<p>其实有O(n)的解法，延承自上一问。设有一副扑克牌，共50张，你怎样将它随机地分给排成一列的50个人？很简单，每次随机抽出一张给一个人，抽完了，也就分完了。现在你有一个随机数发生器，每次随机生成一个索引，你抽出该索引位置的牌（从数组中删除该元素），这个操作等价与将该索引的元素与数组最后一个元素互换。下一次，从[0, 49)里随机生成一个索引，纵然该索引与之前的可能一样，但对应位置的牌已经换了，所以不会抽出重复的牌。如此反复，抽完为止。这样你每删除一个元素的复杂度是O(1), 所以总共的复杂度就是O(n).</p>
+<h2 id="机器学习相关"><a href="#机器学习相关" class="headerlink" title="机器学习相关"></a>机器学习相关</h2><p>Q: K-均值聚类中k如何选取，评价指标，他很不稳定，如何让它稳定一些。</p>
+<p>评价指标：类间相似度低，类内相似度高。K-means的稳定性较差，可能每次随机选取的初始聚类中心不一样，而导致聚类的效果不一样。从某种程度上来说，K-means对数据较为敏感，无法识别离群点。传统聚类采用的距离度量通常为欧式距离，Kernel k-means将所有样本映射到另外一个特征空间中再进行聚类，就有可能改善聚类效果。</p>
+<p>一种改进：K-means++，它的思想是在已经选定n个聚类中心后，选取第n+1个聚类中心时：距离当前n个聚类中心越远的点会有更高的概率被选为第n+1个聚类中心。在选取第一个聚类中心时同样使用随机的方法，这个改单简单有效。</p>
+<p>另外，一个很重要的问题，K的值如何选取？在低维度时，可以将数据画出来看大致有几个类，而在面对高维和复杂数据时，这种方法难以使用。关于K的选取：ISODATA，迭代自组织数据分析法，它的思想是：当属与某个类别的样本数量过少时就把该类别去除；当属与某个类别的样本数量过多时，分散程度较大时，将该类别分裂为两个子类。</p>
+<p>Q: 正则化如何克服过拟合？背后的原理是什么？</p>
+<p>正则化控制模型的复杂度。正则系数越大，模型拟合能力越差（偏差大，方差小），复杂度越低，一定程度上克服了过拟合。考虑正则系数从小变大，一开始偏差较小，方差较大。因为模型足够复杂，可以很好的学到数据特征，但也容易过拟合，对特定的数据集很敏感，也许换一个数据集就会是不一样的结果，此时已经发生了过拟合。随着正则系数不断变大，偏差也跟着增加，但方差会随之减小，因为正则项事实上限制了模型的拟合能力，降低了模型的复杂度。牺牲了偏差（变大），换取了方差（变小）。而在有限的训练数据集上，方差过大就意味着过拟合，意味着模型对数据集敏感。这不是我们想要的。整个过程的泛化误差先减小（方差减小）后增大（偏差增大），先是方差主导，后是偏差主导。最佳的正则系数应该对应着最小的泛化误差。详见PRML p.151</p>
+<p>Q: 有没有接触过其他的网络模型，CNN，RNN等？</p>
+<p>没有。</p>
+<p>Q: vae是生成网络吗？可不可以和infogan结合？了解一下vae？</p>
+<p>是。</p>
+<h2 id="纽劢面经"><a href="#纽劢面经" class="headerlink" title="纽劢面经"></a>纽劢面经</h2><ol>
+<li>random forest 需要对特征做什么处理吗？</li>
+<li>常用的特征选择方法有哪些？</li>
+<li>主成分分析做特征选择有哪些缺点？</li>
+<li>l1 regularization 也可以做特征选择？</li>
+<li>特征有离散有连续该怎么处理？ one-hot encoding</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:guyueshui002@gmail.com">Yychi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://guyueshui.github.io/2019/07/08/interview-notes/">https://guyueshui.github.io/2019/07/08/interview-notes/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png"><div class="post-qr-code__desc">微信：我很贫穷(*/ω＼*)</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg"><div class="post-qr-code__desc">支付宝：请给我钱(╬ Ò ‸ Ó)</div></div></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/05/05/tf-quick-start/"><span>TF Intro</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://s2.ax1x.com/2019/02/19/kgD6g0.png)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Work with <font color="#ffb3d1"><i class="fa fa-heartbeat fa-lg"> </i></font> by yychi</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.0"></script><script src="/js/fancybox.js?version=1.6.0"></script><script src="/js/sidebar.js?version=1.6.0"></script><script src="/js/copy.js?version=1.6.0"></script><script src="/js/fireworks.js?version=1.6.0"></script><script src="/js/transition.js?version=1.6.0"></script><script src="/js/scroll.js?version=1.6.0"></script><script src="/js/head.js?version=1.6.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"scale":0.7,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":70,"height":180},"mobile":{"show":false,"scale":0.5},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
