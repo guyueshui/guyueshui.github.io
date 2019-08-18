@@ -130,6 +130,178 @@ ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = {
 </blockquote>
 </li>
 </ul>
+<p><strong>More detail</strong></p>
+<p>It has a general pattern:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:[range]s/from/to/[flags]</span><br></pre></td></tr></table></figure></p>
+<p>The default range is current line. See some examples:</p>
+<ul>
+<li><code>:1,10s/from/to</code> - search and replace between line 1 and 10 (included)</li>
+<li><code>:10s/from/to/</code> - search and replace only in line 10</li>
+<li><code>:%s/from/to/</code> - in global scope</li>
+</ul>
+<p><code>flags</code> can be</p>
+<ul>
+<li>g: replace all matches in whole line w/o confirmation</li>
+<li>c: confirm before replace</li>
+<li>i: ignore lower/upper case</li>
+<li>e: ignore error</li>
+</ul>
+<p>Note that flags can be combined together, e.g., <code>:%s/from/to/gc</code> means search and replace in global and ask for confirmation before each replacement.</p>
+<p><strong>Use regular expression</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Meta character</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>.</code></td>
+<td>Matches any character</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[abc]</code></td>
+<td>Matches any char from the list</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[^abc]</code></td>
+<td>Matches any char except from the list</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\d</code></td>
+<td>Matches numers == <code>[0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\D</code></td>
+<td>Opposite to above == <code>[^0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\x</code></td>
+<td>Matches hex numbers == <code>[0-9A-Fa-f]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\X</code></td>
+<td>Opposite to above == <code>[^0-9A-Fa-f]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\l</code></td>
+<td>Matches lower case letters == <code>[a-z]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\L</code></td>
+<td>opposite to above == <code>[^a-z]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\u</code></td>
+<td>Matches upper case letters == <code>[A-Z]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\U</code></td>
+<td>Opposite to above == <code>[^A-Z]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\w</code></td>
+<td>Matches alphanumeric chars == <code>[0-9A-Za-z_]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\W</code></td>
+<td>Opposite to above == <code>[^0-9A-Za-z_]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\t</code></td>
+<td>Matches <code>&lt;TAB&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\s</code></td>
+<td>Matches space == <code>[\t]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\S</code></td>
+<td>Opposite to above</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Special characters need to be escaped. Some of them are <code>.[]\*/</code>, if you want to match some of them, put the backslash “\” ahead. For example: <code>* -&gt; \*</code>.</p>
+<p>There are also some special form to express how much do you expect to match the specific pattern.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Meta char</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td>match &gt;= 0 times</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\+</code></td>
+<td>match &gt;= 1 times</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\?</code></td>
+<td>match 0 or 1 time</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\{n,m}</code></td>
+<td>match n&lt;=x&lt;=m times</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\{n}</code></td>
+<td>match n times</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\{n,}</code></td>
+<td>match &gt;= n times</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\{,m}</code></td>
+<td>match &lt;= m times</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Also, some postional characters.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Meta char</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$</code></td>
+<td>end of line</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td>beginning of line</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\&lt;</code></td>
+<td>beginning of word</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\&gt;</code></td>
+<td>end of word</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some examples:</p>
+<ul>
+<li>remove the spaces of eol: <code>%s/\s+$//g</code></li>
+<li>remove spaces of bol: <code>%s/^\s*//</code> or <code>%s/^ *//</code></li>
+<li>delete empty line: <code>%s/^$//</code> or <code>g/^$/d</code></li>
+<li>delete lines with <code>&lt;space&gt;</code> or <code>&lt;tab&gt;</code> as beginning: <code>%s/^[ |\t]*$//</code> or <code>g/^[ |\t]*$/d</code></li>
+</ul>
+<p>Note that pattern in regex scoped by <code>\(&lt;pattern&gt;\)</code> can be refered as <code>\1</code>, <code>\2</code>, etc. in the latter statement. For example, I want to replace every “abc…xyz” to “xyz…abc”, just write like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%s/\(abc\)\(.*\)\(xyz\)/\3\2\1/g</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="Advanced-Tricks"><a href="#Advanced-Tricks" class="headerlink" title="Advanced Tricks"></a>Advanced Tricks</h2><h3 id="Auto-Complete"><a href="#Auto-Complete" class="headerlink" title="Auto Complete"></a>Auto Complete</h3><p>In insert mode, press <code>^p</code>, vim will give you a list of all words you have typed, kind of auto complete.</p>
 <p><img src="https://i2.wp.com/yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/completion.gif?zoom=2" alt="Image adapted from REF3"></p>
@@ -145,7 +317,7 @@ ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = {
 <li><code>&#39;A-Z</code> - between files</li>
 </ul>
 <blockquote>
-<p>A straight tick <code>&#39;</code> refers to the line, use a backtick <code>` </code> to also include the column, see <a href="https://www.cs.oberlin.edu/~kuperman/help/vim/markers.html" title="Yukynn" target="_blank" rel="noopener">here</a>.</p>
+<p>A straight tick <code>&#39;</code> refers to the line, use a backtick <code>` </code> to also include the column, see [here][foo].</p>
 </blockquote>
 <p><strong>It seems that the marker <code>.</code> will mark the last edit position, so if you open your last edited file again, <code>`.</code> will take you to that position!</strong> </p>
 <h3 id="Block-Editing"><a href="#Block-Editing" class="headerlink" title="Block Editing"></a>Block Editing</h3><p>One of the magic of vim is block editing. Just press <code>^V</code> to enter block mode. Then select some block you are interested, then make some modifications. Finally press <code>Esc</code>, then those modifications you have just made will be applied onto every line of the block.</p>
@@ -227,6 +399,7 @@ ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = {
 <li><a href="https://globalinheart.wordpress.com/2011/09/07/%E7%AE%80%E6%98%8E-vim-%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">简明 Vim 练级攻略</a></li>
 <li><a href="https://vim.rtorr.com/" target="_blank" rel="noopener">Vim Cheat Sheet</a></li>
 <li><a href="https://devhints.io/vim" target="_blank" rel="noopener">Vim cheatsheet</a></li>
+<li><a href="https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/" target="_blank" rel="noopener">Vim查找替换及正则表达式的使用</a></li>
 </ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:guyueshui002@gmail.com">Yychi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://guyueshui.github.io/2018/12/20/Vim命令速查/">https://guyueshui.github.io/2018/12/20/Vim命令速查/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vim/">vim</a><a class="post-meta__tags" href="/tags/速查/">速查</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png"><div class="post-qr-code__desc">微信：我很贫穷(*/ω＼*)</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg"><div class="post-qr-code__desc">支付宝：请给我钱(╬ Ò ‸ Ó)</div></div></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/20/一些推导/"><i class="fa fa-chevron-left">  </i><span>一些推导</span></a></div><div class="next-post pull-right"><a href="/2018/12/19/Melody-主题使用自定义字体/"><span>Melody 主题的一些个人更改</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://s2.ax1x.com/2019/02/19/kgD6g0.png)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Yychi</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Work with <font color="#ffb3d1"><i class="fa fa-heartbeat fa-lg"> </i></font> by yychi</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.0"></script><script src="/js/fancybox.js?version=1.6.0"></script><script src="/js/sidebar.js?version=1.6.0"></script><script src="/js/copy.js?version=1.6.0"></script><script src="/js/fireworks.js?version=1.6.0"></script><script src="/js/transition.js?version=1.6.0"></script><script src="/js/scroll.js?version=1.6.0"></script><script src="/js/head.js?version=1.6.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
