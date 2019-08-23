@@ -21,8 +21,8 @@ body {
   min-height: 100%;
   background: #fff;
   color: #4c4948;
-  font-size: 16px;
-  font-family: Gill Sans, Martel Sans, Spectral, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  font-family: Gill Sans, Linux Libertine O, Martel Sans, Spectral, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 1.8;
 }
 *::-webkit-scrollbar {
@@ -253,7 +253,7 @@ table td {
   padding-top: 1.4rem;
   background: #212121;
   color: #eff;
-  font-size: 16px;
+  font-size: 90%;
   line-height: 20px;
 }
 figure.highlight {
@@ -267,14 +267,14 @@ blockquote {
 }
 .article-container pre,
 .article-container code {
-  font-family: Monaco, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
+  font-family: Source Code Pro, Monaco, consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
 }
 .article-container code {
   padding: 0.1rem 0.2rem;
   background: rgba(27,31,35,0.05);
   color: #1f2d3d;
   word-wrap: break-word;
-  font-size: 16px;
+  font-size: 90%;
 }
 .article-container pre code {
   padding: 0;
@@ -1784,8 +1784,8 @@ img:hover {
   background: #00c4b6;
 }
 @font-face {
-  font-family: Martel Sans;
-  src: url("/fonts/MartelSans-Regular.ttf");
+  font-family: Linux Libertine O;
+  src: url("/fonts/Libertine/LinLibertine_DR.otf");
 }
 @font-face {
   font-family: HYZhongSongS;
