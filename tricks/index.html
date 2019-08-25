@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="1961">
+<meta itemprop="wordCount" content="1985">
 
 
 
@@ -77,7 +77,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">=。=</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -105,7 +105,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">=。=</a>
 </div>
 
 <nav class="site-navbar">
@@ -351,7 +351,8 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <ul>
 <li><code>find . -name &quot;*name*&quot;</code> - 找出当前文件夹文件名包含“name”的文件<br /></li>
 <li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件<br /></li>
-<li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件<br />
+<li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件<br /></li>
+<li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹<br />
 <br /></li>
 </ul>
 
@@ -702,7 +703,25 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
   </div>
 </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-01-17 22:19:05 \x2b0000 UTC',
+        title: 'Useful Tricks',
+        link: decodeURI(location.href),
+        desc: '此页内容多为软件使用技巧，绝大部分内容来自互联网，如有侵权，请与我联系。也有部分内容系自己使用软件所得的一些经验，仅供参考。 FFmepg 转视频为gif',
+        owner: 'guyueshui',
+        repo: 'git@github.com:guyueshui\/gitment.git',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 

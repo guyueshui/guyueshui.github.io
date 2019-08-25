@@ -49,10 +49,10 @@
     
     <item>
       <title>Melody 主题的一些个人更改</title>
-      <link>https://guyueshui.github.io/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
+      <link>https://guyueshui.github.io/post/melody-theme-customization/</link>
       <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
       
-      <guid>https://guyueshui.github.io/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <guid>https://guyueshui.github.io/post/melody-theme-customization/</guid>
       <description>更改字体 Melody 主题字体配置文件在 $BLOG/themes/melody/source/css/var.styl，其中 $BLOG 为 Hexo 博客根目录。截取一段如</description>
     </item>
     

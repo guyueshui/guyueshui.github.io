@@ -6,10 +6,19 @@
     <description>Recent content on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Aug 2019 16:14:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 16:00:50 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://guyueshui.github.io/post/blog-trans/</link>
+      <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
+      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
+    </item>
     
     <item>
       <title>GDB 基本用法</title>
@@ -218,10 +227,10 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
     
     <item>
       <title>Melody 主题的一些个人更改</title>
-      <link>https://guyueshui.github.io/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
+      <link>https://guyueshui.github.io/post/melody-theme-customization/</link>
       <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
       
-      <guid>https://guyueshui.github.io/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <guid>https://guyueshui.github.io/post/melody-theme-customization/</guid>
       <description>更改字体 Melody 主题字体配置文件在 $BLOG/themes/melody/source/css/var.styl，其中 $BLOG 为 Hexo 博客根目录。截取一段如</description>
     </item>
     
@@ -258,13 +267,8 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Wed, 12 Dec 2018 22:06:18 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/about/</guid>
-      <description>Welcome! This blog is mainly written for self-reference, which covers math, tech, and maybe some other notes (learning or working). Nevertheless, it&#39;s really my pleasure if some of my articles is useful for you. :)
-About Me I am yychi, a student.
-
-
-Your browser doesn&#39;t support H5 audio flag!
-
-Wenyanwen roulette by CTP.</description>
+      <description>Site Welcome! This blog is mainly written for self-reference, which covers math, tech, and maybe some other notes (learning or working). Nevertheless, it&#39;s really my pleasure if some of my articles is useful for you. :)
+Timeline of this site    Time Event     2018-12-24 First published by Hexo, theme Melody   2019-08-25 Move to Hugo, theme Even    Me I am yychi, a student.</description>
     </item>
     
     <item>

@@ -77,7 +77,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">=。=</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -105,7 +105,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">=。=</a>
 </div>
 
 <nav class="site-navbar">
@@ -327,7 +327,25 @@ top                         <span class="c1"># 动态显示进程状态</span></
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-03-07 19:22:02 \x2b0000 UTC',
+        title: 'Linux 相关信息速查',
+        link: decodeURI(location.href),
+        desc: '本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 \/etc\/issue # 查看操作系统版本 cat \/proc\/version # 查看操作系统内核信息 uname -a # 查看操作',
+        owner: 'guyueshui',
+        repo: 'git@github.com:guyueshui\/gitment.git',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 

@@ -6,10 +6,19 @@
     <description>Recent content in information theory on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Aug 2018 18:02:36 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Dec 2018 19:18:29 +0000</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/tags/information-theory/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>一些推导</title>
+      <link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link>
+      <pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid>
+      <description>高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}</description>
+    </item>
     
     <item>
       <title>最大熵对应的概率分布</title>

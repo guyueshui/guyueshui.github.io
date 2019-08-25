@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-03-15T22:59:39&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-15T22:59:39&#43;00:00" />
-<meta itemprop="wordCount" content="837">
+<meta itemprop="wordCount" content="840">
 
 
 
@@ -77,7 +77,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">=。=</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -105,7 +105,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">=。=</a>
 </div>
 
 <nav class="site-navbar">
@@ -138,7 +138,7 @@
       <div class="post-meta">
         <span class="post-time"> March 15, 2019 </span>
         <div class="post-category">
-            <a href="/categories/learning-notes/"> Learning Notes </a>
+            <a href="/categories/notes/"> Notes </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -197,25 +197,28 @@ $$</p>
 
 <h2 id="logistic-回归">Logistic 回归</h2>
 
-<p>现在，我们模型的假设是<br />
-$$<br />
+<p>现在，我们模型的假设是</p>
+
+<p>$$<br />
 \begin{split}<br />
 y &amp;= h_{\mathbf{\theta}}(\mathrm{x}) = g(\mathbf{\theta}^T \mathrm{x}) <br />
 &amp;= \frac{1}{1+\exp({-\theta^T \mathrm{x}})} = g(z)<br />
 \end{split}<br />
 $$</p>
 
-<p>我们希望通过训练改变 $\theta$ 的值，进一步改善我们的模型。现在，我们打算换一个角度来看待这个问题，因为$g(\theta^T x) \in (0,1)$，正好可以表示一个概率，而之前我们看到，最小二乘实际上等价于，我对数据有一些假设（高斯白噪声），在这些假设下，做参数$\theta$的极大似然估计(MLE). 基于这个想法，我们假设，<br />
-$$<br />
+<p>我们希望通过训练改变 $\theta$ 的值，进一步改善我们的模型。现在，我们打算换一个角度来看待这个问题，因为$g(\theta^T x) \in (0,1)$，正好可以表示一个概率，而之前我们看到，最小二乘实际上等价于，我对数据有一些假设（高斯白噪声），在这些假设下，做参数$\theta$的极大似然估计(MLE). 基于这个想法，我们假设，</p>
+
+<p>$$<br />
 \begin{split}<br />
-P(y=1|x;\theta) &amp;=  h<em>{\theta}(x) <br />
-P(y=0|x;\theta) &amp;=  1 - h</em>{\theta}(x)<br />
+P(y=1|x;\theta) &amp;=  h_{\theta}(x) \newline<br />
+P(y=0|x;\theta) &amp;=  1 - h_{\theta}(x)<br />
 \end{split}<br />
 $$</p>
 
-<p>然后就那么刚刚好，回忆一下sigmoid函数有哪些迷人的性质，你会发现下面的式子也是对的<br />
-$$<br />
-p(y|x;\theta) = [h<em>{\theta}(x)]^y [1-h</em>{\theta}(x)]^{1-y}<br />
+<p>然后就那么刚刚好，回忆一下sigmoid函数有哪些迷人的性质，你会发现下面的式子也是对的</p>
+
+<p>$$<br />
+p(y|x;\theta) = [h_{\theta}(x)]^y [1-h_{\theta}(x)]^{1-y}<br />
 $$</p>
 
 <p>再假设m个样本独立同分布，我们得到似然函数<br />
@@ -239,15 +242,16 @@ $$<br />
 \theta = \theta + \alpha \nabla_{\theta} l(\theta)<br />
 $$</p>
 
-<p>注意梯度上升是沿着正梯度方向更新。给定一个训练样本 $(x,y)$, 其梯度为<br />
-$$<br />
+<p>注意梯度上升是沿着正梯度方向更新。给定一个训练样本 $(x,y)$, 其梯度为</p>
+
+<p>$$<br />
 \begin{split}<br />
 \frac{\partial}{\partial \theta_j} l(\theta)<br />
 &amp;= \left(\frac{y}{g(z)} - \frac{1-y}{1-g(z)}<br />
 \right)<br />
-\frac{\partial g(z)}{\partial z} \frac{\partial z}{\partial \theta_j} <br />
-&amp;= (y-g(z)) \frac{\partial z}{\partial \theta<em>j} <br />
-&amp;= (y-h</em>{\theta}(x))x_j<br />
+\frac{\partial g(z)}{\partial z} \frac{\partial z}{\partial \theta_j} \newline<br />
+&amp;= (y-g(z)) \frac{\partial z}{\partial \theta_j} \newline<br />
+&amp;= (y-h_{\theta}(x))x_j<br />
 \end{split}<br />
 $$</p>
 
@@ -313,7 +317,25 @@ $$</p>
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-03-15 22:59:39 \x2b0000 UTC',
+        title: '浅谈 Logistic 回归',
+        link: decodeURI(location.href),
+        desc: 'In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在',
+        owner: 'guyueshui',
+        repo: 'git@github.com:guyueshui\/gitment.git',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 
@@ -366,6 +388,14 @@ $$</p>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 
