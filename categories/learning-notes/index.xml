@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Notes on 水阙</title>
+    <link>https://guyueshui.github.io/categories/learning-notes/</link>
+    <description>Recent content in Learning Notes on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Apr 2019 10:35:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://guyueshui.github.io/categories/learning-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>神奇的位运算</title>
+      <link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
+      <description>In editing... 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
+    </item>
+    
+    <item>
+      <title>A collection of some coding problems</title>
+      <link>https://guyueshui.github.io/post/coding-problems/</link>
+      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/coding-problems/</guid>
+      <description>题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之</description>
+    </item>
+    
+    <item>
+      <title>瞎说 KMP 算法</title>
+      <link>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</guid>
+      <description>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导</description>
+    </item>
+    
+    <item>
+      <title>初尝 C&#43;&#43; 类设计</title>
+      <link>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Tue, 02 Apr 2019 21:31:40 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</guid>
+      <description>最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想</description>
+    </item>
+    
+    <item>
+      <title>LeetCode: Sum of Two Integers</title>
+      <link>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</link>
+      <pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</guid>
+      <description>记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的+或-. 原题地址：https://leetcode.com/pr</description>
+    </item>
+    
+    <item>
+      <title>浅谈 Logistic 回归</title>
+      <link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
+      <description>In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
+    </item>
+    
+    <item>
+      <title>Matrix Factorization</title>
+      <link>https://guyueshui.github.io/post/matrix-factorization/</link>
+      <pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/matrix-factorization/</guid>
+      <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
+Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
+There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
+    </item>
+    
+    <item>
+      <title>在 Beamer 中使用参考文献</title>
+      <link>https://guyueshui.github.io/post/use-reference-in-beamer/</link>
+      <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
+      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+    </item>
+    
+    <item>
+      <title>一些推导</title>
+      <link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link>
+      <pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid>
+      <description>高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}</description>
+    </item>
+    
+    <item>
+      <title>最大熵对应的概率分布</title>
+      <link>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link>
+      <pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid>
+      <description>最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优</description>
+    </item>
+    
+  </channel>
+</rss>

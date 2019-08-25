@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HTML 美化 Markdown 排版 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="HTML 美化 Markdown 排版" />
+<meta property="og:description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/" />
+<meta property="article:published_time" content="2018-12-16T00:04:38+00:00" />
+<meta property="article:modified_time" content="2018-12-16T00:04:38+00:00" />
+<meta itemprop="name" content="HTML 美化 Markdown 排版">
+<meta itemprop="description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来">
+
+
+<meta itemprop="datePublished" content="2018-12-16T00:04:38&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-16T00:04:38&#43;00:00" />
+<meta itemprop="wordCount" content="800">
+
+
+
+<meta itemprop="keywords" content="layour,beautify,html," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML 美化 Markdown 排版"/>
+<meta name="twitter:description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">HTML 美化 Markdown 排版</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> December 16, 2018 </span>
+        <div class="post-category">
+            <a href="/categories/techniques/"> Techniques </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-对齐控制">1. 对齐控制</a></li>
+<li><a href="#2-字体控制">2. 字体控制</a></li>
+<li><a href="#3-使用-fontawesome-图标">3. 使用 FontAwesome 图标</a></li>
+<li><a href="#4-插图控制">4. 插图控制</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p><a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来说说在使用 Markdown 排版的时候，如何引入一点 HTML 的技巧来帮助我们排版的更加好看。</p>
+
+<h2 id="1-对齐控制">1. 对齐控制</h2>
+
+<p>标准的 Markdown 只支持居左对齐。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>I am centered<span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>会排版出居中的效果：<br />
+<!-- centering --><br />
+<center>I am centered</center></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- right-aligned --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;text-align:right&#34;</span><span class="p">&gt;</span>I am right aligned<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>会排版出居右的效果：<br />
+<div style="text-align:right">I am right aligned</div></p>
+
+<!-- more -->
+
+<h2 id="2-字体控制">2. 字体控制</h2>
+
+<p>通过 HTML 标签，我们可以精确的控制字体族，字体大小，字体颜色，字体形态（粗体，斜体，下划线，删除线）等等。具体参见<a href="http://www.w3school.com.cn/tags/tag_font.asp">w3school</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">&#39;3&#39;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>I am red of size 3<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">5px</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;#0066FF&#34;</span><span class="p">&gt;</span>I am 天依蓝 of size 5px<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">font</span> <span class="na">face</span><span class="o">=</span><span class="s">&#34;verdana&#34;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;green&#34;</span><span class="p">&gt;</span>I am verdana of color green<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>I am underlined<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">s</span><span class="p">&gt;</span>I am deleted :(<span class="p">&lt;/</span><span class="nt">s</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>I am bolded<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>I am italic<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">big</span><span class="p">&gt;</span>I am bigger than you<span class="p">&lt;/</span><span class="nt">big</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>I am smaller than you<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+look<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>me<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>Ctrl+Shift+D<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>using this for short quote<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background-color:black&#34;</span><span class="p">&gt;</span>举世皆白我独黑<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>的排版效果：<br />
+<font size='3' color="red">I am red of size 3</font><br />
+<font size=5px color="#0066FF">I am 天依蓝 of size 5px</font><br />
+<font face="verdana" color="green">I am verdana of color green</font><br />
+<u>I am underlined</u><br />
+<s>I am deleted :(</s><br />
+<b>I am bolded</b><br />
+<i>I am italic</i><br />
+<big>I am bigger than you</big><br />
+<small>I am smaller than you</small><br />
+look<sup>at</sup><sub>me</sub><br />
+<kbd>Ctrl+Shift+D</kbd><br />
+<q>using this for short quote</q><br />
+<div style="background-color:black">举世皆白我独黑</div></p>
+
+<h2 id="3-使用-fontawesome-图标">3. 使用 FontAwesome 图标</h2>
+
+<p><a href="https://fontawesome.com/start">FontAwesome</a> 是一款图标字体集合。以下 Icon 的名称均可以在<a href="https://fontawesome.com/icons">官网</a>查到：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-check-square&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> completed
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-square&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> uncompleted
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-github&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> github icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-weixin&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> wechat icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-rss&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> rss icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-twitter&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> twitter icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-weibo&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> weibo icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-weibo fa-lg&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> large weibo icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-weibo fa-2x&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> 2\*weibo icon
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa fa-weibo fa-4x&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> 4\*weibo icon</code></pre></td></tr></table>
+</div>
+</div>
+<p>的排版效果如下：<br />
+<i class="fa fa-check-square"> </i> completed<br />
+<i class="fa fa-square"> </i> uncompleted<br />
+<i class="fa fa-github"> </i> github icon<br />
+<i class="fa fa-weixin"> </i> wechat icon<br />
+<i class="fa fa-rss"> </i> rss icon<br />
+<i class="fa fa-twitter"> </i> twitter icon<br />
+<i class="fa fa-weibo"> </i> weibo icon<br />
+<i class="fa fa-weibo fa-lg"> </i> large weibo icon<br />
+<i class="fa fa-weibo fa-2x"> </i> 2*weibo icon<br />
+<i class="fa fa-weibo fa-4x"> </i> 4*weibo icon</p>
+
+<h2 id="4-插图控制">4. 插图控制</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- 类似的可以设置 height=&#34;100&#34; --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;miwa.png&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;100&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;miwa-width=100&#34;</span> <span class="p">/&gt;</span>
+![miwa](miwa.png)</code></pre></td></tr></table>
+</div>
+</div>
+<p>下面是排版结果的对比：<br />
+<img src="miwa.png" width="100" alt="miwa-width=100" /><br />
+<img src="miwa.png" alt="miwa" /></p>
+
+<h2 id="reference">Reference</h2>
+
+<blockquote>
+<p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。<code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是更长远的保障。<br />
+<div style="text-align:right">——w3shcool</div></p>
+</blockquote>
+
+<ul>
+<li><a href="https://walesexcitedmei.github.io/2018/08/30/HEXO-NexT-%E4%B8%BB%E9%A2%98%E6%8F%90%E9%AB%98%E5%8D%9A%E5%AE%A2%E9%A2%9C%E5%80%BC/">[HEXO] NexT 主题提高博客颜值</a><br /></li>
+<li><a href="http://www.w3school.com.cn/html/html_elements.asp">HTML 元素</a><br /></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        December 16, 2018
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/index.md" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/layour/">layour</a>
+          <a href="/tags/beautify/">beautify</a>
+          <a href="/tags/html/">html</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Melody 主题的一些个人更改</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/manage-dotfiles-by-git/">
+            <span class="next-text nav-default">Manage Dotfiles by Git</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
