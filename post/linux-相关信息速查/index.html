@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux 相关信息速查 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux 相关信息速查" />
+<meta property="og:description" content="本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
+<meta property="article:published_time" content="2019-03-07T19:22:02+00:00" />
+<meta property="article:modified_time" content="2019-03-07T19:22:02+00:00" />
+<meta itemprop="name" content="Linux 相关信息速查">
+<meta itemprop="description" content="本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作">
+
+
+<meta itemprop="datePublished" content="2019-03-07T19:22:02&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-07T19:22:02&#43;00:00" />
+<meta itemprop="wordCount" content="501">
+
+
+
+<meta itemprop="keywords" content="info,reference," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux 相关信息速查"/>
+<meta name="twitter:description" content="本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux 相关信息速查</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> March 7, 2019 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#系统相关">系统相关</a></li>
+<li><a href="#内存外存">内存外存</a></li>
+<li><a href="#网络状态">网络状态</a></li>
+<li><a href="#用户状态相关">用户状态相关</a></li>
+<li><a href="#进程状态相关">进程状态相关</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>本文主要引用 <a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang</a> 的博客。</p>
+
+<h2 id="系统相关">系统相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
+head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
+cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
+uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
+cat /proc/cpuinfo           <span class="c1"># 查看 CPU 信息</span>
+hostname                    <span class="c1"># 查看计算机名字</span>
+env                         <span class="c1"># 列出环境变量</span>
+lsmod                       <span class="c1"># 列出加载的内核模块</span>
+uptime                      <span class="c1"># 查看系统运行时间、负载、用户数量</span>
+cat /proc/loadavg           <span class="c1"># 查看系统负载</span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- more -->
+
+<h2 id="内存外存">内存外存</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
+grep MemTotal /proc/meminfo <span class="c1"># 查看内存总量</span>
+grep MemFree /proc/meminfo  <span class="c1"># 查看空闲内存总量</span>
+df -h                       <span class="c1"># 查看各分区使用情况</span>
+fdisk -l                    <span class="c1"># 查看所有分区</span>
+swapon -s                   <span class="c1"># 查看所有交换分区</span>
+hdparm -i /dev/hda          <span class="c1"># 查看 IDE 磁盘的参数</span>
+dmesg <span class="p">|</span> grep IDE            <span class="c1"># 查看系统启动时 IDE 磁盘的状态</span>
+mount <span class="p">|</span> column -t           <span class="c1"># 查看各分区的挂载状态</span>
+du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的大小</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="网络状态">网络状态</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
+ip addr show                <span class="c1"># 同上</span>
+iptables -L                 <span class="c1"># 查看 iptables 防火墙</span>
+route -n                    <span class="c1"># 查看本机路由表</span>
+netstat -lntp               <span class="c1"># 查看所有监听端口</span>
+netstat -antp               <span class="c1"># 查看所有已建立的连接</span>
+netstat -s                  <span class="c1"># 查看网络统计信息</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="用户状态相关">用户状态相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
+who                         <span class="c1"># 查看活动用户</span>
+id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
+cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
+cut -d: -f1 /etc/group      <span class="c1"># 查看系统所有组</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="进程状态相关">进程状态相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ps -ef                      <span class="c1"># 查看所有进程</span>
+ps aux                      <span class="c1"># 同上</span>
+top                         <span class="c1"># 动态显示进程状态</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        March 7, 2019
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/index.md" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/info/">info</a>
+          <a href="/tags/reference/">reference</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">快速自定义 LaTeX 排版字体</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E8%B0%88%E8%B0%88%E6%8A%A5%E4%BB%BB%E5%AE%89%E4%B9%A6/">
+            <span class="next-text nav-default">《报任安书》</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
