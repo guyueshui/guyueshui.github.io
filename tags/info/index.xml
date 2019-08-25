@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>info on 水阙</title>
-    <link>http://localhost:1313/tags/info/</link>
+    <link>https://guyueshui.github.io/tags/info/</link>
     <description>Recent content in info on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 07 Mar 2019 19:22:02 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/info/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guyueshui.github.io/tags/info/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux 相关信息速查</title>
-      <link>http://localhost:1313/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link>
+      <link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid>
+      <guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid>
       <description>本文主要引用 Liam Huang 的博客。 系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作</description>
     </item>
     

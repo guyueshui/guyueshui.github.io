@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bit manipulation on 水阙</title>
-    <link>http://localhost:1313/tags/bit-manipulation/</link>
+    <link>https://guyueshui.github.io/tags/bit-manipulation/</link>
     <description>Recent content in bit manipulation on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 08 Apr 2019 10:35:16 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/bit-manipulation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guyueshui.github.io/tags/bit-manipulation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>神奇的位运算</title>
-      <link>http://localhost:1313/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
+      <link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
       <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
+      <guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
       <description>In editing... 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
     </item>
     
     <item>
       <title>LeetCode: Sum of Two Integers</title>
-      <link>http://localhost:1313/post/leetcode-sum-of-two-integers/</link>
+      <link>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</link>
       <pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/leetcode-sum-of-two-integers/</guid>
+      <guid>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</guid>
       <description>记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的+或-. 原题地址：https://leetcode.com/pr</description>
     </item>
     

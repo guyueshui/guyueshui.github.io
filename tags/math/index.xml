@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>math on 水阙</title>
-    <link>http://localhost:1313/tags/math/</link>
+    <link>https://guyueshui.github.io/tags/math/</link>
     <description>Recent content in math on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Mar 2019 22:59:39 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guyueshui.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>浅谈 Logistic 回归</title>
-      <link>http://localhost:1313/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link>
+      <link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link>
       <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
+      <guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
       <description>In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
     </item>
     
     <item>
       <title>Matrix Factorization</title>
-      <link>http://localhost:1313/post/matrix-factorization/</link>
+      <link>https://guyueshui.github.io/post/matrix-factorization/</link>
       <pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/matrix-factorization/</guid>
+      <guid>https://guyueshui.github.io/post/matrix-factorization/</guid>
       <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
 Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
 There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
@@ -33,28 +33,28 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
     
     <item>
       <title>Exponential Distribution</title>
-      <link>http://localhost:1313/post/exponetial-distribution/</link>
+      <link>https://guyueshui.github.io/post/exponetial-distribution/</link>
       <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/exponetial-distribution/</guid>
+      <guid>https://guyueshui.github.io/post/exponetial-distribution/</guid>
       <description>Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
     </item>
     
     <item>
       <title>一些推导</title>
-      <link>http://localhost:1313/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link>
+      <link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link>
       <pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid>
+      <guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid>
       <description>高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}</description>
     </item>
     
     <item>
       <title>最大熵对应的概率分布</title>
-      <link>http://localhost:1313/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link>
+      <link>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link>
       <pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid>
+      <guid>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid>
       <description>最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优</description>
     </item>
     
