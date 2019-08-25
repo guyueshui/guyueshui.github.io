@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Martel Sans;
+  src: url("/fonts/MartelSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: Linux Libertine O;
+  src: url("/fonts/Libertine/LinLibertine_DR.otf");
+}
+
+@font-face {
+  font-family: Linux Biolinum O;
+  src: url("/fonts/Libertine/LibBiolinum_R.otf");
+}
