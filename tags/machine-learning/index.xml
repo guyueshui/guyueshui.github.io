@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine learning on 水阙</title>
+    <link>http://localhost:1313/tags/machine-learning/</link>
+    <description>Recent content in machine learning on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Mar 2019 22:59:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>浅谈 Logistic 回归</title>
+      <link>http://localhost:1313/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
+      <description>In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
+    </item>
+    
+  </channel>
+</rss>

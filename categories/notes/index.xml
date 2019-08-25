@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on 水阙</title>
+    <link>http://localhost:1313/categories/notes/</link>
+    <description>Recent content in Notes on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Aug 2019 20:43:02 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>位域结构体简介</title>
+      <link>http://localhost:1313/post/bit-field-struct/</link>
+      <pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/bit-field-struct/</guid>
+      <description>最近实习接触到一个新的知识点，C/C++的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)</description>
+    </item>
+    
+    <item>
+      <title>面试笔记整理</title>
+      <link>http://localhost:1313/post/interview-notes/</link>
+      <pubDate>Mon, 08 Jul 2019 20:14:17 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/interview-notes/</guid>
+      <description>总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C++相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1</description>
+    </item>
+    
+    <item>
+      <title>The Beauty of Recursion</title>
+      <link>http://localhost:1313/post/the-beauty-of-recursion/</link>
+      <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/the-beauty-of-recursion/</guid>
+      <description>Declaration: this article is in long time editing...
+Here comes some beautiful recursive solutions to some problems.
+Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of
+0, 1, 1, 2, 3, 5, 8, 13 ...
+The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
+    </item>
+    
+    <item>
+      <title>Exponential Distribution</title>
+      <link>http://localhost:1313/post/exponetial-distribution/</link>
+      <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/exponetial-distribution/</guid>
+      <description>Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
+    </item>
+    
+  </channel>
+</rss>

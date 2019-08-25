@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>位域结构体简介 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/bit-field-struct/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="位域结构体简介" />
+<meta property="og:description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/bit-field-struct/" />
+<meta property="article:published_time" content="2019-08-06T20:43:02+00:00" />
+<meta property="article:modified_time" content="2019-08-06T20:43:02+00:00" />
+<meta itemprop="name" content="位域结构体简介">
+<meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)">
+
+
+<meta itemprop="datePublished" content="2019-08-06T20:43:02&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-06T20:43:02&#43;00:00" />
+<meta itemprop="wordCount" content="1900">
+
+
+
+<meta itemprop="keywords" content="cpp,struct,bit field," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="位域结构体简介"/>
+<meta name="twitter:description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">位域结构体简介</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> August 6, 2019 </span>
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>最近实习接触到一个新的知识点，C/C++的位域结构体。</p>
+
+<p>以下开始摘抄自：<a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">here</a></p>
+
+<p>位段(bit-field)是以位为单位来定义结构体(或联合体)中的成员变量所占的空间。含有位段的结构体(联合体)称为位段结构。采用位段结构既能够节省空间，又方便于操作。</p>
+
+<p>位段的定义格式为:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type [var]: digits</pre></td></tr></table>
+</div>
+</div>
+<p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
+
+<p>举个例子，你可以这样定义一个位域结构体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// sizeof(A): 4
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">A</span>
+<span class="p">{</span>
+  <span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">12</span><span class="p">;</span>
+  <span class="n">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// sizeof(B): 12
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">B</span>
+<span class="p">{</span>
+  <span class="n">uint32_t</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">uint32_t</span> <span class="n">b</span><span class="p">;</span>
+  <span class="n">uint32_t</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p><code>uint32_t</code>实际上是<code>unsigned int</code>的别名，并且指定了用4个字节存储int类型的数据，而 1byte = 8bits, 4个字节共计32bits，结构体A使用了位域的方式，指定了每个成员所占用的bit数。可以看到，A中三个成员总共占用的比特数为32，也就是4个字节。所以结构体A所占用的空间就是4字节，而B没有使用位域，则3个成员各占4个字节，共计12字节。说白了，位域就是将结构体的成员在比特位上编排的更紧凑，更节省空间。</p>
+
+<p>以下开启一段摘抄：</p>
+
+<p>关于位域结构体有以下几点说明：(以下“位段就是位域”，c.f. <a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">ref1</a>)<br />
+1. 位段的类型只能是int，unsigned int，signed int三种类型，不能是char型或者浮点型；<br />
+2. 位段占的二进制位数不能超过该基本类型所能表示的最大位数，比如在VC中int是占4个字节，那么最多只能是32位；<br />
+3. 无名位段不能被访问，但是会占据空间；<br />
+4. 不能对位段进行取地址操作；<br />
+5. 若位段占的二进制位数为0，则这个位段必须是无名位段，下一个位段从下一个位段存储单元(这里的位段存储单元经测试在VC环境下是4个字节)开始存放；<br />
+6. 若位段出现在表达式中，则会自动进行整型升级，自动转换为int型或者unsigned int。<br />
+7. 对位段赋值时，最好不要超过位段所能表示的最大范围，否则可能会造成意想不到的结果。<br />
+8. 位段不能出现数组的形式。</p>
+
+<p>对于位段结构，编译器会自动进行存储空间的优化，主要有这几条原则:</p>
+
+<ol>
+<li>如果一个位段存储单元能够存储得下位段结构中的所有成员，那么位段结构中的所有成员只能放在一个位段存储单元中，不能放在两个位段存储单元中；如果一个位段存储单元不能容纳下位段结构中的所有成员，那么从剩余的位段从下一个位段存储单元开始存放。(在VC中位段存储单元的大小是4字节).<br /></li>
+
+<li><p>如果一个位段结构中只有一个占有0位的无名位段，则只占1或0字节的空间(C语言中是占0字节，而C++中占1字节)；否则其他任何情况下，一个位段结构所占的空间至少是一个位段存储单元的大小；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// sizeof(A): 4
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">A</span> <span class="p">{</span>
+<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// sizeof(B): 12
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
+<span class="n">uint32_t</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">uint32_t</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">uint32_t</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// sizeof(C): 8
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">C</span> <span class="p">{</span>
+<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nl">uint32_t</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// 不会和a凑在一起，新开一个字节存
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="c1">// sizeof(D): 12
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">D</span> <span class="p">{</span>
+<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nl">uint32_t</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// 隔断
+</span><span class="c1"></span><span class="nl">uint32_t</span><span class="p">:</span> <span class="mi">6</span><span class="p">;</span>    <span class="c1">// 开启新的位域存储单元
+</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// 前一个位域不够放，开启新的存放单元
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="c1">// sizeof(E): 4
+</span><span class="c1">// 内存分布简图
+</span><span class="c1">// 0000 0000 0000 0000
+</span><span class="c1">// a--- b--- cd-------
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">E</span> <span class="p">{</span>
+<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">b</span><span class="p">;</span>        <span class="c1">// 隔断
+</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 在下一个存储单元
+</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// 四个成员刚好占用32bits，即4个字节
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">Print</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// test
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">C</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">D</span> <span class="n">d</span><span class="p">;</span>
+<span class="n">E</span> <span class="n">e</span><span class="p">;</span>
+<span class="n">Print</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// 4
+</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="c1">// 12
+</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">c</span><span class="p">);</span> <span class="c1">// 8
+</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">d</span><span class="p">);</span> <span class="c1">// 12
+</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span> <span class="c1">// 4
+</span><span class="c1"></span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<p>以下测试用法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// sizeof: 4
+</span><span class="c1"></span><span class="k">struct</span> <span class="n">TcpMsgHead</span> <span class="p">{</span>
+  <span class="n">uint32_t</span> <span class="nl">length</span><span class="p">:</span> <span class="mi">16</span><span class="p">;</span>
+  <span class="n">uint32_t</span> <span class="nl">flags</span><span class="p">:</span> <span class="mi">8</span><span class="p">;</span>
+  <span class="kt">int</span>      <span class="nl">num</span><span class="p">:</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="k">const</span> <span class="n">TcpMsgHead</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;length: %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;flags:  %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">flags</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;num:    %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">num</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// test
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">TcpMsgHead</span> <span class="n">head</span><span class="p">;</span>
+  <span class="n">head</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mh">0xffff</span><span class="p">;</span> <span class="c1">// 2^16 - 1 = 65535
+</span><span class="c1"></span>  <span class="n">head</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0xff</span><span class="p">;</span>    <span class="c1">// 2^8 - 1 = 255
+</span><span class="c1"></span>  <span class="n">head</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mh">0xff</span><span class="p">;</span>
+  <span class="n">Print</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>上述程序的输出为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">length:    65535
+flags:       255
+num:          -1</pre></td></tr></table>
+</div>
+</div>
+<p>解释一下为什么num成员的值为-1：<br />
+首先num设置的比特位为8，而num的类型为int，是有符号的。对于有符号的整数，计算机内部使用补码表示的。<br />
+0xff 换成二进制<br />
+1111 1111<br />
+这正好是-1的补码。</p>
+
+<p>其实，Ycm给出的提示已经很明确了：<br />
+<img src="tr1.png" alt="tr1" /><br />
+Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 也就是二进制的 0001 0001, 则不会发生截断，因为8比特足够描述0x11，符号位是0，表示正数，所以这很符合我们的预期。但是如果再加一个2呢？<br />
+<img src="tr2.png" alt="tr2" /><br />
+可以看到Ycm提示发生截断，<br />
+529被截断成了17, 即<br />
+0010 0001 0001 被截断成了 0001 0001<br />
+也就是说，我结构体定义的时候已经确定了num只有8比特位可以存。高于8比特的数据全都截断。如果最高位是1，则会被转成负数，这可能和你的预期不符。所以一定不要设置超过容量的数据。</p>
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+<li><a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">浅谈C语言中的位段</a><br />
+<br />
+<br /></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        August 6, 2019
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://localhost:1313/post/bit-field-struct/index.md" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cpp/">cpp</a>
+          <a href="/tags/struct/">struct</a>
+          <a href="/tags/bit-field/">bit field</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/os-knowledge/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">os knowledge</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/interview-notes/">
+            <span class="next-text nav-default">面试笔记整理</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

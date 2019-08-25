@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>beautify on 水阙</title>
+    <link>http://localhost:1313/tags/beautify/</link>
+    <description>Recent content in beautify on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Dec 2018 14:31:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/beautify/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Melody 主题的一些个人更改</title>
+      <link>http://localhost:1313/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/melody-%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <description>更改字体 Melody 主题字体配置文件在 $BLOG/themes/melody/source/css/var.styl，其中 $BLOG 为 Hexo 博客根目录。截取一段如</description>
+    </item>
+    
+    <item>
+      <title>HTML 美化 Markdown 排版</title>
+      <link>http://localhost:1313/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</link>
+      <pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</guid>
+      <description>Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来</description>
+    </item>
+    
+  </channel>
+</rss>

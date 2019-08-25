@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on 水阙</title>
+    <link>http://localhost:1313/tags/algorithm/</link>
+    <description>Recent content in algorithm on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Apr 2019 19:31:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A collection of some coding problems</title>
+      <link>http://localhost:1313/post/coding-problems/</link>
+      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/coding-problems/</guid>
+      <description>题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之</description>
+    </item>
+    
+    <item>
+      <title>瞎说 KMP 算法</title>
+      <link>http://localhost:1313/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</guid>
+      <description>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导</description>
+    </item>
+    
+  </channel>
+</rss>

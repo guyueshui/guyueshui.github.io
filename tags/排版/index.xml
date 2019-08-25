@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>排版 on 水阙</title>
+    <link>http://localhost:1313/tags/%E6%8E%92%E7%89%88/</link>
+    <description>Recent content in 排版 on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Mar 2019 15:41:10 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E6%8E%92%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>快速自定义 LaTeX 排版字体</title>
+      <link>http://localhost:1313/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <description>字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
+    </item>
+    
+    <item>
+      <title>在 Beamer 中使用参考文献</title>
+      <link>http://localhost:1313/post/use-reference-in-beamer/</link>
+      <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/use-reference-in-beamer/</guid>
+      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+    </item>
+    
+  </channel>
+</rss>

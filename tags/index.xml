@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 水阙</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 18 Aug 2019 16:14:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cpp</title>
+      <link>http://localhost:1313/tags/cpp/</link>
+      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>http://localhost:1313/tags/debug/</link>
+      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gdb</title>
+      <link>http://localhost:1313/tags/gdb/</link>
+      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/gdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bit field</title>
+      <link>http://localhost:1313/tags/bit-field/</link>
+      <pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/bit-field/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>struct</title>
+      <link>http://localhost:1313/tags/struct/</link>
+      <pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/struct/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interview</title>
+      <link>http://localhost:1313/tags/interview/</link>
+      <pubDate>Mon, 08 Jul 2019 20:14:17 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming thought</title>
+      <link>http://localhost:1313/tags/programming-thought/</link>
+      <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/programming-thought/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recursion</title>
+      <link>http://localhost:1313/tags/recursion/</link>
+      <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/recursion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bit manipulation</title>
+      <link>http://localhost:1313/tags/bit-manipulation/</link>
+      <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/bit-manipulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trick</title>
+      <link>http://localhost:1313/tags/trick/</link>
+      <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/trick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>http://localhost:1313/tags/algorithm/</link>
+      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coding problems</title>
+      <link>http://localhost:1313/tags/coding-problems/</link>
+      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/coding-problems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamic programming</title>
+      <link>http://localhost:1313/tags/dynamic-programming/</link>
+      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/dynamic-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pattern match</title>
+      <link>http://localhost:1313/tags/pattern-match/</link>
+      <pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/pattern-match/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leetcode</title>
+      <link>http://localhost:1313/tags/leetcode/</link>
+      <pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>http://localhost:1313/tags/classification/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>http://localhost:1313/tags/math/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>http://localhost:1313/tags/regression/</link>
+      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>http://localhost:1313/tags/latex/</link>
+      <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字体</title>
+      <link>http://localhost:1313/tags/%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E5%AD%97%E4%BD%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>排版</title>
+      <link>http://localhost:1313/tags/%E6%8E%92%E7%89%88/</link>
+      <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E6%8E%92%E7%89%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>info</title>
+      <link>http://localhost:1313/tags/info/</link>
+      <pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/info/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reference</title>
+      <link>http://localhost:1313/tags/reference/</link>
+      <pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/reference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>polybar</title>
+      <link>http://localhost:1313/tags/polybar/</link>
+      <pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/polybar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algebra</title>
+      <link>http://localhost:1313/tags/algebra/</link>
+      <pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/algebra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beamer</title>
+      <link>http://localhost:1313/tags/beamer/</link>
+      <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/beamer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>http://localhost:1313/tags/probability/</link>
+      <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>http://localhost:1313/tags/vim/</link>
+      <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beautify</title>
+      <link>http://localhost:1313/tags/beautify/</link>
+      <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/beautify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>http://localhost:1313/tags/html/</link>
+      <pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>layour</title>
+      <link>http://localhost:1313/tags/layour/</link>
+      <pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/layour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotfiles</title>
+      <link>http://localhost:1313/tags/dotfiles/</link>
+      <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/dotfiles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>http://localhost:1313/tags/android/</link>
+      <pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flash</title>
+      <link>http://localhost:1313/tags/flash/</link>
+      <pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/flash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>information theory</title>
+      <link>http://localhost:1313/tags/information-theory/</link>
+      <pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/information-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>custom</title>
+      <link>http://localhost:1313/tags/custom/</link>
+      <pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/custom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smart router</title>
+      <link>http://localhost:1313/tags/smart-router/</link>
+      <pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/smart-router/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tar</title>
+      <link>http://localhost:1313/tags/tar/</link>
+      <pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/tar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>备份</title>
+      <link>http://localhost:1313/tags/%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E5%A4%87%E4%BB%BD/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

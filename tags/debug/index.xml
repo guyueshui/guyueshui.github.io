@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debug on 水阙</title>
+    <link>http://localhost:1313/tags/debug/</link>
+    <description>Recent content in debug on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 18 Aug 2019 16:14:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GDB 基本用法</title>
+      <link>http://localhost:1313/post/basic-gdb-usages/</link>
+      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/basic-gdb-usages/</guid>
+      <description>废话以后有时间再加。 首先编译时开启调试选项： 1 g++ main.cpp -g -O0 -O0指定编译器的优化级别为0，即不优化。 然后编译出来的可执行文件，默认名字是a.ou</description>
+    </item>
+    
+  </channel>
+</rss>

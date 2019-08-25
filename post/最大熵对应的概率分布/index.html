@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>最大熵对应的概率分布 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="最大熵对应的概率分布" />
+<meta property="og:description" content="最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/" />
+<meta property="article:published_time" content="2018-08-01T18:02:36+00:00" />
+<meta property="article:modified_time" content="2018-08-01T18:02:36+00:00" />
+<meta itemprop="name" content="最大熵对应的概率分布">
+<meta itemprop="description" content="最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优">
+
+
+<meta itemprop="datePublished" content="2018-08-01T18:02:36&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-01T18:02:36&#43;00:00" />
+<meta itemprop="wordCount" content="909">
+
+
+
+<meta itemprop="keywords" content="math,information theory," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="最大熵对应的概率分布"/>
+<meta name="twitter:description" content="最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">最大熵对应的概率分布</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> August 1, 2018 </span>
+        <div class="post-category">
+            <a href="/categories/learning-notes/"> Learning Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#最大熵定理">最大熵定理</a></li>
+<li><a href="#举例">举例</a>
+<ul>
+<li><a href="#1-高斯分布">1. 高斯分布</a></li>
+<li><a href="#2-指数分布">2. 指数分布</a></li>
+<li><a href="#3-均匀分布">3. 均匀分布</a></li>
+<li><a href="#4-几何分布">4. 几何分布</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="最大熵定理">最大熵定理</h2>
+
+<p><em>设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为</em><br />
+$$<br />
+    h(X) = - \int p(x)\log p(x) dx<br />
+$$<br />
+<em>其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。</em></p>
+
+<!-- more -->
+
+<p>考虑如下优化问题：<br />
+$$<br />
+\begin{array}{ll}<br />
+&amp;\underset{p}{\text{Maximize}} &amp; \displaystyle h(p) = - \int_S p(x)\log p(x) dx <br />
+&amp;\text{Subject to} &amp;\displaystyle \int_S p(x) dx = 1 \[2pt]<br />
+&amp;~ &amp; p(x) \ge 0 \[2pt]<br />
+&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n<br />
+\end{array}<br />
+$$<br />
+其中，集合 $S$ 是随机变量的support，即其所有可能的取值。我们意图找到这样的概率分布 $p​$, 他满足所有的约束（前两条是概率公理的约束，最后一条叫做矩约束，在模型中有时会假设随机变量的矩为常数），并且能够使得熵最大。将上述优化问题写成标准形式：<br />
+$$<br />
+\begin{array}{ll}<br />
+&amp;\underset{p}{\text{Minimize}} &amp; \displaystyle  \int_S p(x)\log p(x) dx <br />
+&amp;\text{Subject to} &amp;-p(x) \le 0 \[2pt]<br />
+&amp;~ &amp;\displaystyle \int_S p(x) dx = 1 \<br />
+&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n<br />
+\end{array}<br />
+$$<br />
+使用<a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange乘数法</a>得到其Lagrangian<br />
+$$<br />
+L(p,\boldsymbol{\lambda}) = \int<em>S p\log p ~dx - \mu</em>{-1}p + \mu_0 \left(\int<em>S p ~dx - 1\right) + \sum</em>{j=1}^n \lambda_j \left(\int_S pf_j~dx - \alpha_j\right)<br />
+$$<br />
+根据KKT条件对Lagrangian求导令为0，可得最优解。</p>
+
+<p>$$<br />
+\begin{gathered}<br />
+\frac{\partial L}{\partial p} = \ln p + 1 - \mu_{-1} + \mu<em>0 + \sum</em>{j=1}^n \lambda_jf<em>j := 0 <br />
+\implies p = \exp\left(-1 + \mu</em>{-1} - \mu<em>0 - \sum</em>{j=1}^n \lambda_j f<em>j \right) =\displaystyle c^{*} e^{-\sum</em>{j=1}^n\lambda_j^{<em>} f_j(x)} := p^{</em>}<br />
+\end{gathered}<br />
+$$</p>
+
+<p>其中，我们要选择 $c^{\star}$, $\boldsymbol{\lambda}^{\star}$ 使得 $p(x)$ 满足约束。到这里我们知道，在所有满足约束的概率分布当中，$p^{\star}$ 是使得熵达到最大的那一个！</p>
+
+<hr />
+
+<h2 id="举例">举例</h2>
+
+<h3 id="1-高斯分布">1. 高斯分布</h3>
+
+<p>约束：<br />
+- $E(X) = 0 \implies f_1 = x$<br />
+- $E(X^2) = \sigma^2 \implies f_2 = x^2$</p>
+
+<p>根据上面的论证，最大熵分布应具有如下形式：<br />
+$$<br />
+p(x) = ce^{-\lambda_1x - \lambda<em>2 x^2}<br />
+$$<br />
+再根据 KKT 条件：<br />
+1. $\int</em>{-\infty}^{+\infty} p(x) = 1$<br />
+2. $\int_{-\infty}^{+\infty} x p(x) = 0$<br />
+3. $\int x^2 p(x) = \sigma^2$</p>
+
+<p>由条件 $(2) \implies p(x)​$ 是偶函数 $\implies \lambda_1 = 0​$, 原条件变成</p>
+
+<ol>
+<li>$\int_{-\infty}^{+\infty} ce^{-\lambda_2x^2} = 1$<br /></li>
+<li>$\int x^2 ce^{-\lambda_2x^2} = \sigma^2$<br />
+<br /></li>
+</ol>
+
+<p>$\implies c = \frac{1}{\sqrt{2\pi\sigma^2}}, ~\lambda_2 = \frac{1}{2\sigma^2} \implies p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}} \sim N(0, ~\sigma^2)$</p>
+
+<h3 id="2-指数分布">2. 指数分布</h3>
+
+<p>约束：<br />
+- $X \ge 0$<br />
+- $E(X) = \frac{1}{\mu}$</p>
+
+<p>根据上面的论证，最大熵分布应具有如下形式：<br />
+$$<br />
+p(x) = ce^{-\lambda<em>1x}<br />
+$$<br />
+再根据 KKT 条件：<br />
+1. $\int</em>{0}^{+\infty} ce^{-\lambda_1x}= 1$<br />
+2. $\int_0^{+\infty} x ce^{-\lambda_1x} = \frac{1}{\mu}$</p>
+
+<p>推导如下：<br />
+$$<br />
+\begin{gathered}<br />
+\int_{0}^{+\infty} e^{-\lambda_1x} = \frac{1}{c} \implies \lambda<em>1 = c <br />
+\int</em>{0}^{+\infty}x e^{-\lambda_1x} = \frac{1}{c\mu} = \frac{1}{\lambda_1\mu} \implies \lambda_1 = \mu<br />
+\end{gathered}<br />
+$$</p>
+
+<p>$\implies p(x) = \mu e^{-\mu x} \sim Exp(\mu)$</p>
+
+<h3 id="3-均匀分布">3. 均匀分布</h3>
+
+<p>约束：</p>
+
+<ul>
+<li>$a \le X \le b$<br />
+<br /></li>
+</ul>
+
+<p>根据上面的论证，最大熵分布应具有如下形式：<br />
+$$<br />
+\begin{gathered}<br />
+p(x) = ce^{- 0x} = c <br />
+\int_a^b c ~dx = 1 \implies c = \frac{1}{b-a}<br />
+\end{gathered}<br />
+$$<br />
+$\implies p(x) = \frac{1}{b-a} \sim Unif(a,~b)$</p>
+
+<h3 id="4-几何分布">4. 几何分布</h3>
+
+<p>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$<br />
+约束：<br />
+- $X = 0,1,2,\dots$<br />
+- $E(X) = \frac{1-p}{p}$</p>
+
+<p>根据上面的论证，最大熵分布应具有如下形式：<br />
+$$<br />
+P(X=k) = p_k = ce^{-\lambda<em>1 k}<br />
+$$<br />
+再根据 KKT 条件：<br />
+1. $\sum</em>{k=0}^{\infty} p<em>k = 1$<br />
+2. $\sum</em>{k=0}^{\infty} k p_k = \frac{1-p}{p}$</p>
+
+<p>推导如下：<br />
+$$<br />
+\begin{gathered}<br />
+\sum_{k=0}^{\infty} ce^{-\lambda<em>1 k} = c \sum</em>{k=0}^{\infty} q^k \quad(\text{where }q = e^{-\lambda<em>1})<br />
+= \frac{c}{1-q} \implies c = 1-q <br />
+\sum</em>{k=0}^{\infty} k ce^{-\lambda<em>1 k} = c\sum</em>{k=1}^{\infty} k (e^{-\lambda<em>1})^k = c\sum</em>{k=1}^{\infty}k q^k = cq \sum kq^{k-1} <br />
+= cq \sum (q^k)' = cq \left(\sum_{k=1}^{\infty}q^k\right)' = cq \left(\frac{q}{1-q}\right)' <br />
+= cq \cdot \frac{1}{(1-q)^2} = \frac{q}{1-q} = \frac{1-p}{p}<br />
+\end{gathered}<br />
+$$<br />
+$\implies e^{-\lambda_1} = q = 1-p, ~ c =p \implies P(X=k) = p_k = pq^k \sim Geom(p)$</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        August 1, 2018
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://localhost:1313/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/index.md" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/math/">math</a>
+          <a href="/tags/information-theory/">information theory</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">记一次重装 Linux</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E6%9F%90%E4%B8%8D%E6%AD%A3%E7%BB%8F%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+            <span class="next-text nav-default">某不正经的个人总结</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
