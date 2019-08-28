@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-08T20:14:17&#43;00:00" />
-<meta itemprop="wordCount" content="9333">
+<meta itemprop="wordCount" content="9827">
 
 
 
@@ -155,7 +155,11 @@
 <li><a href="#算法相关">算法相关</a></li>
 <li><a href="#机器学习相关">机器学习相关</a></li>
 <li><a href="#纽劢面经">纽劢面经</a></li>
+<li><a href="#小米面经">小米面经</a></li>
 <li><a href="#牛客网c-笔记">牛客网C++笔记</a></li>
+</ul></li>
+<li><a href="#知识扫盲">知识扫盲</a>
+<ul>
 <li><a href="#操作系统">操作系统</a>
 <ul>
 <li><a href="#进程vs-线程">进程vs.线程</a></li>
@@ -394,6 +398,28 @@ A: 用一个长度为50的数组用作map，初始化全为0. 然后使用随机
 <br /></li>
 </ol>
 
+<h2 id="小米面经">小米面经</h2>
+
+<p>Q: 了解LRU缓存吗？<br />
+A: 没听说过。</p>
+
+<p>这里说的缓存是一种广义的概念，在计算机存储层次结构中，低一层的存储器都可以看做是高一层的缓存。比如Cache是内存的缓存，内存是硬盘的缓存，硬盘是网络的缓存等等。</p>
+
+<p>缓存可以有效地解决存储器性能与容量的这对矛盾，但绝非看上去那么简单。如果缓存算法设计不当，非但不能提高访问速度，反而会使系统变得更慢。</p>
+
+<p>从本质上来说，缓存之所以有效是因为程序和数据的局部性（locality）。程序会按固定的顺序执行，数据会存放在连续的内存空间并反复读写。这些特点使得我们可以缓存那些经常用到的数据，从而提高读写速度。</p>
+
+<p>缓存的大小是固定的，它应该只保存最常被访问的那些数据。然而未来不可预知，我们只能从过去的访问序列做预测，于是就有了各种各样的缓存替换策略。本文介绍一种简单的缓存策略，称为最近最少使用（LRU，Least Recently Used）算法。</p>
+
+<p>作者：金戈大王<br />
+链接：<a href="https://www.jianshu.com/p/b1ab4a170c3c">https://www.jianshu.com/p/b1ab4a170c3c</a><br />
+来源：简书<br />
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
+<p>Q: https加密方式？</p>
+
+<p>Q: 输入网址到浏览器展示的过程？</p>
+
 <h2 id="牛客网c-笔记">牛客网C++笔记</h2>
 
 <p>原地址：<a href="https://www.nowcoder.com/discuss/164721?type=0&amp;order=0&amp;pos=16&amp;page=0">https://www.nowcoder.com/discuss/164721?type=0&amp;order=0&amp;pos=16&amp;page=0</a></p>
@@ -409,6 +435,8 @@ A：<code>static_cast&lt;target type&gt;(variable)</code>可以将变量强制�
 
 <p>Q：怎么判断一个数是二的倍数，怎么求一个数中有几个1，说一下你的思路并手写代码？<br />
 A：(x &amp; 1)可以判断奇偶，(x &amp; x-1)可以去掉二进制最低位的1. (c.f. 我的另一篇文章&quot;a collection of coding problems&quot;).</p>
+
+<h1 id="知识扫盲">知识扫盲</h1>
 
 <h2 id="操作系统">操作系统</h2>
 

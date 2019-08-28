@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cpp Learn - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&amp;#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&amp;#39;/\ \/\ \ /&amp;#39;___\ \ _ `\/\ \\/ /&amp;#39;,__\ \ \ _ &amp;lt;&amp;#39;\ \ \ / __`\ /&amp;#39;_ `\ `\ \ \\ \ \_\" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/cpp-learn/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Cpp Learn" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/cpp-learn/" />
+<meta property="article:published_time" content="2019-08-28T22:52:32+08:00" />
+<meta property="article:modified_time" content="2019-08-28T22:52:32+08:00" />
+<meta itemprop="name" content="Cpp Learn">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
+
+
+<meta itemprop="dateModified" content="2019-08-28T22:52:32&#43;08:00" />
+<meta itemprop="wordCount" content="3010">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cpp Learn"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Cpp Learn</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> August 28, 2019 </span>
+        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> __    __               __           __               ____    ___                       
+/\ \  /\ \             /\ \      __ /\ \             /\  _`\ /\_ \                      
+\ `\`\\/&#39;/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
+ `\ `\ /&#39;/\ \/\ \  /&#39;___\ \  _ `\/\ \\/      /&#39;,__\   \ \  _ &lt;&#39;\ \ \   / __`\  /&#39;_ `\   
+   `\ \ \\ \ \_\ \/\ \__/\ \ \ \ \ \ \      /\__, `\   \ \ \L\ \\_\ \_/\ \L\ \/\ \L\ \  
+     \ \_\\/`____ \ \____\\ \_\ \_\ \_\     \/\____/    \ \____//\____\ \____/\ \____ \ 
+      \/_/ `/___/&gt; \/____/ \/_/\/_/\/_/      \/___/      \/___/ \/____/\/___/  \/___L\ \
+              /\___/                                                             /\____/
+              \/__/                                                              \_/__/ &#39;`</pre></td></tr></table>
+</div>
+</div>
+<p>epll/wait: reactor模式：不停轮询，发现有事做，就做！<br>
+asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。</p>
+
+<h2 id="编写多线程需要注意的点">编写多线程需要注意的点</h2>
+
+<ol>
+<li>在脑中先大致想好每个线程的工作是什么，什么时候开始，什么时候结束。<br></li>
+<li>捋清楚了之后再开始动手写。<br>
+<br></li>
+</ol>
+
+<p>调用<code>t.join()</code>的作用类似于，如果线程结束，主线程执行到join就可以立即返回，如果线程为结束，主线程执行到join会阻塞，直到线程结束。然后主线程继续执行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">            main  thread1
+              +      +
+              |      |
+              |      |
+              |      |
+              |      |
+thread1.join()+------+
+              |
+              |
+              |
+              v</pre></td></tr></table>
+</div>
+</div>
+<p>如果某线程申请占有互斥量时，该互斥量被其他线程占有，则会引起该线程阻塞。观察者模式在计算机系统中使用甚广。</p>
+
+<h2 id="使用stdconditionalvariable注意事项">使用<code>std::conditional_variable</code>注意事项</h2>
+
+<ul>
+<li>调用wait的线程必须占有mutex，否则undefined<br></li>
+<li>所有并发线程（如果使用同一个条件变量交互）必须使用同一个mutex，否则undefined<br>
+<br></li>
+</ul>
+
+<h2 id="使用stdthread注意事项">使用<code>std::thread</code>注意事项</h2>
+
+<ul>
+<li>thread对象构造完成即开始执行<br></li>
+<li>使用detach之后，程序失去该线程的控制权，线程结束之后资源全部释放<br></li>
+<li>使用detach之后，主线程结束时，所有资源都被释放，即便该线程还未停止<br></li>
+<li>线程之间没有父/子关系。如果线程A创建线程B，然后线程A终止，则线程B将继续执行。但如果主线程终止，则整个进程终止，自然进程下的所有线程都终止，资源释放<br>
+<br></li>
+</ul>
+
+<h2 id="使用stdatomic注意事项">使用<code>std::atomic</code>注意事项</h2>
+
+<ul>
+<li>atomic is neither copyable nor movable<br></li>
+<li>mutex is neither copyable nor movable<br>
+<br></li>
+</ul>
+
+<h2 id="from-shuos-blog">From Shuo's blog</h2>
+
+<p>依据《Java 并发编程实践》/《Java Concurrency in Practice》一书，一个线程安全的 class 应当满足三个条件：</p>
+
+<ul>
+<li>从多个线程访问时，其表现出正确的行为<br></li>
+<li>无论操作系统如何调度这些线程，无论这些线程的执行顺序如何交织<br></li>
+<li>调用端代码无需额外的同步或其他协调动作<br>
+<br></li>
+</ul>
+
+<p>对象构造要做到线程安全，惟一的要求是在构造期间不要泄露 this 指针，即</p>
+
+<ul>
+<li>不要在构造函数中注册任何回调<br></li>
+<li>也不要在构造函数中把 this 传给跨线程的对象<br></li>
+<li>即便在构造函数的最后一行也不行<br>
+<br></li>
+</ul>
+
+<h2 id="不要在ctor里调用虚函数">不要在ctor里调用虚函数</h2>
+
+<p>总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和bug。</p>
+
+<p>ctor应该设计的尽量简单，确保对象可以被正确构造。在ctor中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。</p>
+
+<h2 id="ctor不能是虚函数">ctor不能是虚函数</h2>
+
+<ol>
+<li><p>从存储空间角度：虚函数对应一个vtable（虚函数表），这大家都知道，可是这个vtable其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到vtable，所以构造函数不能是虚函数。</p></li>
+
+<li><p>从使用角度：虚函数主要用于在信息不全的情况下，能使重载的函数得到对应的调用。构造函数本身就是要初始化实例，那使用虚函数也没有实际意义呀。所以构造函数没有必要是虚函数。</p></li>
+</ol>
+
+<p>虚函数的作用在于通过父类的指针或者引用来调用它的时候能够变成调用子类的那个成员函数。而构造函数是在创建对象时自动调用的，不可能通过父类的指针或者引用去调用，因此也就规定构造函数不能是虚函数。</p>
+
+<ol start="3">
+<li>构造函数不需要是虚函数，也不允许是虚函数，因为创建一个对象时我们总是要明确指定对象的类型，尽管我们可能通过实验室的基类的指针或引用去访问它。但析构却不一定，我们往往通过基类的指针来销毁对象。这时候如果析构函数不是虚函数，就不能正确识别对象类型从而不能正确调用析构函数。<br>
+<br></li>
+</ol>
+
+<p>④从实现上看，vbtl在构造函数调用后才建立，因而构造函数不可能成为虚函数  </p>
+
+<p>  从实际含义上看，在调用构造函数时还不能确定对象的真实类型（因为子类会调父类的构造函数）；而且构造函数的作用是提供初始化，在对象生命期只执行一次，不是对象的动态行为，也没有太大的必要成为虚函数</p>
+
+<p>⑤当一个构造函数被调用时，它做的首要的事情之一是初始化它的V P T R。因此，它只能知道它是“当前”类的，而完全忽视这个对象后面是否还有继承者。当编译器为这个构造函数产生代码时，它是为这个类的构造函数产生代码- -既不是为基类，也不是为它的派生类（因为类不知道谁继承它）。<br>
+ ————————————————<br>
+版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：<a href="https://blog.csdn.net/cainiao000001/article/details/81603782">https://blog.csdn.net/cainiao000001/article/details/81603782</a></p>
+
+<h2 id="虚函数的工作原理">虚函数的工作原理</h2>
+
+<p><a href="https://zhuanlan.zhihu.com/p/60543586">https://zhuanlan.zhihu.com/p/60543586</a></p>
+
+<p>C++ 规定了虚函数的行为，但将实现方法留给了编译器的作者。不需要知道实现方法也可以很好的使用虚函数，但了解虚函数的工作原理有助于更好地理解概念。</p>
+
+<p>通常，编译器处理虚函数的方法是：给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。</p>
+
+<p>这种数组称为虚函数表（Virtual Function Table, vtbl）。</p>
+
+<p>虚函数表是一个数组，数组的元素是指针，指针指的是虚函数的地址。</p>
+
+<p>具有虚函数的类的实例，都会在头部存一个指向虚函数表的指针。</p>
+
+<h2 id="常见类型所占空间大小">常见类型所占空间大小</h2>
+
+<table>
+<thead>
+<tr>
+<th>TYPE</th>
+<th align="right">Bytes</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>(unsigned) int</td>
+<td align="right">4</td>
+</tr>
+
+<tr>
+<td>(unsigned) short</td>
+<td align="right">2</td>
+</tr>
+
+<tr>
+<td>(unsigned) long</td>
+<td align="right">8</td>
+</tr>
+
+<tr>
+<td>float</td>
+<td align="right">4</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td align="right">8</td>
+</tr>
+
+<tr>
+<td>long double</td>
+<td align="right">16</td>
+</tr>
+
+<tr>
+<td>(unsigned) char</td>
+<td align="right">1</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。</p>
+
+<h2 id="joseph-ring">Joseph Ring</h2>
+
+<p>牛客网上类似的题：<br>
+<a href="https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6">https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6</a></p>
+
+<p>描述：人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。</p>
+
+<p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p>
+
+<p>解法：维基百科上也有，GeeksforGeeks还有视频教程。<br>
+<a href="https://en.wikipedia.org/wiki/Josephus_problem">https://en.wikipedia.org/wiki/Josephus_problem</a><br>
+<a href="https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/">https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/</a></p>
+
+<p>常见的有两种解法：</p>
+
+<ul>
+<li>单链表模拟<br></li>
+<li>数学递推=&gt;递归求解<br>
+<br></li>
+</ul>
+
+<p>显然，假设n个人编号：0,1,2,3,...,n-1. 从0号开始报数（报数从0开始），报到m-1的将被处决，然后从下一个人开始报数。直到剩下最后一个人，赦免之。</p>
+
+<p>第一趟：报到m的自然是编号为(m-1)%n.<br>
+接着从 m%n 开始报数，接下来又会是谁被处决呢？</p>
+
+<p>等等，先来看看问题是什么，我希望知道幸免者的编号。在n个人，报m个数的设定下，我希望知道幸免者编号，假设这个编号就是f(n,m).</p>
+
+<p>在第一趟之后，报数从编号k=m%n开始，但是此时只有n-1个人，我还是想知道幸存者的编号。如果此时将编号重新映射一下，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">k   -&gt; 0
+k+1 -&gt; 1
+...
+k-2 -&gt; n-2</pre></td></tr></table>
+</div>
+</div>
+<p>那么问题就变成了n-1个人，从0开始报数，报到m-1被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 f(n-1, m). 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是x，那么映射回原编号x'</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">x&#39; = (x+k)%n</pre></td></tr></table>
+</div>
+</div>
+<p>于是，如果我们能够知道 f(n-1, m), 那么 f(n, m) = (f(n-1,m) + m)%n. 这就得到了递推公式。接着看一下边界条件，当n = 1时， f(1, m) = 0; 结束。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        August 28, 2019
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/blog-trans/">
+            <span class="next-text nav-default">博客迁移记录</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-08-28 22:52:32 \x2b0800 CST',
+        title: 'Cpp Learn',
+        link: decodeURI(location.href),
+        desc: '1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ \/\\ \\ \/\\ \\ \/\\ \\ __ \/\\ \\ \/\\ _`\\ \/\\_ \\ \\ `\\`\\\\\/\x26#39;\/__ __ ___\\ \\ \\___ \/\\_\\\\ \\\/ ____ \\ \\ \\L\\ \\\/\/\\ \\ ___ __ `\\ `\\ \/\x26#39;\/\\ \\\/\\ \\ \/\x26#39;___\\ \\ _ `\\\/\\ \\\\\/ \/\x26#39;,__\\ \\ \\ _ \x26lt;\x26#39;\\ \\ \\ \/ __`\\ \/\x26#39;_ `\\ `\\ \\ \\\\ \\ \\_\\',
+        owner: 'guyueshui',
+        repo: 'gitment',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

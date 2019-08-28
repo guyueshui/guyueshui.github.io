@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="1985">
+<meta itemprop="wordCount" content="2240">
 
 
 
@@ -368,6 +368,8 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 
 <h2 id="git">Git</h2>
 
+<p><strong>创建别名</strong></p>
+
 <p>使用 <code>git log</code> 查看提交历史，但是输出冗杂。通常使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -429,6 +431,49 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <pre class="chroma"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;</code></pre></td></tr></table>
 </div>
 </div>
+<p><strong>删除commit历史</strong></p>
+
+<p>如果不小心将隐私信息推送至远程仓库（如github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的commit历史查到你所做的更改，所以这种情况下必须删除之前所有的commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除master分支，将新建的分支重命名为master，再推送到远程强制覆盖<sup class="footnote-ref" id="fnref:a"><a href="#fn:a">1</a></sup>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Check out to a temporary branch:</span>
+git checkout --orphan TEMP_BRANCH
+
+<span class="c1"># Add all the files:</span>
+git add -A
+
+<span class="c1"># Commit the changes:</span>
+git commit -am <span class="s2">&#34;Initial commit&#34;</span>
+
+<span class="c1"># Delete the old branch:</span>
+git branch -D master
+
+<span class="c1"># Rename the temporary branch to master:</span>
+git branch -m master
+
+<span class="c1"># Finally, force update to our repository:</span>
+git push -f origin master</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="command-g">Command <code>g++</code></h2>
 
 <p>自定义包含路径</p>
@@ -477,20 +522,24 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl</code></pre></td></tr></table>
 
 <p><a href="https://aria2.github.io/">aria2c</a> 是个好东西。</p>
 
-<p>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/">aria2配置示例</a><br />
-webui:<br />
-- <a href="http://binux.github.io/yaaw/demo/">YAAW</a><br />
-- <a href="https://ziahamza.github.io/webui-aria2/#">ziahamza</a><br />
-- <a href="http://ariang.mayswind.net/latest/">AriaNg</a></p>
+<ul>
+<li>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/">aria2配置示例</a><br /></li>
+<li>webui:<br />
+
+<ul>
+<li><a href="http://binux.github.io/yaaw/demo/">YAAW</a><br /></li>
+<li><a href="https://ziahamza.github.io/webui-aria2/#">ziahamza</a><br /></li>
+<li><a href="http://ariang.mayswind.net/latest/">AriaNg</a><br />
+<br /></li>
+</ul></li>
+</ul>
 
 <p>Note: jsonrpc 地址格式为 <code>http://token:&lt;rpc-secret&gt;@hostname:port/jsonrpc</code><br />
 令牌填写自己设置的 <code>rpc-secret</code><br />
-<center><br />
-<img src="https://i.loli.net/2018/12/28/5c263327c4214.png" width="500" /><br />
-</center></p>
+<img src="https://i.loli.net/2018/12/28/5c263327c4214.png" alt="" /></p>
 
 <p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code><br />
-<center><img src="https://i.loli.net/2018/12/28/5c263398854c3.png" width="500" /></center></p>
+<img src="https://i.loli.net/2018/12/28/5c263398854c3.png" alt="" /></p>
 
 <h2 id="html">HTML</h2>
 
@@ -699,6 +748,15 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <li><a href="https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/">linux下视频转gif</a><br /></li>
 <li><a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">Running Bash Commands in the Background the Right Way [Linux]</a><br /></li>
 </ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:a"><a href="https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651">https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651</a><br />
+ <a class="footnote-return" href="#fnref:a">↩</a></li>
+</ol>
+</div>
 
   </div>
 </article>

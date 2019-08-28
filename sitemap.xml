@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guyueshui.github.io/post/cpp-learn/</loc>
+    <lastmod>2019-08-28T22:52:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/</loc>
-    <lastmod>2019-08-25T16:00:50+08:00</lastmod>
+    <lastmod>2019-08-28T22:52:32+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/</loc>
+    <lastmod>2019-08-28T22:52:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -12,12 +25,6 @@
     <lastmod>2019-08-25T16:00:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/</loc>
-    <lastmod>2019-08-25T16:00:50+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
