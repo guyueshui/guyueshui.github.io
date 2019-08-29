@@ -58,7 +58,7 @@ The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\t
       <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/coding-problems/</guid>
-      <description>题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之</description>
+      <description>场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个</description>
     </item>
     
     <item>

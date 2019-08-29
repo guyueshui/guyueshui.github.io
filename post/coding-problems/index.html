@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个" /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -44,25 +44,25 @@
 
 
 <meta property="og:title" content="A collection of some coding problems" />
-<meta property="og:description" content="题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之" />
+<meta property="og:description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/coding-problems/" />
 <meta property="article:published_time" content="2019-04-07T19:31:59+00:00" />
-<meta property="article:modified_time" content="2019-04-07T19:31:59+00:00" />
+<meta property="article:modified_time" content="2019-08-29T00:00:00+00:00" />
 <meta itemprop="name" content="A collection of some coding problems">
-<meta itemprop="description" content="题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之">
+<meta itemprop="description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个">
 
 
 <meta itemprop="datePublished" content="2019-04-07T19:31:59&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-07T19:31:59&#43;00:00" />
-<meta itemprop="wordCount" content="10842">
+<meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="11794">
 
 
 
 <meta itemprop="keywords" content="algorithm,dynamic programming,coding problems," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A collection of some coding problems"/>
-<meta name="twitter:description" content="题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之"/>
+<meta name="twitter:description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -149,7 +149,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#场景题">场景题</a>
 <ul>
 <li><a href="#题一-最高得分">题一：最高得分</a></li>
 <li><a href="#题二-最少硬币">题二：最少硬币</a></li>
@@ -162,6 +162,7 @@
 <li><a href="#题九-stern-brocot-tree">题九：Stern-Brocot Tree</a></li>
 <li><a href="#题十-解码字符串">题十：解码字符串</a></li>
 <li><a href="#题十一-重排并计算逆序数">题十一：重排并计算逆序数</a></li>
+<li><a href="#josephus-problem">Josephus Problem</a></li>
 </ul></li>
 <li><a href="#数据结构相关">数据结构相关</a>
 <ul>
@@ -183,6 +184,8 @@
 </div>
     <div class="post-content">
       
+
+<h1 id="场景题">场景题</h1>
 
 <h2 id="题一-最高得分">题一：最高得分</h2>
 
@@ -2323,7 +2326,7 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
     <span class="n">qs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span> 
   <span class="p">}</span>
   <span class="c1">// done
-</span><span class="c1"></span>  
+</span><span class="c1"></span>
   <span class="n">clock_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
   <span class="n">UniTest</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">qs</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TimeElapsed</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;ms for mergesort&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
@@ -2365,6 +2368,88 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 </div>
 <p>差了3倍左右！</p>
 
+<h2 id="josephus-problem">Josephus Problem</h2>
+
+<blockquote>
+<p>这个问题是以弗拉维奥·约瑟夫命名的，他是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。<br />
+<div style="text-align:right">——维基百科</div></p>
+</blockquote>
+
+<p>描述：人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。（牛客网上类似的题<sup class="footnote-ref" id="fnref:c"><a href="#fn:c">1</a></sup>）</p>
+
+<p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p>
+
+<p>解法：维基百科<sup class="footnote-ref" id="fnref:a"><a href="#fn:a">2</a></sup>上也有，GeeksforGeeks<sup class="footnote-ref" id="fnref:b"><a href="#fn:b">3</a></sup>还有视频教程。</p>
+
+<p>常见的有两种解法：</p>
+
+<ul>
+<li>单链表模拟<br /></li>
+<li>数学递推<br />
+<br /></li>
+</ul>
+
+<p>显然，假设n个人编号：$0,1,2,3,\dots,n-1$. 从0号开始报数（报数从0开始），报到m-1的将被处决，然后从下一个人开始报数。直到剩下最后一个人，赦免之。</p>
+
+<p>第一趟：报到 m 的自然是编号为$(m-1) \mod n$.<br />
+接着从 $m \mod n$ 开始报数，接下来又会是谁被处决呢？</p>
+
+<p>等等，先来看看问题是什么，我希望知道幸免者的编号。在n个人，报m个数的设定下，我希望知道幸免者编号，假设这个编号就是$f(n,m)$, 这里 $f$ 是个神奇的函数，我只要告诉它 n 和 m 它就能告诉我最后幸存者的编号。如果我能找到 $f(n, m)$ 和 $f(n-1, m)$ 的递推关系式，那将是极好的。</p>
+
+<p>在第一趟之后，报数从编号 $k = m \mod n$ 开始，但是此时只有 n-1个人，我还是想知道幸存者的编号。如果此时将编号重新映射一下，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">k   -&gt; 0
+k+1 -&gt; 1
+...
+k-2 -&gt; n-2</pre></td></tr></table>
+</div>
+</div>
+<p>那么问题就变成了 n-1 个人，从0开始报数，报到 m-1 被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 $f(n-1, m)$. 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是 x，那么映射回原编号 y</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">y = (x+k) mod n</pre></td></tr></table>
+</div>
+</div>
+<p>于是，如果我们能够知道 $f(n-1, m)$, 那么</p>
+
+<p>$$<br />
+f(n, m) = (f(n-1,m) + m) \mod n.<br />
+$$</p>
+
+<p>这就得到了递推公式，接着看一下边界条件，当n = 1时， $f(1, m) = 0$; 结束。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">Josephus</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="p">(</span><span class="s">&#34;we need n &gt;= 1&#34;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">Josephus</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <h1 id="数据结构相关">数据结构相关</h1>
 
 <p><strong>大部分出自<a href="https://www.nowcoder.com/ta/coding-interviews">《剑指Offer》</a></strong></p>
@@ -3475,7 +3560,20 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:c"><a href="https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6">https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6</a><br />
+ <a class="footnote-return" href="#fnref:c">↩</a></li>
+<li id="fn:a"><a href="https://en.wikipedia.org/wiki/Josephus_problem">https://en.wikipedia.org/wiki/Josephus_problem</a><br />
+ <a class="footnote-return" href="#fnref:a">↩</a></li>
+<li id="fn:b"><a href="https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/">https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/</a><br />
+ <a class="footnote-return" href="#fnref:b">↩</a></li>
+</ol>
 </div>
+
     </div>
 
     <div class="post-copyright">
@@ -3486,7 +3584,7 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        April 7, 2019
+        August 29, 2019
         
     </span>
   </p>
@@ -3539,7 +3637,7 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
         id: '2019-04-07 19:31:59 \x2b0000 UTC',
         title: 'A collection of some coding problems',
         link: decodeURI(location.href),
-        desc: '题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之',
+        desc: '场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {
