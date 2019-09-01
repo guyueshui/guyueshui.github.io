@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T19:31:59&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="11794">
+<meta itemprop="wordCount" content="12491">
 
 
 
@@ -163,6 +163,7 @@
 <li><a href="#题十-解码字符串">题十：解码字符串</a></li>
 <li><a href="#题十一-重排并计算逆序数">题十一：重排并计算逆序数</a></li>
 <li><a href="#josephus-problem">Josephus Problem</a></li>
+<li><a href="#扔骰子的期望">扔骰子的期望</a></li>
 </ul></li>
 <li><a href="#数据结构相关">数据结构相关</a>
 <ul>
@@ -2446,6 +2447,171 @@ $$</p>
   <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">(</span><span class="n">Josephus</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="扔骰子的期望">扔骰子的期望</h2>
+
+<blockquote>
+<p>拼多多2019校招正式批</p>
+</blockquote>
+
+<p>扔n个骰子，第i个骰子有可能掷出$X_i$种等概率的不同结果，数字从1到$X_i$. 比如$X_i = 2$, 就等可能的出现1点或2点。所有骰子的结果的最大值将作为最终结果。求最终结果的期望。</p>
+
+<p>输入描述：<br />
+第一行一个整数n，表示n个骰子。（1 &lt;= n &lt;= 50）<br />
+第二行n个整数，表示每个骰子的结果数$X_i$. ($2 \le X_i \le 50$)</p>
+
+<p>输出描述：<br />
+输出最终结果的期望，保留两位小数。</p>
+
+<p>示例输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">2
+2 2</pre></td></tr></table>
+</div>
+</div>
+<p>示例输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">1.75</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>主要考察事件概率的计算。</p>
+</blockquote>
+
+<p>假设有3个骰子，最大点数分别为2,3,4点。那么扔n个骰子，最终结果为1的概率如下</p>
+
+<p>$$<br />
+P(1) = \frac{1}{2\times 3 \times 4} = \frac{1}{24}<br />
+$$</p>
+
+<p>同理，最终结果为2, 也就是说三个骰子中最大的点数为2, 考虑每个骰子都点数都小于或等于2的概率，再减去每个骰子都小于或等于1的概率，即为</p>
+
+<p>$$<br />
+\begin{gathered}<br />
+P(2) = \frac{2\times 2\times 2}{2 \times 3 \times 4} - \frac{1}{2\times 3 \times 4} = \frac{7}{24} \newline<br />
+P(3) = \frac{2 \times 3 \times 3}{2 \times 3 \times 4} - \frac{2\times 2\times 2}{2 \times 3 \times 4} = \frac{10}{24} \newline<br />
+P(4) = \frac{2 \times 3 \times 4}{2 \times 3 \times 4} - \frac{2\times 3\times 3}{2 \times 3 \times 4} = \frac{6}{24}<br />
+\end{gathered}<br />
+$$</p>
+
+<p>这就求得了最终结果的所有可能的值对应的概率，可以看出相加为1, 现在可以求期望了。</p>
+
+<blockquote>
+<p>注意，当要求的点数大于当前骰子的最大点数时，那么该骰子掷出小于该点数的概率为1. 比如让一个最大点数为2的骰子掷出小于3的点数，显然概率为1.</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">Distribution</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">die_ranges</span><span class="p">,</span> <span class="kt">int</span> <span class="n">support</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">probs</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">support</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">pprob</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="c1">// for previous prob
+</span><span class="c1"></span>    <span class="kt">double</span> <span class="n">prob</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>  <span class="c1">// for current prob
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">die_ranges</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">pprob</span> <span class="o">*=</span> <span class="n">min</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="kt">double</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">);</span>
+      <span class="n">prob</span> <span class="o">*=</span> <span class="n">min</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="kt">double</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">probs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">prob</span> <span class="o">-</span> <span class="n">pprob</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">probs</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num_die</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num_die</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">maxpoint</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">die_ranges</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tmp</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">num_die</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;</span> <span class="n">maxpoint</span><span class="p">)</span>
+      <span class="n">maxpoint</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">die_ranges</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// io done
+</span><span class="c1"></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">Distribution</span><span class="p">(</span><span class="n">die_ranges</span><span class="p">,</span> <span class="n">maxpoint</span><span class="p">);</span>
+  
+  <span class="kt">double</span> <span class="n">expectation</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">maxpoint</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">expectation</span> <span class="o">+=</span> <span class="p">(</span><span class="n">probs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%.2f&#34;</span><span class="p">,</span> <span class="n">expectation</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
