@@ -39,7 +39,7 @@
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link href="/dist/even.bd0d3683.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -54,11 +54,11 @@
 
 
 <meta itemprop="dateModified" content="2019-08-28T22:52:32&#43;08:00" />
-<meta itemprop="wordCount" content="1463">
+<meta itemprop="wordCount" content="1728">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="cpp," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C&#43;&#43; 学习笔记"/>
 <meta name="twitter:description" content="诚如是，Life is too short to learn c&#43;&#43;. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权"/>
@@ -136,7 +136,9 @@
 
       <div class="post-meta">
         <span class="post-time"> August 28, 2019 </span>
-        
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -154,6 +156,11 @@
 <li><a href="#虚函数的工作原理">虚函数的工作原理</a></li>
 <li><a href="#常见类型所占空间大小">常见类型所占空间大小</a></li>
 <li><a href="#静态成员的初始化">静态成员的初始化</a></li>
+<li><a href="#析构函数的调用时机">析构函数的调用时机</a></li>
+<li><a href="#内存布局">内存布局</a>
+<ul>
+<li><a href="#结构体">结构体</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -314,6 +321,58 @@
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="析构函数的调用时机">析构函数的调用时机</h2>
+
+<p>The destructor is called whenever an object's lifetime ends, which includes</p>
+
+<ul>
+<li>program termination, for objects with static storage duration<br /></li>
+<li>thread exit, for objects with thread-local storage duration<br /></li>
+<li>end of scope, for objects with automatic storage duration and for temporaries whose life was extended by binding to reference<br /></li>
+<li>delete-expressin, for objects with dynamic storage duration<br /></li>
+<li>end of the full expression, for nameless temporaries<br /></li>
+<li>stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.<br />
+<br /></li>
+</ul>
+
+<p>c.f. <a href="https://en.cppreference.com/w/cpp/language/destructor">https://en.cppreference.com/w/cpp/language/destructor</a></p>
+
+<h2 id="内存布局">内存布局</h2>
+
+<h3 id="结构体">结构体</h3>
+
+<p>C++规范在“结构”上使用了和C相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="n">S</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>     <span class="c1">// memory location #1
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nl">b</span> <span class="p">:</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// memory location #2
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nl">c</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="c1">// memory location #2 (continued)
+</span><span class="c1"></span>    <span class="kt">char</span>  <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="kt">int</span> <span class="nl">d</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">// memory location #3
+</span><span class="c1"></span>    <span class="k">struct</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="nl">ee</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// memory location #4
+</span><span class="c1"></span>    <span class="p">}</span> <span class="n">e</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">obj</span><span class="p">;</span> <span class="c1">// The object &#39;obj&#39; consists of 4 separate memory locations
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>类的静态成员不占用类的空间，静态成员在程序数据段中。<br /></li>
+</ul>
+
     </div>
 
     <div class="post-copyright">
@@ -349,7 +408,9 @@
       </label>
   </div>
 </div><footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/cpp/">cpp</a>
+          </div>
       <nav class="post-nav">
         <a class="prev" href="/post/concurrent-programming/">
             <i class="iconfont icon-left"></i>

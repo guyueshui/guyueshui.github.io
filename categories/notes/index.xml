@@ -6,10 +6,37 @@
     <description>Recent content in Notes on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Aug 2019 20:43:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Sep 2019 11:05:10 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设计模式学习笔记</title>
+      <link>https://guyueshui.github.io/post/design-pattern-notes/</link>
+      <pubDate>Mon, 02 Sep 2019 11:05:10 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/design-pattern-notes/</guid>
+      <description>如无特殊声明：本文所有UML图均出自《图说设计模式》。在此特别鸣谢！ Singleton 单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例</description>
+    </item>
+    
+    <item>
+      <title>多线程学习笔记</title>
+      <link>https://guyueshui.github.io/post/concurrent-programming/</link>
+      <pubDate>Thu, 29 Aug 2019 21:40:23 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/concurrent-programming/</guid>
+      <description>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 学习笔记</title>
+      <link>https://guyueshui.github.io/post/cpp-learn/</link>
+      <pubDate>Wed, 28 Aug 2019 22:52:32 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
+      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
+    </item>
     
     <item>
       <title>位域结构体简介</title>

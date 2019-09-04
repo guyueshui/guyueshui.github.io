@@ -39,7 +39,7 @@
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.4798f29a.min.css" rel="stylesheet">
+<link href="/dist/even.bd0d3683.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="13567">
+<meta itemprop="wordCount" content="13613">
 
 
 
@@ -363,6 +363,9 @@ A: 重载指函数签名（函数原型）不同的两个函数名字相同，�
 </div>
 <p>子类中g发生了重载。而基类指针调用f时，发现是虚函数，会去查表（发生动态绑定），但子类中并没有相应的重写（override），子类中的f仅仅是另一个函数，所以查表得知还是调用基类的f; 基类指针调用g时，发现不是虚函数，直接调用基类的g. 此间，子类的两个g对基类的g都是隐藏！</p>
 
+<p>Q：memcpy 和 memmove 的区别<br />
+A：memcpy不能应对内存重叠，memmove可以。详见man pages.</p>
+
 <h2 id="算法相关">算法相关</h2>
 
 <p>Q: 从一个数组中删除一个元素，复杂度是多少？如果不关心索引和值的对应关系。<br />
@@ -608,7 +611,7 @@ A：(x &amp; 1)可以判断奇偶，(x &amp; x-1)可以去掉二进制最低位�
 
 <p>1024以下的端口号被称为知名端口（well-known port），其实就是系统保留端口，有很多约定的服务和特定的端口号对应，如ssh默认端口号是22.</p>
 
-<p>所有的TCP连接都是全双工的，并且是点到点的。所谓全双工，意味着同时可在两个方向上传输数据；二点到点则意味着每个连接恰好有两个端点。TCP并不支持多播或者广播传输模式。</p>
+<p>所有的TCP连接都是全双工的，并且是点到点的。所谓全双工，意味着同时可在两个方向上传输数据；而点到点则意味着每个连接恰好有两个端点。TCP并不支持多播或者广播传输模式。</p>
 
 <p>一个TCP连接就是一个字节流，而不是消息流。端到端之间并不比保留消息的边界。例如，如果发送进程将4个512字节的数据块写到一个TCP流中，那么在接收进程中，这些数据有可能按4个512字节快的方式被递交，也可能是2个1024字节的数据块，或是一个2048字节的数据块，或者其他方式。接收方无法获知这些数据被写入字节流时候的单元大小。</p>
 
