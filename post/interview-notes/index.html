@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="13613">
+<meta itemprop="wordCount" content="14573">
 
 
 
@@ -187,6 +187,7 @@
 <li><a href="#tcp服务模型">TCP服务模型</a></li>
 <li><a href="#tcp协议">TCP协议</a></li>
 </ul></li>
+<li><a href="#references">References</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -424,15 +425,117 @@ A: 没听说过。</p>
 
 <p>缓存的大小是固定的，它应该只保存最常被访问的那些数据。然而未来不可预知，我们只能从过去的访问序列做预测，于是就有了各种各样的缓存替换策略。本文介绍一种简单的缓存策略，称为最近最少使用（LRU，Least Recently Used）算法。</p>
 
-<p>作者：金戈大王<br />
-链接：<a href="https://www.jianshu.com/p/b1ab4a170c3c">https://www.jianshu.com/p/b1ab4a170c3c</a><br />
-来源：简书<br />
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>Q: https加密方式？<br />
+A: 不知道啊。</p>
 
-<p>Q: https加密方式？</p>
+<p>Q: 输入网址到浏览器展示的过程？<br />
+A: 不知道。</p>
 
-<p>Q: 输入网址到浏览器展示的过程？</p>
+<p>HTTP的工作流程大致如下：</p>
 
+<ol>
+<li>地址解析<br /></li>
+<li>封装HTTP请求。将访问信息以及本机的一些信息封装成一个HTTP请求数据包<br /></li>
+<li>封装TCP包。建立 TCP 连接 , 也就是常说的&quot;三次握手&quot; . 由于HTTP位于最上层的应用层 , 所以HTTP在工作之前要由 TCP 和 IP 协议建立网络连接。<br /></li>
+<li>客户端发送请求命令。在连接建立之后 , 客户端发送 HTTP 请求到服务端与请求相关的信息都会包含在请求头和请求体中发送给服务器端 .<br /></li>
+<li>服务端响应。服务器端在收到请求之后 , 根据客户端的请求发送给客户端相应的信息 , 相关的响应信息都会放在响应头和响应体中 .<br /></li>
+<li>关闭连接。服务器端在发送完响应之后 , 就会关闭连接 , 如果过客户端的请求的头部信息中有 <code>Connection: keep-alive</code> , 那么客户端在响应完这个请求之后不会关闭连接 , 知道客户端的所有请求都响应完毕 , 才会关闭连接 , 这样大大节省了带宽和 IO 资源 .<br />
+<br />
+<br /></li>
+</ol>
+
+<ul>
+<li>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议，所有的WWW文件都必须遵守这个标准。<br /></li>
+<li>HTTP是基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）<br /></li>
+<li>HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。如下图<br />
+<br /></li>
+</ul>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/4/16/162cd3df803538f6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="" /></p>
+
+<ul>
+<li>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br /></li>
+<li>HTTP默认的端口号为80，HTTPS的端口号为443。<br />
+<br /></li>
+</ul>
+
+<p><strong>HTTP状态码</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>原因</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational(信息性状态码)</td>
+</tr>
+
+<tr>
+<td>2XX</td>
+<td>Success(成功状态码)</td>
+</tr>
+
+<tr>
+<td>3XX</td>
+<td>Redirection(重定向)</td>
+</tr>
+
+<tr>
+<td>4XX</td>
+<td>Client Error(客户端错误状态码)</td>
+</tr>
+
+<tr>
+<td>5XX</td>
+<td>Server Error(服务器错误状态码)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">200(OK 客户端发过来的数据被正常处理
+204(Not Content 正常响应，没有实体
+206(Partial Content 范围请求，返回部分数据，响应报文中由Content-Range指定实体内容
+
+301(Moved Permanently) 永久重定向
+302(Found) 临时重定向，规范要求，方法名不变，但是都会改变
+303(See Other) 和302类似，但必须用GET方法
+304(Not Modified) 状态未改变， 配合(If-Match、If-Modified-Since、If-None_Match、If-Range、If-Unmodified-Since)
+307(Temporary Redirect) 临时重定向，不该改变请求方法
+
+400(Bad Request) 请求报文语法错误
+401 (unauthorized) 需要认证
+403(Forbidden) 服务器拒绝访问对应的资源
+404(Not Found) 服务器上无法找到资源
+
+500(Internal Server Error)服务器故障
+503(Service Unavailable) 服务器处于超负载或正在停机维护</pre></td></tr></table>
+</div>
+</div>
 <h2 id="牛客网c-笔记">牛客网C++笔记</h2>
 
 <p>原地址：<a href="https://www.nowcoder.com/discuss/164721?type=0&amp;order=0&amp;pos=16&amp;page=0">https://www.nowcoder.com/discuss/164721?type=0&amp;order=0&amp;pos=16&amp;page=0</a></p>
@@ -624,6 +727,18 @@ A：(x &amp; 1)可以判断奇偶，(x &amp; x-1)可以去掉二进制最低位�
 <h3 id="tcp协议">TCP协议</h3>
 
 <p>TCP的一个关键特征，也是主导了整个协议设计的特征是，TCP连接上的每个字节都有它独有的32位序列号。发送端和接收端的TCP实体以数据段的形式交换数据。TCP数据段（TCP segment）是由一个固定的20字节的头（加上可选的部分）以及随后的0个或者多个数据字节构成的。TCP软件决定数据段的大小，它可以将多次写操作的数据累积起来放到一个数据段中，也可以将一次写操作的数据分割到多个数据段中。有两个因素限制了段的长度：第一，每个数据段，包括TCP头在内，必须适合IP的65515字节净荷大小；其次，每个网络都有一个<strong>最大传输单元（Maximum Transfer Unit）MTU</strong>，每个数据段必须适合于MTU。在实践中，MTU通常是1500字节（以太网的净荷大小），因此它规定了数据段长度的上界。</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+<li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a><br /></li>
+<li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a><br /></li>
+<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a><br />
+<br />
+<br />
+<br />
+<br /></li>
+</ol>
 
     </div>
 
