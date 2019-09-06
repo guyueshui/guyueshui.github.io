@@ -54,7 +54,7 @@
 
 
 <meta itemprop="dateModified" content="2019-08-28T22:52:32&#43;08:00" />
-<meta itemprop="wordCount" content="1728">
+<meta itemprop="wordCount" content="2077">
 
 
 
@@ -151,6 +151,7 @@
 <li>
 <ul>
 <li><a href="#reactor-v-s-proactor">Reactor v.s. Proactor</a></li>
+<li><a href="#几个常用的宏">几个常用的宏</a></li>
 <li><a href="#不要在ctor里调用虚函数">不要在ctor里调用虚函数</a></li>
 <li><a href="#ctor不能是虚函数">ctor不能是虚函数</a></li>
 <li><a href="#虚函数的工作原理">虚函数的工作原理</a></li>
@@ -161,6 +162,11 @@
 <ul>
 <li><a href="#结构体">结构体</a></li>
 </ul></li>
+<li><a href="#模板">模板</a>
+<ul>
+<li><a href="#重载与特化">重载与特化</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -176,6 +182,16 @@
 <ul>
 <li>epll/wait: reactor模式，不停轮询，发现有事做，就做！<br /></li>
 <li>asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。<br />
+<br /></li>
+</ul>
+
+<h2 id="几个常用的宏">几个常用的宏</h2>
+
+<ul>
+<li><code>__func__</code>: name of an function, exists in C99/C++11 (<code>__FUNCTION__</code> is non standard)<br /></li>
+<li><code>__LINE__</code>: line number of the code<br /></li>
+<li><code>__FILE__</code>: filename of the file<br /></li>
+<li><code>__DATE__</code> and <code>__TIME__</code>: as you wish<br />
 <br /></li>
 </ul>
 
@@ -370,8 +386,63 @@
 </div>
 </div>
 <ul>
-<li>类的静态成员不占用类的空间，静态成员在程序数据段中。<br /></li>
+<li>类的静态成员不占用类的空间，静态成员在程序数据段中。<br />
+<br /></li>
 </ul>
+
+<h2 id="模板">模板</h2>
+
+<h3 id="重载与特化">重载与特化</h3>
+
+<p>从编译到函数模板的调用，编译器必须在非模板重载、模板重载和模板重载的特化间决定。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span><span class="err"> </span><span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>              <span class="c1">// #1 ：模板重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span><span class="err"> </span><span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>             <span class="c1">// #2 ：模板重载
+</span><span class="c1"></span><span class="kt">void</span>                     <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>         <span class="c1">// #3 ：非模板重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>            <span class="c1">// #4 ： #1 的特化
+</span><span class="c1"></span>
+<span class="n">f</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>        <span class="c1">// 调用 #1
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #2
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>        <span class="c1">// 调用 #3
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>          <span class="c1">// 调用 #4
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>注意只有非模板和初等模板重载参与重载决议。特化不是重载，且不受考虑。只有在重载决议选择最佳匹配初等函数模板后，才检验其特化以查看何为最佳匹配。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span><span class="err"> </span><span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>    <span class="c1">// #1 ：所有类型的重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span> <span class="c1">// #2 ：为指向 int 的指针特化 #1
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span><span class="err"> </span><span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>   <span class="c1">// #3 ：所有指针类型的重载
+</span><span class="c1"></span>
+<span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>即重载的优先级要高于特化。</p>
+
+<p>关于模板函数重载的更多内容，参考<a href="https://en.cppreference.com/w/cpp/language/function_template">function_template</a>。</p>
+
+<h2 id="references">References</h2>
 
     </div>
 

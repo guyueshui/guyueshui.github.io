@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2019 11:05:10 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 19:37:55 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>服务端开发预备知识</title>
+      <link>https://guyueshui.github.io/post/server-develop-preliminaries/</link>
+      <pubDate>Fri, 06 Sep 2019 19:37:55 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid>
+      <description>操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程</description>
+    </item>
     
     <item>
       <title>设计模式学习笔记</title>

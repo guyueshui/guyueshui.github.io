@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>服务端开发预备知识 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/server-develop-preliminaries/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.bd0d3683.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="服务端开发预备知识" />
+<meta property="og:description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/server-develop-preliminaries/" />
+<meta property="article:published_time" content="2019-09-06T19:37:55+08:00" />
+<meta property="article:modified_time" content="2019-09-06T19:37:55+08:00" />
+<meta itemprop="name" content="服务端开发预备知识">
+<meta itemprop="description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程">
+
+
+<meta itemprop="dateModified" content="2019-09-06T19:37:55&#43;08:00" />
+<meta itemprop="wordCount" content="10218">
+
+
+
+<meta itemprop="keywords" content="os,network,tcp,udp," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="服务端开发预备知识"/>
+<meta name="twitter:description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">服务端开发预备知识</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> September 6, 2019 </span>
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#操作系统">操作系统</a>
+<ul>
+<li><a href="#进程vs-线程">进程vs.线程</a></li>
+<li><a href="#上下文切换">上下文切换</a></li>
+<li><a href="#系统调用">系统调用</a></li>
+<li><a href="#semaphore-mutex">Semaphore/Mutex</a></li>
+<li><a href="#死锁">死锁</a></li>
+<li><a href="#生产者消费者">生产者消费者</a></li>
+<li><a href="#进程间通信">进程间通信</a></li>
+</ul></li>
+<li><a href="#网络">网络</a>
+<ul>
+<li><a href="#网络分层">网络分层</a></li>
+<li><a href="#路由">路由</a></li>
+<li><a href="#网络统计指标">网络统计指标</a></li>
+<li><a href="#tcp-vs-udp">TCP vs. UDP</a></li>
+</ul></li>
+<li><a href="#udp介绍">UDP介绍</a>
+<ul>
+<li><a href="#rpc">RPC</a></li>
+<li><a href="#rtc">RTC</a></li>
+</ul></li>
+<li><a href="#tcp介绍">TCP介绍</a>
+<ul>
+<li><a href="#tcp服务模型">TCP服务模型</a></li>
+<li><a href="#tcp协议">TCP协议</a></li>
+<li><a href="#tcp连接的建立">TCP连接的建立</a></li>
+<li><a href="#tcp连接的释放">TCP连接的释放</a></li>
+</ul></li>
+<li><a href="#http协议">HTTP协议</a>
+<ul>
+<li><a href="#http状态码">HTTP状态码</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="操作系统">操作系统</h2>
+
+<blockquote>
+<p>摘自《程序员面试白皮书》</p>
+</blockquote>
+
+<h3 id="进程vs-线程">进程vs.线程</h3>
+
+<p>进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程A不能通过传地址的方式直接读写进程B的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。</p>
+
+<p>此外，进程作为操作系统中拥有资源和独立调度的基本单位，可以拥有多个线程。通常操作系统中运行的一个程序就对应一个进程。在同一进程中，线程的切换不会引起进程切换。在不同的进程中进行线程切换，若从一个进程内的线程切换到另一个进程中的线程时，会引起进程切换。相比进程切换，线程切换的开销要小很多。线程与进程相结合能够提高系统的运行效率。</p>
+
+<p>线程可以分为两类：<br />
+一类是用户级线程（user level thread）。对于这类线程，有关线程管理的所有工作都由应用程序完成，内核意识不到线程的存在。在应用程序启动后，操作系统分配给该程序一个进程号，以及其对应的内存空间等资源。应用程序通常现在一个线程中运行，该线程被称为主线程。在其运行的某个时刻，可以通过调用线程库中的函数创建一个在相同进程中运行的新线程。用户级线程的好处是非常高效，不需要进入内核空间，但并发效率不高。</p>
+
+<p>另一类是内核级线程（kernel level thread）。对于这类线程，有关线程管理的所有工作由内核完成，应用程序没有进行线程管理的代码，只能调用内核线程的接口。内核维护进程及其内部的每个线程，调度也有内核基于线程架构完成。内核级线程的好处是，内核可以将不同的线程更好地分配到不同的CPU，以实现真正的并行计算。</p>
+
+<p>事实上，在现代操作系统中，往往使用组合方式实现多线程，即线程创建完全在用户空间中完成，并且一个应用程序中的多个用户级线程被映射到一些内核级线程上，相当于是一种折中方案。</p>
+
+<h3 id="上下文切换">上下文切换</h3>
+
+<p>对于单核单线程CPU而言，在某一时刻只能执行一条CPU指令。上下文切换（context switch）是一种将CPU资源从一个进程分配给另一个进程的机制。从用户角度看，计算机能够并行运行多个进程，这恰恰是操作系统通过快速上下文切换造成的结果。在切换的过程中，操作系统需要先存储当前进程的状态（包括内存空间的指针，当前执行完的指令等等），在读入下一个进程的状态，然后执行此进程。</p>
+
+<h3 id="系统调用">系统调用</h3>
+
+<p>系统调用（system call）是程序向系统内核请求服务的方式。可以包括硬件相关的服务（访问硬盘等），或者创建进程，调度其他进程等。系统调用是程序和操作系统之间的重要接口。</p>
+
+<h3 id="semaphore-mutex">Semaphore/Mutex</h3>
+
+<p>当用户创立了多个线程/进程时，如果不同线程/进程同时读写相同的内容，则可能造成读写错误，或者数据不一致。此时，需要通过加锁的方式，控制核心区域（critical section）的访问权限。对于semaphore而言，在初始化变量的时候可以控制允许多少个线程/进程同时访问一个critical section，其他的线程/进程会被堵塞，直到有人解锁。Mutex相当于只允许一个线程/进程访问的semaphore。此外，根据实际需要，人们还实现了一种读写锁（read-write lock），它允许同时存在多个reader，但任何时候之多只有一个writer，且不能和reader共存。</p>
+
+<h3 id="死锁">死锁</h3>
+
+<p>在引入锁的同时，我们遇到了一个新的问题：死锁（dead lock）。死锁是指两个或多个线程/进程之间相互阻塞，以至于任何一个都不能继续运行，因此也不能解锁其他线程/进程。例如，线程1占有锁A，并且尝试获取锁B；而线程2占有锁B，并尝试获取锁A。此时，两者相互阻塞，都无法继续运行。</p>
+
+<p>总结产生死锁的四个条件（只有当四个条件同时满足时才会产生死锁）：</p>
+
+<ol>
+<li>Mutual Exclusion -- Only one process may use a resource at a time<br /></li>
+<li>Hold-and-Wait -- Process holds resource while waiting for another<br /></li>
+<li>No Preemption -- Can't take a resouce away from a process<br /></li>
+<li>Circular Wait -- The waiting processes form a cycle<br />
+<br /></li>
+</ol>
+
+<h3 id="生产者消费者">生产者消费者</h3>
+
+<p>生产者消费者模型是一种常见的通信模型：生产者和消费者共享一个数据管道，生产者将数据写入buffer，消费者从另一头读取数据。对于数据管道，需要考虑为空和溢出的情况。同时，通常还需要将这部份共享内存用mutex加锁。在只有一个生产者消费者的情况下，可以设计无锁队列（lockfree queue），线程安全地直接读写数据。</p>
+
+<h3 id="进程间通信">进程间通信</h3>
+
+<p>在介绍进程的时候，我们提起过不能直接读写另一个进程的数据。两者之间的通信需要通过进程间通信（inter-process communication，IPC）进行。进程通信的方式通常遵循生产者消费者模型，需要实现数据交换和同步两大功能。</p>
+
+<ol>
+<li>Shared-memory + semaphore: 不同进程通过读写操作系统中特殊的共享内存进行数据交换，进程之间用semaphore实现同步。<br /></li>
+<li>Message passing: 进程在操作系统内部注册一个端口，并检测有没有数据，其他进程直接写数据到该端口。该通信方式更加接近与网络通信方式。事实上，网络通信也是一种IPC，知识进程分布在不同机器上而已。<br />
+<br /></li>
+</ol>
+
+<h2 id="网络">网络</h2>
+
+<blockquote>
+<p>摘自《程序员面试白皮书》</p>
+</blockquote>
+
+<h3 id="网络分层">网络分层</h3>
+
+<p>计算级之间的交互模型通常是指Open System Interconnection model (OSI), 该模型将网络通信系统抽象成了七层。因其不太实用，工业界普遍使用简化的TCP/IP五层模型。</p>
+
+<p><img src="/img/posted/osi-model.jpg" alt="osi-model" /></p>
+
+<ul>
+<li>应用层 针对特定的协议，为应用程序做服务,比如SMP,POP3,SSH,FTP等协议。<br /></li>
+<li>表示层 负责数据格式的转换，把不同表现形式的信息转换成适合网络传输的格式。<br /></li>
+<li>会话层 负责建立和断开通信连接，什么时候建立连接，什么时候断开连接以及保持多久的连接。<br /></li>
+<li>传输层 在两个通信节点之间负责数据的传输，起着可靠传输的作用。(运行在这一层的设备有四层交换机，四层路由器)<br /></li>
+<li>网络层 路由选择，在多个网络之间转发数据包，负责将数据包传送到目的地址。(运行在这一层的设备有路由器，三层交换机)<br /></li>
+<li>数据链路层 负责物理层面互联设备之间的通信传输，比如一个以太网相连的两个节点之间的通信，是数据帧与1、0比特流之间的转换。(运行在这一层的设备是网桥、以太网交换机、网卡)<br /></li>
+<li>物理层 主要是1、0比特流与电子信号的高低电平之间的转换。(运行在这一层的设备是中继器、双绞线)<br />
+<br /></li>
+</ul>
+
+<h3 id="路由">路由</h3>
+
+<p>从用户角度看，路由（routing）是指将数据从一个用户终端，通过网络节点（例如路由器、交换机等），发送到另一个用户节点的过程。理论上说，对于一个拥有多个节点的拓扑网络而言，路由是指在Network Layer（OSI model的第三层）将数据包（data packet）从一个节点以最优的路径发送到目标节点的实现方法。其核心包括：如何获得邻近节点的信息，如何估计链路质量，如何寻址，如何构建网络拓扑等等。通过路由器之间的路由协议（routing protocol）可以实现两个网络节点之间信息（包括网络域名，邻近节点，链路质量等）的交换和散布，通过不断重复该过程，每个节点都会获得足够多关于所在网络的拓扑信息。当有数据包需要传送时，路由器再通过路由算法（routing algorithm）计算传递当前数据包的最优路径，并把数据包发送给下一个邻近节点。许多路由算法基于图理论，实现了最小生成树，最短路径等等经典的拓扑算法。</p>
+
+<p>网络中，所谓地址是指IP地址，IPv4规定利用32bits作为IP地址（即4bytes，也就是我们常看到的x.x.x.x，x在0-255之间，2^8-1=255）。但随着网络设备的增多，IPv4已经不能满足人们的需求，故互联网逐渐向IPv6进行演进，IPv6利用128bits作为IP地址。</p>
+
+<p>事实上，直观而言，network routing的过程就相当于传统意义上的邮包寄送，IP地址可以类比于邮政编码，路由器就相当于邮局，通过目的地邮政编码与邮局系统中的递送路径进行比较，由此确定下一步应该把当前包裹传递到哪里。</p>
+
+<h3 id="网络统计指标">网络统计指标</h3>
+
+<p><strong>带宽/速率（Bandwidth/Rate）</strong></p>
+
+<p>所谓带宽是指一个网络节点能以多快的速度将数据接收/发送出去，单位时bits per second（bps）。对于实时性要求不高的数据，例如下载等，带宽时影响用户体验的主要因素。两个终端节点之间的带宽由路径中所有节点的最小带宽决定。同时，重算的数据发送速度不应超过当前的上载带宽，否则会对网络造成压力导致拥塞（congestion）。</p>
+
+<p><strong>One-way Delay/Round Trip Time</strong></p>
+
+<p>One-way Delay用以衡量网络的延迟。假设在时间点A从一个节点发送数据到另一个节点，目的节点在时间B收到数据，则两个时间点之差即为One-way Delay. 类似的，RTT则是数据完成一个Round Trip回到始发节点的时间差，一般RTT可以近似估计为One-way Delay的两倍。对于网络会议，IP电话等，延迟时影响用户体验的主要因素。延迟可能是由网络中某个节点处理数据速度慢，突然有大规模数据需要传输，或者某条链路不断重传数据造成的。延迟与带宽有一定的相关性，但没有必然联系。</p>
+
+<h3 id="tcp-vs-udp">TCP vs. UDP</h3>
+
+<p>在Transport Layer，数据流被分块传输。最常见的协议是TCP和UDP。</p>
+
+<p><strong>TCP</strong></p>
+
+<p><strong>Reliable Protocol</strong> TCP（Transmission Control Protocol）是一种可靠的传输协议，在网络条件正常的情况下，TCP协议能够保证接收端收到所有数据，并且接受到的数据顺序与发送端一致。TCP通过在发送端给每个数据包分配单调递增的sequence number，以及在接收端发送ACK（acknowledgement）实现可靠传输。每个发送的数据包都包含序列号，当接收端收到数据包时，会发送ACK告诉发送端当前自己期待的下一个序列号是多少。例如，发送端分别发送了序列号为99、100、101、102的四个数据包，接收端收到数据包99后，会发送ACK 100，意味着接收端期待下一个数据包编号100. 如果由于某些原因，数据包100没有到达接收端，但数据包101、102到达了，那么接收端会继续发送ACK 100. 当发送端发现当前发送的数据包编号超过了100，但接收端仍然期望收到100，那么发送端就会重新发送数据包100. 如果接收端收到了重新发送的数据包100，那么接收端会回复ACK 103，继续进行剩下的数据传输，并且把数据包99、100、101、102按顺序传递给上一层。</p>
+
+<p><strong>Flow Control</strong> TCP使用了end-toend flow control以避免发送端发送数据过快导致接收端无法处理。TCP采用了滑动窗口（sliding window）实现流量控制。 接收端通过ACK告诉发送端自己还能接收多少数据，发送端不能发送超过该值的数据量。当接收端返回的窗口大小为0时，发送端停止发送数据，直到窗口大小被更新。由于ACK是由发送端发送的数据触发，可能接收端窗口已经打开，但是由于发送端已经停止发送，故接收端没有机会通过ACK告知发送端新的窗口大小，在这种情况下会造成死锁。在实际实现中，发送端会设置一个timer，如果timer到期，发送端会尝试发送小数据包，以触发接收端ACK.</p>
+
+<p><strong>Congestion Control</strong> 为了控制传输速度防止堵塞网络，并且在网络容量允许的范围内尽可能多的传输数据，TCP引入congestion control，用以判断当前的网络负荷，并且调整传输速率。TCP通常采用additive increase， multiplicative decrease的算法，即如果按时收到对应的ACK，则下一次传输速率线性增加，否则视为发生了网络拥塞，下一次传输的比特数折半。所谓的“按时”基于RTT：发送端会估计RTT，并且期望当数据包发送以后，在RTT时间内收到对应的ACK。现在TCP需要分别实现slow-start，congestion avoidance，fast retransmit和fast-recovery，以达到最高的效率。</p>
+
+<p><strong>UDP</strong></p>
+
+<p>相比与TCP，UDP（User Datagram Protocol）简单许多：连接建立时不需要经过类似于TCP的三次握手，只需要知道接收端的IP和端口，发送端就可以直接发送数据。同时，UDP也没有ACK，flow control和congestion control，故UDP相较TCP传输更快，使用起来更简单。</p>
+
+<h2 id="udp介绍">UDP介绍</h2>
+
+<blockquote>
+<p>摘自《计算机网络 第四版》</p>
+</blockquote>
+
+<p>UDP面向无连接，它传输的数据段（segment）是由8字节的头和净荷域构成的。头包含源端口和目标端口，各占16位，共4字节。两个端口分别被用来标识源机器和目标机器内部的端点。当一个UDP分组到来的时候，它的净荷部分被递交给与目标端口相关联的那个进程。这种关联关系是在调用了bind原语或者其他某一种类似的做法之后建立起来的。实际上，采用UDP而不是原始的IP，其最主要的价值是增加了源端口和目标端口。如果没有端口域，则传输层将不知道该如何处理分组；而有了端口之后，它就可以正确地提交数据段了。</p>
+
+<p>当目标端必须将一个应答送回给源端地时候，源端口是必须地。发送应答的进程只要将进来的数据段中的source port域复制道输出的数据段中的destination port域，就可以指定在发送方机器上由哪个进程来接受应答。</p>
+
+<p>另外值得提出来的可能是UDP没有做到一些事情。UDP并不考虑流控制、错误控制，在收到一个坏的数据段之后它也不重传。所有这些工作都留给用户进程。UDP所作的事情就是提供一个接口，并且在接口中增加复用（demultiplexing）的特性。他利用端口的概念将数据段解复用到多个进程中。这就是它所做的全部工作。</p>
+
+<p>UDP尤其适用域C-S架构下，客户端给服务器发送一个短的请求，并且期望一个短的应答回来，如果请求或者应答丢失，只需要超时重传。</p>
+
+<p>UDP的一个应用时DNS（Domain Name System），简单来说，如果一个程序需要根据某一个主机名（比如www.cs.berkeley.edu）来查找它的IP地址，那么，它可以给DNS服务器发送一个包含该主机名的UDP分组。服务器用一个包含该主机IP地址的UDP分组作为应答。实现不需要建立连接，事后也不需要释放连接。在网络上只要两条消息就够了。DNS在进行区域传输(主从dns server之间的数据同步)的时候使用TCP，普通的查询使用UDP。因为普通查询数据量小，比较适合用udp这种速度更快。</p>
+
+<h3 id="rpc">RPC</h3>
+
+<p>从某种意义上讲，向一台远程主机发送一个消息并获得一个应答，就如同在编程语言中执行一个函数调用一样。在这两种情况下，你都要提供一个或多个参数，然后获得一个结果。这种现象导致人们试图将网络上的请求-应答交互过程，做成像过程调用那样可以进行类型匹配和转换。这样的结构是的网络应用更加易于编程，而且人们对这种处理方式也更加熟悉。例如，假设有一个名为<code>getIPaddress(hostname)</code>的过程，它的工作方式为：向DNS服务器发送一个UDP分组，然后等待应答，如果在规定的时间内没有接收到应答的话，则超时并重试。通过这种方式，网络的所有细节对于程序员而言全部隐藏。</p>
+
+<p>这个领域中的关键工作由Birrel和Nelson（1984）完成。简单来说：允许本地的程序调用远程主机上的过程。当机器A上的进程调用机器B上的一个过程的时候，机器A上的调用进程被挂起，而机器B上被调用的过程则开始执行。参数信息从调用方传输到被调用方，而过程的执行结果则从反方向传递回来。对于程序员而言，所有的消息传递都是不可见的。这项技术称为RPC（Remote Procedure Call），目前已成为许多网络应用的基础。按照传统，调用过程称为客户，被调用过程称为服务器。</p>
+
+<p>当然，RPC不一定非得使用UDP分组，但是，RPC和UDP是一对很好的搭档，而且，UDP常常被用于RPC。然而，当参数或者结果值可能超过最大的UDP分组的时候，或者当所请求的操作并不幂等（即不能安全地重复多次执行，比如计数器递增地操作）的时候，可能有必要建立一个TCP连接，然后利用该连接来发送请求，而不是使用UDP来完成远程调用。</p>
+
+<h3 id="rtc">RTC</h3>
+
+<p>UDP的还被广泛应用在实时多媒体：Internet广播电台、Internet电话、音乐点播、视频会议、视频点播等。人们发现每一种应用都在重复设计几乎相同的实时传输协议，逐渐地人们意识到，为多媒体应用制定一个通用的协议是一个很好的想法，因此就诞生了RTP（Real-time Transport Protocol）。</p>
+
+<h2 id="tcp介绍">TCP介绍</h2>
+
+<p>UDP是一个简单的协议，它有一些非常合适的用途。但是对于大多数Internet应用来说，他们更需要可靠的，按序递交的特性。所以还需要另一个协议，这就是TCP，目前它是Internet上承担任务最为繁重的一个协议。</p>
+
+<p>TCP是专门为了在不可靠的互联网上提供一个可靠的端到端字节流而设计的。每台支持TCP的机器都有一个TCP传输实体，它或者是一个库过程，或者是一个用户进程，或者是内核的一部分。在所有这些情形下，它管理TCP流，以及与IP层之间的接口。TCP传输实体接受本地进程和用户数据流，并且将他们分割成不超过64KB（在实践中，考虑到每个帧中都希望有IP和TCP头，所以通常不超过1460数据字节）的分片，然后以单独的IP数据报的形式发送每一个分片。当包含TCP数据的数据报到达一台机器的时候，他们被递交给TCP传输实体，然后TCP传输实体再重构出原始的字节流。</p>
+
+<p>IP层并不保证数据报一定被正确的递交到目标端，所以TCP需要判断超时的情况，并且需要根据需要重传数据报。即使被正确递交的数据报，也可能存在错序的问题，这也是TCP的责任，他必须把接收到的数据报按照正确的顺序重新装配成用户消息。</p>
+
+<h3 id="tcp服务模型">TCP服务模型</h3>
+
+<p>要想获得TCP服务，发送方和接收方必须创建一种被称为套接字的端点。每个套接字有一个套接字号（地址），它是由主机的IP地址以及本地主机局部的一个16为数值组成的，此16为数值被称为端口（port）。端口是一个TSAP的TCP名字。为了获得TCP服务，首先必须要显示的再发送机器的套接字和接受机器的套接字之间建立一个连接。</p>
+
+<p>一个套接字有可能同时被用于多个连接。换句话说，两个或者多个连接可能终止与同一个套接字。每个连接可以用两端的套接字标识符来标识，即（socket1, socket2）。TCP不适用虚电路号或者其他的标识符。</p>
+
+<p>1024以下的端口号被称为知名端口（well-known port），其实就是系统保留端口，有很多约定的服务和特定的端口号对应，如ssh默认端口号是22.</p>
+
+<p>所有的TCP连接都是全双工的，并且是点到点的。所谓全双工，意味着同时可在两个方向上传输数据；而点到点则意味着每个连接恰好有两个端点。TCP并不支持多播或者广播传输模式。</p>
+
+<p>一个TCP连接就是一个字节流，而不是消息流。端到端之间并不比保留消息的边界。例如，如果发送进程将4个512字节的数据块写到一个TCP流中，那么在接收进程中，这些数据有可能按4个512字节快的方式被递交，也可能是2个1024字节的数据块，或是一个2048字节的数据块，或者其他方式。接收方无法获知这些数据被写入字节流时候的单元大小。</p>
+
+<p>正如Unix中文件一样，读文件的程序无法判断该文件是怎么写成的，是一次性还是分块写入，然而，程序也无意于去弄清这个事情。一个TCP软件不理解TCP字节流的含义，也无意于弄清其含义，一个字节就是一个字节而已。</p>
+
+<p>当一个应用将数据传递给TCP的时候，TCP可能立即将数据发送出去，也可能将它缓冲起来（为了收集更多的数据从而一次发送出去），这完全由TCP软件自己来决定。然而，有时候应用程序确实希望自己的数据立即被发送出去，例如，假设一个用户已经登陆到一台远程服务器上，用户每输入一行命令就会敲入回车键，这时候该命令行应该被立即发送到远程主机，而不应该缓冲起来等待下一行命令。为了强迫将数据发送出去，应用程序可以使用PUSH标志，它相当于告诉TCP不要延迟传输过程。</p>
+
+<p>有关TCP服务的最后一个值得在这里提出来的特性是紧急数据（urgent data）。当一个交互用户通过敲入<kbd>DEL</kbd>或者<kbd>CTRL</kbd>-<kbd>C</kbd>来打断一个已经开始运行的远程计算过程的时候，发送方应用把一些控制信息放在数据流中，然后将它联通URGETN标志一起交给TCP。这一事件将使得TCP停止继续积累数据，而是将该连接上已有的所有数据立即传输出去。当目标端接收到紧急数据的时候，接收方应用被中断（比如，按Unix的术语来说得到了一个信号），所以它停止当前正在做的工作，并且读入数据流以找到紧急数据。紧急数据的尾部应该被标记出来，所以，如何发现紧急数据要取决于具体的应用程序。这种方案基本上只是提供了一种原始的信号机制，其余的工作全部留给应用程序自己来处理。</p>
+
+<h3 id="tcp协议">TCP协议</h3>
+
+<p>TCP的一个关键特征，也是主导了整个协议设计的特征是，TCP连接上的每个字节都有它独有的32位序列号。发送端和接收端的TCP实体以数据段的形式交换数据。TCP数据段（TCP segment）是由一个固定的20字节的头（加上可选的部分）以及随后的0个或者多个数据字节构成的。TCP软件决定数据段的大小，它可以将多次写操作的数据累积起来放到一个数据段中，也可以将一次写操作的数据分割到多个数据段中。有两个因素限制了段的长度：第一，每个数据段，包括TCP头在内，必须适合IP的65515字节净荷大小；其次，每个网络都有一个<strong>最大传输单元（Maximum Transfer Unit）MTU</strong>，每个数据段必须适合于MTU。在实践中，MTU通常是1500字节（以太网的净荷大小），因此它规定了数据段长度的上界。</p>
+
+<h3 id="tcp连接的建立">TCP连接的建立</h3>
+
+<p>TCP使用三步握手法建立连接。为了一个建立一个连接，某一方，比如说服务器，通过执行LISTEN和ACCEPT primitives（既可以指定一个特定的源，也可以不指定）被动地等待一个进来地连接请求。</p>
+
+<p>另一端，比如客户端，执行一个CONNECT primitive，同时指定以下参数：它希望连接地IP地址和端口、它愿意接受地最大TCP分段长度，以及一些可选地用户数据（比如口令）。CONNECT primitive发送一个SYN=1和ACK=0的TCP数据段，然后等待应答。</p>
+
+<p>当这个数据段到达目标端的时候，那里的TCP实体查看一下是否有一个进程已经在Destination port域中指定的端口上执行的LISTEN。如果没有的话，它送回一个设置了RST位的应答，已拒绝客户的连接请求。</p>
+
+<p>如果某个进程正在监听端口，那么，TCP实体将进来的TCP数据段交给该进程。然后该进程可以接受或者拒绝这个连接请求。如果它接受的话，则送回一个确认数据段。在正常情况下发送的TCP数据段顺序如图（a）所示。请注意，SYN数据段只消耗1字节的序列号空间，所以它的确认是非常明确的，毫无二义性。</p>
+
+<p><img src="https://s2.ax1x.com/2019/09/06/nKaiH1.png" alt="nKaiH1.png" /></p>
+
+<p>如果两台主机同时企图在同样的两个套接字之间建立一个连接，则事件序列如上图（b）所示。这些事件的结果是，只有一个连接被建立起来，而不是两个，因为所有的连接都是由它们的端点来标识的。如果第一个请求导致建立了一个由(x,y)标识的连接，而第二个请求也建立了这样一个连接，那么，在TCP实体内部只有一个表项，即(x,y).</p>
+
+<h3 id="tcp连接的释放">TCP连接的释放</h3>
+
+<p>虽然TCP连接时全双工的，但是，为了理解TCP连接的释放过程，最好将TCP连接看成一对单工连接。每个单工连接被单独释放，两个单工连接之间相互独立。为了释放一个连接，任何一方都可以发送一个设置了FIN位的TCP数据段，这表示它已经没有数据要发送了。当FIN数据段被确认的时候，这个方向上就停止传送新数据。然而，另一个方向上可能还在继续无限制地传送数据，当两个方向都停止的时候，连接才被释放。通常情况下，为了释放一个连接，需要4个TCP数据段：每个方向一个FIN和一个ACK。然而，第一个ACK和第二个FIN有可能被包含在同一个数据段中，从而将总数降低到3个。</p>
+
+<p>四次挥手。<a href="https://blog.csdn.net/qq_33951180/article/details/60767876">https://blog.csdn.net/qq_33951180/article/details/60767876</a><br />
+<a href="https://www.imooc.com/article/17411">https://www.imooc.com/article/17411</a></p>
+
+<h2 id="http协议">HTTP协议</h2>
+
+<ul>
+<li>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议，所有的WWW文件都必须遵守这个标准。<br /></li>
+<li>HTTP是基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）<br /></li>
+<li>HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。如下图<br />
+<br /></li>
+</ul>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/4/16/162cd3df803538f6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="" /></p>
+
+<ul>
+<li>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br /></li>
+<li>HTTP默认的端口号为80，HTTPS的端口号为443。<br />
+<br /></li>
+</ul>
+
+<h3 id="http状态码">HTTP状态码</h3>
+
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>原因</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational(信息性状态码)</td>
+</tr>
+
+<tr>
+<td>2XX</td>
+<td>Success(成功状态码)</td>
+</tr>
+
+<tr>
+<td>3XX</td>
+<td>Redirection(重定向)</td>
+</tr>
+
+<tr>
+<td>4XX</td>
+<td>Client Error(客户端错误状态码)</td>
+</tr>
+
+<tr>
+<td>5XX</td>
+<td>Server Error(服务器错误状态码)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">200(OK 客户端发过来的数据被正常处理
+204(Not Content 正常响应，没有实体
+206(Partial Content 范围请求，返回部分数据，响应报文中由Content-Range指定实体内容
+
+301(Moved Permanently) 永久重定向
+302(Found) 临时重定向，规范要求，方法名不变，但是都会改变
+303(See Other) 和302类似，但必须用GET方法
+304(Not Modified) 状态未改变， 配合(If-Match、If-Modified-Since、If-None_Match、If-Range、If-Unmodified-Since)
+307(Temporary Redirect) 临时重定向，不该改变请求方法
+
+400(Bad Request) 请求报文语法错误
+401 (unauthorized) 需要认证
+403(Forbidden) 服务器拒绝访问对应的资源
+404(Not Found) 服务器上无法找到资源
+
+500(Internal Server Error)服务器故障
+503(Service Unavailable) 服务器处于超负载或正在停机维护</pre></td></tr></table>
+</div>
+</div>
+<h2 id="references">References</h2>
+
+<ol>
+<li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a><br /></li>
+<li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a><br /></li>
+<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a><br />
+<br />
+<br />
+<br />
+<br /></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        September 6, 2019
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/os/">os</a>
+          <a href="/tags/network/">network</a>
+          <a href="/tags/tcp/">tcp</a>
+          <a href="/tags/udp/">udp</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/design-pattern-notes/">
+            <span class="next-text nav-default">设计模式学习笔记</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-09-06 19:37:55 \x2b0800 CST',
+        title: '服务端开发预备知识',
+        link: decodeURI(location.href),
+        desc: '操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程',
+        owner: 'guyueshui',
+        repo: 'gitment',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
