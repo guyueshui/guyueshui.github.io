@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T19:31:59&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="12491">
+<meta itemprop="wordCount" content="13020">
 
 
 
@@ -178,6 +178,7 @@
 <li><a href="#不可描述">不可描述</a></li>
 <li><a href="#k轮换">K轮换</a></li>
 <li><a href="#move-zeros">Move zeros</a></li>
+<li><a href="#kth-largest-element-in-an-array">Kth Largest Element in an Array</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -3669,9 +3670,13 @@ rotate 2 steps to the right: [3,99,-1,-100]</pre></td></tr></table>
 Output: [1,3,12,0,0]</pre></td></tr></table>
 </div>
 </div>
-<p>Note:<br />
-- You must do this in-place without making a copy of the array.<br />
-- Minimize the total number of operations.</p>
+<p>Note:</p>
+
+<ul>
+<li>You must do this in-place without making a copy of the array.<br /></li>
+<li>Minimize the total number of operations.<br />
+<br /></li>
+</ul>
 
 <blockquote>
 <p>思路：记录数字0出现的个数count。如果当前数字是0，给count加一；如果不是0，将这个值往前挪count位。最后将最后count个元素置0.</p>
@@ -3724,6 +3729,146 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="kth-largest-element-in-an-array">Kth Largest Element in an Array</h2>
+
+<p>From: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode125</a></p>
+
+<p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+
+<p>Example 1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Input: [3,2,1,5,6,4] and k = 2
+Output: 5</pre></td></tr></table>
+</div>
+</div>
+<p>Example 2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Input: [3,2,3,1,2,4,5,5,6] and k = 4
+Output: 4</pre></td></tr></table>
+</div>
+</div>
+<p>Note: You may assume k is always valid, 1 ≤ k ≤ array's length.</p>
+
+<blockquote>
+<p>思路：利用快排的partition思想，每次选取一个pivot，将数组分为小于pivot和大于pivot的两部分。此时pivot的index就是排好序之后的index，与k相比，如果出较小，则在后半部分（大于pivot）再次划分，如果较大，则在前半部分划分。直到划分出来的pivot的index等于k。还要注意的是，这样找出来的是第k小，用数组长度减一下，才是第k大，注意index的变换。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span><span class="err"> </span><span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">findKthLargest</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// from 王小康：快排partition知道吧？
+</span><span class="c1"></span>    <span class="c1">// 就一刀一刀地劈开，劈一次你知道pivot的index，
+</span><span class="c1"></span>    <span class="c1">// 如果比k小，继续在右边劈，如果比k大，就在左边劈！
+</span><span class="c1"></span>    
+    <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="p">(</span><span class="s">&#34;empty arr&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">nums</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+    <span class="c1">// else @nums has &gt;= 2 elems
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span> <span class="c1">// kth large = len+1-k small
+</span><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="n">mid</span> <span class="o">!=</span> <span class="n">k</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mid</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+        <span class="k">else</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">];</span>
+  <span class="p">}</span>
+  
+  <span class="n">size_t</span> <span class="n">Partition</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">beg</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">end</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">size_t</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">beg</span><span class="p">;</span>
+    <span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot</span><span class="p">])</span>
+      <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span>
+  <span class="n">Solution</span> <span class="n">so</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">so</span><span class="p">.</span><span class="n">findKthLargest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="footnotes">
