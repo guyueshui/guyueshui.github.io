@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.58.1 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/server-develop-preliminaries/" />
@@ -54,7 +54,7 @@
 
 
 <meta itemprop="dateModified" content="2019-09-06T19:37:55&#43;08:00" />
-<meta itemprop="wordCount" content="10218">
+<meta itemprop="wordCount" content="12585">
 
 
 
@@ -352,6 +352,48 @@
 
 <p>1024以下的端口号被称为知名端口（well-known port），其实就是系统保留端口，有很多约定的服务和特定的端口号对应，如ssh默认端口号是22.</p>
 
+<table>
+<thead>
+<tr>
+<th align="center">应用程序</th>
+<th align="center">FTP</th>
+<th align="center">TFTP</th>
+<th align="center">TELNET</th>
+<th align="center">SMTP</th>
+<th align="center">DNS</th>
+<th align="center">HTTP</th>
+<th align="center">SSH</th>
+<th align="center">MYSQL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">端口</td>
+<td align="center">21, 20</td>
+<td align="center">69</td>
+<td align="center">23</td>
+<td align="center">25</td>
+<td align="center">53</td>
+<td align="center">80</td>
+<td align="center">22</td>
+<td align="center">3306</td>
+</tr>
+
+<tr>
+<td align="center">传输层协议</td>
+<td align="center">TCP</td>
+<td align="center">UDP</td>
+<td align="center">TCP</td>
+<td align="center">TCP</td>
+<td align="center">UDP</td>
+<td align="center">TCP</td>
+<td align="center">TCP</td>
+<td align="center">TCP</td>
+</tr>
+</tbody>
+</table>
+
 <p>所有的TCP连接都是全双工的，并且是点到点的。所谓全双工，意味着同时可在两个方向上传输数据；而点到点则意味着每个连接恰好有两个端点。TCP并不支持多播或者广播传输模式。</p>
 
 <p>一个TCP连接就是一个字节流，而不是消息流。端到端之间并不比保留消息的边界。例如，如果发送进程将4个512字节的数据块写到一个TCP流中，那么在接收进程中，这些数据有可能按4个512字节快的方式被递交，也可能是2个1024字节的数据块，或是一个2048字节的数据块，或者其他方式。接收方无法获知这些数据被写入字节流时候的单元大小。</p>
@@ -366,13 +408,42 @@
 
 <p>TCP的一个关键特征，也是主导了整个协议设计的特征是，TCP连接上的每个字节都有它独有的32位序列号。发送端和接收端的TCP实体以数据段的形式交换数据。TCP数据段（TCP segment）是由一个固定的20字节的头（加上可选的部分）以及随后的0个或者多个数据字节构成的。TCP软件决定数据段的大小，它可以将多次写操作的数据累积起来放到一个数据段中，也可以将一次写操作的数据分割到多个数据段中。有两个因素限制了段的长度：第一，每个数据段，包括TCP头在内，必须适合IP的65515字节净荷大小；其次，每个网络都有一个<strong>最大传输单元（Maximum Transfer Unit）MTU</strong>，每个数据段必须适合于MTU。在实践中，MTU通常是1500字节（以太网的净荷大小），因此它规定了数据段长度的上界。</p>
 
+<p><img src="/img/posted/tcp-head-format.png" alt="tcp-head" /></p>
+
+<ol>
+<li>源端口和目的端口，各占2个字节，分别写入源端口和目的端口；<br /></li>
+<li>序号（seq number），占4个字节，TCP连接中传送的字节流中的每个字节都按顺序编号。例如，一段报文的序号字段值是 301 ，而携带的数据共有100字段，显然下一个报文段（如果还有的话）的数据序号应该从401开始；<br /></li>
+<li>确认号（ack number），占4个字节，是期望收到对方下一个报文的第一个数据字节的序号。例如，B收到了A发送过来的报文，其序列号字段是501，而数据长度是200字节，这表明B正确的收到了A发送的到序号700为止的数据。因此，B期望收到A的下一个数据序号是701，于是B在发送给A的确认报文段中把确认号置为701；<br /></li>
+<li>数据偏移，占4位，它指出TCP报文的数据距离TCP报文段的起始处有多远；<br /></li>
+<li>保留，占6位，保留今后使用，但目前应都位0；<br /></li>
+<li>紧急URG，当URG=1，表明紧急指针字段有效。告诉系统此报文段中有紧急数据；<br /></li>
+<li>确认ACK，仅当ACK=1时，确认号字段才有效。TCP规定，在连接建立后所有报文的传输都必须把ACK置1；<br /></li>
+<li>推送PSH，当两个应用进程进行交互式通信时，有时在一端的应用进程希望在键入一个命令后立即就能收到对方的响应，这时候就将PSH=1；<br /></li>
+<li>复位RST，当RST=1，表明TCP连接中出现严重差错，必须释放连接，然后再重新建立连接；<br /></li>
+<li>同步SYN，在连接建立时用来同步序号。当SYN=1，ACK=0，表明是连接请求报文，若同意连接，则响应报文中应该使SYN=1，ACK=1；<br /></li>
+<li>终止FIN，用来释放连接。当FIN=1，表明此报文的发送方的数据已经发送完毕，并且要求释放；<br /></li>
+<li>窗口，占2字节，指的是通知接收方，发送本报文你需要有多大的空间来接受；<br /></li>
+<li>检验和，占2字节，校验首部和数据这两部分；<br /></li>
+<li>紧急指针，占2字节，指出本报文段中的紧急数据的字节数；<br /></li>
+<li>选项，长度可变，定义一些其他的可选的参数。<br />
+<br /></li>
+</ol>
+
+<blockquote>
+<p>注意：标志位<code>ACK</code>和确认序列号ack，ack是一个变量，它表示本机期待的下个包的序列号（seq），ack的全称叫做acknowledgement number. 而<code>ACK</code>是一个标志位，在TCP头部可以看到，标志位只能为0或1，用来传输特定的信息。</p>
+</blockquote>
+
 <h3 id="tcp连接的建立">TCP连接的建立</h3>
+
+<blockquote>
+<p>关于TCP的三握四挥参见<sup class="footnote-ref" id="fnref:a"><a href="#fn:a">1</a></sup>，讲的很详细，以下绝大部分参考自该文。</p>
+</blockquote>
 
 <p>TCP使用三步握手法建立连接。为了一个建立一个连接，某一方，比如说服务器，通过执行LISTEN和ACCEPT primitives（既可以指定一个特定的源，也可以不指定）被动地等待一个进来地连接请求。</p>
 
 <p>另一端，比如客户端，执行一个CONNECT primitive，同时指定以下参数：它希望连接地IP地址和端口、它愿意接受地最大TCP分段长度，以及一些可选地用户数据（比如口令）。CONNECT primitive发送一个SYN=1和ACK=0的TCP数据段，然后等待应答。</p>
 
-<p>当这个数据段到达目标端的时候，那里的TCP实体查看一下是否有一个进程已经在Destination port域中指定的端口上执行的LISTEN。如果没有的话，它送回一个设置了RST位的应答，已拒绝客户的连接请求。</p>
+<p>当这个数据段到达目标端的时候，那里的TCP实体查看一下是否有一个进程已经在Destination port域中指定的端口上执行的LISTEN。如果没有的话，它送回一个设置了RST位的应答，以拒绝客户的连接请求。</p>
 
 <p>如果某个进程正在监听端口，那么，TCP实体将进来的TCP数据段交给该进程。然后该进程可以接受或者拒绝这个连接请求。如果它接受的话，则送回一个确认数据段。在正常情况下发送的TCP数据段顺序如图（a）所示。请注意，SYN数据段只消耗1字节的序列号空间，所以它的确认是非常明确的，毫无二义性。</p>
 
@@ -380,12 +451,48 @@
 
 <p>如果两台主机同时企图在同样的两个套接字之间建立一个连接，则事件序列如上图（b）所示。这些事件的结果是，只有一个连接被建立起来，而不是两个，因为所有的连接都是由它们的端点来标识的。如果第一个请求导致建立了一个由(x,y)标识的连接，而第二个请求也建立了这样一个连接，那么，在TCP实体内部只有一个表项，即(x,y).</p>
 
+<p>具体来说：</p>
+
+<ol>
+<li>一方（客户端）发起连接请求，发送一个包（seq=x，SYN=1，ACK=0），进入SYN-SENT状态；<br /></li>
+<li>另一方（服务端）收到请求，如果同意连接，则发出确认包（seq=y，ack=x+1，SYN=1，ACK=1），进入SYN-RCVD状态；<br /></li>
+<li>客户端收到确认的包后，也需要向服务端发送确认包（seq=x+1，ack=y+1，SYN=0，ACK=1），进入ESTABLISHED状态；<br /></li>
+<li>服务端收到确认的包后，进入ESTABLISHED状态，至此，连接已建立。<br />
+<br /></li>
+</ol>
+
+<p><img src="/img/posted/tcp-connect.png" alt="tcp-connect" /></p>
+
+<p><strong>为什么客户端最后还要发送一次确认？</strong></p>
+
+<p>假设客户端发送的第一个连接请求没有丢失，只是在网络节点中滞留的时间太长了，由于客户端没有收到服务端的回复，所以会超时重传，无论如何，客户端发送了两个连接请求，如果采用两次握手，那么服务端因为收到了两次连接请求，会开启两个连接在等待数据传输，这会造成资源浪费。而如果是三次握手才建立连接，那么服务端会等待客户端的确认，才会建立连接。而客户端本意只有一次连接请求，所以只会发送一次确认，服务端收到确认之后建立连接。而对服务端的第二个返回确认，客户端会置之不理，因为客户端本意只有一次连接而已。</p>
+
 <h3 id="tcp连接的释放">TCP连接的释放</h3>
 
-<p>虽然TCP连接时全双工的，但是，为了理解TCP连接的释放过程，最好将TCP连接看成一对单工连接。每个单工连接被单独释放，两个单工连接之间相互独立。为了释放一个连接，任何一方都可以发送一个设置了FIN位的TCP数据段，这表示它已经没有数据要发送了。当FIN数据段被确认的时候，这个方向上就停止传送新数据。然而，另一个方向上可能还在继续无限制地传送数据，当两个方向都停止的时候，连接才被释放。通常情况下，为了释放一个连接，需要4个TCP数据段：每个方向一个FIN和一个ACK。然而，第一个ACK和第二个FIN有可能被包含在同一个数据段中，从而将总数降低到3个。</p>
+<p>虽然TCP连接是全双工的，但是，为了理解TCP连接的释放过程，最好将TCP连接看成一对单工连接。每个单工连接被单独释放，两个单工连接之间相互独立。为了释放一个连接，任何一方都可以发送一个设置了FIN位的TCP数据段，这表示它已经没有数据要发送了。当FIN数据段被确认的时候，这个方向上就停止传送新数据。然而，另一个方向上可能还在继续无限制地传送数据，当两个方向都停止的时候，连接才被释放。通常情况下，为了释放一个连接，需要4个TCP数据段：每个方向一个FIN和一个ACK。然而，第一个ACK和第二个FIN有可能被包含在同一个数据段中，从而将总数降低到3个。</p>
 
 <p>四次挥手。<a href="https://blog.csdn.net/qq_33951180/article/details/60767876">https://blog.csdn.net/qq_33951180/article/details/60767876</a><br />
 <a href="https://www.imooc.com/article/17411">https://www.imooc.com/article/17411</a></p>
+
+<p>具体来说：</p>
+
+<ol>
+<li>一方（客户端）主动发送连接释放请求，发送一个包（seq=u，FIN=1），其序列号为u，等于之前最后接收的包序列号加1，进入FIN-WAIT-1状态；<br /></li>
+<li>另一方（服务端）收到释放请求，发出确认报文（seq=v，ack=u+1，ACK=1），进入CLOSE-WAIT状态。将TCP连接看成一对单工连接，此时客户端单方面停止向服务端发送消息，但服务端的发送还未停止，客户端仍要接收来自服务端的消息；这时服务端会通知上层应用客户端连接已经释放，但到服务端释放可能还需要一段时间；<br /></li>
+<li>客户端收到服务器的确认报文，进入FIN-WAIT-2状态；<br /></li>
+<li>服务端处理完自己的事情之后，向客户端发送连接释放确认报文（seq=w，ack=u+1，ACK=1，FIN=1），进入LAST-ACK状态；<br /></li>
+<li>客户端收到服务端的释放报文，必须发出确认报文（seq=u+1，ack=w+1，ACK=1），进入TIME-WAIT状态。此时连接还未释放，客户端会等待2个MSL (Maximum Segment Lifetime) 时间，才会进入CLOSED状态；<br /></li>
+<li>服务端只要收到客户端的确认报文，立即进入CLOSED状态。<br />
+<br /></li>
+</ol>
+
+<p><img src="/img/posted/tcp-disconnect.png" alt="tcp-disconnect" /></p>
+
+<p><strong>为什么客户端最后还要等待2MSL？</strong></p>
+
+<p>第一，保证客户端发送的最后一个ACK报文能够到达服务器，因为这个ACK报文可能丢失，站在服务器的角度看来，我已经发送了FIN+ACK报文请求断开了，客户端还没有给我回应，应该是我发送的请求断开报文它没有收到，于是服务器又会重新发送一次，而客户端就能在这个2MSL时间段内收到这个重传的报文，接着给出回应报文，并且会重启2MSL计时器。</p>
+
+<p>第二，防止类似与“三次握手”中提到了的“已经失效的连接请求报文段”出现在本连接中。客户端发送完最后一个确认报文后，在这个2MSL时间中，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样新的连接中不会出现旧连接的请求报文。处在TIME_WAIT状态的两端端口都不能使用，等到2MSL时间结束后才能继续使用。当连接处于2MSL等待阶段时，任何迟到的报文段将会被丢弃。这样一来，就会有更大的机会让丢失的ACK字段再次被发送出去，并且也让“四次挥手”更加可靠。</p>
 
 <h2 id="http协议">HTTP协议</h2>
 
@@ -396,7 +503,7 @@
 <br /></li>
 </ul>
 
-<p><img src="https://user-gold-cdn.xitu.io/2018/4/16/162cd3df803538f6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="" /></p>
+<p><img src="/img/posted/https.png" alt="https" /></p>
 
 <ul>
 <li>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br /></li>
@@ -486,12 +593,23 @@
 <ol>
 <li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a><br /></li>
 <li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a><br /></li>
-<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a><br />
+<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a><br /></li>
+<li><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a><br />
+<br />
 <br />
 <br />
 <br />
 <br /></li>
 </ol>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:a"><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a><br />
+ <a class="footnote-return" href="#fnref:a">↩</a></li>
+</ol>
+</div>
 
     </div>
 

@@ -3,50 +3,58 @@
   
   <url>
     <loc>https://guyueshui.github.io/categories/</loc>
-    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/categories/notes/</loc>
-    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/post/</loc>
-    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/</loc>
-    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/network/</loc>
     <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/categories/notes/</loc>
+    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/os/</loc>
     <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/tcp/</loc>
     <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/udp/</loc>
     <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -58,14 +66,16 @@
   
   <url>
     <loc>https://guyueshui.github.io/</loc>
-    <lastmod>2019-09-06T19:37:55+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/design-pattern/</loc>
     <lastmod>2019-09-02T11:05:10+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -78,19 +88,22 @@
   <url>
     <loc>https://guyueshui.github.io/tags/concurrent/</loc>
     <lastmod>2019-08-29T21:40:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/multi-thread/</loc>
     <lastmod>2019-08-29T21:40:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/mutex/</loc>
     <lastmod>2019-08-29T21:40:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -110,12 +123,27 @@
   <url>
     <loc>https://guyueshui.github.io/tags/cpp/</loc>
     <lastmod>2019-08-28T22:52:32+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/post/blog-trans/</loc>
     <lastmod>2019-08-25T16:00:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/debug/</loc>
+    <lastmod>2019-08-18T16:14:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/gdb/</loc>
+    <lastmod>2019-08-18T16:14:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -128,39 +156,31 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/categories/techniques/</loc>
-    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/debug/</loc>
-    <lastmod>2019-08-18T16:14:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/gdb/</loc>
-    <lastmod>2019-08-18T16:14:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/linux/</loc>
     <lastmod>2019-08-18T16:14:24+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/categories/techniques/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/bit-field/</loc>
     <lastmod>2019-08-06T20:43:02+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/struct/</loc>
     <lastmod>2019-08-06T20:43:02+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -173,12 +193,27 @@
   <url>
     <loc>https://guyueshui.github.io/tags/interview/</loc>
     <lastmod>2019-08-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/post/interview-notes/</loc>
     <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/programming-thought/</loc>
+    <lastmod>2019-04-23T09:08:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/recursion/</loc>
+    <lastmod>2019-04-23T09:08:28+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -191,27 +226,17 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/programming-thought/</loc>
-    <lastmod>2019-04-23T09:08:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/recursion/</loc>
-    <lastmod>2019-04-23T09:08:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/bit-manipulation/</loc>
     <lastmod>2019-04-08T10:35:16+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/trick/</loc>
     <lastmod>2019-04-08T10:35:16+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -231,25 +256,29 @@
   <url>
     <loc>https://guyueshui.github.io/tags/algorithm/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/coding-problems/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/dynamic-programming/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/pattern-match/</loc>
     <lastmod>2019-04-04T00:05:41+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -267,6 +296,13 @@
   </url>
   
   <url>
+    <loc>https://guyueshui.github.io/tags/leetcode/</loc>
+    <lastmod>2019-03-26T14:53:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</loc>
     <lastmod>2019-03-26T14:53:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -274,33 +310,31 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/leetcode/</loc>
-    <lastmod>2019-03-26T14:53:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/classification/</loc>
     <lastmod>2019-03-15T22:59:39+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/machine-learning/</loc>
     <lastmod>2019-03-15T22:59:39+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/math/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/regression/</loc>
     <lastmod>2019-03-15T22:59:39+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -313,13 +347,15 @@
   <url>
     <loc>https://guyueshui.github.io/tags/latex/</loc>
     <lastmod>2019-03-08T15:41:10+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2019-03-08T15:41:10+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -332,38 +368,43 @@
   <url>
     <loc>https://guyueshui.github.io/tags/%E6%8E%92%E7%89%88/</loc>
     <lastmod>2019-03-08T15:41:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/categories/linux/</loc>
-    <lastmod>2019-03-07T19:22:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</loc>
-    <lastmod>2019-03-07T19:22:02+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/info/</loc>
-    <lastmod>2019-03-07T19:22:02+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/categories/linux/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/reference/</loc>
-    <lastmod>2019-03-07T19:22:02+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/categories/literature/</loc>
     <lastmod>2019-03-07T18:27:18+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -388,6 +429,13 @@
   </url>
   
   <url>
+    <loc>https://guyueshui.github.io/tags/polybar/</loc>
+    <lastmod>2019-01-16T21:33:17+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-01-16T21:33:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,9 +443,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/polybar/</loc>
-    <lastmod>2019-01-16T21:33:17+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://guyueshui.github.io/tags/algebra/</loc>
+    <lastmod>2019-01-03T21:07:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -408,15 +457,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/algebra/</loc>
-    <lastmod>2019-01-03T21:07:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/beamer/</loc>
     <lastmod>2019-01-03T16:05:47+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -436,18 +480,27 @@
   <url>
     <loc>https://guyueshui.github.io/tags/probability/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/information-theory/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/vim/</loc>
+    <lastmod>2018-12-20T19:17:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -460,9 +513,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/vim/</loc>
-    <lastmod>2018-12-20T19:17:54+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://guyueshui.github.io/tags/beautify/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -473,14 +527,15 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/beautify/</loc>
-    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://guyueshui.github.io/links/</loc>
+    <lastmod>2018-12-18T10:25:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/links/</loc>
-    <lastmod>2018-12-18T10:25:24+00:00</lastmod>
+    <loc>https://guyueshui.github.io/tags/html/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -493,15 +548,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/html/</loc>
-    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/layout/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -519,6 +569,20 @@
   </url>
   
   <url>
+    <loc>https://guyueshui.github.io/tags/dotfiles/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/git/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/manage-dotfiles-by-git/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -526,15 +590,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/dotfiles/</loc>
-    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/git/</loc>
-    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://guyueshui.github.io/tags/android/</loc>
+    <lastmod>2018-09-18T23:00:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -545,15 +604,10 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/android/</loc>
-    <lastmod>2018-09-18T23:00:05+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/flash/</loc>
     <lastmod>2018-09-18T23:00:05+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -573,7 +627,8 @@
   <url>
     <loc>https://guyueshui.github.io/categories/jottings/</loc>
     <lastmod>2017-06-23T14:41:27+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -591,6 +646,13 @@
   </url>
   
   <url>
+    <loc>https://guyueshui.github.io/tags/custom/</loc>
+    <lastmod>2017-02-21T16:01:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</loc>
     <lastmod>2017-02-21T16:01:55+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -598,21 +660,17 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/custom/</loc>
-    <lastmod>2017-02-21T16:01:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/smart-router/</loc>
     <lastmod>2017-02-21T16:01:55+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/tags/tar/</loc>
     <lastmod>2016-09-10T19:00:57+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -625,7 +683,8 @@
   <url>
     <loc>https://guyueshui.github.io/tags/%E5%A4%87%E4%BB%BD/</loc>
     <lastmod>2016-09-10T19:00:57+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
