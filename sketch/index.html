@@ -23,13 +23,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.58.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/sketch/" />
-
-
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -55,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2018-12-14T13:59:49&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-14T13:59:49&#43;00:00" />
-<meta itemprop="wordCount" content="8694">
+<meta itemprop="wordCount" content="8751">
 
 
 
@@ -145,6 +142,44 @@
 <br /></li>
 </ul>
 
+<hr />
+
+<p>递归lambda表达式写法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">fact</span> <span class="o">=</span>
+      <span class="p">[</span><span class="o">&amp;</span><span class="n">fact</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+      <span class="p">};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fact</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="2019-年-8-月">2019 年 8 月</h2>
 
 <p>8月的第一周，就惹我家领导生气了。问题还蛮严重的，第一次感觉到，原来感情真的很脆弱，就像鸡蛋壳一样。一不小心，就容易捅破。好的感情需要用心经营，很明显是我经营不善，我必须自食其果。这种问题都是常见的问题，但是还是会犯，明明听过很多前车之鉴，但自己就是犯贱，偏要以身试法。何苦来！跳脱不开，陷于苦海，即便早该明白的，也早已经明白的道理，没有切身的感受，终究不能领悟，不知代价。人之一物，可能大都是这样的。</p>
@@ -1158,7 +1193,7 @@ A: <a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">
       gitment.render('comments-gitment');
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-  
+
   
 
   

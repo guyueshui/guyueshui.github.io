@@ -23,13 +23,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.58.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/interview-notes/" />
-
-
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -55,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="5431">
+<meta itemprop="wordCount" content="5702">
 
 
 
@@ -336,6 +333,22 @@ A: 重载指函数签名（函数原型）不同的两个函数名字相同，�
 <p>Q：memcpy 和 memmove 的区别<br />
 A：memcpy不能应对内存重叠，memmove可以。详见man pages.</p>
 
+<p>Q：为什么要内存对齐？<br />
+A：不会。</p>
+
+<p>我们关注内存对齐不外乎下面两大原因：</p>
+
+<ol>
+<li>平台原因(移植原因)：不是所有的硬件平台都能访问任意地址上的任意数据的；某些硬件平台只能在某些地址处取<br />
+某些特定类型的数据，否则抛出硬件异常。（平台移植是驱动程序开发者经常需要考虑的问题）。<br /></li>
+<li>性能原因：数据结构(尤其是栈)应该尽可能地在自然边界上对齐。原因在于，为了访问未对齐的内存，处理器需要作两次内存访问；而对齐的内存访问仅需要一次访问。<br />
+<br /></li>
+</ol>
+
+<blockquote>
+<p>可以使用预编译指令<code>pragma pack(n)</code>来指定对齐系数，n=1,2,4,8,16. 结构体对齐将按照最大成员大小和n中的较小值来对齐。</p>
+</blockquote>
+
 <h2 id="算法相关">算法相关</h2>
 
 <p>Q: 从一个数组中删除一个元素，复杂度是多少？如果不关心索引和值的对应关系。<br />
@@ -512,7 +525,7 @@ A：(x &amp; 1)可以判断奇偶，(x &amp; x-1)可以去掉二进制最低位�
       gitment.render('comments-gitment');
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-  
+
   
 
   
