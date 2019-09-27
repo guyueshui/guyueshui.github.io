@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T19:31:59&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="15263">
+<meta itemprop="wordCount" content="15304">
 
 
 
@@ -3366,10 +3366,20 @@ $$</p>
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
 
@@ -3384,17 +3394,25 @@ $$</p>
 <span class="c1">// print the right-most node of each layer of a tree.
 </span><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">PrintRightMost</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="p">(</span><span class="s">&#34;empty tree&#34;</span><span class="p">);</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
+  <span class="c1">// - time: O(N), where N is #TreeNodes
+</span><span class="c1"></span>  <span class="c1">// - space: O(N + logN)
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span> 
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">mat</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">layer_travel</span> <span class="o">=</span>
+    <span class="p">[</span><span class="o">&amp;</span><span class="n">mat</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">layer_travel</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">depth</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
-        <span class="c1">// prefer see right child than left
-</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span>
-            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">depth</span> <span class="o">==</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">mat</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+        <span class="n">mat</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+      <span class="n">mat</span><span class="p">[</span><span class="n">depth</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+      <span class="n">layer_travel</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="n">layer_travel</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">};</span>
+
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">row</span> <span class="p">:</span> <span class="n">mat</span><span class="p">)</span> <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
