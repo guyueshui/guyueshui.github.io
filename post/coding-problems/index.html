@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T19:31:59&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="15304">
+<meta itemprop="wordCount" content="15964">
 
 
 
@@ -164,6 +164,7 @@
 <li><a href="#递增二叉树">递增二叉树</a></li>
 <li><a href="#经过棋盘的最小开销">经过棋盘的最小开销</a></li>
 <li><a href="#出列的顺序-类约瑟夫环">出列的顺序（类约瑟夫环）</a></li>
+<li><a href="#最短通行时间">最短通行时间</a></li>
 </ul></li>
 <li><a href="#数据结构相关">数据结构相关</a>
 <ul>
@@ -179,6 +180,7 @@
 <li><a href="#k轮换">K轮换</a></li>
 <li><a href="#move-zeros">Move zeros</a></li>
 <li><a href="#kth-largest-element-in-an-array">Kth Largest Element in an Array</a></li>
+<li><a href="#最大连续子列">最大连续子列</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -3329,6 +3331,192 @@ $$</p>
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="最短通行时间">最短通行时间</h2>
+
+<blockquote>
+<p>度小满金融2020校招</p>
+</blockquote>
+
+<p>有N辆车要陆续通过一座最大承重为W的桥，其中第i辆车的重量为w[i], 过桥时间为t[i]. 要求：第辆车上桥时间不早于第i-1辆车上桥的时间；i任意时刻桥上所有车辆的总重量不超过W。那么，所有车辆都通过这座桥的所需的最短时间是多少？</p>
+
+<p>输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">第一行输入两个整数N，W（1 &lt;= N, W &lt;= 100000）
+第二行输入N个整数w[1]到w[N]（1 &lt;= w[i] &lt;= W）
+第三行输入N个整数t[1]到t[N]（1 &lt;= t[i] &lt;= 10000）
+
+4 2
+1 1 1 1
+2 1 2 2</pre></td></tr></table>
+</div>
+</div>
+<p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">4</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>干就完了，模拟！</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">MinTime</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">car_weights</span><span class="p">,</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">pass_times</span><span class="p">,</span>
+            <span class="k">const</span> <span class="kt">int</span> <span class="n">max_weight</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">car_weights</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">elapsed_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">cur</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">max_weight</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(;;)</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">cur</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">&amp;&amp;</span> <span class="n">w</span> <span class="o">&gt;=</span> <span class="n">car_weights</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span>
+    <span class="p">{</span>
+      <span class="n">w</span> <span class="o">-=</span> <span class="n">car_weights</span><span class="p">[</span><span class="n">cur</span><span class="o">++</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">cur</span> <span class="o">&gt;=</span> <span class="n">len</span><span class="p">)</span> <span class="c1">// reach the last car
+</span><span class="c1"></span>    <span class="p">{</span>
+      <span class="n">elapsed_time</span> <span class="o">+=</span> 
+        <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">max_element</span><span class="p">(</span><span class="n">pass_times</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">start</span><span class="p">,</span> <span class="n">pass_times</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+      <span class="k">return</span> <span class="n">elapsed_time</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="c1">// each time a car passed, some other car may board the bridge
+</span><span class="c1"></span>      <span class="kt">int</span> <span class="n">mintime_idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cur</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pass_times</span><span class="p">[</span><span class="n">mintime_idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pass_times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">pass_times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">mintime_idx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">elapsed_time</span> <span class="o">+=</span> <span class="n">pass_times</span><span class="p">[</span><span class="n">mintime_idx</span><span class="p">];</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cur</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">// update time
+</span><span class="c1"></span>        <span class="n">pass_times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">pass_times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">pass_times</span><span class="p">[</span><span class="n">mintime_idx</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+
+      <span class="c1">// car @mintime_idx has passed, now @w may be free to pass a new car
+</span><span class="c1"></span>      <span class="n">w</span> <span class="o">+=</span> <span class="n">car_weights</span><span class="p">[</span><span class="n">mintime_idx</span><span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num_car</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num_car</span> <span class="o">&gt;&gt;</span> <span class="n">max_weight</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">car_weights</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num_car</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span> <span class="n">n</span><span class="o">--</span><span class="p">;)</span>
+  <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">w</span><span class="p">;</span>
+    <span class="n">car_weights</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pass_times</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num_car</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span> <span class="n">n</span><span class="o">--</span><span class="p">;)</span>
+  <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">pass_times</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// io done
+</span><span class="c1"></span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">MinTime</span><span class="p">(</span><span class="n">car_weights</span><span class="p">,</span> <span class="n">pass_times</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <h1 id="数据结构相关">数据结构相关</h1>
 
 <p><strong>大部分出自<a href="https://www.nowcoder.com/ta/coding-interviews">《剑指Offer》</a></strong></p>
@@ -4464,7 +4652,7 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
 </div>
 <h2 id="kth-largest-element-in-an-array">Kth Largest Element in an Array</h2>
 
-<p>From: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode125</a></p>
+<p>From: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode125</a>.</p>
 
 <p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
 
@@ -4598,6 +4786,65 @@ Output: 4</pre></td></tr></table>
   <span class="n">Solution</span> <span class="n">so</span><span class="p">;</span>
   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">so</span><span class="p">.</span><span class="n">findKthLargest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="最大连续子列">最大连续子列</h2>
+
+<p>From: <a href="https://leetcode-cn.com/problems/maximum-subarray/">LeetCode53</a>.</p>
+
+<p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>设置两个变量，一个记录当前连加的值，另一个记录目前位置最大连续子序列，迭代更新。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">MaxSubArray</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">max_so_far</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">arr</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">sum</span> <span class="o">+=</span> <span class="n">e</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="n">sum</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
+
+    <span class="n">max_so_far</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_so_far</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">max_so_far</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
