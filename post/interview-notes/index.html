@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="8591">
+<meta itemprop="wordCount" content="10341">
 
 
 
@@ -162,6 +162,8 @@
 <li><a href="#招银网络科技">招银网络科技</a></li>
 <li><a href="#新东方">新东方</a></li>
 <li><a href="#中移-苏州-软件研发中心">中移（苏州）软件研发中心</a></li>
+<li><a href="#米哈游">米哈游</a></li>
+<li><a href="#references">References</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -453,17 +455,21 @@ A: 不知道。</p>
 
 <p>(Sept. 20)</p>
 
-<p>Q: 挑一个你最熟的项目说下？<br />
-Q: Pooling是怎么回事，有什么用？<br />
-Q: 二叉树序列化，空指针序列化为null，e.g., [1,2,3,4,null,null,5]<br />
-Q: CNN和DNN的区别？<br />
-Q: 卷积有什么作用？</p>
+<ul>
+<li>挑一个你最熟的项目说下？<br /></li>
+<li>Pooling是怎么回事，有什么用？<br /></li>
+<li>二叉树序列化，空指针序列化为null，e.g., [1,2,3,4,null,null,5]<br /></li>
+<li>CNN和DNN的区别？<br /></li>
+<li>卷积有什么作用？<br />
+<br /></li>
+</ul>
 
 <p>一面面完之后，建议我转后端，我说好啊，然后二面面的后端，似乎是个leader，主要就是问问实习经历，然后让我等HR面。下午三点到的58，二面面完三点四五十，然后等HR等了大概40分钟，好像是好多人排队等HR面，后来我找人问情况，说我五点有事，能不能安排一下，然后就有一个看着像技术的HR，承担了我的HR面。面完等结果，说是择优录用。</p>
 
 <h2 id="网易游戏">网易游戏</h2>
 
-<p>(Spet. 20)</p>
+<p><strong>一面</strong><br />
+(Spet. 20)</p>
 
 <p>面完58已经四点五十了，想着怎么着也赶不上网易面试了。所以下了大楼，就找了个人不多的地方，掏出电脑，席地而坐，打开手机热点，打开面试地址（这里真要吐槽一下，我是Linux系统，这次面试它没发邮件，只以短信形式发了面试链接，我电脑上又没有微信QQ，只好手敲网址，那时候已经要开始了，可把我急坏了，还敲错了几次，把大写的I误认为小写的l），就开始面试起来。</p>
 
@@ -497,6 +503,95 @@ Q: 卷积有什么作用？</p>
 </ul></li>
 </ul>
 
+<p><strong>二面</strong><br />
+(Oct. 17)</p>
+
+<p>还是盼来了二面，然而很那个，怎么说呢，感觉不是很擅长。全程问我怎么设计游戏，不太会。</p>
+
+<ul>
+<li>自我介绍<br /></li>
+<li>为什么投网易游戏？<br /></li>
+<li>平时喜欢玩游戏吗？玩的最多的是什么游戏？<br /></li>
+<li>你说喜欢玩安琪拉，如果让你设计一个安琪拉，你会怎么设计？（一边瞎写，一边瞎扯）<br /></li>
+<li>你会添加哪些成员函数，和成员变量？<br /></li>
+<li>你说到了装备，如果让你设计一个装备系统，你会怎么做？<br /></li>
+<li>我们知道角色HP受很多因素影响，比方说装备，受到攻击，增益buf等，那么你是如何更新角色HP的呢？（说到了观察者模式）<br /></li>
+<li>谁是观察者，谁是被观察者？<br /></li>
+<li>我们知道装备的属性大部分是静态的，对于静态属性的也要用观察者模式订阅吗？<br /></li>
+<li>你说到了观察者模式，平时项目中有用到过哪些设计模式？<br /></li>
+<li>你是如何学习设计模式的？<br /></li>
+<li>说说你对protobuf的理解？<br /></li>
+<li>我们知道proto文件，使用proto文件有什么好处？<br /></li>
+<li>大概知道protobuf的压缩原理吗？比方说如何编码int32.<br /></li>
+
+<li><p>现在有一个老版本的protobuf序列化之后的字符串，但是后来又新加了一个变量。具体来说，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">required int32 hp;
+optional int32 lv;
+===saved===
+
+optional int32 mp;
+===readed===</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<p>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？<br />
+- 实现一个带max()函数的栈？<br />
+- 使用辅助栈，需要额外O(n)的空间，如果没有这么多空间给你，假设只有O(logn)，如何优化？（没答出来）<br />
+- 说说你对boost::asio的理解？<br />
+- 说说你实习中遇到的多线程问题？<br />
+- 学过哪些计算机基础课？（没有）<br />
+- 压力最大的一件事？<br />
+- 目前手上有offer吗？<br />
+- 方便说下哪几家吗？<br />
+- 期望薪资大概多少？<br />
+- 我这边差不多了，你有什么要问我的吗？</p>
+
+<p>看样子网易平均50分钟，面的感觉一般吧，51分，希望给个三面！</p>
+
+<p>在定位并处理应用程序出现的网络问题时，了解系统默认网络配置是非常必要的。ipv4网络协议的默认配置可以在/proc/sys/net/ipv4/下查看，其中与TCP协议栈相关的配置项均以tcp_xxx命名。可以使用cat查看，也可以使用sysctl批量查看。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat /proc/sys/net/ipv4/tcp_tw_reuse
+<span class="m">2</span>
+
+$ whatis sysctl
+sysctl <span class="o">(</span><span class="m">2</span><span class="o">)</span>           - read/write system parameters
+sysctl <span class="o">(</span><span class="m">8</span><span class="o">)</span>           - configure kernel parameters at runtime
+
+$ sysctl net/ipv4
+net.ipv4.cipso_cache_bucket_size <span class="o">=</span> <span class="m">10</span>
+net.ipv4.cipso_cache_enable <span class="o">=</span> <span class="m">1</span>
+net.ipv4.cipso_rbm_optfmt <span class="o">=</span> <span class="m">0</span>
+net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
+...</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="白山云科技">白山云科技</h2>
 
 <p>(Sept. 20)</p>
@@ -679,6 +774,56 @@ Q: 卷积有什么作用？</p>
 </ul>
 
 <p>事实上我连自我介绍都没说完，就被打断了，然后也就问了几个问题，不到10分钟就结束了。希望给个offer吧！</p>
+
+<h2 id="米哈游">米哈游</h2>
+
+<p>(Oct. 17)</p>
+
+<ul>
+<li>自我介绍<br /></li>
+<li>C++多态<br /></li>
+<li>动态绑定的原理<br /></li>
+<li>虚函数原理<br /></li>
+<li>虚函数表是一个对象一个还是一个类一个？（不会）<br /></li>
+<li>说一下C++四个智能指针以及各自用法？<br /></li>
+<li>STL了解吗？<br /></li>
+<li>map的底层实现使用的什么数据结构？<br /></li>
+<li>红黑树的插入、删除、查找的平均和最坏复杂度是多少？（O(logn)和O(n)）<br /></li>
+<li>vector底层实现？<br /></li>
+<li>vector push_back 和 pop_back 的复杂度<br /></li>
+<li>操作系统的大端序和小端序知道吗？<br /></li>
+<li>写一个程序判断某个机器是大端序还是小端序？（不会）<br /></li>
+<li>写一个程序判断某个机器是32位还是64位？（不会）<br /></li>
+<li>如果起了一个进程，该进程使用tcp连接绑定了一个端口，如何查看这个端口是多少？（netstat -tp）<br /></li>
+<li>如何查看一个进程所占用的内存？（htop）<br /></li>
+<li>htop/top会显示很多个内存，哪个才是你要的？<br /></li>
+<li>有一个基本有序的数组，用什么排序算法比较好？（答了希尔排序，错的，插入排序）<br /></li>
+<li>讲一下希尔排序？（推广的插入排序）<br /></li>
+<li>对于有序数组，插入排序的时间复杂度是多少？（答了O(n^2)，没救了，面试官已经告诉我答案了，我居然还没发现！O(n)）<br /></li>
+<li>快排的最好最快复杂度是多少？（问排序问崩了，脑子已经糊了，答了O(n)和O(n^2)，实际上快排最好也就O(nlogn)）<br /></li>
+<li>快排在什么情况下性能最差？（答了在倒序的时候，尼玛正序的时候也是啊）<br /></li>
+<li>那什么情况下最好呢？（答了正序的时候，尼玛快把这个沙雕拖出去！应该是每次划分正好左右两边平衡的时候，这样生成的递归树最平衡，复杂度最低）<br /></li>
+<li>你实习都干了啥？看你写了Asio，你说说你实习的时候网络模型是什么样的，就是网络和业务的对接？（没接触业务）<br /></li>
+<li>（针对我实习时候protobuf部分的内容问了很多，但是我都没说清楚，有点忘了）<br /></li>
+<li>为什么投游戏行业？<br /></li>
+<li>平时玩游戏吗？（玩了很久的崩坏3）<br /></li>
+<li>多少级？（满级，80）<br /></li>
+<li>哇，80级大佬！（后来把号卖了）<br /></li>
+<li>卖了？（肝不动啊！）<br /></li>
+<li>我这边问完了，你有什么想问的？（问了针对岗位的建议）<br /></li>
+<li>应届生还是应该注重基础：数据结构、算法、网络、高并发等等。<br />
+<br /></li>
+</ul>
+
+<p>层次分明：语言+操作系统+算法+简历，感觉米忽悠的面试官水平挺高的。</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+<li><a href="https://blog.csdn.net/bingqingsuimeng/article/details/52064841">大量TIME_WAIT的终极详解和解决方案</a><br />
+<br />
+<br /></li>
+</ol>
 
     </div>
 
