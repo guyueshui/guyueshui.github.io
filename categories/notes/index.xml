@@ -6,10 +6,22 @@
     <description>Recent content in Notes on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Sep 2019 19:37:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 10:45:03 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nueral Network Learning Notes</title>
+      <link>https://guyueshui.github.io/post/nn-notes/</link>
+      <pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/nn-notes/</guid>
+      <description>Hello here.
+CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B.
+ a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).
+ each filter convolving with the input will produce an activation map, two filters will produce two, etc.</description>
+    </item>
     
     <item>
       <title>服务端开发预备知识</title>

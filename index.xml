@@ -6,10 +6,22 @@
     <description>Recent content on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Sep 2019 19:37:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 10:45:03 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nueral Network Learning Notes</title>
+      <link>https://guyueshui.github.io/post/nn-notes/</link>
+      <pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/nn-notes/</guid>
+      <description>Hello here.
+CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B.
+ a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).
+ each filter convolving with the input will produce an activation map, two filters will produce two, etc.</description>
+    </item>
     
     <item>
       <title>服务端开发预备知识</title>
@@ -324,7 +336,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Fri, 14 Dec 2018 13:59:49 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/sketch/</guid>
-      <description>2019 年 10 月 今年十一算是比较特殊的，因为，我订婚了。似乎有点快，但也是必将发生的事，女票成为了未婚妻，感情一直很好，虽然谈了不到两年，但是我们从</description>
+      <description>2019 年 11 月 又开启了新的一月，秋招应该要结束了，就差收个尾了。总体来说，我的战线还是挺长的，从8中旬开始陆续笔试，9月更是一大波笔试和面试，然而</description>
     </item>
     
     <item>
