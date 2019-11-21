@@ -373,10 +373,9 @@
 <p>这样做的好处还有一个，就是你在写程序的时候变得更加轻松。为什么？因为我不用考虑所有的细节，只是调用了一些函数，而实现这些函数很可能不是我们要干的活。<q>Oh, that's cool! George will do for me.</q> 你甚至可以去喝杯咖啡。但是现在，让我们短暂的充当以下 George 的角色。就拿<code>Unit</code>类的设计来说，我现在想要实现第二个构造函数，根据题目的意思，我可能接受两个代表不同表示方法的<code>string</code>，我要将它们解析成行列索引。让我们回头看看这个函数的实现，它先判断输入的是那个类型，然后分情况做不同的事（调用不同的函数）。这里我用到了3个wishful thinking：</p>
 
 <ol>
-<li>我希望有一个叫<code>typeInfer()</code>的函数，我给它一个字符串，它告诉我这属于哪个类型的表示方法。<br /></li>
-<li>如果是<code>RxCy</code>型，我希望有一个函数<code>getIdx_RC()</code>能够处理这种类型的输入，解析出行列索引。<br /></li>
-<li>如果是<code>BC23</code>型，我希望有一个函数<code>getIdx_NRC()</code>能够处理这种类型的输入，解析出行列索引。<br />
-<br /></li>
+<li>我希望有一个叫<code>typeInfer()</code>的函数，我给它一个字符串，它告诉我这属于哪个类型的表示方法。</li>
+<li>如果是<code>RxCy</code>型，我希望有一个函数<code>getIdx_RC()</code>能够处理这种类型的输入，解析出行列索引。</li>
+<li>如果是<code>BC23</code>型，我希望有一个函数<code>getIdx_NRC()</code>能够处理这种类型的输入，解析出行列索引。</li>
 </ol>
 
 <p>这样一来，我们不容易犯错。为什么？因为这个构造函数的逻辑足够简单，仅仅是分两个情况做不同的事。做的事也很简单：仅仅是调用一个函数！如果你能保证所调用的函数不犯错，那么整个过程也不会出错。既简单，又robust！</p>
@@ -502,8 +501,7 @@
 <p>好了，看了上面的实现，我又想当然的引入了几个函数。但是通过上下文，你可以很明显的看出来我引入这个函数实干嘛用的。正是因为这个时候我需要有一个函数帮我去干这个事情，而我又不想把这些复杂的工作都写到一个函数里面（因为容易出错，且很难调试）。所以我引入了它们：</p>
 
 <ol>
-<li><code>letter2pos()</code>接受一个字符串，返回解析出来的数值索引。<br />
-<br /></li>
+<li><code>letter2pos()</code>接受一个字符串，返回解析出来的数值索引。</li>
 </ol>
 
 <p>好吧，居然只引入了一个(╬ Ò ‸ Ó)，再来看看它的实现。</p>
@@ -701,10 +699,9 @@
 <p>好在前段时间看了点SICP，B站上有视频的，我自己也在对着书看，真的是非常好的课程。循着书中传递的思想，慢慢就这么写着，发现有的问题可以写出来了，得益于代码结构的改变，调试错误也比以前稍微轻松一些。到这次写这道编程题，要是在考试中这么写，我肯定来不及的。但是我在课余花了不少时间构思，终于用面向对象的思想将它初步实现。虽然这个类设计的很简单，也有很多瑕疵：</p>
 
 <ol>
-<li>异常输入的处理<br /></li>
-<li>类结构的优化以及完备性检查<br /></li>
-<li>代码细节的优化<br />
-<br /></li>
+<li>异常输入的处理</li>
+<li>类结构的优化以及完备性检查</li>
+<li>代码细节的优化</li>
 </ol>
 
 <p>但是和以前半途而废相比，起码完成了类的实现，虽然很粗糙。谨以此文记录一下！</p>
@@ -712,11 +709,10 @@
 <p><strong>附赠：SICP的学习资源</strong></p>
 
 <ol>
-<li><a href="https://www.bilibili.com/video/av8515129">B站视频</a><br /></li>
-<li><a href="https://sarabander.github.io/sicp/">在线电子书</a><br /></li>
-<li><a href="http://community.schemewiki.org/?SICP-Solutions">习题答案</a><br /></li>
-<li><a href="https://github.com/sarabander/p2pu-sicp">p2pu sicp solutions</a><br />
-<br /></li>
+<li><a href="https://www.bilibili.com/video/av8515129">B站视频</a></li>
+<li><a href="https://sarabander.github.io/sicp/">在线电子书</a></li>
+<li><a href="http://community.schemewiki.org/?SICP-Solutions">习题答案</a></li>
+<li><a href="https://github.com/sarabander/p2pu-sicp">p2pu sicp solutions</a></li>
 </ol>
 
 <p><font color="red">感谢SICP视频翻译工作者，感谢B站up主的搬运，感谢开源社区！</font></p>

@@ -166,47 +166,47 @@
 
 <h2 id="最大熵定理">最大熵定理</h2>
 
-<p><em>设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为</em><br />
-$$<br />
-    h(X) = - \int p(x)\log p(x) dx<br />
-$$<br />
+<p><em>设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为</em>
+$$
+    h(X) = - \int p(x)\log p(x) dx
+$$
 <em>其中，$\log$ 一般取自然对数  $\ln$, 单位为 奈特（nats）。</em></p>
 
 <!-- more -->
 
-<p>考虑如下优化问题：<br />
-$$<br />
-\begin{array}{ll}<br />
-&amp;\underset{p}{\text{Maximize}} &amp; \displaystyle h(p) = - \int_S p(x)\log p(x) dx \newline<br />
-&amp;\text{Subject to} &amp;\displaystyle \int_S p(x) dx = 1 \newline<br />
-&amp;~ &amp; p(x) \ge 0 \newline<br />
-&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n<br />
-\end{array}<br />
-$$<br />
+<p>考虑如下优化问题：
+$$
+\begin{array}{ll}
+&amp;\underset{p}{\text{Maximize}} &amp; \displaystyle h(p) = - \int_S p(x)\log p(x) dx \newline
+&amp;\text{Subject to} &amp;\displaystyle \int_S p(x) dx = 1 \newline
+&amp;~ &amp; p(x) \ge 0 \newline
+&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n
+\end{array}
+$$
 其中，集合 $S$ 是随机变量的support，即其所有可能的取值。我们意图找到这样的概率分布 $p$, 他满足所有的约束（前两条是概率公理的约束，最后一条叫做矩约束，在模型中有时会假设随机变量的矩为常数），并且能够使得熵最大。将上述优化问题写成标准形式：</p>
 
-<p>$$<br />
-\begin{array}{ll}<br />
-&amp;\underset{p}{\text{Minimize}} &amp; \displaystyle  \int_S p(x)\log p(x) dx \newline<br />
-&amp;\text{Subject to} &amp;-p(x) \le 0 \newline<br />
-&amp;~ &amp;\displaystyle \int_S p(x) dx = 1 \newline<br />
-&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n<br />
-\end{array}<br />
+<p>$$
+\begin{array}{ll}
+&amp;\underset{p}{\text{Minimize}} &amp; \displaystyle  \int_S p(x)\log p(x) dx \newline
+&amp;\text{Subject to} &amp;-p(x) \le 0 \newline
+&amp;~ &amp;\displaystyle \int_S p(x) dx = 1 \newline
+&amp;~ &amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n
+\end{array}
 $$</p>
 
 <p>使用<a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange乘数法</a>得到其Lagrangian</p>
 
-<p>$$<br />
-L(p,\boldsymbol{\lambda}) = \int_S p\log p ~dx - \mu_{-1}p + \mu_0 \left(\int_S p ~dx - 1\right) + \sum_{j=1}^n \lambda_j \left(\int_S pf_j~dx - \alpha_j\right)<br />
+<p>$$
+L(p,\boldsymbol{\lambda}) = \int_S p\log p ~dx - \mu_{-1}p + \mu_0 \left(\int_S p ~dx - 1\right) + \sum_{j=1}^n \lambda_j \left(\int_S pf_j~dx - \alpha_j\right)
 $$</p>
 
 <p>根据KKT条件对Lagrangian求导令为0，可得最优解。</p>
 
-<p>$$<br />
-\begin{gathered}<br />
-\frac{\partial L}{\partial p} = \ln p + 1 - \mu_{-1} + \mu_0 + \sum_{j=1}^n \lambda_jf_j := 0 \newline<br />
-\implies p = \exp\left(-1 + \mu_{-1} - \mu_0 - \sum_{j=1}^n \lambda_j f_j \right) =\displaystyle c^{\star} e^{-\sum_{j=1}^n\lambda_j^{*} f_j(x)} := p^{\star}<br />
-\end{gathered}<br />
+<p>$$
+\begin{gathered}
+\frac{\partial L}{\partial p} = \ln p + 1 - \mu_{-1} + \mu_0 + \sum_{j=1}^n \lambda_jf_j := 0 \newline
+\implies p = \exp\left(-1 + \mu_{-1} - \mu_0 - \sum_{j=1}^n \lambda_j f_j \right) =\displaystyle c^{\star} e^{-\sum_{j=1}^n\lambda_j^{*} f_j(x)} := p^{\star}
+\end{gathered}
 $$</p>
 
 <p>其中，我们要选择 $c^{\star}$, $\boldsymbol{\lambda}^{\star}$ 使得 $p(x)$ 满足约束。到这里我们知道，在所有满足约束的概率分布当中，$p^{\star}$ 是使得熵达到最大的那一个！</p>
@@ -220,36 +220,33 @@ $$</p>
 <p>约束：</p>
 
 <ul>
-<li>$E(X) = 0 \implies f_1 = x$<br /></li>
-<li>$E(X^2) = \sigma^2 \implies f_2 = x^2$<br />
-<br /></li>
+<li>$E(X) = 0 \implies f_1 = x$</li>
+<li>$E(X^2) = \sigma^2 \implies f_2 = x^2$</li>
 </ul>
 
 <p>根据上面的论证，最大熵分布应具有如下形式：</p>
 
-<p>$$<br />
-p(x) = ce^{-\lambda_1x - \lambda_2 x^2}<br />
+<p>$$
+p(x) = ce^{-\lambda_1x - \lambda_2 x^2}
 $$</p>
 
 <p>再根据 KKT 条件：</p>
 
 <ol>
-<li>$\int_{-\infty}^{+\infty} p(x) = 1$<br /></li>
-<li>$\int_{-\infty}^{+\infty} x p(x) = 0$<br /></li>
-<li>$\int x^2 p(x) = \sigma^2$<br />
-<br /></li>
+<li>$\int_{-\infty}^{+\infty} p(x) = 1$</li>
+<li>$\int_{-\infty}^{+\infty} x p(x) = 0$</li>
+<li>$\int x^2 p(x) = \sigma^2$</li>
 </ol>
 
 <p>由条件 $(2) \implies p(x)$ 是偶函数 $\implies \lambda_1 = 0$, 原条件变成</p>
 
 <ol>
-<li>$\int_{-\infty}^{+\infty} ce^{-\lambda_2x^2} = 1$<br /></li>
-<li>$\int x^2 ce^{-\lambda_2x^2} = \sigma^2$<br />
-<br /></li>
+<li>$\int_{-\infty}^{+\infty} ce^{-\lambda_2x^2} = 1$</li>
+<li>$\int x^2 ce^{-\lambda_2x^2} = \sigma^2$</li>
 </ol>
 
-<p>$$<br />
-\implies c = \frac{1}{\sqrt{2\pi\sigma^2}}, ~\lambda_2 = \frac{1}{2\sigma^2} \implies p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}} \sim N(0, ~\sigma^2)<br />
+<p>$$
+\implies c = \frac{1}{\sqrt{2\pi\sigma^2}}, ~\lambda_2 = \frac{1}{2\sigma^2} \implies p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}} \sim N(0, ~\sigma^2)
 $$</p>
 
 <h3 id="2-指数分布">2. 指数分布</h3>
@@ -257,32 +254,30 @@ $$</p>
 <p>约束：</p>
 
 <ul>
-<li>$X \ge 0$<br /></li>
-<li>$E(X) = \frac{1}{\mu}$<br />
-<br /></li>
+<li>$X \ge 0$</li>
+<li>$E(X) = \frac{1}{\mu}$</li>
 </ul>
 
 <p>根据上面的论证，最大熵分布应具有如下形式：</p>
 
-<p>$$<br />
-p(x) = ce^{-\lambda_1x}<br />
+<p>$$
+p(x) = ce^{-\lambda_1x}
 $$</p>
 
 <p>再根据 KKT 条件：</p>
 
 <ol>
-<li>$\int_{0}^{+\infty} ce^{-\lambda_1x}= 1$<br /></li>
-<li>$\int_0^{+\infty} x ce^{-\lambda_1x} = \frac{1}{\mu}$<br />
-<br /></li>
+<li>$\int_{0}^{+\infty} ce^{-\lambda_1x}= 1$</li>
+<li>$\int_0^{+\infty} x ce^{-\lambda_1x} = \frac{1}{\mu}$</li>
 </ol>
 
 <p>推导如下：</p>
 
-<p>$$<br />
-\begin{gathered}<br />
-\int_{0}^{+\infty} e^{-\lambda_1x} = \frac{1}{c} \implies \lambda_1 = c \newline<br />
-\int_{0}^{+\infty}x e^{-\lambda_1x} = \frac{1}{c\mu} = \frac{1}{\lambda_1\mu} \implies \lambda_1 = \mu<br />
-\end{gathered}<br />
+<p>$$
+\begin{gathered}
+\int_{0}^{+\infty} e^{-\lambda_1x} = \frac{1}{c} \implies \lambda_1 = c \newline
+\int_{0}^{+\infty}x e^{-\lambda_1x} = \frac{1}{c\mu} = \frac{1}{\lambda_1\mu} \implies \lambda_1 = \mu
+\end{gathered}
 $$</p>
 
 <p>$\implies p(x) = \mu e^{-\mu x} \sim Exp(\mu)$</p>
@@ -292,54 +287,51 @@ $$</p>
 <p>约束：</p>
 
 <ul>
-<li>$a \le X \le b$<br />
-<br /></li>
+<li>$a \le X \le b$</li>
 </ul>
 
-<p>根据上面的论证，最大熵分布应具有如下形式：<br />
-$$<br />
-\begin{gathered}<br />
-p(x) = ce^{- 0x} = c \newline<br />
-\int_a^b c ~dx = 1 \implies c = \frac{1}{b-a}<br />
-\end{gathered}<br />
-$$<br />
+<p>根据上面的论证，最大熵分布应具有如下形式：
+$$
+\begin{gathered}
+p(x) = ce^{- 0x} = c \newline
+\int_a^b c ~dx = 1 \implies c = \frac{1}{b-a}
+\end{gathered}
+$$
 $\implies p(x) = \frac{1}{b-a} \sim Unif(a,~b)$</p>
 
 <h3 id="4-几何分布">4. 几何分布</h3>
 
-<p>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$<br />
+<p>几何分布计数直到第一次成功前所有的失败次数。$P(X=k) = q^kp$
 约束：</p>
 
 <ul>
-<li>$X = 0,1,2,\dots$<br /></li>
-<li>$E(X) = \frac{1-p}{p}$<br />
-<br /></li>
+<li>$X = 0,1,2,\dots$</li>
+<li>$E(X) = \frac{1-p}{p}$</li>
 </ul>
 
 <p>根据上面的论证，最大熵分布应具有如下形式：</p>
 
-<p>$$<br />
-P(X=k) = p_k = ce^{-\lambda_1 k}<br />
+<p>$$
+P(X=k) = p_k = ce^{-\lambda_1 k}
 $$</p>
 
 <p>再根据 KKT 条件：</p>
 
 <ol>
-<li>$\sum_{k=0}^{\infty} p_k = 1$<br /></li>
-<li>$\sum_{k=0}^{\infty} k p_k = \frac{1-p}{p}$<br />
-<br /></li>
+<li>$\sum_{k=0}^{\infty} p_k = 1$</li>
+<li>$\sum_{k=0}^{\infty} k p_k = \frac{1-p}{p}$</li>
 </ol>
 
 <p>推导如下：</p>
 
-<p>$$<br />
-\begin{gathered}<br />
-\sum_{k=0}^{\infty} ce^{-\lambda_1 k} = c \sum_{k=0}^{\infty} q^k \quad(\text{where }q = e^{-\lambda_1}) \newline<br />
-= \frac{c}{1-q} \implies c = 1-q \newline<br />
-\sum_{k=0}^{\infty} k ce^{-\lambda_1 k} = c\sum_{k=1}^{\infty} k (e^{-\lambda_1})^k = c\sum_{k=1}^{\infty}k q^k = cq \sum kq^{k-1} \newline<br />
-= cq \sum (q^k)' = cq \left(\sum_{k=1}^{\infty}q^k\right)' = cq \left(\frac{q}{1-q}\right)' \newline<br />
-= cq \cdot \frac{1}{(1-q)^2} = \frac{q}{1-q} = \frac{1-p}{p}<br />
-\end{gathered}<br />
+<p>$$
+\begin{gathered}
+\sum_{k=0}^{\infty} ce^{-\lambda_1 k} = c \sum_{k=0}^{\infty} q^k \quad(\text{where }q = e^{-\lambda_1}) \newline
+= \frac{c}{1-q} \implies c = 1-q \newline
+\sum_{k=0}^{\infty} k ce^{-\lambda_1 k} = c\sum_{k=1}^{\infty} k (e^{-\lambda_1})^k = c\sum_{k=1}^{\infty}k q^k = cq \sum kq^{k-1} \newline
+= cq \sum (q^k)' = cq \left(\sum_{k=1}^{\infty}q^k\right)' = cq \left(\frac{q}{1-q}\right)' \newline
+= cq \cdot \frac{1}{(1-q)^2} = \frac{q}{1-q} = \frac{1-p}{p}
+\end{gathered}
 $$</p>
 
 <p>$\implies e^{-\lambda_1} = q = 1-p, ~ c =p \implies P(X=k) = p_k = pq^k \sim Geom(p)$</p>

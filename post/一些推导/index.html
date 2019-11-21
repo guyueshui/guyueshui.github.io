@@ -161,41 +161,41 @@
 
 <p>$X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$，其微分熵推导过程如下：</p>
 
-<p>$$<br />
-\begin{split}<br />
-h(X) &amp;= \int_{-\infty}^{\infty}<br />
-\frac{-1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) \cdot<br />
-\ln \left[<br />
-\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)<br />
-\right] dx \newline<br />
-&amp;= \frac{-1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^{\infty}<br />
-\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)<br />
-\cdot<br />
-\left(<br />
-\ln(2\pi\sigma^2)^{-1/2} - \frac{(x-\mu)^2}{2\sigma^2}<br />
-\right) dx \newline<br />
-&amp;= \frac{1}{2}\ln(2\pi\sigma^2) \int_{-\infty}^{\infty}<br />
-\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline<br />
-&amp;\quad<br />
-+ \int_{-\infty}^{\infty}<br />
-\frac{(x-\mu)^2}{2\sigma^2} \cdot<br />
-\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline<br />
-&amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2\sigma^2}E(X-\mu)^2 \newline<br />
-&amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2} = \frac{1}{2}\ln(2\pi e\sigma^2) \qquad\text{(nats)}<br />
-\end{split}<br />
+<p>$$
+\begin{split}
+h(X) &amp;= \int_{-\infty}^{\infty}
+\frac{-1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) \cdot
+\ln \left[
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+\right] dx \newline
+&amp;= \frac{-1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^{\infty}
+\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+\cdot
+\left(
+\ln(2\pi\sigma^2)^{-1/2} - \frac{(x-\mu)^2}{2\sigma^2}
+\right) dx \newline
+&amp;= \frac{1}{2}\ln(2\pi\sigma^2) \int_{-\infty}^{\infty}
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline
+&amp;\quad
++ \int_{-\infty}^{\infty}
+\frac{(x-\mu)^2}{2\sigma^2} \cdot
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline
+&amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2\sigma^2}E(X-\mu)^2 \newline
+&amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2} = \frac{1}{2}\ln(2\pi e\sigma^2) \qquad\text{(nats)}
+\end{split}
 $$</p>
 
 <!-- more -->
 
-<p>又因为 $H_b(X) = \log_ba \cdot H_a(X)$，于是取 $b=e, ~a=2$<br />
-$$<br />
-\implies \frac{1 \text{ nat}}{x \text{ bits}} = \ln2 \implies x = \frac{1}{\ln2} = \frac{\log e}{\log2} = \log e \text{ bits}<br />
-$$<br />
-所以<br />
-$$<br />
-\frac{1}{2}\ln(2\pi e\sigma^2) \text{ nats} =<br />
-\frac{1}{2} \cdot \frac{\log(2\pi e\sigma^2)}{\log e} \cdot \log e \text{ bits} =<br />
-\frac{1}{2}\log(2\pi e\sigma^2) \text{ bits}<br />
+<p>又因为 $H_b(X) = \log_ba \cdot H_a(X)$，于是取 $b=e, ~a=2$
+$$
+\implies \frac{1 \text{ nat}}{x \text{ bits}} = \ln2 \implies x = \frac{1}{\ln2} = \frac{\log e}{\log2} = \log e \text{ bits}
+$$
+所以
+$$
+\frac{1}{2}\ln(2\pi e\sigma^2) \text{ nats} =
+\frac{1}{2} \cdot \frac{\log(2\pi e\sigma^2)}{\log e} \cdot \log e \text{ bits} =
+\frac{1}{2}\log(2\pi e\sigma^2) \text{ bits}
 $$</p>
 
     </div>

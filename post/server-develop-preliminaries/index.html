@@ -201,7 +201,7 @@
 
 <p>此外，进程作为操作系统中拥有资源和独立调度的基本单位，可以拥有多个线程。通常操作系统中运行的一个程序就对应一个进程。在同一进程中，线程的切换不会引起进程切换。在不同的进程中进行线程切换，若从一个进程内的线程切换到另一个进程中的线程时，会引起进程切换。相比进程切换，线程切换的开销要小很多。线程与进程相结合能够提高系统的运行效率。</p>
 
-<p>线程可以分为两类：<br />
+<p>线程可以分为两类：
 一类是用户级线程（user level thread）。对于这类线程，有关线程管理的所有工作都由应用程序完成，内核意识不到线程的存在。在应用程序启动后，操作系统分配给该程序一个进程号，以及其对应的内存空间等资源。应用程序通常现在一个线程中运行，该线程被称为主线程。在其运行的某个时刻，可以通过调用线程库中的函数创建一个在相同进程中运行的新线程。用户级线程的好处是非常高效，不需要进入内核空间，但并发效率不高。</p>
 
 <p>另一类是内核级线程（kernel level thread）。对于这类线程，有关线程管理的所有工作由内核完成，应用程序没有进行线程管理的代码，只能调用内核线程的接口。内核维护进程及其内部的每个线程，调度也有内核基于线程架构完成。内核级线程的好处是，内核可以将不同的线程更好地分配到不同的CPU，以实现真正的并行计算。</p>
@@ -227,11 +227,10 @@
 <p>总结产生死锁的四个条件（只有当四个条件同时满足时才会产生死锁）：</p>
 
 <ol>
-<li>Mutual Exclusion -- Only one process may use a resource at a time<br /></li>
-<li>Hold-and-Wait -- Process holds resource while waiting for another<br /></li>
-<li>No Preemption -- Can't take a resouce away from a process<br /></li>
-<li>Circular Wait -- The waiting processes form a cycle<br />
-<br /></li>
+<li>Mutual Exclusion -- Only one process may use a resource at a time</li>
+<li>Hold-and-Wait -- Process holds resource while waiting for another</li>
+<li>No Preemption -- Can't take a resouce away from a process</li>
+<li>Circular Wait -- The waiting processes form a cycle</li>
 </ol>
 
 <h3 id="生产者消费者">生产者消费者</h3>
@@ -243,9 +242,8 @@
 <p>在介绍进程的时候，我们提起过不能直接读写另一个进程的数据。两者之间的通信需要通过进程间通信（inter-process communication，IPC）进行。进程通信的方式通常遵循生产者消费者模型，需要实现数据交换和同步两大功能。</p>
 
 <ol>
-<li>Shared-memory + semaphore: 不同进程通过读写操作系统中特殊的共享内存进行数据交换，进程之间用semaphore实现同步。<br /></li>
-<li>Message passing: 进程在操作系统内部注册一个端口，并检测有没有数据，其他进程直接写数据到该端口。该通信方式更加接近与网络通信方式。事实上，网络通信也是一种IPC，知识进程分布在不同机器上而已。<br />
-<br /></li>
+<li>Shared-memory + semaphore: 不同进程通过读写操作系统中特殊的共享内存进行数据交换，进程之间用semaphore实现同步。</li>
+<li>Message passing: 进程在操作系统内部注册一个端口，并检测有没有数据，其他进程直接写数据到该端口。该通信方式更加接近与网络通信方式。事实上，网络通信也是一种IPC，知识进程分布在不同机器上而已。</li>
 </ol>
 
 <h2 id="网络">网络</h2>
@@ -261,14 +259,13 @@
 <p><img src="/img/posted/osi-model.jpg" alt="osi-model" /></p>
 
 <ul>
-<li>应用层 针对特定的协议，为应用程序做服务,比如SMP,POP3,SSH,FTP等协议。<br /></li>
-<li>表示层 负责数据格式的转换，把不同表现形式的信息转换成适合网络传输的格式。<br /></li>
-<li>会话层 负责建立和断开通信连接，什么时候建立连接，什么时候断开连接以及保持多久的连接。<br /></li>
-<li>传输层 在两个通信节点之间负责数据的传输，起着可靠传输的作用。(运行在这一层的设备有四层交换机，四层路由器)<br /></li>
-<li>网络层 路由选择，在多个网络之间转发数据包，负责将数据包传送到目的地址。(运行在这一层的设备有路由器，三层交换机)<br /></li>
-<li>数据链路层 负责物理层面互联设备之间的通信传输，比如一个以太网相连的两个节点之间的通信，是数据帧与1、0比特流之间的转换。(运行在这一层的设备是网桥、以太网交换机、网卡)<br /></li>
-<li>物理层 主要是1、0比特流与电子信号的高低电平之间的转换。(运行在这一层的设备是中继器、双绞线)<br />
-<br /></li>
+<li>应用层 针对特定的协议，为应用程序做服务,比如SMP,POP3,SSH,FTP等协议。</li>
+<li>表示层 负责数据格式的转换，把不同表现形式的信息转换成适合网络传输的格式。</li>
+<li>会话层 负责建立和断开通信连接，什么时候建立连接，什么时候断开连接以及保持多久的连接。</li>
+<li>传输层 在两个通信节点之间负责数据的传输，起着可靠传输的作用。(运行在这一层的设备有四层交换机，四层路由器)</li>
+<li>网络层 路由选择，在多个网络之间转发数据包，负责将数据包传送到目的地址。(运行在这一层的设备有路由器，三层交换机)</li>
+<li>数据链路层 负责物理层面互联设备之间的通信传输，比如一个以太网相连的两个节点之间的通信，是数据帧与1、0比特流之间的转换。(运行在这一层的设备是网桥、以太网交换机、网卡)</li>
+<li>物理层 主要是1、0比特流与电子信号的高低电平之间的转换。(运行在这一层的设备是中继器、双绞线)</li>
 </ul>
 
 <h3 id="路由">路由</h3>
@@ -408,22 +405,21 @@
 <p><img src="/img/posted/tcp-head-format.png" alt="tcp-head" /></p>
 
 <ol>
-<li>源端口和目的端口，各占2个字节，分别写入源端口和目的端口；<br /></li>
-<li>序号（seq number），占4个字节，TCP连接中传送的字节流中的每个字节都按顺序编号。例如，一段报文的序号字段值是 301 ，而携带的数据共有100字段，显然下一个报文段（如果还有的话）的数据序号应该从401开始；<br /></li>
-<li>确认号（ack number），占4个字节，是期望收到对方下一个报文的第一个数据字节的序号。例如，B收到了A发送过来的报文，其序列号字段是501，而数据长度是200字节，这表明B正确的收到了A发送的到序号700为止的数据。因此，B期望收到A的下一个数据序号是701，于是B在发送给A的确认报文段中把确认号置为701；<br /></li>
-<li>数据偏移，占4位，它指出TCP报文的数据距离TCP报文段的起始处有多远；<br /></li>
-<li>保留，占6位，保留今后使用，但目前应都位0；<br /></li>
-<li>紧急URG，当URG=1，表明紧急指针字段有效。告诉系统此报文段中有紧急数据；<br /></li>
-<li>确认ACK，仅当ACK=1时，确认号字段才有效。TCP规定，在连接建立后所有报文的传输都必须把ACK置1；<br /></li>
-<li>推送PSH，当两个应用进程进行交互式通信时，有时在一端的应用进程希望在键入一个命令后立即就能收到对方的响应，这时候就将PSH=1；<br /></li>
-<li>复位RST，当RST=1，表明TCP连接中出现严重差错，必须释放连接，然后再重新建立连接；<br /></li>
-<li>同步SYN，在连接建立时用来同步序号。当SYN=1，ACK=0，表明是连接请求报文，若同意连接，则响应报文中应该使SYN=1，ACK=1；<br /></li>
-<li>终止FIN，用来释放连接。当FIN=1，表明此报文的发送方的数据已经发送完毕，并且要求释放；<br /></li>
-<li>窗口，占2字节，指的是通知接收方，发送本报文你需要有多大的空间来接受；<br /></li>
-<li>检验和，占2字节，校验首部和数据这两部分；<br /></li>
-<li>紧急指针，占2字节，指出本报文段中的紧急数据的字节数；<br /></li>
-<li>选项，长度可变，定义一些其他的可选的参数。<br />
-<br /></li>
+<li>源端口和目的端口，各占2个字节，分别写入源端口和目的端口；</li>
+<li>序号（seq number），占4个字节，TCP连接中传送的字节流中的每个字节都按顺序编号。例如，一段报文的序号字段值是 301 ，而携带的数据共有100字段，显然下一个报文段（如果还有的话）的数据序号应该从401开始；</li>
+<li>确认号（ack number），占4个字节，是期望收到对方下一个报文的第一个数据字节的序号。例如，B收到了A发送过来的报文，其序列号字段是501，而数据长度是200字节，这表明B正确的收到了A发送的到序号700为止的数据。因此，B期望收到A的下一个数据序号是701，于是B在发送给A的确认报文段中把确认号置为701；</li>
+<li>数据偏移，占4位，它指出TCP报文的数据距离TCP报文段的起始处有多远；</li>
+<li>保留，占6位，保留今后使用，但目前应都位0；</li>
+<li>紧急URG，当URG=1，表明紧急指针字段有效。告诉系统此报文段中有紧急数据；</li>
+<li>确认ACK，仅当ACK=1时，确认号字段才有效。TCP规定，在连接建立后所有报文的传输都必须把ACK置1；</li>
+<li>推送PSH，当两个应用进程进行交互式通信时，有时在一端的应用进程希望在键入一个命令后立即就能收到对方的响应，这时候就将PSH=1；</li>
+<li>复位RST，当RST=1，表明TCP连接中出现严重差错，必须释放连接，然后再重新建立连接；</li>
+<li>同步SYN，在连接建立时用来同步序号。当SYN=1，ACK=0，表明是连接请求报文，若同意连接，则响应报文中应该使SYN=1，ACK=1；</li>
+<li>终止FIN，用来释放连接。当FIN=1，表明此报文的发送方的数据已经发送完毕，并且要求释放；</li>
+<li>窗口，占2字节，指的是通知接收方，发送本报文你需要有多大的空间来接受；</li>
+<li>检验和，占2字节，校验首部和数据这两部分；</li>
+<li>紧急指针，占2字节，指出本报文段中的紧急数据的字节数；</li>
+<li>选项，长度可变，定义一些其他的可选的参数。</li>
 </ol>
 
 <blockquote>
@@ -451,11 +447,10 @@
 <p>具体来说：</p>
 
 <ol>
-<li>一方（客户端）发起连接请求，发送一个包（seq=x，SYN=1，ACK=0），进入SYN-SENT状态；<br /></li>
-<li>另一方（服务端）收到请求，如果同意连接，则发出确认包（seq=y，ack=x+1，SYN=1，ACK=1），进入SYN-RCVD状态；<br /></li>
-<li>客户端收到确认的包后，也需要向服务端发送确认包（seq=x+1，ack=y+1，SYN=0，ACK=1），进入ESTABLISHED状态；<br /></li>
-<li>服务端收到确认的包后，进入ESTABLISHED状态，至此，连接已建立。<br />
-<br /></li>
+<li>一方（客户端）发起连接请求，发送一个包（seq=x，SYN=1，ACK=0），进入SYN-SENT状态；</li>
+<li>另一方（服务端）收到请求，如果同意连接，则发出确认包（seq=y，ack=x+1，SYN=1，ACK=1），进入SYN-RCVD状态；</li>
+<li>客户端收到确认的包后，也需要向服务端发送确认包（seq=x+1，ack=y+1，SYN=0，ACK=1），进入ESTABLISHED状态；</li>
+<li>服务端收到确认的包后，进入ESTABLISHED状态，至此，连接已建立。</li>
 </ol>
 
 <p><img src="/img/posted/tcp-connect.png" alt="tcp-connect" /></p>
@@ -468,19 +463,18 @@
 
 <p>虽然TCP连接是全双工的，但是，为了理解TCP连接的释放过程，最好将TCP连接看成一对单工连接。每个单工连接被单独释放，两个单工连接之间相互独立。为了释放一个连接，任何一方都可以发送一个设置了FIN位的TCP数据段，这表示它已经没有数据要发送了。当FIN数据段被确认的时候，这个方向上就停止传送新数据。然而，另一个方向上可能还在继续无限制地传送数据，当两个方向都停止的时候，连接才被释放。通常情况下，为了释放一个连接，需要4个TCP数据段：每个方向一个FIN和一个ACK。然而，第一个ACK和第二个FIN有可能被包含在同一个数据段中，从而将总数降低到3个。</p>
 
-<p>四次挥手。<a href="https://blog.csdn.net/qq_33951180/article/details/60767876">https://blog.csdn.net/qq_33951180/article/details/60767876</a><br />
+<p>四次挥手。<a href="https://blog.csdn.net/qq_33951180/article/details/60767876">https://blog.csdn.net/qq_33951180/article/details/60767876</a>
 <a href="https://www.imooc.com/article/17411">https://www.imooc.com/article/17411</a></p>
 
 <p>具体来说：</p>
 
 <ol>
-<li>一方（客户端）主动发送连接释放请求，发送一个包（seq=u，FIN=1），其序列号为u，等于之前最后接收的包序列号加1，进入FIN-WAIT-1状态；<br /></li>
-<li>另一方（服务端）收到释放请求，发出确认报文（seq=v，ack=u+1，ACK=1），进入CLOSE-WAIT状态。将TCP连接看成一对单工连接，此时客户端单方面停止向服务端发送消息，但服务端的发送还未停止，客户端仍要接收来自服务端的消息；这时服务端会通知上层应用客户端连接已经释放，但到服务端释放可能还需要一段时间；<br /></li>
-<li>客户端收到服务器的确认报文，进入FIN-WAIT-2状态；<br /></li>
-<li>服务端处理完自己的事情之后，向客户端发送连接释放确认报文（seq=w，ack=u+1，ACK=1，FIN=1），进入LAST-ACK状态；<br /></li>
-<li>客户端收到服务端的释放报文，必须发出确认报文（seq=u+1，ack=w+1，ACK=1），进入TIME-WAIT状态。此时连接还未释放，客户端会等待2个MSL (Maximum Segment Lifetime) 时间，才会进入CLOSED状态；<br /></li>
-<li>服务端只要收到客户端的确认报文，立即进入CLOSED状态。<br />
-<br /></li>
+<li>一方（客户端）主动发送连接释放请求，发送一个包（seq=u，FIN=1），其序列号为u，等于之前最后接收的包序列号加1，进入FIN-WAIT-1状态；</li>
+<li>另一方（服务端）收到释放请求，发出确认报文（seq=v，ack=u+1，ACK=1），进入CLOSE-WAIT状态。将TCP连接看成一对单工连接，此时客户端单方面停止向服务端发送消息，但服务端的发送还未停止，客户端仍要接收来自服务端的消息；这时服务端会通知上层应用客户端连接已经释放，但到服务端释放可能还需要一段时间；</li>
+<li>客户端收到服务器的确认报文，进入FIN-WAIT-2状态；</li>
+<li>服务端处理完自己的事情之后，向客户端发送连接释放确认报文（seq=w，ack=u+1，ACK=1，FIN=1），进入LAST-ACK状态；</li>
+<li>客户端收到服务端的释放报文，必须发出确认报文（seq=u+1，ack=w+1，ACK=1），进入TIME-WAIT状态。此时连接还未释放，客户端会等待2个MSL (Maximum Segment Lifetime) 时间，才会进入CLOSED状态；</li>
+<li>服务端只要收到客户端的确认报文，立即进入CLOSED状态。</li>
 </ol>
 
 <p><img src="/img/posted/tcp-disconnect.png" alt="tcp-disconnect" /></p>
@@ -494,18 +488,16 @@
 <h2 id="http协议">HTTP协议</h2>
 
 <ul>
-<li>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议，所有的WWW文件都必须遵守这个标准。<br /></li>
-<li>HTTP是基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）<br /></li>
-<li>HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。如下图<br />
-<br /></li>
+<li>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议，所有的WWW文件都必须遵守这个标准。</li>
+<li>HTTP是基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）</li>
+<li>HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。如下图</li>
 </ul>
 
 <p><img src="/img/posted/https.png" alt="https" /></p>
 
 <ul>
-<li>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br /></li>
-<li>HTTP默认的端口号为80，HTTPS的端口号为443。<br />
-<br /></li>
+<li>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。</li>
+<li>HTTP默认的端口号为80，HTTPS的端口号为443。</li>
 </ul>
 
 <h3 id="http状态码">HTTP状态码</h3>
@@ -588,22 +580,17 @@
 <h2 id="references">References</h2>
 
 <ol>
-<li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a><br /></li>
-<li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a><br /></li>
-<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a><br /></li>
-<li><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a><br />
-<br />
-<br />
-<br />
-<br />
-<br /></li>
+<li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a></li>
+<li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a></li>
+<li><a href="https://www.jianshu.com/p/9f0636c5e416">HTTP协议及其工作流程</a></li>
+<li><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a></li>
 </ol>
 <div class="footnotes">
 
 <hr />
 
 <ol>
-<li id="fn:a"><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a><br />
+<li id="fn:a"><a href="https://blog.csdn.net/qzcsu/article/details/72861891">TCP的三次握手与四次挥手（详解+动图）</a>
  <a class="footnote-return" href="#fnref:a">↩</a></li>
 </ol>
 </div>

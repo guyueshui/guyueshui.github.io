@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="2366">
+<meta itemprop="wordCount" content="2480">
 
 
 
@@ -248,26 +248,24 @@ ffmpeg -i input.mkv -b 2048k out.gif</code></pre></td></tr></table>
 <h3 id="行内操作">行内操作</h3>
 
 <ul>
-<li><code>^a</code>: jump to BOL<br /></li>
-<li><code>^e</code>: jump to EOL<br /></li>
-<li><code>^u</code>: delete the line<br /></li>
-<li><code>^k</code>: delete to EOL<br /></li>
-<li><code>^w</code>: delete a word forward<br /></li>
-<li><code>alt+f</code>: jump a word forward<br /></li>
-<li><code>alt+b</code>: jump a word backward<br /></li>
-<li><code>^r</code>: search history<br /></li>
-<li><code>alt+.</code>: complete second parameter<br />
-<br /></li>
+<li><code>^a</code>: jump to BOL</li>
+<li><code>^e</code>: jump to EOL</li>
+<li><code>^u</code>: delete the line</li>
+<li><code>^k</code>: delete to EOL</li>
+<li><code>^w</code>: delete a word forward</li>
+<li><code>alt+f</code>: jump a word forward</li>
+<li><code>alt+b</code>: jump a word backward</li>
+<li><code>^r</code>: search history</li>
+<li><code>alt+.</code>: complete second parameter</li>
 </ul>
 
 <h3 id="任务控制">任务控制</h3>
 
 <ol>
-<li>执行<code>command</code><br /></li>
-<li>按<code>^z</code>挂起当前job<br /></li>
-<li>按<code>bg</code>后台继续该job<br /></li>
-<li>按<code>fg</code>召回前台<br />
-<br /></li>
+<li>执行<code>command</code></li>
+<li>按<code>^z</code>挂起当前job</li>
+<li>按<code>bg</code>后台继续该job</li>
+<li>按<code>fg</code>召回前台</li>
 </ol>
 
 <h3 id="后台运行命令">后台运行命令</h3>
@@ -289,13 +287,12 @@ ffmpeg -i input.mkv -b 2048k out.gif</code></pre></td></tr></table>
 </div>
 </div>
 <ul>
-<li>如此你可以继续使用当前shell<br /></li>
-<li>使用<code>bg</code>查看是否有任务在后台运行<br /></li>
-<li>使用<code>jobs</code>查看后台任务<br /></li>
-<li>使用<code>fg</code>将任务召回前台<br /></li>
-<li>不能退出shell，否则进程会被杀掉<br /></li>
-<li><strong>使用<code>disown</code>丢掉进程，可以退出shell</strong><br />
-<br /></li>
+<li>如此你可以继续使用当前shell</li>
+<li>使用<code>bg</code>查看是否有任务在后台运行</li>
+<li>使用<code>jobs</code>查看后台任务</li>
+<li>使用<code>fg</code>将任务召回前台</li>
+<li>不能退出shell，否则进程会被杀掉</li>
+<li><strong>使用<code>disown</code>丢掉进程，可以退出shell</strong></li>
 </ul>
 
 <p>又：</p>
@@ -332,49 +329,46 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 </div>
 </div>
 <ul>
-<li><code>path</code> - search path<br /></li>
-<li><code>expression</code> - expands to <code>-options [-print -exec -ok]</code><br />
+<li><code>path</code> - search path</li>
+<li><code>expression</code> - expands to <code>-options [-print -exec -ok]</code>
 
 <ul>
-<li><code>-options</code>: 指定find常用选项<br /></li>
-<li><code>-print</code>: 将匹配到的文件写入标准输出[默认]<br /></li>
-<li><code>-exec</code>: 在匹配到的文件上执行一串命令。格式为<code>&lt;command&gt; {} \;</code>，注意 {} 和 \; 之间的空格。<br />
+<li><code>-options</code>: 指定find常用选项</li>
+<li><code>-print</code>: 将匹配到的文件写入标准输出[默认]</li>
+<li><code>-exec</code>: 在匹配到的文件上执行一串命令。格式为<code>&lt;command&gt; {} \;</code>，注意 {} 和 \; 之间的空格。
 
 <ul>
-<li><code>find . -size 0 -exec rm {} \;</code> - 删除当前目录下size为0的文件<br /></li>
-<li><code>rm -i $(find . -size 0)</code> - 同上<br /></li>
-<li><code>find . -size 0 | xargs rm -f &amp;</code> - 同上<br /></li>
+<li><code>find . -size 0 -exec rm {} \;</code> - 删除当前目录下size为0的文件</li>
+<li><code>rm -i $(find . -size 0)</code> - 同上</li>
+<li><code>find . -size 0 | xargs rm -f &amp;</code> - 同上</li>
 </ul></li>
-<li><code>-ok</code>: 同上，执行命令前会询问<br />
-<br /></li>
+<li><code>-ok</code>: 同上，执行命令前会询问</li>
 </ul></li>
 </ul>
 
 <p><strong>常用选项</strong></p>
 
 <ul>
-<li>name - 按照文件名查找<br />
+<li>name - 按照文件名查找
 
 <ul>
-<li><code>find &lt;dir&gt; -name &quot;*.cpp&quot;</code>: 在目录dir下查找后缀为cpp的文件<br /></li>
+<li><code>find &lt;dir&gt; -name &quot;*.cpp&quot;</code>: 在目录dir下查找后缀为cpp的文件</li>
 </ul></li>
-<li>perm - 按照文件权限查找<br /></li>
-<li>user - 按照文件所有者查找<br /></li>
-<li>group - 按照文件所有组查找<br /></li>
-<li>type - 按照文件类型查找<br /></li>
-<li>size - 按照文件大小查找<br /></li>
-<li>...<br />
-<br /></li>
+<li>perm - 按照文件权限查找</li>
+<li>user - 按照文件所有者查找</li>
+<li>group - 按照文件所有组查找</li>
+<li>type - 按照文件类型查找</li>
+<li>size - 按照文件大小查找</li>
+<li>...</li>
 </ul>
 
 <p><strong>几个例子</strong></p>
 
 <ul>
-<li><code>find . -name &quot;*name*&quot;</code> - 找出当前文件夹文件名包含“name”的文件<br /></li>
-<li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件<br /></li>
-<li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件<br /></li>
-<li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹<br />
-<br /></li>
+<li><code>find . -name &quot;*name*&quot;</code> - 找出当前文件夹文件名包含“name”的文件</li>
+<li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件</li>
+<li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件</li>
+<li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹</li>
 </ul>
 
 <hr />
@@ -550,26 +544,29 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl</code></pre></td></tr></table>
 
 <h2 id="aria2c">Aria2c</h2>
 
-<p><a href="https://aria2.github.io/">aria2c</a> 是个好东西。</p>
+<p><a href="https://aria2.github.io/">aria2c</a> 是个好东西。支持连接，磁力，种子下载。轻量且强大，可直接使用，也可作为服务端，配合WebUI使用。</p>
 
 <ul>
-<li>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/">aria2配置示例</a><br /></li>
-<li>webui:<br />
+<li>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/">aria2配置示例</a></li>
+<li>WebUI:
 
 <ul>
-<li><a href="http://binux.github.io/yaaw/demo/">YAAW</a><br /></li>
-<li><a href="https://ziahamza.github.io/webui-aria2/#">ziahamza</a><br /></li>
-<li><a href="http://ariang.mayswind.net/latest/">AriaNg</a><br />
-<br /></li>
+<li><a href="http://binux.github.io/yaaw/demo/">YAAW</a></li>
+<li><a href="https://ziahamza.github.io/webui-aria2/#">ziahamza</a></li>
+<li><a href="http://ariang.mayswind.net/latest/">AriaNg</a></li>
 </ul></li>
 </ul>
 
-<p>Note: jsonrpc 地址格式为 <code>http://token:&lt;rpc-secret&gt;@hostname:port/jsonrpc</code><br />
-令牌填写自己设置的 <code>rpc-secret</code><br />
+<p>Note: jsonrpc 地址格式为 <code>http://token:&lt;rpc-secret&gt;@hostname:port/jsonrpc</code>
+令牌填写自己设置的 <code>rpc-secret</code>
 <img src="https://i.loli.net/2018/12/28/5c263327c4214.png" alt="" /></p>
 
-<p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code><br />
+<p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code>
 <img src="https://i.loli.net/2018/12/28/5c263398854c3.png" alt="" /></p>
+
+<h2 id="mpv">MPV</h2>
+
+<p><a href="https://mpv.io">MPV</a> 是一个轻量、简约、跨平台的播放器。据我自己体验，在Linux下比mplayer播放效果要好，mplayer倍速会掉帧，而mpv则不太明显。</p>
 
 <h2 id="html">HTML</h2>
 
@@ -775,15 +772,15 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <h1 id="reference">Reference</h1>
 
 <ul>
-<li><a href="https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/">linux下视频转gif</a><br /></li>
-<li><a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">Running Bash Commands in the Background the Right Way [Linux]</a><br /></li>
+<li><a href="https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/">linux下视频转gif</a></li>
+<li><a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">Running Bash Commands in the Background the Right Way [Linux]</a></li>
 </ul>
 <div class="footnotes">
 
 <hr />
 
 <ol>
-<li id="fn:a"><a href="https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651">https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651</a><br />
+<li id="fn:a"><a href="https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651">https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651</a>
  <a class="footnote-return" href="#fnref:a">↩</a></li>
 </ol>
 </div>

@@ -19,9 +19,7 @@
 <meta name="author" content="Yychi" /><meta name="description" content="Declaration: this article is in long time editing...
 Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of
-0, 1, 1, 2, 3, 5, 8, 13 ...
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)." /><meta name="keywords" content="水阙, yychi" />
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)." /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -49,9 +47,7 @@ The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\t
 <meta property="og:description" content="Declaration: this article is in long time editing...
 Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of
-0, 1, 1, 2, 3, 5, 8, 13 ...
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)." />
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/the-beauty-of-recursion/" />
 <meta property="article:published_time" content="2019-04-23T09:08:28+00:00" />
@@ -60,9 +56,7 @@ The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\t
 <meta itemprop="description" content="Declaration: this article is in long time editing...
 Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of
-0, 1, 1, 2, 3, 5, 8, 13 ...
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).">
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).">
 
 
 <meta itemprop="datePublished" content="2019-04-23T09:08:28&#43;00:00" />
@@ -77,9 +71,7 @@ The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\t
 <meta name="twitter:description" content="Declaration: this article is in long time editing...
 Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of
-0, 1, 1, 2, 3, 5, 8, 13 ...
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)."/>
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0)."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -196,15 +188,15 @@ The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\t
 
 <h3 id="fibonacci-numbers">Fibonacci Numbers</h3>
 
-<p>The first comes very famous Fibonacci Numbers, which is a sequence of<br />
-0, 1, 1, 2, 3, 5, 8, 13 ...<br />
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).<br />
-$$<br />
-\text{fib}(n) = \begin{cases}<br />
-n, &amp;\text{ if } n \le 1 \newline<br />
-\text{fib}(n-1) + \text{fib}(n-2), &amp;\text{ if } n &gt; 1.<br />
-\end{cases}<br />
-$$<br />
+<p>The first comes very famous Fibonacci Numbers, which is a sequence of
+0, 1, 1, 2, 3, 5, 8, 13 ...
+The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).
+$$
+\text{fib}(n) = \begin{cases}
+n, &amp;\text{ if } n \le 1 \newline
+\text{fib}(n-1) + \text{fib}(n-2), &amp;\text{ if } n &gt; 1.
+\end{cases}
+$$
 That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -281,23 +273,23 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 </div>
 <h3 id="jump-floor">Jump Floor</h3>
 
-<p>A frog is jumping, it can either jump one or two steps at a time. How many ways can he jump from 0 to nth floor? For instance, from 0 to 3, there are 3 ways:<br />
-1. 1,2 (first one, then it jumps two steps and reach 3)<br />
-2. 2,1 (first two, then it jumps one step and reach 3)<br />
+<p>A frog is jumping, it can either jump one or two steps at a time. How many ways can he jump from 0 to nth floor? For instance, from 0 to 3, there are 3 ways:
+1. 1,2 (first one, then it jumps two steps and reach 3)
+2. 2,1 (first two, then it jumps one step and reach 3)
 3. 1,1,1</p>
 
-<p>Make sure you catch the problem. It will indeed reduce to Fibonacci Numbers. Let's see. <strong>Always try the First-Case Analysis.</strong> Denote $\text{opt}(n)$ to be the number of ways it jumps from 0 to $n^{\text{th}}$ floor. If we condition on the first step, then<br />
-1. it jumps 1 at first time, then the remaining is the number of ways to jump from 0 to $(n-1)^{\text{th}}$ floor, which is $\text{opt}(n-1)$.<br />
+<p>Make sure you catch the problem. It will indeed reduce to Fibonacci Numbers. Let's see. <strong>Always try the First-Case Analysis.</strong> Denote $\text{opt}(n)$ to be the number of ways it jumps from 0 to $n^{\text{th}}$ floor. If we condition on the first step, then
+1. it jumps 1 at first time, then the remaining is the number of ways to jump from 0 to $(n-1)^{\text{th}}$ floor, which is $\text{opt}(n-1)$.
 2. it jumps 2 at first time, then the remaining $\text{opt}(n-2)$.</p>
 
-<p>Hence we get the following:<br />
-$$<br />
-\text{opt}(n) =<br />
-\begin{cases}<br />
-n, &amp; n \le 2 \newline<br />
-\text{opt}(n-1) + \text{opt}(n-2), &amp; n &gt; 2.<br />
-\end{cases}<br />
-$$<br />
+<p>Hence we get the following:
+$$
+\text{opt}(n) =
+\begin{cases}
+n, &amp; n \le 2 \newline
+\text{opt}(n-1) + \text{opt}(n-2), &amp; n &gt; 2.
+\end{cases}
+$$
 Note that the above is a Fibonacci sequence except the index shifting.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -694,7 +686,7 @@ Note that the above is a Fibonacci sequence except the index shifting.</p>
         id: '2019-04-23 09:08:28 \x2b0000 UTC',
         title: 'The Beauty of Recursion',
         link: decodeURI(location.href),
-        desc: 'Declaration: this article is in long time editing...\nHere comes some beautiful recursive solutions to some problems.\nExamples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.\nFibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of\n0, 1, 1, 2, 3, 5, 8, 13 ...\nThe structure is easily captured, if we use $\\text{fib}(n)$ to denote the $n^{\\text{th}}$ Fibonacci Number (n is assumed to start from 0).',
+        desc: 'Declaration: this article is in long time editing...\nHere comes some beautiful recursive solutions to some problems.\nExamples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.\nFibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\\text{fib}(n)$ to denote the $n^{\\text{th}}$ Fibonacci Number (n is assumed to start from 0).',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

@@ -164,14 +164,13 @@
 <h2 id="规格参数">规格参数</h2>
 
 <ul>
-<li>WAN(10/100Mbps)<br /></li>
-<li>LAN(10/100Mbps)*2<br /></li>
-<li>双频：2.4GHz:300Mbps+5GHz:867Mbps<br /></li>
-<li>USB2.0接口<br /></li>
-<li>外置天线*2<br /></li>
-<li>天线增益：3dBi<br /></li>
-<li>128MB内存<br />
-<br /></li>
+<li>WAN(10/100Mbps)</li>
+<li>LAN(10/100Mbps)*2</li>
+<li>双频：2.4GHz:300Mbps+5GHz:867Mbps</li>
+<li>USB2.0接口</li>
+<li>外置天线*2</li>
+<li>天线增益：3dBi</li>
+<li>128MB内存</li>
 </ul>
 
 <!-- more -->
@@ -179,10 +178,9 @@
 <h2 id="资源">资源</h2>
 
 <ul>
-<li>PandoraBox 下载源：<a href="http://downloads.pandorabox.com.cn/">http://downloads.pandorabox.com.cn</a><br /></li>
-<li>旧版(2015年1月)：<a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/">设备代号Lenovo-Y1_RY-1S</a><br /></li>
-<li>新版(2017年1月)：<a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin">newifi-mini</a> 附<a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt">Changelog</a><br />
-<br /></li>
+<li>PandoraBox 下载源：<a href="http://downloads.pandorabox.com.cn/">http://downloads.pandorabox.com.cn</a></li>
+<li>旧版(2015年1月)：<a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/">设备代号Lenovo-Y1_RY-1S</a></li>
+<li>新版(2017年1月)：<a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin">newifi-mini</a> 附<a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt">Changelog</a></li>
 </ul>
 
 <p>我用旧版安装shadowsocks时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是Material Design，很好看。</p>
@@ -190,19 +188,18 @@
 <p>下面开始刷入PandoraBox：</p>
 
 <ol>
-<li>下载好相应固件<br /></li>
-<li>通过有线连接路由器和PC，将PC端IP设置为192.168.1.254，子网掩码255.255.255.0，网关192.168.1.1<br /></li>
-<li>拔下路由器电源，再次插上，迅速按下RESET键，若设备两个蓝灯连续闪烁，说明已经进入恢复模式<br /></li>
-<li>在浏览器中输入192.168.1.1进入恢复模式页面，选择之前下好的固件开始刷入<br /></li>
-<li>等候1-2分钟，将PC端IP设置为自动获取，在浏览器中输入192.168.1.1即可开始常规配置<br />
-<br /></li>
+<li>下载好相应固件</li>
+<li>通过有线连接路由器和PC，将PC端IP设置为192.168.1.254，子网掩码255.255.255.0，网关192.168.1.1</li>
+<li>拔下路由器电源，再次插上，迅速按下RESET键，若设备两个蓝灯连续闪烁，说明已经进入恢复模式</li>
+<li>在浏览器中输入192.168.1.1进入恢复模式页面，选择之前下好的固件开始刷入</li>
+<li>等候1-2分钟，将PC端IP设置为自动获取，在浏览器中输入192.168.1.1即可开始常规配置</li>
 </ol>
 
 <h2 id="配置路由器">配置路由器</h2>
 
 <ul>
-<li>配置SSH远程登录，默认配置允许，输入 <code>ssh root@&lt;hostname&gt;</code>以登录路由器<br /></li>
-<li>配置Samba文件共享，也可以在网页端配置，以便传输必要文件到路由器<br /></li>
+<li>配置SSH远程登录，默认配置允许，输入 <code>ssh root@&lt;hostname&gt;</code>以登录路由器</li>
+<li>配置Samba文件共享，也可以在网页端配置，以便传输必要文件到路由器</li>
 
 <li><p>配置opkg软件源，写下这篇文章时，以下源可用</p>
 <div class="highlight"><div class="chroma">
@@ -238,12 +235,11 @@ src/gz 17.01_packages http://downloads.pandorabox.com.cn/pandorabox/packages/mip
 <p>接下来安装SS：</p>
 
 <ul>
-<li>远程登录路由器<br /></li>
-<li>执行 <code>opkg update</code><br /></li>
-<li>执行 <code>opkg install shadowsocks-libev</code><br /></li>
-<li>执行 <code>opkg install luci-app-shadowsocks</code><br /></li>
-<li>浏览器中输入192.168.1.1，服务栏目里应该多了一个Shadowsocks<br />
-<br /></li>
+<li>远程登录路由器</li>
+<li>执行 <code>opkg update</code></li>
+<li>执行 <code>opkg install shadowsocks-libev</code></li>
+<li>执行 <code>opkg install luci-app-shadowsocks</code></li>
+<li>浏览器中输入192.168.1.1，服务栏目里应该多了一个Shadowsocks</li>
 </ul>
 
 <p>上述安装过程可能会报密钥校验不通过，此时可以在opkg里加强制选项绕过，还有些情况需要手动下载软件包上传到路由器进行本地安装，总之还有一些小问题没有提到的。未尽之处，尽力而为吧。</p>

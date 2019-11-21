@@ -174,7 +174,7 @@
 
 <p><strong>1.分区</strong></p>
 
-<p>一般而言只需要分 3 个区：根（<code>/</code>），用户主目录(<code>/home</code>) 以及 <code>swap</code> 交换。贴一下我的分区图<br />
+<p>一般而言只需要分 3 个区：根（<code>/</code>），用户主目录(<code>/home</code>) 以及 <code>swap</code> 交换。贴一下我的分区图
 <img src="https://s2.ax1x.com/2019/01/18/kpjHnx.png" alt="分区信息" /></p>
 
 <p>可以看到，一块磁盘 (disk) 被分成很多的分区 (partition) . 其中，稍微现代一点的电脑主板都启用了 <a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">UEFI</a>，所以在磁盘第一个分区是 <a href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ESP</a> 分区。这个分区中就包含了所有可启动系统的启动文件。在没有安装 Linux 之前，它里面只包含有 Windows 自带的启动文件。在安装完成 Linux 后，由于有两个可启动的系统，所以需要一个引导程序(<a href="https://wiki.archlinux.org/index.php/REFInd">rEFInd</a>, Grub 等)来将选择权交给用户。</p>
@@ -362,7 +362,7 @@ mount /dev/nvme0n1p1 /mnt/boot/efi</code></pre></td></tr></table>
 
 <p>关于中文字体，目前推荐的只有两个：<a href="wenq.org">文泉驿</a>，<a href="http://www.arphic.com.tw/">文鼎</a>。</p>
 
-<p>例如要将下载好的 Alegreya.zip 字体安装到系统，只需要将其解压：<br />
+<p>例如要将下载好的 Alegreya.zip 字体安装到系统，只需要将其解压：
 <img src="https://s2.ax1x.com/2019/01/18/kpjOAO.png" alt="" /></p>
 
 <p>可以看到里面的字体文件。挑几个解释一下</p>

@@ -394,7 +394,7 @@
 
 <p>然后就开始了漫长的折腾过程，循着错误信息去改对应的地方，然后看效果。再微调，再看效果，直到满意为止。</p>
 
-<p>下面是我调整完成的样子：<br />
+<p>下面是我调整完成的样子：
 <img src="https://s2.ax1x.com/2019/01/16/kSXd9s.png" alt="kSXd9s.png" /></p>
 
 <h2 id="了解构造">了解构造</h2>
@@ -450,24 +450,24 @@
 <p>这样就完成了所期望的改变。</p>
 
 <blockquote>
-<p>Note: 要输入 Font Awesome 字符，可以打开官网的字符集 <a href="https://fontawesome.com/cheatsheet?from=io">cheatsheet</a>，然后直接复制到编辑器中。<br />
-<img src="https://s2.ax1x.com/2019/01/17/kpFFm9.png" alt="kpFFm9.png" /><br />
+<p>Note: 要输入 Font Awesome 字符，可以打开官网的字符集 <a href="https://fontawesome.com/cheatsheet?from=io">cheatsheet</a>，然后直接复制到编辑器中。
+<img src="https://s2.ax1x.com/2019/01/17/kpFFm9.png" alt="kpFFm9.png" />
 例如，通过浏览器搜索找到上行箭头，复制之。</p>
 
-<p>另外如果使用 vim，可以直接输入对应的十六进制编码来完成字符的输入。比如，我要输入上行箭头（fa-arrow-up），它的十六进制码为 <code>f062</code>（在 cheatsheet 中可查）：<br />
-1. 按 <code>i</code> 进入插入模式<br />
-2. 按 <kbd>Ctrl</kbd> + <kbd>v</kbd><br />
-3. 按 <code>u</code> 进入十六进制输入模式<br />
-4. 输入 <code>f062</code><br />
+<p>另外如果使用 vim，可以直接输入对应的十六进制编码来完成字符的输入。比如，我要输入上行箭头（fa-arrow-up），它的十六进制码为 <code>f062</code>（在 cheatsheet 中可查）：
+1. 按 <code>i</code> 进入插入模式
+2. 按 <kbd>Ctrl</kbd> + <kbd>v</kbd>
+3. 按 <code>u</code> 进入十六进制输入模式
+4. 输入 <code>f062</code>
 5. 按 <kbd>Esc</kbd> 返回正常模式</p>
 
 <p>inputing... <i class="fa fa-arrow-up"> </i></p>
 
-<p>另，<code>:help i_CTRL-V_digit</code><br />
-In insert-mode, type control+V followed by<br />
-- <code>a</code> decimal number<br />
-- <code>x</code> then a hex number<br />
-- <code>u</code> then a 4-hexchar unicode sequence<br />
+<p>另，<code>:help i_CTRL-V_digit</code>
+In insert-mode, type control+V followed by
+- <code>a</code> decimal number
+- <code>x</code> then a hex number
+- <code>u</code> then a 4-hexchar unicode sequence
 - <code>U</code> then an 8-hexchar unicode sequence</p>
 </blockquote>
 
@@ -645,7 +645,7 @@ In insert-mode, type control+V followed by<br />
 <span class="na">ramp-load-7-foreground</span> <span class="o">=</span> <span class="s">#ff5555</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告CPU使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：<br />
+<p>这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告CPU使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：
 <img src="https://s2.ax1x.com/2019/01/17/kpVXGt.gif" alt="kpVXGt.gif" /></p>
 
 <p>内存模块也是类似的。先看一下配置，</p>
@@ -912,7 +912,7 @@ In insert-mode, type control+V followed by<br />
 <span class="na">animation-charging-framerate</span> <span class="o">=</span> <span class="s">750</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照0、1、2的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：<br />
+<p>上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照0、1、2的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：
 <img src="https://s2.ax1x.com/2019/01/17/kpQbCQ.gif" alt="kpQbCQ.gif" /></p>
 
 <h3 id="mpd-模块">MPD 模块</h3>
@@ -920,17 +920,16 @@ In insert-mode, type control+V followed by<br />
 <p><a href="https://www.musicpd.org/">MPD</a> 全称 Music Player Daemon.</p>
 
 <blockquote>
-<p>MPD (music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate client is needed.<br />
+<p>MPD (music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate client is needed.
 <div style="text-align:right">──adpted from archwiki</div></p>
 </blockquote>
 
 <p>MPD是一个轻量的本地音乐播放框架。需要和客户端（mpc）一起使用。大致分为几步：</p>
 
 <ol>
-<li><code>$ mpd</code> 启动 mpd 进程<br /></li>
-<li><code>$ mpc add &lt;MusicDir&gt;</code> 添加本地音乐文件夹<br /></li>
-<li><code>$ mpc play</code> 开始播放<br />
-<br /></li>
+<li><code>$ mpd</code> 启动 mpd 进程</li>
+<li><code>$ mpc add &lt;MusicDir&gt;</code> 添加本地音乐文件夹</li>
+<li><code>$ mpc play</code> 开始播放</li>
 </ol>
 
 <p>如我们所见，非常轻量。但是 mpc 是命令行工具，使用起来难免有些不顺手。好在 polybar 已经内置了 mpd 模块，我们只需要改改样式就可以了。</p>
@@ -1020,7 +1019,7 @@ In insert-mode, type control+V followed by<br />
 <span class="c1">;;; }}}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>配置好我们需要的样式就大功告成啦，看一下效果：<br />
+<p>配置好我们需要的样式就大功告成啦，看一下效果：
 <img src="https://s2.ax1x.com/2019/01/17/kpgZLt.gif" alt="kpgZLt.gif" /></p>
 
 <h2 id="总结">总结</h2>
@@ -1030,18 +1029,10 @@ In insert-mode, type control+V followed by<br />
 <h2 id="reference">Reference</h2>
 
 <ul>
-<li><a href="https://github.com/jaagr/polybar/wiki">Polybar wiki</a><br /></li>
-<li><a href="https://github.com/jaagr/dots/tree/master/.config/polybar/testing">Polybar example</a><br /></li>
-<li><a href="https://www.reddit.com/r/unixporn/comments/5pikkd/how_to_get_polybar_icons_working/">How to get polybar icons working</a><br /></li>
-<li><a href="https://forum.archlabslinux.com/t/show-us-your-polybar/159/10">Show Us Your Polybar - Artwork / Polybar &amp; Tint2 Configs - ArchLabs Linux</a><br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br /></li>
+<li><a href="https://github.com/jaagr/polybar/wiki">Polybar wiki</a></li>
+<li><a href="https://github.com/jaagr/dots/tree/master/.config/polybar/testing">Polybar example</a></li>
+<li><a href="https://www.reddit.com/r/unixporn/comments/5pikkd/how_to_get_polybar_icons_working/">How to get polybar icons working</a></li>
+<li><a href="https://forum.archlabslinux.com/t/show-us-your-polybar/159/10">Show Us Your Polybar - Artwork / Polybar &amp; Tint2 Configs - ArchLabs Linux</a></li>
 </ul>
 
     </div>

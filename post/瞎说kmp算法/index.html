@@ -300,21 +300,20 @@ bacbababaabcbab|
 <p>先来看看它如何产生的吧，关于它的生成，许多博文讲得很清楚了。其中大多是用前缀集、后缀集的概念描述。设有字符串<code>str = ababba</code>, 它的长度<code>length(str) = 6</code>,</p>
 
 <ul>
-<li><strong>前缀集</strong>：去掉字符串尾部 1-5 个字符得到的所有子串。记作 <code>P(str)</code> = {a, ab, aba, abab, ababb}.<br /></li>
-<li><strong>后缀集</strong>：去掉字符串头部 1-5 个字符得到的所有子串。记作 <code>S(str)</code> = {a, ba, bba, abba, babba}.<br />
-<br /></li>
+<li><strong>前缀集</strong>：去掉字符串尾部 1-5 个字符得到的所有子串。记作 <code>P(str)</code> = {a, ab, aba, abab, ababb}.</li>
+<li><strong>后缀集</strong>：去掉字符串头部 1-5 个字符得到的所有子串。记作 <code>S(str)</code> = {a, ba, bba, abba, babba}.</li>
 </ul>
 
-<p>该字符串<code>str = ababba</code>对应的 partial mathch value (PMV) 计算方式：<br />
-$$<br />
-v = \max_{i\in S(\texttt{str}) \cap P(\texttt{str})} \text{length}(i) := f(\texttt{str})<br />
-$$<br />
+<p>该字符串<code>str = ababba</code>对应的 partial mathch value (PMV) 计算方式：
+$$
+v = \max_{i\in S(\texttt{str}) \cap P(\texttt{str})} \text{length}(i) := f(\texttt{str})
+$$
 于是，给定一个字符串<code>str</code>，我们的<code>f(str)</code>就能返回它的PMV. 现在有请我们的主角<code>K = abababca</code>上场，我们来看看如何构建它的PMT.</p>
 
 <blockquote>
-<p>Note: 为了防止我自定义的术语让你感到很吃力，先给你洗个脑。<br />
-PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.<br />
-PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.<br />
+<p>Note: 为了防止我自定义的术语让你感到很吃力，先给你洗个脑。
+PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.
+PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.
 PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.</p>
 </blockquote>
 
@@ -613,14 +612,14 @@ bacbababaabcbab
 </div>
 <p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
 
-<p><div style="text-align:center"><br />
-    <code><br />
-        jump_chars = PML - PMT[PML-1]<br />
-    </code><br />
-</div><br />
+<p><div style="text-align:center">
+    <code>
+        jump_chars = PML - PMT[PML-1]
+    </code>
+</div>
 其中，PML 表示 partial match length，代表当前匹配长度，比如step5的匹配长度 <code>PML=5</code>.</p>
 
-<p>Q: PMT是什么？它为什么这么屌？凭什么它这么屌？它是干嘛的呢？<br />
+<p>Q: PMT是什么？它为什么这么屌？凭什么它这么屌？它是干嘛的呢？
 A: 可以说PMT就是待匹配字符串的本体了。</p>
 
 <h2 id="复杂度分析">复杂度分析</h2>
@@ -632,10 +631,7 @@ A: 可以说PMT就是待匹配字符串的本体了。</p>
 <h2 id="reference">Reference</h2>
 
 <ol>
-<li><a href="http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/">The Knuth-Morris-Pratt Algorithm in my own words</a><br />
-<br />
-<br />
-<br /></li>
+<li><a href="http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/">The Knuth-Morris-Pratt Algorithm in my own words</a></li>
 </ol>
 
     </div>

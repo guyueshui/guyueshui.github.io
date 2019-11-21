@@ -202,10 +202,9 @@
 <p>where</p>
 
 <ul>
-<li><code>OPERATOR</code> - what you want to do? This mainly covers copy, cut, paste, etc.<br /></li>
-<li><code>NUMBER</code> - how many times do you want? It's nothing but repeating the operation <code>NUMBER</code> times, and it's <strong>optional</strong>.<br /></li>
-<li><code>MOTION</code> - where do you want to go? This point out the scope where the <code>OPERATOR</code> applies.<br />
-<br /></li>
+<li><code>OPERATOR</code> - what you want to do? This mainly covers copy, cut, paste, etc.</li>
+<li><code>NUMBER</code> - how many times do you want? It's nothing but repeating the operation <code>NUMBER</code> times, and it's <strong>optional</strong>.</li>
+<li><code>MOTION</code> - where do you want to go? This point out the scope where the <code>OPERATOR</code> applies.</li>
 </ul>
 
 <blockquote>
@@ -217,36 +216,34 @@
 <h3 id="copy-cut-paste">Copy, Cut, Paste</h3>
 
 <ul>
-<li>v - visual mode, now you can select what you want<br /></li>
-<li>V - visual in line, this is extremely useful when you want to copy a line, just <code>V</code>+<code>y</code>!<br /></li>
-<li>y - yank, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, copy the selected text to clipboard (<code>&quot;</code>)<br />
-&gt; - <code>yy</code>: copy current line<br />
-&gt; - <code>5yy</code>: copy 5 lines below<br />
-&gt; - <code>y</code>+<code>MOTION</code>: copy the motion scope<br />
-&gt;    + <code>y0</code>: copy from here to BOL (beginning of line)<br />
-&gt;    + <code>y$</code>: copy from here to EOL<br />
-&gt;    + <code>y4G</code>: copy from here to line 4<br />
-&gt;    + <code>y?bar</code>: copy from here to previous occurrence of <code>bar</code><br /></li>
-<li>d - delete &amp; yank, not only delete, but also yank<br /></li>
-<li>p - paste after the cursor<br /></li>
-<li>P - paste before the cursor<br />
-<br /></li>
+<li>v - visual mode, now you can select what you want</li>
+<li>V - visual in line, this is extremely useful when you want to copy a line, just <code>V</code>+<code>y</code>!</li>
+<li>y - yank, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, copy the selected text to clipboard (<code>&quot;</code>)
+&gt; - <code>yy</code>: copy current line
+&gt; - <code>5yy</code>: copy 5 lines below
+&gt; - <code>y</code>+<code>MOTION</code>: copy the motion scope
+&gt;    + <code>y0</code>: copy from here to BOL (beginning of line)
+&gt;    + <code>y$</code>: copy from here to EOL
+&gt;    + <code>y4G</code>: copy from here to line 4
+&gt;    + <code>y?bar</code>: copy from here to previous occurrence of <code>bar</code></li>
+<li>d - delete &amp; yank, not only delete, but also yank</li>
+<li>p - paste after the cursor</li>
+<li>P - paste before the cursor</li>
 </ul>
 
 <h3 id="edit">Edit</h3>
 
 <ul>
-<li>i - insert<br /></li>
-<li>a - insert after the cursor<br /></li>
-<li>o - insert a line below and insert<br /></li>
-<li>O - insert a line above and insert<br /></li>
-<li>r - replace, replace the character inplace<br /></li>
-<li>x - delete current character<br /></li>
-<li>s - delete the character and insert<br /></li>
-<li>u - recall the last command<br /></li>
-<li><code>^r</code> - recall the last recall, namely redo<br /></li>
-<li><code>.</code> - repeat the last command<br />
-<br /></li>
+<li>i - insert</li>
+<li>a - insert after the cursor</li>
+<li>o - insert a line below and insert</li>
+<li>O - insert a line above and insert</li>
+<li>r - replace, replace the character inplace</li>
+<li>x - delete current character</li>
+<li>s - delete the character and insert</li>
+<li>u - recall the last command</li>
+<li><code>^r</code> - recall the last recall, namely redo</li>
+<li><code>.</code> - repeat the last command</li>
 </ul>
 
 <blockquote>
@@ -258,34 +255,32 @@
 <h3 id="basic">Basic</h3>
 
 <ul>
-<li>h - move left<br /></li>
-<li>l - move right<br /></li>
-<li>j - move down<br /></li>
-<li>k - move up<br />
-&gt; Note: view <code>(h, l)</code> and <code>(j, k)</code> as pairs<br /></li>
-<li>G - jump to EOF (end of file)<br /></li>
-<li>gg - jump to BOF<br /></li>
-<li><code>x</code> + (gg | G) - jump to line <code>x</code> (must be a valid line number)<br />
-<br /></li>
+<li>h - move left</li>
+<li>l - move right</li>
+<li>j - move down</li>
+<li>k - move up
+&gt; Note: view <code>(h, l)</code> and <code>(j, k)</code> as pairs</li>
+<li>G - jump to EOF (end of file)</li>
+<li>gg - jump to BOF</li>
+<li><code>x</code> + (gg | G) - jump to line <code>x</code> (must be a valid line number)</li>
 </ul>
 
 <p>Some additional movements:</p>
 
 <ul>
-<li>w - next word, points to the first letter<br /></li>
-<li>b - back, previous word, points to the first letter<br /></li>
-<li>e - end, jump to the end of the word<br />
-<br /><br /></li>
-<li><code>%</code> - find the bracket matches (<code>( )</code>,<code>{ }</code>, <code>[ ]</code>...)<br />
-<br /><br /></li>
-<li><code>^e</code> - scroll down<br /></li>
-<li><code>^y</code> - scroll up<br /></li>
-<li><code>^d</code> - half-screen down<br /></li>
-<li><code>^u</code> - half-screen up<br />
-<br /><br /></li>
-<li><code>*</code> - jump to next occurrence of current word<br /></li>
-<li><code>#</code> - jump to previous occurrence of current word<br />
+<li>w - next word, points to the first letter</li>
+<li>b - back, previous word, points to the first letter</li>
+<li>e - end, jump to the end of the word
 <br /></li>
+<li><code>%</code> - find the bracket matches (<code>( )</code>,<code>{ }</code>, <code>[ ]</code>...)
+<br /></li>
+<li><code>^e</code> - scroll down</li>
+<li><code>^y</code> - scroll up</li>
+<li><code>^d</code> - half-screen down</li>
+<li><code>^u</code> - half-screen up
+<br /></li>
+<li><code>*</code> - jump to next occurrence of current word</li>
+<li><code>#</code> - jump to previous occurrence of current word</li>
 </ul>
 
 <blockquote>
@@ -295,20 +290,19 @@
 <h3 id="inline-movement">Inline movement</h3>
 
 <ul>
-<li><code>^</code>: jump to the first character which is not a blank (space, tab, <code>\n</code>, <code>\r</code>)<br /></li>
-<li><code>g_</code>: jump to the last character which isn't a blank<br />
-<br /><br /></li>
-<li><code>0</code>: jump to the beginning<br /></li>
-<li><code>$</code>: jump to the end<br />
-<br /><br /></li>
-<li>f<code>x</code>: find next <code>x</code> in current line<br />
-&gt; Note: you can use <code>;</code>(alongside) and <code>,</code>(reverse side) to repeat this in two directions<br /></li>
-<li>F<code>x</code>: find previous <code>x</code> in current line<br />
-&gt; Note: same rules can be applied<br />
-<br /><br /></li>
-<li>t<code>x</code>: find next <code>x</code> and move 1 backward<br /></li>
-<li>T<code>x</code>: find previous <code>x</code> and move 1 backward<br />
+<li><code>^</code>: jump to the first character which is not a blank (space, tab, <code>\n</code>, <code>\r</code>)</li>
+<li><code>g_</code>: jump to the last character which isn't a blank
 <br /></li>
+<li><code>0</code>: jump to the beginning</li>
+<li><code>$</code>: jump to the end
+<br /></li>
+<li>f<code>x</code>: find next <code>x</code> in current line
+&gt; Note: you can use <code>;</code>(alongside) and <code>,</code>(reverse side) to repeat this in two directions</li>
+<li>F<code>x</code>: find previous <code>x</code> in current line
+&gt; Note: same rules can be applied
+<br /></li>
+<li>t<code>x</code>: find next <code>x</code> and move 1 backward</li>
+<li>T<code>x</code>: find previous <code>x</code> and move 1 backward</li>
 </ul>
 
 <p><img src="https://i0.wp.com/yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/line_moves.jpg?zoom=2" alt="Image adapted from REF3" /></p>
@@ -320,14 +314,13 @@
 <h3 id="search-replace">Search &amp; Replace</h3>
 
 <ul>
-<li><code>/keyword</code> - search <code>keyword</code> after the cursor<br /></li>
-<li><code>?keyword</code> - search   <code>keyword</code> before the cursor<br />
-&gt; Note: use <code>n</code>(search next) or <code>N</code>(search previous) for quick search<br /></li>
-<li><code>:{search_scope}s/{target}/{replace}/{replace_flag}</code> - replace <code>{target}</code> to <code>{replace}</code><br />
-&gt; - <code>s</code> stands for substitute.<br />
-&gt; - <code>:%s/a/b/g</code>: global (<code>%</code>) search <code>a</code>, replace it to <code>b</code> at every (<code>g</code>) occurrence<br />
-&gt; - <code>:%s/a/b/gc</code>: interact with every replace<br />
-<br /></li>
+<li><code>/keyword</code> - search <code>keyword</code> after the cursor</li>
+<li><code>?keyword</code> - search   <code>keyword</code> before the cursor
+&gt; Note: use <code>n</code>(search next) or <code>N</code>(search previous) for quick search</li>
+<li><code>:{search_scope}s/{target}/{replace}/{replace_flag}</code> - replace <code>{target}</code> to <code>{replace}</code>
+&gt; - <code>s</code> stands for substitute.
+&gt; - <code>:%s/a/b/g</code>: global (<code>%</code>) search <code>a</code>, replace it to <code>b</code> at every (<code>g</code>) occurrence
+&gt; - <code>:%s/a/b/gc</code>: interact with every replace</li>
 </ul>
 
 <p><strong>More detail</strong></p>
@@ -344,16 +337,15 @@
 <p>The default range is current line. See some examples:</p>
 
 <ul>
-<li><code>:1,10s/from/to</code> - search and replace between line 1 and 10 (included)<br /></li>
-<li><code>:10s/from/to/</code> - search and replace only in line 10<br /></li>
-<li><code>:%s/from/to/</code> - in global scope<br />
-<br /></li>
+<li><code>:1,10s/from/to</code> - search and replace between line 1 and 10 (included)</li>
+<li><code>:10s/from/to/</code> - search and replace only in line 10</li>
+<li><code>:%s/from/to/</code> - in global scope</li>
 </ul>
 
-<p><code>flags</code> can be<br />
-- g: replace all matches in whole line w/o confirmation<br />
-- c: confirm before replace<br />
-- i: ignore lower/upper case<br />
+<p><code>flags</code> can be
+- g: replace all matches in whole line w/o confirmation
+- c: confirm before replace
+- i: ignore lower/upper case
 - e: ignore error</p>
 
 <p>Note that flags can be combined together, e.g., <code>:%s/from/to/gc</code> means search and replace in global and ask for confirmation before each replacement.</p>
@@ -534,10 +526,10 @@
 </tbody>
 </table>
 
-<p>Some examples:<br />
-- remove the spaces of eol: <code>%s/\s+$//g</code><br />
-- remove spaces of bol: <code>%s/^\s*//</code> or <code>%s/^ *//</code><br />
-- delete empty line: <code>%s/^$//</code> or <code>g/^$/d</code><br />
+<p>Some examples:
+- remove the spaces of eol: <code>%s/\s+$//g</code>
+- remove spaces of bol: <code>%s/^\s*//</code> or <code>%s/^ *//</code>
+- delete empty line: <code>%s/^$//</code> or <code>g/^$/d</code>
 - delete lines with <code>&lt;space&gt;</code> or <code>&lt;tab&gt;</code> as beginning: <code>%s/^[ |\t]*$//</code> or <code>g/^[ |\t]*$/d</code></p>
 
 <p>Note that pattern in regex scoped by <code>\(&lt;pattern&gt;\)</code> can be refered as <code>\1</code>, <code>\2</code>, etc. in the latter statement. For example, I want to replace every &quot;abc...xyz&quot; to &quot;xyz...abc&quot;, just write like this</p>
@@ -562,14 +554,13 @@
 <h3 id="markers">Markers</h3>
 
 <ul>
-<li><code>:marks</code> - list of marks<br /></li>
-<li><code>mk</code> - mark current position (can use a-z)<br />
-&gt; also known as <code>:mark k</code><br /></li>
-<li><code>'k</code> - move to mark k<br /></li>
-<li><code>d'k</code> - delete from current position to mark k<br /></li>
-<li><code>'a-z</code> - same file<br /></li>
-<li><code>'A-Z</code> - between files<br />
-<br /></li>
+<li><code>:marks</code> - list of marks</li>
+<li><code>mk</code> - mark current position (can use a-z)
+&gt; also known as <code>:mark k</code></li>
+<li><code>'k</code> - move to mark k</li>
+<li><code>d'k</code> - delete from current position to mark k</li>
+<li><code>'a-z</code> - same file</li>
+<li><code>'A-Z</code> - between files</li>
 </ul>
 
 <blockquote>
@@ -585,12 +576,11 @@
 <p>See this magic:</p>
 
 <ol>
-<li><code>^</code> jump to BOL<br /></li>
-<li><code>^V</code> enter block mode<br /></li>
-<li><code>4j</code> move 4 lines down<br /></li>
-<li><code>I</code> enter insert mode and add something<br /></li>
-<li><code>Esc</code> to see the effect<br />
-<br /></li>
+<li><code>^</code> jump to BOL</li>
+<li><code>^V</code> enter block mode</li>
+<li><code>4j</code> move 4 lines down</li>
+<li><code>I</code> enter insert mode and add something</li>
+<li><code>Esc</code> to see the effect</li>
 </ol>
 
 <p><img src="https://i1.wp.com/yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif?zoom=2" alt="Image adapted from REF3" /></p>
@@ -598,11 +588,10 @@
 <p>Additionally, you can</p>
 
 <ol>
-<li><code>^v/v/V</code> enter visual mode<br /></li>
-<li><code>J</code> joint them into one line<br /></li>
-<li><code>&lt;</code> or <code>&gt;</code> modify indents<br /></li>
-<li><code>=</code> auto indent (extremely powerful?)<br />
-<br /></li>
+<li><code>^v/v/V</code> enter visual mode</li>
+<li><code>J</code> joint them into one line</li>
+<li><code>&lt;</code> or <code>&gt;</code> modify indents</li>
+<li><code>=</code> auto indent (extremely powerful?)</li>
 </ol>
 
 <p><img src="https://i1.wp.com/yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/autoindent.gif?zoom=2" alt="Image adapted from REF3" /></p>
@@ -610,12 +599,11 @@
 <p>or</p>
 
 <ol>
-<li><code>^v</code> enter block mode<br /></li>
-<li>select some line<br /></li>
-<li><code>$</code> jump to EOL<br /></li>
-<li><code>A</code> append something<br /></li>
-<li><code>Esc</code> see the effect<br />
-<br /></li>
+<li><code>^v</code> enter block mode</li>
+<li>select some line</li>
+<li><code>$</code> jump to EOL</li>
+<li><code>A</code> append something</li>
+<li><code>Esc</code> see the effect</li>
 </ol>
 
 <p><img src="https://i2.wp.com/yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/append-to-many-lines.gif?zoom=2" alt="Image adapted from REF3" /></p>
@@ -628,9 +616,9 @@
 
 <p>Summarization:</p>
 
-<p><code>qa</code> - record macro a<br />
-<code>q</code> - stop recording macro<br />
-<code>@a</code> - run macro a<br />
+<p><code>qa</code> - record macro a
+<code>q</code> - stop recording macro
+<code>@a</code> - run macro a
 <code>@@</code> - rerun last run macro</p>
 
 <h3 id="clipboard">Clipboard</h3>
@@ -659,61 +647,56 @@
 <h3 id="multi-file">Multi-file</h3>
 
 <ul>
-<li><code>:e &lt;file&gt;</code> - edit <code>&lt;file&gt;</code> in new buffer<br /></li>
-<li><code>bnext</code> - go to the next buffer<br /></li>
-<li><code>bprev</code> - go previous<br /></li>
-<li><code>bd</code> - delete a buffer (close a file)<br /></li>
-<li><code>ls</code> - list all open buffers<br />
-<br /></li>
+<li><code>:e &lt;file&gt;</code> - edit <code>&lt;file&gt;</code> in new buffer</li>
+<li><code>bnext</code> - go to the next buffer</li>
+<li><code>bprev</code> - go previous</li>
+<li><code>bd</code> - delete a buffer (close a file)</li>
+<li><code>ls</code> - list all open buffers</li>
 </ul>
 
 <p><strong>Multi-window</strong></p>
 
 <ul>
-<li><code>:sp &lt;file&gt;</code> - split horizontally and open <code>&lt;file&gt;</code><br /></li>
-<li><code>:vsp</code> - split vertically <s>and open filename optionally, same file by default</s><br /></li>
-<li><code>^w</code> + <code>h/j/k/l</code> - focus left/down/up/right window<br /></li>
-<li><code>:close</code> - close current window (buffer &amp; file)<br />
-<br /></li>
+<li><code>:sp &lt;file&gt;</code> - split horizontally and open <code>&lt;file&gt;</code></li>
+<li><code>:vsp</code> - split vertically <s>and open filename optionally, same file by default</s></li>
+<li><code>^w</code> + <code>h/j/k/l</code> - focus left/down/up/right window</li>
+<li><code>:close</code> - close current window (buffer &amp; file)</li>
 </ul>
 
 <p><strong>Multi-tab</strong></p>
 
 <ul>
-<li><code>tabnew &lt;file&gt;</code> - open <code>&lt;file&gt;</code> in new tab, empty file by default<br /></li>
-<li><code>gt</code> or <code>:tabnext</code> - move to the next tab<br /></li>
-<li><code>gT</code> or <code>:tabprev</code> - move to previous<br /></li>
-<li><code>&lt;num&gt;gt</code> - move to tab number <code>&lt;num&gt;</code><br /></li>
-<li><code>:tabclose</code> - close the current tab (windows &amp; files)<br /></li>
-<li><code>:tabonly</code> - close all tabs except for the current one<br /></li>
-<li><code>:tabdo &lt;cmd&gt;</code> - apply the <code>&lt;cmd&gt;</code> to all tabs<br />
-&gt; <code>tabdo q</code> will close all tabs<br />
-<br /></li>
+<li><code>tabnew &lt;file&gt;</code> - open <code>&lt;file&gt;</code> in new tab, empty file by default</li>
+<li><code>gt</code> or <code>:tabnext</code> - move to the next tab</li>
+<li><code>gT</code> or <code>:tabprev</code> - move to previous</li>
+<li><code>&lt;num&gt;gt</code> - move to tab number <code>&lt;num&gt;</code></li>
+<li><code>:tabclose</code> - close the current tab (windows &amp; files)</li>
+<li><code>:tabonly</code> - close all tabs except for the current one</li>
+<li><code>:tabdo &lt;cmd&gt;</code> - apply the <code>&lt;cmd&gt;</code> to all tabs
+&gt; <code>tabdo q</code> will close all tabs</li>
 </ul>
 
 <h3 id="spell-check">Spell Check</h3>
 
 <ul>
-<li><code>:set spell</code> - toggle on spell checker<br /></li>
-<li><code>:set nospell</code> - toggle off spell checker<br /></li>
-<li><code>]s</code> - move to next mistake<br /></li>
-<li><code>[s</code> - move tp previous mistake<br /></li>
-<li><code>z=</code> - choose an alternative<br /></li>
-<li><code>zg</code> - add to userdict<br /></li>
-<li><code>zw</code> - remove from userdict<br />
-<br />
-<br /></li>
+<li><code>:set spell</code> - toggle on spell checker</li>
+<li><code>:set nospell</code> - toggle off spell checker</li>
+<li><code>]s</code> - move to next mistake</li>
+<li><code>[s</code> - move tp previous mistake</li>
+<li><code>z=</code> - choose an alternative</li>
+<li><code>zg</code> - add to userdict</li>
+<li><code>zw</code> - remove from userdict</li>
 </ul>
 
 <h2 id="reference">Reference</h2>
 
 <ol>
-<li><a href="https://github.com/ruanyf/articles/blob/master/dev/vim/operation.md">Vim操作</a><br /></li>
-<li><a href="https://harttle.land/2016/08/08/vim-search-in-file.html">在 Vim 中优雅地查找和替换</a><br /></li>
-<li><a href="https://globalinheart.wordpress.com/2011/09/07/%E7%AE%80%E6%98%8E-vim-%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5/">简明 Vim 练级攻略</a><br /></li>
-<li><a href="https://vim.rtorr.com/">Vim Cheat Sheet</a><br /></li>
-<li><a href="https://devhints.io/vim">Vim cheatsheet</a><br /></li>
-<li><a href="https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/">Vim查找替换及正则表达式的使用</a><br /></li>
+<li><a href="https://github.com/ruanyf/articles/blob/master/dev/vim/operation.md">Vim操作</a></li>
+<li><a href="https://harttle.land/2016/08/08/vim-search-in-file.html">在 Vim 中优雅地查找和替换</a></li>
+<li><a href="https://globalinheart.wordpress.com/2011/09/07/%E7%AE%80%E6%98%8E-vim-%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5/">简明 Vim 练级攻略</a></li>
+<li><a href="https://vim.rtorr.com/">Vim Cheat Sheet</a></li>
+<li><a href="https://devhints.io/vim">Vim cheatsheet</a></li>
+<li><a href="https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/">Vim查找替换及正则表达式的使用</a></li>
 </ol>
 
     </div>

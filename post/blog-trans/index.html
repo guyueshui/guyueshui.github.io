@@ -290,9 +290,8 @@
 <p>Even主题还是比较好的，将serif和sans分成了两族，这应该是很自然的。之前Melody里面只能设置全局，一换所有字体都换了，也可能是我不会换orz. 可以看到这里可以自定义字体族，我只是在前面加了两个而已，</p>
 
 <ul>
-<li>serif：Linux Libertine O<br /></li>
-<li>sans: Linux Biolinum O<br />
-<br /></li>
+<li>serif：Linux Libertine O</li>
+<li>sans: Linux Biolinum O</li>
 </ul>
 
 <p>这两个字体我十分推荐，源于SICP的排版字体，非常耐看！Sans用于标题等粗文本，serif用于排版正文。关于字体名字的获得：</p>
@@ -437,20 +436,19 @@
 <p>部署过程参考文档即可：<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on Github</a>. 我还是大致翻译一下吧：</p>
 
 <ol>
-<li>在你的Github上新建一个仓库，假设叫<code>blog</code>. 这个仓库将用来存放Hugo工程文件，也就是你本地的Hugo site根目录。<br /></li>
-<li>在你的Github上创建仓库<code>&lt;username&gt;.github.io</code>，其中<code>&lt;username&gt;</code>为你的Github账户名，这个仓库将用来存放Hugo生成的整个网站。如果你已经有这个仓库了，清空之。<br /></li>
-<li><code>git clone git@github.com:&lt;username&gt;/blog.git &amp;&amp; cd blog</code><br /></li>
-<li>将你的本地Hugo文件夹复制到<code>blog</code>中去，确保你的网站可以在本地正常运作（使用<code>hugo server</code>或<code>hugo --config &lt;your-config&gt;.toml server</code>）然后访问<code>localhost:1313</code><br /></li>
-<li>如果你觉得网站已经符合你的预期了：<br />
+<li>在你的Github上新建一个仓库，假设叫<code>blog</code>. 这个仓库将用来存放Hugo工程文件，也就是你本地的Hugo site根目录。</li>
+<li>在你的Github上创建仓库<code>&lt;username&gt;.github.io</code>，其中<code>&lt;username&gt;</code>为你的Github账户名，这个仓库将用来存放Hugo生成的整个网站。如果你已经有这个仓库了，清空之。</li>
+<li><code>git clone git@github.com:&lt;username&gt;/blog.git &amp;&amp; cd blog</code></li>
+<li>将你的本地Hugo文件夹复制到<code>blog</code>中去，确保你的网站可以在本地正常运作（使用<code>hugo server</code>或<code>hugo --config &lt;your-config&gt;.toml server</code>）然后访问<code>localhost:1313</code></li>
+<li>如果你觉得网站已经符合你的预期了：
 
 <ul>
-<li>按下<kbd>Ctrl</kbd>+<kbd>C</kbd>终止本地服务<br /></li>
-<li><code>rm -rf public</code>删除整个<code>public</code>文件夹，不用担心，你总可以使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成它<br /></li>
+<li>按下<kbd>Ctrl</kbd>+<kbd>C</kbd>终止本地服务</li>
+<li><code>rm -rf public</code>删除整个<code>public</code>文件夹，不用担心，你总可以使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成它</li>
 </ul></li>
-<li>将<code>&lt;username&gt;.github.io</code>添加为本仓库的<a href="https://github.blog/2016-02-01-working-with-submodules/">submodule</a>, 这样一来<code>public</code>文件夹下的内容就会推送到<code>&lt;username&gt;.github.io</code>这个仓库。使用如下命令来完成：<code>git submodule add -b master git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code><br /></li>
-<li>使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成你的网站，生成的文件将在<code>public</code>文件夹下<br /></li>
-<li>进入<code>public</code>文件夹，使用git完成推送<br />
-<br /></li>
+<li>将<code>&lt;username&gt;.github.io</code>添加为本仓库的<a href="https://github.blog/2016-02-01-working-with-submodules/">submodule</a>, 这样一来<code>public</code>文件夹下的内容就会推送到<code>&lt;username&gt;.github.io</code>这个仓库。使用如下命令来完成：<code>git submodule add -b master git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code></li>
+<li>使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成你的网站，生成的文件将在<code>public</code>文件夹下</li>
+<li>进入<code>public</code>文件夹，使用git完成推送</li>
 </ol>
 
 <blockquote>
@@ -461,9 +459,9 @@
 <hr />
 
 <ol>
-<li id="fn:a"><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a><br />
+<li id="fn:a"><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a>
  <a class="footnote-return" href="#fnref:a">↩</a></li>
-<li id="fn:b"><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a><br />
+<li id="fn:b"><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a>
  <a class="footnote-return" href="#fnref:b">↩</a></li>
 </ol>
 </div>

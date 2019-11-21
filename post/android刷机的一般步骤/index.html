@@ -196,10 +196,9 @@
 <p><strong>数据备份</strong></p>
 
 <ul>
-<li>建议使用<a href="https://www.coolapk.com/">钛备份</a>：可对逐个应用以及系统数据（包括 WIFI 信息，系统设置，短信，联系人，另外还有版本控制）进行备份，root 备份首选。<br /></li>
-<li>Adb 备份<br /></li>
-<li>TWRP 备份<br />
-<br /></li>
+<li>建议使用<a href="https://www.coolapk.com/">钛备份</a>：可对逐个应用以及系统数据（包括 WIFI 信息，系统设置，短信，联系人，另外还有版本控制）进行备份，root 备份首选。</li>
+<li>Adb 备份</li>
+<li>TWRP 备份</li>
 </ul>
 
 <p><strong>配置电脑 Android 调试环境</strong></p>
@@ -221,7 +220,7 @@ Installed as /usr/bin/adb</pre></td></tr></table>
 </div>
 <p>若没有配置，安装软件包：<code>pacman -S android-tools</code> (Arch Linux ver.) Windows 下载对应的工具包，解压即可。不过需要配置一下路径，或者直接把所有的文件都弄到解压的文件夹下操作。</p>
 
-<p>另说一下驱动，在 Linux 和 Mac OS 下，均不需要考虑驱动的问题。在 Windows 下，需要在网上找到相应设备的驱动，安装好之后，才可以用 <code>adb</code> 进行刷机。这里一个显式的标志是：<br />
+<p>另说一下驱动，在 Linux 和 Mac OS 下，均不需要考虑驱动的问题。在 Windows 下，需要在网上找到相应设备的驱动，安装好之后，才可以用 <code>adb</code> 进行刷机。这里一个显式的标志是：
 &gt; 右键开始菜单 =&gt; 设备管理器 =&gt; ADB interface</p>
 
 <p>如果有这个 ADB 设备，则说明设备驱动已经安装好。</p>
@@ -279,7 +278,7 @@ Installed as /usr/bin/adb</pre></td></tr></table>
 <pre class="chroma">$ fastboot flash recovery twrp-xxx.img</pre></td></tr></table>
 </div>
 </div>
-<p>即完成第三方 Rec 的刷入。<br />
+<p>即完成第三方 Rec 的刷入。
 &gt; Note: 此时也可以选择 fastboot boot twrp-xxx.img 临时从第三方 rec 启动</p>
 
 <p><strong>进入第三方 Recovery</strong></p>
@@ -323,14 +322,14 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 </div>
 <p>一般 <code>internal storage</code> 是不会动的，把其他三个分区清掉。</p>
 
-<p>然后安装刷机包，找到事先放好的刷机包位置，刷入，重启！<br />
-&gt; Note: 或者事先没有拷贝的话，确保命令执行目录中有你的刷机包，使用<br />
-&gt; <code>adb push aex-xxx-rom.zip /sdcard</code><br />
-&gt; 即可将刷机包拷贝至手机存储目录。<br />
-&gt;<br />
-&gt; 再或者，使用 ADB sideload 功能边传文件边刷。具体操作在 rec 中：高级 =&gt; ADB sideload<br />
-&gt; 然后再命令行输入<br />
-&gt; <code>adb sideload aex-xxx-rom.zip</code><br />
+<p>然后安装刷机包，找到事先放好的刷机包位置，刷入，重启！
+&gt; Note: 或者事先没有拷贝的话，确保命令执行目录中有你的刷机包，使用
+&gt; <code>adb push aex-xxx-rom.zip /sdcard</code>
+&gt; 即可将刷机包拷贝至手机存储目录。
+&gt;
+&gt; 再或者，使用 ADB sideload 功能边传文件边刷。具体操作在 rec 中：高级 =&gt; ADB sideload
+&gt; 然后再命令行输入
+&gt; <code>adb sideload aex-xxx-rom.zip</code>
 &gt; 即可开始刷机</p>
 
 <p>完了！一般重启需要一些时间，请耐心等待一下。</p>
@@ -338,10 +337,9 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 <p><strong>补丁（root包， gapps包）</strong></p>
 
 <ul>
-<li>Root：推荐 <a href="http://www.supersu.com/">Supersu</a> 或者 <a href="https://www.xda-developers.com/how-to-install-magisk/">Magisk</a><br /></li>
-<li>Gapps：推荐 <a href="https://opengapps.org/">Opengapps</a>. Google 大法好，不带 Google 框架的安卓不是 Android！<br /></li>
-<li>Custom kernel<br />
-<br /></li>
+<li>Root：推荐 <a href="http://www.supersu.com/">Supersu</a> 或者 <a href="https://www.xda-developers.com/how-to-install-magisk/">Magisk</a></li>
+<li>Gapps：推荐 <a href="https://opengapps.org/">Opengapps</a>. Google 大法好，不带 Google 框架的安卓不是 Android！</li>
+<li>Custom kernel</li>
 </ul>
 
 <blockquote>
@@ -409,8 +407,8 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</pre></td></tr></
 <h2 id="reference">Reference</h2>
 
 <ul>
-<li><a href="https://developer.android.com/studio/run/device">在硬件设备上运行应用</a><br /></li>
-<li><a href="https://stackoverflow.com/questions/27017453/fastboot-and-adb-not-working-with-sudo/28127944#28127944">fastboot and adb not working with sudo</a><br /></li>
+<li><a href="https://developer.android.com/studio/run/device">在硬件设备上运行应用</a></li>
+<li><a href="https://stackoverflow.com/questions/27017453/fastboot-and-adb-not-working-with-sudo/28127944#28127944">fastboot and adb not working with sudo</a></li>
 </ul>
 
     </div>

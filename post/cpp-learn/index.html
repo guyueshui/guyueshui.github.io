@@ -177,19 +177,17 @@
 <h2 id="reactor-v-s-proactor">Reactor v.s. Proactor</h2>
 
 <ul>
-<li>epll/wait: reactor模式，不停轮询，发现有事做，就做！<br /></li>
-<li>asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。<br />
-<br /></li>
+<li>epll/wait: reactor模式，不停轮询，发现有事做，就做！</li>
+<li>asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。</li>
 </ul>
 
 <h2 id="几个常用的宏">几个常用的宏</h2>
 
 <ul>
-<li><code>__func__</code>: name of an function, exists in C99/C++11 (<code>__FUNCTION__</code> is non standard)<br /></li>
-<li><code>__LINE__</code>: line number of the code<br /></li>
-<li><code>__FILE__</code>: filename of the file<br /></li>
-<li><code>__DATE__</code> and <code>__TIME__</code>: as you wish<br />
-<br /></li>
+<li><code>__func__</code>: name of an function, exists in C99/C++11 (<code>__FUNCTION__</code> is non standard)</li>
+<li><code>__LINE__</code>: line number of the code</li>
+<li><code>__FILE__</code>: filename of the file</li>
+<li><code>__DATE__</code> and <code>__TIME__</code>: as you wish</li>
 </ul>
 
 <h2 id="不要在ctor里调用虚函数">不要在ctor里调用虚函数</h2>
@@ -203,14 +201,14 @@
 <ol>
 <li><p>从存储空间角度：虚函数对应一个vtable（虚函数表），这大家都知道，可是这个vtable其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到vtable，所以构造函数不能是虚函数。</p></li>
 
-<li><p>从使用角度：虚函数主要用于在信息不全的情况下，能使重载的函数得到对应的调用。构造函数本身就是要初始化实例，那使用虚函数也没有实际意义呀。所以构造函数没有必要是虚函数。<br />
+<li><p>从使用角度：虚函数主要用于在信息不全的情况下，能使重载的函数得到对应的调用。构造函数本身就是要初始化实例，那使用虚函数也没有实际意义呀。所以构造函数没有必要是虚函数。
 虚函数的作用在于通过父类的指针或者引用来调用它的时候能够变成调用子类的那个成员函数。而构造函数是在创建对象时自动调用的，不可能通过父类的指针或者引用去调用，因此也就规定构造函数不能是虚函数。</p></li>
 
 <li><p>构造函数不需要是虚函数，也不允许是虚函数，因为创建一个对象时我们总是要明确指定对象的类型，尽管我们可能通过实验室的基类的指针或引用去访问它。但析构却不一定，我们往往通过基类的指针来销毁对象。这时候如果析构函数不是虚函数，就不能正确识别对象类型从而不能正确调用析构函数。</p></li>
 </ol>
 
-<p>——————————————————<br />
-版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。<br />
+<p>——————————————————
+版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
 原文链接：<a href="https://blog.csdn.net/cainiao000001/article/details/81603782">https://blog.csdn.net/cainiao000001/article/details/81603782</a></p>
 
 <h2 id="虚函数的工作原理">虚函数的工作原理</h2>
@@ -339,13 +337,12 @@
 <p>The destructor is called whenever an object's lifetime ends, which includes</p>
 
 <ul>
-<li>program termination, for objects with static storage duration<br /></li>
-<li>thread exit, for objects with thread-local storage duration<br /></li>
-<li>end of scope, for objects with automatic storage duration and for temporaries whose life was extended by binding to reference<br /></li>
-<li>delete-expressin, for objects with dynamic storage duration<br /></li>
-<li>end of the full expression, for nameless temporaries<br /></li>
-<li>stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.<br />
-<br /></li>
+<li>program termination, for objects with static storage duration</li>
+<li>thread exit, for objects with thread-local storage duration</li>
+<li>end of scope, for objects with automatic storage duration and for temporaries whose life was extended by binding to reference</li>
+<li>delete-expressin, for objects with dynamic storage duration</li>
+<li>end of the full expression, for nameless temporaries</li>
+<li>stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.</li>
 </ul>
 
 <p>c.f. <a href="https://en.cppreference.com/w/cpp/language/destructor">https://en.cppreference.com/w/cpp/language/destructor</a></p>
@@ -383,8 +380,7 @@
 </div>
 </div>
 <ul>
-<li>类的静态成员不占用类的空间，静态成员在程序数据段中。<br />
-<br /></li>
+<li>类的静态成员不占用类的空间，静态成员在程序数据段中。</li>
 </ul>
 
 <h2 id="模板">模板</h2>

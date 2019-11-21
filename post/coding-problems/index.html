@@ -193,15 +193,15 @@
 
 <h2 id="题一-最高得分">题一：最高得分</h2>
 
-<p>一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之后，游戏结束。此时$N$个数字在玩家面前组成一个新的排列，这个数列每相邻两个数字之差的绝对值之和为玩家最终得分。假设玩家前面的$N$个数字从左到右标号为 $n_1,n_2, \dots, n_N$，则最终得分$S$的计算方式如下：<br />
-$$<br />
-S = \text{abs}(n_1-n_2) + \text{abs}(n_2-n_3) + \cdots + \text{abs}(n_{N-1} - n_N).<br />
+<p>一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之后，游戏结束。此时$N$个数字在玩家面前组成一个新的排列，这个数列每相邻两个数字之差的绝对值之和为玩家最终得分。假设玩家前面的$N$个数字从左到右标号为 $n_1,n_2, \dots, n_N$，则最终得分$S$的计算方式如下：
+$$
+S = \text{abs}(n_1-n_2) + \text{abs}(n_2-n_3) + \cdots + \text{abs}(n_{N-1} - n_N).
 $$</p>
 
 <p>请计算玩家在以上游戏规则中把所有数字拿完可以获得的最大得分。</p>
 
 <blockquote>
-<p>思路：拿到这个问题，感觉像是动态规划。得想办法把子问题拆出来。但是一般情况下，并不是这么好拆的。所以从最简单的用例开始。假设只有两个数，这很简单，无论怎么拿，得分都一样。再加一个数呢？你就要考虑从哪里先拿，然后再从哪里先拿的问题。假设现在有三个数，你从前端拿了一个数，则下一步你得考虑从哪里拿的增益比较大。从前端拿得到一个front_gain, 从末端拿得到一个back_gain. 你得比一比哪个会让你的得分最大化。然后下一步继续这样考虑，这就形成了一个递归步。就是说你已经拆出来了！专业店说就是你找除了递推关系式。<br />
+<p>思路：拿到这个问题，感觉像是动态规划。得想办法把子问题拆出来。但是一般情况下，并不是这么好拆的。所以从最简单的用例开始。假设只有两个数，这很简单，无论怎么拿，得分都一样。再加一个数呢？你就要考虑从哪里先拿，然后再从哪里先拿的问题。假设现在有三个数，你从前端拿了一个数，则下一步你得考虑从哪里拿的增益比较大。从前端拿得到一个front_gain, 从末端拿得到一个back_gain. 你得比一比哪个会让你的得分最大化。然后下一步继续这样考虑，这就形成了一个递归步。就是说你已经拆出来了！专业店说就是你找除了递推关系式。
 题外话：Case analysis is more powerful than you thought!</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -363,11 +363,11 @@ $$</p>
 
 <p>小Q去商场购物，经常会遇到找零钱的问题。小Q现在手上有$n$种不同面值的硬币，每种面值的硬币有无限多个。为了方便购物，小Q希望带尽量少的硬币，并且要能组合出$1$到$m$之间（包含$1$和$m$）的所有面值。</p>
 
-<p>输入描述：<br />
-第一行包含两个整数$m, n ~(1 \le n \le 100, ~1 \le m \le 10^9)$，含义如题所述。<br />
+<p>输入描述：
+第一行包含两个整数$m, n ~(1 \le n \le 100, ~1 \le m \le 10^9)$，含义如题所述。
 接下来$n$行，每行一个整数，每$i+1$行的整数表示第$i$种硬币的面值。</p>
 
-<p>输出描述：<br />
+<p>输出描述：
 输出一个整数，表示最少需要携带的硬币数量。如果无解，则输出$-1$.</p>
 
 <p>示例输入：</p>
@@ -397,7 +397,7 @@ $$</p>
 </div>
 </div>
 <blockquote>
-<p>思路：一拿到就让人联想到动态规划。但其实不是，因为它的条件是要构成所有1到m之间的面值。所以就得从1到m慢慢凑出来。假设当前选择的硬币已经可以构成[1, i], 那么我当然下次在选面值的之后，会很理想的去寻找一个面值为i+1的硬币。这样我可以使我构造的最大面值尽可能的大。如果这个面值大于m了，那我们就完事儿了。这是贪心的思想。具体来说，比方已选的硬币可以构造出1到5之间的任何面值，那我在选择一个面值为6的硬币，就可以构造出1到11之间的任何面值。所以我们从面值为1的开始加，记录当前可以构造的最大面值max_constructed，在选择下一个硬币的时候，优先选择面值&lt;=max_constructed+1的硬币。<br />
+<p>思路：一拿到就让人联想到动态规划。但其实不是，因为它的条件是要构成所有1到m之间的面值。所以就得从1到m慢慢凑出来。假设当前选择的硬币已经可以构成[1, i], 那么我当然下次在选面值的之后，会很理想的去寻找一个面值为i+1的硬币。这样我可以使我构造的最大面值尽可能的大。如果这个面值大于m了，那我们就完事儿了。这是贪心的思想。具体来说，比方已选的硬币可以构造出1到5之间的任何面值，那我在选择一个面值为6的硬币，就可以构造出1到11之间的任何面值。所以我们从面值为1的开始加，记录当前可以构造的最大面值max_constructed，在选择下一个硬币的时候，优先选择面值&lt;=max_constructed+1的硬币。
 参考：<a href="https://blog.csdn.net/MOU_IT/article/details/89057036">https://blog.csdn.net/MOU_IT/article/details/89057036</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -608,20 +608,20 @@ $$</p>
 <h2 id="题四-舞会">题四：舞会</h2>
 
 <blockquote>
-<p>链接：<a href="https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec">https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec</a><br />
+<p>链接：<a href="https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec">https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec</a>
 来源：牛客网</p>
 </blockquote>
 
 <p>今天，在冬木市举行了一场盛大的舞会。参加舞会的有n 位男士，从 1 到 n 编号；有 m 位女士，从 1 到 m 编号。对于每一位男士，他们心中都有各自心仪的一些女士，在这次舞会中，他们希望能与每一位自己心仪的女士跳一次舞。同样的，对于每一位女士，她们心中也有各自心仪的一些男士，她们也希望能与每一位自己心仪的男士跳一次舞。在舞会中，对于每一首舞曲，你可以选择一些男士和女士出来跳舞。但是显然的，一首舞曲中一位男士只能和一位女士跳舞，一位女士也只能和一位男士跳舞。由于舞会的时间有限，现在你想知道你最少需要准备多少首舞曲，才能使所有人的心愿都得到满足？</p>
 
-<p>input:<br />
-第一行包含两个整数n,m，表示男士和女士的人数。1≤n,m≤ 1000<br />
-接下来n行，<br />
-第i行表示编号为i的男士有ki个心仪的女生<br />
-然后包含ki个不同的整数分别表示他心仪的女士的编号。<br />
+<p>input:
+第一行包含两个整数n,m，表示男士和女士的人数。1≤n,m≤ 1000
+接下来n行，
+第i行表示编号为i的男士有ki个心仪的女生
+然后包含ki个不同的整数分别表示他心仪的女士的编号。
 接下来m行，以相同的格式描述每一位女士心仪的男士。</p>
 
-<p>output:<br />
+<p>output:
 一个整数，表示最少需要准备的舞曲数目。</p>
 
 <p>示例输入：</p>
@@ -664,7 +664,7 @@ $$</p>
 </div>
 </div>
 <blockquote>
-<p>思路：乍一看好象很难，不知道怎么处理。其实只要仔细看清楚题目要求：要求每个刃都能得到满足！这很重要，即便还有一个我喜欢的人没跟我跳，就得再放一首歌让我跳！了解到这个需求之后，问题就变的简单了，只要统计出每个人心仪人的数量，以及被心仪的数量，对所有人求一个最大值就行了。<br />
+<p>思路：乍一看好象很难，不知道怎么处理。其实只要仔细看清楚题目要求：要求每个刃都能得到满足！这很重要，即便还有一个我喜欢的人没跟我跳，就得再放一首歌让我跳！了解到这个需求之后，问题就变的简单了，只要统计出每个人心仪人的数量，以及被心仪的数量，对所有人求一个最大值就行了。
 参考：<a href="https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec">https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -797,7 +797,7 @@ $$</p>
 <p>给定一个数组，求其全排列。</p>
 
 <blockquote>
-<p>Idea: pick one element as prefix, then add to the permutations of the rest n-1 elems.<br />
+<p>Idea: pick one element as prefix, then add to the permutations of the rest n-1 elems.
 Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://www.cnblogs.com/ranjiewen/p/8059336.html</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -861,7 +861,7 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 </div>
 <h2 id="题六-斜线填充">题六：斜线填充</h2>
 
-<p>给定n x m的矩阵，按照从右上往左下的斜线填充 1 到 n*m 的值。<br />
+<p>给定n x m的矩阵，按照从右上往左下的斜线填充 1 到 n*m 的值。
 例如，对于一个3x3的矩阵,</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1211,24 +1211,23 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 <p>本题需要让你模拟一下在Windows系统里窗口和鼠标的点击操作，具体如下：</p>
 
 <ol>
-<li>屏幕分辨率为3840x2160，左上角坐标为(0, 0)，右下角坐标为(3839, 2159).<br /></li>
-<li>窗口是一个矩形的形状，由左上角坐标(x, y), 和宽高(w, h)四给数字来定位。左上角坐标为(x, y), 右下角坐标为(x+w, y+h). 其中左上角坐标一定会在屏幕范围内，其他一些部分可能会超过屏幕范围。<br /></li>
-<li>窗口的点击和遮挡规则同Windows，但是不考虑关闭窗口、最大化、最小化和强制置顶的情况。即，<br />
+<li>屏幕分辨率为3840x2160，左上角坐标为(0, 0)，右下角坐标为(3839, 2159).</li>
+<li>窗口是一个矩形的形状，由左上角坐标(x, y), 和宽高(w, h)四给数字来定位。左上角坐标为(x, y), 右下角坐标为(x+w, y+h). 其中左上角坐标一定会在屏幕范围内，其他一些部分可能会超过屏幕范围。</li>
+<li>窗口的点击和遮挡规则同Windows，但是不考虑关闭窗口、最大化、最小化和强制置顶的情况。即，
 
 <ol>
-<li>如果发生重叠，后面打开的窗口会显示在前面打开的窗口上面<br /></li>
-<li>当鼠标发生一次点击的时候，需要判断点击到了哪个窗口，如果同个坐标有多个窗口，算点击到最上层的那个<br /></li>
-<li>当一个窗口被点击的时候，会浮动到最上层<br />
-<br /></li>
+<li>如果发生重叠，后面打开的窗口会显示在前面打开的窗口上面</li>
+<li>当鼠标发生一次点击的时候，需要判断点击到了哪个窗口，如果同个坐标有多个窗口，算点击到最上层的那个</li>
+<li>当一个窗口被点击的时候，会浮动到最上层</li>
 </ol></li>
 </ol>
 
-<p>输入描述：<br />
-每个测试输入包含1个测试用例。第一行为2个整数N，M。其中N表示打开窗口的数目，M表示鼠标点击的数目，其中$0&lt;N,M &lt; 1000$.<br />
-接下来N行，每一行四个整数$x_i, y_i, w_i, h_i$, 分别表示第i个窗口（窗口id为i，从1开始计数）的左上角坐标以及宽高，初始时窗口是按输入的顺序依次打开。其中$0 \le x_i &lt; 3840$, $0 \le y_i &lt; 2160$, $0 &lt; w_i &lt; 3840$, $0 &lt; h_i &lt; 2160$.<br />
+<p>输入描述：
+每个测试输入包含1个测试用例。第一行为2个整数N，M。其中N表示打开窗口的数目，M表示鼠标点击的数目，其中$0&lt;N,M &lt; 1000$.
+接下来N行，每一行四个整数$x_i, y_i, w_i, h_i$, 分别表示第i个窗口（窗口id为i，从1开始计数）的左上角坐标以及宽高，初始时窗口是按输入的顺序依次打开。其中$0 \le x_i &lt; 3840$, $0 \le y_i &lt; 2160$, $0 &lt; w_i &lt; 3840$, $0 &lt; h_i &lt; 2160$.
 再接下来有M行，每一行两个整数$x_j, y_j$, 分别表示接下来发生的鼠标点击坐标。其中$0 \le x_j &lt; 3840, ~0 \le y_j &lt; 2160$</p>
 
-<p>输出描述：<br />
+<p>输出描述：
 对于每次鼠标点击，输出本次点击到的窗口id。如果没有点击到窗口，输出-1.</p>
 
 <p>示例输入：</p>
@@ -1483,11 +1482,11 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 
 <p>Give a rational nunmber in form P/Q, find the position of P/Q in the Stern-Borcot tree.</p>
 
-<p>Input description:<br />
+<p>Input description:
 Input consists of two integers, P and Q (1&lt;=P,Q &lt;= 1000), which represent the rational number P/Q. We promise P and Q are relatively prime.</p>
 
-<p>Output description:<br />
-Output consists of two integers, R and C. R indicates the row index of P/Q in the Stern-Brocot tree, C indicates the index of P/Q in that row.<br />
+<p>Output description:
+Output consists of two integers, R and C. R indicates the row index of P/Q in the Stern-Brocot tree, C indicates the index of P/Q in that row.
 Both R and C are base 1. We promise the position of P/Q is always in the first 12 rows of the Stern-Brocot tree, which means R&lt;=12.</p>
 
 <p>Sample input:</p>
@@ -1961,17 +1960,17 @@ HGBCACABCACABCACAF</pre></td></tr></table>
 
 <p>作为程序员的小Q，它的数列和其他人的不太一样，他有$2^n$个数。老板问了小Q一共m次，每次给出一个整数$q_i$ (1&lt;=i&lt;=m)，要求小Q把这些数每$2^{q_i}$分为一组，然后把每组进行翻转，小Q想知道每次操作后整个序列中的逆序对个数是多少呢？</p>
 
-<p>例如：<br />
-对于序列1 3 4 2，逆序对有(4,2), (3,2)总数量为2.<br />
+<p>例如：
+对于序列1 3 4 2，逆序对有(4,2), (3,2)总数量为2.
 翻转之后为2 4 3 1，逆序对有(2,1), (4,3), (4,1), (3,1)总数量为4.</p>
 
-<p>输入描述：<br />
-第一行一个数n（0&lt;=n&lt;=20）<br />
-第二行$2^n$个数，表示初始序列（1&lt;=初始序列&lt;=$10^9$）<br />
-第三行一个数m（1&lt;=m&lt;=$10^6$）<br />
+<p>输入描述：
+第一行一个数n（0&lt;=n&lt;=20）
+第二行$2^n$个数，表示初始序列（1&lt;=初始序列&lt;=$10^9$）
+第三行一个数m（1&lt;=m&lt;=$10^6$）
 第四行m个数表示$q_i$ (0&lt;=$q_i$&lt;=n)</p>
 
-<p>输出描述：<br />
+<p>输出描述：
 m行每行一个数表示答案</p>
 
 <p>输入示例：</p>
@@ -2004,11 +2003,11 @@ m行每行一个数表示答案</p>
 0</pre></td></tr></table>
 </div>
 </div>
-<p>说明：<br />
-初始序列2 1 4 3<br />
-$2^{q_1} = 2$ -&gt; 第一次：1 2 3 4 -&gt; 逆序对数0<br />
-$2^{q_2} = 4$ -&gt; 第二次：4 3 2 1 -&gt; 逆序对数6<br />
-$2^{q_3} = 1$ -&gt; 第三次：4 3 2 1 -&gt; 逆序对数6<br />
+<p>说明：
+初始序列2 1 4 3
+$2^{q_1} = 2$ -&gt; 第一次：1 2 3 4 -&gt; 逆序对数0
+$2^{q_2} = 4$ -&gt; 第二次：4 3 2 1 -&gt; 逆序对数6
+$2^{q_3} = 1$ -&gt; 第三次：4 3 2 1 -&gt; 逆序对数6
 $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 
 <blockquote>
@@ -2375,7 +2374,7 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 <h2 id="josephus-problem">Josephus Problem</h2>
 
 <blockquote>
-<p>这个问题是以弗拉维奥·约瑟夫命名的，他是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。<br />
+<p>这个问题是以弗拉维奥·约瑟夫命名的，他是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。
 <div style="text-align:right">——维基百科</div></p>
 </blockquote>
 
@@ -2388,14 +2387,13 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 <p>常见的有两种解法：</p>
 
 <ul>
-<li>单链表模拟<br /></li>
-<li>数学递推<br />
-<br /></li>
+<li>单链表模拟</li>
+<li>数学递推</li>
 </ul>
 
 <p>显然，假设n个人编号：$0,1,2,3,\dots,n-1$. 从0号开始报数（报数从0开始），报到m-1的将被处决，然后从下一个人开始报数。直到剩下最后一个人，赦免之。</p>
 
-<p>第一趟：报到 m 的自然是编号为$(m-1) \mod n$.<br />
+<p>第一趟：报到 m 的自然是编号为$(m-1) \mod n$.
 接着从 $m \mod n$ 开始报数，接下来又会是谁被处决呢？</p>
 
 <p>等等，先来看看问题是什么，我希望知道幸免者的编号。在n个人，报m个数的设定下，我希望知道幸免者编号，假设这个编号就是$f(n,m)$, 这里 $f$ 是个神奇的函数，我只要告诉它 n 和 m 它就能告诉我最后幸存者的编号。如果我能找到 $f(n, m)$ 和 $f(n-1, m)$ 的递推关系式，那将是极好的。</p>
@@ -2426,8 +2424,8 @@ k-2 -&gt; n-2</pre></td></tr></table>
 </div>
 <p>于是，如果我们能够知道 $f(n-1, m)$, 那么</p>
 
-<p>$$<br />
-f(n, m) = (f(n-1,m) + m) \mod n.<br />
+<p>$$
+f(n, m) = (f(n-1,m) + m) \mod n.
 $$</p>
 
 <p>这就得到了递推公式，接着看一下边界条件，当n = 1时， $f(1, m) = 0$; 结束。</p>
@@ -2462,11 +2460,11 @@ $$</p>
 
 <p>扔n个骰子，第i个骰子有可能掷出$X_i$种等概率的不同结果，数字从1到$X_i$. 比如$X_i = 2$, 就等可能的出现1点或2点。所有骰子的结果的最大值将作为最终结果。求最终结果的期望。</p>
 
-<p>输入描述：<br />
-第一行一个整数n，表示n个骰子。（1 &lt;= n &lt;= 50）<br />
+<p>输入描述：
+第一行一个整数n，表示n个骰子。（1 &lt;= n &lt;= 50）
 第二行n个整数，表示每个骰子的结果数$X_i$. ($2 \le X_i \le 50$)</p>
 
-<p>输出描述：<br />
+<p>输出描述：
 输出最终结果的期望，保留两位小数。</p>
 
 <p>示例输入：</p>
@@ -2495,18 +2493,18 @@ $$</p>
 
 <p>假设有3个骰子，最大点数分别为2,3,4点。那么扔n个骰子，最终结果为1的概率如下</p>
 
-<p>$$<br />
-P(1) = \frac{1}{2\times 3 \times 4} = \frac{1}{24}<br />
+<p>$$
+P(1) = \frac{1}{2\times 3 \times 4} = \frac{1}{24}
 $$</p>
 
 <p>同理，最终结果为2, 也就是说三个骰子中最大的点数为2, 考虑每个骰子都点数都小于或等于2的概率，再减去每个骰子都小于或等于1的概率，即为</p>
 
-<p>$$<br />
-\begin{gathered}<br />
-P(2) = \frac{2\times 2\times 2}{2 \times 3 \times 4} - \frac{1}{2\times 3 \times 4} = \frac{7}{24} \newline<br />
-P(3) = \frac{2 \times 3 \times 3}{2 \times 3 \times 4} - \frac{2\times 2\times 2}{2 \times 3 \times 4} = \frac{10}{24} \newline<br />
-P(4) = \frac{2 \times 3 \times 4}{2 \times 3 \times 4} - \frac{2\times 3\times 3}{2 \times 3 \times 4} = \frac{6}{24}<br />
-\end{gathered}<br />
+<p>$$
+\begin{gathered}
+P(2) = \frac{2\times 2\times 2}{2 \times 3 \times 4} - \frac{1}{2\times 3 \times 4} = \frac{7}{24} \newline
+P(3) = \frac{2 \times 3 \times 3}{2 \times 3 \times 4} - \frac{2\times 2\times 2}{2 \times 3 \times 4} = \frac{10}{24} \newline
+P(4) = \frac{2 \times 3 \times 4}{2 \times 3 \times 4} - \frac{2\times 3\times 3}{2 \times 3 \times 4} = \frac{6}{24}
+\end{gathered}
 $$</p>
 
 <p>这就求得了最终结果的所有可能的值对应的概率，可以看出相加为1, 现在可以求期望了。</p>
@@ -2961,7 +2959,7 @@ NO</pre></td></tr></table>
 
 <p>现有一个地图，由横线与竖线组成（参考围棋棋盘），起点在左上角，终点在右下角。每次行走只能沿线移动到相邻的点，每走一步产生一个开销。计算从起点到终点的最小开销为多少。</p>
 
-<p>输入描述：<br />
+<p>输入描述：
 $m \times n$ 的地图表示如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3000,13 +2998,13 @@ $m \times n$ 的地图表示如下</p>
 
 <p>假设用一个矩阵，名字就叫dp，表示最优结果。dp(i,j)表示从起点到坐标(i,j)的最小开销。很容易得到递推关系：</p>
 
-<p>$$<br />
-\text{dp}(i, j) =<br />
-\begin{cases}<br />
-\text{map}(i,j) + \min(\text{dp}(i, j-1), \text{dp}(i-1, j)) &amp; i, j &gt; 0\newline<br />
-\sum_{x=0}^{j-1} \text{map}(i, j) &amp; i = 0 \newline<br />
-\sum_{x=1}^{i-1} \text{map}(i, j) &amp; j = 0<br />
-\end{cases}.<br />
+<p>$$
+\text{dp}(i, j) =
+\begin{cases}
+\text{map}(i,j) + \min(\text{dp}(i, j-1), \text{dp}(i-1, j)) &amp; i, j &gt; 0\newline
+\sum_{x=0}^{j-1} \text{map}(i, j) &amp; i = 0 \newline
+\sum_{x=1}^{i-1} \text{map}(i, j) &amp; j = 0
+\end{cases}.
 $$</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3167,10 +3165,10 @@ $$</p>
 
 <p>将N个人排成一排，从第一个人开始报数，如果报数是M的倍数就出列，报道队尾后则回到队头继续报数，直到所有人都出列。</p>
 
-<p>输入描述：<br />
+<p>输入描述：
 输入2个正整数，空格分隔，第一个代表人数N，第二个代表M。</p>
 
-<p>输出描述：<br />
+<p>输出描述：
 输出一个数组，每个数据表示原来在队列中的位置，用空格隔开，表示出列顺序</p>
 
 <p>输入实例：</p>
@@ -4289,8 +4287,8 @@ $$</p>
 </div>
 <h2 id="不可描述">不可描述</h2>
 
-<p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有<br />
-1、10、11、12、13<br />
+<p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有
+1、10、11、12、13
 因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -4512,9 +4510,8 @@ rotate 2 steps to the right: [3,99,-1,-100]</pre></td></tr></table>
 <p>Note:</p>
 
 <ul>
-<li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.<br /></li>
-<li>Could you do it in-place with O(1) extra space?<br />
-<br /></li>
+<li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</li>
+<li>Could you do it in-place with O(1) extra space?</li>
 </ul>
 
 <blockquote>
@@ -4591,9 +4588,8 @@ Output: [1,3,12,0,0]</pre></td></tr></table>
 <p>Note:</p>
 
 <ul>
-<li>You must do this in-place without making a copy of the array.<br /></li>
-<li>Minimize the total number of operations.<br />
-<br /></li>
+<li>You must do this in-place without making a copy of the array.</li>
+<li>Minimize the total number of operations.</li>
 </ul>
 
 <blockquote>
@@ -4853,11 +4849,11 @@ Explanation: [4,-1,2,1] has the largest sum = 6.</pre></td></tr></table>
 <hr />
 
 <ol>
-<li id="fn:c"><a href="https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6">https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6</a><br />
+<li id="fn:c"><a href="https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6">https://www.nowcoder.com/questionTerminal/f78a359491e64a50bce2d89cff857eb6</a>
  <a class="footnote-return" href="#fnref:c">↩</a></li>
-<li id="fn:a"><a href="https://en.wikipedia.org/wiki/Josephus_problem">https://en.wikipedia.org/wiki/Josephus_problem</a><br />
+<li id="fn:a"><a href="https://en.wikipedia.org/wiki/Josephus_problem">https://en.wikipedia.org/wiki/Josephus_problem</a>
  <a class="footnote-return" href="#fnref:a">↩</a></li>
-<li id="fn:b"><a href="https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/">https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/</a><br />
+<li id="fn:b"><a href="https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/">https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/</a>
  <a class="footnote-return" href="#fnref:b">↩</a></li>
 </ol>
 </div>

@@ -226,7 +226,7 @@ g&#43;&#43; main.cpp -g -O0
 </div>
 <p>使用<code>list</code>在gdb中查看代码块以确定你要在哪一行设置断点（这就很麻烦，所以一般直接在main函数打个断点，然后单步去run）。</p>
 
-<p>设好断点以后，使用<code>run</code>启动程序，程序会在断点处停顿，等待你的输入指令。<br />
+<p>设好断点以后，使用<code>run</code>启动程序，程序会在断点处停顿，等待你的输入指令。
 <img src="gdb-demo.png" alt="gdb-demo" /></p>
 
 <p>使用<code>next</code>进行单步执行，使用<code>step</code>步入。所谓步入就是如果有函数调用，程序会跟踪到所调用的函数内部的代码，而单步的话，则会直接完成函数调用，获得返回值（如果有的话）。</p>
@@ -236,9 +236,9 @@ g&#43;&#43; main.cpp -g -O0
 <h2 id="备注">备注</h2>
 
 <ul>
-<li>GDB里面的命令都有缩写（break=b, next=n, step=s, ...）<br /></li>
-<li>什么命令也不敲直接回车默认执行上一条命令<br /></li>
-<li>使用<code>help &lt;command&gt;</code>来获取相关命令的使用帮助<br /></li>
+<li>GDB里面的命令都有缩写（break=b, next=n, step=s, ...）</li>
+<li>什么命令也不敲直接回车默认执行上一条命令</li>
+<li>使用<code>help &lt;command&gt;</code>来获取相关命令的使用帮助</li>
 </ul>
     </div>
 
