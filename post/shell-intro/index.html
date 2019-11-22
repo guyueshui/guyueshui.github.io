@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Brief Introduction to Shell Script - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="This article is mainly refered to &amp;quot;The Linux Command Line&amp;quot;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/shell-intro/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.bd0d3683.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Brief Introduction to Shell Script" />
+<meta property="og:description" content="This article is mainly refered to &quot;The Linux Command Line&quot;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/shell-intro/" />
+<meta property="article:published_time" content="2019-11-22T16:59:46+08:00" />
+<meta property="article:modified_time" content="2019-11-22T16:59:46+08:00" />
+<meta itemprop="name" content="Brief Introduction to Shell Script">
+<meta itemprop="description" content="This article is mainly refered to &quot;The Linux Command Line&quot;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?">
+
+
+<meta itemprop="dateModified" content="2019-11-22T16:59:46&#43;08:00" />
+<meta itemprop="wordCount" content="2193">
+
+
+
+<meta itemprop="keywords" content="shell,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Brief Introduction to Shell Script"/>
+<meta name="twitter:description" content="This article is mainly refered to &quot;The Linux Command Line&quot;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Brief Introduction to Shell Script</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> November 22, 2019 </span>
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#expansion">Expansion</a>
+<ul>
+<li><a href="#pathname-expansion">Pathname expansion</a></li>
+<li><a href="#tilde-expansion">Tilde expansion</a></li>
+<li><a href="#arithmetic-expansion">Arithmetic expansion</a></li>
+<li><a href="#brace-expansion">Brace expansion</a></li>
+<li><a href="#command-substitution">Command substitution</a></li>
+</ul></li>
+<li><a href="#quoting">Quoting</a>
+<ul>
+<li><a href="#double-quotes">Double quotes</a></li>
+<li><a href="#single-quotes">Single quotes</a></li>
+</ul></li>
+<li><a href="#variables-and-assignments">Variables and assignments</a></li>
+<li><a href="#here-documents">&quot;Here documents&quot;</a></li>
+<li><a href="#flow-control">Flow control</a>
+<ul>
+<li><a href="#using-if">Using <code>if</code></a></li>
+<li><a href="#using-test">Using <code>test</code></a></li>
+<li><a href="#modern-test">Modern <code>test</code></a></li>
+</ul></li>
+<li><a href="#designed-for-integers">(( ))-Designed for integers</a></li>
+<li><a href="#shell-function">Shell function</a>
+<ul>
+<li><a href="#use-local-variables-in-shell-functions">Use local variables in shell functions</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>This article is mainly refered to &quot;The Linux Command Line&quot;<sup class="footnote-ref" id="fnref:a"><a href="#fn:a">1</a></sup>. I just take
+some most important things out of the book.</p>
+
+<h2 id="expansion">Expansion</h2>
+
+<p>Each time you type a command line and press the <kbd>Enter</kbd> key, bash
+performs several processes upon the text before it carries out your command.
+Just look an example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *
+Desktop Documents ls-output.txt Music Pictures Public Templates Videos</code></pre></td></tr></table>
+</div>
+</div>
+<p>Why not display an asterisk? That's <strong>expansion</strong>! <code>*</code> <em>expands</em> to all files in
+current directory.</p>
+
+<h3 id="pathname-expansion">Pathname expansion</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls
+Desktop ls-output.txt Pictures Templates
+Documents Music Public Videos
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> D*
+Desktop Documents
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *s
+Documents Pictures Templates Videos
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">[[</span>:upper:<span class="o">]]</span>*
+Desktop Documents Music Pictures Public Templates Videos
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> /usr/*/share
+/usr/kerberos/share /usr/local/share</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="tilde-expansion">Tilde expansion</h3>
+
+<p>As you know, <code>~</code> has a special meaning of the home directory of current user.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~
+/home/me
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~foo
+/home/foo</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="arithmetic-expansion">Arithmetic expansion</h3>
+
+<p>The shell allows arithmetic to be performed by expansion. This allows us to
+use the shell prompt as a calculator:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$((</span><span class="m">2</span> <span class="o">+</span> <span class="m">2</span><span class="k">))</span>
+<span class="m">4</span>
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> with <span class="k">$((</span><span class="m">5</span><span class="o">%</span><span class="m">2</span><span class="k">))</span> left over.
+with <span class="m">1</span> left over.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Note: Arithmetic expansion supports only integers (whole numbers, no
+decimals).</p>
+
+<h3 id="brace-expansion">Brace expansion</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Front-<span class="o">{</span>A,B,C<span class="o">}</span>-Back
+Front-A-Back Front-B-Back Front-C-Back</code></pre></td></tr></table>
+</div>
+</div>
+<p>Patterns to be brace expanded may contain a leading portion called a
+<em>preamble</em> and a trailing portion called a <em>postscript</em>. The brace expression
+itself may contain either a comma-separated list of strings or a range of
+integers or single characters. The pattern may not contain embedded
+whitespace.  Here is an example using a range of integers:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Number_<span class="o">{</span><span class="m">1</span>..5<span class="o">}</span>
+Number_1 Number_2 Number_3 Number_4 Number_5
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">{</span>Z..A<span class="o">}</span>
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> a<span class="o">{</span>A<span class="o">{</span><span class="m">1</span>,2<span class="o">}</span>,B<span class="o">{</span><span class="m">3</span>,4<span class="o">}}</span>b
+aA1b aA2b aB3b aB4b</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="command-substitution">Command substitution</h3>
+
+<p>Command substitution allows us to use the output of a command as an
+expansion:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>ls<span class="k">)</span>
+Desktop Documents ls-output.txt Music Pictures Public Templates Videos
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="k">$(</span>which cp<span class="k">)</span>
+-rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> <span class="m">2012</span>-12-05 <span class="m">08</span>:58 /bin/cp</code></pre></td></tr></table>
+</div>
+</div>
+<p>There is an alternative syntax for command substitution in older shell
+programs that is also supported in bash . It uses back quotes instead
+of the dollar sign and parentheses:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="sb">`</span>which cp<span class="sb">`</span>
+-rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> <span class="m">2012</span>-12-05 <span class="m">08</span>:58 /bin/cp</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="quoting">Quoting</h2>
+
+<p>Usage of single or double quotes in shell commands is confusing for me,
+at least. Hey, take a look:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> are you     ok
+are you ok
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;are you     ok&#39;</span>
+are you     ok
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;are you     ok&#34;</span>
+are you     ok
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> The total is <span class="nv">$100</span>.00
+The total is .00
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;The total is $100.00&#39;</span>
+The total is <span class="nv">$100</span>.00
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;The total is </span><span class="nv">$100</span><span class="s2">.00&#34;</span>
+The total is .00</code></pre></td></tr></table>
+</div>
+</div>
+<p>Isn't that confusing? Fortunately, the shell provides a mechanism called
+quoting to selectively suppress unwanted expansions.</p>
+
+<h3 id="double-quotes">Double quotes</h3>
+
+<p>If you place text inside double quotes, all the special characters used
+by the shell lose their special meaning and are treated as ordinary
+characters. The exceptions are <strong>$ (dollar sign), \ (backslash),
+and ` (back tick)</strong>.</p>
+
+<p>By default, word splitting looks for the presence of spaces, tabs, and
+newlines (linefeed characters) and treats them as delimiters between
+words. This means that unquoted spaces, tabs, and newlines are not
+considered to be part of the text. They serve only as separators.
+The fact that newlines are considered delimiters by the word splitting
+mechanism causes an interesting, albeit subtle, effect on command
+substitution. Consider the following:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>cal<span class="k">)</span>
+February <span class="m">2012</span> Su Mo Tu We Th Fr Sa <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span> <span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span> <span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span>
+
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>cal<span class="k">)</span><span class="s2">&#34;</span>
+   February <span class="m">2012</span>
+Su Mo Tu We Th Fr Sa
+             <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+ <span class="m">5</span>  <span class="m">6</span>  <span class="m">7</span>  <span class="m">8</span>  <span class="m">9</span> <span class="m">10</span> <span class="m">11</span>
+<span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span>
+<span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span>
+<span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>In the first instance, the unquoted command substitution resulted in
+a command line containing 38 arguments; in the second, the result was a
+command line with 1 argument that includes the embedded spaces and
+newlines.</p>
+
+<h3 id="single-quotes">Single quotes</h3>
+
+<p>If we need to suppress all expansions, we use single quotes. Here is
+a comparison of unquoted, double quotes, and single quotes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
+text /home/me/ls-output.txt a b foo <span class="m">4</span> me
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;text ~/*.txt {a,b} </span><span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span><span class="s2"> </span><span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&#34;</span>
+text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> foo <span class="m">4</span> me
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER&#39;</span>
+text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>As we can see, with each succeeding level of quoting, more and more
+expansions are suppressed.</p>
+
+<h2 id="variables-and-assignments">Variables and assignments</h2>
+
+<ul>
+<li>the shell does not care about the type of data assigned to a variable; it treats them all as <strong>strings</strong>.</li>
+
+<li><p>in an assignment, there must be <strong>no spaces</strong> between the variable name, the equal sign, and the value.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">a</span><span class="o">=</span>z                 <span class="c1"># Assign the string &#34;z&#34; to variable a.</span>
+<span class="nv">b</span><span class="o">=</span><span class="s2">&#34;a string&#34;</span>        <span class="c1"># Embedded spaces must be within quotes.</span>
+<span class="nv">c</span><span class="o">=</span><span class="s2">&#34;a string and </span><span class="nv">$b</span><span class="s2">&#34;</span> <span class="c1"># Other expansions such as variables can be expanded into the assignment.</span>
+<span class="nv">d</span><span class="o">=</span><span class="k">$(</span>ls -l foo.txt<span class="k">)</span>  <span class="c1"># Results of a command.</span>
+<span class="nv">e</span><span class="o">=</span><span class="k">$((</span><span class="m">5</span> <span class="o">*</span> <span class="m">7</span><span class="k">))</span>        <span class="c1"># Arithmetic expansion.</span>
+<span class="nv">f</span><span class="o">=</span><span class="s2">&#34;\t\ta string\n&#34;</span>  <span class="c1"># Escape sequences such as tabs and newlines.</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h2 id="here-documents">&quot;Here documents&quot;</h2>
+
+<p>A here document is an additional form of I/O redirection in which we
+embed a body of text into our script and feed it into the standard input
+of a command. It works like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> <span class="s">&lt;&lt; token
+</span><span class="s">text...
+</span><span class="s">token</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>where command is the name of a command that accepts standard input and
+token is a string used to indicate the end of the embedded text. For
+example, you</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="s">&lt;&lt; _EOF_
+</span><span class="s">heredoc&gt; are you
+</span><span class="s">heredoc&gt; ok?
+</span><span class="s">heredoc&gt; Yes i am.
+</span><span class="s">heredoc&gt; And you?
+</span><span class="s">heredoc&gt; _EOF_</span>
+are you
+ok?
+Yes i am.
+And you?</code></pre></td></tr></table>
+</div>
+</div>
+<p>Namely, you just use a custom EOF indicator of the input to that command.
+So what’s the advantage of using a here document? It’s mostly the same as
+echo , except that, by default, single and double quotes within here
+documents lose their special meaning to the shell. Here is a
+command-line example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nv">foo</span><span class="o">=</span><span class="s2">&#34;some text&#34;</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ cat <span class="s">&lt;&lt; _EOF_
+</span><span class="s">&gt; $foo
+</span><span class="s">&gt; &#34;$foo&#34;
+</span><span class="s">&gt; &#39;$foo&#39;
+</span><span class="s">&gt; \$foo
+</span><span class="s">&gt; _EOF_</span>
+some text
+<span class="s2">&#34;some text&#34;</span>
+<span class="s1">&#39;some text&#39;</span>
+<span class="nv">$foo</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>As we can see, the shell pays no attention to the quotation marks. It
+treats them as ordinary characters. This allows us to embed quotes freely within a here document.</p>
+
+<p>If we change the redirection operator from <code>&lt;&lt;</code> to <code>&lt;&lt;-</code> , the shell will
+ignore leading tab characters in the here document. This allows a here
+document to be indented, which can improve readability:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="s">&lt;&lt;- E_o_F
+</span><span class="s">heredocd&gt; no indent
+</span><span class="s">heredocd&gt;    indent
+</span><span class="s">heredocd&gt;         hiahia
+</span><span class="s">heredocd&gt;         E_o_F</span>
+heredocd&gt; E_o_F
+no indent
+   indent
+        hiahia
+        E_o_F</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="flow-control">Flow control</h2>
+
+<h3 id="using-if">Using <code>if</code></h3>
+
+<p>The syntax of if-statement is</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">if</span> commands<span class="p">;</span> <span class="k">then</span>
+  commands
+<span class="o">[</span><span class="k">elif</span> commands<span class="p">;</span> <span class="k">then</span>
+  commands...<span class="o">]</span>
+<span class="o">[</span><span class="k">else</span>
+  commands<span class="o">]</span>
+<span class="k">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>where commands is a list of commands. This may be a little confusing at
+first glance, &quot;if&quot; should judge a condition rather than a series of
+commands. This leads to the concept of <strong>exit status</strong>.</p>
+
+<p>Commands (including the scripts and shell functions we write) issue a
+value to the system when they terminate, called an exit status. This
+value, which is an integer in the range of 0 to 255, indicates the
+success or failure of the command’s execution. By convention, a value
+of 0 indicates success, and any other value indicates failure. The shell
+provides a parameter that we can use to examine the exit status. Here
+we see it in action:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /usr/bin
+/usr/bin
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="m">0</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /bin/usr
+ls: cannot access /bin/usr: No such file or directory
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="m">2</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The shell provides two extremely simple built-in commands that do
+nothing except terminate with either a 0 or 1 exit status. The true
+command always executes successfully, and the false command always
+executes unsuccessfully:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">true</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="m">0</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">false</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="m">1</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="using-test">Using <code>test</code></h3>
+
+<p>By far, the command used most frequently with if is <code>test</code>. The test
+command performs a variety of checks and comparisons. It has two
+equivalent forms:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">test</span> expression
+<span class="c1"># or</span>
+<span class="o">[</span> expression <span class="o">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>where &quot;expression&quot; is an expression that is evaluated as either true or
+false. The test command returns an exit status of 0 when the expression
+is true and a status of 1 when the expression is false.</p>
+
+<p><strong>File expressions</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Is true if...</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>file1 -nt file2</code></td>
+<td><code>file1</code> is newer than <code>file2</code>.</td>
+</tr>
+
+<tr>
+<td><code>file1 -ot file2</code></td>
+<td><code>file1</code> is older than <code>file2</code>.</td>
+</tr>
+
+<tr>
+<td><code>-d file</code></td>
+<td><code>file</code> exists and is a directory.</td>
+</tr>
+
+<tr>
+<td><code>-e file</code></td>
+<td><code>file</code> exists.</td>
+</tr>
+
+<tr>
+<td><code>-L file</code></td>
+<td><code>file</code> exists and is a symbolic link.</td>
+</tr>
+
+<tr>
+<td><code>-r file</code></td>
+<td><code>file</code> exists and is readable (has readable permission for the effective user).</td>
+</tr>
+
+<tr>
+<td><code>-s file</code></td>
+<td><code>file</code> exists and has a length greater than zero.</td>
+</tr>
+
+<tr>
+<td><code>-w file</code></td>
+<td><code>file</code> exists and is writable (has writable permission for the effective user).</td>
+</tr>
+
+<tr>
+<td><code>-x file</code></td>
+<td><code>file</code> exists and is executable (has execute/search permission for the effective user).</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>String expressions</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Is true if...</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code> is not null</td>
+</tr>
+
+<tr>
+<td><code>-n string</code></td>
+<td>the length of <code>string</code> is greater than zero</td>
+</tr>
+
+<tr>
+<td><code>-z string</code></td>
+<td>the length of <code>string</code> is zero</td>
+</tr>
+
+<tr>
+<td><code>string1 == string2</code></td>
+<td><code>string1</code> and <code>string2</code> are equal.</td>
+</tr>
+
+<tr>
+<td><code>string1 != string2</code></td>
+<td><code>string1</code> and <code>string2</code> are not equal.</td>
+</tr>
+
+<tr>
+<td><code>string1 &gt; string2</code></td>
+<td><code>string1</code> sorts after <code>string2</code>.</td>
+</tr>
+
+<tr>
+<td><code>string1 &lt; string2</code></td>
+<td><code>string1</code> sorts before <code>string2</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Note: the &gt; and &lt; expression must be quoted (or escaped with a backslash)
+when used with <code>test</code>, oterwise they will be interpreted as the shell
+redirection opreators.</p>
+
+<p><strong>Integer expressions</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Is true if...</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>integer1 -eq integer2</code></td>
+<td><code>integer1</code> is equal to <code>integer2</code></td>
+</tr>
+
+<tr>
+<td><code>integer1 -ne integer2</code></td>
+<td><code>integer1</code> is not equal to <code>integer2</code></td>
+</tr>
+
+<tr>
+<td><code>integer1 -le integer2</code></td>
+<td><code>integer1</code> is less than or equal to <code>integer2</code></td>
+</tr>
+
+<tr>
+<td><code>integer1 -lt integer2</code></td>
+<td><code>integer1</code> is less than <code>integer2</code></td>
+</tr>
+
+<tr>
+<td><code>integer1 -ge integer2</code></td>
+<td><code>integer1</code> is greater than or equal to <code>integer2</code></td>
+</tr>
+
+<tr>
+<td><code>integer1 -gt integer2</code></td>
+<td><code>integer1</code> is greater than <code>integer2</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="modern-test">Modern <code>test</code></h3>
+
+<p>Recent versions of bash include a compound command that acts as an
+enhanced replacement for <code>test</code> . It uses the following syntax:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[[</span> expression <span class="o">]]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>where expression is an expression that evaluates to either a true or false
+result. The [[ ]] command is very similar to test (it supports all of its
+expressions) but adds an important new string expression:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">string</span> <span class="o">=</span>~ regex</code></pre></td></tr></table>
+</div>
+</div>
+<p>which returns true if <code>string</code> is matched by the extended regular expression
+<code>regex</code>.</p>
+
+<h2 id="designed-for-integers">(( ))-Designed for integers</h2>
+
+<p>(( )) is used to perform <strong>arithmetic truth tests</strong>. An arithmetic truth test
+results in true if the result of the arithmetic evaluation is non-zero.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span><span class="m">1</span><span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+It is true.
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span><span class="m">0</span><span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$<span class="o">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="shell-function">Shell function</h2>
+
+<p>Shell functions must be declared before using it. There are two ways to
+define a shell function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">function</span> name <span class="o">{</span>
+  commands
+  <span class="k">return</span>
+<span class="o">}</span>
+
+name <span class="o">()</span> <span class="o">{</span>
+  commands
+  <span class="k">return</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="use-local-variables-in-shell-functions">Use local variables in shell functions</h3>
+
+<p>Local variables are accessible only within the shell function
+in which they are defined, and they cease to exist once the shell function
+terminates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="c1"># local-vars: script to demonstrate local variables</span>
+
+<span class="nv">foo</span><span class="o">=</span><span class="m">0</span>   <span class="c1"># global</span>
+
+func1<span class="o">()</span>
+<span class="o">{</span>
+  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">1</span>   <span class="c1"># local</span>
+  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+func2<span class="o">()</span>
+<span class="o">{</span>
+  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">2</span>   <span class="c1"># local</span>
+  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+func1
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+func2
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ ./local-vars
+global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
+func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">1</span>
+global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
+func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">2</span>
+global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>We see that the assignment of values to the local variable foo within
+both shell functions has no effect on the value of foo defined outside the
+functions.</p>
+
+<p>TO BE CONTINUED...</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:a"><a href="https://www.amazon.com/product-reviews/1593279523">&quot;The Linux Command Line, A Complete Introduction&quot;</a>, William E. Shotts, Jr.
+ <a class="footnote-return" href="#fnref:a">↩</a></li>
+</ol>
+</div>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        November 22, 2019
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/shell/">shell</a>
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/nn-notes/">
+            <span class="next-text nav-default">Nueral Network Learning Notes</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-11-22 16:59:46 \x2b0800 CST',
+        title: 'Brief Introduction to Shell Script',
+        link: decodeURI(location.href),
+        desc: 'This article is mainly refered to \x26quot;The Linux Command Line\x26quot;1. I just take some most important things out of the book.\nExpansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:\n1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?',
+        owner: 'guyueshui',
+        repo: 'gitment',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

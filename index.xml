@@ -6,10 +6,21 @@
     <description>Recent content on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Oct 2019 10:45:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 16:59:46 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Brief Introduction to Shell Script</title>
+      <link>https://guyueshui.github.io/post/shell-intro/</link>
+      <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/shell-intro/</guid>
+      <description>This article is mainly refered to &amp;quot;The Linux Command Line&amp;quot;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
+    </item>
     
     <item>
       <title>Nueral Network Learning Notes</title>
