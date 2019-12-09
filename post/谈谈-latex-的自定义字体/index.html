@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-03-08T15:41:10+00:00" />
 <meta itemprop="name" content="快速自定义 LaTeX 排版字体">
 <meta itemprop="description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17">
-
-
 <meta itemprop="datePublished" content="2019-03-08T15:41:10&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-08T15:41:10&#43;00:00" />
 <meta itemprop="wordCount" content="663">
 
 
 
-<meta itemprop="keywords" content="排版,latex,字体," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="排版,latex,字体," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="快速自定义 LaTeX 排版字体"/>
 <meta name="twitter:description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17"/>
 
@@ -145,28 +142,21 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#字体设置">字体设置</a></li>
-<li><a href="#latex-字体样式相关命令">LaTeX 字体样式相关命令</a></li>
-<li><a href="#扩展包">扩展包</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">字体设置</a></li>
+    <li><a href="#latex-">LaTeX 字体样式相关命令</a></li>
+    <li><a href="#heading1">扩展包</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="字体设置">字体设置</h2>
-
+      <h2 id="heading">字体设置</h2>
 <p>在导言区引入<code>fontspec</code>包：<code>\usepackage{fontspec}</code></p>
-
 <p>使用如下命令自定义字体：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -188,16 +178,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% 西文默认字体，排版主字体
-</span><span class="c"></span><span class="k">\setmainfont</span><span class="nb">{}</span>
+</span><span class="c"></span><span class="k">\setmainfont</span><span class="nb">{</span><span class="nb">}</span>
 
 <span class="c">% 西文无称线字体
-</span><span class="c"></span><span class="k">\setsansfont</span><span class="nb">{}</span>
+</span><span class="c"></span><span class="k">\setsansfont</span><span class="nb">{</span><span class="nb">}</span>
 
 <span class="c">% 西文等宽字体
-</span><span class="c"></span><span class="k">\setmonofont</span><span class="nb">{}</span>
+</span><span class="c"></span><span class="k">\setmonofont</span><span class="nb">{</span><span class="nb">}</span>
 
 <span class="c">% 数学公式字体
-</span><span class="c"></span><span class="k">\setmathfont</span><span class="nb">{}</span>
+</span><span class="c"></span><span class="k">\setmathfont</span><span class="nb">{</span><span class="nb">}</span>
 
 <span class="c">% 中文主字体
 </span><span class="c"></span><span class="k">\setCJKmainfont</span>[
@@ -205,26 +195,22 @@
     BoldFont = HYQiHei-70S.ttf ,
     ItalicFont = HYKaiTiS.ttf ,
     SmallCapsFont = HYQiHei-70S.ttf
-    ]<span class="nb">{</span>HYQiHei-45S.ttf<span class="nb">}</span></code></pre></td></tr></table>
+    ]<span class="nb">{</span>HYQiHei-45S.ttf<span class="nb">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<!-- more -->
-
+</div><!-- raw HTML omitted -->
 <blockquote>
 <p>Note:</p>
-
 <ul>
 <li>使用<code>fc-list</code>查看系统字体</li>
 <li>使用<code>fc-list: lang=zh</code>查看中文字体</li>
 </ul>
 </blockquote>
-
 <p><strong>直接使用字体文件</strong></p>
-
 <p>LaTeX可以直接使用未安装的字体文件进行排版，但要指定字体文件的位置等信息。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -241,17 +227,16 @@
 </span><span class="c"></span>    BoldFont = HYQiHei-70S.ttf, <span class="c">% &#39;.ttf&#39; can be dropped if 
 </span><span class="c"></span>                                <span class="c">% &#39;Extension&#39; is specified
 </span><span class="c"></span>    ItalicFont = HYKaiTiS.ttf,  <span class="c">% similarly
-</span><span class="c"></span>]<span class="nb">{</span>HYQiHei-45S.ttf<span class="nb">}</span>              <span class="err">%</span> set default font to 汉仪旗黑</code></pre></td></tr></table>
+</span><span class="c"></span>]<span class="nb">{</span>HYQiHei-45S.ttf<span class="nb">}</span>              <span class="c">% set default font to 汉仪旗黑
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p><img src="https://s2.ax1x.com/2019/03/11/ACHzeH.png" alt="" />
-<img src="https://s2.ax1x.com/2019/03/11/ACbE6S.png" alt="" />
+</div><p><img src="https://s2.ax1x.com/2019/03/11/ACHzeH.png" alt="">
+<img src="https://s2.ax1x.com/2019/03/11/ACbE6S.png" alt="">
 从上面两张图可以看出，中文字体不像西文，是没有对应的斜体和粗体的。所以只能用其他字体替代，通过改变字体的方式达到伪斜体，伪粗体的效果。</p>
-
 <p><strong>设置字体别名</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -266,36 +251,34 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhsong<span class="nb">}{</span>HYZhongSongS<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhhei<span class="nb">}{</span>WenQuanYi Micro Hei<span class="nb">}</span>
+<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhsong<span class="nb">}</span><span class="nb">{</span>HYZhongSongS<span class="nb">}</span>
+<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhhei<span class="nb">}</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
 <span class="c">%\setCJKfamilyfont{zhfs}{Adobe Fangsong Std}
-</span><span class="c">%\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
-</span><span class="c">%\setCJKfamilyfont{zhli}{LiSu}
-</span><span class="c">%\setCJKfamilyfont{zhyou}{YouYuan}
+</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
+</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhli}{LiSu}
+</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhyou}{YouYuan}
 </span><span class="c"></span>
-<span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhsong<span class="nb">}}</span>   <span class="c">% 宋体
-</span><span class="c"></span><span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhhei<span class="nb">}}</span>     <span class="c">% 黑体
-</span><span class="c">%\newcommand*{\kaishu}{\CJKfamily{zhkai}}   % 楷书
-</span><span class="c">%\newcommand*{\fangsong}{\CJKfamily{zhfs}}  % 仿宋
-</span><span class="c">%\newcommand*{\lishu}{\CJKfamily{zhli}}     % 隶书
-</span><span class="c"></span><span class="err">%</span><span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\youyuan</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhyou<span class="nb">}}</span>  <span class="err">%</span> 幼圆</code></pre></td></tr></table>
+<span class="k">\newcommand</span><span class="k">*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}</span><span class="nb">{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhsong<span class="nb">}</span><span class="nb">}</span>   <span class="c">% 宋体
+</span><span class="c"></span><span class="k">\newcommand</span><span class="k">*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}</span><span class="nb">{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhhei<span class="nb">}</span><span class="nb">}</span>     <span class="c">% 黑体
+</span><span class="c"></span><span class="c">%\newcommand*{\kaishu}{\CJKfamily{zhkai}}   % 楷书
+</span><span class="c"></span><span class="c">%\newcommand*{\fangsong}{\CJKfamily{zhfs}}  % 仿宋
+</span><span class="c"></span><span class="c">%\newcommand*{\lishu}{\CJKfamily{zhli}}     % 隶书
+</span><span class="c"></span><span class="c">%\newcommand*{\youyuan}{\CJKfamily{zhyou}}  % 幼圆
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>以上为对应的字体设定了我们较为习惯的别名，使用方式如下：</p>
+</div><p>以上为对应的字体设定了我们较为习惯的别名，使用方式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tex" data-lang="tex"><span class="nb">{</span><span class="k">\zhsong</span> 这段文字使用宋体字。<span class="nb">}</span>
-<span class="nb">{</span><span class="k">\zhhei</span> 这段使用黑体。<span class="nb">}</span></code></pre></td></tr></table>
+<span class="nb">{</span><span class="k">\zhhei</span> 这段使用黑体。<span class="nb">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="latex-字体样式相关命令">LaTeX 字体样式相关命令</h2>
-
+</div><h2 id="latex-">LaTeX 字体样式相关命令</h2>
 <p><strong>字体大小</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -303,62 +286,50 @@
 <th align="right">SIZE</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left"><code>\tiny</code></td>
 <td align="right">5pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\scriptsize</code></td>
 <td align="right">7pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\footnotesize</code></td>
 <td align="right">8pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\small</code></td>
 <td align="right">9pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\normalsize</code></td>
 <td align="right">10pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\large</code></td>
 <td align="right">12pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\Large</code></td>
 <td align="right">14pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\LARGE</code></td>
 <td align="right">18pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\huge</code></td>
 <td align="right">20pt</td>
 </tr>
-
 <tr>
 <td align="left"><code>\Huge</code></td>
 <td align="right">24pt</td>
 </tr>
 </tbody>
 </table>
-
 <p><strong>字体样式</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -366,56 +337,44 @@
 <th>STYLE</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>\textbf</code></td>
 <td>粗体</td>
 </tr>
-
 <tr>
 <td><code>\textit</code></td>
 <td>斜体</td>
 </tr>
-
 <tr>
 <td><code>\textsl</code></td>
 <td>slanted斜体</td>
 </tr>
-
 <tr>
 <td><code>\textsc</code></td>
 <td>小体大写文本</td>
 </tr>
-
 <tr>
 <td><code>\underline</code></td>
 <td>下划线</td>
 </tr>
-
 <tr>
 <td><code>\texttt</code></td>
 <td>打字机字族，调用<code>\setmonofont{}</code>所设置的字体</td>
 </tr>
-
 <tr>
 <td><code>\textsf</code></td>
 <td>无称线字族，调用<code>\setsansfont{}</code>所设置的字体</td>
 </tr>
-
 <tr>
 <td><code>\textrm</code></td>
 <td>罗马字族，调用m<code>\setmainfont{}</code>所设置的字体</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="扩展包">扩展包</h2>
-
+<h2 id="heading1">扩展包</h2>
 <p><strong>ulem 宏包</strong></p>
-
 <p>在导言区引入：<code>\usepackage{ulem}</code></p>
-
 <table>
 <thead>
 <tr>
@@ -423,28 +382,23 @@
 <th>STYLE</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>\uline</code></td>
 <td>下划线</td>
 </tr>
-
 <tr>
 <td><code>\uuline</code></td>
 <td>双下划线</td>
 </tr>
-
 <tr>
 <td><code>\uwave</code></td>
 <td>波浪线</td>
 </tr>
-
 <tr>
 <td><code>\sout</code></td>
 <td>删除线</td>
 </tr>
-
 <tr>
 <td><code>\xout</code></td>
 <td>斜删除线</td>

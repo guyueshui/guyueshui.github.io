@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on 水阙</title>
@@ -17,8 +17,8 @@
       <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
-      <description>This article is mainly refered to &amp;quot;The Linux Command Line&amp;quot;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+      <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
     </item>
     
@@ -29,17 +29,16 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
       
       <guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid>
       <description>&lt;p&gt;废话以后有时间再加。&lt;/p&gt;
-
 &lt;p&gt;首先编译时开启调试选项：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
     </item>
     
   </channel>

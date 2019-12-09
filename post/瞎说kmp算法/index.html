@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-04-04T00:05:41+00:00" />
 <meta itemprop="name" content="瞎说 KMP 算法">
 <meta itemprop="description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导">
-
-
 <meta itemprop="datePublished" content="2019-04-04T00:05:41&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-04T00:05:41&#43;00:00" />
-<meta itemprop="wordCount" content="2713">
+<meta itemprop="wordCount" content="2541">
 
 
 
-<meta itemprop="keywords" content="algorithm,pattern match," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="algorithm,pattern match," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="瞎说 KMP 算法"/>
 <meta name="twitter:description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导"/>
 
@@ -145,96 +142,31 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#常规方法">常规方法</a></li>
-<li><a href="#partial-match-table">Partial Match Table</a>
-<ul>
-<li><a href="#又">又</a></li>
-</ul></li>
-<li><a href="#pmt-怎么用">PMT 怎么用</a></li>
-<li><a href="#复杂度分析">复杂度分析</a></li>
-<li><a href="#c-实现">C++实现</a></li>
-<li><a href="#reference">Reference</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">背景</a></li>
+    <li><a href="#heading1">常规方法</a></li>
+    <li><a href="#partial-match-table">Partial Match Table</a>
+      <ul>
+        <li><a href="#heading2">又</a></li>
+      </ul>
+    </li>
+    <li><a href="#pmt-">PMT 怎么用</a></li>
+    <li><a href="#heading3">复杂度分析</a></li>
+    <li><a href="#c">C++实现</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导论上也有，只是之前没看到那里。所以，总结一下：我本有好多次机会学习它，然而一次都没有把握。:(</p>
-
+      <p>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导论上也有，只是之前没看到那里。所以，总结一下：我本有好多次机会学习它，然而一次都没有把握。:(</p>
 <p>所以这次，拿出来好好研究一波，做点笔记，以备日后之用。说起来网络上关于该算法的博文一大堆，我也不说能比它们都好，每个人都有适合自己的理解，我这里就是瞎谈一番罢了。</p>
-
 <p>在开始之前，强烈建议先读<a href="http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/">Jake Boxer</a>的文章，它从无到有，讲得浅显易懂，介绍了 how it works！我这篇文章，也是在看了好多中文博客未解之后，开始看了那个外文博文。在理解的基础上，加一点自己的描述。</p>
-
-<h2 id="背景">背景</h2>
-
-<p>长长的博文一大堆，相信你也很珍惜时间，我就长话短说（偷懒找个借口:p）。<strong>这个算法是干嘛的？</strong>它解决的问题是，给定一个字符串，我们称之为主角K，然后你要在一个比它长的配角Z中找到我们的主角。翻译一下：在父串中寻找给定的子串，返回匹配索引。比如说<code>K = king</code>，<code>Z = zookingmonkey</code>，很显然，Z中有与K相同的子串，返回索引<code>4</code>.</p>
-
-<h2 id="常规方法">常规方法</h2>
-
+<h2 id="heading">背景</h2>
+<p>长长的博文一大堆，相信你也很珍惜时间，我就长话短说（偷懒找个借口:p）。**这个算法是干嘛的？**它解决的问题是，给定一个字符串，我们称之为主角K，然后你要在一个比它长的配角Z中找到我们的主角。翻译一下：在父串中寻找给定的子串，返回匹配索引。比如说<code>K = king</code>，<code>Z = zookingmonkey</code>，很显然，Z中有与K相同的子串，返回索引<code>4</code>.</p>
+<h2 id="heading1">常规方法</h2>
 <p>沿用Jake Boxer的例子，设<code>K = abababca</code>，<code>Z = bacbababaabcbab</code>. 常规的方法是从头开始比较，比如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">/* 
+<pre><code>/* 
  * `|` denotes a match
  * `x` denotes a dismatch
  */
@@ -284,58 +216,46 @@ bacbababaabcbab|
                |
         abababca
 
----&gt; return NOT FOUND!</pre></td></tr></table>
-</div>
-</div>
-<p>以上就是正常思考的方法，维护一个指针<code>p</code>，指向第一次开始比的位置，然后依次比下去， 跟踪匹配的位数 ，如果全部匹配，返回<code>p</code>，如果有一个不匹配，直接右移一位，<code>p = p+1</code>. 接着如法炮制，从第一个字符依次比下去。设父串Z的长度为 <code>n</code>，子串K的长度为<code>m</code>，那么上述方法最坏情况下要比较<code>m*n</code>次，时间复杂度为<code>O(mn)</code>.</p>
-
+---&gt; return NOT FOUND!
+</code></pre><p>以上就是正常思考的方法，维护一个指针<code>p</code>，指向第一次开始比的位置，然后依次比下去， 跟踪匹配的位数 ，如果全部匹配，返回<code>p</code>，如果有一个不匹配，直接右移一位，<code>p = p+1</code>. 接着如法炮制，从第一个字符依次比下去。设父串Z的长度为 <code>n</code>，子串K的长度为<code>m</code>，那么上述方法最坏情况下要比较<code>m*n</code>次，时间复杂度为<code>O(mn)</code>.</p>
 <p>KMP算法要做的事情的，就是根据子串K的特征，在<strong>移位</strong>和<strong>比较</strong>的时候实现一个跳步！减少了比较次数。</p>
-
 <p>但是要根据子串K的特征，哪又是什么样的？该如何刻画呢？这就要说到下面的 partial match table 了。</p>
-
 <h2 id="partial-match-table">Partial Match Table</h2>
-
 <p>KMP有一个很重要的表，叫做 Partial Match Table (PMT)，翻译过来叫做部分匹配表。它有多重要呢？就像理想对于你的那种重要。KMP什么时候能跳步，跳多少，都是由它决定的！</p>
-
 <p>先来看看它如何产生的吧，关于它的生成，许多博文讲得很清楚了。其中大多是用前缀集、后缀集的概念描述。设有字符串<code>str = ababba</code>, 它的长度<code>length(str) = 6</code>,</p>
-
 <ul>
 <li><strong>前缀集</strong>：去掉字符串尾部 1-5 个字符得到的所有子串。记作 <code>P(str)</code> = {a, ab, aba, abab, ababb}.</li>
 <li><strong>后缀集</strong>：去掉字符串头部 1-5 个字符得到的所有子串。记作 <code>S(str)</code> = {a, ba, bba, abba, babba}.</li>
 </ul>
-
 <p>该字符串<code>str = ababba</code>对应的 partial mathch value (PMV) 计算方式：
 $$
 v = \max_{i\in S(\texttt{str}) \cap P(\texttt{str})} \text{length}(i) := f(\texttt{str})
 $$
 于是，给定一个字符串<code>str</code>，我们的<code>f(str)</code>就能返回它的PMV. 现在有请我们的主角<code>K = abababca</code>上场，我们来看看如何构建它的PMT.</p>
-
 <blockquote>
 <p>Note: 为了防止我自定义的术语让你感到很吃力，先给你洗个脑。
 PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.
 PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.
 PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就是PMV.</p>
 </blockquote>
-
 <p>先用一句话简要说明一下：对K的前缀集的每个字符串再加上K本身，计算它们的PMV，按从短到长的顺序将它们排成一行。再用程序语言表达一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">buildPMT</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">buildPMT</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="p">:</span>
     <span class="c1"># 假设 S(K) 返回的列表按子串的长度从小到大排序</span>
-    <span class="n">PMT</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span> <span class="k">for</span> <span class="n">substr</span> <span class="ow">in</span> <span class="n">S</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span>
-    <span class="n">PMT</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">PMT</span></code></pre></td></tr></table>
+    <span class="n">PMT</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span> <span class="k">for</span> <span class="n">substr</span> <span class="ow">in</span> <span class="n">S</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="p">]</span>
+    <span class="n">PMT</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">PMT</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>那么我们计算得到的<code>K = abababca</code>的 partial match table 如下：</p>
-
+</div><p>那么我们计算得到的<code>K = abababca</code>的 partial match table 如下：</p>
 <table>
 <thead>
 <tr>
@@ -350,7 +270,6 @@ PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就�
 <th align="center">a</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="right">value</td>
@@ -363,7 +282,6 @@ PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就�
 <td align="center">0</td>
 <td align="center">1</td>
 </tr>
-
 <tr>
 <td align="right">index</td>
 <td align="center">0</td>
@@ -377,107 +295,29 @@ PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就�
 </tr>
 </tbody>
 </table>
-
 <p>记住这个表，它很重要！或者讲到跳转的时候再过来查看。这一部分基本上是转述了Jake Boker的话，不过表达的可能不如他。感谢Jake Boxer.</p>
-
-<h3 id="又">又</h3>
-
-<p>下面讲讲我理解的PMT的计算方式。因为PMV (partial match value) 是最大公共子串的长度，哪两个公共？前缀集和后缀集！那么我们比较的时候肯定要分别在两个集合中找字符串长度一致的两个串，考察它们是否相等。依次从长度为1，2，3...这么一直找下去，如果有更长的公共串，就更新PMV。</p>
-
+<h3 id="heading2">又</h3>
+<p>下面讲讲我理解的PMT的计算方式。因为PMV (partial match value) 是最大公共子串的长度，哪两个公共？前缀集和后缀集！那么我们比较的时候肯定要分别在两个集合中找字符串长度一致的两个串，考察它们是否相等。依次从长度为1，2，3&hellip;这么一直找下去，如果有更长的公共串，就更新PMV。</p>
 <p>具体来说，给我一个字符串<code>str = ababa</code>，我可以这样来计算它的PMV. 想象有一块木板插空该字符串，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">a|baba =&gt; a, baba
+<pre><code>a|baba =&gt; a, baba
 ab|aba =&gt; ab, aba
 aba|ba =&gt; aba, ba
-abab|a =&gt; abab, a</pre></td></tr></table>
-</div>
-</div>
-<p>每次插空，我都可以得到一个前缀和一个后缀。从上面的结果来看，产生的次序还有一定的对称性。那么我计算它的PMV时，直接这样比较：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">(1). a|baba &lt;=&gt; abab|a ---&gt; PMV = 1
+abab|a =&gt; abab, a
+</code></pre><p>每次插空，我都可以得到一个前缀和一个后缀。从上面的结果来看，产生的次序还有一定的对称性。那么我计算它的PMV时，直接这样比较：</p>
+<pre><code>(1). a|baba &lt;=&gt; abab|a ---&gt; PMV = 1
 (2). ab|aba &lt;=&gt; aba|ba ---&gt; PMV = 3
 ( ). aba|ba &lt;=&gt; ab|aba ---&gt; it returns to step (2)
 ( ). abab|a &lt;=&gt; a|baba ---&gt; it returns to step (1)
 
----&gt; return PMV = 3</pre></td></tr></table>
-</div>
-</div>
-<p>即每次划分之后，我直接考察它对称的划分，然后比较前缀后缀是否相等，进而更新PMV.</p>
-
-<h2 id="pmt-怎么用">PMT 怎么用</h2>
-
+---&gt; return PMV = 3
+</code></pre><p>即每次划分之后，我直接考察它对称的划分，然后比较前缀后缀是否相等，进而更新PMV.</p>
+<h2 id="pmt-">PMT 怎么用</h2>
 <p>实际上这一段也算是转述Jake Boxer的话，再次感谢！</p>
-
 <blockquote>
 <p>KMP算法要做的事情的，就是根据子串K的特征，在<strong>移位</strong>和<strong>比较</strong>的时候实现一个跳步！减少了比较次数。</p>
 </blockquote>
-
 <p>之前提到KMP的主要思想就是跳步，现在是时候来看看它是怎么个跳法了。同样的父串<code>Z = bacbababaabcbab</code>，子串<code>K = abababca</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">/*
+<pre><code>/*
  * `|` denotes a match
  * `x` denotes a dismatch
  * `~` denotes a jump
@@ -507,7 +347,7 @@ bacbababaabcbab
 bacbababaabcbab
     |||||x
     abababca
-!ATTENTION! I&#39;LL JUMP
+!ATTENTION! I'LL JUMP
 
 (6):
 bacbababaabcbab
@@ -520,26 +360,10 @@ bacbababaabcbab|
       ~~       |
         abababca
 
----&gt; return NOT FOUND!</pre></td></tr></table>
-</div>
-</div>
-<p>为什么你跳得这么兴奋？为什么可以这么跳？我想应该有人和我当初一样，虽然你跳的很好，但是我一脸懵逼(＃°Д°).</p>
-
+---&gt; return NOT FOUND!
+</code></pre><p>为什么你跳得这么兴奋？为什么可以这么跳？我想应该有人和我当初一样，虽然你跳的很好，但是我一脸懵逼(＃°Д°).</p>
 <p>我们把来看step5到step6的跳步拎出来看看，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">(5):
+<pre><code>(5):
 bacbababaabcbab
     |||||x
     abababca
@@ -547,52 +371,17 @@ bacbababaabcbab
 (5.1):
 ****ababa******
     |||||x
-    ababa***</pre></td></tr></table>
-</div>
-</div>
-<p>从step5到step5.1我什么也没干，只是把一些碍眼的东西替换成了<code>*</code>号。我们可以看到的是，step5匹配了5个字符，匹配的是K的开头向后5个字符。让我们回头看看这个子串的PMV，查表得知<code>f(&quot;ababa&quot;)=3</code>. 这个“3”代表着什么？它代表了子串<code>ababa</code>的长度为3的前缀一定等于长度为3的后缀，因为这就是PMV的物理意义啊，同志们！所以我可以跳步！直接将前缀<code>abc</code>挪到与后缀<code>abc</code>对齐！</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">aba|ba &lt;=&gt; ab|aba
+    ababa***
+</code></pre><p>从step5到step5.1我什么也没干，只是把一些碍眼的东西替换成了<code>*</code>号。我们可以看到的是，step5匹配了5个字符，匹配的是K的开头向后5个字符。让我们回头看看这个子串的PMV，查表得知<code>f(&quot;ababa&quot;)=3</code>. 这个“3”代表着什么？它代表了子串<code>ababa</code>的长度为3的前缀一定等于长度为3的后缀，因为这就是PMV的物理意义啊，同志们！所以我可以跳步！直接将前缀<code>abc</code>挪到与后缀<code>abc</code>对齐！</p>
+<pre><code>aba|ba &lt;=&gt; ab|aba
 
 ---&gt; jump:
 
 ababa
 ~~|||
-  ababa</pre></td></tr></table>
-</div>
-</div>
-<p>我不但可以跳步2，我还知道后面的3个字符比都不用比，肯定和父串match，所以我直接从第4个字符开始比。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">(5):
+  ababa
+</code></pre><p>我不但可以跳步2，我还知道后面的3个字符比都不用比，肯定和父串match，所以我直接从第4个字符开始比。</p>
+<pre><code>(5):
 bacbababaabcbab
     |||||x
     abababca
@@ -607,29 +396,15 @@ bacbababaabcbab
     ~~|||x
       abababca
          |
-         start point for comparison</pre></td></tr></table>
-</div>
-</div>
-<p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
-
-<p><div style="text-align:center">
-    <code>
-        jump_chars = PML - PMT[PML-1]
-    </code>
-</div>
-其中，PML 表示 partial match length，代表当前匹配长度，比如step5的匹配长度 <code>PML=5</code>.</p>
-
+         start point for comparison
+</code></pre><p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
+<!-- raw HTML omitted -->
 <p>Q: PMT是什么？它为什么这么屌？凭什么它这么屌？它是干嘛的呢？
 A: 可以说PMT就是待匹配字符串的本体了。</p>
-
-<h2 id="复杂度分析">复杂度分析</h2>
-
+<h2 id="heading3">复杂度分析</h2>
 <p>来日在填(╬ Ò ‸ Ó)</p>
-
-<h2 id="c-实现">C++实现</h2>
-
+<h2 id="c">C++实现</h2>
 <h2 id="reference">Reference</h2>
-
 <ol>
 <li><a href="http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/">The Knuth-Morris-Pratt Algorithm in my own words</a></li>
 </ol>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>latex on 水阙</title>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>reference on 水阙</title>
@@ -18,11 +18,10 @@
       
       <guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid>
       <description>&lt;p&gt;本文主要引用 &lt;a href=&#34;https://liam.page/2016/11/06/Linux-Info-Cheatsheet/&#34;&gt;Liam Huang&lt;/a&gt; 的博客。&lt;/p&gt;
-
-&lt;h2 id=&#34;系统相关&#34;&gt;系统相关&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;系统相关&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
@@ -43,7 +42,8 @@ hostname                    &lt;span class=&#34;c1&#34;&gt;# 查看计算机名�
 env                         &lt;span class=&#34;c1&#34;&gt;# 列出环境变量&lt;/span&gt;
 lsmod                       &lt;span class=&#34;c1&#34;&gt;# 列出加载的内核模块&lt;/span&gt;
 uptime                      &lt;span class=&#34;c1&#34;&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
-cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -54,7 +54,7 @@ cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&
       <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description>This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you</description>
+      <description>This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want? It&#39;s</description>
     </item>
     
   </channel>

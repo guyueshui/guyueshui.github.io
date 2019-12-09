@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/bit-field-struct/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-08-06T20:43:02+00:00" />
 <meta itemprop="name" content="位域结构体简介">
 <meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)">
-
-
 <meta itemprop="datePublished" content="2019-08-06T20:43:02&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-06T20:43:02&#43;00:00" />
-<meta itemprop="wordCount" content="1892">
+<meta itemprop="wordCount" content="1888">
 
 
 
-<meta itemprop="keywords" content="cpp,struct,bit field," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="cpp,struct,bit field," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="位域结构体简介"/>
 <meta name="twitter:description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"/>
 
@@ -145,39 +142,23 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#reference">Reference</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>最近实习接触到一个新的知识点，C/C++的位域结构体。</p>
-
+      <p>最近实习接触到一个新的知识点，C/C++的位域结构体。</p>
 <p>以下开始摘抄自：<a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">here</a></p>
-
 <p>位段(bit-field)是以位为单位来定义结构体(或联合体)中的成员变量所占的空间。含有位段的结构体(联合体)称为位段结构。采用位段结构既能够节省空间，又方便于操作。</p>
-
 <p>位段的定义格式为:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">type [var]: digits</pre></td></tr></table>
-</div>
-</div>
-<p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
-
+<pre><code>type [var]: digits
+</code></pre><p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
 <p>举个例子，你可以这样定义一个位域结构体：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -195,29 +176,25 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// sizeof(A): 4
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">A</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">A</span>
 <span class="p">{</span>
-  <span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">12</span><span class="p">;</span>
-  <span class="n">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
-  <span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">};</span>
+  <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">12</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
 
 <span class="c1">// sizeof(B): 12
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">B</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">B</span>
 <span class="p">{</span>
-  <span class="n">uint32_t</span> <span class="n">a</span><span class="p">;</span>
-  <span class="n">uint32_t</span> <span class="n">b</span><span class="p">;</span>
-  <span class="n">uint32_t</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">};</span>
+  <span class="kt">uint32_t</span> <span class="n">a</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">b</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p><code>uint32_t</code>实际上是<code>unsigned int</code>的别名，并且指定了用4个字节存储int类型的数据，而 1byte = 8bits, 4个字节共计32bits，结构体A使用了位域的方式，指定了每个成员所占用的bit数。可以看到，A中三个成员总共占用的比特数为32，也就是4个字节。所以结构体A所占用的空间就是4字节，而B没有使用位域，则3个成员各占4个字节，共计12字节。说白了，位域就是将结构体的成员在比特位上编排的更紧凑，更节省空间。</p>
-
+</div><p><code>uint32_t</code>实际上是<code>unsigned int</code>的别名，并且指定了用4个字节存储int类型的数据，而 1byte = 8bits, 4个字节共计32bits，结构体A使用了位域的方式，指定了每个成员所占用的bit数。可以看到，A中三个成员总共占用的比特数为32，也就是4个字节。所以结构体A所占用的空间就是4字节，而B没有使用位域，则3个成员各占4个字节，共计12字节。说白了，位域就是将结构体的成员在比特位上编排的更紧凑，更节省空间。</p>
 <p>以下开启一段摘抄：</p>
-
 <p>关于位域结构体有以下几点说明：(以下“位段就是位域”，c.f. <a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">ref1</a>)</p>
-
 <ol>
 <li>位段的类型只能是int，unsigned int，signed int三种类型，不能是char型或者浮点型；</li>
 <li>位段占的二进制位数不能超过该基本类型所能表示的最大位数，比如在VC中int是占4个字节，那么最多只能是32位；</li>
@@ -228,16 +205,14 @@
 <li>对位段赋值时，最好不要超过位段所能表示的最大范围，否则可能会造成意想不到的结果。</li>
 <li>位段不能出现数组的形式。</li>
 </ol>
-
 <p>对于位段结构，编译器会自动进行存储空间的优化，主要有这几条原则:</p>
-
 <ol>
 <li>如果一个位段存储单元能够存储得下位段结构中的所有成员，那么位段结构中的所有成员只能放在一个位段存储单元中，不能放在两个位段存储单元中；如果一个位段存储单元不能容纳下位段结构中的所有成员，那么从剩余的位段从下一个位段存储单元开始存放。(在VC中位段存储单元的大小是4字节).</li>
-
-<li><p>如果一个位段结构中只有一个占有0位的无名位段，则只占1或0字节的空间(C语言中是占0字节，而C++中占1字节)；否则其他任何情况下，一个位段结构所占的空间至少是一个位段存储单元的大小；</p>
+<li>如果一个位段结构中只有一个占有0位的无名位段，则只占1或0字节的空间(C语言中是占0字节，而C++中占1字节)；否则其他任何情况下，一个位段结构所占的空间至少是一个位段存储单元的大小；</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -304,80 +279,77 @@
 </span><span class="lnt">65
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="c1">// sizeof(A): 4
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">A</span> <span class="p">{</span>
-<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">4</span><span class="p">;</span>
-<span class="n">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">};</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
 
 <span class="c1">// sizeof(B): 12
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
-<span class="n">uint32_t</span> <span class="n">a</span><span class="p">;</span>
-<span class="n">uint32_t</span> <span class="n">b</span><span class="p">;</span>
-<span class="n">uint32_t</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">};</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="n">a</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">b</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
 
 <span class="c1">// sizeof(C): 8
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">C</span> <span class="p">{</span>
-<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nl">uint32_t</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// 不会和a凑在一起，新开一个字节存
-</span><span class="c1"></span><span class="p">};</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">C</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// 不会和a凑在一起，新开一个字节存
+</span><span class="c1"></span><span class="p">}</span><span class="p">;</span>
 
 <span class="c1">// sizeof(D): 12
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">D</span> <span class="p">{</span>
-<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nl">uint32_t</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// 隔断
-</span><span class="c1"></span><span class="nl">uint32_t</span><span class="p">:</span> <span class="mi">6</span><span class="p">;</span>    <span class="c1">// 开启新的位域存储单元
-</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// 前一个位域不够放，开启新的存放单元
-</span><span class="c1"></span><span class="p">};</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">D</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">uint32_t</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// 隔断
+</span><span class="c1"></span>  <span class="kt">uint32_t</span><span class="o">:</span> <span class="mi">6</span><span class="p">;</span>    <span class="c1">// 开启新的位域存储单元
+</span><span class="c1"></span>  <span class="kt">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// 前一个位域不够放，开启新的存放单元
+</span><span class="c1"></span><span class="p">}</span><span class="p">;</span>
 
 <span class="c1">// sizeof(E): 4
-</span><span class="c1">// 内存分布简图
-</span><span class="c1">// 0000 0000 0000 0000
-</span><span class="c1">// a--- b--- cd-------
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">E</span> <span class="p">{</span>
-<span class="n">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">b</span><span class="p">;</span>        <span class="c1">// 隔断
-</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 在下一个存储单元
-</span><span class="c1"></span><span class="n">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// 四个成员刚好占用32bits，即4个字节
-</span><span class="c1"></span><span class="p">};</span>
+</span><span class="c1"></span><span class="c1">// 内存分布简图
+</span><span class="c1"></span><span class="c1">// 0000 0000 0000 0000
+</span><span class="c1"></span><span class="c1">// a--- b--- cd-------
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">E</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">b</span><span class="p">;</span>        <span class="c1">// 隔断
+</span><span class="c1"></span>  <span class="kt">uint32_t</span> <span class="nl">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 在下一个存储单元
+</span><span class="c1"></span>  <span class="kt">uint32_t</span> <span class="nl">d</span><span class="p">:</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// 四个成员刚好占用32bits，即4个字节
+</span><span class="c1"></span><span class="p">}</span><span class="p">;</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="kt">void</span> <span class="n">Print</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// test
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">A</span> <span class="n">a</span><span class="p">;</span>
-<span class="n">B</span> <span class="n">b</span><span class="p">;</span>
-<span class="n">C</span> <span class="n">c</span><span class="p">;</span>
-<span class="n">D</span> <span class="n">d</span><span class="p">;</span>
-<span class="n">E</span> <span class="n">e</span><span class="p">;</span>
-<span class="n">Print</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// 4
-</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="c1">// 12
-</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">c</span><span class="p">);</span> <span class="c1">// 8
-</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">d</span><span class="p">);</span> <span class="c1">// 12
-</span><span class="c1"></span><span class="n">Print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span> <span class="c1">// 4
-</span><span class="c1"></span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+  <span class="n">C</span> <span class="n">c</span><span class="p">;</span>
+  <span class="n">D</span> <span class="n">d</span><span class="p">;</span>
+  <span class="n">E</span> <span class="n">e</span><span class="p">;</span>
+  <span class="n">Print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 4
+</span><span class="c1"></span>  <span class="n">Print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 12
+</span><span class="c1"></span>  <span class="n">Print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 8
+</span><span class="c1"></span>  <span class="n">Print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 12
+</span><span class="c1"></span>  <span class="n">Print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 4
+</span><span class="c1"></span>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-
-<p>以下测试用法：</p>
+</div><p>以下测试用法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -408,68 +380,55 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="c1">// sizeof: 4
-</span><span class="c1"></span><span class="k">struct</span> <span class="n">TcpMsgHead</span> <span class="p">{</span>
-  <span class="n">uint32_t</span> <span class="nl">length</span><span class="p">:</span> <span class="mi">16</span><span class="p">;</span>
-  <span class="n">uint32_t</span> <span class="nl">flags</span><span class="p">:</span> <span class="mi">8</span><span class="p">;</span>
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">TcpMsgHead</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="nl">length</span><span class="p">:</span> <span class="mi">16</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="nl">flags</span><span class="p">:</span> <span class="mi">8</span><span class="p">;</span>
   <span class="kt">int</span>      <span class="nl">num</span><span class="p">:</span> <span class="mi">8</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="p">}</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="k">const</span> <span class="n">TcpMsgHead</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;length: %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;flags:  %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">flags</span><span class="p">);</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;num:    %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">num</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">length: %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">length</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">flags:  %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">flags</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">num:    %8d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">num</span><span class="p">)</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// test
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">TcpMsgHead</span> <span class="n">head</span><span class="p">;</span>
   <span class="n">head</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mh">0xffff</span><span class="p">;</span> <span class="c1">// 2^16 - 1 = 65535
 </span><span class="c1"></span>  <span class="n">head</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0xff</span><span class="p">;</span>    <span class="c1">// 2^8 - 1 = 255
 </span><span class="c1"></span>  <span class="n">head</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mh">0xff</span><span class="p">;</span>
-  <span class="n">Print</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+  <span class="n">Print</span><span class="p">(</span><span class="n">head</span><span class="p">)</span><span class="p">;</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>上述程序的输出为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">length:    65535
+</div><p>上述程序的输出为：</p>
+<pre><code>length:    65535
 flags:       255
-num:          -1</pre></td></tr></table>
-</div>
-</div>
-<p>解释一下为什么num成员的值为-1：
+num:          -1
+</code></pre><p>解释一下为什么num成员的值为-1：
 首先num设置的比特位为8，而num的类型为int，是有符号的。对于有符号的整数，计算机内部使用补码表示的。
 0xff 换成二进制
 1111 1111
 这正好是-1的补码。</p>
-
 <p>其实，Ycm给出的提示已经很明确了：
-<img src="tr1.png" alt="tr1" />
+<img src="tr1.png" alt="tr1">
 Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 也就是二进制的 0001 0001, 则不会发生截断，因为8比特足够描述0x11，符号位是0，表示正数，所以这很符合我们的预期。但是如果再加一个2呢？
-<img src="tr2.png" alt="tr2" />
+<img src="tr2.png" alt="tr2">
 可以看到Ycm提示发生截断，
 529被截断成了17, 即
 0010 0001 0001 被截断成了 0001 0001
 也就是说，我结构体定义的时候已经确定了num只有8比特位可以存。高于8比特的数据全都截断。如果最高位是1，则会被转成负数，这可能和你的预期不符。所以一定不要设置超过容量的数据。</p>
-
 <h2 id="reference">Reference</h2>
-
 <ol>
 <li><a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">浅谈C语言中的位段</a></li>
 </ol>

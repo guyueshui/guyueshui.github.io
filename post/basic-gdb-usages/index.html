@@ -26,7 +26,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/basic-gdb-usages/" />
@@ -45,7 +45,6 @@
 
 <meta property="og:title" content="GDB 基本用法" />
 <meta property="og:description" content="废话以后有时间再加。
-
 首先编译时开启调试选项：
 
 
@@ -62,7 +61,6 @@ g&#43;&#43; main.cpp -g -O0
 <meta property="article:modified_time" content="2019-08-18T16:14:24+00:00" />
 <meta itemprop="name" content="GDB 基本用法">
 <meta itemprop="description" content="废话以后有时间再加。
-
 首先编译时开启调试选项：
 
 
@@ -73,19 +71,15 @@ g&#43;&#43; main.cpp -g -O0
 
 
 -O0指定编译器的优化级别为0，即不优化。">
-
-
 <meta itemprop="datePublished" content="2019-08-18T16:14:24&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-18T16:14:24&#43;00:00" />
-<meta itemprop="wordCount" content="474">
+<meta itemprop="wordCount" content="479">
 
 
 
-<meta itemprop="keywords" content="debug,linux,gdb,cpp," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="debug,linux,gdb,cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GDB 基本用法"/>
 <meta name="twitter:description" content="废话以后有时间再加。
-
 首先编译时开启调试选项：
 
 
@@ -181,62 +175,52 @@ g&#43;&#43; main.cpp -g -O0
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#备注">备注</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">备注</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
       <p>废话以后有时间再加。</p>
-
 <p>首先编译时开启调试选项：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>-O0</code>指定编译器的优化级别为0，即不优化。</p>
-
+</div><p><code>-O0</code>指定编译器的优化级别为0，即不优化。</p>
 <p>然后编译出来的可执行文件，默认名字是<code>a.out</code>. 直接了当，用gdb打开之，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">gdb a.out</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">gdb a.out
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>要调试必然要打断点，两种方式：指定行数；指定函数。</p>
+</div><p>要调试必然要打断点，两种方式：指定行数；指定函数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> <span class="m">10</span>  // create breakpoint at line <span class="m">10</span>
-<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> main  // create breakpoint at the entrance of main</code></pre></td></tr></table>
+<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> main  // create breakpoint at the entrance of main
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>使用<code>list</code>在gdb中查看代码块以确定你要在哪一行设置断点（这就很麻烦，所以一般直接在main函数打个断点，然后单步去run）。</p>
-
+</div><p>使用<code>list</code>在gdb中查看代码块以确定你要在哪一行设置断点（这就很麻烦，所以一般直接在main函数打个断点，然后单步去run）。</p>
 <p>设好断点以后，使用<code>run</code>启动程序，程序会在断点处停顿，等待你的输入指令。
-<img src="gdb-demo.png" alt="gdb-demo" /></p>
-
+<img src="gdb-demo.png" alt="gdb-demo"></p>
 <p>使用<code>next</code>进行单步执行，使用<code>step</code>步入。所谓步入就是如果有函数调用，程序会跟踪到所调用的函数内部的代码，而单步的话，则会直接完成函数调用，获得返回值（如果有的话）。</p>
-
 <p>使用<code>info locals</code>查看栈变量的值，使用<code>info args</code>查看函数传入参数的值。使用<code>print &lt;variable&gt;</code>查看指定变量的值。</p>
-
-<h2 id="备注">备注</h2>
-
+<h2 id="heading">备注</h2>
 <ul>
-<li>GDB里面的命令都有缩写（break=b, next=n, step=s, ...）</li>
+<li>GDB里面的命令都有缩写（break=b, next=n, step=s, &hellip;）</li>
 <li>什么命令也不敲直接回车默认执行上一条命令</li>
 <li>使用<code>help &lt;command&gt;</code>来获取相关命令的使用帮助</li>
 </ul>
@@ -304,7 +288,7 @@ g&#43;&#43; main.cpp -g -O0
         id: '2019-08-18 16:14:24 \x2b0000 UTC',
         title: 'GDB 基本用法',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3e废话以后有时间再加。\x3c\/p\x3e\n\n\x3cp\x3e首先编译时开启调试选项：\x3c\/p\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3e\x3cspan class=\x22lnt\x22\x3e1\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3eg\x2b\x2b main.cpp -g -O0\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e\n\x3cp\x3e\x3ccode\x3e-O0\x3c\/code\x3e指定编译器的优化级别为0，即不优化。\x3c\/p\x3e',
+        desc: '\x3cp\x3e废话以后有时间再加。\x3c\/p\x3e\n\x3cp\x3e首先编译时开启调试选项：\x3c\/p\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode\x3e\x3cspan class=\x22lnt\x22\x3e1\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3eg\x2b\x2b main.cpp -g -O0\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e\x3cp\x3e\x3ccode\x3e-O0\x3c\/code\x3e指定编译器的优化级别为0，即不优化。\x3c\/p\x3e',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

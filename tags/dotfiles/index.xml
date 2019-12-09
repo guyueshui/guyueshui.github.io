@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dotfiles on 水阙</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/manage-dotfiles-by-git/</guid>
-      <description>对于Linux用户，在 $HOME 文件夹下，一般都有大量的隐藏文件，形如.conf,.xxxrc等，这些都是程序的配置文件。很多人也许花了一个下午，一</description>
+      <description>对于Linux用户，在 $HOME 文件夹下，一般都有大量的隐藏文件，形如.conf`,.xxxrc`等，这些都是程序的配置文件。很多人也许花了一个下午</description>
     </item>
     
   </channel>

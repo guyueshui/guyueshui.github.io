@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/sicp-learning-notes/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-02-21T14:50:23+00:00" />
 <meta itemprop="name" content="SICP Learning Notes">
 <meta itemprop="description" content="当我们考察一门语言时，主要看三点 primitives：元操作是什么 means of combinations：如何组合 means of abstraction：如何抽象">
-
-
 <meta itemprop="datePublished" content="2019-02-21T14:50:23&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-21T14:50:23&#43;00:00" />
-<meta itemprop="wordCount" content="449">
+<meta itemprop="wordCount" content="437">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SICP Learning Notes"/>
 <meta name="twitter:description" content="当我们考察一门语言时，主要看三点 primitives：元操作是什么 means of combinations：如何组合 means of abstraction：如何抽象"/>
 
@@ -142,38 +139,19 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
       <p>当我们考察一门语言时，主要看三点</p>
-
 <ol>
 <li>primitives：元操作是什么</li>
 <li>means of combinations：如何组合</li>
 <li>means of abstraction：如何抽象，构造更复杂的程序</li>
 </ol>
-
 <p>数据和过程之间没有本质的区别</p>
-
 <p>在写完构造器（constrcutor）之后，记得写上选择器（selector）。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">+---------+       rule          +--------+
+<pre><code>+---------+       rule          +--------+
 | pattern +--------------------&gt;+skeleton|
 +----+----+                     +----+---+
      |                               |
@@ -184,33 +162,22 @@
 +----+-----+                    +----+-----+
 |expression|                    |expression|
 |  source  +-------------------&gt;+  target  |
-+----------+                    +----------+</pre></td></tr></table>
-</div>
-</div>
-<p>pattern match</p>
-
-<p>foo -- matches exactly foo
-(f a b) -- matches a list, whose first element is f, etc.
-(? x) -- matches anything, call it x
-(?c x) -- matches a constant, call it x
-(?v x) -- matches a variable, call it x</p>
-
++----------+                    +----------+
+</code></pre><p>pattern match</p>
+<p>foo &ndash; matches exactly foo
+(f a b) &ndash; matches a list, whose first element is f, etc.
+(? x) &ndash; matches anything, call it x
+(?c x) &ndash; matches a constant, call it x
+(?v x) &ndash; matches a variable, call it x</p>
 <p>skeletons</p>
-
-<p>foo -- instantiates to itself
-(f a b) -- instantiates to a 3-list, results of instatiating each of f, a, b
-(: x) -- instatantiates to the value of x in the pattern matched</p>
-
+<p>foo &ndash; instantiates to itself
+(f a b) &ndash; instantiates to a 3-list, results of instatiating each of f, a, b
+(: x) &ndash; instatantiates to the value of x in the pattern matched</p>
 <p>任何一个复杂的大程序都是由简单的小部分组成。纵然递归模式非常复杂，最重要的事情就是：<strong>不去思考它</strong>。如果取思考它的实际行为，大家就会迷惑。</p>
-
 <p>Convince yourself something is right.</p>
-
 <p>好的编程或设计方法就是你知道什么不用去思考！</p>
-
 <p>Wishful thinking is crucial!</p>
-
 <p>Lisp没有循环，靠递归的procedure实现迭代，这并不表示procedure展开的process也是递归的。区分递归和迭代的核心是是否需要辅助空间跟踪程序运行的状态。</p>
-
 <p><strong>Case analysis is more powerful than you thought!</strong> Trust me.</p>
 
     </div>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/blog-trans/" />
@@ -48,15 +48,12 @@
 <meta property="article:modified_time" content="2019-08-25T16:00:50+08:00" />
 <meta itemprop="name" content="博客迁移记录">
 <meta itemprop="description" content="终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天">
-
-
 <meta itemprop="dateModified" content="2019-08-25T16:00:50&#43;08:00" />
-<meta itemprop="wordCount" content="2942">
+<meta itemprop="wordCount" content="2947">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="博客迁移记录"/>
 <meta name="twitter:description" content="终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天"/>
 
@@ -142,40 +139,31 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#frontmatter-不匹配">Frontmatter 不匹配</a></li>
-<li><a href="#时间格式">时间格式</a></li>
-<li><a href="#公式渲染">公式渲染</a></li>
-<li><a href="#自定义字体">自定义字体</a></li>
-<li><a href="#图片和表格居中">图片和表格居中</a></li>
-<li><a href="#部署">部署</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#frontmatter-">Frontmatter 不匹配</a></li>
+        <li><a href="#heading">时间格式</a></li>
+        <li><a href="#heading1">公式渲染</a></li>
+        <li><a href="#heading2">自定义字体</a></li>
+        <li><a href="#heading3">图片和表格居中</a></li>
+        <li><a href="#heading4">部署</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>终于还是干了！很早以前就有了这个想法，起初使用<a href="https://hexo.io">Hexo</a>搭的博客，折腾了一段时间，选了一个不错的主题<a href="https://github.com/Molunerfinn/hexo-theme-melody">Melody</a>。一切都进行的很好，直到有一天又发现<a href="https://gohugo.io">Hugo</a>这么个东西，登时就忍不住了，不是说原来的不好，二十Hugo太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开html一样。相比之下Hexo的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：</p>
-
-<p><img src="oldstyle.png" alt="oldstyle" /></p>
-
+      <p>终于还是干了！很早以前就有了这个想法，起初使用<a href="https://hexo.io">Hexo</a>搭的博客，折腾了一段时间，选了一个不错的主题<a href="https://github.com/Molunerfinn/hexo-theme-melody">Melody</a>。一切都进行的很好，直到有一天又发现<a href="https://gohugo.io">Hugo</a>这么个东西，登时就忍不住了，不是说原来的不好，二十Hugo太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开html一样。相比之下Hexo的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：</p>
+<p><img src="oldstyle.png" alt="oldstyle"></p>
 <p>如你所见，还可以在 <a href="https://guyueshui.github.io/blog_archive">https://guyueshui.github.io/blog_archive</a> 访问它，但以后的更新还是主要在现在这个博客上。</p>
-
 <p>这里简单记录一下迁移过程中遇到的一些问题。</p>
-
-<h3 id="frontmatter-不匹配">Frontmatter 不匹配</h3>
-
+<h3 id="frontmatter-">Frontmatter 不匹配</h3>
 <p>Hexo博文的frontmatter格式如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -196,13 +184,13 @@
 </span><span class="w"></span>-<span class="w"> </span>linux<span class="w">
 </span><span class="w"></span>-<span class="w"> </span>gdb<span class="w">
 </span><span class="w"></span>-<span class="w"> </span>c++<span class="w">
-</span><span class="w"></span>---</code></pre></td></tr></table>
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>而Hugo博文的frontmatter如下</p>
+</div><p>而Hugo博文的frontmatter如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -215,17 +203,15 @@
 </span><span class="w"></span>date<span class="p">:</span><span class="w"> </span><span class="ld">2019-08-18 16:14:24</span><span class="w">
 </span><span class="w"></span>categories<span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Techniques&#39;</span><span class="p">]</span><span class="w">
 </span><span class="w"></span>tags<span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;linux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c++&#39;</span><span class="p">]</span><span class="w">
-</span><span class="w"></span>---</code></pre></td></tr></table>
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>还好我的文章不算多，一个个改吧！</p>
-
-<h3 id="时间格式">时间格式</h3>
-
+</div><p>还好我的文章不算多，一个个改吧！</p>
+<h3 id="heading">时间格式</h3>
 <p>Hexo的时间格式很简单：<code>2006-01-02 15:04</code>. 但是Hugo的时间格式就比较麻烦了。默认模板<code>archetypes/defalut.md</code>中定义的frontmatter如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -234,13 +220,13 @@
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
 </span><span class="w"></span>title<span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
 </span><span class="w"></span>date<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
-</span><span class="w"></span>---</code></pre></td></tr></table>
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>先不管title，默认的<code>.Date</code>变量生成出来的时间格式是这样的：<code>2006-01-02T15:04:59-0700</code>, 看着怪难受的。我想让它变得简单直观一些，于是改成如下格式：</p>
+</div><p>先不管title，默认的<code>.Date</code>变量生成出来的时间格式是这样的：<code>2006-01-02T15:04:59-0700</code>, 看着怪难受的。我想让它变得简单直观一些，于是改成如下格式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -251,27 +237,21 @@
 </span><span class="w"></span>title<span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
 </span><span class="w"></span>date<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>dateFormat<span class="w"> </span><span class="s2">&#34;Mon Jan 2 2006&#34;</span><span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
 </span><span class="w"></span>lastmod<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
-</span><span class="w"></span>---</code></pre></td></tr></table>
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>使用<code>dataFormat</code>函数将输出格式转换成喜欢的格式，所有支持的格式参见Hugo文档<sup class="footnote-ref" id="fnref:a"><a href="#fn:a">1</a></sup>。这里我将它转换成“Mon Jan 2 2006”这种格式，但是它丢失了时间信息，所以我加了一个<code>lastmod</code>表示最后更改日期，而且没有做格式转换。</p>
-
+</div><p>使用<code>dataFormat</code>函数将输出格式转换成喜欢的格式，所有支持的格式参见Hugo文档<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。这里我将它转换成“Mon Jan 2 2006”这种格式，但是它丢失了时间信息，所以我加了一个<code>lastmod</code>表示最后更改日期，而且没有做格式转换。</p>
 <blockquote>
 <p>注意：貌似是Go语言的原因，Go语言所有的时间计算都是有一个基准的，这个基准时间就是：<code>2006-01-02 15:04:05 0700</code>, 所有日期的格式设置都要根据这个时间来设，否则就会计算出错误的时间。至于为什么？可能是因为它比较好记：1月2日3点4分5秒6年7时区。开个玩笑:)</p>
 </blockquote>
-
-<h3 id="公式渲染">公式渲染</h3>
-
+<h3 id="heading1">公式渲染</h3>
 <p>这个我是真的头大，这是先前阻止我转Hugo的唯一理由。Hexo那边有专门的插件解决这个事情，而且可以配置markdown解析规则，因此比较完美的解析出公式段并正确渲染。但Hugo貌似就要自己动手了，之前也在网上找了很多解决方案，要么是主题自带，要么是手动添加mathjax支持到head里面。这样所有的页面都会加载mathjax，但是还是避免不了解析错误的问题：比如在markdown里面<code>_</code>可以表示斜体的开头，但在LaTeX里面表示下标。诸如此类的字符冲突还有很多，如果不能自定义markdown的解析规则，那么就会导致有些公式无法正常渲染。另外我也试过KaTeX+mmark的方案，未果。</p>
-
 <p>到目前为止，我还是没有找到满意的解决方案。现在用的是even主题自带的mathjax，所以可能还是会有一些公式无法正常渲染(ﾟДﾟ≡ﾟдﾟ)!?</p>
-
-<h3 id="自定义字体">自定义字体</h3>
-
+<h3 id="heading2">自定义字体</h3>
 <p>有了之前在Melody主题自定字体的经验，这次修改字体没有太费什么功夫。主要将主题的<code>font-family</code>改一下，以及将对应的字体放到网站中去。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -280,24 +260,22 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">//! file: themes/even/src/css/_variables.scss
-</span><span class="c1">// Font family of the site.
-</span><span class="c1"></span><span class="nv">$global-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Libertine</span> <span class="n">O</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s2">Source Sans Pro&#39;</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s2">Helvetica Neue&#39;</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span> <span class="nv">!default</span><span class="p">;</span>
+</span><span class="c1"></span><span class="c1">// Font family of the site.
+</span><span class="c1"></span><span class="nv">$global-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Libertine</span> <span class="n">O</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s1">Source Sans Pro</span><span class="s1">&#39;</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s1">Helvetica Neue</span><span class="s1">&#39;</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span> <span class="nv">!default</span><span class="p">;</span>
 
 <span class="c1">// Serif font family of the site.
-</span><span class="c1"></span><span class="nv">$global-serif-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Biolinum</span> <span class="n">O</span><span class="o">,</span> <span class="n">Athelas</span><span class="o">,</span> <span class="n">STHeiti</span><span class="o">,</span> <span class="n">Microsoft</span> <span class="n">Yahei</span><span class="o">,</span> <span class="no">serif</span> <span class="nv">!default</span><span class="p">;</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nv">$global-serif-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Biolinum</span> <span class="n">O</span><span class="o">,</span> <span class="n">Athelas</span><span class="o">,</span> <span class="n">STHeiti</span><span class="o">,</span> <span class="n">Microsoft</span> <span class="n">Yahei</span><span class="o">,</span> <span class="no">serif</span> <span class="nv">!default</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Even主题还是比较好的，将serif和sans分成了两族，这应该是很自然的。之前Melody里面只能设置全局，一换所有字体都换了，也可能是我不会换orz. 可以看到这里可以自定义字体族，我只是在前面加了两个而已，</p>
-
+</div><p>Even主题还是比较好的，将serif和sans分成了两族，这应该是很自然的。之前Melody里面只能设置全局，一换所有字体都换了，也可能是我不会换orz. 可以看到这里可以自定义字体族，我只是在前面加了两个而已，</p>
 <ul>
 <li>serif：Linux Libertine O</li>
 <li>sans: Linux Biolinum O</li>
 </ul>
-
 <p>这两个字体我十分推荐，源于SICP的排版字体，非常耐看！Sans用于标题等粗文本，serif用于排版正文。关于字体名字的获得：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -310,13 +288,13 @@
 /home/yychi/.local/share/fonts/Libertine/LinLibertine_DR.otf: Linux Libertine Display O:style<span class="o">=</span>Regular
 /home/yychi/.local/share/fonts/Libertine/LinLibertine_RI.otf: Linux Libertine O:style<span class="o">=</span>Italic
 /home/yychi/.local/share/fonts/Libertine/LinBiolinum_R.otf: Linux Biolinum O:style<span class="o">=</span>Regular
-/home/yychi/.local/share/fonts/Monaco_Linux.ttf: Monaco:style<span class="o">=</span>Regular</code></pre></td></tr></table>
+/home/yychi/.local/share/fonts/Monaco_Linux.ttf: Monaco:style<span class="o">=</span>Regular
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>然后将字体文件复制到博客根目录的<code>static/fonts/Libertine</code>文件夹，这样hugo生成网站的时候就会把字体文件一并获得。最后在<code>_variables.scss</code>或<code>_custom.scss</code>中设置一下字体目录就行了。</p>
+</div><p>然后将字体文件复制到博客根目录的<code>static/fonts/Libertine</code>文件夹，这样hugo生成网站的时候就会把字体文件一并获得。最后在<code>_variables.scss</code>或<code>_custom.scss</code>中设置一下字体目录就行了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -328,22 +306,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@font-face</span> <span class="p">{</span>
-  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Libertine</span> <span class="nt">O</span><span class="o">;</span>
-  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;/fonts/Libertine/LinLibertine_DR.otf&#34;</span><span class="o">);</span>
+  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Libertine</span> <span class="nt">O</span><span class="p">;</span>
+  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;</span><span class="s2">/fonts/Libertine/LinLibertine_DR.otf</span><span class="s2">&#34;</span><span class="o">)</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@font-face</span> <span class="p">{</span>
-  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Biolinum</span> <span class="nt">O</span><span class="o">;</span>
-  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;/fonts/Libertine/LinBiolinum_R.otf&#34;</span><span class="o">);</span>
-<span class="p">}</span></code></pre></td></tr></table>
+  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Biolinum</span> <span class="nt">O</span><span class="p">;</span>
+  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;</span><span class="s2">/fonts/Libertine/LinBiolinum_R.otf</span><span class="s2">&#34;</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="图片和表格居中">图片和表格居中</h3>
-
-<p>因为Even主题默认是居左的，所以这里改为居中<sup class="footnote-ref" id="fnref:b"><a href="#fn:b">2</a></sup>。</p>
+</div><h3 id="heading3">图片和表格居中</h3>
+<p>因为Even主题默认是居左的，所以这里改为居中<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -389,82 +366,78 @@
 </span><span class="c1"></span>
 <span class="c1">// 图片居中
 </span><span class="c1"></span><span class="nt">img</span> <span class="p">{</span>
-  <span class="nt">display</span><span class="nd">:</span> <span class="nt">inline-block</span><span class="o">;</span>
-  <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="o">;</span>
-  <span class="o">/*</span> <span class="nt">make</span> <span class="nt">img</span> <span class="nt">centerd</span> <span class="o">@</span><span class="nt">yychi</span> <span class="o">*/</span>
-  <span class="nt">height</span><span class="nd">:</span> <span class="nt">auto</span><span class="o">;</span>
-  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6em</span> <span class="nt">0</span><span class="o">;</span>
-  <span class="nt">position</span><span class="nd">:</span> <span class="nt">relative</span><span class="o">;</span>
-  <span class="nt">left</span><span class="nd">:</span> <span class="nt">50</span><span class="err">%</span><span class="o">;</span>
-  <span class="nt">-webkit-transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">);</span> <span class="o">//</span> <span class="nt">for</span> <span class="nt">Safari</span> <span class="nt">and</span> <span class="nt">iOS</span>
-  <span class="nt">-ms-transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">);</span> <span class="o">//</span> <span class="nt">for</span> <span class="nt">IE9</span>
-  <span class="nt">transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">);</span>
+  <span class="nt">display</span><span class="nd">:</span> <span class="nt">inline-block</span><span class="p">;</span>
+  <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+  <span class="cm">/* make img centerd @yychi */</span>
+  <span class="nt">height</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.</span><span class="nc">6em</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">position</span><span class="nd">:</span> <span class="nt">relative</span><span class="p">;</span>
+  <span class="nt">left</span><span class="nd">:</span> <span class="nt">50</span><span class="err">%</span><span class="p">;</span>
+  <span class="nt">-webkit-transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">)</span><span class="p">;</span> <span class="c1">// for Safari and iOS
+</span><span class="c1"></span>  <span class="nt">-ms-transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">)</span><span class="p">;</span> <span class="c1">// for IE9
+</span><span class="c1"></span>  <span class="nt">transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">)</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// 表格居中
-</span><span class="c1"></span><span class="nc">.table-wrapper</span> <span class="p">{</span>
-  <span class="nt">overflow-x</span><span class="nd">:</span> <span class="nt">auto</span><span class="o">;</span>
+</span><span class="c1"></span><span class="nc">.</span><span class="nc">table-wrapper</span> <span class="p">{</span>
+  <span class="nt">overflow-x</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span>
 
   <span class="o">&gt;</span> <span class="nt">table</span> <span class="p">{</span>
-    <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="o">;</span>
-    <span class="nt">margin</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">auto</span><span class="o">;</span> <span class="o">//</span> <span class="nt">make</span> <span class="nt">table</span> <span class="nt">centered</span> <span class="o">@</span><span class="nt">yychi</span>
-    <span class="nt">border-spacing</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
-    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">2px</span> <span class="nt">3px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nc">.125</span><span class="o">);</span>
+    <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+    <span class="nt">margin</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">auto</span><span class="p">;</span> <span class="c1">// make table centered @yychi
+</span><span class="c1"></span>    <span class="nt">border-spacing</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">2px</span> <span class="nt">3px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nc">.</span><span class="nc">125</span><span class="o">)</span><span class="p">;</span>
 
     <span class="nt">thead</span> <span class="p">{</span>
-      <span class="nt">background</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="o">;</span>
+      <span class="nt">background</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
-      <span class="nt">padding</span><span class="nd">:</span> <span class="nt">5px</span> <span class="nt">15px</span><span class="o">;</span>
-      <span class="nt">border</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">double</span> <span class="err">$</span><span class="nt">content-table-border-color</span><span class="o">;</span>
+      <span class="nt">padding</span><span class="nd">:</span> <span class="nt">5px</span> <span class="nt">15px</span><span class="p">;</span>
+      <span class="nt">border</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">double</span> <span class="err">$</span><span class="nt">content-table-border-color</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nt">tr</span><span class="nd">:hover</span> <span class="p">{</span>
-      <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="o">;</span>
+    <span class="nt">tr</span><span class="nd">:</span><span class="nd">hover</span> <span class="p">{</span>
+      <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="部署">部署</h3>
-
+</div><h3 id="heading4">部署</h3>
 <p>Hugo的部署，没有Hexo那样一步到位，每次都要手动操作。以至于一开始载了很多跟头。按照Hugo中文文档中的方法试了不行（好像坊间流传Hugo的文档写的不行），于是去翻英文文档。对照着做，其实还好，没那么困难。就是一开始走了点弯路，因为我的blog仓库并不是空的，之前的Hexo生成的网站还在。所以走流程的时候出了一些问题，各种文件冲突。后来干脆将Hexo page部署到另一个仓库，将blog仓库清空。然后按照流程走，终于走完了。</p>
-
 <p>其实还有一个问题，一开始我Hugo设置了输出markdown源文件，Hugo会把它放到生成博文的同目录下，原本只有一个<code>index.html</code>, 现在多了一个<code>index.md</code>. 我想这很好啊，不用另外开一个仓库保存原始的md文件了，但是部署上去，github报错，说生成的md文件里有语法错误，网站构建失败。没办法，现在不想折腾了，就在Hugo中把这个选项关了。</p>
-
 <p>部署过程参考文档即可：<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on Github</a>. 我还是大致翻译一下吧：</p>
-
 <ol>
 <li>在你的Github上新建一个仓库，假设叫<code>blog</code>. 这个仓库将用来存放Hugo工程文件，也就是你本地的Hugo site根目录。</li>
 <li>在你的Github上创建仓库<code>&lt;username&gt;.github.io</code>，其中<code>&lt;username&gt;</code>为你的Github账户名，这个仓库将用来存放Hugo生成的整个网站。如果你已经有这个仓库了，清空之。</li>
 <li><code>git clone git@github.com:&lt;username&gt;/blog.git &amp;&amp; cd blog</code></li>
 <li>将你的本地Hugo文件夹复制到<code>blog</code>中去，确保你的网站可以在本地正常运作（使用<code>hugo server</code>或<code>hugo --config &lt;your-config&gt;.toml server</code>）然后访问<code>localhost:1313</code></li>
-<li>如果你觉得网站已经符合你的预期了：
-
+<li>如果你觉得网站已经符合你的预期了：</li>
+</ol>
 <ul>
-<li>按下<kbd>Ctrl</kbd>+<kbd>C</kbd>终止本地服务</li>
+<li>按下<!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->C<!-- raw HTML omitted -->终止本地服务</li>
 <li><code>rm -rf public</code>删除整个<code>public</code>文件夹，不用担心，你总可以使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成它</li>
-</ul></li>
+</ul>
+<ol start="6">
 <li>将<code>&lt;username&gt;.github.io</code>添加为本仓库的<a href="https://github.blog/2016-02-01-working-with-submodules/">submodule</a>, 这样一来<code>public</code>文件夹下的内容就会推送到<code>&lt;username&gt;.github.io</code>这个仓库。使用如下命令来完成：<code>git submodule add -b master git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code></li>
 <li>使用<code>hugo --config &lt;your-config&gt;.toml</code>来生成你的网站，生成的文件将在<code>public</code>文件夹下</li>
 <li>进入<code>public</code>文件夹，使用git完成推送</li>
 </ol>
-
 <blockquote>
 <p>注意：此前需要在你的Hugo配置文件中更改相应的<code>baseURL</code>. 例如，更改为<code>baseURL = &quot;https://&lt;username&gt;.github.io&quot;</code></p>
 </blockquote>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:a"><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a>
- <a class="footnote-return" href="#fnref:a">↩</a></li>
-<li id="fn:b"><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a>
- <a class="footnote-return" href="#fnref:b">↩</a></li>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a><a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a><a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
     </div>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on 水阙</title>
@@ -17,8 +17,8 @@
       <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
-      <description>This article is mainly refered to &amp;quot;The Linux Command Line&amp;quot;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+      <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
     </item>
     
@@ -29,7 +29,8 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
       
       <guid>https://guyueshui.github.io/post/nn-notes/</guid>
       <description>Hello here.
-CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted). each filter convolving with the input will produce an activation map, two filters will produce two, etc.</description>
+CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
+ take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
     </item>
     
     <item>
@@ -92,10 +93,9 @@ CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. 
       <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
-      <description>Declaration: this article is in long time editing...
-Here comes some beautiful recursive solutions to some problems.
+      <description>Declaration: this article is in long time editing&amp;hellip; Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
     </item>
     
     <item>
@@ -104,7 +104,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
-      <description>In editing... 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
+      <description>In editing&amp;hellip; 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
     </item>
     
     <item>
@@ -149,7 +149,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
-      <description>In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
+      <description>In editing&amp;hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <guid>https://guyueshui.github.io/post/matrix-factorization/</guid>
       <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
 Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
-There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
+There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
     </item>
     
     <item>
@@ -169,7 +169,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
     </item>
     
     <item>

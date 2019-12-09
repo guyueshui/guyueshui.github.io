@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/exponetial-distribution/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-08-25T00:00:00+00:00" />
 <meta itemprop="name" content="Exponential Distribution">
 <meta itemprop="description" content="Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.">
-
-
 <meta itemprop="datePublished" content="2018-12-25T22:21:49&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1079">
+<meta itemprop="wordCount" content="1076">
 
 
 
-<meta itemprop="keywords" content="math,probability," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="math,probability," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exponential Distribution"/>
 <meta name="twitter:description" content="Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success."/>
 
@@ -145,45 +142,32 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#story">Story</a></li>
-<li><a href="#basic">Basic</a></li>
-<li><a href="#memeoryless-property">Memeoryless Property</a></li>
-<li><a href="#examples">Examples</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#basic">Basic</a></li>
+    <li><a href="#memeoryless-property">Memeoryless Property</a></li>
+    <li><a href="#examples">Examples</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="story">Story</h2>
-
+      <h2 id="story">Story</h2>
 <blockquote>
-<p>The Exponential distribution is the continuous counterpart to the <a href="file://./Geometric-Distribution.md">Geometric distribution</a>. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</p>
-
-<div style="text-align:right">——adapted from Book BH</div>
+<p>The Exponential distribution is the continuous counterpart to the <a href="">Geometric distribution</a>. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</p>
+<!-- raw HTML omitted -->
 </blockquote>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <h2 id="basic">Basic</h2>
-
 <p><strong>Definition</strong>: A continuous r.v. $X$ is said to have the <em>Exponential distribution</em> with parameter $\lambda$ if its PDF is
 $$
 f(x) = \lambda e^{-\lambda x}, \quad x &gt; 0
 $$
 The corresponding CDF is</p>
-
 <p>$$
 F(x) = 1 - e^{-\lambda x}, \quad x &gt; 0
 $$</p>
-
 <p>To calculate the expectation and variance, we first consider $X \sim Exp(1)$ with PDF $f(x) = e^{-x}$, then</p>
-
 <p>$$
 \begin{split}
 E(X) &amp;= \int_0^{\infty} x e^{-x} dx = 1  \newline
@@ -195,39 +179,29 @@ M_X(t) &amp;= E(e^{tX}) = \int_0^{\infty} e^{tx} e^{-x} dx \newline
 &amp;= \int_0^{\infty} e^{-(1-t)x} dx = \frac{1}{1-t} \quad \text{for }t&lt;1
 \end{split}
 $$</p>
-
 <p>Now let $Y=\frac{X}{\lambda} \sim Exp(\lambda)$ for</p>
-
 <p>$$
 f_Y(y) = f_X(X(y))\frac{dx}{dy} = e^{-\lambda y}\cdot\lambda \sim Exp(\lambda)
 $$</p>
-
 <p>or</p>
-
 <p>$$
 P(Y\le y) = P(X\le \lambda y) = 1 - e^{-\lambda y} \sim Exp(\lambda).
 $$</p>
-
 <p>Hence, we can get</p>
-
 <ul>
 <li>$E(Y) = E(X/\lambda) = 1/\lambda$</li>
 <li>$Var(Y) = Var(X/\lambda) = 1/\lambda^2$</li>
 <li>MGF (moment generating function):</li>
 </ul>
-
 <p>$$
 \begin{split}
-  M_Y(t) &amp;= E(e^{tY}) =E(e^{tX/\lambda}) \newline
-    &amp;= E(e^{\frac{t}{\lambda}X}) = M_X(\frac{t}{\lambda}) = \frac{1}{1-t/\lambda} \newline
-  &amp;= \frac{\lambda}{\lambda -t} \quad \text{for }t&lt;\lambda
-  \end{split}
+M_Y(t) &amp;= E(e^{tY}) =E(e^{tX/\lambda}) \newline
+&amp;= E(e^{\frac{t}{\lambda}X}) = M_X(\frac{t}{\lambda}) = \frac{1}{1-t/\lambda} \newline
+&amp;= \frac{\lambda}{\lambda -t} \quad \text{for }t&lt;\lambda
+\end{split}
 $$</p>
-
 <h2 id="memeoryless-property">Memeoryless Property</h2>
-
 <p>Memoryless is something like $P(X \ge s+t ~|~ X \ge s) = P(X \ge t)$, let $X \sim Exp(\lambda)$, then</p>
-
 <p>$$
 \begin{split}
 P(X \ge s+t ~|~ X \ge s) &amp;= \frac{P(X \ge s+t, ~X \ge s)}{P(X \ge s)} \newline
@@ -236,19 +210,13 @@ P(X \ge s+t ~|~ X \ge s) &amp;= \frac{P(X \ge s+t, ~X \ge s)}{P(X \ge s)} \newli
 &amp;= P(X \ge t)
 \end{split}
 $$</p>
-
 <p><strong>Theorem</strong>: If $X$ is a positive continuous r.v. with memoryless property, then $X$ has an <em>exponential distribution</em>. Similarly, if $X$ is discrete, then it has a <em>geometric distribution</em>.</p>
-
 <blockquote>
 <p>Proof idea: use survival function and solve differential equations.</p>
 </blockquote>
-
 <h2 id="examples">Examples</h2>
-
 <p><strong>eg.1</strong> $X_1 \sim Exp(\lambda_1), ~X_2 \sim Exp(\lambda_2)$, and $X_1 \perp X_2$. Then $P(X_1 &lt; X_2) = \frac{\lambda_1}{\lambda_1 + \lambda_2}$.</p>
-
 <p><strong>Proof</strong>: By LOTP (law of total probability),</p>
-
 <p>$$
 \begin{split}
 P(X_1 &lt; X_2) &amp;= \int_0^{\infty} f_{X_1}(x) P(X_2 &gt; X_1 ~|~ X_1=x) dx \newline
@@ -259,11 +227,8 @@ P(X_1 &lt; X_2) &amp;= \int_0^{\infty} f_{X_1}(x) P(X_2 &gt; X_1 ~|~ X_1=x) dx \
 &amp;= \frac{\lambda_1}{\lambda_1 + \lambda_2}
 \end{split}
 $$</p>
-
 <p><strong>eg.2</strong> $\{X_i\}_{i=1}^n$ are independent with $X_j \sim Exp(\lambda_j)$. Let $L = \min(X_1, \cdots, X_n)$, then $L \sim Exp(\lambda_1 + \cdots \lambda_n)$.</p>
-
 <p><strong>Proof</strong>:</p>
-
 <p>$$
 \begin{split}
 P(L &gt; t) &amp;= P\left(\min(X_1,\cdots,X_n) &gt; t\right) \newline
@@ -273,36 +238,27 @@ P(L &gt; t) &amp;= P\left(\min(X_1,\cdots,X_n) &gt; t\right) \newline
 &amp;= e^{-(\lambda_1 + \cdots \lambda_n)t} \sim Exp\left(\sum_j \lambda_j\right)
 \end{split}
 $$</p>
-
 <p>The intuition of this result is that if you consider $n$ Poisson processes with rate $\lambda_j$,</p>
-
 <ul>
 <li>$X_1$ as the waiting time for a green car</li>
 <li>$X_2$ as the waiting time for a red car</li>
-<li>...</li>
+<li>&hellip;</li>
 </ul>
-
 <p>Then $L$ is the waiting time for a car of any color (i.e., any car). So it makes sense, the rate is $\lambda_1 + \cdots + \lambda_n$.</p>
-
 <p><strong>eg.3</strong> (Difference of two exponetial) Let $X \sim Exp(\lambda)$ and $Y \sim Exp(\mu)$, $X \perp Y$. Then what is the PDF of $Z=X-Y$?</p>
-
 <p><strong>Solution</strong>:
 Recall the story of exponential, one can think of $X$ and $Y$ as waiting times for two independent things. For example,</p>
-
 <ul>
 <li>$X$ as the waiting time for a red car passing by</li>
 <li>$Y$ as the waiting time for a blue car</li>
 </ul>
-
 <p>If we see a blue car passing by, then the further waiting time for a red car is still distributed as same distribution as $Y$, for the memoryless property of exponential. Likewise, if we see a red car passing by, then the further waiting time is distributed as same as $X$. The further waiting time is somehow what we are interested in, say $Z$.</p>
-
 <p>The above intuition says that, the conditional distribution of $X-Y$ given $X &gt; Y$ is the distribution of $X$, and the conditional distribution of $X-Y$ given $X \le Y$ is the distribution of $-Y$ (or in other words, the conditional distribution of $Y-X$ given $Y \ge X$ is same as the distribution of $Y$).</p>
-
 <blockquote>
 <p>To make full use of our intuition, we know that</p>
-
 <ul>
-<li><p>If $X&gt;Y$, which means $Z&gt;0$, then $Z~|~X&gt;Y = X$ a.s. holds, that is
+<li>
+<p>If $X&gt;Y$, which means $Z&gt;0$, then $Z~|~X&gt;Y = X$ a.s. holds, that is
 $$
 \begin{gathered}
 f_Z(z~|~X&gt;Y) = \lambda e^{-\lambda z} \newline
@@ -310,27 +266,25 @@ f_Z(z~|~X&gt;Y) = \lambda e^{-\lambda z} \newline
 \implies f_Z(z) = f_Z(z~|~X&gt;Y)P(X&gt;Y) \newline
 = \frac{\mu}{\lambda + \mu}\lambda e^{-\lambda z}.
 \end{gathered}
-$$</p></li>
-
-<li><p>If $X &lt; Y$, which means $Z &lt; 0$, then $Z~|~X&lt;Y = -Y$ a.s. holds, that is
+$$</p>
+</li>
+<li>
+<p>If $X &lt; Y$, which means $Z &lt; 0$, then $Z~|~X&lt;Y = -Y$ a.s. holds, that is
 $$
 \begin{gathered}
 f_Z(z~|~X&lt;Y) = f_Y(y(z))\left|\frac{dy}{dz}\right| = \mu e^{\mu z} \newline
-\implies f_Z(z) = f_Z(z~|~X&lt;Y)P(X&lt;Y) <br />
+\implies f_Z(z) = f_Z(z~|~X&lt;Y)P(X&lt;Y) \<br>
 = \frac{\lambda}{\lambda + \mu} \mu e^{\mu z}
 \end{gathered}
-$$</p></li>
+$$</p>
+</li>
 </ul>
-
 <p>However, this is just a sketch. Later we will see how to derivate the form mathematically.</p>
 </blockquote>
-
 <p>From the above point of view, the PDF of $Z$ had better be discussed by the sign of $Z$.</p>
-
 <ul>
 <li>If $Z &gt; 0$, which implies $X &gt; Y\implies P(X &gt; Y) = 0 $, then</li>
 </ul>
-
 <p>$$
 \begin{split}
 P(Z &gt; z) &amp;= P(X-Y&gt;z ~|~ X&gt;Y)P(X&gt;Y) + P(Z&gt;z~|~X&lt;Y)P(X&lt;Y) \newline
@@ -339,11 +293,9 @@ P(Z &gt; z) &amp;= P(X-Y&gt;z ~|~ X&gt;Y)P(X&gt;Y) + P(Z&gt;z~|~X&lt;Y)P(X&lt;Y)
 \implies f_Z(z) &amp;= \frac{\lambda\mu}{\lambda + \mu} e^{-\lambda z} \quad \text{for }z&gt;0
 \end{split}
 $$</p>
-
 <ul>
 <li>If $Z \le 0$, which implies $X \le Y$, then</li>
 </ul>
-
 <p>$$
 \begin{split}
 P(Z &lt; z) &amp;= P(Z&lt;z ~|~ X&gt;Y)P(X&gt;Y) + P(X-Y&lt;z~|~X&lt;Y)P(X&lt;Y) \newline
@@ -353,9 +305,7 @@ P(Z &lt; z) &amp;= P(Z&lt;z ~|~ X&gt;Y)P(X&gt;Y) + P(X-Y&lt;z~|~X&lt;Y)P(X&lt;Y)
 \implies f_Z(z) &amp;= \frac{\lambda\mu}{\lambda + \mu}e^{\mu z} \quad \text{for }z&lt;0
 \end{split}
 $$</p>
-
 <p>Therefore, the PDF of $Z$ has the form</p>
-
 <p>$$
 f_Z(z) = \frac{\lambda\mu}{\lambda + \mu}
 \begin{cases}
@@ -363,7 +313,6 @@ e^{-\lambda z} &amp;\quad z&gt;0 \newline
 e^{\mu z} &amp;\quad z&lt;0
 \end{cases}
 $$</p>
-
 <blockquote>
 <p>Note: $P(X=Y)=0$ since the integral domain is a line ($y=x$) whose measure is 0. That is $P(Z=0) = 0$. This is why we can give no care of the case $X=Y$.</p>
 </blockquote>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 水阙</title>
@@ -17,8 +17,8 @@
       <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
-      <description>This article is mainly refered to &amp;quot;The Linux Command Line&amp;quot;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+      <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
     </item>
     
@@ -29,7 +29,8 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
       
       <guid>https://guyueshui.github.io/post/nn-notes/</guid>
       <description>Hello here.
-CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted). each filter convolving with the input will produce an activation map, two filters will produce two, etc.</description>
+CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
+ take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
     </item>
     
     <item>
@@ -84,17 +85,16 @@ CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. 
       
       <guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid>
       <description>&lt;p&gt;废话以后有时间再加。&lt;/p&gt;
-
 &lt;p&gt;首先编译时开启调试选项：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -121,10 +121,9 @@ CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. 
       <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
-      <description>Declaration: this article is in long time editing...
-Here comes some beautiful recursive solutions to some problems.
+      <description>Declaration: this article is in long time editing&amp;hellip; Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 ... The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
     </item>
     
     <item>
@@ -133,7 +132,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
-      <description>In editing... 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
+      <description>In editing&amp;hellip; 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727</description>
     </item>
     
     <item>
@@ -178,7 +177,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
-      <description>In editing... Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
+      <description>In editing&amp;hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
     </item>
     
     <item>
@@ -197,11 +196,10 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       
       <guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid>
       <description>&lt;p&gt;本文主要引用 &lt;a href=&#34;https://liam.page/2016/11/06/Linux-Info-Cheatsheet/&#34;&gt;Liam Huang&lt;/a&gt; 的博客。&lt;/p&gt;
-
-&lt;h2 id=&#34;系统相关&#34;&gt;系统相关&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;系统相关&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
@@ -222,7 +220,8 @@ hostname                    &lt;span class=&#34;c1&#34;&gt;# 查看计算机名�
 env                         &lt;span class=&#34;c1&#34;&gt;# 列出环境变量&lt;/span&gt;
 lsmod                       &lt;span class=&#34;c1&#34;&gt;# 列出加载的内核模块&lt;/span&gt;
 uptime                      &lt;span class=&#34;c1&#34;&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
-cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -262,7 +261,7 @@ cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&
       <guid>https://guyueshui.github.io/post/matrix-factorization/</guid>
       <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
 Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
-There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
+There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
     </item>
     
     <item>
@@ -271,7 +270,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
     </item>
     
     <item>
@@ -298,7 +297,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description>This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you</description>
+      <description>This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want? It&#39;s</description>
     </item>
     
     <item>
@@ -325,7 +324,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/manage-dotfiles-by-git/</guid>
-      <description>对于Linux用户，在 $HOME 文件夹下，一般都有大量的隐藏文件，形如.conf,.xxxrc等，这些都是程序的配置文件。很多人也许花了一个下午，一</description>
+      <description>对于Linux用户，在 $HOME 文件夹下，一般都有大量的隐藏文件，形如.conf`,.xxxrc`等，这些都是程序的配置文件。很多人也许花了一个下午</description>
     </item>
     
     <item>
@@ -370,7 +369,7 @@ There is no so-called &amp;quot;orthonormal&amp;quot; matrix. There is just an o
       <pubDate>Wed, 26 Apr 2017 14:49:15 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/%E5%81%87%E6%83%B3%E6%95%8C/</guid>
-      <description>：今天也是满负罪恶感的一天呢？ --嗯，其实我还蛮会自我减压的。 ：这已经称得上是放纵了呢！ --不不不，我的神经有紧绷过吗？ ：那你准备何时紧绷。</description>
+      <description>：今天也是满负罪恶感的一天呢？ &amp;ndash;嗯，其实我还蛮会自我减压的。 ：这已经称得上是放纵了呢！ &amp;ndash;不不不，我的神经有紧绷过吗？</description>
     </item>
     
     <item>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/" />
@@ -48,16 +48,13 @@
 <meta property="article:modified_time" content="2019-08-25T00:00:00+00:00" />
 <meta itemprop="name" content="一些推导">
 <meta itemprop="description" content="高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}">
-
-
 <meta itemprop="datePublished" content="2018-12-20T19:18:29&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="236">
+<meta itemprop="wordCount" content="235">
 
 
 
-<meta itemprop="keywords" content="math,information theory," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="math,information theory," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一些推导"/>
 <meta name="twitter:description" content="高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}"/>
 
@@ -145,22 +142,15 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#高斯分布的微分熵">高斯分布的微分熵</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">高斯分布的微分熵</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="高斯分布的微分熵">高斯分布的微分熵</h2>
-
+      <h2 id="heading">高斯分布的微分熵</h2>
 <p>$X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$，其微分熵推导过程如下：</p>
-
 <p>$$
 \begin{split}
 h(X) &amp;= \int_{-\infty}^{\infty}
@@ -176,17 +166,17 @@ h(X) &amp;= \int_{-\infty}^{\infty}
 \right) dx \newline
 &amp;= \frac{1}{2}\ln(2\pi\sigma^2) \int_{-\infty}^{\infty}
 \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline
-&amp;\quad
-+ \int_{-\infty}^{\infty}
+&amp;\quad</p>
+<ul>
+<li>\int_{-\infty}^{\infty}
 \frac{(x-\mu)^2}{2\sigma^2} \cdot
 \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) dx \newline
 &amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2\sigma^2}E(X-\mu)^2 \newline
 &amp;= \frac{1}{2}\ln(2\pi\sigma^2) + \frac{1}{2} = \frac{1}{2}\ln(2\pi e\sigma^2) \qquad\text{(nats)}
 \end{split}
-$$</p>
-
-<!-- more -->
-
+$$</li>
+</ul>
+<!-- raw HTML omitted -->
 <p>又因为 $H_b(X) = \log_ba \cdot H_a(X)$，于是取 $b=e, ~a=2$
 $$
 \implies \frac{1 \text{ nat}}{x \text{ bits}} = \ln2 \implies x = \frac{1}{\ln2} = \frac{\log e}{\log2} = \log e \text{ bits}

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/" />
@@ -46,12 +46,9 @@
 <meta property="og:description" content="向往水的温柔，在心底打着卷儿。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://guyueshui.github.io/" />
-
 <meta property="og:updated_time" content="2019-11-22T16:59:46+08:00" />
 <meta itemprop="name" content="水阙">
-<meta itemprop="description" content="向往水的温柔，在心底打着卷儿。">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="向往水的温柔，在心底打着卷儿。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="水阙"/>
 <meta name="twitter:description" content="向往水的温柔，在心底打着卷儿。"/>
 
@@ -135,8 +132,8 @@
   
   <div class="post-content">
     <div class="post-summary">
-      This article is mainly refered to &quot;The Linux Command Line&quot;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
+      This article is mainly refered to &ldquo;The Linux Command Line&rdquo;1. I just take some most important things out of the book.
+Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?
     </div>
     <div class="read-more">
@@ -159,7 +156,8 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
   <div class="post-content">
     <div class="post-summary">
       Hello here.
-CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted). each filter convolving with the input will produce an activation map, two filters will produce two, etc.
+CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
+ take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).
     </div>
     <div class="read-more">
       <a href="/post/nn-notes/" class="read-more-link">Read more...</a>
@@ -284,17 +282,16 @@ CNN Conv Layer  take a volume as input: height x weight x depth, e.g., 32x32x3. 
   <div class="post-content">
     <div class="post-summary">
       <p>废话以后有时间再加。</p>
-
 <p>首先编译时开启调试选项：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>-O0</code>指定编译器的优化级别为0，即不优化。</p>
+</div><p><code>-O0</code>指定编译器的优化级别为0，即不优化。</p>
     </div>
     <div class="read-more">
       <a href="/post/basic-gdb-usages/" class="read-more-link">Read more...</a>
