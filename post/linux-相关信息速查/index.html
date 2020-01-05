@@ -107,7 +107,7 @@ cat /proc/loadavg           # 查看系统负载
 ">
 <meta itemprop="datePublished" content="2019-03-07T19:22:02&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="512">
+<meta itemprop="wordCount" content="578">
 
 
 
@@ -323,6 +323,8 @@ netstat -s                  <span class="c1"># 查看网络统计信息</span>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
@@ -330,9 +332,12 @@ who                         <span class="c1"># 查看活动用户</span>
 id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
 cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
 cut -d: -f1 /etc/group      <span class="c1"># 查看系统所有组</span>
+usermod -a -G group1,group2 user  <span class="c1"># 将用户追加到组</span>
+groups user                 <span class="c1"># 查看用户所属的组</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading4">进程状态相关</h2>
+</div><p>参考：https://linux.cn/article-10768-1.html</p>
+<h2 id="heading4">进程状态相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -462,7 +467,7 @@ top                         <span class="c1"># 动态显示进程状态</span>
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
