@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/" />
@@ -143,12 +143,12 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">从最小二乘说起</a></li>
-    <li><a href="#heading1">线性回归</a></li>
-    <li><a href="#heading2">概率解释</a></li>
-    <li><a href="#sigmoid">Sigmoid函数的引入</a></li>
-    <li><a href="#logistic-">Logistic 回归</a></li>
-    <li><a href="#-softmax">扩展为 softmax</a></li>
+    <li><a href="#从最小二乘说起">从最小二乘说起</a></li>
+    <li><a href="#线性回归">线性回归</a></li>
+    <li><a href="#概率解释">概率解释</a></li>
+    <li><a href="#sigmoid函数的引入">Sigmoid函数的引入</a></li>
+    <li><a href="#logistic-回归">Logistic 回归</a></li>
+    <li><a href="#扩展为-softmax">扩展为 softmax</a></li>
   </ul>
 </nav>
   </div>
@@ -156,10 +156,10 @@
     <div class="post-content">
       <p>In editing&hellip;</p>
 <p><strong>Logistic回归属于分类模型！！！</strong></p>
-<h2 id="heading">从最小二乘说起</h2>
-<h2 id="heading1">线性回归</h2>
-<h2 id="heading2">概率解释</h2>
-<h2 id="sigmoid">Sigmoid函数的引入</h2>
+<h2 id="从最小二乘说起">从最小二乘说起</h2>
+<h2 id="线性回归">线性回归</h2>
+<h2 id="概率解释">概率解释</h2>
+<h2 id="sigmoid函数的引入">Sigmoid函数的引入</h2>
 <p>如果把我比作一张白纸，在我的知识储备中，现在只有线性回归。但是要处理分类问题，我该怎么办？没办法，先考虑一个二分类问题，$y \in {0,1}$，我们准备霸王硬上弓，用回归模型套上去！
 $$
 y = h_{\theta}(x)
@@ -173,7 +173,7 @@ $$</p>
 <li>$g&rsquo;(t) = g(t)(1-g(t))$</li>
 <li>$1 - g(t) = g(-t)$</li>
 </ol>
-<h2 id="logistic-">Logistic 回归</h2>
+<h2 id="logistic-回归">Logistic 回归</h2>
 <p>现在，我们模型的假设是</p>
 <p>$$
 \begin{split}
@@ -223,7 +223,7 @@ $$</p>
 $$</p>
 <p>迭代使得似然函数最大化，完成训练。最后应该输出一个0~1之间的概率值。我们可以人为设定一个阈值（如0.5），当输出概率大于0.5，判定$y=1$，反之亦然。如此一来，就完成了回归到分类的转化。</p>
 <p>另外，上述sigmoid函数又叫logistic函数，故名。<strong>Logistic回归事实上是一个分类器！！！</strong></p>
-<h2 id="-softmax">扩展为 softmax</h2>
+<h2 id="扩展为-softmax">扩展为 softmax</h2>
 
     </div>
 

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/interview-notes/" />
@@ -50,7 +50,7 @@
 <meta itemprop="description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1">
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="10411">
+<meta itemprop="wordCount" content="10417">
 
 
 
@@ -143,21 +143,21 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#c">C++相关</a></li>
-    <li><a href="#heading">算法相关</a></li>
-    <li><a href="#heading1">机器学习相关</a></li>
-    <li><a href="#heading2">纽劢</a></li>
-    <li><a href="#heading3">小米</a></li>
-    <li><a href="#58">58同城</a></li>
-    <li><a href="#heading4">网易游戏</a></li>
-    <li><a href="#heading5">白山云科技</a></li>
-    <li><a href="#heading6">百度</a></li>
-    <li><a href="#heading7">上海银行？</a></li>
-    <li><a href="#heading8">依图</a></li>
-    <li><a href="#heading9">招银网络科技</a></li>
-    <li><a href="#heading10">新东方</a></li>
-    <li><a href="#heading11">中移（苏州）软件研发中心</a></li>
-    <li><a href="#heading12">米哈游</a></li>
+    <li><a href="#c相关">C++相关</a></li>
+    <li><a href="#算法相关">算法相关</a></li>
+    <li><a href="#机器学习相关">机器学习相关</a></li>
+    <li><a href="#纽劢">纽劢</a></li>
+    <li><a href="#小米">小米</a></li>
+    <li><a href="#58同城">58同城</a></li>
+    <li><a href="#网易游戏">网易游戏</a></li>
+    <li><a href="#白山云科技">白山云科技</a></li>
+    <li><a href="#百度">百度</a></li>
+    <li><a href="#上海银行">上海银行？</a></li>
+    <li><a href="#依图">依图</a></li>
+    <li><a href="#招银网络科技">招银网络科技</a></li>
+    <li><a href="#新东方">新东方</a></li>
+    <li><a href="#中移苏州软件研发中心">中移（苏州）软件研发中心</a></li>
+    <li><a href="#米哈游">米哈游</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -165,7 +165,7 @@
 </div>
     <div class="post-content">
       <p>总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！</p>
-<h2 id="c">C++相关</h2>
+<h2 id="c相关">C++相关</h2>
 <p>Q: <code>std::vector</code> push_back 的复杂度是多少？
 A: O(1), amortized constant.</p>
 <p>Q: vector从1到n push n个元素，假设发生扩容时按两倍增长，写出复杂度关于n的表达式？
@@ -229,16 +229,16 @@ A: new/delete在C++中是运算符，但malloc/free是继承自C的内存管理�
 <td class="lntd">
 <pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">base</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">a</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">base</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">derived</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;derived&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
 
-<span class="n">base</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">derived</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-<span class="n">pb</span><span class="o">-</span><span class="o">&gt;</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">;</span>
+<span class="n">base</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">derived</span><span class="p">();</span>
+<span class="n">pb</span><span class="o">-&gt;</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>A: derived. 虚函数的动态绑定，根据运行时类型调用对应的版本，虽然是基类指针，但实际上是派生类对象，所以调用派生类中的函数。动态绑定是C++支持多态的根本原因。关于动态绑定，参见：<a href="https://www.learncpp.com/cpp-tutorial/122-virtual-functions/">here</a>.</p>
@@ -279,33 +279,33 @@ A: 重载指函数签名（函数原型）不同的两个函数名字相同，�
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">Base::f(int)</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">Base::g(float)</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::f(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">Derived::f(float)</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">Derived::g(float)</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">Derived::g(int)</span><span class="s">&#34;</span> <span class="o">&lt;</span><span class="o">&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::f(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">// test
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">Derived</span> <span class="n">dobj</span><span class="p">;</span>
     <span class="n">Base</span><span class="o">*</span> <span class="n">pd</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dobj</span><span class="p">;</span>
-    <span class="n">pd</span><span class="o">-</span><span class="o">&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">;</span>       <span class="c1">// Base::f(int)
-</span><span class="c1"></span>    <span class="n">pd</span><span class="o">-</span><span class="o">&gt;</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">)</span><span class="p">;</span>    <span class="c1">// Base::g(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">f</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">)</span><span class="p">;</span>   <span class="c1">// Derived::f(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">)</span><span class="p">;</span>   <span class="c1">// Derived::g(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">;</span>      <span class="c1">// Derived::g(int)
+    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>       <span class="c1">// Base::f(int)
+</span><span class="c1"></span>    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>    <span class="c1">// Base::g(float)
+</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">f</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::f(float)
+</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::g(float)
+</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>      <span class="c1">// Derived::g(int)
 </span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -324,14 +324,14 @@ A：不会。</p>
 <blockquote>
 <p>可以使用预编译指令<code>pragma pack(n)</code>来指定对齐系数，n=1,2,4,8,16. 结构体对齐将按照最大成员大小和n中的较小值来对齐。</p>
 </blockquote>
-<h2 id="heading">算法相关</h2>
+<h2 id="算法相关">算法相关</h2>
 <p>Q: 从一个数组中删除一个元素，复杂度是多少？如果不关心索引和值的对应关系。
 A: O(1), 将要删除的元素与最后一个元素互换，将数组的长度减一。</p>
 <p>注意：这里他说不关心数组的索引和值的对应关系。连续存储就是数组，只不过先前通过索引i获得的值，并不一定和删除后通过索引i获得的值相同。我答的是O(n),因为要删除一个元素，还得将删除元素之后的元素前移一位，这样才是我理解的删除的语义。但是面试官说不关心索引与值的对应关系，那么假设数组长度为n，删除元素位置为i，在互换A[i]和A[n]之后，删除后数组的A[i]变成了原先的A[n], 但一般认为删除后A[i]应该是原先的A[i+1], 这就是他说的不关心索引和值的对应，和我所理解的不一样。</p>
 <p>Q: 生成50个[0, 50)间的随机整数，构成一个序列，要求不能重复？
 A: 用一个长度为50的数组用作map，初始化全为0. 然后使用随机数发生器生成[0, 50)之间的整数，并在map对应索引位置+1. 依次生成随机整数，且判断其索引对应的值是否为0，等于0说明还未生成过，等于1说明已经生成过，应该换一个。但是这样不能保证收敛，也许它永远生成不满50个随机整数。</p>
 <p>其实有O(n)的解法，延承自上一问。设有一副扑克牌，共50张，你怎样将它随机地分给排成一列的50个人？很简单，每次随机抽出一张给一个人，抽完了，也就分完了。现在你有一个随机数发生器，每次随机生成一个索引，你抽出该索引位置的牌（从数组中删除该元素），这个操作等价与将该索引的元素与数组最后一个元素互换。下一次，从[0, 49)里随机生成一个索引，纵然该索引与之前的可能一样，但对应位置的牌已经换了，所以不会抽出重复的牌。如此反复，抽完为止。这样你每删除一个元素的复杂度是O(1), 所以总共的复杂度就是O(n).</p>
-<h2 id="heading1">机器学习相关</h2>
+<h2 id="机器学习相关">机器学习相关</h2>
 <p>Q: K-均值聚类中k如何选取，评价指标，他很不稳定，如何让它稳定一些。</p>
 <p>评价指标：类间相似度低，类内相似度高。K-means的稳定性较差，可能每次随机选取的初始聚类中心不一样，而导致聚类的效果不一样。从某种程度上来说，K-means对数据较为敏感，无法识别离群点。传统聚类采用的距离度量通常为欧式距离，Kernel k-means将所有样本映射到另外一个特征空间中再进行聚类，就有可能改善聚类效果。</p>
 <p>一种改进：K-means++，它的思想是在已经选定n个聚类中心后，选取第n+1个聚类中心时：距离当前n个聚类中心越远的点会有更高的概率被选为第n+1个聚类中心。在选取第一个聚类中心时同样使用随机的方法，这个改单简单有效。</p>
@@ -342,7 +342,7 @@ A: 用一个长度为50的数组用作map，初始化全为0. 然后使用随机
 <p>没有。</p>
 <p>Q: vae是生成网络吗？可不可以和infogan结合？了解一下vae？</p>
 <p>是。</p>
-<h2 id="heading2">纽劢</h2>
+<h2 id="纽劢">纽劢</h2>
 <ul>
 <li>random forest 需要对特征做什么处理吗？</li>
 <li>常用的特征选择方法有哪些？</li>
@@ -350,7 +350,7 @@ A: 用一个长度为50的数组用作map，初始化全为0. 然后使用随机
 <li>l1 regularization 也可以做特征选择？</li>
 <li>特征有离散有连续该怎么处理？ one-hot encoding</li>
 </ul>
-<h2 id="heading3">小米</h2>
+<h2 id="小米">小米</h2>
 <p><strong>一面</strong></p>
 <p>Q: 了解LRU缓存吗？
 A: 没听说过。</p>
@@ -381,7 +381,7 @@ A: 不知道。</p>
 <li>堆内存和栈内存的区别</li>
 <li><code>int a, *b;</code>有什么区别？（考察指针默认不开辟内存）</li>
 </ul>
-<h2 id="58">58同城</h2>
+<h2 id="58同城">58同城</h2>
 <p>(Sept. 20)</p>
 <ul>
 <li>挑一个你最熟的项目说下？</li>
@@ -391,7 +391,7 @@ A: 不知道。</p>
 <li>卷积有什么作用？</li>
 </ul>
 <p>一面面完之后，建议我转后端，我说好啊，然后二面面的后端，似乎是个leader，主要就是问问实习经历，然后让我等HR面。下午三点到的58，二面面完三点四五十，然后等HR等了大概40分钟，好像是好多人排队等HR面，后来我找人问情况，说我五点有事，能不能安排一下，然后就有一个看着像技术的HR，承担了我的HR面。面完等结果，说是择优录用。</p>
-<h2 id="heading4">网易游戏</h2>
+<h2 id="网易游戏">网易游戏</h2>
 <p><strong>一面</strong>
 (Spet. 20)</p>
 <p>面完58已经四点五十了，想着怎么着也赶不上网易面试了。所以下了大楼，就找了个人不多的地方，掏出电脑，席地而坐，打开手机热点，打开面试地址（这里真要吐槽一下，我是Linux系统，这次面试它没发邮件，只以短信形式发了面试链接，我电脑上又没有微信QQ，只好手敲网址，那时候已经要开始了，可把我急坏了，还敲错了几次，把大写的I误认为小写的l），就开始面试起来。</p>
@@ -442,13 +442,25 @@ A: 不知道。</p>
 <li>我们知道proto文件，使用proto文件有什么好处？</li>
 <li>大概知道protobuf的压缩原理吗？比方说如何编码int32.</li>
 <li>现在有一个老版本的protobuf序列化之后的字符串，但是后来又新加了一个变量。具体来说，
-<pre><code>required int32 hp;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">required int32 hp;
 optional int32 lv;
 ===saved===
 
 optional int32 mp;
 ===readed===
-</code></pre><p>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？</p>
 </li>
 <li>实现一个带max()函数的栈？</li>
 <li>使用辅助栈，需要额外O(n)的空间，如果没有这么多空间给你，假设只有O(logn)，如何优化？（没答出来）</li>
@@ -496,10 +508,10 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 ...
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading5">白山云科技</h2>
+</div><h2 id="白山云科技">白山云科技</h2>
 <p>(Sept. 20)</p>
 <p>面完网易之后，已经下午六点了，又赶去了白山的宣讲会，还好还没结束，那边研发还有几个人在面。等了一会之后，可能面试官们已经累了，直接leader面的我，并且本来应该有三轮技术面，一轮HR面。可能我去的太晚了，leader面过之后就算作二面通过，等了一会儿之后，直接HR面了。顺利拿到offer，秋招第一个offer，感谢！听说本来研发是几个人一起面，和面试官坐在一个圆桌上，面试官挨个问问题，好可怕。</p>
-<h2 id="heading6">百度</h2>
+<h2 id="百度">百度</h2>
 <p>(Sept. 25)</p>
 <p>畅谈50分钟，反手挂！是我太菜，打扰了（这里吐槽一下百度选的垃圾酒店，太偏僻了，太难找了）面试官全程盯着简历问。</p>
 <ul>
@@ -519,10 +531,10 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 <li>那k-means呢？（怪我光准备后台了，算法没复习，这两个搅浑了，恐怕是导致反手挂的直接原因）</li>
 </ul>
 <p>后面就没再问了，估计那时候面试官已经给我挂了，然后象征性的问我有没有问题问他，我也象征性的问了几个，然后就没有然后了。</p>
-<h2 id="heading7">上海银行？</h2>
+<h2 id="上海银行">上海银行？</h2>
 <p>(Sept. 25)</p>
 <p>我是去搞笑的，约的面试时间是下午三点，面完百度开始往那赶，赶到哪里的时候三点一刻，还怕来不及。结果去了等了两个多小时，还没排上我！听面完回来的同学说，5个面试官，同时面3个同学，算是群面？然后这样一组要面40-50分钟。三人一组的去，面完一组按编号叫下一组。虽然我是迟到了，排到了101号，但是两个小时后，才面到85号。也就是说，还有15人，三组，120分钟！三点去，要等的七点才能面上！算了，银行都这么高冷，（让我想起找实习的时候面招行，12个人分两组，一起搭积木，不，是按要求搭积木，还要能扯，把你搭好的积木吹上天，关于技术问题，一个都不问！）我惹不起，等到五点半就溜了。</p>
-<h2 id="heading8">依图</h2>
+<h2 id="依图">依图</h2>
 <p>(Sept. 27)</p>
 <ul>
 <li>自我介绍</li>
@@ -534,7 +546,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 <li>由于写代码花了太长时间，直接结束</li>
 </ul>
 <p>（果然，凉凉）</p>
-<h2 id="heading9">招银网络科技</h2>
+<h2 id="招银网络科技">招银网络科技</h2>
 <p><strong>电面</strong>
 (Sept. 28)</p>
 <p>忘得差不多了。</p>
@@ -578,7 +590,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 </ul>
 <p><strong>HR面</strong></p>
 <p>应该是去现场的都会面完三轮，不过结果如何就不知道了。问了HR，说两周内出结果，求个offer。</p>
-<h2 id="heading10">新东方</h2>
+<h2 id="新东方">新东方</h2>
 <p>(Oct. 11)</p>
 <ul>
 <li>自我介绍</li>
@@ -590,7 +602,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 <li>（后面记不得了）</li>
 </ul>
 <p>面试官意外的好说话，全程笑嘻嘻，我还迟到了10分钟。这次体验很好，可惜base北京。</p>
-<h2 id="heading11">中移（苏州）软件研发中心</h2>
+<h2 id="中移苏州软件研发中心">中移（苏州）软件研发中心</h2>
 <p>(Oct. 14)</p>
 <p><strong>一面</strong></p>
 <ul>
@@ -630,7 +642,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 <li>很好，今天就面到这里，你回去等消息吧。</li>
 </ul>
 <p>事实上我连自我介绍都没说完，就被打断了，然后也就问了几个问题，不到10分钟就结束了。希望给个offer吧！</p>
-<h2 id="heading12">米哈游</h2>
+<h2 id="米哈游">米哈游</h2>
 <p>(Oct. 17)</p>
 <ul>
 <li>自我介绍</li>

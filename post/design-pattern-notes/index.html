@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/design-pattern-notes/" />
@@ -195,7 +195,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// A singleton class
-</span><span class="c1"></span><span class="c1">// c.f. https://zhuanlan.zhihu.com/p/37469260
+</span><span class="c1">// c.f. https://zhuanlan.zhihu.com/p/37469260
 </span><span class="c1"></span>
 <span class="cm">/**
 </span><span class="cm"> * This is so-called lazy-singleton, since it creates the
@@ -207,22 +207,22 @@
 <span class="k">class</span> <span class="nc">SingletonV1</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">static</span> <span class="n">SingletonV1</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">(</span><span class="p">)</span>
+  <span class="k">static</span> <span class="n">SingletonV1</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">=</span><span class="o">=</span> <span class="k">nullptr</span><span class="p">)</span>
-      <span class="n">pinstance_</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SingletonV1</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+      <span class="n">pinstance_</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SingletonV1</span><span class="p">();</span>
     <span class="k">return</span> <span class="n">pinstance_</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>
-  <span class="n">SingletonV1</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="o">~</span><span class="n">SingletonV1</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="n">SingletonV1</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="o">~</span><span class="n">SingletonV1</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
   <span class="n">SingletonV1</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV1</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
   <span class="n">SingletonV1</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV1</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 <span class="k">private</span><span class="o">:</span> 
   <span class="k">static</span> <span class="n">SingletonV1</span><span class="o">*</span> <span class="n">pinstance_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 <span class="c1">// static member initialization
-</span><span class="c1"></span><span class="n">SingletonV1</span><span class="o">*</span> <span class="n">SingletonV1</span><span class="o">:</span><span class="o">:</span><span class="n">pinstance_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span><span class="c1"></span><span class="n">SingletonV1</span><span class="o">*</span> <span class="n">SingletonV1</span><span class="o">::</span><span class="n">pinstance_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -273,11 +273,11 @@
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">mutex</span> <span class="n">gm</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">gm</span><span class="p">;</span>
 
 <span class="cm">/**
 </span><span class="cm"> * This is also a lazy-singleton, but it&#39;s thread-safe.
@@ -286,37 +286,37 @@
 <span class="k">class</span> <span class="nc">SingletonV2</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">static</span> <span class="n">SingletonV2</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">(</span><span class="p">)</span>
+  <span class="k">static</span> <span class="n">SingletonV2</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">=</span><span class="o">=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
     <span class="p">{</span>
       <span class="c1">// Attention here: see if &gt;= 2 threads meets here,
 </span><span class="c1"></span>      <span class="c1">// only one thread can hold the mutex, then create
 </span><span class="c1"></span>      <span class="c1">// the instance, this is can only occur on your first
 </span><span class="c1"></span>      <span class="c1">// request on instance, once the instance is created,
 </span><span class="c1"></span>      <span class="c1">// we can return it immediately.
-</span><span class="c1"></span>      <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lk</span><span class="p">(</span><span class="n">gm</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span>      <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lk</span><span class="p">(</span><span class="n">gm</span><span class="p">);</span>
 
       <span class="c1">// See why double check here?
 </span><span class="c1"></span>      <span class="c1">// Cause if &gt;= 2 threads have already run across here,
 </span><span class="c1"></span>      <span class="c1">// they&#39;ve waited and finally held the mutex, w/o this
 </span><span class="c1"></span>      <span class="c1">// check, all of these threads will create a instance,
 </span><span class="c1"></span>      <span class="c1">// that&#39;s not what you want.
-</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">=</span><span class="o">=</span> <span class="k">nullptr</span><span class="p">)</span>  <span class="c1">// double check
-</span><span class="c1"></span>        <span class="n">pinstance_</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SingletonV2</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="n">pinstance_</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>  <span class="c1">// double check
+</span><span class="c1"></span>        <span class="n">pinstance_</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SingletonV2</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">pinstance_</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>
-  <span class="n">SingletonV2</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="o">~</span><span class="n">SingletonV2</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="n">SingletonV2</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="o">~</span><span class="n">SingletonV2</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
   <span class="n">SingletonV2</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV2</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
   <span class="n">SingletonV2</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV2</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 <span class="k">private</span><span class="o">:</span> 
   <span class="k">static</span> <span class="n">SingletonV2</span><span class="o">*</span> <span class="n">pinstance_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 <span class="c1">// static member initialization
-</span><span class="c1"></span><span class="n">SingletonV2</span><span class="o">*</span> <span class="n">SingletonV2</span><span class="o">:</span><span class="o">:</span><span class="n">pinstance_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span><span class="c1"></span><span class="n">SingletonV2</span><span class="o">*</span> <span class="n">SingletonV2</span><span class="o">::</span><span class="n">pinstance_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -351,18 +351,18 @@
 <span class="k">class</span> <span class="nc">SingletonV3</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">static</span> <span class="n">SingletonV3</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">(</span><span class="p">)</span>
+  <span class="k">static</span> <span class="n">SingletonV3</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="c1">// Note that instance will be created only at the first time.
 </span><span class="c1"></span>    <span class="k">static</span> <span class="n">SingletonV3</span> <span class="n">instance</span><span class="p">;</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">instance</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>
-  <span class="n">SingletonV3</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="o">~</span><span class="n">SingletonV3</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="n">SingletonV3</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="o">~</span><span class="n">SingletonV3</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
   <span class="n">SingletonV3</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV3</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
   <span class="n">SingletonV3</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV3</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -405,22 +405,22 @@
 <span class="k">class</span> <span class="nc">SingletonV4</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">static</span> <span class="n">SingletonV4</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">(</span><span class="p">)</span>
+  <span class="k">static</span> <span class="n">SingletonV4</span><span class="o">*</span> <span class="n">GetInstance</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">instance_</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>
-  <span class="n">SingletonV4</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="o">~</span><span class="n">SingletonV4</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="n">SingletonV4</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="o">~</span><span class="n">SingletonV4</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
   <span class="n">SingletonV4</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV4</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
   <span class="n">SingletonV4</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">SingletonV4</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 <span class="k">private</span><span class="o">:</span>
   <span class="c1">// note that here is not a pointer, since a pointer will not own
 </span><span class="c1"></span>  <span class="c1">// a memory range by default.
 </span><span class="c1"></span>  <span class="k">static</span> <span class="n">SingletonV4</span> <span class="n">instance_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 <span class="c1">// initialize the static member
-</span><span class="c1"></span><span class="n">SingletonV4</span> <span class="n">SingletonV4</span><span class="o">:</span><span class="o">:</span><span class="n">instance_</span><span class="p">;</span>
+</span><span class="c1"></span><span class="n">SingletonV4</span> <span class="n">SingletonV4</span><span class="o">::</span><span class="n">instance_</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="factory">Factory</h2>
@@ -499,61 +499,61 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// This file implements a demo for simple factory pattern.
-</span><span class="c1"></span><span class="c1">//
-</span><span class="c1"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="c1">//
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="cp">#</span><span class="cp">define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)</span><span class="cp">
+<span class="cp">#define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Product</span> <span class="c1">// abstract product
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Product</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Product</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">ProductA</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Product</span> <span class="c1">// concrete product
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">ProductA</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">ProductA</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">A::Operation()</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;A::Operation()&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">ProductB</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Product</span> <span class="c1">// concrete product
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">ProductB</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">ProductB</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">B::Operation()</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;B::Operation()&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">Factory</span> <span class="c1">// factory
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">Factory</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">Factory</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="k">static</span> <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">=</span><span class="o">=</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">A</span><span class="s">&#34;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">ProductA</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">=</span><span class="o">=</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">B</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#34;A&#34;</span><span class="p">)</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">ProductA</span><span class="p">();</span>
+    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#34;B&#34;</span><span class="p">)</span>
       <span class="k">return</span> <span class="k">new</span> <span class="n">ProductB</span><span class="p">;</span>
     <span class="k">else</span>
       <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">///
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">Product</span><span class="o">*</span> <span class="n">pa</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">:</span><span class="o">:</span><span class="n">CreateProduct</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">A</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Product</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">:</span><span class="o">:</span><span class="n">CreateProduct</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">B</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">pa</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Operation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">pb</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Operation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">pa</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">::</span><span class="n">CreateProduct</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">);</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">::</span><span class="n">CreateProduct</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">);</span>
+  <span class="n">pa</span><span class="o">-&gt;</span><span class="n">Operation</span><span class="p">();</span>
+  <span class="n">pb</span><span class="o">-&gt;</span><span class="n">Operation</span><span class="p">();</span>
 
   <span class="k">delete</span> <span class="n">pb</span><span class="p">;</span>
   <span class="k">delete</span> <span class="n">pa</span><span class="p">;</span>
@@ -649,80 +649,80 @@
 </span><span class="lnt">81
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="cp">#</span><span class="cp">define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)</span><span class="cp">
+<span class="cp">#define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)
 </span><span class="cp"></span>
 <span class="k">class</span> <span class="nc">Product</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Product</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Product</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">ProductA</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Product</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">ProductA</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">ProductA</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span>
+  <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">ProductA::Operation()</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;ProductA::Operation()&#34;</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">ProductB</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Product</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">ProductB</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">ProductB</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Operation</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span>
+  <span class="kt">void</span> <span class="n">Operation</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">ProductB::Operation()</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;ProductB::Operation()&#34;</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">Creator</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Creator</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Creator</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">CreatorA</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Creator</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">CreatorA</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">CreatorA</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductA</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductA</span><span class="p">();</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">CreatorB</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Creator</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">CreatorB</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">CreatorB</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">CreateProduct</span><span class="p">()</span> <span class="k">override</span>
   <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductB</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductB</span><span class="p">();</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">// test
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">Creator</span><span class="o">*</span> <span class="n">ca</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CreatorA</span><span class="p">;</span>  
-  <span class="n">Product</span><span class="o">*</span> <span class="n">pa</span> <span class="o">=</span> <span class="n">ca</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateProduct</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">pa</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Operation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">pa</span> <span class="o">=</span> <span class="n">ca</span><span class="o">-&gt;</span><span class="n">CreateProduct</span><span class="p">();</span>
+  <span class="n">pa</span><span class="o">-&gt;</span><span class="n">Operation</span><span class="p">();</span>
 
   <span class="n">Creator</span><span class="o">*</span> <span class="n">cb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CreatorB</span><span class="p">;</span>
-  <span class="n">Product</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="n">cb</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateProduct</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">pb</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Operation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Product</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="n">cb</span><span class="o">-&gt;</span><span class="n">CreateProduct</span><span class="p">();</span>
+  <span class="n">pb</span><span class="o">-&gt;</span><span class="n">Operation</span><span class="p">();</span>
 
   <span class="k">delete</span> <span class="n">pb</span><span class="p">;</span>
   <span class="k">delete</span> <span class="n">cb</span><span class="p">;</span>
@@ -849,105 +849,105 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// This file implements a demo of abstract factory pattern.
-</span><span class="c1"></span><span class="c1">//
-</span><span class="c1"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="c1">//
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="cp">#</span><span class="cp">define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)</span><span class="cp">
+<span class="cp">#define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)
 </span><span class="cp"></span>
 <span class="c1">// cats
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Cat</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Cat</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Cat</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Meow</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Meow</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">BlackCat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Cat</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">BlackCat</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">BlackCat</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Meow</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">b::meow~</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Meow</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;b::meow~&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">WhiteCat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Cat</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">WhiteCat</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">WhiteCat</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Meow</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">w::meow~</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Meow</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;w::meow~&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">// dogs
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Dog</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Dog</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Dog</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Bark</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Bark</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">BlackDog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Dog</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">BlackDog</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">BlackDog</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Bark</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">b::wang~</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Bark</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;b::wang~&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">WhiteDog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Dog</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">WhiteDog</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">WhiteDog</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">Bark</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">w::wang~</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="n">Bark</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;w::wang~&#34;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">// here comes factory
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Factory</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Factory</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Factory</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">BlackFactory</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Factory</span>  <span class="c1">// factory that dyes animals black
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">BlackFactory</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">BlackFactory</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">BlackCat</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-  <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="n">BlackDog</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">BlackCat</span><span class="p">();</span> <span class="p">}</span>
+  <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="n">BlackDog</span><span class="p">();</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">WhiteFactory</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Factory</span>  <span class="c1">// factory that dyes animals white
 </span><span class="c1"></span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">WhiteFactory</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">WhiteFactory</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">WhiteCat</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-  <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WhiteDog</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="n">Cat</span><span class="o">*</span> <span class="n">CreateCat</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">WhiteCat</span><span class="p">();</span> <span class="p">}</span>
+  <span class="n">Dog</span><span class="o">*</span> <span class="nf">CreateDog</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WhiteDog</span><span class="p">();</span> <span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">///
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">Factory</span><span class="o">*</span> <span class="n">pblack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BlackFactory</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Factory</span><span class="o">*</span> <span class="n">pwhite</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WhiteFactory</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Factory</span><span class="o">*</span> <span class="n">pblack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BlackFactory</span><span class="p">();</span>
+  <span class="n">Factory</span><span class="o">*</span> <span class="n">pwhite</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WhiteFactory</span><span class="p">();</span>
 
-  <span class="n">Cat</span><span class="o">*</span> <span class="n">black_cat</span> <span class="o">=</span> <span class="n">pblack</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateCat</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Cat</span><span class="o">*</span> <span class="n">white_cat</span> <span class="o">=</span> <span class="n">pwhite</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateCat</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Cat</span><span class="o">*</span> <span class="n">black_cat</span> <span class="o">=</span> <span class="n">pblack</span><span class="o">-&gt;</span><span class="n">CreateCat</span><span class="p">();</span>
+  <span class="n">Cat</span><span class="o">*</span> <span class="n">white_cat</span> <span class="o">=</span> <span class="n">pwhite</span><span class="o">-&gt;</span><span class="n">CreateCat</span><span class="p">();</span>
 
-  <span class="n">Dog</span><span class="o">*</span> <span class="n">black_dog</span> <span class="o">=</span> <span class="n">pblack</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateDog</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Dog</span><span class="o">*</span> <span class="n">white_dog</span> <span class="o">=</span> <span class="n">pwhite</span><span class="o">-</span><span class="o">&gt;</span><span class="n">CreateDog</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Dog</span><span class="o">*</span> <span class="n">black_dog</span> <span class="o">=</span> <span class="n">pblack</span><span class="o">-&gt;</span><span class="n">CreateDog</span><span class="p">();</span>
+  <span class="n">Dog</span><span class="o">*</span> <span class="n">white_dog</span> <span class="o">=</span> <span class="n">pwhite</span><span class="o">-&gt;</span><span class="n">CreateDog</span><span class="p">();</span>
 
-  <span class="n">black_cat</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Meow</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">black_dog</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Bark</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">white_cat</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Meow</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">white_dog</span><span class="o">-</span><span class="o">&gt;</span><span class="n">Bark</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">black_cat</span><span class="o">-&gt;</span><span class="n">Meow</span><span class="p">();</span>
+  <span class="n">black_dog</span><span class="o">-&gt;</span><span class="n">Bark</span><span class="p">();</span>
+  <span class="n">white_cat</span><span class="o">-&gt;</span><span class="n">Meow</span><span class="p">();</span>
+  <span class="n">white_dog</span><span class="o">-&gt;</span><span class="n">Bark</span><span class="p">();</span>
 
   <span class="k">delete</span> <span class="n">white_dog</span><span class="p">;</span>
   <span class="k">delete</span> <span class="n">black_dog</span><span class="p">;</span>
@@ -1092,12 +1092,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// This file implements a demo of observer pattern.
-</span><span class="c1"></span><span class="c1">//
-</span><span class="c1"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;list&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="c1">//
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;list&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="cp">#</span><span class="cp">define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)</span><span class="cp">
+<span class="cp">#define PRINT_NAME printf(&#34;%s\n&#34;, __FUNCTION__)
 </span><span class="cp"></span>
 <span class="c1">// front declaration
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Subject</span><span class="p">;</span>
@@ -1106,85 +1106,85 @@
 <span class="k">class</span> <span class="nc">Subject</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Subject</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Subject</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">attach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">detach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">notify</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>  <span class="c1">// notify all observers
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">attach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">);</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">detach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">);</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">notify</span><span class="p">();</span>  <span class="c1">// notify all observers
 </span><span class="c1"></span>  
   <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">set_state</span><span class="p">(</span><span class="kt">int</span> <span class="n">state</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_state</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_state</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="k">private</span><span class="o">:</span>
-  <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Observer</span><span class="o">*</span><span class="o">&gt;</span> <span class="n">observers_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Observer</span><span class="o">*&gt;</span> <span class="n">observers_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">Observer</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Observer</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">Observer</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="k">virtual</span> <span class="kt">void</span> <span class="n">update</span><span class="p">(</span><span class="n">Subject</span><span class="o">*</span> <span class="n">sb</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">//================ impl subject ==============
-</span><span class="c1"></span><span class="kt">void</span> <span class="n">Subject</span><span class="o">:</span><span class="o">:</span><span class="n">attach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span> <span class="p">{</span> <span class="n">observers_</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ob</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span>
+</span><span class="c1"></span><span class="kt">void</span> <span class="n">Subject</span><span class="o">::</span><span class="n">attach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span> <span class="p">{</span> <span class="n">observers_</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ob</span><span class="p">);</span> <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">Subject</span><span class="o">:</span><span class="o">:</span><span class="n">detach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">Subject</span><span class="o">::</span><span class="n">detach</span><span class="p">(</span><span class="n">Observer</span><span class="o">*</span> <span class="n">ob</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">observers_</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="n">it</span> <span class="o">!</span><span class="o">=</span> <span class="n">observers_</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="o">+</span><span class="o">+</span><span class="n">it</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">observers_</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">observers_</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">=</span><span class="o">=</span> <span class="n">ob</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="n">ob</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="n">observers_</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">)</span><span class="p">;</span>
+      <span class="n">observers_</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">Subject</span><span class="o">:</span><span class="o">:</span><span class="n">notify</span><span class="p">(</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">Subject</span><span class="o">::</span><span class="n">notify</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">ob</span> <span class="p">:</span> <span class="n">observers_</span><span class="p">)</span>
-    <span class="n">ob</span><span class="o">-</span><span class="o">&gt;</span><span class="n">update</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">ob</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="cm">/* a specific subject */</span>
 <span class="k">class</span> <span class="nc">Weather</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Subject</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="o">~</span><span class="n">Weather</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="o">~</span><span class="n">Weather</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">public</span><span class="o">:</span>
   <span class="kt">void</span> <span class="n">set_state</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="n">state_</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="p">}</span>
-  <span class="kt">int</span> <span class="nf">get_state</span><span class="p">(</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="n">state_</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kt">int</span> <span class="nf">get_state</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="n">state_</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">state_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="cm">/* a specific observer */</span>
 <span class="k">class</span> <span class="nc">WeatherAPP</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Observer</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">WeatherAPP</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span><span class="o">:</span> <span class="n">name_</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span><span class="p">}</span>
-  <span class="o">~</span><span class="n">WeatherAPP</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
+  <span class="n">WeatherAPP</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span><span class="o">:</span> <span class="n">name_</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="o">~</span><span class="n">WeatherAPP</span><span class="p">()</span> <span class="p">{</span> <span class="n">PRINT_NAME</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="k">public</span><span class="o">:</span>
   <span class="kt">void</span> <span class="n">update</span><span class="p">(</span><span class="n">Subject</span><span class="o">*</span> <span class="n">sb</span><span class="p">)</span> <span class="k">override</span>
   <span class="p">{</span>
-    <span class="n">state_</span> <span class="o">=</span> <span class="n">sb</span><span class="o">-</span><span class="o">&gt;</span><span class="n">get_state</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> 
+    <span class="n">state_</span> <span class="o">=</span> <span class="n">sb</span><span class="o">-&gt;</span><span class="n">get_state</span><span class="p">();</span> 
 
-    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">Observer %s: </span><span class="s">&#34;</span><span class="p">,</span> <span class="n">name_</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Observer %s: &#34;</span><span class="p">,</span> <span class="n">name_</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">state_</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="k">case</span> <span class="mi">0</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">default</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">0</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;default</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
               <span class="k">break</span><span class="p">;</span>
-      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">rainy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;rainy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
               <span class="k">break</span><span class="p">;</span>
-      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">cloudy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;cloudy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
               <span class="k">break</span><span class="p">;</span>
-      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">foggy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;foggy</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
               <span class="k">break</span><span class="p">;</span>
       <span class="k">default</span><span class="o">:</span> <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
@@ -1192,24 +1192,24 @@
 
 <span class="k">private</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">state_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">:</span><span class="o">:</span><span class="n">string</span> <span class="n">name_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">///
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">Subject</span><span class="o">*</span> <span class="n">weather</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Weather</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Observer</span><span class="o">*</span> <span class="n">ob1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WeatherAPP</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">Color TianQi</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">Observer</span><span class="o">*</span> <span class="n">ob2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WeatherAPP</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">Moji TianQi</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">attach</span><span class="p">(</span><span class="n">ob1</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">attach</span><span class="p">(</span><span class="n">ob2</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">Subject</span><span class="o">*</span> <span class="n">weather</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Weather</span><span class="p">();</span>
+  <span class="n">Observer</span><span class="o">*</span> <span class="n">ob1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WeatherAPP</span><span class="p">(</span><span class="s">&#34;Color TianQi&#34;</span><span class="p">);</span>
+  <span class="n">Observer</span><span class="o">*</span> <span class="n">ob2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WeatherAPP</span><span class="p">(</span><span class="s">&#34;Moji TianQi&#34;</span><span class="p">);</span>
+  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="n">ob1</span><span class="p">);</span>
+  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="n">ob2</span><span class="p">);</span>
 
-  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">set_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">;</span> <span class="c1">// rainy
-</span><span class="c1"></span>  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">notify</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">set_state</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// rainy
+</span><span class="c1"></span>  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">();</span>
 
-  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">detach</span><span class="p">(</span><span class="n">ob2</span><span class="p">)</span><span class="p">;</span>
-  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">set_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">;</span> <span class="c1">// foggy
-</span><span class="c1"></span>  <span class="n">weather</span><span class="o">-</span><span class="o">&gt;</span><span class="n">notify</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">detach</span><span class="p">(</span><span class="n">ob2</span><span class="p">);</span>
+  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">set_state</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// foggy
+</span><span class="c1"></span>  <span class="n">weather</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">();</span>
   
   <span class="k">delete</span> <span class="n">ob2</span><span class="p">;</span>
   <span class="k">delete</span> <span class="n">ob1</span><span class="p">;</span>

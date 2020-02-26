@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" />
@@ -143,15 +143,15 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">字体设置</a></li>
-    <li><a href="#latex-">LaTeX 字体样式相关命令</a></li>
-    <li><a href="#heading1">扩展包</a></li>
+    <li><a href="#字体设置">字体设置</a></li>
+    <li><a href="#latex-字体样式相关命令">LaTeX 字体样式相关命令</a></li>
+    <li><a href="#扩展包">扩展包</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="heading">字体设置</h2>
+      <h2 id="字体设置">字体设置</h2>
 <p>在导言区引入<code>fontspec</code>包：<code>\usepackage{fontspec}</code></p>
 <p>使用如下命令自定义字体：</p>
 <div class="highlight"><div class="chroma">
@@ -178,16 +178,16 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% 西文默认字体，排版主字体
-</span><span class="c"></span><span class="k">\setmainfont</span><span class="nb">{</span><span class="nb">}</span>
+</span><span class="c"></span><span class="k">\setmainfont</span><span class="nb">{}</span>
 
 <span class="c">% 西文无称线字体
-</span><span class="c"></span><span class="k">\setsansfont</span><span class="nb">{</span><span class="nb">}</span>
+</span><span class="c"></span><span class="k">\setsansfont</span><span class="nb">{}</span>
 
 <span class="c">% 西文等宽字体
-</span><span class="c"></span><span class="k">\setmonofont</span><span class="nb">{</span><span class="nb">}</span>
+</span><span class="c"></span><span class="k">\setmonofont</span><span class="nb">{}</span>
 
 <span class="c">% 数学公式字体
-</span><span class="c"></span><span class="k">\setmathfont</span><span class="nb">{</span><span class="nb">}</span>
+</span><span class="c"></span><span class="k">\setmathfont</span><span class="nb">{}</span>
 
 <span class="c">% 中文主字体
 </span><span class="c"></span><span class="k">\setCJKmainfont</span>[
@@ -251,19 +251,19 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhsong<span class="nb">}</span><span class="nb">{</span>HYZhongSongS<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhhei<span class="nb">}</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
+<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhsong<span class="nb">}{</span>HYZhongSongS<span class="nb">}</span>
+<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>zhhei<span class="nb">}{</span>WenQuanYi Micro Hei<span class="nb">}</span>
 <span class="c">%\setCJKfamilyfont{zhfs}{Adobe Fangsong Std}
-</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
-</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhli}{LiSu}
-</span><span class="c"></span><span class="c">%\setCJKfamilyfont{zhyou}{YouYuan}
+</span><span class="c">%\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
+</span><span class="c">%\setCJKfamilyfont{zhli}{LiSu}
+</span><span class="c">%\setCJKfamilyfont{zhyou}{YouYuan}
 </span><span class="c"></span>
-<span class="k">\newcommand</span><span class="k">*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}</span><span class="nb">{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhsong<span class="nb">}</span><span class="nb">}</span>   <span class="c">% 宋体
-</span><span class="c"></span><span class="k">\newcommand</span><span class="k">*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}</span><span class="nb">{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhhei<span class="nb">}</span><span class="nb">}</span>     <span class="c">% 黑体
-</span><span class="c"></span><span class="c">%\newcommand*{\kaishu}{\CJKfamily{zhkai}}   % 楷书
-</span><span class="c"></span><span class="c">%\newcommand*{\fangsong}{\CJKfamily{zhfs}}  % 仿宋
-</span><span class="c"></span><span class="c">%\newcommand*{\lishu}{\CJKfamily{zhli}}     % 隶书
-</span><span class="c"></span><span class="c">%\newcommand*{\youyuan}{\CJKfamily{zhyou}}  % 幼圆
+<span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhsong<span class="nb">}}</span>   <span class="c">% 宋体
+</span><span class="c"></span><span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>zhhei<span class="nb">}}</span>     <span class="c">% 黑体
+</span><span class="c">%\newcommand*{\kaishu}{\CJKfamily{zhkai}}   % 楷书
+</span><span class="c">%\newcommand*{\fangsong}{\CJKfamily{zhfs}}  % 仿宋
+</span><span class="c">%\newcommand*{\lishu}{\CJKfamily{zhli}}     % 隶书
+</span><span class="c">%\newcommand*{\youyuan}{\CJKfamily{zhyou}}  % 幼圆
 </span></code></pre></td></tr></table>
 </div>
 </div><p>以上为对应的字体设定了我们较为习惯的别名，使用方式如下：</p>
@@ -277,7 +277,7 @@
 <span class="nb">{</span><span class="k">\zhhei</span> 这段使用黑体。<span class="nb">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="latex-">LaTeX 字体样式相关命令</h2>
+</div><h2 id="latex-字体样式相关命令">LaTeX 字体样式相关命令</h2>
 <p><strong>字体大小</strong></p>
 <table>
 <thead>
@@ -372,7 +372,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="heading1">扩展包</h2>
+<h2 id="扩展包">扩展包</h2>
 <p><strong>ulem 宏包</strong></p>
 <p>在导言区引入：<code>\usepackage{ulem}</code></p>
 <table>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" />
@@ -50,7 +50,7 @@
 <meta itemprop="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的">
 <meta itemprop="datePublished" content="2018-08-13T10:07:05&#43;00:00" />
 <meta itemprop="dateModified" content="2018-08-13T10:07:05&#43;00:00" />
-<meta itemprop="wordCount" content="1561">
+<meta itemprop="wordCount" content="1570">
 
 
 
@@ -143,11 +143,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#-archlinux">安装 Archlinux</a></li>
-    <li><a href="#-gnome">安装 Gnome</a></li>
-    <li><a href="#heading">系统美化</a>
+    <li><a href="#安装-archlinux">安装 Archlinux</a></li>
+    <li><a href="#安装-gnome">安装 Gnome</a></li>
+    <li><a href="#系统美化">系统美化</a>
       <ul>
-        <li><a href="#heading1">字体</a></li>
+        <li><a href="#字体">字体</a></li>
       </ul>
     </li>
   </ul>
@@ -157,7 +157,7 @@
     <div class="post-content">
       <p>放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 <code>startx</code> 启动 gnome-session 失败。几经解决未果，只好重装！</p>
 <!-- raw HTML omitted -->
-<h2 id="-archlinux">安装 Archlinux</h2>
+<h2 id="安装-archlinux">安装 Archlinux</h2>
 <p>基本安装步骤都是按照 ArchWiki 上的 <a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Installation Guide</a> 以及简书上的一篇文章 <a href="https://www.jianshu.com/p/82a40aac52aa">虚拟机安装Archlinux的简易步骤</a>.</p>
 <p>安装过程主要可以分为以下几个步骤：</p>
 <p><strong>1.分区</strong></p>
@@ -310,10 +310,10 @@ mount /dev/nvme0n1p1 /mnt/boot/efi
 </div>
 </div><hr>
 <p>另外，还有一种更加简单的方法，直接敲命令 <code>wifi-menu</code> 可以进行交互式 WiFi 连接，体验和图形界面一样。</p>
-<h2 id="-gnome">安装 Gnome</h2>
+<h2 id="安装-gnome">安装 Gnome</h2>
 <p>来日在填</p>
-<h2 id="heading">系统美化</h2>
-<h3 id="heading1">字体</h3>
+<h2 id="系统美化">系统美化</h2>
+<h3 id="字体">字体</h3>
 <p>如何在 Linux 上安装喜欢的<a href="https://fonts.google.com/">字体</a>呢？只需要将对应的字体文件复制到相应的字体目录，再执行几个命令就 OK 了。</p>
 <p><strong>下载字体</strong></p>
 <p>英文字体的话，<a href="https://fonts.google.com/">Google Fonts</a> 基本可以完全搞定。</p>
@@ -321,19 +321,40 @@ mount /dev/nvme0n1p1 /mnt/boot/efi
 <p>例如要将下载好的 Alegreya.zip 字体安装到系统，只需要将其解压：
 <img src="https://s2.ax1x.com/2019/01/18/kpjOAO.png" alt=""></p>
 <p>可以看到里面的字体文件。挑几个解释一下</p>
-<pre><code>Alegreya-Regular.ttf    # 常规字体
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Alegreya-Regular.ttf    # 常规字体
 Alegreya-Italic.ttf    # 斜体
 Alegreya-Bold.ttf    # 粗体
 Alegreya-BoldItalic.ttf    # 粗斜体
-</code></pre><p>一般而言，虽然一个字体包里面可能有很多字体文件，很多变体（粗体，特粗，细，特细等），我们只需要安装以上四种变体基本上就足够了。在 TeXLive 中，如果指定了字体族，那么其中的 <code>\emph</code> 和 <code>\textbf</code>命令会自动寻找相应的变体来排版。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>一般而言，虽然一个字体包里面可能有很多字体文件，很多变体（粗体，特粗，细，特细等），我们只需要安装以上四种变体基本上就足够了。在 TeXLive 中，如果指定了字体族，那么其中的 <code>\emph</code> 和 <code>\textbf</code>命令会自动寻找相应的变体来排版。</p>
 <p><strong>复制到指定目录</strong></p>
 <p>将这四个文件复制到系统字体文件夹</p>
-<pre><code># 用户字体目录
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 用户字体目录
 ~/.local/share/fonts
 
 # 系统字体目录
 /usr/share/fonts
-</code></pre><p>为了便于管理，可以在系统字体目录下新建一个文件夹存放用户后续安装的字体，例如</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>为了便于管理，可以在系统字体目录下新建一个文件夹存放用户后续安装的字体，例如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1

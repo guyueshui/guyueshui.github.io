@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
@@ -228,19 +228,19 @@ cat /proc/loadavg           # 查看系统负载
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">系统相关</a></li>
-    <li><a href="#heading1">内存外存</a></li>
-    <li><a href="#heading2">网络状态</a></li>
-    <li><a href="#heading3">用户状态相关</a></li>
-    <li><a href="#heading4">进程状态相关</a></li>
-    <li><a href="#heading5">添加用户到组</a></li>
+    <li><a href="#系统相关">系统相关</a></li>
+    <li><a href="#内存外存">内存外存</a></li>
+    <li><a href="#网络状态">网络状态</a></li>
+    <li><a href="#用户状态相关">用户状态相关</a></li>
+    <li><a href="#进程状态相关">进程状态相关</a></li>
+    <li><a href="#添加用户到组">添加用户到组</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
       <p>本文主要引用 <a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang</a> 的博客。</p>
-<h2 id="heading">系统相关</h2>
+<h2 id="系统相关">系统相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -267,7 +267,7 @@ uptime                      <span class="c1"># 查看系统运行时间、负载
 cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading1">内存外存</h2>
+</div><h2 id="内存外存">内存外存</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -294,7 +294,7 @@ mount <span class="p">|</span> column -t           <span class="c1"># 查看各�
 du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的大小</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading2">网络状态</h2>
+</div><h2 id="网络状态">网络状态</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -315,7 +315,7 @@ netstat -antp               <span class="c1"># 查看所有已建立的连接</s
 netstat -s                  <span class="c1"># 查看网络统计信息</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading3">用户状态相关</h2>
+</div><h2 id="用户状态相关">用户状态相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -337,7 +337,7 @@ groups user                 <span class="c1"># 查看用户所属的组</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>参考：https://linux.cn/article-10768-1.html</p>
-<h2 id="heading4">进程状态相关</h2>
+<h2 id="进程状态相关">进程状态相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -350,7 +350,7 @@ ps aux                      <span class="c1"># 同上</span>
 top                         <span class="c1"># 动态显示进程状态</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading5">添加用户到组</h2>
+</div><h2 id="添加用户到组">添加用户到组</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -422,7 +422,7 @@ top                         <span class="c1"># 动态显示进程状态</span>
         id: '2019-03-07 19:22:02 \x2b0000 UTC',
         title: 'Linux 使用指北',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3e本文主要引用 \x3ca href=\x22https:\/\/liam.page\/2016\/11\/06\/Linux-Info-Cheatsheet\/\x22\x3eLiam Huang\x3c\/a\x3e 的博客。\x3c\/p\x3e\n\x3ch2 id=\x22heading\x22\x3e系统相关\x3c\/h2\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode\x3e\x3cspan class=\x22lnt\x22\x3e 1\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 2\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 3\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 4\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 5\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 6\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 7\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 8\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 9\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e10\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3elsb_release -a              \x3cspan class=\x22c1\x22\x3e# 查看操作系统版本\x3c\/span\x3e\nhead -n \x3cspan class=\x22m\x22\x3e1\x3c\/span\x3e \/etc\/issue        \x3cspan class=\x22c1\x22\x3e# 查看操作系统版本\x3c\/span\x3e\ncat \/proc\/version           \x3cspan class=\x22c1\x22\x3e# 查看操作系统内核信息\x3c\/span\x3e\nuname -a                    \x3cspan class=\x22c1\x22\x3e# 查看操作系统内核信息、CPU 信息\x3c\/span\x3e\ncat \/proc\/cpuinfo           \x3cspan class=\x22c1\x22\x3e# 查看 CPU 信息\x3c\/span\x3e\nhostname                    \x3cspan class=\x22c1\x22\x3e# 查看计算机名字\x3c\/span\x3e\nenv                         \x3cspan class=\x22c1\x22\x3e# 列出环境变量\x3c\/span\x3e\nlsmod                       \x3cspan class=\x22c1\x22\x3e# 列出加载的内核模块\x3c\/span\x3e\nuptime                      \x3cspan class=\x22c1\x22\x3e# 查看系统运行时间、负载、用户数量\x3c\/span\x3e\ncat \/proc\/loadavg           \x3cspan class=\x22c1\x22\x3e# 查看系统负载\x3c\/span\x3e\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e',
+        desc: '\x3cp\x3e本文主要引用 \x3ca href=\x22https:\/\/liam.page\/2016\/11\/06\/Linux-Info-Cheatsheet\/\x22\x3eLiam Huang\x3c\/a\x3e 的博客。\x3c\/p\x3e\n\x3ch2 id=\x22系统相关\x22\x3e系统相关\x3c\/h2\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode\x3e\x3cspan class=\x22lnt\x22\x3e 1\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 2\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 3\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 4\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 5\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 6\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 7\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 8\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e 9\n\x3c\/span\x3e\x3cspan class=\x22lnt\x22\x3e10\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3elsb_release -a              \x3cspan class=\x22c1\x22\x3e# 查看操作系统版本\x3c\/span\x3e\nhead -n \x3cspan class=\x22m\x22\x3e1\x3c\/span\x3e \/etc\/issue        \x3cspan class=\x22c1\x22\x3e# 查看操作系统版本\x3c\/span\x3e\ncat \/proc\/version           \x3cspan class=\x22c1\x22\x3e# 查看操作系统内核信息\x3c\/span\x3e\nuname -a                    \x3cspan class=\x22c1\x22\x3e# 查看操作系统内核信息、CPU 信息\x3c\/span\x3e\ncat \/proc\/cpuinfo           \x3cspan class=\x22c1\x22\x3e# 查看 CPU 信息\x3c\/span\x3e\nhostname                    \x3cspan class=\x22c1\x22\x3e# 查看计算机名字\x3c\/span\x3e\nenv                         \x3cspan class=\x22c1\x22\x3e# 列出环境变量\x3c\/span\x3e\nlsmod                       \x3cspan class=\x22c1\x22\x3e# 列出加载的内核模块\x3c\/span\x3e\nuptime                      \x3cspan class=\x22c1\x22\x3e# 查看系统运行时间、负载、用户数量\x3c\/span\x3e\ncat \/proc\/loadavg           \x3cspan class=\x22c1\x22\x3e# 查看系统负载\x3c\/span\x3e\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

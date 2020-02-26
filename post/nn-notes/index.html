@@ -25,7 +25,7 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/nn-notes/" />
@@ -174,9 +174,9 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 </ul>
 <p>The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called <strong>activation map</strong>) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.</p>
 <p>ConvNet is a sequence of convolution layers, interspersed with activation functions.</p>
-<p>Let's find out how the spatial dimensions change (since the depth of input and filter will always match, and then shrinks to 1 in actication map). Suppose we have 7x7 input spatially, 3x3 filter, then we have 5x5 output. If applied with stride 2, then 3x3 output. What about stride 3? Oh, it doesn't fit, you cannot apply 3x3 filter on 7x7 input with stride 3.</p>
+<p>Let&rsquo;s find out how the spatial dimensions change (since the depth of input and filter will always match, and then shrinks to 1 in actication map). Suppose we have 7x7 input spatially, 3x3 filter, then we have 5x5 output. If applied with stride 2, then 3x3 output. What about stride 3? Oh, it doesn&rsquo;t fit, you cannot apply 3x3 filter on 7x7 input with stride 3.</p>
 <p>Output size: (N-F)/stride + 1 for NxN input, FxF filter.</p>
-<p>Take padding into account since it's common to zero pad the border. E.g., 7x7 input, 3x3 filter, applied with stride 1, pad with 1 pixel border, what is the output? Oh, it's 7x7 output! In general, common to see CONV layers with stride 1, filters of size FxF, and zero-padding with (F-1)/2, which will <strong>perserve size spatially</strong>.</p>
+<p>Take padding into account since it&rsquo;s common to zero pad the border. E.g., 7x7 input, 3x3 filter, applied with stride 1, pad with 1 pixel border, what is the output? Oh, it&rsquo;s 7x7 output! In general, common to see CONV layers with stride 1, filters of size FxF, and zero-padding with (F-1)/2, which will <strong>perserve size spatially</strong>.</p>
 <p>Output size: $(N + 2\times padding - F) / stride + 1$.</p>
 <p>Train yourself, 32x32x3 input, 10 5x5 filters with stride 1, pad 2, what is the output volume size? Oh, 32x32x10 output! What is the number of parameters in this layer? Oh, $(5 \times 5 \times 3 + 1) \times 10 = 760$, plus 1 for bias.</p>
 <p>To summarize, the Conv Layer:</p>
@@ -225,8 +225,8 @@ For convenience, we first summarize, the ConvTanspose layer:</p>
 </ul>
 </li>
 </ul>
-<p>The following isn't that correct.</p>
-<p>Then what on earth does transposed convolution do? In fact, a transposed convolution has an associated convolution with <!-- raw HTML omitted -->$F \times F$ filter, $1/S$ stride, $(F-P-1)$ padding<!-- raw HTML omitted -->, here i haven't configured it out. Recall that, the layer requires four parameters while K does not affect the spatial size ($W \times H$).</p>
+<p>The following isn&rsquo;t that correct.</p>
+<p>Then what on earth does transposed convolution do? In fact, a transposed convolution has an associated convolution with <!-- raw HTML omitted -->$F \times F$ filter, $1/S$ stride, $(F-P-1)$ padding<!-- raw HTML omitted -->, here i haven&rsquo;t configured it out. Recall that, the layer requires four parameters while K does not affect the spatial size ($W \times H$).</p>
 <p>So if we have a square input volumn of size $I \time I \times D$, and we pass it into an ConvTranspose Layer with parameter (K, F, S, P), then the output has shape:</p>
 <p>$$
 \begin{split}

@@ -25,7 +25,7 @@ Expansion Each time you type a command line and press the Enterkey, bash perform
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/shell-intro/" />
@@ -55,7 +55,7 @@ Expansion Each time you type a command line and press the Enterkey, bash perform
 Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?">
 <meta itemprop="dateModified" content="2019-11-22T16:59:46&#43;08:00" />
-<meta itemprop="wordCount" content="2191">
+<meta itemprop="wordCount" content="2192">
 
 
 
@@ -166,7 +166,7 @@ Expansion Each time you type a command line and press the Enterkey, bash perform
       </ul>
     </li>
     <li><a href="#variables-and-assignments">Variables and assignments</a></li>
-    <li><a href="#here-documents">Here documents</a></li>
+    <li><a href="#here-documents">&ldquo;Here documents&rdquo;</a></li>
     <li><a href="#flow-control">Flow control</a>
       <ul>
         <li><a href="#using-if">Using if</a></li>
@@ -174,7 +174,7 @@ Expansion Each time you type a command line and press the Enterkey, bash perform
         <li><a href="#modern-test">Modern test</a></li>
       </ul>
     </li>
-    <li><a href="#-designed-for-integers">(( ))-Designed for integers</a></li>
+    <li><a href="#--designed-for-integers">(( ))-Designed for integers</a></li>
     <li><a href="#shell-function">Shell function</a>
       <ul>
         <li><a href="#use-local-variables-in-shell-functions">Use local variables in shell functions</a></li>
@@ -201,7 +201,7 @@ Just look an example:</p>
 Desktop Documents ls-output.txt Music Pictures Public Templates Videos
 </code></pre></td></tr></table>
 </div>
-</div><p>Why not display an asterisk? That's <strong>expansion</strong>! <code>*</code> <em>expands</em> to all files in
+</div><p>Why not display an asterisk? That&rsquo;s <strong>expansion</strong>! <code>*</code> <em>expands</em> to all files in
 current directory.</p>
 <h3 id="pathname-expansion">Pathname expansion</h3>
 <div class="highlight"><div class="chroma">
@@ -233,7 +233,7 @@ Desktop Documents
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *s
 Documents Pictures Templates Videos
 
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">[</span><span class="o">[</span>:upper:<span class="o">]</span><span class="o">]</span>*
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">[[</span>:upper:<span class="o">]]</span>*
 Desktop Documents Music Pictures Public Templates Videos
 
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> /usr/*/share
@@ -313,7 +313,7 @@ Number_1 Number_2 Number_3 Number_4 Number_5
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">{</span>Z..A<span class="o">}</span>
 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
 
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> a<span class="o">{</span>A<span class="o">{</span>1,2<span class="o">}</span>,B<span class="o">{</span>3,4<span class="o">}</span><span class="o">}</span>b
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> a<span class="o">{</span>A<span class="o">{</span>1,2<span class="o">}</span>,B<span class="o">{</span>3,4<span class="o">}}</span>b
 aA1b aA2b aB3b aB4b
 </code></pre></td></tr></table>
 </div>
@@ -388,11 +388,11 @@ The total is .00
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;The total is $100.00&#39;</span>
 The total is <span class="nv">$100</span>.00
 
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">The total is </span><span class="nv">$100</span><span class="s2">.00</span><span class="s2">&#34;</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;The total is </span><span class="nv">$100</span><span class="s2">.00&#34;</span>
 The total is .00
 </code></pre></td></tr></table>
 </div>
-</div><p>Isn't that confusing? Fortunately, the shell provides a mechanism called
+</div><p>Isn&rsquo;t that confusing? Fortunately, the shell provides a mechanism called
 quoting to selectively suppress unwanted expansions.</p>
 <h3 id="double-quotes">Double quotes</h3>
 <p>If you place text inside double quotes, all the special characters used
@@ -453,7 +453,7 @@ a comparison of unquoted, double quotes, and single quotes:</p>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
 text /home/me/ls-output.txt a b foo <span class="m">4</span> me
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">text ~/*.txt {a,b} </span><span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span><span class="s2"> </span><span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&#34;</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;text ~/*.txt {a,b} </span><span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span><span class="s2"> </span><span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&#34;</span>
 text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> foo <span class="m">4</span> me
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER&#39;</span>
 text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
@@ -478,7 +478,7 @@ expansions are suppressed.</p>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">a</span><span class="o">=</span>z                 <span class="c1"># Assign the string &#34;z&#34; to variable a.</span>
 <span class="nv">b</span><span class="o">=</span><span class="s2">&#34;a string&#34;</span>        <span class="c1"># Embedded spaces must be within quotes.</span>
-<span class="nv">c</span><span class="o">=</span><span class="s2">&#34;</span><span class="s2">a string and </span><span class="nv">$b</span><span class="s2">&#34;</span> <span class="c1"># Other expansions such as variables can be expanded into the assignment.</span>
+<span class="nv">c</span><span class="o">=</span><span class="s2">&#34;a string and </span><span class="nv">$b</span><span class="s2">&#34;</span> <span class="c1"># Other expansions such as variables can be expanded into the assignment.</span>
 <span class="nv">d</span><span class="o">=</span><span class="k">$(</span>ls -l foo.txt<span class="k">)</span>  <span class="c1"># Results of a command.</span>
 <span class="nv">e</span><span class="o">=</span><span class="k">$((</span><span class="m">5</span> <span class="o">*</span> <span class="m">7</span><span class="k">))</span>        <span class="c1"># Arithmetic expansion.</span>
 <span class="nv">f</span><span class="o">=</span><span class="s2">&#34;\t\ta string\n&#34;</span>  <span class="c1"># Escape sequences such as tabs and newlines.</span>
@@ -821,7 +821,7 @@ enhanced replacement for <code>test</code> . It uses the following syntax:</p>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span><span class="o">[</span> expression <span class="o">]</span><span class="o">]</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[[</span> expression <span class="o">]]</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>where expression is an expression that evaluates to either a true or false
@@ -837,7 +837,7 @@ expressions) but adds an important new string expression:</p>
 </div>
 </div><p>which returns true if <code>string</code> is matched by the extended regular expression
 <code>regex</code>.</p>
-<h2 id="-designed-for-integers">(( ))-Designed for integers</h2>
+<h2 id="--designed-for-integers">(( ))-Designed for integers</h2>
 <p>(( )) is used to perform <strong>arithmetic truth tests</strong>. An arithmetic truth test
 results in true if the result of the arithmetic evaluation is non-zero.</p>
 <div class="highlight"><div class="chroma">
@@ -848,9 +848,9 @@ results in true if the result of the arithmetic evaluation is non-zero.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">(</span><span class="o">(</span>1<span class="o">)</span><span class="o">)</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>1<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
 It is true.
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">(</span><span class="o">(</span>0<span class="o">)</span><span class="o">)</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>0<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
 <span class="o">[</span>me@linuxbox ~<span class="o">]</span>$<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
@@ -875,7 +875,7 @@ define a shell function:</p>
   <span class="k">return</span>
 <span class="o">}</span>
 
-name <span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+name <span class="o">()</span> <span class="o">{</span>
   commands
   <span class="k">return</span>
 <span class="o">}</span>
@@ -918,23 +918,23 @@ terminates.</p>
 
 <span class="nv">foo</span><span class="o">=</span><span class="m">0</span>   <span class="c1"># global</span>
 
-func1<span class="o">(</span><span class="o">)</span>
+func1<span class="o">()</span>
 <span class="o">{</span>
   <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">1</span>   <span class="c1"># local</span>
-  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
 <span class="o">}</span>
 
-func2<span class="o">(</span><span class="o">)</span>
+func2<span class="o">()</span>
 <span class="o">{</span>
   <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">2</span>   <span class="c1"># local</span>
-  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
 <span class="o">}</span>
 
-<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
 func1
-<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
 func2
-<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -963,7 +963,7 @@ functions.</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><a href="https://www.amazon.com/product-reviews/1593279523">&ldquo;The Linux Command Line, A Complete Introduction&rdquo;</a>, William E. Shotts, Jr.<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://www.amazon.com/product-reviews/1593279523">&ldquo;The Linux Command Line, A Complete Introduction&rdquo;</a>, William E. Shotts, Jr. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

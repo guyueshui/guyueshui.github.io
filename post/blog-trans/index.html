@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/blog-trans/" />
@@ -49,7 +49,7 @@
 <meta itemprop="name" content="博客迁移记录">
 <meta itemprop="description" content="终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天">
 <meta itemprop="dateModified" content="2019-08-25T16:00:50&#43;08:00" />
-<meta itemprop="wordCount" content="2947">
+<meta itemprop="wordCount" content="2946">
 
 
 
@@ -142,12 +142,12 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#frontmatter-">Frontmatter 不匹配</a></li>
-        <li><a href="#heading">时间格式</a></li>
-        <li><a href="#heading1">公式渲染</a></li>
-        <li><a href="#heading2">自定义字体</a></li>
-        <li><a href="#heading3">图片和表格居中</a></li>
-        <li><a href="#heading4">部署</a></li>
+        <li><a href="#frontmatter-不匹配">Frontmatter 不匹配</a></li>
+        <li><a href="#时间格式">时间格式</a></li>
+        <li><a href="#公式渲染">公式渲染</a></li>
+        <li><a href="#自定义字体">自定义字体</a></li>
+        <li><a href="#图片和表格居中">图片和表格居中</a></li>
+        <li><a href="#部署">部署</a></li>
       </ul>
     </li>
   </ul>
@@ -159,7 +159,7 @@
 <p><img src="oldstyle.png" alt="oldstyle"></p>
 <p>如你所见，还可以在 <a href="https://guyueshui.github.io/blog_archive">https://guyueshui.github.io/blog_archive</a> 访问它，但以后的更新还是主要在现在这个博客上。</p>
 <p>这里简单记录一下迁移过程中遇到的一些问题。</p>
-<h3 id="frontmatter-">Frontmatter 不匹配</h3>
+<h3 id="frontmatter-不匹配">Frontmatter 不匹配</h3>
 <p>Hexo博文的frontmatter格式如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -176,14 +176,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span>title<span class="p">:</span><span class="w"> </span>GDB<span class="w"> </span>基本用法<span class="w">
-</span><span class="w"></span>date<span class="p">:</span><span class="w"> </span><span class="ld">2019-08-18 16:14:24</span><span class="w">
-</span><span class="w"></span>categories<span class="p">:</span><span class="w"> </span>Techniques<span class="w"> 
-</span><span class="w"></span>tags<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>debug<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>linux<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>gdb<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>c++<span class="w">
+</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span>GDB<span class="w"> </span>基本用法<span class="w">
+</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2019-08-18 16:14:24</span><span class="w">
+</span><span class="w"></span><span class="k">categories</span><span class="p">:</span><span class="w"> </span>Techniques<span class="w"> 
+</span><span class="w"></span><span class="k">tags</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- debug<span class="w">
+</span><span class="w"></span>- linux<span class="w">
+</span><span class="w"></span>- gdb<span class="w">
+</span><span class="w"></span>- c++<span class="w">
 </span><span class="w"></span>---<span class="w">
 </span></code></pre></td></tr></table>
 </div>
@@ -199,15 +199,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span>title<span class="p">:</span><span class="w"> </span>GDB<span class="w"> </span>基本用法<span class="w">
-</span><span class="w"></span>date<span class="p">:</span><span class="w"> </span><span class="ld">2019-08-18 16:14:24</span><span class="w">
-</span><span class="w"></span>categories<span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Techniques&#39;</span><span class="p">]</span><span class="w">
-</span><span class="w"></span>tags<span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;linux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c++&#39;</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span>GDB<span class="w"> </span>基本用法<span class="w">
+</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2019-08-18 16:14:24</span><span class="w">
+</span><span class="w"></span><span class="k">categories</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Techniques&#39;</span><span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="k">tags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;linux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c++&#39;</span><span class="p">]</span><span class="w">
 </span><span class="w"></span>---<span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><p>还好我的文章不算多，一个个改吧！</p>
-<h3 id="heading">时间格式</h3>
+<h3 id="时间格式">时间格式</h3>
 <p>Hexo的时间格式很简单：<code>2006-01-02 15:04</code>. 但是Hugo的时间格式就比较麻烦了。默认模板<code>archetypes/defalut.md</code>中定义的frontmatter如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -218,8 +218,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span>title<span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
-</span><span class="w"></span>date<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
+</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
+</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
 </span><span class="w"></span>---<span class="w">
 </span></code></pre></td></tr></table>
 </div>
@@ -234,9 +234,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span>title<span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
-</span><span class="w"></span>date<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>dateFormat<span class="w"> </span><span class="s2">&#34;Mon Jan 2 2006&#34;</span><span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
-</span><span class="w"></span>lastmod<span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
+</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
+</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>dateFormat<span class="w"> </span><span class="s2">&#34;Mon Jan 2 2006&#34;</span><span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
+</span><span class="w"></span><span class="k">lastmod</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
 </span><span class="w"></span>---<span class="w">
 </span></code></pre></td></tr></table>
 </div>
@@ -244,10 +244,10 @@
 <blockquote>
 <p>注意：貌似是Go语言的原因，Go语言所有的时间计算都是有一个基准的，这个基准时间就是：<code>2006-01-02 15:04:05 0700</code>, 所有日期的格式设置都要根据这个时间来设，否则就会计算出错误的时间。至于为什么？可能是因为它比较好记：1月2日3点4分5秒6年7时区。开个玩笑:)</p>
 </blockquote>
-<h3 id="heading1">公式渲染</h3>
+<h3 id="公式渲染">公式渲染</h3>
 <p>这个我是真的头大，这是先前阻止我转Hugo的唯一理由。Hexo那边有专门的插件解决这个事情，而且可以配置markdown解析规则，因此比较完美的解析出公式段并正确渲染。但Hugo貌似就要自己动手了，之前也在网上找了很多解决方案，要么是主题自带，要么是手动添加mathjax支持到head里面。这样所有的页面都会加载mathjax，但是还是避免不了解析错误的问题：比如在markdown里面<code>_</code>可以表示斜体的开头，但在LaTeX里面表示下标。诸如此类的字符冲突还有很多，如果不能自定义markdown的解析规则，那么就会导致有些公式无法正常渲染。另外我也试过KaTeX+mmark的方案，未果。</p>
 <p>到目前为止，我还是没有找到满意的解决方案。现在用的是even主题自带的mathjax，所以可能还是会有一些公式无法正常渲染(ﾟДﾟ≡ﾟдﾟ)!?</p>
-<h3 id="heading2">自定义字体</h3>
+<h3 id="自定义字体">自定义字体</h3>
 <p>有了之前在Melody主题自定字体的经验，这次修改字体没有太费什么功夫。主要将主题的<code>font-family</code>改一下，以及将对应的字体放到网站中去。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -260,8 +260,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">//! file: themes/even/src/css/_variables.scss
-</span><span class="c1"></span><span class="c1">// Font family of the site.
-</span><span class="c1"></span><span class="nv">$global-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Libertine</span> <span class="n">O</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s1">Source Sans Pro</span><span class="s1">&#39;</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s1">Helvetica Neue</span><span class="s1">&#39;</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span> <span class="nv">!default</span><span class="p">;</span>
+</span><span class="c1">// Font family of the site.
+</span><span class="c1"></span><span class="nv">$global-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Libertine</span> <span class="n">O</span><span class="o">,</span> <span class="s1">&#39;Source Sans Pro&#39;</span><span class="o">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span> <span class="nv">!default</span><span class="p">;</span>
 
 <span class="c1">// Serif font family of the site.
 </span><span class="c1"></span><span class="nv">$global-serif-font-family</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">Biolinum</span> <span class="n">O</span><span class="o">,</span> <span class="n">Athelas</span><span class="o">,</span> <span class="n">STHeiti</span><span class="o">,</span> <span class="n">Microsoft</span> <span class="n">Yahei</span><span class="o">,</span> <span class="no">serif</span> <span class="nv">!default</span><span class="p">;</span>
@@ -307,16 +307,16 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@font-face</span> <span class="p">{</span>
   <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Libertine</span> <span class="nt">O</span><span class="p">;</span>
-  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;</span><span class="s2">/fonts/Libertine/LinLibertine_DR.otf</span><span class="s2">&#34;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;/fonts/Libertine/LinLibertine_DR.otf&#34;</span><span class="o">)</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@font-face</span> <span class="p">{</span>
   <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Linux</span> <span class="nt">Biolinum</span> <span class="nt">O</span><span class="p">;</span>
-  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;</span><span class="s2">/fonts/Libertine/LinBiolinum_R.otf</span><span class="s2">&#34;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;/fonts/Libertine/LinBiolinum_R.otf&#34;</span><span class="o">)</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heading3">图片和表格居中</h3>
+</div><h3 id="图片和表格居中">图片和表格居中</h3>
 <p>因为Even主题默认是居左的，所以这里改为居中<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -370,7 +370,7 @@
   <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
   <span class="cm">/* make img centerd @yychi */</span>
   <span class="nt">height</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span>
-  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.</span><span class="nc">6em</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6em</span> <span class="nt">0</span><span class="p">;</span>
   <span class="nt">position</span><span class="nd">:</span> <span class="nt">relative</span><span class="p">;</span>
   <span class="nt">left</span><span class="nd">:</span> <span class="nt">50</span><span class="err">%</span><span class="p">;</span>
   <span class="nt">-webkit-transform</span><span class="nd">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="err">%</span><span class="o">)</span><span class="p">;</span> <span class="c1">// for Safari and iOS
@@ -379,14 +379,14 @@
 <span class="p">}</span>
 
 <span class="c1">// 表格居中
-</span><span class="c1"></span><span class="nc">.</span><span class="nc">table-wrapper</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nc">.table-wrapper</span> <span class="p">{</span>
   <span class="nt">overflow-x</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span>
 
   <span class="o">&gt;</span> <span class="nt">table</span> <span class="p">{</span>
     <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
     <span class="nt">margin</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">auto</span><span class="p">;</span> <span class="c1">// make table centered @yychi
 </span><span class="c1"></span>    <span class="nt">border-spacing</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
-    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">2px</span> <span class="nt">3px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nc">.</span><span class="nc">125</span><span class="o">)</span><span class="p">;</span>
+    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">2px</span> <span class="nt">3px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nt">0</span><span class="o">,</span><span class="nc">.125</span><span class="o">)</span><span class="p">;</span>
 
     <span class="nt">thead</span> <span class="p">{</span>
       <span class="nt">background</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="p">;</span>
@@ -397,14 +397,14 @@
       <span class="nt">border</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">double</span> <span class="err">$</span><span class="nt">content-table-border-color</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nt">tr</span><span class="nd">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="nt">tr</span><span class="nd">:hover</span> <span class="p">{</span>
       <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">deputy-color</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heading4">部署</h3>
+</div><h3 id="部署">部署</h3>
 <p>Hugo的部署，没有Hexo那样一步到位，每次都要手动操作。以至于一开始载了很多跟头。按照Hugo中文文档中的方法试了不行（好像坊间流传Hugo的文档写的不行），于是去翻英文文档。对照着做，其实还好，没那么困难。就是一开始走了点弯路，因为我的blog仓库并不是空的，之前的Hexo生成的网站还在。所以走流程的时候出了一些问题，各种文件冲突。后来干脆将Hexo page部署到另一个仓库，将blog仓库清空。然后按照流程走，终于走完了。</p>
 <p>其实还有一个问题，一开始我Hugo设置了输出markdown源文件，Hugo会把它放到生成博文的同目录下，原本只有一个<code>index.html</code>, 现在多了一个<code>index.md</code>. 我想这很好啊，不用另外开一个仓库保存原始的md文件了，但是部署上去，github报错，说生成的md文件里有语法错误，网站构建失败。没办法，现在不想折腾了，就在Hugo中把这个选项关了。</p>
 <p>部署过程参考文档即可：<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on Github</a>. 我还是大致翻译一下吧：</p>
@@ -431,10 +431,10 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a><a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference">.Format | Hugo</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a><a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://cszxyang.github.io/post/hugo/build/">Hugo 建站记录</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

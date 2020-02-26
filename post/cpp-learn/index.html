@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/cpp-learn/" />
@@ -143,21 +143,21 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#reactor-vs-proactor">Reactor v.s. Proactor</a></li>
-    <li><a href="#heading">几个常用的宏</a></li>
-    <li><a href="#ctor">不要在ctor里调用虚函数</a></li>
-    <li><a href="#ctor1">ctor不能是虚函数</a></li>
-    <li><a href="#heading1">虚函数的工作原理</a></li>
-    <li><a href="#heading2">常见类型所占空间大小</a></li>
-    <li><a href="#heading3">静态成员的初始化</a></li>
-    <li><a href="#heading4">析构函数的调用时机</a></li>
-    <li><a href="#heading5">内存布局</a>
+    <li><a href="#几个常用的宏">几个常用的宏</a></li>
+    <li><a href="#不要在ctor里调用虚函数">不要在ctor里调用虚函数</a></li>
+    <li><a href="#ctor不能是虚函数">ctor不能是虚函数</a></li>
+    <li><a href="#虚函数的工作原理">虚函数的工作原理</a></li>
+    <li><a href="#常见类型所占空间大小">常见类型所占空间大小</a></li>
+    <li><a href="#静态成员的初始化">静态成员的初始化</a></li>
+    <li><a href="#析构函数的调用时机">析构函数的调用时机</a></li>
+    <li><a href="#内存布局">内存布局</a>
       <ul>
-        <li><a href="#heading6">结构体</a></li>
+        <li><a href="#结构体">结构体</a></li>
       </ul>
     </li>
-    <li><a href="#heading7">模板</a>
+    <li><a href="#模板">模板</a>
       <ul>
-        <li><a href="#heading8">重载与特化</a></li>
+        <li><a href="#重载与特化">重载与特化</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -172,17 +172,17 @@
 <li>epll/wait: reactor模式，不停轮询，发现有事做，就做！</li>
 <li>asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。</li>
 </ul>
-<h2 id="heading">几个常用的宏</h2>
+<h2 id="几个常用的宏">几个常用的宏</h2>
 <ul>
 <li><code>__func__</code>: name of an function, exists in C99/C++11 (<code>__FUNCTION__</code> is non standard)</li>
 <li><code>__LINE__</code>: line number of the code</li>
 <li><code>__FILE__</code>: filename of the file</li>
 <li><code>__DATE__</code> and <code>__TIME__</code>: as you wish</li>
 </ul>
-<h2 id="ctor">不要在ctor里调用虚函数</h2>
+<h2 id="不要在ctor里调用虚函数">不要在ctor里调用虚函数</h2>
 <p>总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和bug。</p>
 <p>ctor应该设计的尽量简单，确保对象可以被正确构造。在ctor中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。</p>
-<h2 id="ctor1">ctor不能是虚函数</h2>
+<h2 id="ctor不能是虚函数">ctor不能是虚函数</h2>
 <ol>
 <li>
 <p>从存储空间角度：虚函数对应一个vtable（虚函数表），这大家都知道，可是这个vtable其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到vtable，所以构造函数不能是虚函数。</p>
@@ -198,14 +198,14 @@
 <p>——————————————————
 版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/cainiao000001/article/details/81603782</p>
-<h2 id="heading1">虚函数的工作原理</h2>
+<h2 id="虚函数的工作原理">虚函数的工作原理</h2>
 <p><a href="https://zhuanlan.zhihu.com/p/60543586">https://zhuanlan.zhihu.com/p/60543586</a></p>
 <p>C++ 规定了虚函数的行为，但将实现方法留给了编译器的作者。不需要知道实现方法也可以很好的使用虚函数，但了解虚函数的工作原理有助于更好地理解概念。</p>
 <p>通常，编译器处理虚函数的方法是：给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。</p>
 <p>这种数组称为虚函数表（Virtual Function Table, vtbl）。</p>
 <p>虚函数表是一个数组，数组的元素是指针，指针指的是虚函数的地址。</p>
 <p>具有虚函数的类的实例，都会在头部存一个指向虚函数表的指针。</p>
-<h2 id="heading2">常见类型所占空间大小</h2>
+<h2 id="常见类型所占空间大小">常见类型所占空间大小</h2>
 <table>
 <thead>
 <tr>
@@ -249,7 +249,7 @@
 </tbody>
 </table>
 <p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。</p>
-<h2 id="heading3">静态成员的初始化</h2>
+<h2 id="静态成员的初始化">静态成员的初始化</h2>
 <p>当一个类包含静态成员时，最好的做法是在类中声明，在类外初始化。由于静态成员是所有对象共享的，如果在类内初始化，则每个对象构造时，都要执行一遍静态成员的初始化，这无疑是一种浪费。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -280,27 +280,27 @@
 <span class="p">{</span>
   <span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
-  <span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">.</span><span class="p">.</span><span class="p">.</span>
-<span class="p">}</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">fun</span><span class="p">();</span>
+  <span class="p">...</span>
+<span class="p">};</span>
 
-<span class="kt">int</span> <span class="n">A</span><span class="o">:</span><span class="o">:</span><span class="n">a</span> <span class="o">=</span> <span class="mi">233</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">A</span><span class="o">::</span><span class="n">a</span> <span class="o">=</span> <span class="mi">233</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">B</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">.</span><span class="p">.</span><span class="p">.</span>
+  <span class="kt">void</span> <span class="n">fun</span><span class="p">();</span>
+  <span class="p">...</span>
 <span class="k">private</span><span class="o">:</span>
   <span class="k">static</span> <span class="n">string</span> <span class="n">str_</span><span class="p">;</span>
   <span class="kt">bool</span> <span class="n">done_</span><span class="p">;</span>
-<span class="p">}</span><span class="p">;</span>
+<span class="p">};</span>
 
-<span class="n">string</span> <span class="n">B</span><span class="o">:</span><span class="o">:</span><span class="n">str_</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">hello, i am static</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">str_</span> <span class="o">=</span> <span class="s">&#34;hello, i am static&#34;</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading4">析构函数的调用时机</h2>
-<p>The destructor is called whenever an object's lifetime ends, which includes</p>
+</div><h2 id="析构函数的调用时机">析构函数的调用时机</h2>
+<p>The destructor is called whenever an object&rsquo;s lifetime ends, which includes</p>
 <ul>
 <li>program termination, for objects with static storage duration</li>
 <li>thread exit, for objects with thread-local storage duration</li>
@@ -310,8 +310,8 @@
 <li>stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.</li>
 </ul>
 <p>c.f. <a href="https://en.cppreference.com/w/cpp/language/destructor">https://en.cppreference.com/w/cpp/language/destructor</a></p>
-<h2 id="heading5">内存布局</h2>
-<h3 id="heading6">结构体</h3>
+<h2 id="内存布局">内存布局</h2>
+<h3 id="结构体">结构体</h3>
 <p>C++规范在“结构”上使用了和C相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -342,8 +342,8 @@
 </div><ul>
 <li>类的静态成员不占用类的空间，静态成员在程序数据段中。</li>
 </ul>
-<h2 id="heading7">模板</h2>
-<h3 id="heading8">重载与特化</h3>
+<h2 id="模板">模板</h2>
+<h3 id="重载与特化">重载与特化</h3>
 <p>从编译到函数模板的调用，编译器必须在非模板重载、模板重载和模板重载的特化间决定。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -358,15 +358,15 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="p">;</span>              <span class="c1">// #1 ：模板重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">)</span><span class="p">;</span>             <span class="c1">// #2 ：模板重载
-</span><span class="c1"></span><span class="kt">void</span>                     <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="p">;</span>         <span class="c1">// #3 ：非模板重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="o">&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="p">;</span>            <span class="c1">// #4 ： #1 的特化
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>              <span class="c1">// #1 ：模板重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>             <span class="c1">// #2 ：模板重载
+</span><span class="c1"></span><span class="kt">void</span>                     <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>         <span class="c1">// #3 ：非模板重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>            <span class="c1">// #4 ： #1 的特化
 </span><span class="c1"></span>
-<span class="n">f</span><span class="p">(</span><span class="sa"></span><span class="sc">&#39;</span><span class="sc">a</span><span class="sc">&#39;</span><span class="p">)</span><span class="p">;</span>        <span class="c1">// 调用 #1
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 调用 #2
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="p">;</span>        <span class="c1">// 调用 #3
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">;</span>          <span class="c1">// 调用 #4
+<span class="n">f</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>        <span class="c1">// 调用 #1
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #2
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>        <span class="c1">// 调用 #3
+</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>          <span class="c1">// 调用 #4
 </span></code></pre></td></tr></table>
 </div>
 </div><p>注意只有非模板和初等模板重载参与重载决议。特化不是重载，且不受考虑。只有在重载决议选择最佳匹配初等函数模板后，才检验其特化以查看何为最佳匹配。</p>
@@ -379,11 +379,11 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="p">;</span>    <span class="c1">// #1 ：所有类型的重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="o">&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="p">;</span> <span class="c1">// #2 ：为指向 int 的指针特化 #1
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">)</span><span class="p">;</span>   <span class="c1">// #3 ：所有指针类型的重载
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>    <span class="c1">// #1 ：所有类型的重载
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span> <span class="c1">// #2 ：为指向 int 的指针特化 #1
+</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>   <span class="c1">// #3 ：所有指针类型的重载
 </span><span class="c1"></span>
-<span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
+<span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
 </span></code></pre></td></tr></table>
 </div>
 </div><p>即重载的优先级要高于特化。</p>

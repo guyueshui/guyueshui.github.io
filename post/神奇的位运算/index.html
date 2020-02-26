@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/" />
@@ -50,7 +50,7 @@
 <meta itemprop="description" content="In editing&hellip; 必备知识 以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727">
 <meta itemprop="datePublished" content="2019-04-08T10:35:16&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-08T10:35:16&#43;00:00" />
-<meta itemprop="wordCount" content="1413">
+<meta itemprop="wordCount" content="1420">
 
 
 
@@ -143,22 +143,22 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">必备知识</a></li>
-    <li><a href="#heading1">常见的位运算</a></li>
+    <li><a href="#必备知识">必备知识</a></li>
+    <li><a href="#常见的位运算">常见的位运算</a></li>
     <li><a href="#applications">Applications</a>
       <ul>
-        <li><a href="#2">除以/乘以2</a></li>
-        <li><a href="#heading2">取相反数</a></li>
-        <li><a href="#-n1">计算 n+1</a></li>
-        <li><a href="#-n11">计算 n-1</a></li>
+        <li><a href="#除以乘以2">除以/乘以2</a></li>
+        <li><a href="#取相反数">取相反数</a></li>
+        <li><a href="#计算-n1">计算 n+1</a></li>
+        <li><a href="#计算-n-1">计算 n-1</a></li>
         <li><a href="#ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</a></li>
-        <li><a href="#heading3">判断奇偶</a></li>
-        <li><a href="#heading4">变量互换（无需临时变量）</a></li>
-        <li><a href="#21">判断是否为2的幂</a></li>
-        <li><a href="#2n">对2的n次方取余</a></li>
-        <li><a href="#nm">取n的第m低位</a></li>
-        <li><a href="#nm1">将n的第m低位置1</a></li>
-        <li><a href="#nm0">将n的第m低位置0</a></li>
+        <li><a href="#判断奇偶">判断奇偶</a></li>
+        <li><a href="#变量互换无需临时变量">变量互换（无需临时变量）</a></li>
+        <li><a href="#判断是否为2的幂">判断是否为2的幂</a></li>
+        <li><a href="#对2的n次方取余">对2的n次方取余</a></li>
+        <li><a href="#取n的第m低位">取n的第m低位</a></li>
+        <li><a href="#将n的第m低位置1">将n的第m低位置1</a></li>
+        <li><a href="#将n的第m低位置0">将n的第m低位置0</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -168,7 +168,7 @@
 </div>
     <div class="post-content">
       <p>In editing&hellip;</p>
-<h2 id="heading">必备知识</h2>
+<h2 id="必备知识">必备知识</h2>
 <p>以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727.html</p>
 <p>假设有一个 int 类型的数，值为5，那么，我们知道它在计算机中表示为：</p>
 <p><code>00000000 00000000 00000000 00000101</code></p>
@@ -216,7 +216,7 @@
 <blockquote>
 <p>转载部分结束，感谢原作者。为了便于阅读，我对排版稍作了改动。</p>
 </blockquote>
-<h2 id="heading1">常见的位运算</h2>
+<h2 id="常见的位运算">常见的位运算</h2>
 <p>C/C++位运算符</p>
 <ul>
 <li><code>~</code>：按位取反</li>
@@ -227,28 +227,47 @@
 <li><code>^</code>：按位异或</li>
 </ul>
 <h2 id="applications">Applications</h2>
-<h3 id="2">除以/乘以2</h3>
+<h3 id="除以乘以2">除以/乘以2</h3>
 <p><code>n &gt;&gt; 1</code>: 右移一位，低位的1被忽略，floor(n/2).
 <code>n &lt;&lt; 1</code>: 左移一位，低位补0，n * 2.</p>
-<h3 id="heading2">取相反数</h3>
+<h3 id="取相反数">取相反数</h3>
 <p><code>~n + 1</code>：对n取反得到反码，加1得到补码，即对应的负数。
 <code>(n ^ -1) + 1</code>：-1的二进制全是1，按位异或之后得到的等价与按位取反。</p>
-<h3 id="-n1">计算 n+1</h3>
+<h3 id="计算-n1">计算 n+1</h3>
 <p><code>-(~n)</code>：</p>
-<pre><code>~n + 1 = -n
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">~n + 1 = -n
 -(~n + 1) = n
 -~n - 1 = n
 -~n = n+1
-</code></pre><h3 id="-n11">计算 n-1</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="计算-n-1">计算 n-1</h3>
 <p><code>~-n</code>:</p>
-<pre><code>n-1 = -(-n+1)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">n-1 = -(-n+1)
 -n+1 = -(~-n) &lt;--- n+1 = -~n
 n-1 = ~-n
-</code></pre><h3 id="ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</h3>
 <p><code>x = a ^ b ^ x</code>：如果x=a，则相当于对b翻转两次，结果自然是b；如果x=b，那么b^b=0，0异或任何数都没有效果，故结果是a.</p>
-<h3 id="heading3">判断奇偶</h3>
+<h3 id="判断奇偶">判断奇偶</h3>
 <p><code>n &amp; 1</code>: 如果结果为1，则表明n的最低位为1，n为奇数；反之为偶数。</p>
-<h3 id="heading4">变量互换（无需临时变量）</h3>
+<h3 id="变量互换无需临时变量">变量互换（无需临时变量）</h3>
 <p><code>a ^= b ^= a ^= b</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -276,29 +295,29 @@ n-1 = ~-n
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// the expression expands two:
-</span><span class="c1"></span><span class="mi">1</span><span class="p">)</span><span class="p">.</span> <span class="n">b</span> <span class="o">^</span><span class="o">=</span> <span class="n">a</span> <span class="o">^</span><span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_b = b ^ (a^b) = a, temp_a = (a^b)
-</span><span class="c1"></span><span class="mi">2</span><span class="p">)</span><span class="p">.</span> <span class="n">a</span> <span class="o">^</span><span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_a = temp_a ^ final_b = (a^b) ^ a = b
+</span><span class="c1"></span><span class="mi">1</span><span class="p">).</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_b = b ^ (a^b) = a, temp_a = (a^b)
+</span><span class="c1"></span><span class="mi">2</span><span class="p">).</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_a = temp_a ^ final_b = (a^b) ^ a = b
 </span><span class="c1"></span>
 <span class="c1">// as you know, xor twice does nothing!
 </span><span class="c1"></span>
 <span class="c1">// ---------------------------------------------//
-</span><span class="c1"></span><span class="c1">// if you doesn&#39;t understand, read the following:
-</span><span class="c1"></span><span class="c1">// read from right to left
-</span><span class="c1"></span><span class="c1">// now we are reading `a ^= b`
-</span><span class="c1"></span><span class="n">a</span> <span class="o">^</span><span class="o">=</span> <span class="n">b</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="c1">// tag this tmp_a = a ^ b
+</span><span class="c1">// if you doesn&#39;t understand, read the following:
+</span><span class="c1">// read from right to left
+</span><span class="c1">// now we are reading `a ^= b`
+</span><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="c1">// tag this tmp_a = a ^ b
 </span><span class="c1"></span>
 <span class="c1">// we are reading `b ^= a ^= b`
-</span><span class="c1"></span><span class="n">b</span> <span class="o">^</span><span class="o">=</span> <span class="n">a</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span>
+</span><span class="c1"></span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="c1">// we are reading `a ^= b ^= a ^= b`
-</span><span class="c1"></span><span class="n">a</span> <span class="o">^</span><span class="o">=</span> <span class="n">b</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">tmp_a</span> <span class="o">^</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">tmp_a</span> <span class="o">^</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
 
 <span class="c1">// at last
 </span><span class="c1"></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="21">判断是否为2的幂</h3>
+</div><h3 id="判断是否为2的幂">判断是否为2的幂</h3>
 <p><code>n &amp; (n-1)</code>：如果n是2的幂，则</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -308,13 +327,13 @@ n-1 = ~-n
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">n</span>   <span class="o">=</span> <span class="mb">0b100000</span><span class="p">.</span><span class="p">.</span><span class="p">.</span>
-<span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mb">0b011111</span><span class="p">.</span><span class="p">.</span><span class="p">.</span>
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">n</span>   <span class="o">=</span> <span class="mb">0b100000</span><span class="p">...</span>
+<span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mb">0b011111</span><span class="p">...</span>
 <span class="c1">// now n &amp; (n-1) = 0, we can judge if it is 0
-</span><span class="c1"></span><span class="c1">// to determine wether n is a power of 2.
+</span><span class="c1">// to determine wether n is a power of 2.
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="2n">对2的n次方取余</h3>
+</div><h3 id="对2的n次方取余">对2的n次方取余</h3>
 <p><code>m &amp; ((1&lt;&lt;n) - 1)</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -323,16 +342,16 @@ n-1 = ~-n
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="p">(</span><span class="mi">1</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)</span>      <span class="o">=</span> <span class="mb">0b10000</span><span class="p">.</span><span class="p">.</span><span class="p">.</span> <span class="c1">// is the nth power of 2
-</span><span class="c1"></span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="o">=</span> <span class="mb">0b01111</span><span class="p">.</span><span class="p">.</span><span class="p">.</span>
-<span class="n">m</span> <span class="o">&amp;</span> <span class="p">(</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// keep the bits lower than n
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span>      <span class="o">=</span> <span class="mb">0b10000</span><span class="p">...</span> <span class="c1">// is the nth power of 2
+</span><span class="c1"></span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="o">=</span> <span class="mb">0b01111</span><span class="p">...</span>
+<span class="n">m</span> <span class="o">&amp;</span> <span class="p">((</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// keep the bits lower than n
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="nm"><strong>取n的第m低位</strong></h3>
+</div><h3 id="取n的第m低位"><strong>取n的第m低位</strong></h3>
 <p><code>(n &gt;&gt; (m-1)) &amp; 1</code>: 右移m-1位，最低位即为原从低到高第m位</p>
-<h3 id="nm1"><strong>将n的第m低位置1</strong></h3>
+<h3 id="将n的第m低位置1"><strong>将n的第m低位置1</strong></h3>
 <p><code>n | (1 &lt;&lt; (m-1))</code>: 将1左移m-1位于n的第m低位对应，相或置1</p>
-<h3 id="nm0"><strong>将n的第m低位置0</strong></h3>
+<h3 id="将n的第m低位置0"><strong>将n的第m低位置0</strong></h3>
 <p><code>n &amp; ~(1 &lt;&lt; (m-1))</code>: 将1左移m-1位对上n的第m低位，按位取反相与</p>
 <h2 id="references">References</h2>
 <ol>

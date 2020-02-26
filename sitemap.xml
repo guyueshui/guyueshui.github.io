@@ -51,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/</loc>
-    <lastmod>2019-11-22T16:59:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/cnn/</loc>
     <lastmod>2019-10-29T10:45:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -451,6 +444,13 @@
   
   <url>
     <loc>https://guyueshui.github.io/tricks/</loc>
+    <lastmod>2019-01-17T22:19:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/</loc>
     <lastmod>2019-01-17T22:19:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

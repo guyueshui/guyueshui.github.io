@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/use-reference-in-beamer/" />
@@ -145,7 +145,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#-bibtex">使用 bibtex</a></li>
+        <li><a href="#使用-bibtex">使用 bibtex</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -158,7 +158,7 @@
 <p>前略。</p>
 <p>Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 <code>\cite</code>，搞得我走了不少弯路（其实是可以的）。</p>
 <!-- raw HTML omitted -->
-<h3 id="-bibtex">使用 bibtex</h3>
+<h3 id="使用-bibtex">使用 bibtex</h3>
 <p>假设你有 <code>mybeamer.tex</code> 文件，在同目录下新建 <code>mybeamer.bib</code> 文件（其实只是纯文本，特殊后缀而已）。将你所有需要引用的文献条目写入该文献中。比如，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -179,14 +179,14 @@
 <pre class="chroma"><code class="language-bib" data-lang="bib"><span class="c">%%% ./mybeamer.bib</span>
 
 <span class="nc">@article</span><span class="p">{</span><span class="nl">shamir2010learning</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">=</span><span class="s">{</span><span class="s">Learning and generalization with the information bottleneck</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">author</span><span class="p">=</span><span class="s">{</span><span class="s">Shamir, Ohad and Sabato, Sivan and Tishby, Naftali</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">journal</span><span class="p">=</span><span class="s">{</span><span class="s">Theoretical Computer Science</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">volume</span><span class="p">=</span><span class="s">{</span><span class="s">411</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">number</span><span class="p">=</span><span class="s">{</span><span class="s">29-30</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">pages</span><span class="p">=</span><span class="s">{</span><span class="s">2696--2711</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">year</span><span class="p">=</span><span class="s">{</span><span class="s">2010</span><span class="s">}</span><span class="p">,</span>
-  <span class="na">publisher</span><span class="p">=</span><span class="s">{</span><span class="s">Elsevier</span><span class="s">}</span>
+  <span class="na">title</span><span class="p">=</span><span class="s">{Learning and generalization with the information bottleneck}</span><span class="p">,</span>
+  <span class="na">author</span><span class="p">=</span><span class="s">{Shamir, Ohad and Sabato, Sivan and Tishby, Naftali}</span><span class="p">,</span>
+  <span class="na">journal</span><span class="p">=</span><span class="s">{Theoretical Computer Science}</span><span class="p">,</span>
+  <span class="na">volume</span><span class="p">=</span><span class="s">{411}</span><span class="p">,</span>
+  <span class="na">number</span><span class="p">=</span><span class="s">{29-30}</span><span class="p">,</span>
+  <span class="na">pages</span><span class="p">=</span><span class="s">{2696--2711}</span><span class="p">,</span>
+  <span class="na">year</span><span class="p">=</span><span class="s">{2010}</span><span class="p">,</span>
+  <span class="na">publisher</span><span class="p">=</span><span class="s">{Elsevier}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>

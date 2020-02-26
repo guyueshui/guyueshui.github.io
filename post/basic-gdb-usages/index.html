@@ -26,7 +26,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/basic-gdb-usages/" />
@@ -176,7 +176,7 @@ g&#43;&#43; main.cpp -g -O0
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">备注</a></li>
+    <li><a href="#备注">备注</a></li>
   </ul>
 </nav>
   </div>
@@ -218,7 +218,7 @@ g&#43;&#43; main.cpp -g -O0
 <img src="gdb-demo.png" alt="gdb-demo"></p>
 <p>使用<code>next</code>进行单步执行，使用<code>step</code>步入。所谓步入就是如果有函数调用，程序会跟踪到所调用的函数内部的代码，而单步的话，则会直接完成函数调用，获得返回值（如果有的话）。</p>
 <p>使用<code>info locals</code>查看栈变量的值，使用<code>info args</code>查看函数传入参数的值。使用<code>print &lt;variable&gt;</code>查看指定变量的值。</p>
-<h2 id="heading">备注</h2>
+<h2 id="备注">备注</h2>
 <ul>
 <li>GDB里面的命令都有缩写（break=b, next=n, step=s, &hellip;）</li>
 <li>什么命令也不敲直接回车默认执行上一条命令</li>
