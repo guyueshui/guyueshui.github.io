@@ -48,11 +48,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/" />
 <meta property="article:published_time" content="2019-01-16T21:33:17+00:00" />
-<meta property="article:modified_time" content="2019-01-16T21:33:17+00:00" />
+<meta property="article:modified_time" content="2020-03-16T00:00:00+00:00" />
 <meta itemprop="name" content="Polybar 的配置笔记">
 <meta itemprop="description" content="前略。 今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量">
 <meta itemprop="datePublished" content="2019-01-16T21:33:17&#43;00:00" />
-<meta itemprop="dateModified" content="2019-01-16T21:33:17&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-16T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="4006">
 
 
@@ -620,8 +620,8 @@ In insert-mode, type control+V followed by</p>
 <span class="na">ramp-load-7-foreground</span> <span class="o">=</span> <span class="s">#ff5555</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告CPU使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：
-<img src="https://s2.ax1x.com/2019/01/17/kpVXGt.gif" alt="kpVXGt.gif"></p>
+</div><p>这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告CPU使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：</p>
+<p><img src="https://s2.ax1x.com/2019/01/17/kpVXGt.gif" alt="kpVXGt.gif"></p>
 <p>内存模块也是类似的。先看一下配置，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -785,7 +785,7 @@ In insert-mode, type control+V followed by</p>
 <span class="c1">;;; }}}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>配置出来的效果见<a href="#group-4">上图</a>。</p>
+</div><p>配置出来的效果见<a href="#gallery-4">上图</a>。</p>
 <h3 id="电池模块">电池模块</h3>
 <p>同理可参考 wiki 配置电池模块。</p>
 <div class="highlight"><div class="chroma">
@@ -884,8 +884,8 @@ In insert-mode, type control+V followed by</p>
 <span class="na">animation-charging-framerate</span> <span class="o">=</span> <span class="s">750</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照0、1、2的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：
-<img src="https://s2.ax1x.com/2019/01/17/kpQbCQ.gif" alt="kpQbCQ.gif"></p>
+</div><p>上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照0、1、2的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：</p>
+<p><img src="https://s2.ax1x.com/2019/01/17/kpQbCQ.gif" alt="kpQbCQ.gif"></p>
 <h3 id="mpd-模块">MPD 模块</h3>
 <p><a href="https://www.musicpd.org/">MPD</a> 全称 Music Player Daemon.</p>
 <blockquote>
@@ -985,8 +985,8 @@ In insert-mode, type control+V followed by</p>
 <span class="c1">;;; }}}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>配置好我们需要的样式就大功告成啦，看一下效果：
-<img src="https://s2.ax1x.com/2019/01/17/kpgZLt.gif" alt="kpgZLt.gif"></p>
+</div><p>配置好我们需要的样式就大功告成啦，看一下效果：</p>
+<p><img src="https://s2.ax1x.com/2019/01/17/kpgZLt.gif" alt="kpgZLt.gif"></p>
 <h2 id="总结">总结</h2>
 <p>一路折腾下来，发现 polybar 其实很友好。配置逻辑也非常清晰，有点怀疑自己当初为什么没有配置好它，反而觉得很难用。所以啊，作者写这个软件也不是为了刁难人的，一开始的时候也并没有这么复杂。我们入手呢，就要从作者一开始写出来的那样，能用出最基础的功能就好了。然后需求都是后来加上去的。有用户提，作者考虑做，或者作者自己想到的功能，才会在后面一步步添加上去。最终成为一个功能相对完善的软件。每个东西都有它的学习曲线，我们可能已经适应了平缓的山坡，突然面对一个陡峭的山峰之时，便不好应对了。但是千里之行，始于足下！我们始终要抓住它们最初的样子，或者说雏形，然后想一想它们是如何发展过来的，顺着这条线路走下去，自然觉得一切合情合理，也有勇气和信心去学了！然后当我们学会一个又一个软件之后，或许会发现它们可能有异曲同工之妙。那便是学到了！</p>
 <h2 id="reference">Reference</h2>
@@ -1007,7 +1007,7 @@ In insert-mode, type control+V followed by</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        January 16, 2019
+        March 16, 2020
         
     </span>
   </p>
