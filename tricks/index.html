@@ -36,9 +36,12 @@
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.bd0d3683.min.css" rel="stylesheet">
+<link href="/dist/even.809550bd.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="Useful Tricks" />
 <meta property="og:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\" />
@@ -50,7 +53,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="2708">
+<meta itemprop="wordCount" content="3561">
 
 
 
@@ -288,6 +291,121 @@ ffmpeg -i input.mkv -b 2048k out.gif
 </code></pre></td></tr></table>
 </div>
 </div><p>等价于以上的操作。单纯的<code>nohup command</code>会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。</p>
+<h3 id="同时输出到console和文件">同时输出到console和文件</h3>
+<p>将命令输出重定向到文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand &gt; SomeFile.txt  <span class="c1"># overwrite</span>
+SomeCommand &gt;&gt; SomeFile.txt <span class="c1"># append</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将命令输出(stdout)及报错(stderr)重定向到文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand <span class="p">&amp;</span>&gt; SomeFile.txt
+SomeCommand <span class="p">&amp;</span>&gt;&gt; SomeFile.txt
+</code></pre></td></tr></table>
+</div>
+</div><p>同时输出到console和文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee SomeFile.txt     <span class="c1"># overwrite</span>
+SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a SomeFile.txt  <span class="c1"># append</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">          || visible in terminal ||   visible in file   || existing
+  Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
+==========++==========+==========++==========+==========++===========
+    &gt;     ||    no    |   yes    ||   yes    |    no    || overwrite
+    &gt;&gt;    ||    no    |   yes    ||   yes    |    no    ||  append
+          ||          |          ||          |          ||
+   2&gt;     ||   yes    |    no    ||    no    |   yes    || overwrite
+   2&gt;&gt;    ||   yes    |    no    ||    no    |   yes    ||  append
+          ||          |          ||          |          ||
+   &amp;&gt;     ||    no    |    no    ||   yes    |   yes    || overwrite
+   &amp;&gt;&gt;    ||    no    |    no    ||   yes    |   yes    ||  append
+          ||          |          ||          |          ||
+ | tee    ||   yes    |   yes    ||   yes    |    no    || overwrite
+ | tee -a ||   yes    |   yes    ||   yes    |    no    ||  append
+          ||          |          ||          |          ||
+ n.e. (*) ||   yes    |   yes    ||    no    |   yes    || overwrite
+ n.e. (*) ||   yes    |   yes    ||    no    |   yes    ||  append
+          ||          |          ||          |          ||
+|&amp; tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
+|&amp; tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref:</p>
+<ol>
+<li><a href="https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file">https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file</a></li>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html#Redirections">https://www.gnu.org/software/bash/manual/bash.html#Redirections</a></li>
+</ol>
+<h3 id="从系统中踢出某个用户">从系统中踢出某个用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># See the pid of the user&#39;s login process.</span>
+$ who -u
+yychi    tty1         2020-02-19 21:06  旧        <span class="m">460</span>
+
+<span class="c1"># Let him know he will be kick off.</span>
+$ <span class="nb">echo</span> <span class="s2">&#34;You&#39;ll be kick off by system administrator.&#34;</span> <span class="p">|</span> write yychi
+
+<span class="c1"># Kick off.</span>
+$ <span class="nb">kill</span> -9 <span class="m">460</span>
+
+<span class="c1"># Done.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref: <a href="https://www.putorius.net/kick-user-off-linux-system.html">https://www.putorius.net/kick-user-off-linux-system.html</a></p>
 <hr>
 <h2 id="command-find">Command <code>find</code></h2>
 <div class="highlight"><div class="chroma">
@@ -413,6 +531,34 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>推送本地分支到远程</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 远程分支如果不存在，则自动创建。</span>
+git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>拉取远程分支到本地</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 从远程分支切换（并创建，如果不存在）本地分支</span>
+git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
+
+<span class="c1"># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
+git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>删除commit历史</strong></p>
@@ -764,7 +910,31 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre class="chroma"><code class="language-bash" data-lang="bash">netstat -tulpn <span class="p">|</span> grep LISTEN
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="reference">Reference</h1>
+</div><h2 id="htop基本操作">Htop基本操作</h2>
+<p>Htop类似于top，但比top更现代化，支持鼠标操作，支持颜色主题。在命令行键入htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)</p>
+<p><img src="/img/htop.jpg" alt=""></p>
+<p>平均负载区的三个数字分别表示过去5、10、15分钟系统的平均负载。进程区每一列的意义分别是：</p>
+<ul>
+<li>PID: 进程号</li>
+<li>USER: 进程所有者的用户名</li>
+<li>PRI: 优先级别</li>
+<li>NI: NICE值（优先级别数值），越小优先级越高</li>
+<li>VIRT: 虚拟内存</li>
+<li>RES: 物理内存</li>
+<li>SHR: 共享内存</li>
+<li>S: 进程状态（S[leep], R[unning], Z[ombie], N表示优先级为负数）</li>
+<li>CPU%: 该进程占用的CPU使用率</li>
+<li>MEM%: 该进程占用的物理内存和总内存的百分比</li>
+<li>TIME+: 该进程启动后占用的CPU时间</li>
+<li>Command: 该进程的启动命令</li>
+</ul>
+<p>常用快捷键可在htop界面按?显示。</p>
+<ul>
+<li>H: 显示/隐藏用户子线程</li>
+<li>Space: 标记进程</li>
+<li>k: 杀死已标记进程</li>
+</ul>
+<h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/">linux下视频转gif</a></li>
 <li><a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">Running Bash Commands in the Background the Right Way [Linux]</a></li>
@@ -851,7 +1021,7 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.f79f403f.min.js"></script>
+<script type="text/javascript" src="/dist/even.bd00e4ee.min.js"></script>
 
 
 

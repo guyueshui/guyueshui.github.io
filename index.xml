@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>博客迁移记录</title>
+      <link>https://guyueshui.github.io/post/blog-trans/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
+      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
+    </item>
+    
+    <item>
+      <title>小内存机器的自我救赎</title>
+      <link>https://guyueshui.github.io/post/nice-softwares/</link>
+      <pubDate>Thu, 12 Mar 2020 09:46:54 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/nice-softwares/</guid>
+      <description>在此记录一下我自己用过的非常棒的小软件。 下载 aria2c: 命令行下载工具，支持下载种子、磁力等。有RPC模式，配合WebUI使用更佳。参考简介。 多媒体 mpv:</description>
+    </item>
+    
+    <item>
       <title>Brief Introduction to Shell Script</title>
       <link>https://guyueshui.github.io/post/shell-intro/</link>
       <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
@@ -67,15 +85,6 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
       
       <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
       <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
-    </item>
-    
-    <item>
-      <title>博客迁移记录</title>
-      <link>https://guyueshui.github.io/post/blog-trans/</link>
-      <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
-      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
     </item>
     
     <item>

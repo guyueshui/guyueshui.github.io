@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 16:59:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>beautify</title>
+      <link>https://guyueshui.github.io/tags/beautify/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/tags/beautify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字体</title>
+      <link>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nice apps</title>
+      <link>https://guyueshui.github.io/tags/nice-apps/</link>
+      <pubDate>Thu, 12 Mar 2020 09:46:54 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/tags/nice-apps/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>linux</title>
@@ -291,15 +318,6 @@
     </item>
     
     <item>
-      <title>字体</title>
-      <link>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</link>
-      <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>排版</title>
       <link>https://guyueshui.github.io/tags/%E6%8E%92%E7%89%88/</link>
       <pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate>
@@ -377,15 +395,6 @@
       <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>beautify</title>
-      <link>https://guyueshui.github.io/tags/beautify/</link>
-      <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/tags/beautify/</guid>
       <description></description>
     </item>
     

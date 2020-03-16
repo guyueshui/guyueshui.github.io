@@ -6,10 +6,19 @@
     <description>Recent content in 字体 on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Mar 2019 15:41:10 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://guyueshui.github.io/post/blog-trans/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
+      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
+    </item>
     
     <item>
       <title>快速自定义 LaTeX 排版字体</title>

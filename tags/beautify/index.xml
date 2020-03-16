@@ -6,10 +6,19 @@
     <description>Recent content in beautify on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Dec 2018 14:31:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/tags/beautify/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://guyueshui.github.io/post/blog-trans/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
+      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
+    </item>
     
     <item>
       <title>Melody 主题的一些个人更改</title>
