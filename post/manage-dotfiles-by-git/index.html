@@ -48,12 +48,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/manage-dotfiles-by-git/" />
 <meta property="article:published_time" content="2018-11-16T10:32:19+00:00" />
-<meta property="article:modified_time" content="2019-08-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-16T00:00:00+00:00" />
 <meta itemprop="name" content="Manage Dotfiles by Git">
 <meta itemprop="description" content="对于Linux用户，在 $HOME 文件夹下，一般都有大量的隐藏文件，形如.conf,.xxxrc等，这些都是程序的配置文件。很多人也许花了一个下午，一">
 <meta itemprop="datePublished" content="2018-11-16T10:32:19&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1337">
+<meta itemprop="dateModified" content="2020-03-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1396">
 
 
 
@@ -146,14 +146,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-新建-bare-仓库">1. 新建 bare 仓库</a></li>
-        <li><a href="#2-创建命令别名">2. 创建命令别名</a></li>
-        <li><a href="#3-使用gitignore">3. 使用.gitignore</a></li>
-        <li><a href="#4-常规-git-操作">4. 常规 git 操作</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-新建-bare-仓库">1. 新建 bare 仓库</a></li>
+    <li><a href="#2-创建命令别名">2. 创建命令别名</a></li>
+    <li><a href="#3-使用gitignore">3. 使用.gitignore</a></li>
+    <li><a href="#4-常规-git-操作">4. 常规 git 操作</a></li>
+    <li><a href="#5-在新系统上还原配置文件">5. 在新系统上还原配置文件</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -163,10 +160,10 @@
       <p>对于Linux用户，在 <code>$HOME</code> 文件夹下，一般都有大量的隐藏文件，形如<code>.conf</code>,<code>.xxxrc</code>等，这些都是程序的配置文件。很多人也许花了一个下午，一天，甚至一个星期，折腾某某程序的配置文件。如果这些轻易丢失了，那就是浪费生命了！所以，如何将这些文件备份，成了很多人必须要问的一个问题。</p>
 <p>之前我就一直没有备份的意识。结果无论是重装系统，还是转移机器，都十分煎熬，很多软件都需要重新配置！这可是一个浩大的工程，费时费力还费心。于是终于想起来应该把苦心经营（大部分都是来自网络资源，然后自己改改）的配置文件给备份一下。</p>
 <!-- raw HTML omitted -->
-<p>于是在网上搜索了一下，发现很多人都用 <a href="https://github.com">Github</a> 备份自己的配置文件。于是便尝试如下：</p>
+<p>于是在网上搜索了一下，发现很多人都用<a href="https://github.com">Github</a>备份自己的配置文件。于是便尝试如下：</p>
 <p>常规操作是将所有需要备份的配置文件单独拎出来，放到一个专用文件夹<code>MyConf</code>下，该文件夹就作为 git repo 的根目录。然后将配置文件链接到需要原本需要它们的文件夹下。这应该是个比较不错的解决方案了，但是有的人可能不喜欢创建软链，很强迫症○|￣|_</p>
-<p>于是就有了接下来的方法：主要思想是使用家目录<code>$HOME</code>下的一个文件夹存储一个 Git bare repository （关于bare repo 和 普通repo的区别参见<a href="http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/">What is a bare git repository?</a>）。 然后使用命令别名去添加，删除，修改配置文件，这样做的好处是不需要在家目录下创建 <code>.git/</code> 目录，否则会干扰其他子目录的 git 操作。</p>
-<h3 id="1-新建-bare-仓库">1. 新建 bare 仓库</h3>
+<p>于是就有了接下来的方法：主要思想是使用家目录<code>$HOME</code>下的一个文件夹存储一个 Git bare repository <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. 然后使用命令别名去添加，删除，修改配置文件，这样做的好处是不需要在家目录下创建 <code>.git/</code> 目录，否则会干扰其他子目录的 git 操作。</p>
+<h2 id="1-新建-bare-仓库">1. 新建 bare 仓库</h2>
 <p>在<code>$HOME</code>文件夹下新建一个文件夹用来存放 git 版本树。然后初始化为 bare 仓库。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -178,7 +175,7 @@
 git init --bare ~/.mydotfiles
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2-创建命令别名">2. 创建命令别名</h3>
+</div><h2 id="2-创建命令别名">2. 创建命令别名</h2>
 <p>接下来需要创建一个命令别名来进行git的各种操作。直接在家目录运行git命令肯定是不行的，因为家目录不是一个 git repo，不包含 .git 文件夹。所以甚至命令别名如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -198,7 +195,7 @@ git init --bare ~/.mydotfiles
 </code></pre></td></tr></table>
 </div>
 </div><p>如此一来，每次进入shell，都可以使用这个别名。可以敲一个 <code>config status</code>看看效果。</p>
-<h3 id="3-使用gitignore">3. 使用<code>.gitignore</code></h3>
+<h2 id="3-使用gitignore">3. 使用<code>.gitignore</code></h2>
 <p>现在我们的工作目录是整个家目录，如果要把整个目录全备份的话，那就太可怕了。家目录一般动辄十几甚至几十个Gb，没有哪家免费服务可以让你把整个家目录都备份的。所以我们需要一个 <code>.gitignore</code> 文件。Git 会主动忽略<code>.gitignore</code>中所匹配的那些文件。在家目录中创建（如果没有）<code>.gitignore</code> 文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -230,7 +227,7 @@ git init --bare ~/.mydotfiles
 #---[ ignore list ]---
 </code></pre></td></tr></table>
 </div>
-</div><p>上面的文件告诉 git 默认忽略所有文件及文件夹，然后反向添加我们想要考虑的那些文件或文件夹。关于该文件的匹配规则参见<a href="https://stackoverflow.com/questions/33189437/explain-gitignore-pattern-matching">explain gitignore pattern matching - Stack Overflow</a>. 另外<a href="https://www.gitignore.io">gitignore.io</a>可以根据要求生成不同的 <code>.gitignore</code> 文件。</p>
+</div><p>上面的文件告诉 git 默认忽略所有文件及文件夹，然后反向添加我们想要考虑的那些文件或文件夹<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。另外<a href="https://www.gitignore.io">gitignore.io</a>可以根据要求生成不同的 <code>.gitignore</code> 文件。</p>
 <p><strong>忽略特定文件</strong></p>
 <p>Permanently ignore changes to a file</p>
 <ol>
@@ -241,7 +238,7 @@ git init --bare ~/.mydotfiles
 <blockquote>
 <p>来自谷歌搜索，巨婴家Doc.</p>
 </blockquote>
-<h3 id="4-常规-git-操作">4. 常规 git 操作</h3>
+<h2 id="4-常规-git-操作">4. 常规 git 操作</h2>
 <p>现在你可以用<code>config add -A</code>来添加所有匹配到的文件。如之前的配置，可以匹配大部分的配置文件。如有遗漏，可以用<code>config add -f &lt;file&gt;</code> 来强制添加。然后可以 <code>config commit -m &quot;initial git&quot;</code> 来提交更改。最后连接 github 远程仓库。</p>
 <p>首先在github网站新建一个同名仓库。比如本地仓库为<code>.mydotfiles</code>, 那就新建一个同名的远程仓库。然后</p>
 <div class="highlight"><div class="chroma">
@@ -255,9 +252,44 @@ config push -u origin master
 </code></pre></td></tr></table>
 </div>
 </div><p>就可以把本地仓库推送到远程，完成同步。</p>
-<p>图片测试：
-<img src="/img/animal-blurred-background-cat-1443710.jpg" alt="animal-blurred-background-cat-1443710"></p>
-<h2 id="reference">Reference</h2>
+<h2 id="5-在新系统上还原配置文件">5. 在新系统上还原配置文件</h2>
+<p>同理，设置别名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将<code>.mydotfiles</code>加入<code>.gitignore</code>以免递归克隆</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> .mydotfiles &gt;&gt; .gitignore
+</code></pre></td></tr></table>
+</div>
+</div><p>克隆备份好的配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone --bare &lt;git-repo-url&gt; <span class="nv">$HOME</span>/.mydotfiles
+</code></pre></td></tr></table>
+</div>
+</div><p>检出克隆下来的配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">config checkout
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="reference">Reference</h2>
 <ul>
 <li><a href="http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/">Using Git and Github to Manage Your Dotfiles</a></li>
 <li><a href="https://dotfiles.github.io/">Dotfiles</a></li>
@@ -265,6 +297,17 @@ config push -u origin master
 <li><a href="https://stackoverflow.com/questions/12501324/how-to-use-gitignore-command-in-git">How to use gitignore command in git - Stack Overflow</a></li>
 <li><a href="https://git-scm.com/docs/gitignore">Gitignore doc</a></li>
 </ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository">What is a bare git repository?</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>关于该文件的匹配规则参见：<a href="https://stackoverflow.com/questions/33189437/explain-gitignore-pattern-matching">explain gitignore pattern matching - Stack Overflow</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -276,7 +319,7 @@ config push -u origin master
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        August 25, 2019
+        March 16, 2020
         
     </span>
   </p>
