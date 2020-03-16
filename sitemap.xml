@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://guyueshui.github.io/tags/beautify/</loc>
+    <loc>https://guyueshui.github.io/categories/</loc>
     <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/categories/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <loc>https://guyueshui.github.io/tags/nice-apps/</loc>
+    <lastmod>2020-03-12T09:46:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -32,27 +32,6 @@
   <url>
     <loc>https://guyueshui.github.io/tags/</loc>
     <lastmod>2020-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/post/blog-trans/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/tags/nice-apps/</loc>
-    <lastmod>2020-03-12T09:46:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -186,6 +165,27 @@
   <url>
     <loc>https://guyueshui.github.io/tags/cpp/</loc>
     <lastmod>2019-08-28T22:52:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/beautify/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/blog-trans/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
