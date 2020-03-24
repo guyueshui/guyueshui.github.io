@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>个性化 on 水阙</title>
+    <link>https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/</link>
+    <description>Recent content in 个性化 on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Aug 2019 16:00:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客迁移记录</title>
+      <link>https://guyueshui.github.io/post/blog-trans/</link>
+      <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
+      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
+    </item>
+    
+    <item>
+      <title>Polybar 的配置笔记</title>
+      <link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid>
+      <description>前略。 今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量</description>
+    </item>
+    
+    <item>
+      <title>Melody 主题的一些个人更改</title>
+      <link>https://guyueshui.github.io/post/melody-theme-customization/</link>
+      <pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/melody-theme-customization/</guid>
+      <description>更改字体 Melody 主题字体配置文件在 $BLOG/themes/melody/source/css/var.styl，其中 $BLOG 为 Hexo 博客根目录。截取一段如</description>
+    </item>
+    
+    <item>
+      <title>Newifi Mini 安装 PandoraBox</title>
+      <link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link>
+      <pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid>
+      <description>首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。 规格参数 WAN(10/100Mbps) LAN(10/100Mbps)*2 双频：2.4GHz:30</description>
+    </item>
+    
+  </channel>
+</rss>

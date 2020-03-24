@@ -53,7 +53,7 @@
 <meta itemprop="description" content="最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想">
 <meta itemprop="datePublished" content="2019-04-02T21:31:40&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-02T21:31:40&#43;00:00" />
-<meta itemprop="wordCount" content="3948">
+<meta itemprop="wordCount" content="3946">
 
 
 
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -180,8 +180,8 @@
 <td>对每组测试数据，单独输出一行，为单元格坐标的另一种表示形式。</td>
 </tr>
 <tr>
-<td>2 <!-- raw HTML omitted --> R23C55 <!-- raw HTML omitted --> BC23</td>
-<td>BC23 <!-- raw HTML omitted --> R23C55</td>
+<td>2 <br> R23C55 <br> BC23</td>
+<td>BC23 <br> R23C55</td>
 </tr>
 </tbody>
 </table>
@@ -350,7 +350,7 @@
 </div>
 </div><p>好了，现在我们实现了第二个构造函数，它接受一个<code>string</code>对象，从中解析出行列索引的值，然后初始化<code>rowIdx</code>和<code>colIdx</code>.</p>
 <p>但是，我们想当然的调用了一些我们还没有实现的函数。这里要特别注意一点：在写程序的时候，这种想法很有用！以下思想来自我学习<a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">SICP</a>一段时间以后的自我体会：程序往往会包含很多的函数，为什么？因为有时候一个稍微复杂的问题，并不是一个函数就能解决的，所以需要多个函数相互协调，相互调用才能共同完成或是解决一项工作。如果你费尽心思把它们都写在一个函数里，可能你觉得很好，但是一旦程序报错，你将无从下手，很难定位到错误发生在哪里。这也是程序设计讲究模块化的理由。将复杂的功能抽象成一个一个的互不干涉的模块（子程序），在每一个小模块里尽可能的将代码写好，使得它只完成并且高效准确地完成这一项任务。那么当所有模块相互协同起来，将会使难以想象的高效，且不容易出错，即便是出错了，也能很快定位到错误发生的地点，便于调试。</p>
-<p>这样做的好处还有一个，就是你在写程序的时候变得更加轻松。为什么？因为我不用考虑所有的细节，只是调用了一些函数，而实现这些函数很可能不是我们要干的活。<!-- raw HTML omitted -->Oh, that&rsquo;s cool! George will do for me.<!-- raw HTML omitted --> 你甚至可以去喝杯咖啡。但是现在，让我们短暂的充当以下 George 的角色。就拿<code>Unit</code>类的设计来说，我现在想要实现第二个构造函数，根据题目的意思，我可能接受两个代表不同表示方法的<code>string</code>，我要将它们解析成行列索引。让我们回头看看这个函数的实现，它先判断输入的是那个类型，然后分情况做不同的事（调用不同的函数）。这里我用到了3个wishful thinking：</p>
+<p>这样做的好处还有一个，就是你在写程序的时候变得更加轻松。为什么？因为我不用考虑所有的细节，只是调用了一些函数，而实现这些函数很可能不是我们要干的活。<q>Oh, that&rsquo;s cool! George will do for me.</q> 你甚至可以去喝杯咖啡。但是现在，让我们短暂的充当以下 George 的角色。就拿<code>Unit</code>类的设计来说，我现在想要实现第二个构造函数，根据题目的意思，我可能接受两个代表不同表示方法的<code>string</code>，我要将它们解析成行列索引。让我们回头看看这个函数的实现，它先判断输入的是那个类型，然后分情况做不同的事（调用不同的函数）。这里我用到了3个wishful thinking：</p>
 <ol>
 <li>我希望有一个叫<code>typeInfer()</code>的函数，我给它一个字符串，它告诉我这属于哪个类型的表示方法。</li>
 <li>如果是<code>RxCy</code>型，我希望有一个函数<code>getIdx_RC()</code>能够处理这种类型的输入，解析出行列索引。</li>
@@ -676,7 +676,7 @@
 <li><a href="http://community.schemewiki.org/?SICP-Solutions">习题答案</a></li>
 <li><a href="https://github.com/sarabander/p2pu-sicp">p2pu sicp solutions</a></li>
 </ol>
-<p><!-- raw HTML omitted -->感谢SICP视频翻译工作者，感谢B站up主的搬运，感谢开源社区！<!-- raw HTML omitted --></p>
+<p><font color="red">感谢SICP视频翻译工作者，感谢B站up主的搬运，感谢开源社区！</font></p>
 
     </div>
 

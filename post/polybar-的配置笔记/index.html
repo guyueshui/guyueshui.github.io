@@ -53,11 +53,11 @@
 <meta itemprop="description" content="前略。 今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量">
 <meta itemprop="datePublished" content="2019-01-16T21:33:17&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4006">
+<meta itemprop="wordCount" content="4019">
 
 
 
-<meta itemprop="keywords" content="polybar," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="polybar,个性化," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Polybar 的配置笔记"/>
 <meta name="twitter:description" content="前略。 今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量"/>
 
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -172,7 +172,7 @@
 <blockquote>
 <p>有些事情，你当时攻不下来。那就先放一放，择日再战有奇效。</p>
 </blockquote>
-<!-- raw HTML omitted -->
+<!-- more -->
 <h2 id="由浅入深">由浅入深</h2>
 <p>这次呢，我从一个最简单的例子入手。从<a href="https://forum.archlabslinux.com/t/show-us-your-polybar/159/10">这里</a>找到一个既好看，又简约的模板：</p>
 <p><img src="https://forum.archlabslinux.com/uploads/default/original/1X/13132e9654f0c10ed9c696caa501a40acc7e62fe.png" alt="Image adapted from ref"></p>
@@ -361,7 +361,7 @@
 <span class="na">format-padding</span> <span class="o">=</span> <span class="s">1</span>
 </code></pre></td></tr></table>
 </div>
-</div><!-- raw HTML omitted -->
+</div><div style="text-align:center"><small>Code adapted from ref</small></div>
 <p>可以看到，配置文件前半部分为 bar 本身的配置：位置，大小，颜色等等。后半部分则是对应模块的配置。其中，我们看到的一些字符未显示，那是由于我的本地并没有可以显示它的字体。其中的乱码主要是 <a href="https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started">Font Awesome</a> 字体，首先我们得安装该字体。看看这个 bar 到底能不能如预期一样正常显示。</p>
 <p>执行</p>
 <div class="highlight"><div class="chroma">
@@ -433,12 +433,12 @@
 <p>另外如果使用 vim，可以直接输入对应的十六进制编码来完成字符的输入。比如，我要输入上行箭头（fa-arrow-up），它的十六进制码为 <code>f062</code>（在 cheatsheet 中可查）：</p>
 <ol>
 <li>按 <code>i</code> 进入插入模式</li>
-<li>按 <!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted --> + <!-- raw HTML omitted -->v<!-- raw HTML omitted --></li>
+<li>按 <kbd>Ctrl</kbd> + <kbd>v</kbd></li>
 <li>按 <code>u</code> 进入十六进制输入模式</li>
 <li>输入 <code>f062</code></li>
-<li>按 <!-- raw HTML omitted -->Esc<!-- raw HTML omitted --> 返回正常模式</li>
+<li>按 <kbd>Esc</kbd> 返回正常模式</li>
 </ol>
-<p>inputing&hellip; <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>inputing&hellip; <i class="fa fa-arrow-up"> </i></p>
 </blockquote>
 <blockquote>
 <p>另，<code>:help i_CTRL-V_digit</code>
@@ -890,7 +890,7 @@ In insert-mode, type control+V followed by</p>
 <p><a href="https://www.musicpd.org/">MPD</a> 全称 Music Player Daemon.</p>
 <blockquote>
 <p>MPD (music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate client is needed.</p>
-<!-- raw HTML omitted -->
+<div style="text-align:right">──adpted from archwiki</div>
 </blockquote>
 <p>MPD是一个轻量的本地音乐播放框架。需要和客户端（mpc）一起使用。大致分为几步：</p>
 <ol>
@@ -1034,6 +1034,7 @@ In insert-mode, type control+V followed by</p>
 </div><footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/polybar/">polybar</a>
+          <a href="/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/">个性化</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/sicp-learning-notes/">

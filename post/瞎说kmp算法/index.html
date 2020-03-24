@@ -53,11 +53,11 @@
 <meta itemprop="description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导">
 <meta itemprop="datePublished" content="2019-04-04T00:05:41&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-04T00:05:41&#43;00:00" />
-<meta itemprop="wordCount" content="2678">
+<meta itemprop="wordCount" content="2722">
 
 
 
-<meta itemprop="keywords" content="algorithm,pattern match," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="算法,模式匹配," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="瞎说 KMP 算法"/>
 <meta name="twitter:description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导"/>
 
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -580,7 +580,12 @@ bacbababaabcbab
 </code></pre></td></tr></table>
 </div>
 </div><p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
-<!-- raw HTML omitted -->
+<div style="text-align:center">
+    <code>
+        jump_chars = PML - PMT[PML-1]
+    </code>
+</div>
+其中，PML 表示 partial match length，代表当前匹配长度，比如step5的匹配长度 `PML=5`.
 <p>Q: PMT是什么？它为什么这么屌？凭什么它这么屌？它是干嘛的呢？
 A: 可以说PMT就是待匹配字符串的本体了。</p>
 <h2 id="复杂度分析">复杂度分析</h2>
@@ -627,8 +632,8 @@ A: 可以说PMT就是待匹配字符串的本体了。</p>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/algorithm/">algorithm</a>
-          <a href="/tags/pattern-match/">pattern match</a>
+          <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+          <a href="/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">模式匹配</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/coding-problems/">

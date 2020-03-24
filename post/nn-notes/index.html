@@ -81,7 +81,7 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -109,7 +109,7 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -195,7 +195,7 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 </li>
 <li>Produces a volume of size $W_2 \times H_2 \times D_2$ where:
 <ul>
-<li><!-- raw HTML omitted -->$W_2 = (W_1 − F + 2P)/S+1$<!-- raw HTML omitted --></li>
+<li><font color=#0066ff>$W_2 = (W_1 − F + 2P)/S+1$</font></li>
 <li>$H_2 = (H_1−F+2P)/S+1$ (i.e. width and height are computed equally by symmetry)</li>
 <li>$D_2=K$</li>
 </ul>
@@ -222,14 +222,14 @@ For convenience, we first summarize, the ConvTanspose layer:</p>
 </li>
 <li>Produces a volume of size $W_2 \times H_2 \times D_2$ where:
 <ul>
-<li><!-- raw HTML omitted -->$W_2 = S(W_1 − 1) + F - 2P$<!-- raw HTML omitted --></li>
+<li><font color=#0066ff>$W_2 = S(W_1 − 1) + F - 2P$</font></li>
 <li>$H_2 = S(H_1−1) + F - 2P$ (i.e. width and height are computed equally by symmetry)</li>
 <li>$D_2=K$</li>
 </ul>
 </li>
 </ul>
 <p>The following isn&rsquo;t that correct.</p>
-<p>Then what on earth does transposed convolution do? In fact, a transposed convolution has an associated convolution with <!-- raw HTML omitted -->$F \times F$ filter, $1/S$ stride, $(F-P-1)$ padding<!-- raw HTML omitted -->, here i haven&rsquo;t configured it out. Recall that, the layer requires four parameters while K does not affect the spatial size ($W \times H$).</p>
+<p>Then what on earth does transposed convolution do? In fact, a transposed convolution has an associated convolution with <s>$F \times F$ filter, $1/S$ stride, $(F-P-1)$ padding</s>, here i haven&rsquo;t configured it out. Recall that, the layer requires four parameters while K does not affect the spatial size ($W \times H$).</p>
 <p>So if we have a square input volumn of size $I \time I \times D$, and we pass it into an ConvTranspose Layer with parameter (K, F, S, P), then the output has shape:</p>
 <p>$$
 \begin{split}

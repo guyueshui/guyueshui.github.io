@@ -53,11 +53,11 @@
 <meta itemprop="description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来">
 <meta itemprop="datePublished" content="2018-12-16T00:04:38&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="764">
+<meta itemprop="wordCount" content="800">
 
 
 
-<meta itemprop="keywords" content="layout,beautify,html," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="排版,美化,html," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HTML 美化 Markdown 排版"/>
 <meta name="twitter:description" content="Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来"/>
 
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -168,8 +168,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>会排版出居中的效果：</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- centering -->
+<center>I am centered</center>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -181,8 +181,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>会排版出居右的效果：</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div style="text-align:right">I am right aligned</div>
+<!-- more -->
 <h2 id="2-字体控制">2. 字体控制</h2>
 <p>通过 HTML 标签，我们可以精确的控制字体族，字体大小，字体颜色，字体形态（粗体，斜体，下划线，删除线）等等。具体参见<a href="http://www.w3school.com.cn/tags/tag_font.asp">w3school</a>.</p>
 <div class="highlight"><div class="chroma">
@@ -203,7 +203,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">&#39;3&#39;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>I am red of size 3<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">5px</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;#0066FF&#34;</span><span class="p">&gt;</span>I am 天依蓝 of size 5px<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">5px</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;#66CCFF&#34;</span><span class="p">&gt;</span>I am 天依蓝 of size 5px<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">font</span> <span class="na">face</span><span class="o">=</span><span class="s">&#34;verdana&#34;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;green&#34;</span><span class="p">&gt;</span>I am verdana of color green<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>I am underlined<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">s</span><span class="p">&gt;</span>I am deleted :(<span class="p">&lt;/</span><span class="nt">s</span><span class="p">&gt;</span>
@@ -217,20 +217,20 @@ look<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background-color:black&#34;</span><span class="p">&gt;</span>举世皆白我独黑<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>的排版效果：
-<!-- raw HTML omitted -->I am red of size 3<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am 天依蓝 of size 5px<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am verdana of color green<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am underlined<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am deleted :(<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am bolded<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am italic<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am bigger than you<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->I am smaller than you<!-- raw HTML omitted -->
-look<!-- raw HTML omitted -->at<!-- raw HTML omitted --><!-- raw HTML omitted -->me<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Ctrl+Shift+D<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->using this for short quote<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+</div><p>的排版效果：</p>
+<p><font size='3' color="red">I am red of size 3</font>
+<font size=5px color="#66CCFF">I am 天依蓝 of size 5px</font>
+<font face="verdana" color="green">I am verdana of color green</font>
+<u>I am underlined</u>
+<s>I am deleted :(</s>
+<b>I am bolded</b>
+<i>I am italic</i>
+<big>I am bigger than you</big>
+<small>I am smaller than you</small>
+look<sup>at</sup><sub>me</sub>
+<kbd>Ctrl+Shift+D</kbd>
+<q>using this for short quote</q></p>
+<div style="background-color:black">举世皆白我独黑</div>
 <h2 id="3-使用-fontawesome-图标">3. 使用 FontAwesome 图标</h2>
 <p><a href="https://fontawesome.com/start">FontAwesome</a> 是一款图标字体集合。以下 Icon 的名称均可以在<a href="https://fontawesome.com/icons">官网</a>查到：</p>
 <div class="highlight"><div class="chroma">
@@ -260,16 +260,16 @@ look<!-- raw HTML omitted -->at<!-- raw HTML omitted --><!-- raw HTML omitted --
 </code></pre></td></tr></table>
 </div>
 </div><p>的排版效果如下：
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> completed
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> uncompleted
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> github icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> wechat icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> rss icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> twitter icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> weibo icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> large weibo icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> 2*weibo icon
-<!-- raw HTML omitted --> <!-- raw HTML omitted --> 4*weibo icon</p>
+<i class="fa fa-check-square"> </i> completed
+<i class="fa fa-square"> </i> uncompleted
+<i class="fa fa-github"> </i> github icon
+<i class="fa fa-weixin"> </i> wechat icon
+<i class="fa fa-rss"> </i> rss icon
+<i class="fa fa-twitter"> </i> twitter icon
+<i class="fa fa-weibo"> </i> weibo icon
+<i class="fa fa-weibo fa-lg"> </i> large weibo icon
+<i class="fa fa-weibo fa-2x"> </i> 2*weibo icon
+<i class="fa fa-weibo fa-4x"> </i> 4*weibo icon</p>
 <h2 id="4-插图控制">4. 插图控制</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -284,12 +284,12 @@ look<!-- raw HTML omitted -->at<!-- raw HTML omitted --><!-- raw HTML omitted --
 </code></pre></td></tr></table>
 </div>
 </div><p>下面是排版结果的对比：
-<!-- raw HTML omitted -->
+<img src="/img/miwa.png" width="100" alt="miwa-width=100" />
 <img src="/img/miwa.png" alt="miwa"></p>
 <h2 id="reference">Reference</h2>
 <blockquote>
 <p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。<code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是更长远的保障。</p>
-<!-- raw HTML omitted -->
+<div style="text-align:right">——w3shcool</div>
 </blockquote>
 <ul>
 <li><a href="https://walesexcitedmei.github.io/2018/08/30/HEXO-NexT-%E4%B8%BB%E9%A2%98%E6%8F%90%E9%AB%98%E5%8D%9A%E5%AE%A2%E9%A2%9C%E5%80%BC/">[HEXO] NexT 主题提高博客颜值</a></li>
@@ -332,8 +332,8 @@ look<!-- raw HTML omitted -->at<!-- raw HTML omitted --><!-- raw HTML omitted --
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/layout/">layout</a>
-          <a href="/tags/beautify/">beautify</a>
+          <a href="/tags/%E6%8E%92%E7%89%88/">排版</a>
+          <a href="/tags/%E7%BE%8E%E5%8C%96/">美化</a>
           <a href="/tags/html/">html</a>
           </div>
       <nav class="post-nav">
@@ -343,7 +343,7 @@ look<!-- raw HTML omitted -->at<!-- raw HTML omitted --><!-- raw HTML omitted --
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/post/manage-dotfiles-by-git/">
-            <span class="next-text nav-default">Manage Dotfiles by Git</span>
+            <span class="next-text nav-default">使用Git管理配置文件</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -49,12 +49,21 @@
     </item>
     
     <item>
+      <title>在 Beamer 中使用参考文献</title>
+      <link>https://guyueshui.github.io/post/use-reference-in-beamer/</link>
+      <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
+      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+    </item>
+    
+    <item>
       <title>Vim Quick Reference</title>
       <link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description>This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?</description>
+      <description>This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you</description>
     </item>
     
     <item>
@@ -76,7 +85,7 @@
     </item>
     
     <item>
-      <title>Manage Dotfiles by Git</title>
+      <title>使用Git管理配置文件</title>
       <link>https://guyueshui.github.io/post/manage-dotfiles-by-git/</link>
       <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
       

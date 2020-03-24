@@ -53,7 +53,7 @@
 <meta itemprop="description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1">
 <meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
 <meta itemprop="dateModified" content="2019-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="10417">
+<meta itemprop="wordCount" content="10430">
 
 
 
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -205,7 +205,7 @@ A: 对于删除给定元素前的迭代器不会失效，被删除元素之后�
 <li>对于deque，如果在首尾之外的任何位置删除元素指向被删除元素外其他元素的迭代器、引用和指针也会失效。如果是删除deque的尾元素，则尾后迭代器也会失效，但其他迭代器、引用和指针不受影响；如果是删除首元素，这些也不会受影响。</li>
 <li>对于vector和string，指向被删除元素之前的元素迭代器、引用和指针仍有效。注意：当我们删除元素时，尾后迭代器总是会失效。</li>
 </ul>
-<!-- raw HTML omitted -->
+<div style="text-align:right">──《C++ Primer》</div>
 </blockquote>
 <p>关于迭代器失效的问题，另参阅：https://blog.csdn.net/lujiandong1/article/details/49872763</p>
 <p>Q: 对于使用hash函数组织的unordered_map，对于给定的hash函数，假设我总能构造一个集合，使得该集合内所有元素的hash值相同，即该集合内所有的key都映射到一个桶内。这种问题该如何解决？

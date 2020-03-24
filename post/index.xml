@@ -36,7 +36,7 @@
       
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
       <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
     </item>
     
@@ -139,7 +139,8 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
       <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
-      <description>Declaration: this article is in long time editing&amp;hellip; Here comes some beautiful recursive solutions to some problems.
+      <description>Declaration: this article is in long time editing&amp;hellip;
+ Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
 Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
     </item>
@@ -288,7 +289,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
+      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
     </item>
     
     <item>
@@ -315,7 +316,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       <pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description>This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?</description>
+      <description>This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you</description>
     </item>
     
     <item>
@@ -337,7 +338,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
     </item>
     
     <item>
-      <title>Manage Dotfiles by Git</title>
+      <title>使用Git管理配置文件</title>
       <link>https://guyueshui.github.io/post/manage-dotfiles-by-git/</link>
       <pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate>
       

@@ -56,7 +56,7 @@
 
 
 
-<meta itemprop="keywords" content="os,network,tcp,udp," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="操作系统,网络,tcp,udp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="服务端开发预备知识"/>
 <meta name="twitter:description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程"/>
 
@@ -73,7 +73,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -101,7 +101,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -322,7 +322,7 @@
 <p>一个TCP连接就是一个字节流，而不是消息流。端到端之间并不比保留消息的边界。例如，如果发送进程将4个512字节的数据块写到一个TCP流中，那么在接收进程中，这些数据有可能按4个512字节快的方式被递交，也可能是2个1024字节的数据块，或是一个2048字节的数据块，或者其他方式。接收方无法获知这些数据被写入字节流时候的单元大小。</p>
 <p>正如Unix中文件一样，读文件的程序无法判断该文件是怎么写成的，是一次性还是分块写入，然而，程序也无意于去弄清这个事情。一个TCP软件不理解TCP字节流的含义，也无意于弄清其含义，一个字节就是一个字节而已。</p>
 <p>当一个应用将数据传递给TCP的时候，TCP可能立即将数据发送出去，也可能将它缓冲起来（为了收集更多的数据从而一次发送出去），这完全由TCP软件自己来决定。然而，有时候应用程序确实希望自己的数据立即被发送出去，例如，假设一个用户已经登陆到一台远程服务器上，用户每输入一行命令就会敲入回车键，这时候该命令行应该被立即发送到远程主机，而不应该缓冲起来等待下一行命令。为了强迫将数据发送出去，应用程序可以使用PUSH标志，它相当于告诉TCP不要延迟传输过程。</p>
-<p>有关TCP服务的最后一个值得在这里提出来的特性是紧急数据（urgent data）。当一个交互用户通过敲入<!-- raw HTML omitted -->DEL<!-- raw HTML omitted -->或者<!-- raw HTML omitted -->CTRL<!-- raw HTML omitted -->-<!-- raw HTML omitted -->C<!-- raw HTML omitted -->来打断一个已经开始运行的远程计算过程的时候，发送方应用把一些控制信息放在数据流中，然后将它联通URGETN标志一起交给TCP。这一事件将使得TCP停止继续积累数据，而是将该连接上已有的所有数据立即传输出去。当目标端接收到紧急数据的时候，接收方应用被中断（比如，按Unix的术语来说得到了一个信号），所以它停止当前正在做的工作，并且读入数据流以找到紧急数据。紧急数据的尾部应该被标记出来，所以，如何发现紧急数据要取决于具体的应用程序。这种方案基本上只是提供了一种原始的信号机制，其余的工作全部留给应用程序自己来处理。</p>
+<p>有关TCP服务的最后一个值得在这里提出来的特性是紧急数据（urgent data）。当一个交互用户通过敲入<kbd>DEL</kbd>或者<kbd>CTRL</kbd>-<kbd>C</kbd>来打断一个已经开始运行的远程计算过程的时候，发送方应用把一些控制信息放在数据流中，然后将它联通URGETN标志一起交给TCP。这一事件将使得TCP停止继续积累数据，而是将该连接上已有的所有数据立即传输出去。当目标端接收到紧急数据的时候，接收方应用被中断（比如，按Unix的术语来说得到了一个信号），所以它停止当前正在做的工作，并且读入数据流以找到紧急数据。紧急数据的尾部应该被标记出来，所以，如何发现紧急数据要取决于具体的应用程序。这种方案基本上只是提供了一种原始的信号机制，其余的工作全部留给应用程序自己来处理。</p>
 <h3 id="tcp协议">TCP协议</h3>
 <p>TCP的一个关键特征，也是主导了整个协议设计的特征是，TCP连接上的每个字节都有它独有的32位序列号。发送端和接收端的TCP实体以数据段的形式交换数据。TCP数据段（TCP segment）是由一个固定的20字节的头（加上可选的部分）以及随后的0个或者多个数据字节构成的。TCP软件决定数据段的大小，它可以将多次写操作的数据累积起来放到一个数据段中，也可以将一次写操作的数据分割到多个数据段中。有两个因素限制了段的长度：第一，每个数据段，包括TCP头在内，必须适合IP的65515字节净荷大小；其次，每个网络都有一个<strong>最大传输单元（Maximum Transfer Unit）MTU</strong>，每个数据段必须适合于MTU。在实践中，MTU通常是1500字节（以太网的净荷大小），因此它规定了数据段长度的上界。</p>
 <p><img src="/img/posted/tcp-head-format.png" alt="tcp-head"></p>
@@ -517,8 +517,8 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/os/">os</a>
-          <a href="/tags/network/">network</a>
+          <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
           <a href="/tags/tcp/">tcp</a>
           <a href="/tags/udp/">udp</a>
           </div>

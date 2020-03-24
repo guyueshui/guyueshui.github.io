@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you" /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -44,22 +44,22 @@
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="Vim Quick Reference" />
-<meta property="og:description" content="This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?" />
+<meta property="og:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" />
 <meta property="article:published_time" content="2018-12-20T19:17:54+00:00" />
 <meta property="article:modified_time" content="2018-12-20T19:17:54+00:00" />
 <meta itemprop="name" content="Vim Quick Reference">
-<meta itemprop="description" content="This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?">
+<meta itemprop="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you">
 <meta itemprop="datePublished" content="2018-12-20T19:17:54&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-20T19:17:54&#43;00:00" />
-<meta itemprop="wordCount" content="1607">
+<meta itemprop="wordCount" content="1608">
 
 
 
 <meta itemprop="keywords" content="vim,reference," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim Quick Reference"/>
-<meta name="twitter:description" content="This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?"/>
+<meta name="twitter:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -74,7 +74,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
+    <a href="/" class="logo">Yychi&#39;s log</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
+  <a href="/" class="logo">Yychi&#39;s log</a>
 </div>
 
 <nav class="site-navbar">
@@ -181,9 +181,9 @@
   </div>
 </div>
     <div class="post-content">
-      <p><!-- raw HTML omitted -->This article needs polish, do not truely trust it!<!-- raw HTML omitted --></p>
+      <p><font color="red">This article needs polish, do not truely trust it!</font></p>
 <p>Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.</p>
-<!-- raw HTML omitted -->
+<!-- more -->
 <h2 id="general-pattern">General Pattern</h2>
 <p>A vim operation consists of three parts, namely</p>
 <div class="highlight"><div class="chroma">
@@ -208,7 +208,7 @@
 <ul>
 <li>v - visual mode, now you can select what you want</li>
 <li>V - visual in line, this is extremely useful when you want to copy a line, just <code>V</code>+<code>y</code>!</li>
-<li>y - yank, like <!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->C<!-- raw HTML omitted -->, copy the selected text to clipboard (<code>&quot;</code>)
+<li>y - yank, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, copy the selected text to clipboard (<code>&quot;</code>)
 <blockquote>
 <ul>
 <li><code>yy</code>: copy current line</li>
@@ -264,14 +264,14 @@
 <li>w - next word, points to the first letter</li>
 <li>b - back, previous word, points to the first letter</li>
 <li>e - end, jump to the end of the word
-<!-- raw HTML omitted --></li>
+<br /></li>
 <li><code>%</code> - find the bracket matches (<code>( )</code>,<code>{ }</code>, <code>[ ]</code>&hellip;)
-<!-- raw HTML omitted --></li>
+<br /></li>
 <li><code>^e</code> - scroll down</li>
 <li><code>^y</code> - scroll up</li>
 <li><code>^d</code> - half-screen down</li>
 <li><code>^u</code> - half-screen up
-<!-- raw HTML omitted --></li>
+<br /></li>
 <li><code>*</code> - jump to next occurrence of current word</li>
 <li><code>#</code> - jump to previous occurrence of current word</li>
 </ul>
@@ -282,10 +282,10 @@
 <ul>
 <li><code>^</code>: jump to the first character which is not a blank (space, tab, <code>\n</code>, <code>\r</code>)</li>
 <li><code>g_</code>: jump to the last character which isn&rsquo;t a blank
-<!-- raw HTML omitted --></li>
+<br /></li>
 <li><code>0</code>: jump to the beginning</li>
 <li><code>$</code>: jump to the end
-<!-- raw HTML omitted --></li>
+<br /></li>
 <li>f<code>x</code>: find next <code>x</code> in current line
 <blockquote>
 <p>Note: you can use <code>;</code>(alongside) and <code>,</code>(reverse side) to repeat this in two directions</p>
@@ -294,7 +294,7 @@
 <li>F<code>x</code>: find previous <code>x</code> in current line
 <blockquote>
 <p>Note: same rules can be applied
-<!-- raw HTML omitted --></p>
+<br /></p>
 </blockquote>
 </li>
 <li>t<code>x</code>: find next <code>x</code> and move 1 backward</li>
@@ -591,7 +591,7 @@
 <p><strong>Multi-window</strong></p>
 <ul>
 <li><code>:sp &lt;file&gt;</code> - split horizontally and open <code>&lt;file&gt;</code></li>
-<li><code>:vsp</code> - split vertically <!-- raw HTML omitted -->and open filename optionally, same file by default<!-- raw HTML omitted --></li>
+<li><code>:vsp</code> - split vertically <s>and open filename optionally, same file by default</s></li>
 <li><code>^w</code> + <code>h/j/k/l</code> - focus left/down/up/right window</li>
 <li><code>:close</code> - close current window (buffer &amp; file)</li>
 </ul>
@@ -691,7 +691,7 @@
         id: '2018-12-20 19:17:54 \x2b0000 UTC',
         title: 'Vim Quick Reference',
         link: decodeURI(location.href),
-        desc: 'This article needs polish, do not truely trust it!Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?',
+        desc: 'This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

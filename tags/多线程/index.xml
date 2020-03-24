@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>多线程 on 水阙</title>
+    <link>https://guyueshui.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <description>Recent content in 多线程 on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Aug 2019 21:40:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://guyueshui.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>多线程学习笔记</title>
+      <link>https://guyueshui.github.io/post/concurrent-programming/</link>
+      <pubDate>Thu, 29 Aug 2019 21:40:23 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/concurrent-programming/</guid>
+      <description>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢</description>
+    </item>
+    
+  </channel>
+</rss>

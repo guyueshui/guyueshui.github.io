@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Mar 2020 22:41:06 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>slides</title>
+      <link>https://guyueshui.github.io/categories/slides/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/categories/slides/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Notes</title>
@@ -17,6 +26,15 @@
       <pubDate>Wed, 18 Mar 2020 22:41:06 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/categories/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>应用推荐</title>
+      <link>https://guyueshui.github.io/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Thu, 12 Mar 2020 09:46:54 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/</guid>
       <description></description>
     </item>
     
@@ -39,20 +57,20 @@
     </item>
     
     <item>
-      <title>Literature</title>
-      <link>https://guyueshui.github.io/categories/literature/</link>
+      <title>文学</title>
+      <link>https://guyueshui.github.io/categories/%E6%96%87%E5%AD%A6/</link>
       <pubDate>Thu, 07 Mar 2019 18:27:18 +0000</pubDate>
       
-      <guid>https://guyueshui.github.io/categories/literature/</guid>
+      <guid>https://guyueshui.github.io/categories/%E6%96%87%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jottings</title>
-      <link>https://guyueshui.github.io/categories/jottings/</link>
+      <title>随笔</title>
+      <link>https://guyueshui.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Fri, 23 Jun 2017 14:41:27 +0000</pubDate>
       
-      <guid>https://guyueshui.github.io/categories/jottings/</guid>
+      <guid>https://guyueshui.github.io/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     

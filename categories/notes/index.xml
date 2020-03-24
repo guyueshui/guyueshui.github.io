@@ -21,22 +21,13 @@
     </item>
     
     <item>
-      <title>小内存机器的自我救赎</title>
-      <link>https://guyueshui.github.io/post/nice-softwares/</link>
-      <pubDate>Thu, 12 Mar 2020 09:46:54 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/nice-softwares/</guid>
-      <description>在此记录一下我自己用过的非常棒的小软件。 下载 aria2c: 命令行下载工具，支持下载种子、磁力等。有RPC模式，配合WebUI使用更佳。参考简介。 多媒体 mpv:</description>
-    </item>
-    
-    <item>
       <title>Brief Introduction to Shell Script</title>
       <link>https://guyueshui.github.io/post/shell-intro/</link>
       <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
       <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
-Expansion Each time you type a command line and press the Enterkey, bash performs several processes upon the text before it carries out your command. Just look an example:
+Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
 1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
     </item>
     
@@ -120,7 +111,8 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
       <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
-      <description>Declaration: this article is in long time editing&amp;hellip; Here comes some beautiful recursive solutions to some problems.
+      <description>Declaration: this article is in long time editing&amp;hellip;
+ Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
 Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
     </item>
@@ -188,15 +180,6 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
       <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
 Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
 There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
-    </item>
-    
-    <item>
-      <title>在 Beamer 中使用参考文献</title>
-      <link>https://guyueshui.github.io/post/use-reference-in-beamer/</link>
-      <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
     </item>
     
     <item>

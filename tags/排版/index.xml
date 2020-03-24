@@ -26,7 +26,16 @@
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish!前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，</description>
+      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+    </item>
+    
+    <item>
+      <title>HTML 美化 Markdown 排版</title>
+      <link>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</link>
+      <pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</guid>
+      <description>Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来</description>
     </item>
     
   </channel>
