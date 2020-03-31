@@ -36,7 +36,7 @@
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.809550bd.min.css" rel="stylesheet">
+<link href="/dist/even.b81d8a2f.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -53,7 +53,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="3569">
+<meta itemprop="wordCount" content="4053">
 
 
 
@@ -643,8 +643,32 @@ git branch -d master_temp
 </code></pre></td></tr></table>
 </div>
 </div><p>Ref: <a href="https://segmentfault.com/a/1190000008360855">https://segmentfault.com/a/1190000008360855</a></p>
-<p><strong>解决合并冲突</strong></p>
-<p>Ref: <a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git">https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</a></p>
+<p><strong>Git merge</strong></p>
+<p>当你觉得很多时候对于一个命令的很多子命令或者选项不是很清晰，而且查了忘，忘了查，那多半是你不理解它的工作机制。或者说它对你来说不是那么自然易懂，这个时候就需要深入以下，了解以下它的基本原理，帮助自己理解，以便记忆。</p>
+<p><code>git merge</code>就是如此，你要知道merge的含义是什么？它其实就是在被merge的分支上重现要merge的commits. 比如说：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">a---b---c---d---e (master)
+    \
+     `--A---B---C (dev)
+</code></pre></td></tr></table>
+</div>
+</div><p>你当前在master分支的e节点，你要merge dev分支。其实就是将A、B、C三个commit在master分支上重现，仿佛master分支上曾经也做过这些改动。那么冲突的来源就是你在两个分支中，对同一个文件作了不同的改动，如何解决不言而喻。</p>
+<p>小朋友，你是否有很多？</p>
+<p>Q: 我想只重现B节点怎么办？<br />
+A: <code>git checkout master &amp;&amp; git cherry-pick 62ecb3</code>，这里<code>62ecb3</code>是节点B的commit标识。</p>
+<p>Q: 我想重现A-B，但不要C怎么办？<br />
+A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76cada^</code>，这里<code>76cada</code>是A节点的commit标识。先基于B创建一个分支，这个分支包含了A节点的改动，然后rebase到master上去，结果就是A和B重现在master分支上。</p>
+<p>Ref:</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git">https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</a></li>
+<li><a href="https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch/">Cherry-Picking specific commits from another branch</a></li>
+</ol>
 <h2 id="command-g">Command <code>g++</code></h2>
 <p>自定义包含路径</p>
 <div class="highlight"><div class="chroma">

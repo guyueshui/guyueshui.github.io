@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Metapost学习笔记 - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&amp;hellip;" /><meta name="keywords" content="水阙, yychi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.67.1 with theme even" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/metapost/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.b81d8a2f.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
+
+<meta property="og:title" content="Metapost学习笔记" />
+<meta property="og:description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/metapost/" />
+<meta property="article:published_time" content="2020-03-31T09:20:44+08:00" />
+<meta property="article:modified_time" content="2020-03-31T09:20:44+08:00" />
+<meta itemprop="name" content="Metapost学习笔记">
+<meta itemprop="description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;">
+<meta itemprop="datePublished" content="2020-03-31T09:20:44&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-31T09:20:44&#43;08:00" />
+<meta itemprop="wordCount" content="816">
+
+
+
+<meta itemprop="keywords" content="metapost,作图," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Metapost学习笔记"/>
+<meta name="twitter:description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s log</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s log</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Metapost学习笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> March 31, 2020 </span>
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#metapost">Metapost</a></li>
+    <li><a href="#画图">画图</a></li>
+    <li><a href="#弯曲控制">弯曲控制</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;</p>
+<p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3812944475,2492602811&amp;fm=26&amp;gp=0.jpg" alt=""></p>
+<p>闲话少叙，开始学习！</p>
+<h2 id="metapost">Metapost</h2>
+<p>介绍什么的，我其实不太关心，所以就不写了……</p>
+<h2 id="画图">画图</h2>
+<p>和C语言一样，Metapost有一个源文件<code>xxx.mp</code>，有一个编译器<code>mpost</code>，然后编译之，即得到图片（默认后缀<code>.mps</code>）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">% file:///hello.mp
+prologues := 3;
+outputtemplate := &#34;%j-%c.mps&#34;;
+outputformat := &#34;mps&#34;;
+
+beginfig(1);
+  draw (0,0)--(11,0)--(11,11)--(0,11)--cycle;
+endfig;
+
+beginfig(2);
+  draw (0,0)..(11,0)..(11,11)..(0,11)..cycle;
+endfig;
+end
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Metapost语句以分号结尾，<strong>除了最后的<code>end</code></strong>!</p>
+</blockquote>
+<p>这里简单说一下源码结构，和LaTeX一样，Metapost有导言区，可以做一些设置之类的工作。如<code>hello.mp</code>中前三句就设置了输出文件格式，以及文件名规范等。然后作图部分主要由<code>beginfig--endfig</code>块控制。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(x);
+  draw something;
+  draw anything;
+endfig;
+</code></pre></td></tr></table>
+</div>
+</div><p>括号中的x替换为数字，类似图片id. 一个源文件中可以有多个<code>beginfig--endfig</code>块，编译后每个块对应一张图片。</p>
+<p>编译<code>hello.mp</code>后即可得到两张图片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ mpost hello.mp
+This is MetaPost, version 2.00 <span class="o">(</span>TeX Live 2018<span class="o">)</span> <span class="o">(</span>kpathsea version 6.3.0<span class="o">)</span>
+<span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/mpost.mp
+<span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005<span class="o">)</span> <span class="o">)</span> <span class="o">(</span>./hello.mp <span class="o">[</span>1<span class="o">]</span> <span class="o">[</span>2<span class="o">]</span> <span class="o">)</span>
+<span class="m">2</span> output files written: hello-1.mps .. hello-2.mps
+Transcript written on tmp.log.
+</code></pre></td></tr></table>
+</div>
+</div><center>
+<figure>
+    <object data="/img/posted/hello-1.svg" type="image/svg+xml" width="100" height="100">
+    </object>
+    <figcaption>Fig-1</figcaption>
+</figure>
+<figure>
+    <object data="/img/posted/hello-2.svg" type="image/svg+xml" width="100" height="100">
+    </object>
+    <figcaption>Fig-2</figcaption>
+</figure>
+</center>
+<p>Metapost按坐标画图非常简单，将坐标点一个一个连起来就行了，注意到<code>--</code>表示直线连接，<code>..</code>表示平滑的曲线连接。和众多编程语言一样，你也可以定义变量方便重复使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(3);
+  z0 = (0,0);
+  z1 = (60,40);
+  z2 = (40,90);
+  z3 = (10,70);
+  z4 = (30,50);
+  draw z0..z1..z2..z3..z4;
+endfig
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+  <center>
+    <object data="/img/posted/hello-3.svg" type="image/svg+xml" width="150" height="150">
+    </object>
+  </center>
+  <figcaption>Fig-3</figcaption>
+</figure>
+<h2 id="弯曲控制">弯曲控制</h2>
+<p>我们已经知道使用<code>..</code>可以让Metapost在两点之间画出平滑的曲线，尽管它画的很好（默认使用<a href="https://zh.wikipedia.org/zh-cn/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A">贝塞尔曲线</a>），但有时候我们往往需要控制哪里该要陡一点，哪里平缓一点。对于这种需求，Metapost同样提供了精细粒度的控制方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(4);
+  for i=0 upto 9:
+    draw (0,0){dir 45}..{dir 10a}{6cm, 0};
+  endfor
+endfig;
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+  <center>
+    <object data="/img/posted/hello-4.svg" type="image/svg+xml" width="300"> 
+    </object>
+  </center>
+  <figcaption>Fig-4</figcaption>
+</figure>
+<p>可以看出，从图上起点（左边的点），对应坐标(0,0)，引出一族曲线，这些曲线在(0,0)处的左极限都是1，呈现出45度角。而在终点(6cm,0)处的入角从0度到90度变化，正如语句中描述的。</p>
+<p>未完待续……</p>
+<figure>
+  <img src="/img/posted/hello-6.svg" width=200 />
+  <figcaption>Fig-6</figcaption>
+</figure>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        March 31, 2020
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/metapost/">metapost</a>
+          <a href="/tags/%E4%BD%9C%E5%9B%BE/">作图</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E5%A3%B0%E9%9F%B3%E7%9A%84%E6%B6%88%E4%BA%A1/">
+            <span class="next-text nav-default">声音的消亡</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2020-03-31 09:20:44 \x2b0800 CST',
+        title: 'Metapost学习笔记',
+        link: decodeURI(location.href),
+        desc: '想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz\x26hellip;',
+        owner: 'guyueshui',
+        repo: 'gitment',
+        oauth: {
+          client_id: 'e8af7d1d7737c71052fa',
+          client_secret: '17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yychi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.bd00e4ee.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
