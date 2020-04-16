@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.67.1 with theme even" />
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/metapost/" />
@@ -53,7 +53,7 @@
 <meta itemprop="description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;">
 <meta itemprop="datePublished" content="2020-03-31T09:20:44&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-31T09:20:44&#43;08:00" />
-<meta itemprop="wordCount" content="816">
+<meta itemprop="wordCount" content="1130">
 
 
 
@@ -147,8 +147,15 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#metapost">Metapost</a></li>
-    <li><a href="#画图">画图</a></li>
+    <li><a href="#一个简单的例子">一个简单的例子</a></li>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#primitives">Primitives</a>
+      <ul>
+        <li><a href="#变量类型">变量类型</a></li>
+      </ul>
+    </li>
     <li><a href="#弯曲控制">弯曲控制</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
   </div>
@@ -159,7 +166,7 @@
 <p>闲话少叙，开始学习！</p>
 <h2 id="metapost">Metapost</h2>
 <p>介绍什么的，我其实不太关心，所以就不写了……</p>
-<h2 id="画图">画图</h2>
+<h2 id="一个简单的例子">一个简单的例子</h2>
 <p>和C语言一样，Metapost有一个源文件<code>xxx.mp</code>，有一个编译器<code>mpost</code>，然后编译之，即得到图片（默认后缀<code>.mps</code>）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -193,9 +200,12 @@ endfig;
 end
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>Metapost语句以分号结尾，<strong>除了最后的<code>end</code></strong>!</p>
-</blockquote>
+</div><p>几点说明：</p>
+<ul>
+<li>Metapost语句以分号结尾，<strong>除了最后的<code>end</code></strong>!</li>
+<li>设置<code>prologues:=3</code>会在生成的图像文件<code>.ps</code>中嵌入字体信息，这会增加图片大小</li>
+<li>默认单位：PostScript Points (1/72in = 0.352777&hellip; mm)</li>
+</ul>
 <p>这里简单说一下源码结构，和LaTeX一样，Metapost有导言区，可以做一些设置之类的工作。如<code>hello.mp</code>中前三句就设置了输出文件格式，以及文件名规范等。然后作图部分主要由<code>beginfig--endfig</code>块控制。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -235,12 +245,12 @@ Transcript written on tmp.log.
 </div>
 </div><center>
 <figure>
-    <object data="/img/posted/hello-1.svg" type="image/svg+xml" width="100" height="100">
+    <object data="/img/posted/mpost/hello-1.svg" type="image/svg+xml" width="100" height="100">
     </object>
     <figcaption>Fig-1</figcaption>
 </figure>
 <figure>
-    <object data="/img/posted/hello-2.svg" type="image/svg+xml" width="100" height="100">
+    <object data="/img/posted/mpost/hello-2.svg" type="image/svg+xml" width="100" height="100">
     </object>
     <figcaption>Fig-2</figcaption>
 </figure>
@@ -270,11 +280,104 @@ endfig
 </div>
 </div><figure>
   <center>
-    <object data="/img/posted/hello-3.svg" type="image/svg+xml" width="150" height="150">
+    <object data="/img/posted/mpost/hello-3.svg" type="image/svg+xml" width="150" height="150">
     </object>
   </center>
   <figcaption>Fig-3</figcaption>
 </figure>
+<h2 id="workflow">Workflow</h2>
+<p>使用默认输出格式会产生PostScript格式的图片，在Linux下可以用gnome中的evince查看。也可以使用<code>epstopdf</code>转化为PDF查看。</p>
+<figure>
+  <center>
+  <img src="https://i.stack.imgur.com/l1AeU.png" />
+  </center>
+  <figcaption>Image adapted from ref1</figcaption>
+</figure>
+<h2 id="primitives">Primitives</h2>
+<h3 id="变量类型">变量类型</h3>
+<p>Metapost几个常见的类型：</p>
+<ul>
+<li><code>pair</code>: (0,0) and (3,4)</li>
+<li><code>path</code>: (0,0)&ndash;(3,4)</li>
+<li><code>pen</code>: (implicit) pen for stroking</li>
+</ul>
+<p>比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(0)
+  u:=1cm;
+  pair a,b; path p; pen mypen;
+  a = (0,0); b = (3u,4u);
+  p = a--b;
+  mypen = pencircle scaled 1mm;
+  pickup mypen;
+  draw p;
+endfig;
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/img/posted/mpost/demo-0.svg" alt=""></p>
+<p>All MetaPost variable types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numeric</td>
+<td>(default, if not explicitly declared)</td>
+</tr>
+<tr>
+<td>pair</td>
+<td><code>pair a; a := (2in,3mm);                   </code></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><code>boolean v; v := false;                    </code></td>
+</tr>
+<tr>
+<td>path</td>
+<td><code>path p; p := fullcircle scaled 5mm;       </code></td>
+</tr>
+<tr>
+<td>pen</td>
+<td><code>pen r; r := pencircle;                    </code></td>
+</tr>
+<tr>
+<td>picture</td>
+<td><code>picture q; q := nullpicture;              </code></td>
+</tr>
+<tr>
+<td>transform</td>
+<td><code>transform t; t := identity rotated 20;    </code></td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>color c; c := (0,0,1);</code> (blue)</td>
+</tr>
+<tr>
+<td>cmykcolor</td>
+<td><code>cmykcolor k; k := (1,0.8,0,0);</code> (some blue)</td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>string s; s := &quot;Hello&quot;;                   </code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="弯曲控制">弯曲控制</h2>
 <p>我们已经知道使用<code>..</code>可以让Metapost在两点之间画出平滑的曲线，尽管它画的很好（默认使用<a href="https://zh.wikipedia.org/zh-cn/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A">贝塞尔曲线</a>），但有时候我们往往需要控制哪里该要陡一点，哪里平缓一点。对于这种需求，Metapost同样提供了精细粒度的控制方法。</p>
 <div class="highlight"><div class="chroma">
@@ -295,17 +398,21 @@ endfig;
 </div>
 </div><figure>
   <center>
-    <object data="/img/posted/hello-4.svg" type="image/svg+xml" width="300"> 
+    <object data="/img/posted/mpost/hello-4.svg" type="image/svg+xml" width="300"> 
     </object>
   </center>
   <figcaption>Fig-4</figcaption>
 </figure>
 <p>可以看出，从图上起点（左边的点），对应坐标(0,0)，引出一族曲线，这些曲线在(0,0)处的左极限都是1，呈现出45度角。而在终点(6cm,0)处的入角从0度到90度变化，正如语句中描述的。</p>
 <p>未完待续……</p>
-<figure>
-  <img src="/img/posted/hello-6.svg" width=200 />
-  <figcaption>Fig-6</figcaption>
-</figure>
+<p><img src="/img/posted/mpost/pics-19.svg" alt=""></p>
+<h2 id="reference">Reference</h2>
+<ol>
+<li><a href="https://tex.stackexchange.com/questions/502533/which-output-file-should-i-export-from-metapost">Which Output file should I export from Metapost?</a></li>
+<li><a href="https://meeting.contextgarden.net/2008/talks/2008-08-22-hartmut-metapost/mptut-context2008.pdf">Metapost for Beginners</a></li>
+<li><a href="https://staff.fnwi.uva.nl/a.j.p.heck/Courses/mptut.pdf">Learning METAPOST by Doing</a></li>
+<li><a href="https://tex.loria.fr/prod-graph/heck-metapost2003.pdf">Tutorial in MetaPost</a></li>
+</ol>
 
     </div>
 
@@ -347,7 +454,11 @@ endfig;
           <a href="/tags/%E4%BD%9C%E5%9B%BE/">作图</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/gnome-app-slow-start/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Gnome应用启动缓慢</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/%E5%A3%B0%E9%9F%B3%E7%9A%84%E6%B6%88%E4%BA%A1/">
             <span class="next-text nav-default">声音的消亡</span>
             <span class="next-text nav-mobile">Next</span>

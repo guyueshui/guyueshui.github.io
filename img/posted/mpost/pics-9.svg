@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.00 on 2020.04.16:1021 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63.855591" height="107.659256" viewBox="0 0 63.855591 107.659256">
+<!-- Original BoundingBox: -1.417328 -14.837402 62.438263 92.821854 -->
+  <path d="M1.000000 92.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M61.000000 52.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M41.000000 2.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M11.000000 22.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M31.000000 42.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 92.000000L61.000000 52.000000L41.000000 2.000000L11.000000 22.000000L31.000000 42.000000" style="stroke:rgb(0.000000%,0.000000%,100.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 92.000000C6.187561 118.835297,61.360733 110.400360,61.000000 52.000000C60.877136 32.110992,58.338959 10.357971,41.000000 2.000000C23.399872 -6.483871,5.724045 7.536316,11.000000 22.000000C14.386368 31.283493,27.355911 32.864899,31.000000 42.000000C40.194092 65.048019,-3.105545 70.761963,1.000000 92.000000Z" style="stroke:rgb(100.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 92.000000C27.979721 94.680847,53.097809 77.935455,61.000000 52.000000C67.218521 31.590454,60.070145 8.979523,41.000000 2.000000C24.315155 -4.106522,7.717499 7.566650,11.000000 22.000000C13.203674 31.689667,24.384445 34.936539,31.000000 42.000000C51.855484 64.267471,30.462112 99.923080,1.000000 92.000000" style="stroke:rgb(0.000000%,100.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+</svg>

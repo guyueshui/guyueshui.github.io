@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.67.1 with theme even" />
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -53,7 +53,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="4053">
+<meta itemprop="wordCount" content="4171">
 
 
 
@@ -449,6 +449,7 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <li>name - 按照文件名查找
 <ul>
 <li><code>find &lt;dir&gt; -name &quot;*.cpp&quot;</code>: 在目录dir下查找后缀为cpp的文件</li>
+<li><code>-name</code>默认不支持正则表达式，顶多支持通配符<code>*</code></li>
 </ul>
 </li>
 <li>perm - 按照文件权限查找</li>
@@ -458,6 +459,25 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <li>size - 按照文件大小查找</li>
 <li>&hellip;</li>
 </ul>
+<p><strong>正则表达式</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">find path -regex <span class="s2">&#34;&lt;regex&gt;&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是默认的正则表达式引擎我也不知道是啥，反正不解析我习惯的那种正则语法。故使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">find . -regextype posix-extended -regex <span class="s2">&#34;.*\.(log|aux|blg)&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上述命令找出当前文件夹及子文件夹所有后缀名为<code>log</code>,<code>aux</code>,<code>blg</code>的文件。</p>
 <p><strong>几个例子</strong></p>
 <ul>
 <li><code>find . -name &quot;*name*&quot;</code> - 找出当前文件夹文件名包含“name”的文件</li>

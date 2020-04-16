@@ -1,0 +1,8 @@
+This is MetaPost, version 2.00 (TeX Live 2018) (kpathsea version 6.3.0)  16 APR 2020 09:41
+**hello.mp
+(/usr/local/texlive/2018/texmf-dist/metapost/base/mpost.mp
+(/usr/local/texlive/2018/texmf-dist/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005) ) (./hello.mp [1] [2] [3] [4{psfo
+nts.map}] [5] [6] )
+6 output files written: hello-1.svg .. hello-6.svg
+

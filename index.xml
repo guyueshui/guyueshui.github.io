@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>Latexmk基础用法</title>
+      <link>https://guyueshui.github.io/post/latexmk-basic/</link>
+      <pubDate>Mon, 13 Apr 2020 23:50:55 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/latexmk-basic/</guid>
+      <description>怎么想到用latexmk的呢？写论文呗！ 本来呢，我一直习惯于使用命令行手敲 1 pdflatex someting.tex 千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出</description>
+    </item>
+    
+    <item>
+      <title>Gnome应用启动缓慢</title>
+      <link>https://guyueshui.github.io/post/gnome-app-slow-start/</link>
+      <pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid>
+      <description>先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso.</description>
+    </item>
+    
+    <item>
       <title>Metapost学习笔记</title>
       <link>https://guyueshui.github.io/post/metapost/</link>
       <pubDate>Tue, 31 Mar 2020 09:20:44 +0800</pubDate>
@@ -416,7 +434,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       <pubDate>Fri, 14 Dec 2018 13:59:49 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/sketch/</guid>
-      <description>2020 年 3 月 近日跟朋友聊到搭建个人网站的事情，又看到谢益辉关于搭建个人网站重要性的描述，于是极力向Q君推荐：“赶紧搭建一个属于自己的网站吧。” Q</description>
+      <description>2020 年 4 月 即便是内心再强大的女生，都有脆弱的时候。我的未婚妻，在我看来她已经是个非常独立、自强的人了，比我早步入社会，阅历比我丰富一些。但是在</description>
     </item>
     
     <item>
