@@ -6,10 +6,19 @@
     <description>Recent content in Notes on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Apr 2020 23:01:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 09:25:09 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>一个really simple的LaTeX宏包</title>
+      <link>https://guyueshui.github.io/post/tex-sty-basic/</link>
+      <pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/tex-sty-basic/</guid>
+      <description>众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近</description>
+    </item>
     
     <item>
       <title>Gnome应用启动缓慢</title>

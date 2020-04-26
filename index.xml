@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>一个really simple的LaTeX宏包</title>
+      <link>https://guyueshui.github.io/post/tex-sty-basic/</link>
+      <pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/tex-sty-basic/</guid>
+      <description>众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近</description>
+    </item>
+    
+    <item>
       <title>Latexmk基础用法</title>
       <link>https://guyueshui.github.io/post/latexmk-basic/</link>
       <pubDate>Mon, 13 Apr 2020 23:50:55 +0800</pubDate>
