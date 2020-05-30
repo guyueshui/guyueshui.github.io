@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.70.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -53,7 +53,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="4171">
+<meta itemprop="wordCount" content="4217">
 
 
 
@@ -484,6 +484,7 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件</li>
 <li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件</li>
 <li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹</li>
+<li><code>find -tyle l -exec ls -l {} +</code> - 找出当前文件夹下损坏的软连接</li>
 </ul>
 <hr>
 <h2 id="command-grep">Command <code>grep</code></h2>
@@ -688,6 +689,13 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 <ol>
 <li><a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git">https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</a></li>
 <li><a href="https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch/">Cherry-Picking specific commits from another branch</a></li>
+</ol>
+<p><strong>Fork之后如何同步fork源的更新</strong></p>
+<p>see: <a href="https://www.zhihu.com/question/28676261">https://www.zhihu.com/question/28676261</a></p>
+<p>Ref:</p>
+<ol>
+<li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/</a></li>
 </ol>
 <h2 id="command-g">Command <code>g++</code></h2>
 <p>自定义包含路径</p>

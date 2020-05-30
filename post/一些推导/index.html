@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>一些推导 - 水阙</title>
+  <title>常用结论的证明记录 - 水阙</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.70.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/" />
@@ -43,22 +43,22 @@
 <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
-<meta property="og:title" content="一些推导" />
+<meta property="og:title" content="常用结论的证明记录" />
 <meta property="og:description" content="高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/" />
 <meta property="article:published_time" content="2018-12-20T19:18:29+00:00" />
-<meta property="article:modified_time" content="2019-08-25T00:00:00+00:00" />
-<meta itemprop="name" content="一些推导">
+<meta property="article:modified_time" content="2020-05-01T00:00:00+00:00" />
+<meta itemprop="name" content="常用结论的证明记录">
 <meta itemprop="description" content="高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}">
 <meta itemprop="datePublished" content="2018-12-20T19:18:29&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="236">
+<meta itemprop="dateModified" content="2020-05-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="597">
 
 
 
 <meta itemprop="keywords" content="math," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一些推导"/>
+<meta name="twitter:title" content="常用结论的证明记录"/>
 <meta name="twitter:description" content="高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}"/>
 
 <!--[if lte IE 9]>
@@ -130,7 +130,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">一些推导</h1>
+      <h1 class="post-title">常用结论的证明记录</h1>
 
       <div class="post-meta">
         <span class="post-time"> December 20, 2018 </span>
@@ -147,6 +147,13 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#高斯分布的微分熵">高斯分布的微分熵</a></li>
+    <li><a href="#概率">概率</a>
+      <ul>
+        <li><a href="#bounds-on-tail-probabilities">Bounds on tail probabilities</a></li>
+      </ul>
+    </li>
+    <li><a href="#law-of-large-numbers">Law of large numbers</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -187,6 +194,63 @@ $$
 \frac{1}{2} \cdot \frac{\log(2\pi e\sigma^2)}{\log e} \cdot \log e \text{ bits} =
 \frac{1}{2}\log(2\pi e\sigma^2) \text{ bits}
 $$</p>
+<h2 id="概率">概率</h2>
+<h3 id="bounds-on-tail-probabilities">Bounds on tail probabilities</h3>
+<p><strong>Markov&rsquo;s inequality</strong>: For any r.v. $X$ and constant $a &gt; 0$,</p>
+<p>$$
+P(|X| \ge a) \le \frac{E|X|}{a}.
+$$</p>
+<p>Let $Y = \frac{|X|}{a}$. We need to show that $P(Y\ge 1) \le E(Y)$. Note that</p>
+<p>$$
+I(Y \ge 1) \le Y,
+$$
+since if $I(Y \ge 1) = 0$ then $Y \ge 0$, and if $I(Y \ge 1) = 1$ then $Y \ge 1$ (because the indicator says so). Taking the expectation of both sides, we have Markov’s inequality.</p>
+<p><strong>Chebyshev&rsquo;s inequality</strong>: Let $X$ have mean $\mu$ and variance $\sigma^2$. Then for any $a &gt; 0$,</p>
+<p>$$
+P(|X-\mu| \ge a) \le \frac{\sigma^2}{a^2}.
+$$</p>
+<p>By Markov&rsquo;s inequality,</p>
+<p>$$
+P(|X-\mu|\ge a) = P((X-\mu)^2 \ge a^2) \le \frac{E(X-\mu)^2}{a^2} = \frac{\sigma^2}{a^2}.
+$$</p>
+<p><strong>Chernoff inequality</strong>: For any r.v. $X$ and constants $a &gt; 0$ and $t&gt;0$,</p>
+<p>$$
+P(X\ge a) \le \frac{E(e^{tX})}{e^{ta}}.
+$$</p>
+<p>The transformation $g$ with $g(x) = e^{tx}$ is invertible and strictly increasing. So by Markov&rsquo;s inequality, we have</p>
+<p>$$
+P(X\ge a) = P(e^{tX} \ge e^{ta}) \le \frac{E(e^{tX})}{e^{ta}}.
+$$</p>
+<h2 id="law-of-large-numbers">Law of large numbers</h2>
+<p>Assume we have i.i.d. $X_1, X_2, X_3, \dots$  with finite mean $\mu$ and finite variance $\sigma^2$. For all positive integers $n$, let</p>
+<p>$$
+\bar{X}_n = \frac{X_1 + \cdots + X_n}{n}
+$$</p>
+<p>be the sample mean of $X_1$ through $X_n$. The sample mean is itself an r.v., with mean $\mu$ and variance $\sigma^2/n$:</p>
+<p>$$
+\begin{split}
+E(\bar{X}_n) &amp;= \frac{1}{n} E\left(\sum_{i=1}^n X_i\right) = \frac{1}{n}\sum_{i=1}^n E(X_i) = \mu, \newline
+\text{Var}(\bar{X}_n) &amp;= \frac{1}{n^2} \text{Var}\left(\sum_{i=1}^n X_i\right) = \frac{1}{n^2}\sum_{i=1}^n \text{Var}(X_i) = \frac{\sigma^2}{n}.
+\end{split}
+$$</p>
+<p><strong>Strong law of large numbers</strong> The sample mean $\bar{X}_n$ converges to the true mean $\mu$ pointwise as $n \to \infty$, with probability 1. In other words,</p>
+<p>$$
+P(\lim_{n\to\infty} \bar{X}_n = \mu) = 1, \text{ or }
+\bar{X}_n \overset{a.s.}{\longrightarrow} \mu.
+$$</p>
+<p><strong>Weak law of large numbers</strong> For all $\epsilon &gt;0$, $P(|\bar{X}_n-\mu|&gt;\epsilon) \to 0$ as $n\to\infty$. (This is called <em>convergence in probability</em>.) In other words,</p>
+<p>$$
+\lim_{n\to\infty}P(\bar{X}_n = \mu) = 1.
+$$</p>
+<p>Fix $\epsilon &gt;0$, by Chebyshev&rsquo;s inequality,</p>
+<p>$$
+P(|\bar{X}_n-\mu|&gt;\epsilon) \le \frac{\sigma^2}{n\epsilon^2}.
+$$</p>
+<p>As $n\to\infty$, the right-hand side goes to 0, ans so must the left-hand side.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Blitzstein, Joseph K, and Hwang, Jessica. &ldquo;Introduction to probability.&rdquo;</li>
+</ol>
 
     </div>
 
@@ -198,7 +262,7 @@ $$</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        August 25, 2019
+        May 1, 2020
         
     </span>
   </p>
@@ -247,7 +311,7 @@ $$</p>
     <script type="text/javascript">
       var gitment = new Gitment({
         id: '2018-12-20 19:18:29 \x2b0000 UTC',
-        title: '一些推导',
+        title: '常用结论的证明记录',
         link: decodeURI(location.href),
         desc: '高斯分布的微分熵 $X \\sim \\mathcal{N}(\\mu, \\sigma^2)~$，$\\displaystyle f(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}',
         owner: 'guyueshui',
