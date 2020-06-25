@@ -53,7 +53,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="4217">
+<meta itemprop="wordCount" content="4362">
 
 
 
@@ -697,6 +697,36 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 <li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/</a></li>
 <li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/</a></li>
 </ol>
+<p><strong>从另一个分支检出某个文件并重命名</strong></p>
+<p>有时候开了一个孤立分支，但是想参考其他分支的代码，而当前分支又有同名文件，此时就需要从其他分支检出文件并重命名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># show the content of a.cpp in specific commit HEAD^</span>
+git show HEAD^:a.cpp
+
+<span class="c1"># that&#39;s done</span>
+git show HEAD^:a.cpp &gt; b.cpp
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref: search &ldquo;git-checkout older revision of a file under a new name&rdquo; in stack overflow</p>
+<p><strong>查看已被跟踪的文件</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git ls-files
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref: search &ldquo;how can i make git show a list of the files that are being tracked&rdquo; in stack overflow</p>
+<hr>
 <h2 id="command-g">Command <code>g++</code></h2>
 <p>自定义包含路径</p>
 <div class="highlight"><div class="chroma">
@@ -954,7 +984,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --auto
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="网络">网络</h2>
+</div><hr>
+<h2 id="网络">网络</h2>
 <p>查看被监听端口</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -964,7 +995,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre class="chroma"><code class="language-bash" data-lang="bash">netstat -tulpn <span class="p">|</span> grep LISTEN
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="htop基本操作">Htop基本操作</h2>
+</div><hr>
+<h2 id="htop基本操作">Htop基本操作</h2>
 <p>Htop类似于top，但比top更现代化，支持鼠标操作，支持颜色主题。在命令行键入htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)</p>
 <p><img src="/img/htop.jpg" alt=""></p>
 <p>平均负载区的三个数字分别表示过去5、10、15分钟系统的平均负载。进程区每一列的意义分别是：</p>
