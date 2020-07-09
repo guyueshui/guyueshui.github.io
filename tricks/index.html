@@ -36,7 +36,8 @@
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.b81d8a2f.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.1306237db1f6effe02aed0730cd5acd505be14f5e8a409e3e060abfb8eb8e127.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -53,7 +54,7 @@
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
 <meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="4362">
+<meta itemprop="wordCount" content="4473">
 
 
 
@@ -691,11 +692,49 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 <li><a href="https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch/">Cherry-Picking specific commits from another branch</a></li>
 </ol>
 <p><strong>Fork之后如何同步fork源的更新</strong></p>
-<p>see: <a href="https://www.zhihu.com/question/28676261">https://www.zhihu.com/question/28676261</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># see remote status</span>
+git remote -v
+
+<span class="c1"># add upstream if not exist one</span>
+git remote add upstream https://github.com/&lt;origin_owner&gt;/&lt;origin_repo&gt;.git
+git remote -v
+</code></pre></td></tr></table>
+</div>
+</div><p>从上游仓库 fetch 分支和提交点，提交给本地 master，并会被存储在一个本地分支 upstream/master</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git fetch upstream
+</code></pre></td></tr></table>
+</div>
+</div><p>切换到任意分支，merge已经fetch的分支即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout somebrach
+git merge upstream/master
+</code></pre></td></tr></table>
+</div>
+</div><p>see: <a href="https://www.zhihu.com/question/28676261">https://www.zhihu.com/question/28676261</a></p>
 <p>Ref:</p>
 <ol>
-<li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/configuring-a-remote-for-a-fork/</a></li>
-<li><a href="https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/">https://link.zhihu.com/?target=https%3A//help.github.com/articles/syncing-a-fork/</a></li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork">Configureing a remote for a fork</a></li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork">Syncing a fork</a></li>
 </ol>
 <p><strong>从另一个分支检出某个文件并重命名</strong></p>
 <p>有时候开了一个孤立分支，但是想参考其他分支的代码，而当前分支又有同名文件，此时就需要从其他分支检出文件并重命名。</p>
@@ -1107,7 +1146,10 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.bd00e4ee.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 
