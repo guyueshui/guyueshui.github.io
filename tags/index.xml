@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Apr 2020 09:25:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 22:44:33 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hibernate</title>
+      <link>https://guyueshui.github.io/tags/hibernate/</link>
+      <pubDate>Mon, 13 Jul 2020 22:44:33 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/tags/hibernate/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tex</title>
