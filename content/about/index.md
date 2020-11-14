@@ -8,6 +8,8 @@ date: 2018-12-12 22:06:18
 
 Welcome! This blog is mainly written for self-reference, which covers math, tech, and maybe some other notes (learning or working). Nevertheless, it's really my pleasure if some of my articles is useful for you. :)
 
+IF you see this, you've succeed!
+
 ### Timeline of this site
 
 | Time       | Event                                           |
