@@ -1,0 +1,11 @@
+This is MetaPost, version 2.00 (TeX Live 2018) (kpathsea version 6.3.0)  16 APR 2020 10:21
+**pics.mp
+(/usr/local/texlive/2018/texmf-dist/metapost/base/mpost.mp
+(/usr/local/texlive/2018/texmf-dist/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005) ) (./pics.mp [0] [1] [2] [3]
+[4{psfonts.map}] [5] [6] [7
+Warning: The character 18 cannot be output in SVG unless prologues:=3;
+Warning: The character 18 cannot be output in SVG unless prologues:=3;
+] [8] [9] [10] [11] [13] [14] [15] [16] [17] [18] [19] )
+19 output files written: pics-0.svg .. pics-19.svg
+

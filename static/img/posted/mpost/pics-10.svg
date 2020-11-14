@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.00 on 2020.04.16:1021 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="116.220276" height="40.196564" viewBox="0 0 116.220276 40.196564">
+<!-- Original BoundingBox: -1.417328 -20.098282 114.802948 20.098282 -->
+  <path d="M1.000000 20.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M57.692810 20.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M114.385620 20.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 20.000000C10.632355 -6.464386,48.060455 -6.464386,57.692810 20.000000C67.325165 46.464386,104.753265 46.464386,114.385620 20.000000" style="stroke:rgb(100.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 20.000000L57.692810 20.000000L114.385620 20.000000" style="stroke:rgb(0.000000%,100.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 20.000000C10.632355 46.464386,48.060455 46.464386,57.692810 20.000000C66.014145 -2.862411,93.326981 20.000000,114.385620 20.000000" style="stroke:rgb(0.000000%,0.000000%,100.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+</svg>

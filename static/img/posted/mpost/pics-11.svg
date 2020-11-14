@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.00 on 2020.04.16:1021 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88.112061" height="35.265839" viewBox="0 0 88.112061 35.265839">
+<!-- Original BoundingBox: -1.536423 -1.417328 86.575638 33.848511 -->
+  <path d="M1.000000 33.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M18.007584 7.487976l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M69.031631 7.487976l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M86.039215 33.000000l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 2.834641;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 33.000000C3.298615 22.676575,9.362488 13.580521,18.007584 7.487976C33.306824 -3.294022,53.732391 -3.294022,69.031631 7.487976C77.676727 13.580521,83.740601 22.676575,86.039215 33.000000" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 33.000000C1.673859 22.057968,8.166534 12.318710,18.007584 7.487976C31.416763 0.905746,55.622452 0.905746,69.031631 7.487976C78.872681 12.318710,85.365356 22.057968,86.039215 33.000000" style="stroke:rgb(100.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 33.000000C-1.710327 21.189606,6.063293 9.528885,18.007584 7.487976C26.450409 6.045364,60.588806 6.045364,69.031631 7.487976C80.975922 9.528885,88.749542 21.189606,86.039215 33.000000" style="stroke:rgb(0.000000%,100.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M1.000000 33.000000C-3.696777 20.900742,5.032593 7.806366,18.007584 7.487976C21.408676 7.404526,65.630539 7.404526,69.031631 7.487976C82.006622 7.806366,90.735992 20.900726,86.039215 33.000000" style="stroke:rgb(0.000000%,0.000000%,100.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+</svg>

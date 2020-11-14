@@ -1,0 +1,4 @@
+[submodule "themes/even"]
+	path = themes/even
+	url = https://github.com/guyueshui/hugo-theme-even.git
+	branch = master
