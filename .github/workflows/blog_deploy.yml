@@ -16,11 +16,13 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v1
+        with:
+          submodules: 'recursive'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.78.1'
+          hugo-version: latest
           extended: true
 
       - name: Build
