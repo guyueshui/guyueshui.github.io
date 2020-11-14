@@ -11,6 +11,8 @@ Welcome! This blog is mainly written for self-reference, which covers math, tech
 IF you see this, you've succeed!
 如果你看到这个，说明你成功了。
 
+看看这一段，实在windows上写地！
+
 ### Timeline of this site
 
 | Time       | Event                                           |
