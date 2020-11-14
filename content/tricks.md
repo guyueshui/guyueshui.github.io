@@ -473,6 +473,44 @@ git ls-files
 
 Ref: search "how can i make git show a list of the files that are being tracked" in stack overflow
 
+**submodule**
+
+git submodule本质上是指向一个其他仓库的链接，默认clone不会将submodule对应的仓库克隆下来。
+```bash
+# help
+git submodule --help
+
+# 添加submodule
+#   1. 进入目标子文件夹
+git submodule add https://github.com/imtianx/liba.git
+
+# 更新submodule
+cd xxx
+git pull
+git submodule update --recursive
+
+# 在主目录下更新submodule liba
+git submodule update --remote liba
+
+# 删除submodule
+vim .gitmodules # 删除相应条目
+vim .git/config # 删除相应条目
+rm -rf .git/modules/liba # 删除对应的git文件夹
+
+# 在克隆时连同submodule一并克隆
+git clone https://github.com/imtianx/MainProject.git --recursive
+# is equivalent to
+git clone https://github.com/imtianx/MainProject.git
+git submodule init
+git submodule update
+```
+
+Ref:
+
+1. [Git-工具-子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
+2. [Git 子模块：git submodule](https://juejin.im/post/6844903572950401038)
+
+
 ----------------
 
 ## Command `g++`

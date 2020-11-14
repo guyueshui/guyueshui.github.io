@@ -8,11 +8,6 @@ date: 2018-12-12 22:06:18
 
 Welcome! This blog is mainly written for self-reference, which covers math, tech, and maybe some other notes (learning or working). Nevertheless, it's really my pleasure if some of my articles is useful for you. :)
 
-IF you see this, you've succeed!
-如果你看到这个，说明你成功了。
-
-看看这一段，实在windows上写地！
-
 ### Timeline of this site
 
 | Time       | Event                                           |
@@ -21,6 +16,7 @@ IF you see this, you've succeed!
 | 2019-08-25 | Move to [Hugo][2], theme [Even][4]              |
 | 2019-08-25 | Add comment system powered by [gitment][5]      |
 | 2020-03-25 | Add many old articles                           |
+| 2020-11-14 | Auto deploy with [Github Actions][6]            |
 
 ## Me
 
@@ -44,3 +40,4 @@ I am yychi, a student.
 [3]: https://github.com/Molunerfinn/hexo-theme-melody
 [4]: https://github.com/olOwOlo/hugo-theme-even
 [5]: https://github.com/imsun/gitment
+[6]: https://github.com/marketplace?type=actions

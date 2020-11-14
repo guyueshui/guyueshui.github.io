@@ -1,9 +1,13 @@
-name: Blog deploy
+# ref: http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
+# see: https://gist.github.com/lisez/41cebe4eb9190a5c5e879fee5933beb1
+# ref: https://immmmm.com/hugo-github-actions/
+
+name: Blog deploy   # as you like
 
 on:
   push:
     branches:
-      - src
+      - src # trigger time
 
 env:
   TZ: Asia/Shanghai
