@@ -6,10 +6,15 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jul 2020 22:44:33 +0800</lastBuildDate>
-    
-	<atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 08 Aug 2020 23:47:48 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>毕业总结</title>
+      <link>https://guyueshui.github.io/post/graduate-summary/</link>
+      <pubDate>Sat, 08 Aug 2020 23:47:48 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/graduate-summary/</guid>
+      <description>盼望着，盼望着，终于毕业了。遥想着第一批毕业的同学，他们5月22日完成答辩，开始了成为社畜前最后的快乐时光。但今年的疫情让许多人取消了毕业旅</description>
+    </item>
     
     <item>
       <title>Linux的休眠</title>

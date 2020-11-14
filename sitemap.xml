@@ -1,9 +1,38 @@
-<?xml-stylesheet type="text/xsl" href="https://guyueshui.github.io/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://guyueshui.github.io/categories/</loc>
-    <lastmod>2020-07-13T22:44:33+08:00</lastmod>
+    <lastmod>2020-08-08T23:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/categories/notes/</loc>
+    <lastmod>2020-08-08T23:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/</loc>
+    <lastmod>2020-08-08T23:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/graduate-summary/</loc>
+    <lastmod>2020-08-08T23:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/</loc>
+    <lastmod>2020-08-08T23:47:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,22 +59,8 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/post/</loc>
-    <lastmod>2020-07-13T22:44:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/tags/</loc>
     <lastmod>2020-07-13T22:44:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/categories/notes/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -577,13 +592,6 @@
   
   <url>
     <loc>https://guyueshui.github.io/tricks/</loc>
-    <lastmod>2019-01-17T22:19:05+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/</loc>
     <lastmod>2019-01-17T22:19:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
