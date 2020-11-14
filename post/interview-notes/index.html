@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0 with theme even" />
+<meta name="generator" content="Hugo 0.78.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/interview-notes/" />
@@ -52,13 +52,14 @@
 <meta property="article:modified_time" content="2019-10-14T00:00:00+00:00" />
 <meta itemprop="name" content="面试经历及笔记">
 <meta itemprop="description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1">
-<meta itemprop="datePublished" content="2019-07-08T20:14:17&#43;00:00" />
-<meta itemprop="dateModified" content="2019-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="10430">
+<meta itemprop="datePublished" content="2019-07-08T20:14:17+00:00" />
+<meta itemprop="dateModified" content="2019-10-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="10429">
 
 
 
-<meta itemprop="keywords" content="interview," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="interview," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="面试经历及笔记"/>
 <meta name="twitter:description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1"/>
 
@@ -370,7 +371,7 @@ A: 不知道。</p>
 <ol>
 <li>地址解析</li>
 <li>封装HTTP请求。将访问信息以及本机的一些信息封装成一个HTTP请求数据包</li>
-<li>封装TCP包。建立 TCP 连接 , 也就是常说的&quot;三次握手&rdquo; . 由于HTTP位于最上层的应用层 , 所以HTTP在工作之前要由 TCP 和 IP 协议建立网络连接。</li>
+<li>封装TCP包。建立 TCP 连接 , 也就是常说的&quot;三次握手&quot; . 由于HTTP位于最上层的应用层 , 所以HTTP在工作之前要由 TCP 和 IP 协议建立网络连接。</li>
 <li>客户端发送请求命令。在连接建立之后 , 客户端发送 HTTP 请求到服务端与请求相关的信息都会包含在请求头和请求体中发送给服务器端 .</li>
 <li>服务端响应。服务器端在收到请求之后 , 根据客户端的请求发送给客户端相应的信息 , 相关的响应信息都会放在响应头和响应体中 .</li>
 <li>关闭连接。服务器端在发送完响应之后 , 就会关闭连接 , 如果过客户端的请求的头部信息中有 <code>Connection: keep-alive</code> , 那么客户端在响应完这个请求之后不会关闭连接 , 知道客户端的所有请求都响应完毕 , 才会关闭连接 , 这样大大节省了带宽和 IO 资源 .</li>
@@ -746,10 +747,10 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2019-07-08 20:14:17 \x2b0000 UTC',
+        id: '2019-07-08 20:14:17 \u002b0000 UTC',
         title: '面试经历及笔记',
         link: decodeURI(location.href),
-        desc: '总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C\x2b\x2b相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1',
+        desc: '总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C\u002b\u002b相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

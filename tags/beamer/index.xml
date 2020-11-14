@@ -6,11 +6,7 @@
     <description>Recent content in beamer on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Jan 2019 16:05:47 +0000</lastBuildDate>
-    
-	<atom:link href="https://guyueshui.github.io/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Jan 2019 16:05:47 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Beamer 中使用参考文献</title>
       <link>https://guyueshui.github.io/post/use-reference-in-beamer/</link>

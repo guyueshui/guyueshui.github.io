@@ -6,11 +6,7 @@
     <description>Recent content in shell on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 16:59:46 +0800</lastBuildDate>
-    
-	<atom:link href="https://guyueshui.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 Nov 2019 16:59:46 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brief Introduction to Shell Script</title>
       <link>https://guyueshui.github.io/post/shell-intro/</link>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0 with theme even" />
+<meta name="generator" content="Hugo 0.78.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -52,13 +52,14 @@
 <meta property="article:modified_time" content="2019-01-17T22:19:05+00:00" />
 <meta itemprop="name" content="Useful Tricks">
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\">
-<meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="wordCount" content="4473">
+<meta itemprop="datePublished" content="2019-01-17T22:19:05+00:00" />
+<meta itemprop="dateModified" content="2019-01-17T22:19:05+00:00" />
+<meta itemprop="wordCount" content="4893">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Useful Tricks"/>
 <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"/>
 
@@ -489,9 +490,109 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 </ul>
 <hr>
 <h2 id="command-grep">Command <code>grep</code></h2>
+<p>最基本用法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查找somefile中匹配到something的行</span>
+$ grep <span class="s2">&#34;something&#34;</span> somefile
+
+<span class="c1"># 定位something所在的行并将接下来的3行一并输出</span>
+$ grep <span class="s2">&#34;something&#34;</span> somefile -A <span class="m">3</span>
+
+<span class="c1"># 定位something所在的行并将之前的3行一并输出</span>
+$ grep <span class="s2">&#34;something&#34;</span> somefile -B <span class="m">3</span>
+
+<span class="c1"># 定位something所在的行并将上下3行一并输出</span>
+$ grep <span class="s2">&#34;something&#34;</span> somefile -C <span class="m">3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>使用正则表达式</strong></p>
+<p><code>grep</code>支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的<code>grep</code>实现方式不同，详见手册。一般extend最为常用，语法为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在somefile中查找包含his或者her的行</span>
+$ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref:</p>
+<ul>
+<li><a href="https://linux.cn/article-6941-1.html">grep 命令系列：grep 中的正则表达式</a></li>
+</ul>
+<hr>
+<h2 id="command-xargs">Command <code>xargs</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ whatis xargs
+xargs <span class="o">(</span>1<span class="o">)</span>            - build and execute <span class="nb">command</span> lines from standard input
+</code></pre></td></tr></table>
+</div>
+</div><p>Ref:</p>
+<ul>
+<li><a href="http://c.biancheng.net/linux/xargs.html">xargs命令：一个给其他命令传递参数的过滤器</a></li>
+</ul>
 <hr>
 <h2 id="command-sed">Command <code>sed</code></h2>
 <hr>
+<h2 id="command-cut">Command <code>cut</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ whatis cut
+cut <span class="o">(</span>1<span class="o">)</span>              - remove sections from each line of files
+</code></pre></td></tr></table>
+</div>
+</div><p>基本用法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 以:为分隔符分割每行，并选择第1,2,4列输出</span>
+$ cut -d: -f1,2,4 /etc/passwd
+root❌0
+bin❌1
+daemon❌2
+mail❌12
+ftp❌11
+http❌33
+nobody❌65534
+dbus❌81
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 <h2 id="git">Git</h2>
 <p><strong>创建别名</strong></p>
 <p>使用 <code>git log</code> 查看提交历史，但是输出冗杂。通常使用</p>
@@ -1081,10 +1182,10 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2019-01-17 22:19:05 \x2b0000 UTC',
+        id: '2019-01-17 22:19:05 \u002b0000 UTC',
         title: 'Useful Tricks',
         link: decodeURI(location.href),
-        desc: '1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ \/\\ \\ \/\\ \\ \/\\ \\ __ \/\\ \\ \/\\ _`\\ \/\\_ \\ \\ `\\`\\\\\/\x26#39;\/__ __ ___\\ \\ \\___ \/\\_\\\\ \\\/ ____ \\ \\ \\L\\ \\\/\/\\ \\ ___ __ `\\ `\\ \/\x26#39;\/\\ \\\/\\ \\ \/\x26#39;___\\ \\ _ `\\\/\\ \\\\\/ \/\x26#39;,__\\ \\ \\ _ \x26lt;\x26#39;\\ \\ \\ \/ __`\\ \/\x26#39;_ `\\ `\\ \\ \\\\ \\ \\_\\',
+        desc: '1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ \/\\ \\ \/\\ \\ \/\\ \\ __ \/\\ \\ \/\\ _`\\ \/\\_ \\ \\ `\\`\\\\\/\u0026#39;\/__ __ ___\\ \\ \\___ \/\\_\\\\ \\\/ ____ \\ \\ \\L\\ \\\/\/\\ \\ ___ __ `\\ `\\ \/\u0026#39;\/\\ \\\/\\ \\ \/\u0026#39;___\\ \\ _ `\\\/\\ \\\\\/ \/\u0026#39;,__\\ \\ \\ _ \u0026lt;\u0026#39;\\ \\ \\ \/ __`\\ \/\u0026#39;_ `\\ `\\ \\ \\\\ \\ \\_\\',
         owner: 'guyueshui',
         repo: 'gitment',
         oauth: {

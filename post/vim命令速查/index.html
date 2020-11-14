@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0 with theme even" />
+<meta name="generator" content="Hugo 0.78.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" />
@@ -52,13 +52,14 @@
 <meta property="article:modified_time" content="2018-12-20T19:17:54+00:00" />
 <meta itemprop="name" content="Vim Quick Reference">
 <meta itemprop="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you">
-<meta itemprop="datePublished" content="2018-12-20T19:17:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-12-20T19:17:54&#43;00:00" />
+<meta itemprop="datePublished" content="2018-12-20T19:17:54+00:00" />
+<meta itemprop="dateModified" content="2018-12-20T19:17:54+00:00" />
 <meta itemprop="wordCount" content="1608">
 
 
 
-<meta itemprop="keywords" content="vim,reference," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="vim,reference," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim Quick Reference"/>
 <meta name="twitter:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you"/>
 
@@ -350,73 +351,73 @@
 <table>
 <thead>
 <tr>
-<th align="center">Meta character</th>
+<th style="text-align:center">Meta character</th>
 <th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>.</code></td>
+<td style="text-align:center"><code>.</code></td>
 <td>Matches any character</td>
 </tr>
 <tr>
-<td align="center"><code>[abc]</code></td>
+<td style="text-align:center"><code>[abc]</code></td>
 <td>Matches any char from the list</td>
 </tr>
 <tr>
-<td align="center"><code>[^abc]</code></td>
+<td style="text-align:center"><code>[^abc]</code></td>
 <td>Matches any char except from the list</td>
 </tr>
 <tr>
-<td align="center"><code>\d</code></td>
+<td style="text-align:center"><code>\d</code></td>
 <td>Matches numers == <code>[0-9]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\D</code></td>
+<td style="text-align:center"><code>\D</code></td>
 <td>Opposite to above == <code>[^0-9]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\x</code></td>
+<td style="text-align:center"><code>\x</code></td>
 <td>Matches hex numbers == <code>[0-9A-Fa-f]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\X</code></td>
+<td style="text-align:center"><code>\X</code></td>
 <td>Opposite to above == <code>[^0-9A-Fa-f]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\l</code></td>
+<td style="text-align:center"><code>\l</code></td>
 <td>Matches lower case letters == <code>[a-z]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\L</code></td>
+<td style="text-align:center"><code>\L</code></td>
 <td>opposite to above == <code>[^a-z]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\u</code></td>
+<td style="text-align:center"><code>\u</code></td>
 <td>Matches upper case letters == <code>[A-Z]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\U</code></td>
+<td style="text-align:center"><code>\U</code></td>
 <td>Opposite to above == <code>[^A-Z]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\w</code></td>
+<td style="text-align:center"><code>\w</code></td>
 <td>Matches alphanumeric chars == <code>[0-9A-Za-z_]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\W</code></td>
+<td style="text-align:center"><code>\W</code></td>
 <td>Opposite to above == <code>[^0-9A-Za-z_]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\t</code></td>
+<td style="text-align:center"><code>\t</code></td>
 <td>Matches <code>&lt;TAB&gt;</code></td>
 </tr>
 <tr>
-<td align="center"><code>\s</code></td>
+<td style="text-align:center"><code>\s</code></td>
 <td>Matches space == <code>[\t]</code></td>
 </tr>
 <tr>
-<td align="center"><code>\S</code></td>
+<td style="text-align:center"><code>\S</code></td>
 <td>Opposite to above</td>
 </tr>
 </tbody>
@@ -426,37 +427,37 @@
 <table>
 <thead>
 <tr>
-<th align="center">Meta char</th>
+<th style="text-align:center">Meta char</th>
 <th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>*</code></td>
+<td style="text-align:center"><code>*</code></td>
 <td>match &gt;= 0 times</td>
 </tr>
 <tr>
-<td align="center"><code>\+</code></td>
+<td style="text-align:center"><code>\+</code></td>
 <td>match &gt;= 1 times</td>
 </tr>
 <tr>
-<td align="center"><code>\?</code></td>
+<td style="text-align:center"><code>\?</code></td>
 <td>match 0 or 1 time</td>
 </tr>
 <tr>
-<td align="center"><code>\{n,m}</code></td>
+<td style="text-align:center"><code>\{n,m}</code></td>
 <td>match n&lt;=x&lt;=m times</td>
 </tr>
 <tr>
-<td align="center"><code>\{n}</code></td>
+<td style="text-align:center"><code>\{n}</code></td>
 <td>match n times</td>
 </tr>
 <tr>
-<td align="center"><code>\{n,}</code></td>
+<td style="text-align:center"><code>\{n,}</code></td>
 <td>match &gt;= n times</td>
 </tr>
 <tr>
-<td align="center"><code>\{,m}</code></td>
+<td style="text-align:center"><code>\{,m}</code></td>
 <td>match &lt;= m times</td>
 </tr>
 </tbody>
@@ -465,25 +466,25 @@
 <table>
 <thead>
 <tr>
-<th align="center">Meta char</th>
+<th style="text-align:center">Meta char</th>
 <th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>$</code></td>
+<td style="text-align:center"><code>$</code></td>
 <td>end of line</td>
 </tr>
 <tr>
-<td align="center"><code>^</code></td>
+<td style="text-align:center"><code>^</code></td>
 <td>beginning of line</td>
 </tr>
 <tr>
-<td align="center"><code>\&lt;</code></td>
+<td style="text-align:center"><code>\&lt;</code></td>
 <td>beginning of word</td>
 </tr>
 <tr>
-<td align="center"><code>\&gt;</code></td>
+<td style="text-align:center"><code>\&gt;</code></td>
 <td>end of word</td>
 </tr>
 </tbody>
@@ -689,7 +690,7 @@
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2018-12-20 19:17:54 \x2b0000 UTC',
+        id: '2018-12-20 19:17:54 \u002b0000 UTC',
         title: 'Vim Quick Reference',
         link: decodeURI(location.href),
         desc: 'This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you',
