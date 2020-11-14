@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tar on 水阙</title>
+    <link>https://guyueshui.github.io/tags/tar/</link>
+    <description>Recent content in tar on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Sep 2016 19:00:57 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/tar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Tar 备份 Archlinux</title>
+      <link>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</link>
+      <pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</guid>
+      <description>Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统</description>
+    </item>
+    
+  </channel>
+</rss>

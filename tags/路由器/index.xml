@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>路由器 on 水阙</title>
+    <link>https://guyueshui.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
+    <description>Recent content in 路由器 on 水阙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 21 Feb 2017 16:01:55 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Newifi Mini 安装 PandoraBox</title>
+      <link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link>
+      <pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid>
+      <description>首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。 规格参数 WAN(10/100Mbps) LAN(10/100Mbps)*2 双频：2.4GHz:30</description>
+    </item>
+    
+  </channel>
+</rss>
