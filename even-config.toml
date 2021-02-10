@@ -141,10 +141,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   [params.gitment]
     # Gitment is a comment system based on GitHub issues.
     # see https://github.com/imsun/gitment
-    owner = "guyueshui"   # Your GitHub ID
-    repo = "gitment"      # The repo to store comments
-    clientId = "e8af7d1d7737c71052fa"                           # Your client ID
-    clientSecret = "17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f"   # Your client secret
+    owner = ""   # Your GitHub ID
+    # owner = "guyueshui"   # Your GitHub ID
+    # repo = "gitment"      # The repo to store comments
+    # clientId = "e8af7d1d7737c71052fa"                           # Your client ID
+    # clientSecret = "17b8e50e7b9d4bbd2177b30902b4bc80b3245f3f"   # Your client secret
 
   [params.gitalk]
     # Gitalk is a comment system based on GitHub issues.
@@ -153,6 +154,19 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     repo = ""               # The repo to store comments
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
+
+  # Valine.
+  # You can get your appid and appkey from https://leancloud.cn
+  # more info please open https://valine.js.org
+  [params.valine]
+    enable = true
+    appId = 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz'
+    appKey = 'fjzzXaIgPDyMlxqtN0oBWeNN'
+    notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify = false # Verification code
+    avatar = 'mm'
+    placeholder = 'ヾﾉ≧∀≦)o来啊，快活啊!'
+    visitor = false
 
   [params.flowchartDiagrams] 
     # see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
