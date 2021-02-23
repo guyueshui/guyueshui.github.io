@@ -10,13 +10,14 @@ Welcome! This blog is mainly written for self-reference, which covers math, tech
 
 ### Timeline of this site
 
-| Time       | Event                                           |
-|:----------:|-------------------------------------------------|
-| 2018-12-24 | First published by [Hexo][1], theme [Melody][3] |
-| 2019-08-25 | Move to [Hugo][2], theme [Even][4]              |
-| 2019-08-25 | Add comment system powered by [gitment][5]      |
-| 2020-03-25 | Add many old articles                           |
-| 2020-11-14 | Auto deploy with [Github Actions][6]            |
+| Time       | Event                                             |
+|:----------:|---------------------------------------------------|
+| 2018-12-24 | First published by [Hexo][1], theme [Melody][3]   |
+| 2019-08-25 | Move to [Hugo][2], theme [Even][4]                |
+| 2019-08-25 | Add comment system powered by [gitment][5]        |
+| 2020-03-25 | Add many old articles                             |
+| 2020-11-14 | Auto deploy with [Github Actions][6]              |
+| 2021-02-10 | Change comment system from gitment to [valine][7] |
 
 ## Me
 
@@ -41,3 +42,4 @@ I am yychi, a student.
 [4]: https://github.com/olOwOlo/hugo-theme-even
 [5]: https://github.com/imsun/gitment
 [6]: https://github.com/marketplace?type=actions
+[7]: https://valine.js.org/
