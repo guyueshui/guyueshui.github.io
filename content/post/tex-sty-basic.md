@@ -4,7 +4,7 @@ date: 2020-04-26T09:25:09+08:00
 lastmod: 2020-04-26T09:25:09+08:00
 keywords: []
 categories: [Notes]
-tags: [排版,tex]
+tags: [排版,latex]
 draft: false
 mathjax: false
 

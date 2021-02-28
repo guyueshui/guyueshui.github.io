@@ -2,6 +2,7 @@
 title: 快速自定义 LaTeX 排版字体
 date: 2019-03-08 15:41:10
 categories: ['Techniques']
+lastmod: 2021-03-01
 tags: ['排版','latex','字体']
 ---
 
@@ -121,3 +122,58 @@ COMMAND | STYLE
 `\uwave` | 波浪线
 `\sout` | 删除线
 `\xout` | 斜删除线
+
+
+## 基础排版
+
+### 行距
+
+> 首先，行距就是相邻两行文字之间的距离。在下面的图片中，两个下划线之间的长度就叫行距。行距的调节一般使用倍数，比如两倍行距。而“单倍行距”又根据字体、字号、软件的不同而改变（不同软件中有不同的定义，没有一个通用的值）。在 LaTeX 里面也有这些概念，在你定义字号的时候，“单倍行距”也随之确定。更改时，我们更改的是“单倍行距”的倍数。
+
+在导言区使用`\linespread{2.0}`可设置2倍行距。
+
+### 缩进
+
+- `\noindent`：取消当前段的首行缩进
+- `\indent`：强制首行缩进
+
+### 对齐
+
+```tex
+% oneline
+\leftline{左对齐}
+\centerline{居中对齐}
+\rightline{右对齐}
+
+% multiline
+\flushleft{左对齐}
+\center{居中对齐}
+\flushright{右对齐}
+
+% or
+\begin{flushright/center/flushleft}
+    some text...
+\end{flushright/center/flushleft}
+```
+
+### 页面版式
+
+页面版式包括页眉页脚，以下两个命令可以设置页面版式：
+
+- `\pagestyle`：设置当前页及后续页版式
+- `\thispagestyle`：设置当前页的版式
+
+可选版式包括
+
+- empty：无页眉页脚
+- plain：无页眉，页脚为居中页码
+- headings：页眉为章节标题，无页脚
+- myheadings：自定义页眉，无页脚
+
+使用`\thispagestyle{empty}`可将当前页的页眉页脚关闭。
+
+
+## References
+
+1. [LaTeX系列笔记(5)-行距](https://zhuanlan.zhihu.com/p/138408387)
+
