@@ -3,7 +3,7 @@
   
   <url>
     <loc>https://guyueshui.github.io/categories/</loc>
-    <lastmod>2021-02-21T22:26:30+08:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,7 +17,7 @@
   
   <url>
     <loc>https://guyueshui.github.io/post/</loc>
-    <lastmod>2021-02-21T22:26:30+08:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,14 +38,14 @@
   
   <url>
     <loc>https://guyueshui.github.io/tags/</loc>
-    <lastmod>2021-02-21T22:26:30+08:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://guyueshui.github.io/</loc>
-    <lastmod>2021-02-21T22:26:30+08:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -79,8 +79,8 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/tex/</loc>
-    <lastmod>2020-04-26T09:25:09+08:00</lastmod>
+    <loc>https://guyueshui.github.io/tags/latex/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,7 +94,7 @@
   
   <url>
     <loc>https://guyueshui.github.io/tags/%E6%8E%92%E7%89%88/</loc>
-    <lastmod>2020-04-26T09:25:09+08:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -353,7 +353,7 @@
   
   <url>
     <loc>https://guyueshui.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -388,7 +388,7 @@
   
   <url>
     <loc>https://guyueshui.github.io/categories/techniques/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -548,15 +548,8 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/tags/latex/</loc>
-    <lastmod>2019-03-08T15:41:10+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2019-03-08T15:41:10+00:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0 with theme even" />
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" />
@@ -37,7 +37,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="/sass/main.min.988153ffe0d59655b8e76064d2cc8b9695d6f1f1fedbeec4368c396fd334edca.css" rel="stylesheet">
+<link href="/sass/main.min.fb153b097a645b85c7ca8c854fb4a47e3d9964764105b00d24214e1a189e5a08.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -47,19 +47,15 @@
 <meta property="og:title" content="快速自定义 LaTeX 排版字体" />
 <meta property="og:description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" />
-<meta property="article:published_time" content="2019-03-08T15:41:10+00:00" />
-<meta property="article:modified_time" content="2019-03-08T15:41:10+00:00" />
+<meta property="og:url" content="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-03-08T15:41:10&#43;00:00" />
+<meta property="article:modified_time" content="2021-03-01T00:00:00&#43;00:00" />
+
 <meta itemprop="name" content="快速自定义 LaTeX 排版字体">
-<meta itemprop="description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17">
-<meta itemprop="datePublished" content="2019-03-08T15:41:10+00:00" />
-<meta itemprop="dateModified" content="2019-03-08T15:41:10+00:00" />
-<meta itemprop="wordCount" content="663">
-
-
-
-<meta itemprop="keywords" content="排版,latex,字体," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17"><meta itemprop="datePublished" content="2019-03-08T15:41:10&#43;00:00" />
+<meta itemprop="dateModified" content="2021-03-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1213">
+<meta itemprop="keywords" content="排版,latex,字体," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="快速自定义 LaTeX 排版字体"/>
 <meta name="twitter:description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17"/>
 
@@ -161,6 +157,15 @@
     <li><a href="#字体设置">字体设置</a></li>
     <li><a href="#latex-字体样式相关命令">LaTeX 字体样式相关命令</a></li>
     <li><a href="#扩展包">扩展包</a></li>
+    <li><a href="#基础排版">基础排版</a>
+      <ul>
+        <li><a href="#行距">行距</a></li>
+        <li><a href="#缩进">缩进</a></li>
+        <li><a href="#对齐">对齐</a></li>
+        <li><a href="#页面版式">页面版式</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -420,6 +425,70 @@
 </tr>
 </tbody>
 </table>
+<h2 id="基础排版">基础排版</h2>
+<h3 id="行距">行距</h3>
+<blockquote>
+<p>首先，行距就是相邻两行文字之间的距离。在下面的图片中，两个下划线之间的长度就叫行距。行距的调节一般使用倍数，比如两倍行距。而“单倍行距”又根据字体、字号、软件的不同而改变（不同软件中有不同的定义，没有一个通用的值）。在 LaTeX 里面也有这些概念，在你定义字号的时候，“单倍行距”也随之确定。更改时，我们更改的是“单倍行距”的倍数。</p>
+</blockquote>
+<p>在导言区使用<code>\linespread{2.0}</code>可设置2倍行距。</p>
+<h3 id="缩进">缩进</h3>
+<ul>
+<li><code>\noindent</code>：取消当前段的首行缩进</li>
+<li><code>\indent</code>：强制首行缩进</li>
+</ul>
+<h3 id="对齐">对齐</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% oneline
+</span><span class="c"></span><span class="k">\leftline</span><span class="nb">{</span>左对齐<span class="nb">}</span>
+<span class="k">\centerline</span><span class="nb">{</span>居中对齐<span class="nb">}</span>
+<span class="k">\rightline</span><span class="nb">{</span>右对齐<span class="nb">}</span>
+
+<span class="c">% multiline
+</span><span class="c"></span><span class="k">\flushleft</span><span class="nb">{</span>左对齐<span class="nb">}</span>
+<span class="k">\center</span><span class="nb">{</span>居中对齐<span class="nb">}</span>
+<span class="k">\flushright</span><span class="nb">{</span>右对齐<span class="nb">}</span>
+
+<span class="c">% or
+</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>flushright/center/flushleft<span class="nb">}</span>
+    some text...
+<span class="k">\end</span><span class="nb">{</span>flushright/center/flushleft<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="页面版式">页面版式</h3>
+<p>页面版式包括页眉页脚，以下两个命令可以设置页面版式：</p>
+<ul>
+<li><code>\pagestyle</code>：设置当前页及后续页版式</li>
+<li><code>\thispagestyle</code>：设置当前页的版式</li>
+</ul>
+<p>可选版式包括</p>
+<ul>
+<li>empty：无页眉页脚</li>
+<li>plain：无页眉，页脚为居中页码</li>
+<li>headings：页眉为章节标题，无页脚</li>
+<li>myheadings：自定义页眉，无页脚</li>
+</ul>
+<p>使用<code>\thispagestyle{empty}</code>可将当前页的页眉页脚关闭。</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/138408387">LaTeX系列笔记(5)-行距</a></li>
+</ol>
 
     </div>
 
@@ -431,7 +500,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        March 8, 2019
+        March 1, 2021
         
     </span>
   </p>
@@ -543,7 +612,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 
