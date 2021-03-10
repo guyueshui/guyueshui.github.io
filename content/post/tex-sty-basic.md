@@ -1,7 +1,7 @@
 ---
 title: "一个really simple的LaTeX宏包"
 date: 2020-04-26T09:25:09+08:00
-lastmod: 2020-04-26T09:25:09+08:00
+lastmod: 2021-03-11
 keywords: []
 categories: [Notes]
 tags: [排版,latex]
@@ -81,6 +81,57 @@ $ fc-list :lang=zh
 \setCJKmonofont{WenQuanYi Zen Hei Mono}
 ```
 后面就是定义一些常用中文字体：宋体、黑体、楷体、仿宋等。注意在使用ctex系文档时，自定义的名字可能已被定义，比如使用`\documentclass{ctextart}`，`\songti`命令已被定义，如果使用了我们自定义的宏包`zhfont`，则会报错命令重复定义。此时可以用`\renewcommand`强制重新定义，也可以使用ctex默认的。总之，我这里加了条件主要是为了学一下TeX里面的控制流。
+
+## 宏包选项
+
+今天我们来谈谈如何给宏包传递选项，众所周知，形如`\usepackage[option1,option2]{xx}`的意思是给宏包xx传递了option1, option2参数，那么宏包内部是如何处理这些选项的呢？趁着这次自定义字体，我们来看看。
+
+首先我建议过一遍`clsguide.pdf`，如果你的电脑上安装完整的tex-live（确切来说是安装了tex的documents），你可以使用`texdoc clsguide`来打开该文档。由于时间原因我决定先放结果，再稍作解释。
+```tex
+% This package provides a zh_CN font customization for convinience.
+% yychi (guyueshui002@gmail.com)
+% 2019-09-25 10:10
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{zhfont}[General zh_CN font setting for tex.]
+\DeclareOption{typography}{\newcommand{\tp}{}}
+\DeclareOption*{%
+  \PackageWarning{zhfont}{Unknown option ‘\CurrentOption’}%
+}
+% IMPORTANT!!!, all declareoption should before this,
+% see: https://es.overleaf.com/learn/latex/Writing_your_own_class
+\ProcessOptions\relax
+
+\ifx\zhfontpath\undefined
+  \newcommand{\zhfontpath}{/home/yychi/Documents/FontsCollection/zh_cn/}
+\else
+  \message{\string\zhfontpath\space is defined by some others.}
+\fi
+
+\RequirePackage{xeCJK}
+\ifx\tp\undefined
+  \setCJKmainfont[
+        Path = \zhfontpath,
+        BoldFont = 方正小标宋_GBK.ttf,
+        ItalicFont = 方正仿宋_GBK.ttf
+  ]{方正书宋_GBK.ttf}
+  \setCJKsansfont[Path=\zhfontpath]{方正黑体_GBK.ttf}
+  \setCJKmonofont[Path=\zhfontpath]{方正中等线_GBK.ttf}
+\else
+  \setCJKmainfont[
+      Path = \zhfontpath zhuzi_old_mincho/,
+      BoldFont = FZFWZhuZiAOldMinchoB.TTF,
+      ItalicFont = FZFWZhuZGDLMCJW.TTF,
+    ]{FZFWZhuZiAOldMinchoR.TTF}
+  \setmainfont{EB Garamond}
+  %\setmonofont{Consolas}
+\fi
+
+% 下同
+```
+此中，`\Declareoption{opt_name}{expression}`，表示宏包提供选项opt_name，如果你在`\usepackage`的时候传递了参数opt_name，那么expression将被执行。而`\DeclareOption*{expression}`表示如果你传递了宏包中未提供的选项，那么expression将被执行。这里我为宏包zhfont提供了选项typography。如果再使用该宏包时传递了该选项，那么zhfont内部会定义一条命令`\tp`，后面通过判断`\tp`有没有被定义来选择不同的字体族，就达到了一个选项，切换字体的效果。
+
+具体来说，如果使用`\usepackage[typography]{zhfont}`，将使用"FZFWZhuZiAOldMinchoR.TTF"这一套字体排版，而如果没有传递该参数，则使用方正书宋排版。好了，时间有限，这里仅做一个快速的记录，以便之后参考。未完待续……
 
 ## Reference
 
