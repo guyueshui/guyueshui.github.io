@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/tex-sty-basic/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-04-26T09:25:09&#43;08:00" />
-<meta property="article:modified_time" content="2020-04-26T09:25:09&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-11T00:00:00&#43;00:00" />
 
 <meta itemprop="name" content="一个really simple的LaTeX宏包">
 <meta itemprop="description" content="众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近"><meta itemprop="datePublished" content="2020-04-26T09:25:09&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-26T09:25:09&#43;08:00" />
-<meta itemprop="wordCount" content="1568">
+<meta itemprop="dateModified" content="2021-03-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2494">
 <meta itemprop="keywords" content="排版,latex," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一个really simple的LaTeX宏包"/>
 <meta name="twitter:description" content="众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近"/>
@@ -154,6 +154,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#宏包选项">宏包选项</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -299,6 +300,97 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>后面就是定义一些常用中文字体：宋体、黑体、楷体、仿宋等。注意在使用ctex系文档时，自定义的名字可能已被定义，比如使用<code>\documentclass{ctextart}</code>，<code>\songti</code>命令已被定义，如果使用了我们自定义的宏包<code>zhfont</code>，则会报错命令重复定义。此时可以用<code>\renewcommand</code>强制重新定义，也可以使用ctex默认的。总之，我这里加了条件主要是为了学一下TeX里面的控制流。</p>
+<h2 id="宏包选项">宏包选项</h2>
+<p>今天我们来谈谈如何给宏包传递选项，众所周知，形如<code>\usepackage[option1,option2]{xx}</code>的意思是给宏包xx传递了option1, option2参数，那么宏包内部是如何处理这些选项的呢？趁着这次自定义字体，我们来看看。</p>
+<p>首先我建议过一遍<code>clsguide.pdf</code>，如果你的电脑上安装完整的tex-live（确切来说是安装了tex的documents），你可以使用<code>texdoc clsguide</code>来打开该文档。由于时间原因我决定先放结果，再稍作解释。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
+</span><span class="c">% yychi (guyueshui002@gmail.com)
+</span><span class="c">% 2019-09-25 10:10
+</span><span class="c"></span>
+<span class="k">\NeedsTeXFormat</span><span class="nb">{</span>LaTeX2e<span class="nb">}</span>[1994/06/01]
+<span class="k">\ProvidesPackage</span><span class="nb">{</span>zhfont<span class="nb">}</span>[General zh<span class="nb">_</span>CN font setting for tex.]
+<span class="k">\DeclareOption</span><span class="nb">{</span>typography<span class="nb">}{</span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\tp</span><span class="nb">}{}}</span>
+<span class="k">\DeclareOption*</span><span class="nb">{</span><span class="c">%
+</span><span class="c"></span>  <span class="k">\PackageWarning</span><span class="nb">{</span>zhfont<span class="nb">}{</span>Unknown option ‘<span class="k">\CurrentOption</span>’<span class="nb">}</span><span class="c">%
+</span><span class="c"></span><span class="nb">}</span>
+<span class="c">% IMPORTANT!!!, all declareoption should before this,
+</span><span class="c">% see: https://es.overleaf.com/learn/latex/Writing_your_own_class
+</span><span class="c"></span><span class="k">\ProcessOptions\relax</span>
+
+<span class="k">\ifx\zhfontpath\undefined</span>
+  <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\zhfontpath</span><span class="nb">}{</span>/home/yychi/Documents/FontsCollection/zh<span class="nb">_</span>cn/<span class="nb">}</span>
+<span class="k">\else</span>
+  <span class="k">\message</span><span class="nb">{</span><span class="k">\string\zhfontpath\space</span> is defined by some others.<span class="nb">}</span>
+<span class="k">\fi</span>
+
+<span class="k">\RequirePackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
+<span class="k">\ifx\tp\undefined</span>
+  <span class="k">\setCJKmainfont</span>[
+        Path = <span class="k">\zhfontpath</span>,
+        BoldFont = 方正小标宋<span class="nb">_</span>GBK.ttf,
+        ItalicFont = 方正仿宋<span class="nb">_</span>GBK.ttf
+  ]<span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+  <span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+  <span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+<span class="k">\else</span>
+  <span class="k">\setCJKmainfont</span>[
+      Path = <span class="k">\zhfontpath</span> zhuzi<span class="nb">_</span>old<span class="nb">_</span>mincho/,
+      BoldFont = FZFWZhuZiAOldMinchoB.TTF,
+      ItalicFont = FZFWZhuZGDLMCJW.TTF,
+    ]<span class="nb">{</span>FZFWZhuZiAOldMinchoR.TTF<span class="nb">}</span>
+  <span class="k">\setmainfont</span><span class="nb">{</span>EB Garamond<span class="nb">}</span>
+  <span class="c">%\setmonofont{Consolas}
+</span><span class="c"></span><span class="k">\fi</span>
+
+<span class="c">% 下同
+</span></code></pre></td></tr></table>
+</div>
+</div><p>此中，<code>\Declareoption{opt_name}{expression}</code>，表示宏包提供选项opt_name，如果你在<code>\usepackage</code>的时候传递了参数opt_name，那么expression将被执行。而<code>\DeclareOption*{expression}</code>表示如果你传递了宏包中未提供的选项，那么expression将被执行。这里我为宏包zhfont提供了选项typography。如果再使用该宏包时传递了该选项，那么zhfont内部会定义一条命令<code>\tp</code>，后面通过判断<code>\tp</code>有没有被定义来选择不同的字体族，就达到了一个选项，切换字体的效果。</p>
+<p>具体来说，如果使用<code>\usepackage[typography]{zhfont}</code>，将使用&quot;FZFWZhuZiAOldMinchoR.TTF&quot;这一套字体排版，而如果没有传递该参数，则使用方正书宋排版。好了，时间有限，这里仅做一个快速的记录，以便之后参考。未完待续……</p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://texfaq.org/FAQ-isdef">https://texfaq.org/FAQ-isdef</a></li>
@@ -316,7 +408,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        April 26, 2020
+        March 11, 2021
         
     </span>
   </p>
