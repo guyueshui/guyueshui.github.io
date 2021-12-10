@@ -186,8 +186,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.reward]           # 文章打赏
     enable = true
-    wechat = "https://s2.ax1x.com/2019/01/18/k9S5a6.png" # 微信二维码
-    alipay = "https://s2.ax1x.com/2019/01/18/k9SvZt.jpg" # 支付宝二维码
+    wechat = "/img/me/wechat-qr.png" # 微信二维码
+    alipay = "/img/me/alipay-qr.jpg" # 支付宝二维码
 
   [params.social]           # 社交链接
     a-email = "mailto:guyueshui002@gmail.com"
