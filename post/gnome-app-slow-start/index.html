@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/gnome-app-slow-start/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o&#43;` ---------------- `ooo/ OS: Arch Linux x86_64 `&#43;oooo: Host: TM1604 XMAKB3M0P0202 `&#43;oooooo: Kernel: 5.5.13-arch2-1 -&#43;oooooo&#43;: Uptime: 5 mins `/:-:&#43;&#43;oooo&#43;: Packages: 1153 (pacman) `/&#43;&#43;&#43;&#43;/&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Shell: zsh 5.8 `/&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Resolution: 1920x1080 `/&#43;&#43;&#43;ooooooooooooo/` WM: i3 ./ooosssso&#43;&#43;osssssso&#43;` Theme: Adwaita [GTK2] .oossssso-````/ossssss&#43;` Icons: Adwaita [GTK2] -osssssso." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/gnome-app-slow-start/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-04-01T23:01:36&#43;08:00" />
-<meta property="article:modified_time" content="2020-04-01T23:01:36&#43;08:00" />
+<meta property="article:published_time" content="2020-04-01T23:01:36+08:00" />
+<meta property="article:modified_time" content="2020-04-01T23:01:36+08:00" />
 
 <meta itemprop="name" content="Gnome应用启动缓慢">
-<meta itemprop="description" content="先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o&#43;` ---------------- `ooo/ OS: Arch Linux x86_64 `&#43;oooo: Host: TM1604 XMAKB3M0P0202 `&#43;oooooo: Kernel: 5.5.13-arch2-1 -&#43;oooooo&#43;: Uptime: 5 mins `/:-:&#43;&#43;oooo&#43;: Packages: 1153 (pacman) `/&#43;&#43;&#43;&#43;/&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Shell: zsh 5.8 `/&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Resolution: 1920x1080 `/&#43;&#43;&#43;ooooooooooooo/` WM: i3 ./ooosssso&#43;&#43;osssssso&#43;` Theme: Adwaita [GTK2] .oossssso-````/ossssss&#43;` Icons: Adwaita [GTK2] -osssssso."><meta itemprop="datePublished" content="2020-04-01T23:01:36&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-01T23:01:36&#43;08:00" />
+<meta itemprop="description" content="先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o&#43;` ---------------- `ooo/ OS: Arch Linux x86_64 `&#43;oooo: Host: TM1604 XMAKB3M0P0202 `&#43;oooooo: Kernel: 5.5.13-arch2-1 -&#43;oooooo&#43;: Uptime: 5 mins `/:-:&#43;&#43;oooo&#43;: Packages: 1153 (pacman) `/&#43;&#43;&#43;&#43;/&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Shell: zsh 5.8 `/&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;: Resolution: 1920x1080 `/&#43;&#43;&#43;ooooooooooooo/` WM: i3 ./ooosssso&#43;&#43;osssssso&#43;` Theme: Adwaita [GTK2] .oossssso-````/ossssss&#43;` Icons: Adwaita [GTK2] -osssssso."><meta itemprop="datePublished" content="2020-04-01T23:01:36+08:00" />
+<meta itemprop="dateModified" content="2020-04-01T23:01:36+08:00" />
 <meta itemprop="wordCount" content="639">
 <meta itemprop="keywords" content="折腾," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gnome应用启动缓慢"/>
@@ -159,7 +159,7 @@
       <p>先看环境：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -181,7 +181,7 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ neofetch
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ neofetch
                    -`                    yychi@MiBook-Air 
                   .o+`                   ---------------- 
                  `ooo/                   OS: Arch Linux x86_64 
@@ -208,12 +208,12 @@
 <p>换做以前，应该是直接重装系统了。可是这次没时间这么折腾，加上年纪大了不想折腾，毕竟这个本子用了这么久了，积累了好多东西。于是死马当活马医，硬着头皮去google相关问题。循着蛛丝马迹，找到可能出问题的一些点。最后还是要看log！</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ journalctl --since<span class="o">=</span>2020-3-25
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ journalctl --since<span class="o">=</span>2020-3-25
 ...
 ...
 </code></pre></td></tr></table>
@@ -221,14 +221,14 @@
 </div><p>最终我发现这几行有嫌疑：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">4月 01 13:15:01 MiBook-Air xdg-desktop-portal-gtk[139187]: Unable to init server: 无法连接：拒绝连接
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">4月 01 13:15:01 MiBook-Air xdg-desktop-portal-gtk[139187]: Unable to init server: 无法连接：拒绝连接
 4月 01 13:15:01 MiBook-Air xdg-desktop-por[139187]: cannot open display: 
 4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Main process exited, code=exited, status=1/FAILURE
 4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Failed with result &#39;exit-code&#39;.
@@ -272,11 +272,11 @@
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

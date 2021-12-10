@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-04-02T21:31:40&#43;00:00" />
-<meta property="article:modified_time" content="2019-04-02T21:31:40&#43;00:00" />
+<meta property="article:published_time" content="2019-04-02T21:31:40+00:00" />
+<meta property="article:modified_time" content="2019-04-02T21:31:40+00:00" />
 
 <meta itemprop="name" content="初尝 C&#43;&#43; 类设计">
-<meta itemprop="description" content="最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想"><meta itemprop="datePublished" content="2019-04-02T21:31:40&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-02T21:31:40&#43;00:00" />
+<meta itemprop="description" content="最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想"><meta itemprop="datePublished" content="2019-04-02T21:31:40+00:00" />
+<meta itemprop="dateModified" content="2019-04-02T21:31:40+00:00" />
 <meta itemprop="wordCount" content="3946">
 <meta itemprop="keywords" content="cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="初尝 C&#43;&#43; 类设计"/>
@@ -199,7 +199,7 @@
 <p>闲话少说，现在就来看看如何实现这个类。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -215,7 +215,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.h
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.h
 </span><span class="c1"></span>
 <span class="k">class</span> <span class="nc">Unit</span> <span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
@@ -234,7 +234,7 @@
 </div><p>先看这么多，我希望每个单元个有两个属性，一个行索引<code>rowIdx</code>一个列索引<code>colIdx</code>. 而且我定义了两个构造函数，一个是直接将行列索引传入，另一个则是通过读取一个字符串，来解析出其中的行列索引的值。这里有一个问题，因为不同类型的字符串解析的方式不一样，所以需要一个指示变量来指明传入的字符串到底是哪个类型：<code>BC23</code>还是<code>R23C55</code>？除此之外，我还需要一个可以转换不同类型表示的函数，给了我表示类型1，我可以直接调用一个函数，输出表示类型2. 需求先大致到这里，来改进一下之前的类。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -271,7 +271,7 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.h
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.h
 </span><span class="c1"></span>
 <span class="cp">#ifndef _UNIT_H_
 </span><span class="cp">#define _UNIT_H_
@@ -314,7 +314,7 @@
 <h3 id="构造函数的实现">构造函数的实现</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -335,7 +335,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
 </span><span class="c1"></span>
 <span class="cp">#include</span> <span class="cpf">&#34;Unit.h&#34;</span><span class="cp">
 </span><span class="cp"></span>
@@ -368,7 +368,7 @@
 <p>还有我个人认为的好处就是，写程序变得简单了。我到每一步的时候，需要什么，想象一下，假设它已经有了，我该怎么写，怎么去调用它。这样你就对为什么要有这个函数，以及这个函数要干什么，心知肚明了。然后上层建设好之后，我再去考虑如何实现那些想象！现在，我们来看看，之前想当然的几个函数如何实现。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -423,7 +423,7 @@
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
 </span><span class="c1"></span>
 <span class="cp">#include</span> <span class="cpf">&#34;Unit.h&#34;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
@@ -488,7 +488,7 @@
 <p>好吧，居然只引入了一个(╬ Ò ‸ Ó)，再来看看它的实现。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -527,7 +527,7 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
 </span><span class="c1"></span>
 <span class="cm">/*
 </span><span class="cm"> * Predefined things...
@@ -569,7 +569,7 @@
 </div><p>哈哈，我又想象了几个不存在的函数。它们的作用很容易通过上下文得知。<code>letter2pos()</code>和<code>pos2letter()</code>是一对相反的函数，它们的作用是完成<code>BC&lt;-&gt;55</code>的映射。至于<code>alph2num()</code>和<code>num2alph()</code>，其实也是一对相反的函数，用于检索26个字母对应的数值。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -592,7 +592,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
 </span><span class="c1"></span>
 <span class="c1">// global map for quick search
 </span><span class="c1"></span><span class="kt">char</span> <span class="n">MAP</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="sc">&#39;D&#39;</span><span class="p">,</span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="sc">&#39;F&#39;</span><span class="p">,</span><span class="sc">&#39;G&#39;</span><span class="p">,</span>
@@ -619,7 +619,7 @@
 <p>基于上面的工作，转换函数的实现就显得格外清晰简单。所谓转换函数，就是当我输入的是类型1的字符串，它输出转换之后的类型2的字符串，由此达到一个转换单元格表示方法的效果。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -643,7 +643,7 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Unit/Unit.hpp
 </span><span class="c1"></span>
 <span class="cm">/*
 </span><span class="cm"> * Predefined things...
@@ -712,11 +712,11 @@
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

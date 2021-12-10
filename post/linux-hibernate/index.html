@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-hibernate/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="先区分一下几个名词：睡眠（sleep）和休眠（hibernate）。 睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/linux-hibernate/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-07-13T22:44:33&#43;08:00" />
-<meta property="article:modified_time" content="2020-07-13T22:44:33&#43;08:00" />
+<meta property="article:published_time" content="2020-07-13T22:44:33+08:00" />
+<meta property="article:modified_time" content="2020-07-13T22:44:33+08:00" />
 
 <meta itemprop="name" content="Linux的休眠">
-<meta itemprop="description" content="先区分一下几个名词：睡眠（sleep）和休眠（hibernate）。 睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠"><meta itemprop="datePublished" content="2020-07-13T22:44:33&#43;08:00" />
-<meta itemprop="dateModified" content="2020-07-13T22:44:33&#43;08:00" />
+<meta itemprop="description" content="先区分一下几个名词：睡眠（sleep）和休眠（hibernate）。 睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠"><meta itemprop="datePublished" content="2020-07-13T22:44:33+08:00" />
+<meta itemprop="dateModified" content="2020-07-13T22:44:33+08:00" />
 <meta itemprop="wordCount" content="1782">
 <meta itemprop="keywords" content="hibernate," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux的休眠"/>
@@ -179,7 +179,7 @@
 <h2 id="查看fstab">查看<code>fstab</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -190,7 +190,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat /etc/fstab
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat /etc/fstab
 <span class="c1"># &lt;file system&gt;             &lt;mount point&gt;  &lt;type&gt;  &lt;options&gt;  &lt;dump&gt;  &lt;pass&gt;</span>
 <span class="c1"># /dev/nvme0n1p5</span>
 <span class="nv">UUID</span><span class="o">=</span>547054ce-bb1b-40e4-a38d-24507d31d5ca   /           ext4        rw,relatime   <span class="m">0</span> <span class="m">1</span>
@@ -205,7 +205,7 @@
 <p>以下命令均可以查看分区信息：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -233,7 +233,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ lsblk
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda           8:0    <span class="m">0</span> 223.6G  <span class="m">0</span> disk 
 ├─sda1        8:1    <span class="m">0</span>   110G  <span class="m">0</span> part /home/yychi/EXTRA
@@ -264,12 +264,12 @@ device           fs_type  label     mount point          UUID
 </div><h2 id="添加恢复分区的内核参数">添加恢复分区的内核参数</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看当前内核启动命令</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看当前内核启动命令</span>
 $ cat /proc/cmdline
 <span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
 </code></pre></td></tr></table>
@@ -278,12 +278,12 @@ $ cat /proc/cmdline
 <p>那么如何修改内核的命令行参数呢？找到你所使用的boot manager（启动引导）程序，更改相应的配置。我使用的是<a href="https://wiki.archlinux.org/index.php/REFInd">rEFInd</a>，需要做的更改为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># file: /boot/refind_linux.conf
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># file: /boot/refind_linux.conf
 &#34;Boot with standard options&#34;  &#34;ro root=/dev/nvme0n1p5 rw resume=/dev/nvme0n1p7&#34;
 &#34;Boot to single-user mode&#34;    &#34;ro root=/dev/nvme0n1p5 single&#34;
 </code></pre></td></tr></table>
@@ -293,31 +293,31 @@ $ cat /proc/cmdline
 <p>作完更改之后，使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ mkinitcpio -P
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mkinitcpio -P
 </code></pre></td></tr></table>
 </div>
 </div><p>重新生成启动镜像，使更改生效，最后重启系统。</p>
 <p>重新进入系统之后，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat /proc/cmdline
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat /proc/cmdline
 <span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
 </code></pre></td></tr></table>
 </div>
 </div><p>如果参数列表里有<code>resume=/dev/nvme0n1p7</code>则说明设置成功。你可以打开一个程序，然后</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl hibernate
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl hibernate
 </code></pre></td></tr></table>
 </div>
 </div><p>令系统休眠，然后再按下电源开关，系统会自动恢复之前的工作环境。</p>
@@ -366,11 +366,11 @@ $ cat /proc/cmdline
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

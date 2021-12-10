@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="In editing&hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-15T22:59:39&#43;00:00" />
-<meta property="article:modified_time" content="2019-03-15T22:59:39&#43;00:00" />
+<meta property="article:published_time" content="2019-03-15T22:59:39+00:00" />
+<meta property="article:modified_time" content="2019-03-15T22:59:39+00:00" />
 
 <meta itemprop="name" content="浅谈 Logistic 回归">
-<meta itemprop="description" content="In editing&hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在"><meta itemprop="datePublished" content="2019-03-15T22:59:39&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-15T22:59:39&#43;00:00" />
+<meta itemprop="description" content="In editing&hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在"><meta itemprop="datePublished" content="2019-03-15T22:59:39+00:00" />
+<meta itemprop="dateModified" content="2019-03-15T22:59:39+00:00" />
 <meta itemprop="wordCount" content="843">
 <meta itemprop="keywords" content="math,机器学习," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="浅谈 Logistic 回归"/>
@@ -188,7 +188,7 @@ $$</p>
 <p>现在，我们模型的假设是</p>
 <p>$$
 \begin{split}
-y &amp;= h_{\mathbf{\theta}}(\mathrm{x}) = g(\mathbf{\theta}^T \mathrm{x}) \<br>
+y &amp;= h_{\mathbf{\theta}}(\mathrm{x}) = g(\mathbf{\theta}^T \mathrm{x}) \
 &amp;= \frac{1}{1+\exp({-\theta^T \mathrm{x}})} = g(z)
 \end{split}
 $$</p>
@@ -206,14 +206,14 @@ $$</p>
 <p>再假设m个样本独立同分布，我们得到似然函数
 $$
 \begin{split}
-L(\theta) &amp;= p(\mathbf{y} | \mathbf{X}; \mathrm{\theta}) \<br>
+L(\theta) &amp;= p(\mathbf{y} | \mathbf{X}; \mathrm{\theta}) \
 &amp;= \prod_{i=1}^m p(y_i | x_i ; \theta)
 \end{split}
 $$</p>
 <p>进一步，得到对数似然
 $$
 \begin{split}
-l(\theta) &amp;= \log L(\theta) \<br>
+l(\theta) &amp;= \log L(\theta) \
 &amp;=\sum_{i=1}^m \left[ y_i\log h(x_i) + (1-y_i)\log(1-h(x_i)) \right]
 \end{split}
 $$</p>
@@ -262,11 +262,11 @@ $$</p>
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

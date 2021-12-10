@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/concurrent-programming/" />
@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/concurrent-programming/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2019-08-29T21:40:23&#43;08:00" />
+<meta property="article:modified_time" content="2019-08-29T21:40:23+08:00" />
 
 <meta itemprop="name" content="多线程学习笔记">
 <meta itemprop="description" content="开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢">
-<meta itemprop="dateModified" content="2019-08-29T21:40:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-29T21:40:23+08:00" />
 <meta itemprop="wordCount" content="1554">
 <meta itemprop="keywords" content="多线程,并发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多线程学习笔记"/>
@@ -191,7 +191,7 @@
 <p>调用<code>t.join()</code>的作用类似于，如果线程结束，主线程执行到join就可以立即返回，如果线程为结束，主线程执行到join会阻塞，直到线程结束。然后主线程继续执行。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -204,7 +204,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">            main  thread1
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">            main  thread1
               +      +
               |      |
               |      |
@@ -285,11 +285,11 @@ thread1.join()+------+
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

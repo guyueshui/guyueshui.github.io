@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/tricks/" /><meta property="article:section" content="" />
-<meta property="article:published_time" content="2019-01-17T22:19:05&#43;00:00" />
-<meta property="article:modified_time" content="2019-01-17T22:19:05&#43;00:00" />
+<meta property="article:published_time" content="2019-01-17T22:19:05+00:00" />
+<meta property="article:modified_time" content="2019-01-17T22:19:05+00:00" />
 
 <meta itemprop="name" content="Useful Tricks">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"><meta itemprop="datePublished" content="2019-01-17T22:19:05&#43;00:00" />
-<meta itemprop="dateModified" content="2019-01-17T22:19:05&#43;00:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"><meta itemprop="datePublished" content="2019-01-17T22:19:05+00:00" />
+<meta itemprop="dateModified" content="2019-01-17T22:19:05+00:00" />
 <meta itemprop="wordCount" content="5150">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Useful Tricks"/>
@@ -139,7 +139,7 @@
   <div class="post-content">
     <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -150,7 +150,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"> __    __               __           __               ____    ___                       
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> __    __               __           __               ____    ___                       
 /\ \  /\ \             /\ \      __ /\ \             /\  _`\ /\_ \                      
 \ `\`\\/&#39;/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
  `\ `\ /&#39;/\ \/\ \  /&#39;___\ \  _ `\/\ \\/      /&#39;,__\   \ \  _ &lt;&#39;\ \ \   / __`\  /&#39;_ `\   
@@ -166,49 +166,49 @@
 <h3 id="转视频为gif">转视频为gif</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mkv out.gif
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mkv out.gif
 </code></pre></td></tr></table>
 </div>
 </div><p>又：加速播放。假设原视频 60 fps，输出降到 30 fps，丢掉一半的帧。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">60</span> -i input.mkv -r <span class="m">30</span> out.gif
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">60</span> -i input.mkv -r <span class="m">30</span> out.gif
 </code></pre></td></tr></table>
 </div>
 </div><p>又：不想丢帧。将输入扩大一倍，输出保留原样。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">120</span> -i input.mkv -r <span class="m">60</span> out.gif
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">120</span> -i input.mkv -r <span class="m">60</span> out.gif
 </code></pre></td></tr></table>
 </div>
 </div><p>又：不想全转。从视频的第2秒开始，截取3秒转化为gif。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif</span>
 ffmpeg -t <span class="m">3</span> -ss 00:00:02 -i input.mkv out-clip.gif
 </code></pre></td></tr></table>
 </div>
 </div><p>又：控制转化质量。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
 ffmpeg -i input.mkv -b 2048k out.gif
 </code></pre></td></tr></table>
 </div>
@@ -218,28 +218,28 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <p>转换图片为指定分辨率。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">convert -resize 1920x1080 src.jpg dst.jpg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 1920x1080 src.jpg dst.jpg
 </code></pre></td></tr></table>
 </div>
 </div><p>又：按百分比转换大小。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">convert -resize 50%x50% src.jpg dst.jpg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 50%x50% src.jpg dst.jpg
 </code></pre></td></tr></table>
 </div>
 </div><p>又：忽略原始宽高比。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">convert -resize 300x300! src.jpg dst.jpg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 300x300! src.jpg dst.jpg
 </code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -266,19 +266,19 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <h3 id="后台运行命令">后台运行命令</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>或者如果你不想看到任何输出，使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -292,10 +292,10 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <p>又：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">nohup <span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">nohup <span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>等价于以上的操作。单纯的<code>nohup command</code>会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。</p>
@@ -303,39 +303,39 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <p>将命令输出重定向到文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand &gt; SomeFile.txt  <span class="c1"># overwrite</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand &gt; SomeFile.txt  <span class="c1"># overwrite</span>
 SomeCommand &gt;&gt; SomeFile.txt <span class="c1"># append</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>将命令输出(stdout)及报错(stderr)重定向到文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand <span class="p">&amp;</span>&gt; SomeFile.txt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand <span class="p">&amp;</span>&gt; SomeFile.txt
 SomeCommand <span class="p">&amp;</span>&gt;&gt; SomeFile.txt
 </code></pre></td></tr></table>
 </div>
 </div><p>同时输出到console和文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee SomeFile.txt     <span class="c1"># overwrite</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee SomeFile.txt     <span class="c1"># overwrite</span>
 SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a SomeFile.txt  <span class="c1"># append</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -357,7 +357,7 @@ SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span clas
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">          || visible in terminal ||   visible in file   || existing
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">          || visible in terminal ||   visible in file   || existing
   Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
 ==========++==========+==========++==========+==========++===========
     &gt;     ||    no    |   yes    ||   yes    |    no    || overwrite
@@ -387,7 +387,7 @@ SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span clas
 <h3 id="从系统中踢出某个用户">从系统中踢出某个用户</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -400,7 +400,7 @@ SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span clas
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># See the pid of the user&#39;s login process.</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># See the pid of the user&#39;s login process.</span>
 $ who -u
 yychi    tty1         2020-02-19 21:06  旧        <span class="m">460</span>
 
@@ -418,21 +418,21 @@ $ <span class="nb">kill</span> -9 <span class="m">460</span>
 <h2 id="command-find">Command <code>find</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ find --help
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ find --help
 Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[</span>-L<span class="o">]</span> <span class="o">[</span>-P<span class="o">]</span> <span class="o">[</span>-Olevel<span class="o">]</span> <span class="o">[</span>-D help<span class="p">|</span>tree<span class="p">|</span>search<span class="p">|</span>stat<span class="p">|</span>rates<span class="p">|</span>opt<span class="p">|</span>exec<span class="o">]</span> <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>前面的选项不常用，初级使用只需掌握</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">find <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -470,19 +470,19 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <p><strong>正则表达式</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">find path -regex <span class="s2">&#34;&lt;regex&gt;&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find path -regex <span class="s2">&#34;&lt;regex&gt;&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>但是默认的正则表达式引擎我也不知道是啥，反正不解析我习惯的那种正则语法。故使用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">find . -regextype posix-extended -regex <span class="s2">&#34;.*\.(log|aux|blg)&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find . -regextype posix-extended -regex <span class="s2">&#34;.*\.(log|aux|blg)&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>上述命令找出当前文件夹及子文件夹所有后缀名为<code>log</code>,<code>aux</code>,<code>blg</code>的文件。</p>
@@ -499,7 +499,7 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <p>最基本用法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -512,7 +512,7 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查找somefile中匹配到something的行</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查找somefile中匹配到something的行</span>
 $ grep <span class="s2">&#34;something&#34;</span> somefile
 
 <span class="c1"># 定位something所在的行并将接下来的3行一并输出</span>
@@ -529,11 +529,11 @@ $ grep <span class="s2">&#34;something&#34;</span> somefile -C <span class="m">3
 <p><code>grep</code>支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的<code>grep</code>实现方式不同，详见手册。一般extend最为常用，语法为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在somefile中查找包含his或者her的行</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在somefile中查找包含his或者her的行</span>
 $ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
 </code></pre></td></tr></table>
 </div>
@@ -545,11 +545,11 @@ $ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
 <h2 id="command-xargs">Command <code>xargs</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ whatis xargs
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ whatis xargs
 xargs <span class="o">(</span>1<span class="o">)</span>            - build and execute <span class="nb">command</span> lines from standard input
 </code></pre></td></tr></table>
 </div>
@@ -563,18 +563,18 @@ xargs <span class="o">(</span>1<span class="o">)</span>            - build and e
 <h2 id="command-cut">Command <code>cut</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ whatis cut
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ whatis cut
 cut <span class="o">(</span>1<span class="o">)</span>              - remove sections from each line of files
 </code></pre></td></tr></table>
 </div>
 </div><p>基本用法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -586,7 +586,7 @@ cut <span class="o">(</span>1<span class="o">)</span>              - remove sect
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 以:为分隔符分割每行，并选择第1,2,4列输出</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 以:为分隔符分割每行，并选择第1,2,4列输出</span>
 $ cut -d: -f1,2,4 /etc/passwd
 root❌0
 bin❌1
@@ -604,34 +604,34 @@ dbus❌81
 <p>使用 <code>git log</code> 查看提交历史，但是输出冗杂。通常使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git log --oneline --abbrev-commit --all --graph --decoreate --color
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git log --oneline --abbrev-commit --all --graph --decoreate --color
 </code></pre></td></tr></table>
 </div>
 </div><p>来获得更美观易读的输出。但是每次输入这么多肯定很烦人，使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config --global alias.graph <span class="s2">&#34;log --graph --oneline --decorate=short&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git config --global alias.graph <span class="s2">&#34;log --graph --oneline --decorate=short&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>增加一个全局别名，这个别名对于任何地方的 <code>git</code> 都适用。如此一来，键入 <code>git graph</code> 会等效于</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git log --graph --oneline --decorate<span class="o">=</span>short
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git log --graph --oneline --decorate<span class="o">=</span>short
 </code></pre></td></tr></table>
 </div>
 </div><p>样例输出：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -642,7 +642,7 @@ dbus❌81
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git graph
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git graph
 
 * 36f2d65 <span class="o">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span class="o">)</span> Forget it
 * 9b4a6d7 Update ref list
@@ -656,34 +656,34 @@ dbus❌81
 </div><p><strong>忽略已经添加的文件</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>推送本地分支到远程</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 远程分支如果不存在，则自动创建。</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 远程分支如果不存在，则自动创建。</span>
 git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>拉取远程分支到本地</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 从远程分支切换（并创建，如果不存在）本地分支</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 从远程分支切换（并创建，如果不存在）本地分支</span>
 git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
 
 <span class="c1"># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
@@ -694,7 +694,7 @@ git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
 <p>如果不小心将隐私信息推送至远程仓库（如github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的commit历史查到你所做的更改，所以这种情况下必须删除之前所有的commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除master分支，将新建的分支重命名为master，再推送到远程强制覆盖<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -713,7 +713,7 @@ git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Check out to a temporary branch:</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Check out to a temporary branch:</span>
 git checkout --orphan TEMP_BRANCH
 
 <span class="c1"># Add all the files:</span>
@@ -736,16 +736,16 @@ git push -f origin master
 <p>例如当前在master分支，希望合并某个分支dev的某个或多个文件到当前分支：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout dev file1 file2 ...
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git checkout dev file1 file2 ...
 </code></pre></td></tr></table>
 </div>
 </div><p>但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支master_temp，然后在master_temp中checkout，最后再将master_temp分支merge到master分支：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -758,7 +758,7 @@ git push -f origin master
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Create a branch based on master</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Create a branch based on master</span>
 git checkout -b master_temp
 
 <span class="c1"># Chechkout file1 from dev to master_temp</span>
@@ -777,12 +777,12 @@ git branch -d master_temp
 <p><code>git merge</code>就是如此，你要知道merge的含义是什么？它其实就是在被merge的分支上重现要merge的commits. 比如说：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">a---b---c---d---e (master)
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a---b---c---d---e (master)
     \
      `--A---B---C (dev)
 </code></pre></td></tr></table>
@@ -801,7 +801,7 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 <p><strong>Fork之后如何同步fork源的更新</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -809,7 +809,7 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># see remote status</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># see remote status</span>
 git remote -v
 
 <span class="c1"># add upstream if not exist one</span>
@@ -820,20 +820,20 @@ git remote -v
 </div><p>从上游仓库 fetch 分支和提交点，提交给本地 master，并会被存储在一个本地分支 upstream/master</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git fetch upstream
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git fetch upstream
 </code></pre></td></tr></table>
 </div>
 </div><p>切换到任意分支，merge已经fetch的分支即可：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout somebrach
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git checkout somebrach
 git merge upstream/master
 </code></pre></td></tr></table>
 </div>
@@ -847,14 +847,14 @@ git merge upstream/master
 <p>有时候开了一个孤立分支，但是想参考其他分支的代码，而当前分支又有同名文件，此时就需要从其他分支检出文件并重命名。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># show the content of a.cpp in specific commit HEAD^</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># show the content of a.cpp in specific commit HEAD^</span>
 git show HEAD^:a.cpp
 
 <span class="c1"># that&#39;s done</span>
@@ -865,10 +865,10 @@ git show HEAD^:a.cpp &gt; b.cpp
 <p><strong>查看已被跟踪的文件</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git ls-files
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git ls-files
 </code></pre></td></tr></table>
 </div>
 </div><p>Ref: search &ldquo;how can i make git show a list of the files that are being tracked&rdquo; in stack overflow</p>
@@ -876,7 +876,7 @@ git show HEAD^:a.cpp &gt; b.cpp
 <p>git submodule本质上是指向一个其他仓库的链接，默认clone不会将submodule对应的仓库克隆下来。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -904,7 +904,7 @@ git show HEAD^:a.cpp &gt; b.cpp
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># help</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># help</span>
 git submodule --help
 
 <span class="c1"># 添加submodule</span>
@@ -942,20 +942,20 @@ git submodule update
 <p>自定义包含路径</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -I/usr/local/include
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -I/usr/local/include
 </code></pre></td></tr></table>
 </div>
 </div><p>自定义链接静态或动态库</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -L/path/to/lib_file
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -L/path/to/lib_file
 g++ main.cpp -L/usr/lib64 -lcurl -lssl
 </code></pre></td></tr></table>
 </div>
@@ -963,28 +963,28 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <p>生成机器码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -c
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -c
 </code></pre></td></tr></table>
 </div>
 </div><p>生成汇编代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -S
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -S
 </code></pre></td></tr></table>
 </div>
 </div><p>仅预编译</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -E &gt; main.i
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -E &gt; main.i
 </code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -1011,26 +1011,26 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <p>给网页添加BGM。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;bgm.mp3&#34;</span> <span class="na">autostart</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;20&#34;</span> <span class="na">hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;bgm.mp3&#34;</span> <span class="na">autostart</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;20&#34;</span> <span class="na">hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>又，添加可以控制播放的音乐。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">autoplay</span><span class="o">=</span><span class="s">&#34;autoplay&#34;</span> <span class="na">controls</span><span class="o">=</span><span class="s">&#34;controls&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;loop&#34;</span> <span class="na">preload</span><span class="o">=</span><span class="s">&#34;auto&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;music.mp3&#34;</span><span class="p">&gt;</span>Your browser doesn&#39;t support H5 audio flag!<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">autoplay</span><span class="o">=</span><span class="s">&#34;autoplay&#34;</span> <span class="na">controls</span><span class="o">=</span><span class="s">&#34;controls&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;loop&#34;</span> <span class="na">preload</span><span class="o">=</span><span class="s">&#34;auto&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;music.mp3&#34;</span><span class="p">&gt;</span>Your browser doesn&#39;t support H5 audio flag!<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="使用xrandr设置多屏显示">使用<code>xrandr</code>设置多屏显示</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1090,7 +1090,7 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 </span><span class="lnt">58
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ xrandr
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ xrandr
 Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">1920</span> x 1080, maximum <span class="m">8192</span> x <span class="m">8192</span>
 eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 294mm x 165mm
    1920x1080     59.93*+
@@ -1153,46 +1153,46 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 </div><p>观察输出可知，连接了两个显示器(eDP-1, HDMI-2)，其中eDP-1是主显示器。如果第二块屏幕无显示，执行下面的命令。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2
 </code></pre></td></tr></table>
 </div>
 </div><p>又，指定分辨率为1920x1080，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --mode 1920x1080
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --mode 1920x1080
 </code></pre></td></tr></table>
 </div>
 </div><p>又，设置为右侧扩展屏，即光标向右可移动至第二块屏，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --right-of eDP-1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --right-of eDP-1
 </code></pre></td></tr></table>
 </div>
 </div><p>又，连接上第二块屏，想关掉内置显示屏，（警告：不要随便关掉内置屏）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --off
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --off
 </code></pre></td></tr></table>
 </div>
 </div><p>又，开启内置屏。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --auto
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --auto
 </code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -1200,10 +1200,10 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <p>查看被监听端口</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">netstat -tulpn <span class="p">|</span> grep LISTEN
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">netstat -tulpn <span class="p">|</span> grep LISTEN
 </code></pre></td></tr></table>
 </div>
 </div><hr>

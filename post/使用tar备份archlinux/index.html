@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-09-10T19:00:57&#43;00:00" />
-<meta property="article:modified_time" content="2016-09-10T19:00:57&#43;00:00" />
+<meta property="article:published_time" content="2016-09-10T19:00:57+00:00" />
+<meta property="article:modified_time" content="2016-09-10T19:00:57+00:00" />
 
 <meta itemprop="name" content="使用 Tar 备份 Archlinux">
-<meta itemprop="description" content="Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统"><meta itemprop="datePublished" content="2016-09-10T19:00:57&#43;00:00" />
-<meta itemprop="dateModified" content="2016-09-10T19:00:57&#43;00:00" />
+<meta itemprop="description" content="Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统"><meta itemprop="datePublished" content="2016-09-10T19:00:57+00:00" />
+<meta itemprop="dateModified" content="2016-09-10T19:00:57+00:00" />
 <meta itemprop="wordCount" content="1248">
 <meta itemprop="keywords" content="备份,tar," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Tar 备份 Archlinux"/>
@@ -168,7 +168,7 @@
 <p>创建exclude列表，排除不需要备份的文件。一个样例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -183,7 +183,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">#vi /excl
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">#vi /excl
 /proc/*
 /dev/*
 /sys/*
@@ -205,13 +205,13 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
 mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
 mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
@@ -220,19 +220,19 @@ mount /dev/sda3 /mnt/home
 </div><p>挂载之后就可以执行chroot进入要备份的系统了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /usr/bin/bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /usr/bin/bash
 </code></pre></td></tr></table>
 </div>
 </div><p>进去之后，执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">tar cvpjf backup20160910.tar.bz2 --exclude-from<span class="o">=</span>/excl /
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tar cvpjf backup20160910.tar.bz2 --exclude-from<span class="o">=</span>/excl /
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -248,13 +248,13 @@ mount /dev/sda3 /mnt/home
 <p>首先，插u盘进入liveCD。规划好分区，格式化啥的，参见archwiki的<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Beginner&rsquo;s Guide</a>. 同样的，挂载好分区。一个样例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
 mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
 mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
@@ -263,11 +263,11 @@ mount /dev/sda3 /mnt/home
 </div><p>当然，需要挂在备份包的存储分区。一个样例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /backup
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /backup
 mount /dev/sda4 /backup
 </code></pre></td></tr></table>
 </div>
@@ -275,51 +275,51 @@ mount /dev/sda4 /backup
 <p>创建临时目录/backup作为sda4的挂载点。最后执行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /mnt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /mnt
 tar xvpjf /backup/backup20160910.tar.bz2
 </code></pre></td></tr></table>
 </div>
 </div><p>将备份包解压到对应的位置。然后生成fstab：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre></td></tr></table>
 </div>
 </div><p>执行完成后建议检查一下/etc/fstab的正确性。接着进入恢复好的系统：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /bin/bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /bin/bash
 </code></pre></td></tr></table>
 </div>
 </div><p>重新配置启动引导：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre></td></tr></table>
 </div>
 </div><p>这样，备份包就恢复好了。</p>
 <p>退出chroot，卸载目录，重启，应该可以进入系统了，还是熟悉的面孔。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">exit</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">exit</span>
 umount -R /mnt
 reboot
 </code></pre></td></tr></table>
@@ -355,11 +355,11 @@ reboot
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

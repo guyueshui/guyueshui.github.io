@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/tex-sty-basic/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/tex-sty-basic/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-04-26T09:25:09&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-11T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2020-04-26T09:25:09+08:00" />
+<meta property="article:modified_time" content="2021-03-11T00:00:00+00:00" />
 
 <meta itemprop="name" content="一个really simple的LaTeX宏包">
-<meta itemprop="description" content="众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近"><meta itemprop="datePublished" content="2020-04-26T09:25:09&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-11T00:00:00&#43;00:00" />
+<meta itemprop="description" content="众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近"><meta itemprop="datePublished" content="2020-04-26T09:25:09+08:00" />
+<meta itemprop="dateModified" content="2021-03-11T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2494">
 <meta itemprop="keywords" content="排版,latex," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一个really simple的LaTeX宏包"/>
@@ -166,7 +166,7 @@
 <p>一个TeX宏包大概长成下面这个样子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -208,7 +208,7 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
 </span><span class="c">% yychi (guyueshui002@gmail.com)
 </span><span class="c">% 2019-09-25 10:10
 </span><span class="c"></span>
@@ -253,7 +253,7 @@
 </div><p>通过例子来学习，不失为一个好方法。上面的就是我为自己自定义的字体配置的宏包，还包含了一定的控制流呢。<s>鬼知道我查这些关键字查了多久。</s>要想设置中文并成功排版出来，必须使用<code>xeCJK</code>红包。里面包含的三条主要设定及其意义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -261,7 +261,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span>[Path=<span class="k">\zhfontpath</span>,
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span>[Path=<span class="k">\zhfontpath</span>,
                 BoldFont=方正小标宋<span class="nb">_</span>GBK.ttf,
                 ItalicFont=方正仿宋<span class="nb">_</span>GBK.ttf]
                 <span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>                     <span class="c">% 设置中文主字体
@@ -272,14 +272,14 @@
 </div><p>上面三条命令就设定好了中文排版主字体，无衬线以及等宽字体。注意如果是已安装的字体，则不需要指定<code>Path</code>和文件名后缀。比如我列一下我已经安装的中文字体：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ fc-list :lang<span class="o">=</span>zh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ fc-list :lang<span class="o">=</span>zh
 /usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc: 文泉驿等宽正黑,WenQuanYi Zen Hei Mono,文泉驛等寬正黑:style<span class="o">=</span>Regular
 /usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿微米黑,WenQuanYi Micro Hei,文泉驛微米黑:style<span class="o">=</span>Regular
 /usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿等宽微米黑,WenQuanYi Micro Hei Mono,文泉驛等寬微米黑:style<span class="o">=</span>Regular
@@ -289,12 +289,12 @@
 </div><p>则相应的字体设定为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span><span class="na">[BoldFont=somefont,ItalicFont=somefont]</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span><span class="na">[BoldFont=somefont,ItalicFont=somefont]</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
 <span class="k">\setCJKsansfont</span><span class="nb">{</span>WenQuanYi Zen Hei<span class="nb">}</span>
 <span class="k">\setCJKmonofont</span><span class="nb">{</span>WenQuanYi Zen Hei Mono<span class="nb">}</span>
 </code></pre></td></tr></table>
@@ -305,7 +305,7 @@
 <p>首先我建议过一遍<code>clsguide.pdf</code>，如果你的电脑上安装完整的tex-live（确切来说是安装了tex的documents），你可以使用<code>texdoc clsguide</code>来打开该文档。由于时间原因我决定先放结果，再稍作解释。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -347,7 +347,7 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
 </span><span class="c">% yychi (guyueshui002@gmail.com)
 </span><span class="c">% 2019-09-25 10:10
 </span><span class="c"></span>
@@ -424,11 +424,11 @@
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

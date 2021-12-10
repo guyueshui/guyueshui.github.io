@@ -26,7 +26,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/basic-gdb-usages/" />
@@ -61,8 +61,8 @@ g&#43;&#43; main.cpp -g -O0
 -O0指定编译器的优化级别为0，即不优化。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/basic-gdb-usages/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-08-18T16:14:24&#43;00:00" />
-<meta property="article:modified_time" content="2019-08-18T16:14:24&#43;00:00" />
+<meta property="article:published_time" content="2019-08-18T16:14:24+00:00" />
+<meta property="article:modified_time" content="2019-08-18T16:14:24+00:00" />
 
 <meta itemprop="name" content="GDB 基本用法">
 <meta itemprop="description" content="废话以后有时间再加。
@@ -75,8 +75,8 @@ g&#43;&#43; main.cpp -g -O0
 g&#43;&#43; main.cpp -g -O0
 
 
--O0指定编译器的优化级别为0，即不优化。"><meta itemprop="datePublished" content="2019-08-18T16:14:24&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-18T16:14:24&#43;00:00" />
+-O0指定编译器的优化级别为0，即不优化。"><meta itemprop="datePublished" content="2019-08-18T16:14:24+00:00" />
+<meta itemprop="dateModified" content="2019-08-18T16:14:24+00:00" />
 <meta itemprop="wordCount" content="479">
 <meta itemprop="keywords" content="debug,gdb,cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GDB 基本用法"/>
@@ -197,30 +197,30 @@ g&#43;&#43; main.cpp -g -O0
 <p>首先编译时开启调试选项：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -g -O0
 </code></pre></td></tr></table>
 </div>
 </div><p><code>-O0</code>指定编译器的优化级别为0，即不优化。</p>
 <p>然后编译出来的可执行文件，默认名字是<code>a.out</code>. 直接了当，用gdb打开之，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">gdb a.out
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gdb a.out
 </code></pre></td></tr></table>
 </div>
 </div><p>要调试必然要打断点，两种方式：指定行数；指定函数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> <span class="m">10</span>  // create breakpoint at line <span class="m">10</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> <span class="m">10</span>  // create breakpoint at line <span class="m">10</span>
 <span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break</span> main  // create breakpoint at the entrance of main
 </code></pre></td></tr></table>
 </div>
@@ -261,11 +261,11 @@ g&#43;&#43; main.cpp -g -O0
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

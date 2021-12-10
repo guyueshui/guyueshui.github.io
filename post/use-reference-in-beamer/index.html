@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/use-reference-in-beamer/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/use-reference-in-beamer/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-01-03T16:05:47&#43;00:00" />
-<meta property="article:modified_time" content="2019-01-03T16:05:47&#43;00:00" />
+<meta property="article:published_time" content="2019-01-03T16:05:47+00:00" />
+<meta property="article:modified_time" content="2019-01-03T16:05:47+00:00" />
 
 <meta itemprop="name" content="在 Beamer 中使用参考文献">
-<meta itemprop="description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新"><meta itemprop="datePublished" content="2019-01-03T16:05:47&#43;00:00" />
-<meta itemprop="dateModified" content="2019-01-03T16:05:47&#43;00:00" />
+<meta itemprop="description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新"><meta itemprop="datePublished" content="2019-01-03T16:05:47+00:00" />
+<meta itemprop="dateModified" content="2019-01-03T16:05:47+00:00" />
 <meta itemprop="wordCount" content="476">
 <meta itemprop="keywords" content="latex,beamer,排版," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Beamer 中使用参考文献"/>
@@ -173,7 +173,7 @@
 <p>假设你有 <code>mybeamer.tex</code> 文件，在同目录下新建 <code>mybeamer.bib</code> 文件（其实只是纯文本，特殊后缀而已）。将你所有需要引用的文献条目写入该文献中。比如，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -187,7 +187,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bib" data-lang="bib"><span class="c">%%% ./mybeamer.bib</span>
+<pre tabindex="0" class="chroma"><code class="language-bib" data-lang="bib"><span class="c">%%% ./mybeamer.bib</span>
 
 <span class="nc">@article</span><span class="p">{</span><span class="nl">shamir2010learning</span><span class="p">,</span>
   <span class="na">title</span><span class="p">=</span><span class="s">{Learning and generalization with the information bottleneck}</span><span class="p">,</span>
@@ -207,7 +207,7 @@
 <p>然后在你的 tex 文件中加入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -225,7 +225,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tex" data-lang="tex"><span class="c">%%% ./mybeamer.tex
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">%%% ./mybeamer.tex
 </span><span class="c"></span>
 <span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span>
 <span class="c">% Removes icon in bibliography
@@ -250,19 +250,19 @@
 <p>首先用<code>pdflatex</code>或者<code>xelatex</code>编译你的 tex 文件<code>mybeamer.tex</code>，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">pdflatex mybeamer.tex
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pdflatex mybeamer.tex
 </code></pre></td></tr></table>
 </div>
 </div><p>这样会在当前目录产生一个<code>.aux</code>文件。然后使用<code>bibtex</code>编译该文件，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">bibtex mybeamer
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">bibtex mybeamer
 </code></pre></td></tr></table>
 </div>
 </div><p>然后再用<code>pdflatex</code>编译一遍。此时应该会出现应用错误，小问号等警告。此时<strong>再用<code>pdflatex</code>编译一遍</strong>即可。如果出现了其他错误，删掉所有 <code>.bbl, .aux</code> 文件，重复以上操作。</p>
@@ -305,11 +305,11 @@
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

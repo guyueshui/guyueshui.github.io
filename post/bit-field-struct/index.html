@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/bit-field-struct/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/bit-field-struct/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-08-06T20:43:02&#43;00:00" />
-<meta property="article:modified_time" content="2019-08-06T20:43:02&#43;00:00" />
+<meta property="article:published_time" content="2019-08-06T20:43:02+00:00" />
+<meta property="article:modified_time" content="2019-08-06T20:43:02+00:00" />
 
 <meta itemprop="name" content="位域结构体简介">
-<meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"><meta itemprop="datePublished" content="2019-08-06T20:43:02&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-06T20:43:02&#43;00:00" />
+<meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"><meta itemprop="datePublished" content="2019-08-06T20:43:02+00:00" />
+<meta itemprop="dateModified" content="2019-08-06T20:43:02+00:00" />
 <meta itemprop="wordCount" content="1892">
 <meta itemprop="keywords" content="cpp,结构体,位运算," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="位域结构体简介"/>
@@ -166,17 +166,17 @@
 <p>位段的定义格式为:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">type [var]: digits
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">type [var]: digits
 </code></pre></td></tr></table>
 </div>
 </div><p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
 <p>举个例子，你可以这样定义一个位域结构体：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -193,7 +193,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// sizeof(A): 4
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// sizeof(A): 4
 </span><span class="c1"></span><span class="k">struct</span> <span class="nc">A</span>
 <span class="p">{</span>
   <span class="kt">uint32_t</span> <span class="nl">a</span><span class="p">:</span> <span class="mi">12</span><span class="p">;</span>
@@ -230,7 +230,7 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -297,7 +297,7 @@
 </span><span class="lnt">65
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -367,7 +367,7 @@
 </div><p>以下测试用法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -398,7 +398,7 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -432,12 +432,12 @@
 </div><p>上述程序的输出为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">length:    65535
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">length:    65535
 flags:       255
 num:          -1
 </code></pre></td></tr></table>
@@ -486,11 +486,11 @@ Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 �
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

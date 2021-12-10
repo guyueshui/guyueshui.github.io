@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/latexmk-basic/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="怎么想到用latexmk的呢？写论文呗！ 本来呢，我一直习惯于使用命令行手敲 1 pdflatex someting.tex 千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/latexmk-basic/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-04-13T23:50:55&#43;08:00" />
-<meta property="article:modified_time" content="2020-04-13T23:50:55&#43;08:00" />
+<meta property="article:published_time" content="2020-04-13T23:50:55+08:00" />
+<meta property="article:modified_time" content="2020-04-13T23:50:55+08:00" />
 
 <meta itemprop="name" content="Latexmk基础用法">
-<meta itemprop="description" content="怎么想到用latexmk的呢？写论文呗！ 本来呢，我一直习惯于使用命令行手敲 1 pdflatex someting.tex 千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出"><meta itemprop="datePublished" content="2020-04-13T23:50:55&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-13T23:50:55&#43;08:00" />
+<meta itemprop="description" content="怎么想到用latexmk的呢？写论文呗！ 本来呢，我一直习惯于使用命令行手敲 1 pdflatex someting.tex 千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出"><meta itemprop="datePublished" content="2020-04-13T23:50:55+08:00" />
+<meta itemprop="dateModified" content="2020-04-13T23:50:55+08:00" />
 <meta itemprop="wordCount" content="750">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Latexmk基础用法"/>
@@ -164,23 +164,23 @@
 <p>本来呢，我一直习惯于使用命令行手敲</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pdflatex someting.tex
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pdflatex someting.tex
 </code></pre></td></tr></table>
 </div>
 </div><p>千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出，让你一窥Tex排版系统的内裤（→_→，一本正经胡说八道中……）。还记得Archlinux的哲学名言吗？&ndash;Keep it simple and stupid (KISS)&ndash;说得太对了呀！</p>
 <p>但是啊说到写论文，肯定要有引用文献的啦，这就麻烦了，每次更新参考文献和交叉引用都需要四步走：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pdflatex a.tex  <span class="c1"># 生成aux文件，下一步bibtex才能知道需要引用哪几个文献</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pdflatex a.tex  <span class="c1"># 生成aux文件，下一步bibtex才能知道需要引用哪几个文献</span>
 bibtex a        <span class="c1"># 生成bbl文件，及将.bib里面的元数据展开成符合tex语法的bibitem</span>
 pdflatex a.tex  <span class="c1"># 刷新引用，可能残留一些问号</span>
 pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示</span>
@@ -191,39 +191,39 @@ pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示
 <h2 id="命令行使用">命令行使用</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">latexmk
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk
 </code></pre></td></tr></table>
 </div>
 </div><p>默认情况下会自动编译当前文件夹下所有tex文件，默认使用pdflatex引擎。</p>
 <p>如果想编译得到PDF文件，则直接加上选项：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">latexmk -pdf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk -pdf
 </code></pre></td></tr></table>
 </div>
 </div><p>如果想编译单个文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">latexmk single_file.tex
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk single_file.tex
 </code></pre></td></tr></table>
 </div>
 </div><p>要删除临时文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">latexmk -c
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk -c
 latexmk -C <span class="c1">## 删除（包含输出文件）</span>
 </code></pre></td></tr></table>
 </div>
@@ -235,7 +235,7 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
 <p>一个简单的配置文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -249,7 +249,7 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-perl" data-lang="perl"><span class="nv">$dvi_previewer</span> <span class="o">=</span> <span class="s">&#39;start xdvi -watchfile 1.5&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-perl" data-lang="perl"><span class="nv">$dvi_previewer</span> <span class="o">=</span> <span class="s">&#39;start xdvi -watchfile 1.5&#39;</span><span class="p">;</span>
 <span class="nv">$ps_previewer</span>  <span class="o">=</span> <span class="s">&#39;start gv --watch&#39;</span><span class="p">;</span>
 <span class="nv">$pdf_previewer</span> <span class="o">=</span> <span class="s">&#39;start evince&#39;</span><span class="p">;</span>
 
@@ -295,11 +295,11 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

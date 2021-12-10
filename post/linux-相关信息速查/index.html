@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
@@ -77,8 +77,8 @@ cat /proc/loadavg           # 查看系统负载
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-07T19:22:02&#43;00:00" />
-<meta property="article:modified_time" content="2019-09-16T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2019-03-07T19:22:02+00:00" />
+<meta property="article:modified_time" content="2019-09-16T00:00:00+00:00" />
 
 <meta itemprop="name" content="Linux 使用指北">
 <meta itemprop="description" content="本文主要引用 Liam Huang 的博客。
@@ -109,8 +109,8 @@ uptime                      # 查看系统运行时间、负载、用户数量
 cat /proc/loadavg           # 查看系统负载
 
 
-"><meta itemprop="datePublished" content="2019-03-07T19:22:02&#43;00:00" />
-<meta itemprop="dateModified" content="2019-09-16T00:00:00&#43;00:00" />
+"><meta itemprop="datePublished" content="2019-03-07T19:22:02+00:00" />
+<meta itemprop="dateModified" content="2019-09-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="578">
 <meta itemprop="keywords" content="常用命令,reference," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux 使用指北"/>
@@ -254,7 +254,7 @@ cat /proc/loadavg           # 查看系统负载
 <h2 id="系统相关">系统相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -266,7 +266,7 @@ cat /proc/loadavg           # 查看系统负载
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
 head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
 cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
 uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
@@ -281,7 +281,7 @@ cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
 </div><h2 id="内存外存">内存外存</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -293,7 +293,7 @@ cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
 grep MemTotal /proc/meminfo <span class="c1"># 查看内存总量</span>
 grep MemFree /proc/meminfo  <span class="c1"># 查看空闲内存总量</span>
 df -h                       <span class="c1"># 查看各分区使用情况</span>
@@ -308,7 +308,7 @@ du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的�
 </div><h2 id="网络状态">网络状态</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -317,7 +317,7 @@ du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的�
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
 ip addr show                <span class="c1"># 同上</span>
 iptables -L                 <span class="c1"># 查看 iptables 防火墙</span>
 route -n                    <span class="c1"># 查看本机路由表</span>
@@ -329,7 +329,7 @@ netstat -s                  <span class="c1"># 查看网络统计信息</span>
 </div><h2 id="用户状态相关">用户状态相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -338,7 +338,7 @@ netstat -s                  <span class="c1"># 查看网络统计信息</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
 who                         <span class="c1"># 查看活动用户</span>
 id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
 cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
@@ -351,12 +351,12 @@ groups user                 <span class="c1"># 查看用户所属的组</span>
 <h2 id="进程状态相关">进程状态相关</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ps -ef                      <span class="c1"># 查看所有进程</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ps -ef                      <span class="c1"># 查看所有进程</span>
 ps aux                      <span class="c1"># 同上</span>
 top                         <span class="c1"># 动态显示进程状态</span>
 </code></pre></td></tr></table>
@@ -364,10 +364,10 @@ top                         <span class="c1"># 动态显示进程状态</span>
 </div><h2 id="添加用户到组">添加用户到组</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">usermod -aG &lt;group&gt; &lt;user&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usermod -aG &lt;group&gt; &lt;user&gt;
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -397,11 +397,11 @@ top                         <span class="c1"># 动态显示进程状态</span>
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

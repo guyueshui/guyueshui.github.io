@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.83.1 with theme even" />
+<meta name="generator" content="Hugo 0.90.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/leetcode-sum-of-two-integers/" />
@@ -48,12 +48,12 @@
 <meta property="og:description" content="记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的&#43;或-. 原题地址：https://leetcode.com/pr" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/leetcode-sum-of-two-integers/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-26T14:53:51&#43;00:00" />
-<meta property="article:modified_time" content="2019-03-26T14:53:51&#43;00:00" />
+<meta property="article:published_time" content="2019-03-26T14:53:51+00:00" />
+<meta property="article:modified_time" content="2019-03-26T14:53:51+00:00" />
 
 <meta itemprop="name" content="LeetCode: Sum of Two Integers">
-<meta itemprop="description" content="记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的&#43;或-. 原题地址：https://leetcode.com/pr"><meta itemprop="datePublished" content="2019-03-26T14:53:51&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-26T14:53:51&#43;00:00" />
+<meta itemprop="description" content="记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的&#43;或-. 原题地址：https://leetcode.com/pr"><meta itemprop="datePublished" content="2019-03-26T14:53:51+00:00" />
+<meta itemprop="dateModified" content="2019-03-26T14:53:51+00:00" />
 <meta itemprop="wordCount" content="1037">
 <meta itemprop="keywords" content="cpp,leetcode,位运算," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LeetCode: Sum of Two Integers"/>
@@ -165,7 +165,7 @@
 <p>我们来看一下答案：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -173,7 +173,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">getSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">getSum</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">);</span>
@@ -184,7 +184,7 @@
 </div><p>乍一看，似乎很难看，位运算毕竟不是很直观。重写一下，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -198,7 +198,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">getSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
@@ -215,7 +215,7 @@
 </div><p>or</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -231,7 +231,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">getSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
@@ -250,10 +250,10 @@
 </div><p>除了将递归写成了迭代，其余部分都是照着第一段代码来的。重要的是为什么是这样？为什么会有</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">a + b == (a^b) + (a&amp;b)&lt;&lt;1
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a + b == (a^b) + (a&amp;b)&lt;&lt;1
 </code></pre></td></tr></table>
 </div>
 </div><p>现在我们挨个来看看<code>a^b</code>、<code>a&amp;b</code>到底是啥？首先<code>a^b</code>，<code>^</code>是C++中的按位异或运算符，它的运算表为：</p>
@@ -266,13 +266,13 @@
 <p>现在我们把它竖过来看，或许你会发现一点东西：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">       1011  &lt;---+ a   X           1011
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">       1011  &lt;---+ a   X           1011
      ^ 1010  &lt;---+ b   X         + 1010
 a^b= -------           X    a+b= -------
        0001            X          10101
@@ -289,12 +289,12 @@ a^b= -------           X    a+b= -------
 <p>接着，又有一个问题：随着程序的执行，b为什么会变成0？我们看看b是如何更新的，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="p">;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// b is updated
 </span><span class="c1"></span><span class="n">a</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
 </code></pre></td></tr></table>
@@ -336,11 +336,11 @@ a^b= -------           X    a+b= -------
   <div class="qr-code">
     
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9S5a6.png">
+        <img class="image" src="/img/me/wechat-qr.png">
         <span>wechat</span>
       </label>
     <label class="qr-code-image" for="reward">
-        <img class="image" src="https://s2.ax1x.com/2019/01/18/k9SvZt.jpg">
+        <img class="image" src="/img/me/alipay-qr.jpg">
         <span>alipay</span>
       </label>
   </div>

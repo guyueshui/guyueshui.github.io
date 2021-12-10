@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Feb 2021 22:26:30 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Dec 2021 22:05:42 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>V3Ray的配置笔记</title>
+      <link>https://guyueshui.github.io/post/build-your-ladder/</link>
+      <pubDate>Tue, 07 Dec 2021 22:05:42 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/build-your-ladder/</guid>
+      <description>学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了</description>
+    </item>
+    
     <item>
       <title>Python Iterables</title>
       <link>https://guyueshui.github.io/post/python-iterables/</link>
@@ -174,10 +183,10 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 &lt;p&gt;首先编译时开启调试选项：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
@@ -286,7 +295,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
 &lt;h2 id=&#34;系统相关&#34;&gt;系统相关&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
@@ -298,7 +307,7 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsb_release -a              &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsb_release -a              &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
 head -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; /etc/issue        &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
 cat /proc/version           &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息&lt;/span&gt;
 uname -a                    &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息、CPU 信息&lt;/span&gt;
