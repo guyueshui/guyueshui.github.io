@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Dec 2021 22:05:42 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 12:55:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A point of python metaclass</title>
+      <link>https://guyueshui.github.io/post/python-metaclass/</link>
+      <pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/python-metaclass/</guid>
+      <description>Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&amp;rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary</description>
+    </item>
+    
     <item>
       <title>V3Ray的配置笔记</title>
       <link>https://guyueshui.github.io/post/build-your-ladder/</link>

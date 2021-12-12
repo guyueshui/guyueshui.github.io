@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A point of python metaclass - 水阙</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yychi" /><meta name="description" content="Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&amp;rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary" /><meta name="keywords" content="metaclass" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.90.1 with theme even" />
+
+
+<link rel="canonical" href="https://guyueshui.github.io/post/python-metaclass/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.01ca264237f4437d074cf6c8cbab3db51634492b8d9acda6b073090c785d6cbb.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
+
+<meta property="og:title" content="A point of python metaclass" />
+<meta property="og:description" content="Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/python-metaclass/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-12T12:55:45+08:00" />
+<meta property="article:modified_time" content="2021-12-12T12:55:45+08:00" />
+
+<meta itemprop="name" content="A point of python metaclass">
+<meta itemprop="description" content="Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary"><meta itemprop="datePublished" content="2021-12-12T12:55:45+08:00" />
+<meta itemprop="dateModified" content="2021-12-12T12:55:45+08:00" />
+<meta itemprop="wordCount" content="979">
+<meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A point of python metaclass"/>
+<meta name="twitter:description" content="Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yychi&#39;s log</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
+      </a><a href="/tricks/">
+        <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Yychi&#39;s log</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">A point of python metaclass</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> December 12, 2021 </span>
+        <div class="post-category">
+            <a href="/categories/notes/"> Notes </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-class-dynamically">Create <code>class</code> dynamically</a></li>
+    <li><a href="#the-class-creation-process">The class creation process</a></li>
+    <li><a href="#use-metaclass">Use metaclass</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="create-class-dynamically">Create <code>class</code> dynamically</h2>
+<p>Python doc says:</p>
+<blockquote>
+<p>By default, classes are constructed using <code>type()</code>. The class body is executed in a new namespace and the class name is bound locally to the result of <code>type(name, bases, namespace)</code>.</p>
+</blockquote>
+<p>That&rsquo;s means, a <code>class</code> statement is equivalent to the call of <code>type</code> method with three arguments:</p>
+<ul>
+<li>name: name of the class</li>
+<li>bases: tuple of the parent class (for inheritance, can be empty)</li>
+<li>attrs: dictionary containing attributes names and values.</li>
+</ul>
+<p>For example, the following classes are identical:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">tmp</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>as verified by the picture below：
+<img src="demo1.png" alt="meta-demo1" title="a, b两个对象结构一致"></p>
+<p>The <a href="https://docs.python.org/3/library/functions.html#type"><code>type</code> function</a> is special:</p>
+<blockquote>
+<p>With one argument, return the type of an object. The return value is a type object and generally the same object as returned by <code>object.__class__</code>.</p>
+<p>With three arguments, return a new type object. This is essentially a dynamic form of the <code>class</code> statement. The name string is the class name and becomes the <code>__name__</code> attribute. The bases tuple contains the base classes and becomes the <code>__bases__</code> attribute; if empty, <code>object</code>, the ultimate base of all classes, is added. The dict dictionary contains attribute and method definitions for the class body; it may be copied or wrapped before becoming the <code>__dict__</code> attribute.</p>
+</blockquote>
+<p>In other words, <code>type</code> is the factory method creating python classes.</p>
+<h2 id="the-class-creation-process">The class creation process</h2>
+<p>The class creation process can be customized by passing the <code>metaclass</code> keyword argument in the class definition line, or by inheriting from an existing class that included such an argument. In the following example, both <code>MyClass</code> and <code>MySubclass</code> are instances of <code>Meta</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">Meta</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">MySubclass</span><span class="p">(</span><span class="n">MyClass</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Any other keyword arguments that are specified in the class definition are passed through to all metaclass operations described below.</p>
+<p>When a class definition is executed, the following steps occur:</p>
+<ul>
+<li>MRO entries are resolved;</li>
+<li>the appropriate metaclass is determined;</li>
+<li>the class namespace is prepared;</li>
+<li>the class body is executed;</li>
+<li>the class object is created.</li>
+</ul>
+<p>Here comes our leading role: metaclass, <strong>the following is captured from <a href="https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python">what are metaclasses in python</a></strong>:</p>
+<p>Metaclasses are the &lsquo;stuff&rsquo; that creates classes.</p>
+<p>You define classes in order to create objects, right?</p>
+<p>But we learned that Python classes are objects.</p>
+<p>Well, metaclasses are what create these objects. They are the classes' classes, you can picture them this way:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="n">MyClass</span> <span class="o">=</span> <span class="n">MetaClass</span><span class="p">()</span>
+<span class="n">my_object</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You&rsquo;ve seen that type lets you do something like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="n">MyClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;MyClass&#39;</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s because the function <code>type</code> is in fact a metaclass. <code>type</code> is the metaclass Python uses to create all classes behind the scenes.</p>
+<p>Everything, and I mean everything, is an object in Python. That includes integers, strings, functions and classes. All of them are objects. And all of them have been created from a class:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">age</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;int&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;bob&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;str&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span> <span class="k">pass</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;function&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span> <span class="k">pass</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Bar</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, what is the <code>__class__</code> of any <code>__class__</code> ?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="n">age</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;type&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;type&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;type&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;type&#39;</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>So, a metaclass is just the stuff that creates class objects.</p>
+<p>You can call it a &lsquo;class factory&rsquo; if you wish.</p>
+<p><code>type</code> is the built-in metaclass Python uses, but of course, you can create your own metaclass.</p>
+<h2 id="use-metaclass">Use metaclass</h2>
+<p>First we see an example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="c1"># __new__ is the method called before __init__</span>
+    <span class="c1"># it&#39;s the method that creates the object and returns it</span>
+    <span class="c1"># while __init__ just initializes the object passed as parameter</span>
+    <span class="c1"># you rarely use __new__, except when you want to control how the object</span>
+    <span class="c1"># is created.</span>
+    <span class="c1"># here the created object is the class, and we want to customize it</span>
+    <span class="c1"># so we override __new__</span>
+    <span class="c1"># you can do some stuff in __init__ too if you wish</span>
+    <span class="c1"># some advanced use involves overriding __call__ as well.</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">bases</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">attrs</span><span class="p">:</span><span class="nb">dict</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">new_attrs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">):</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;modify attr: </span><span class="si">%s</span><span class="s1"> -&gt; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+                <span class="n">new_attrs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_attrs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">new_attrs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="n">new_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">MyMeta</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">aaa</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">bbb</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>we see the memory when hit the following breakpoint,
+<img src="demo2.png" alt="demo2"></p>
+<p>From the picture we see:</p>
+<ol>
+<li>the class name &lsquo;D&rsquo; is passed as parameter <code>cls_name</code> of <code>MyMeta.__new__</code>,</li>
+<li>the class variables of <code>D</code> is passed as parameter <code>attrs</code> of <code>MyMeta.__new__</code>,</li>
+<li>the keyword arguments of <code>D</code> &ndash; <code>foo</code> and <code>bar</code> are passed as keyword arguments of <code>MyMeta.__new__</code>.</li>
+</ol>
+<p>The next breakpoint:
+<img src="demo3.png" alt="demo3">
+gives</p>
+<ol>
+<li>the <code>self</code> variable passed to <code>MyMeta.__call__</code> is just the class <code>D</code>,</li>
+<li>the <code>D(3, 4)</code> pass 3, 4 to parameter <code>args</code> of <code>MyMeta.__call__</code>.</li>
+</ol>
+<p>The last breakpoint gives the memory of instance <code>d</code>,
+<img src="demo4.png" alt="demo4"></p>
+<ol>
+<li>the class <code>D</code> has class attributes &lsquo;AAA&rsquo; and &lsquo;BBB&rsquo;, which are converted to uppercase in <code>MyMeta.__new__</code>,</li>
+<li>the instance <code>d</code> has instance attributes &lsquo;a=9&rsquo; and &lsquo;b=16&rsquo;, which are processed in <code>MyMeta.__call__</code>,</li>
+<li>console outputs the log of uppercase conversion.</li>
+</ol>
+<p>Last word: i highly recommend you to read the document of <a href="https://docs.python.org/3.9/reference/datamodel.html#object.__new__"><code>obj.__new__</code></a> and <a href="https://docs.python.org/3.9/reference/datamodel.html#object.__init__"><code>obj.__init__</code></a>, and to be continued&hellip;</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python">What are metaclasses in python</a></li>
+<li><a href="https://docs.python.org/3/reference/datamodel.html#metaclasses">Python documents</a></li>
+<li><a href="https://docs.python.org/3.9/reference/datamodel.html#special-method-names">Class customizations</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yychi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        December 12, 2021
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/me/wechat-qr.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/me/alipay-qr.jpg">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/python/">python</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/build-your-ladder/">
+            <span class="next-text nav-default">V3Ray的配置笔记</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz',
+        appKey: 'fjzzXaIgPDyMlxqtN0oBWeNN',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
+  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
