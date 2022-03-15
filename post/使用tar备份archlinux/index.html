@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/" />
@@ -183,20 +183,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">#vi /excl
-/proc/*
-/dev/*
-/sys/*
-/tmp/*
-/mnt/*
-/media/*
-/run/*
-/var/lock/*
-/var/run/*
-/var/lib/pacman/*
-/var/cache/pacman/pkg/*
-/lost+found
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#vi /excl
+</span></span><span class="line"><span class="cl">/proc/*
+</span></span><span class="line"><span class="cl">/dev/*
+</span></span><span class="line"><span class="cl">/sys/*
+</span></span><span class="line"><span class="cl">/tmp/*
+</span></span><span class="line"><span class="cl">/mnt/*
+</span></span><span class="line"><span class="cl">/media/*
+</span></span><span class="line"><span class="cl">/run/*
+</span></span><span class="line"><span class="cl">/var/lock/*
+</span></span><span class="line"><span class="cl">/var/run/*
+</span></span><span class="line"><span class="cl">/var/lib/pacman/*
+</span></span><span class="line"><span class="cl">/var/cache/pacman/pkg/*
+</span></span><span class="line"><span class="cl">/lost+found
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>准备一个liveCD，也就是安装arch的u盘。</li>
@@ -211,11 +211,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
-mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
-mount /dev/sda1 /mnt/boot
-mount /dev/sda3 /mnt/home
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mount /dev/sda2 /mnt
+</span></span><span class="line"><span class="cl">mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
+</span></span><span class="line"><span class="cl">mount /dev/sda1 /mnt/boot
+</span></span><span class="line"><span class="cl">mount /dev/sda3 /mnt/home
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>挂载之后就可以执行chroot进入要备份的系统了。</p>
 <div class="highlight"><div class="chroma">
@@ -223,8 +223,8 @@ mount /dev/sda3 /mnt/home
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /usr/bin/bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arch-chroot /mnt /usr/bin/bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>进去之后，执行</p>
 <div class="highlight"><div class="chroma">
@@ -232,8 +232,8 @@ mount /dev/sda3 /mnt/home
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tar cvpjf backup20160910.tar.bz2 --exclude-from<span class="o">=</span>/excl /
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar cvpjf backup20160910.tar.bz2 --exclude-from<span class="o">=</span>/excl /
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <ul>
@@ -254,11 +254,11 @@ mount /dev/sda3 /mnt/home
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt
-mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
-mount /dev/sda1 /mnt/boot
-mount /dev/sda3 /mnt/home
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mount /dev/sda2 /mnt
+</span></span><span class="line"><span class="cl">mkdir /mnt/<span class="o">{</span>boot,home<span class="o">}</span>
+</span></span><span class="line"><span class="cl">mount /dev/sda1 /mnt/boot
+</span></span><span class="line"><span class="cl">mount /dev/sda3 /mnt/home
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>当然，需要挂在备份包的存储分区。一个样例：</p>
 <div class="highlight"><div class="chroma">
@@ -267,9 +267,9 @@ mount /dev/sda3 /mnt/home
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /backup
-mount /dev/sda4 /backup
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir /backup
+</span></span><span class="line"><span class="cl">mount /dev/sda4 /backup
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中，备份包的存储位置是sda4，这里插一句，大家是怎么分辨sdax对应哪块空间的？反正我是根据大小啦=。=</p>
 <p>创建临时目录/backup作为sda4的挂载点。最后执行：</p>
@@ -279,9 +279,9 @@ mount /dev/sda4 /backup
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /mnt
-tar xvpjf /backup/backup20160910.tar.bz2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /mnt
+</span></span><span class="line"><span class="cl">tar xvpjf /backup/backup20160910.tar.bz2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将备份包解压到对应的位置。然后生成fstab：</p>
 <div class="highlight"><div class="chroma">
@@ -289,8 +289,8 @@ tar xvpjf /backup/backup20160910.tar.bz2
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行完成后建议检查一下/etc/fstab的正确性。接着进入恢复好的系统：</p>
 <div class="highlight"><div class="chroma">
@@ -298,8 +298,8 @@ tar xvpjf /backup/backup20160910.tar.bz2
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">arch-chroot /mnt /bin/bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arch-chroot /mnt /bin/bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>重新配置启动引导：</p>
 <div class="highlight"><div class="chroma">
@@ -307,8 +307,8 @@ tar xvpjf /backup/backup20160910.tar.bz2
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样，备份包就恢复好了。</p>
 <p>退出chroot，卸载目录，重启，应该可以进入系统了，还是熟悉的面孔。</p>
@@ -319,10 +319,10 @@ tar xvpjf /backup/backup20160910.tar.bz2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">exit</span>
-umount -R /mnt
-reboot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">umount -R /mnt
+</span></span><span class="line"><span class="cl">reboot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="后话">后话</h2>
 <p>咦呀，我是第一次写博客，而且是博客园这样大的平台，写到这里还是惊魂未定0v0。我也有自知之明，一开始申请写博客权限的时候也写明了：借园子这样的好地方，边学习，边记录。事实上，我也是刚刚接触linux，今年6月份端午的时候。折腾了三个月，一直在折腾，因为它总是冒出莫名其妙的问题，有的解决了，有的没能解决。事后观之，在折腾的过程中，虽说没学到啥实质性的技术，但至少了解了一些处理问题的框架模式，自己也能动手解决一些小问题了，对自己还是很有帮助的。</p>
@@ -433,7 +433,7 @@ reboot
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -450,7 +450,7 @@ reboot
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

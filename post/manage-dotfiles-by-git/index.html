@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/manage-dotfiles-by-git/" />
@@ -179,9 +179,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir ~/.mydotfiles
-git init --bare ~/.mydotfiles
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir ~/.mydotfiles
+</span></span><span class="line"><span class="cl">git init --bare ~/.mydotfiles
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="2-创建命令别名">2. 创建命令别名</h2>
 <p>接下来需要创建一个命令别名来进行git的各种操作。直接在家目录运行git命令肯定是不行的，因为家目录不是一个 git repo，不包含 .git 文件夹。所以甚至命令别名如下：</p>
@@ -190,8 +190,8 @@ git init --bare ~/.mydotfiles
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">alias config=&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">alias config=&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>像这样定义别名，是一种临时的方式。想要使它每次都生效，可以将其写入 <code>.bashrc</code> 或 <code>.zshrc</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -199,8 +199,8 @@ git init --bare ~/.mydotfiles
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;alias config=&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;&#34; &gt;&gt; $HOME/.bashrc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#34;alias config=&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;&#34; &gt;&gt; $HOME/.bashrc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如此一来，每次进入shell，都可以使用这个别名。可以敲一个 <code>config status</code>看看效果。</p>
 <h2 id="3-使用gitignore">3. 使用<code>.gitignore</code></h2>
@@ -221,19 +221,19 @@ git init --bare ~/.mydotfiles
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">#! $HOME/.gitignore
-
-#----[ ignore all ] -----
-*
-#---[ consider list ]---
-!*.[Xx]resources
-!*.conf
-!*config*
-!*[a-zA-Z]*rc
-!.config/
-!.config/*
-#---[ ignore list ]---
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#! $HOME/.gitignore
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#----[ ignore all ] -----
+</span></span><span class="line"><span class="cl">*
+</span></span><span class="line"><span class="cl">#---[ consider list ]---
+</span></span><span class="line"><span class="cl">!*.[Xx]resources
+</span></span><span class="line"><span class="cl">!*.conf
+</span></span><span class="line"><span class="cl">!*config*
+</span></span><span class="line"><span class="cl">!*[a-zA-Z]*rc
+</span></span><span class="line"><span class="cl">!.config/
+</span></span><span class="line"><span class="cl">!.config/*
+</span></span><span class="line"><span class="cl">#---[ ignore list ]---
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面的文件告诉 git 默认忽略所有文件及文件夹，然后反向添加我们想要考虑的那些文件或文件夹<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。另外<a href="https://www.gitignore.io">gitignore.io</a>可以根据要求生成不同的 <code>.gitignore</code> 文件。</p>
 <p><strong>忽略特定文件</strong></p>
@@ -255,9 +255,9 @@ git init --bare ~/.mydotfiles
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">config remote add origin git@github.com:&lt;username&gt;/&lt;repo_name&gt;
-config push -u origin master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">config remote add origin git@github.com:&lt;username&gt;/&lt;repo_name&gt;
+</span></span><span class="line"><span class="cl">config push -u origin master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>就可以把本地仓库推送到远程，完成同步。</p>
 <h2 id="5-在新系统上还原配置文件">5. 在新系统上还原配置文件</h2>
@@ -267,8 +267,8 @@ config push -u origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将<code>.mydotfiles</code>加入<code>.gitignore</code>以免递归克隆</p>
 <div class="highlight"><div class="chroma">
@@ -276,8 +276,8 @@ config push -u origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> .mydotfiles &gt;&gt; .gitignore
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> .mydotfiles &gt;&gt; .gitignore
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>克隆备份好的配置文件</p>
 <div class="highlight"><div class="chroma">
@@ -285,8 +285,8 @@ config push -u origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone --bare &lt;git-repo-url&gt; <span class="nv">$HOME</span>/.mydotfiles
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --bare &lt;git-repo-url&gt; <span class="nv">$HOME</span>/.mydotfiles
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>检出克隆下来的配置文件</p>
 <div class="highlight"><div class="chroma">
@@ -294,8 +294,8 @@ config push -u origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">config checkout
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">config checkout
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="reference">Reference</h2>
 <ul>
@@ -420,7 +420,7 @@ config push -u origin master
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -437,7 +437,7 @@ config push -u origin master
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

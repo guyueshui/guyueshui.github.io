@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/gnome-app-slow-start/" />
@@ -181,27 +181,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ neofetch
-                   -`                    yychi@MiBook-Air 
-                  .o+`                   ---------------- 
-                 `ooo/                   OS: Arch Linux x86_64 
-                `+oooo:                  Host: TM1604 XMAKB3M0P0202 
-               `+oooooo:                 Kernel: 5.5.13-arch2-1 
-               -+oooooo+:                Uptime: 5 mins 
-             `/:-:++oooo+:               Packages: 1153 (pacman) 
-            `/++++/+++++++:              Shell: zsh 5.8 
-           `/++++++++++++++:             Resolution: 1920x1080 
-          `/+++ooooooooooooo/`           WM: i3 
-         ./ooosssso++osssssso+`          Theme: Adwaita [GTK2] 
-        .oossssso-````/ossssss+`         Icons: Adwaita [GTK2] 
-       -osssssso.      :ssssssso.        Terminal: urxvt 
-      :osssssss/        osssso+++.       Terminal Font: DejaVu Sans Mono for Powerline 
-     /ossssssss/        +ssssooo/-       CPU: Intel i5-7200U (4) @ 3.100GHz 
-   `/ossssso+/:-        -:/+osssso+-     GPU: NVIDIA GeForce MX150 
-  `+sso+:-`                 `.-/+oso:    GPU: Intel HD Graphics 620 
- `++:.                           `-/+/   Memory: 1608MiB / 7881MiB 
- .`                                 `/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ neofetch
+</span></span><span class="line"><span class="cl">                   -`                    yychi@MiBook-Air 
+</span></span><span class="line"><span class="cl">                  .o+`                   ---------------- 
+</span></span><span class="line"><span class="cl">                 `ooo/                   OS: Arch Linux x86_64 
+</span></span><span class="line"><span class="cl">                `+oooo:                  Host: TM1604 XMAKB3M0P0202 
+</span></span><span class="line"><span class="cl">               `+oooooo:                 Kernel: 5.5.13-arch2-1 
+</span></span><span class="line"><span class="cl">               -+oooooo+:                Uptime: 5 mins 
+</span></span><span class="line"><span class="cl">             `/:-:++oooo+:               Packages: 1153 (pacman) 
+</span></span><span class="line"><span class="cl">            `/++++/+++++++:              Shell: zsh 5.8 
+</span></span><span class="line"><span class="cl">           `/++++++++++++++:             Resolution: 1920x1080 
+</span></span><span class="line"><span class="cl">          `/+++ooooooooooooo/`           WM: i3 
+</span></span><span class="line"><span class="cl">         ./ooosssso++osssssso+`          Theme: Adwaita [GTK2] 
+</span></span><span class="line"><span class="cl">        .oossssso-````/ossssss+`         Icons: Adwaita [GTK2] 
+</span></span><span class="line"><span class="cl">       -osssssso.      :ssssssso.        Terminal: urxvt 
+</span></span><span class="line"><span class="cl">      :osssssss/        osssso+++.       Terminal Font: DejaVu Sans Mono for Powerline 
+</span></span><span class="line"><span class="cl">     /ossssssss/        +ssssooo/-       CPU: Intel i5-7200U (4) @ 3.100GHz 
+</span></span><span class="line"><span class="cl">   `/ossssso+/:-        -:/+osssso+-     GPU: NVIDIA GeForce MX150 
+</span></span><span class="line"><span class="cl">  `+sso+:-`                 `.-/+oso:    GPU: Intel HD Graphics 620 
+</span></span><span class="line"><span class="cl"> `++:.                           `-/+/   Memory: 1608MiB / 7881MiB 
+</span></span><span class="line"><span class="cl"> .`                                 `/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>再看问题：Gnome系软件（gedit, baobab, nautilus等）启动龟速，通常需要等待10-30s.</p>
 <p>思考：我看你就是在为难我，我压根不知道问题出在哪里。大概就是几天前更新系统的时候看到需要更新很多gnome的包，心想着我都不用gnome了，留这么多gnome的包干吗呢？于是删了很多，这一删我以往的经验就告诉我可能会出什么幺蛾子。果不其然，这些天有时候浏览器调用文件管理器（gnome家nautilus）的时候，非常之满，我一度以为死机。细看来又不是，等了十几秒文件窗口忽然蹦出来，怎么这么慢！</p>
@@ -213,10 +213,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ journalctl --since<span class="o">=</span>2020-3-25
-...
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ journalctl --since<span class="o">=</span>2020-3-25
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最终我发现这几行有嫌疑：</p>
 <div class="highlight"><div class="chroma">
@@ -228,12 +228,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">4月 01 13:15:01 MiBook-Air xdg-desktop-portal-gtk[139187]: Unable to init server: 无法连接：拒绝连接
-4月 01 13:15:01 MiBook-Air xdg-desktop-por[139187]: cannot open display: 
-4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Main process exited, code=exited, status=1/FAILURE
-4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Failed with result &#39;exit-code&#39;.
-4月 01 13:15:01 MiBook-Air systemd[520]: Failed to start Portal service (GTK+/GNOME implementation).
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">4月 01 13:15:01 MiBook-Air xdg-desktop-portal-gtk[139187]: Unable to init server: 无法连接：拒绝连接
+</span></span><span class="line"><span class="cl">4月 01 13:15:01 MiBook-Air xdg-desktop-por[139187]: cannot open display: 
+</span></span><span class="line"><span class="cl">4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Main process exited, code=exited, status=1/FAILURE
+</span></span><span class="line"><span class="cl">4月 01 13:15:01 MiBook-Air systemd[520]: xdg-desktop-portal-gtk.service: Failed with result &#39;exit-code&#39;.
+</span></span><span class="line"><span class="cl">4月 01 13:15:01 MiBook-Air systemd[520]: Failed to start Portal service (GTK+/GNOME implementation).
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>结果一查，果然查到一篇相关的帖子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我的问题和他一模一样。结果就解决了，就解决了，解决了，决了，了！</p>
 <p>问题的原因其实我不太懂，谨此写下折腾记录。</p>
@@ -349,7 +349,7 @@
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -366,7 +366,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

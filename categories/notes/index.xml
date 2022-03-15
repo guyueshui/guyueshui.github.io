@@ -6,7 +6,16 @@
     <description>Recent content in Notes on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Dec 2021 12:55:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 学习笔记</title>
+      <link>https://guyueshui.github.io/post/cpp-learn/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
+      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
+    </item>
+    
     <item>
       <title>A point of python metaclass</title>
       <link>https://guyueshui.github.io/post/python-metaclass/</link>
@@ -32,15 +41,6 @@
       
       <guid>https://guyueshui.github.io/post/python-iterables/</guid>
       <description>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己</description>
-    </item>
-    
-    <item>
-      <title>毕业总结</title>
-      <link>https://guyueshui.github.io/post/graduate-summary/</link>
-      <pubDate>Sat, 08 Aug 2020 23:47:48 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/graduate-summary/</guid>
-      <description>盼望着，盼望着，终于毕业了。遥想着第一批毕业的同学，他们5月22日完成答辩，开始了成为社畜前最后的快乐时光。但今年的疫情让许多人取消了毕业旅</description>
     </item>
     
     <item>
@@ -126,15 +126,6 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
       
       <guid>https://guyueshui.github.io/post/concurrent-programming/</guid>
       <description>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43; 学习笔记</title>
-      <link>https://guyueshui.github.io/post/cpp-learn/</link>
-      <pubDate>Wed, 28 Aug 2019 22:52:32 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
-      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
     </item>
     
     <item>

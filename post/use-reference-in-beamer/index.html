@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/use-reference-in-beamer/" />
@@ -187,19 +187,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bib" data-lang="bib"><span class="c">%%% ./mybeamer.bib</span>
-
-<span class="nc">@article</span><span class="p">{</span><span class="nl">shamir2010learning</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">=</span><span class="s">{Learning and generalization with the information bottleneck}</span><span class="p">,</span>
-  <span class="na">author</span><span class="p">=</span><span class="s">{Shamir, Ohad and Sabato, Sivan and Tishby, Naftali}</span><span class="p">,</span>
-  <span class="na">journal</span><span class="p">=</span><span class="s">{Theoretical Computer Science}</span><span class="p">,</span>
-  <span class="na">volume</span><span class="p">=</span><span class="s">{411}</span><span class="p">,</span>
-  <span class="na">number</span><span class="p">=</span><span class="s">{29-30}</span><span class="p">,</span>
-  <span class="na">pages</span><span class="p">=</span><span class="s">{2696--2711}</span><span class="p">,</span>
-  <span class="na">year</span><span class="p">=</span><span class="s">{2010}</span><span class="p">,</span>
-  <span class="na">publisher</span><span class="p">=</span><span class="s">{Elsevier}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bib" data-lang="bib"><span class="line"><span class="cl"><span class="c">%%% ./mybeamer.bib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nc">@article</span><span class="p">{</span><span class="nl">shamir2010learning</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">title</span><span class="p">=</span><span class="s">{Learning and generalization with the information bottleneck}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">author</span><span class="p">=</span><span class="s">{Shamir, Ohad and Sabato, Sivan and Tishby, Naftali}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">journal</span><span class="p">=</span><span class="s">{Theoretical Computer Science}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">volume</span><span class="p">=</span><span class="s">{411}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">number</span><span class="p">=</span><span class="s">{29-30}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">pages</span><span class="p">=</span><span class="s">{2696--2711}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">year</span><span class="p">=</span><span class="s">{2010}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">publisher</span><span class="p">=</span><span class="s">{Elsevier}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>Note: 关于 bibtex 引用格式的获取，直接上 <a href="https://scholar.google.com/">Google Scholar</a> 或者<a href="https://xueshu.baidu.com/">百度学术</a> 搜所引文题目，导出为 bibtex 格式。</p>
@@ -225,23 +225,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">%%% ./mybeamer.tex
-</span><span class="c"></span>
-<span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span>
-<span class="c">% Removes icon in bibliography
-</span><span class="c"></span><span class="k">\setbeamertemplate</span><span class="nb">{</span>bibliography item<span class="nb">}</span>[text]
-...
-<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-...
-<span class="c">%%% end of your presentation slides
-</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[allowframebreaks]<span class="nb">{</span>References<span class="nb">}</span>
-	<span class="c">%\bibliographystyle{plain}
-</span><span class="c"></span>	<span class="k">\bibliographystyle</span><span class="nb">{</span>amsalpha<span class="nb">}</span>
-	<span class="c">%\bibliography{mybeamer} also works
-</span><span class="c"></span>	<span class="k">\bibliography</span><span class="nb">{</span>./mybeamer.bib<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="c">%%% ./mybeamer.tex
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="c">% Removes icon in bibliography
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\setbeamertemplate</span><span class="nb">{</span>bibliography item<span class="nb">}</span>[text]
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="c">%%% end of your presentation slides
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[allowframebreaks]<span class="nb">{</span>References<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c">%\bibliographystyle{plain}
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>	<span class="k">\bibliographystyle</span><span class="nb">{</span>amsalpha<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c">%\bibliography{mybeamer} also works
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>	<span class="k">\bibliography</span><span class="nb">{</span>./mybeamer.bib<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>Note: bib 文件可以不于 tex 文件同名，作相应改动即可。</p>
@@ -253,8 +253,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pdflatex mybeamer.tex
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pdflatex mybeamer.tex
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样会在当前目录产生一个<code>.aux</code>文件。然后使用<code>bibtex</code>编译该文件，</p>
 <div class="highlight"><div class="chroma">
@@ -262,8 +262,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">bibtex mybeamer
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bibtex mybeamer
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后再用<code>pdflatex</code>编译一遍。此时应该会出现应用错误，小问号等警告。此时<strong>再用<code>pdflatex</code>编译一遍</strong>即可。如果出现了其他错误，删掉所有 <code>.bbl, .aux</code> 文件，重复以上操作。</p>
 <p>总结一下四个步骤：</p>
@@ -384,7 +384,7 @@
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -401,7 +401,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

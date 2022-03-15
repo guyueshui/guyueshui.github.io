@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/concurrent-programming/" />
@@ -204,18 +204,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">            main  thread1
-              +      +
-              |      |
-              |      |
-              |      |
-              |      |
-thread1.join()+------+
-              |
-              |
-              |
-              v
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">            main  thread1
+</span></span><span class="line"><span class="cl">              +      +
+</span></span><span class="line"><span class="cl">              |      |
+</span></span><span class="line"><span class="cl">              |      |
+</span></span><span class="line"><span class="cl">              |      |
+</span></span><span class="line"><span class="cl">              |      |
+</span></span><span class="line"><span class="cl">thread1.join()+------+
+</span></span><span class="line"><span class="cl">              |
+</span></span><span class="line"><span class="cl">              |
+</span></span><span class="line"><span class="cl">              |
+</span></span><span class="line"><span class="cl">              v
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果某线程申请占有互斥量时，该互斥量被其他线程占有，则会引起该线程阻塞。</p>
 <p>一般来说线程安全性很难保证，但只有两种操作可以保证线程安全性，</p>
@@ -304,8 +304,8 @@ thread1.join()+------+
             <span class="prev-text nav-default">设计模式学习笔记</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/cpp-learn/">
-            <span class="next-text nav-default">C&#43;&#43; 学习笔记</span>
+        <a class="next" href="/post/blog-trans/">
+            <span class="next-text nav-default">博客迁移记录</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -363,7 +363,7 @@ thread1.join()+------+
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -380,7 +380,7 @@ thread1.join()+------+
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Dec 2021 12:55:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 学习笔记</title>
+      <link>https://guyueshui.github.io/post/cpp-learn/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
+      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
+    </item>
+    
     <item>
       <title>A point of python metaclass</title>
       <link>https://guyueshui.github.io/post/python-metaclass/</link>
@@ -32,15 +41,6 @@
       
       <guid>https://guyueshui.github.io/post/python-iterables/</guid>
       <description>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己</description>
-    </item>
-    
-    <item>
-      <title>毕业总结</title>
-      <link>https://guyueshui.github.io/post/graduate-summary/</link>
-      <pubDate>Sat, 08 Aug 2020 23:47:48 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/graduate-summary/</guid>
-      <description>盼望着，盼望着，终于毕业了。遥想着第一批毕业的同学，他们5月22日完成答辩，开始了成为社畜前最后的快乐时光。但今年的疫情让许多人取消了毕业旅</description>
     </item>
     
     <item>
@@ -165,15 +165,6 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
     </item>
     
     <item>
-      <title>C&#43;&#43; 学习笔记</title>
-      <link>https://guyueshui.github.io/post/cpp-learn/</link>
-      <pubDate>Wed, 28 Aug 2019 22:52:32 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
-      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
-    </item>
-    
-    <item>
       <title>博客迁移记录</title>
       <link>https://guyueshui.github.io/post/blog-trans/</link>
       <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>
@@ -195,8 +186,8 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;g++ main.cpp -g -O0
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g++ main.cpp -g -O0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
     </item>
@@ -316,17 +307,17 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsb_release -a              &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
-head -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; /etc/issue        &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
-cat /proc/version           &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息&lt;/span&gt;
-uname -a                    &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息、CPU 信息&lt;/span&gt;
-cat /proc/cpuinfo           &lt;span class=&#34;c1&#34;&gt;# 查看 CPU 信息&lt;/span&gt;
-hostname                    &lt;span class=&#34;c1&#34;&gt;# 查看计算机名字&lt;/span&gt;
-env                         &lt;span class=&#34;c1&#34;&gt;# 列出环境变量&lt;/span&gt;
-lsmod                       &lt;span class=&#34;c1&#34;&gt;# 列出加载的内核模块&lt;/span&gt;
-uptime                      &lt;span class=&#34;c1&#34;&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
-cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsb_release -a              &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;head -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; /etc/issue        &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/version           &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uname -a                    &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息、CPU 信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/cpuinfo           &lt;span class=&#34;c1&#34;&gt;# 查看 CPU 信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hostname                    &lt;span class=&#34;c1&#34;&gt;# 查看计算机名字&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;env                         &lt;span class=&#34;c1&#34;&gt;# 列出环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsmod                       &lt;span class=&#34;c1&#34;&gt;# 列出加载的内核模块&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uptime                      &lt;span class=&#34;c1&#34;&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/" />
@@ -177,10 +177,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ fastboot oem get-bootinfo
-    1. Bootloader Lock State : UNLOCKED =&gt; 表示已经解锁，可以刷机
-    2. Bootloader Lock State : LOCKED =&gt; 表示未解锁，自行百度设备解锁方法
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ fastboot oem get-bootinfo
+</span></span><span class="line"><span class="cl">    1. Bootloader Lock State : UNLOCKED =&gt; 表示已经解锁，可以刷机
+</span></span><span class="line"><span class="cl">    2. Bootloader Lock State : LOCKED =&gt; 表示未解锁，自行百度设备解锁方法
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其二，如果手机还是可用的。进入开发者选项查看，下图是一个已解锁的例子：</p>
 <img src="https://i.loli.net/2019/01/06/5c30ebe291246.png" width="300" alt="手机开发者模式" />
@@ -202,11 +202,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ adb --version
-Android Debug Bridge version 1.0.40
-Version 9.0.0_r3
-Installed as /usr/bin/adb
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ adb --version
+</span></span><span class="line"><span class="cl">Android Debug Bridge version 1.0.40
+</span></span><span class="line"><span class="cl">Version 9.0.0_r3
+</span></span><span class="line"><span class="cl">Installed as /usr/bin/adb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>若没有配置，安装软件包：<code>pacman -S android-tools</code> (Arch Linux ver.) Windows 下载对应的工具包，解压即可。不过需要配置一下路径，或者直接把所有的文件都弄到解压的文件夹下操作。</p>
 <p>另说一下驱动，在 Linux 和 Mac OS 下，均不需要考虑驱动的问题。在 Windows 下，需要在网上找到相应设备的驱动，安装好之后，才可以用 <code>adb</code> 进行刷机。这里一个显式的标志是：</p>
@@ -231,9 +231,9 @@ Installed as /usr/bin/adb
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ adb devices
-    xxxxxx device
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ adb devices
+</span></span><span class="line"><span class="cl">    xxxxxx device
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>会列出所有已连接的 Android 设备。在高版本的 Android 系统中应该会弹出一个对话框询问是否允许电脑调试本机，点击一律允许即可。</p>
 <p>确保手机已经解锁，开机状态连接电脑。在命令行输入</p>
@@ -242,8 +242,8 @@ Installed as /usr/bin/adb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ adb reboot bootloader
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ adb reboot bootloader
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>手机会重启进入 bootloader，也就是 fastboot 模式。</p>
 <p>确保执行目录里面有之前下载的 <code>twrp-xxx.img</code> 文件，命令行输入</p>
@@ -252,8 +252,8 @@ Installed as /usr/bin/adb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ fastboot flash recovery twrp-xxx.img
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ fastboot flash recovery twrp-xxx.img
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>即完成第三方 Rec 的刷入。</p>
 <blockquote>
@@ -266,8 +266,8 @@ Installed as /usr/bin/adb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ fastboot reboot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ fastboot reboot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>重启手机，然后同时按住<code>电源键 + 音量下键</code>（有些手机不一样，自行摸索） 进入 rec. 也可以等开机后输入</p>
 <div class="highlight"><div class="chroma">
@@ -275,8 +275,8 @@ Installed as /usr/bin/adb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ adb reboot recovery
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ adb reboot recovery
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>进入rec.</p>
 <p><strong>刷机</strong></p>
@@ -289,11 +289,11 @@ Installed as /usr/bin/adb
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">system                  # 系统分区
-data                    # 数据分区：应用数据（设置，帐号，习惯等）
-cache/davik cache       # 缓存分区：应用缓存，系统缓存
-internal storage        # 个人资料存储：包含照片视频音乐等所有个人资料
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">system                  # 系统分区
+</span></span><span class="line"><span class="cl">data                    # 数据分区：应用数据（设置，帐号，习惯等）
+</span></span><span class="line"><span class="cl">cache/davik cache       # 缓存分区：应用缓存，系统缓存
+</span></span><span class="line"><span class="cl">internal storage        # 个人资料存储：包含照片视频音乐等所有个人资料
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>一般 <code>internal storage</code> 是不会动的，把其他三个分区清掉。</p>
 <p>然后安装刷机包，找到事先放好的刷机包位置，刷入，重启！</p>
@@ -331,13 +331,13 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ lsusb
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 004: ID 8087:0a2b Intel Corp. 
-Bus 001 Device 003: ID 04f3:0c1a Elan Microelectronics Corp. 
-Bus 001 Device 002: ID 04f2:b5a3 Chicony Electronics Co., Ltd 
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ lsusb
+</span></span><span class="line"><span class="cl">Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+</span></span><span class="line"><span class="cl">Bus 001 Device 004: ID 8087:0a2b Intel Corp. 
+</span></span><span class="line"><span class="cl">Bus 001 Device 003: ID 04f3:0c1a Elan Microelectronics Corp. 
+</span></span><span class="line"><span class="cl">Bus 001 Device 002: ID 04f2:b5a3 Chicony Electronics Co., Ltd 
+</span></span><span class="line"><span class="cl">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>连接手机之后：</p>
 <div class="highlight"><div class="chroma">
@@ -351,14 +351,14 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ lsusb
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 004: ID 8087:0a2b Intel Corp. 
-Bus 001 Device 003: ID 04f3:0c1a Elan Microelectronics Corp. 
-Bus 001 Device 002: ID 04f2:b5a3 Chicony Electronics Co., Ltd 
-Bus 001 Device 041: ID 2717:ff48  
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ lsusb
+</span></span><span class="line"><span class="cl">Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+</span></span><span class="line"><span class="cl">Bus 001 Device 004: ID 8087:0a2b Intel Corp. 
+</span></span><span class="line"><span class="cl">Bus 001 Device 003: ID 04f3:0c1a Elan Microelectronics Corp. 
+</span></span><span class="line"><span class="cl">Bus 001 Device 002: ID 04f2:b5a3 Chicony Electronics Co., Ltd 
+</span></span><span class="line"><span class="cl">Bus 001 Device 041: ID 2717:ff48  
+</span></span><span class="line"><span class="cl">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样就可以判断该设备的供应商 ID 为 <strong>2717</strong>.</p>
 <p>然后重启 <code>udev</code> 服务： <code>udevadm control --reload</code>（Arch Linux ver.）</p>
@@ -476,7 +476,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -493,7 +493,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

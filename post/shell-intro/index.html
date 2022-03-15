@@ -25,7 +25,7 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/shell-intro/" />
@@ -209,9 +209,9 @@ Just look an example:</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *
-Desktop Documents ls-output.txt Music Pictures Public Templates Videos
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *
+</span></span><span class="line"><span class="cl">Desktop Documents ls-output.txt Music Pictures Public Templates Videos
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Why not display an asterisk? That&rsquo;s <strong>expansion</strong>! <code>*</code> <em>expands</em> to all files in
 current directory.</p>
@@ -235,22 +235,22 @@ current directory.</p>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls
-Desktop ls-output.txt Pictures Templates
-Documents Music Public Videos
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> D*
-Desktop Documents
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *s
-Documents Pictures Templates Videos
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">[[</span>:upper:<span class="o">]]</span>*
-Desktop Documents Music Pictures Public Templates Videos
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> /usr/*/share
-/usr/kerberos/share /usr/local/share
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls
+</span></span><span class="line"><span class="cl">Desktop ls-output.txt Pictures Templates
+</span></span><span class="line"><span class="cl">Documents Music Public Videos
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> D*
+</span></span><span class="line"><span class="cl">Desktop Documents
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> *s
+</span></span><span class="line"><span class="cl">Documents Pictures Templates Videos
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">[[</span>:upper:<span class="o">]]</span>*
+</span></span><span class="line"><span class="cl">Desktop Documents Music Pictures Public Templates Videos
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> /usr/*/share
+</span></span><span class="line"><span class="cl">/usr/kerberos/share /usr/local/share
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="tilde-expansion">Tilde expansion</h3>
 <p>As you know, <code>~</code> has a special meaning of the home directory of current user.</p>
@@ -263,12 +263,12 @@ Desktop Documents Music Pictures Public Templates Videos
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~
-/home/me
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~foo
-/home/foo
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~
+</span></span><span class="line"><span class="cl">/home/me
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> ~foo
+</span></span><span class="line"><span class="cl">/home/foo
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="arithmetic-expansion">Arithmetic expansion</h3>
 <p>The shell allows arithmetic to be performed by expansion. This allows us to
@@ -282,12 +282,12 @@ use the shell prompt as a calculator:</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$((</span><span class="m">2</span> <span class="o">+</span> <span class="m">2</span><span class="k">))</span>
-<span class="m">4</span>
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> with <span class="k">$((</span><span class="m">5</span><span class="o">%</span><span class="m">2</span><span class="k">))</span> left over.
-with <span class="m">1</span> left over.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$((</span><span class="m">2</span> <span class="o">+</span> <span class="m">2</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> with <span class="k">$((</span><span class="m">5</span><span class="o">%</span><span class="m">2</span><span class="k">))</span> left over.
+</span></span><span class="line"><span class="cl">with <span class="m">1</span> left over.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Note: Arithmetic expansion supports only integers (whole numbers, no
 decimals).</p>
@@ -298,9 +298,9 @@ decimals).</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Front-<span class="o">{</span>A,B,C<span class="o">}</span>-Back
-Front-A-Back Front-B-Back Front-C-Back
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Front-<span class="o">{</span>A,B,C<span class="o">}</span>-Back
+</span></span><span class="line"><span class="cl">Front-A-Back Front-B-Back Front-C-Back
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Patterns to be brace expanded may contain a leading portion called a
 <em>preamble</em> and a trailing portion called a <em>postscript</em>. The brace expression
@@ -319,15 +319,15 @@ whitespace.  Here is an example using a range of integers:</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Number_<span class="o">{</span>1..5<span class="o">}</span>
-Number_1 Number_2 Number_3 Number_4 Number_5
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">{</span>Z..A<span class="o">}</span>
-Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> a<span class="o">{</span>A<span class="o">{</span>1,2<span class="o">}</span>,B<span class="o">{</span>3,4<span class="o">}}</span>b
-aA1b aA2b aB3b aB4b
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> Number_<span class="o">{</span>1..5<span class="o">}</span>
+</span></span><span class="line"><span class="cl">Number_1 Number_2 Number_3 Number_4 Number_5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="o">{</span>Z..A<span class="o">}</span>
+</span></span><span class="line"><span class="cl">Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> a<span class="o">{</span>A<span class="o">{</span>1,2<span class="o">}</span>,B<span class="o">{</span>3,4<span class="o">}}</span>b
+</span></span><span class="line"><span class="cl">aA1b aA2b aB3b aB4b
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="command-substitution">Command substitution</h3>
 <p>Command substitution allows us to use the output of a command as an
@@ -341,12 +341,12 @@ expansion:</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>ls<span class="k">)</span>
-Desktop Documents ls-output.txt Music Pictures Public Templates Videos
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="k">$(</span>which cp<span class="k">)</span>
--rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> 2012-12-05 08:58 /bin/cp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>ls<span class="k">)</span>
+</span></span><span class="line"><span class="cl">Desktop Documents ls-output.txt Music Pictures Public Templates Videos
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="k">$(</span>which cp<span class="k">)</span>
+</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> 2012-12-05 08:58 /bin/cp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>There is an alternative syntax for command substitution in older shell
 programs that is also supported in bash . It uses back quotes instead
@@ -357,9 +357,9 @@ of the dollar sign and parentheses:</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="sb">`</span>which cp<span class="sb">`</span>
--rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> 2012-12-05 08:58 /bin/cp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -l <span class="sb">`</span>which cp<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> root root <span class="m">71516</span> 2012-12-05 08:58 /bin/cp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="quoting">Quoting</h2>
 <p>Usage of single or double quotes in shell commands is confusing for me,
@@ -385,24 +385,24 @@ at least. Hey, take a look:</p>
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> are you     ok
-are you ok
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;are you     ok&#39;</span>
-are you     ok
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;are you     ok&#34;</span>
-are you     ok
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> The total is <span class="nv">$100</span>.00
-The total is .00
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;The total is $100.00&#39;</span>
-The total is <span class="nv">$100</span>.00
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;The total is </span><span class="nv">$100</span><span class="s2">.00&#34;</span>
-The total is .00
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> are you     ok
+</span></span><span class="line"><span class="cl">are you ok
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;are you     ok&#39;</span>
+</span></span><span class="line"><span class="cl">are you     ok
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;are you     ok&#34;</span>
+</span></span><span class="line"><span class="cl">are you     ok
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> The total is <span class="nv">$100</span>.00
+</span></span><span class="line"><span class="cl">The total is .00
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;The total is $100.00&#39;</span>
+</span></span><span class="line"><span class="cl">The total is <span class="nv">$100</span>.00
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;The total is </span><span class="nv">$100</span><span class="s2">.00&#34;</span>
+</span></span><span class="line"><span class="cl">The total is .00
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Isn&rsquo;t that confusing? Fortunately, the shell provides a mechanism called
 quoting to selectively suppress unwanted expansions.</p>
@@ -433,18 +433,18 @@ substitution. Consider the following:</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>cal<span class="k">)</span>
-February <span class="m">2012</span> Su Mo Tu We Th Fr Sa <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span> <span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span> <span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span>
-
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>cal<span class="k">)</span><span class="s2">&#34;</span>
-   February <span class="m">2012</span>
-Su Mo Tu We Th Fr Sa
-             <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
- <span class="m">5</span>  <span class="m">6</span>  <span class="m">7</span>  <span class="m">8</span>  <span class="m">9</span> <span class="m">10</span> <span class="m">11</span>
-<span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span>
-<span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span>
-<span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$(</span>cal<span class="k">)</span>
+</span></span><span class="line"><span class="cl">February <span class="m">2012</span> Su Mo Tu We Th Fr Sa <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span> <span class="m">11</span> <span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span> <span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>cal<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">   February <span class="m">2012</span>
+</span></span><span class="line"><span class="cl">Su Mo Tu We Th Fr Sa
+</span></span><span class="line"><span class="cl">             <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+</span></span><span class="line"><span class="cl"> <span class="m">5</span>  <span class="m">6</span>  <span class="m">7</span>  <span class="m">8</span>  <span class="m">9</span> <span class="m">10</span> <span class="m">11</span>
+</span></span><span class="line"><span class="cl"><span class="m">12</span> <span class="m">13</span> <span class="m">14</span> <span class="m">15</span> <span class="m">16</span> <span class="m">17</span> <span class="m">18</span>
+</span></span><span class="line"><span class="cl"><span class="m">19</span> <span class="m">20</span> <span class="m">21</span> <span class="m">22</span> <span class="m">23</span> <span class="m">24</span> <span class="m">25</span>
+</span></span><span class="line"><span class="cl"><span class="m">26</span> <span class="m">27</span> <span class="m">28</span> <span class="m">29</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In the first instance, the unquoted command substitution resulted in
 a command line containing 38 arguments; in the second, the result was a
@@ -463,13 +463,13 @@ a comparison of unquoted, double quotes, and single quotes:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
-text /home/me/ls-output.txt a b foo <span class="m">4</span> me
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;text ~/*.txt {a,b} </span><span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span><span class="s2"> </span><span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&#34;</span>
-text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> foo <span class="m">4</span> me
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER&#39;</span>
-text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
+</span></span><span class="line"><span class="cl">text /home/me/ls-output.txt a b foo <span class="m">4</span> me
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&#34;text ~/*.txt {a,b} </span><span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span><span class="s2"> </span><span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> foo <span class="m">4</span> me
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="s1">&#39;text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER&#39;</span>
+</span></span><span class="line"><span class="cl">text ~/*.txt <span class="o">{</span>a,b<span class="o">}</span> <span class="k">$(</span><span class="nb">echo</span> foo<span class="k">)</span> <span class="k">$((</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="k">))</span> <span class="nv">$USER</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>As we can see, with each succeeding level of quoting, more and more
 expansions are suppressed.</p>
@@ -488,13 +488,13 @@ expansions are suppressed.</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">a</span><span class="o">=</span>z                 <span class="c1"># Assign the string &#34;z&#34; to variable a.</span>
-<span class="nv">b</span><span class="o">=</span><span class="s2">&#34;a string&#34;</span>        <span class="c1"># Embedded spaces must be within quotes.</span>
-<span class="nv">c</span><span class="o">=</span><span class="s2">&#34;a string and </span><span class="nv">$b</span><span class="s2">&#34;</span> <span class="c1"># Other expansions such as variables can be expanded into the assignment.</span>
-<span class="nv">d</span><span class="o">=</span><span class="k">$(</span>ls -l foo.txt<span class="k">)</span>  <span class="c1"># Results of a command.</span>
-<span class="nv">e</span><span class="o">=</span><span class="k">$((</span><span class="m">5</span> <span class="o">*</span> <span class="m">7</span><span class="k">))</span>        <span class="c1"># Arithmetic expansion.</span>
-<span class="nv">f</span><span class="o">=</span><span class="s2">&#34;\t\ta string\n&#34;</span>  <span class="c1"># Escape sequences such as tabs and newlines.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">a</span><span class="o">=</span>z                 <span class="c1"># Assign the string &#34;z&#34; to variable a.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">b</span><span class="o">=</span><span class="s2">&#34;a string&#34;</span>        <span class="c1"># Embedded spaces must be within quotes.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">c</span><span class="o">=</span><span class="s2">&#34;a string and </span><span class="nv">$b</span><span class="s2">&#34;</span> <span class="c1"># Other expansions such as variables can be expanded into the assignment.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">d</span><span class="o">=</span><span class="k">$(</span>ls -l foo.txt<span class="k">)</span>  <span class="c1"># Results of a command.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">e</span><span class="o">=</span><span class="k">$((</span><span class="m">5</span> <span class="o">*</span> <span class="m">7</span><span class="k">))</span>        <span class="c1"># Arithmetic expansion.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">f</span><span class="o">=</span><span class="s2">&#34;\t\ta string\n&#34;</span>  <span class="c1"># Escape sequences such as tabs and newlines.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="here-documents">&ldquo;Here documents&rdquo;</h2>
 <p>A here document is an additional form of I/O redirection in which we
@@ -507,10 +507,10 @@ of a command. It works like this:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> <span class="s">&lt;&lt; token
-</span><span class="s">text...
-</span><span class="s">token</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> <span class="s">&lt;&lt; token
+</span></span></span><span class="line"><span class="cl"><span class="s">text...
+</span></span></span><span class="line"><span class="cl"><span class="s">token</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where command is the name of a command that accepts standard input and
 token is a string used to indicate the end of the embedded text. For
@@ -529,17 +529,17 @@ example, you</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="s">&lt;&lt; _EOF_
-</span><span class="s">heredoc&gt; are you
-</span><span class="s">heredoc&gt; ok?
-</span><span class="s">heredoc&gt; Yes i am.
-</span><span class="s">heredoc&gt; And you?
-</span><span class="s">heredoc&gt; _EOF_</span>
-are you
-ok?
-Yes i am.
-And you?
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat <span class="s">&lt;&lt; _EOF_
+</span></span></span><span class="line"><span class="cl"><span class="s">heredoc&gt; are you
+</span></span></span><span class="line"><span class="cl"><span class="s">heredoc&gt; ok?
+</span></span></span><span class="line"><span class="cl"><span class="s">heredoc&gt; Yes i am.
+</span></span></span><span class="line"><span class="cl"><span class="s">heredoc&gt; And you?
+</span></span></span><span class="line"><span class="cl"><span class="s">heredoc&gt; _EOF_</span>
+</span></span><span class="line"><span class="cl">are you
+</span></span><span class="line"><span class="cl">ok?
+</span></span><span class="line"><span class="cl">Yes i am.
+</span></span><span class="line"><span class="cl">And you?
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Namely, you just use a custom EOF indicator of the input to that command.
 So what’s the advantage of using a here document? It’s mostly the same as
@@ -561,18 +561,18 @@ command-line example:</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nv">foo</span><span class="o">=</span><span class="s2">&#34;some text&#34;</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ cat <span class="s">&lt;&lt; _EOF_
-</span><span class="s">&gt; $foo
-</span><span class="s">&gt; &#34;$foo&#34;
-</span><span class="s">&gt; &#39;$foo&#39;
-</span><span class="s">&gt; \$foo
-</span><span class="s">&gt; _EOF_</span>
-some text
-<span class="s2">&#34;some text&#34;</span>
-<span class="s1">&#39;some text&#39;</span>
-<span class="nv">$foo</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nv">foo</span><span class="o">=</span><span class="s2">&#34;some text&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ cat <span class="s">&lt;&lt; _EOF_
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; $foo
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; &#34;$foo&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; &#39;$foo&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; \$foo
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; _EOF_</span>
+</span></span><span class="line"><span class="cl">some text
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;some text&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;some text&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$foo</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>As we can see, the shell pays no attention to the quotation marks. It
 treats them as ordinary characters. This allows us to embed quotes freely within a here document.</p>
@@ -593,17 +593,17 @@ document to be indented, which can improve readability:</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="s">&lt;&lt;- E_o_F
-</span><span class="s">heredocd&gt; no indent
-</span><span class="s">heredocd&gt;    indent
-</span><span class="s">heredocd&gt;         hiahia
-</span><span class="s">heredocd&gt;         E_o_F</span>
-heredocd&gt; E_o_F
-no indent
-   indent
-        hiahia
-        E_o_F
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat <span class="s">&lt;&lt;- E_o_F
+</span></span></span><span class="line"><span class="cl"><span class="s">heredocd&gt; no indent
+</span></span></span><span class="line"><span class="cl"><span class="s">heredocd&gt;    indent
+</span></span></span><span class="line"><span class="cl"><span class="s">heredocd&gt;         hiahia
+</span></span></span><span class="line"><span class="cl"><span class="s">heredocd&gt;         E_o_F</span>
+</span></span><span class="line"><span class="cl">heredocd&gt; E_o_F
+</span></span><span class="line"><span class="cl">no indent
+</span></span><span class="line"><span class="cl">   indent
+</span></span><span class="line"><span class="cl">        hiahia
+</span></span><span class="line"><span class="cl">        E_o_F
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="flow-control">Flow control</h2>
 <h3 id="using-if">Using <code>if</code></h3>
@@ -619,14 +619,14 @@ no indent
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">if</span> commands<span class="p">;</span> <span class="k">then</span>
-  commands
-<span class="o">[</span><span class="k">elif</span> commands<span class="p">;</span> <span class="k">then</span>
-  commands...<span class="o">]</span>
-<span class="o">[</span><span class="k">else</span>
-  commands<span class="o">]</span>
-<span class="k">fi</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> commands<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  commands
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="k">elif</span> commands<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  commands...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  commands<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where commands is a list of commands. This may be a little confusing at
 first glance, &ldquo;if&rdquo; should judge a condition rather than a series of
@@ -650,15 +650,15 @@ we see it in action:</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /usr/bin
-/usr/bin
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
-<span class="m">0</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /bin/usr
-ls: cannot access /bin/usr: No such file or directory
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
-<span class="m">2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /usr/bin
+</span></span><span class="line"><span class="cl">/usr/bin
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ ls -d /bin/usr
+</span></span><span class="line"><span class="cl">ls: cannot access /bin/usr: No such file or directory
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+</span></span><span class="line"><span class="cl"><span class="m">2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The shell provides two extremely simple built-in commands that do
 nothing except terminate with either a 0 or 1 exit status. The true
@@ -674,13 +674,13 @@ executes unsuccessfully:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">true</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
-<span class="m">0</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">false</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
-<span class="m">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+</span></span><span class="line"><span class="cl"><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="using-test">Using <code>test</code></h3>
 <p>By far, the command used most frequently with if is <code>test</code>. The test
@@ -693,10 +693,10 @@ equivalent forms:</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">test</span> expression
-<span class="c1"># or</span>
-<span class="o">[</span> expression <span class="o">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">test</span> expression
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> expression <span class="o">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where &ldquo;expression&rdquo; is an expression that is evaluated as either true or
 false. The test command returns an exit status of 0 when the expression
@@ -833,8 +833,8 @@ enhanced replacement for <code>test</code> . It uses the following syntax:</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[[</span> expression <span class="o">]]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[[</span> expression <span class="o">]]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where expression is an expression that evaluates to either a true or false
 result. The [[ ]] command is very similar to test (it supports all of its
@@ -844,8 +844,8 @@ expressions) but adds an important new string expression:</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">string</span> <span class="o">=</span>~ regex
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">string</span> <span class="o">=</span>~ regex
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>which returns true if <code>string</code> is matched by the extended regular expression
 <code>regex</code>.</p>
@@ -860,11 +860,11 @@ results in true if the result of the arithmetic evaluation is non-zero.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>1<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
-It is true.
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>0<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
-<span class="o">[</span>me@linuxbox ~<span class="o">]</span>$<span class="o">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>1<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">It is true.
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$ <span class="k">if</span> <span class="o">((</span>0<span class="o">))</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;It is true.&#34;</span><span class="p">;</span> <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>me@linuxbox ~<span class="o">]</span>$<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="shell-function">Shell function</h2>
 <p>Shell functions must be declared before using it. There are two ways to
@@ -882,16 +882,16 @@ define a shell function:</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">function</span> name <span class="o">{</span>
-  commands
-  <span class="k">return</span>
-<span class="o">}</span>
-
-name <span class="o">()</span> <span class="o">{</span>
-  commands
-  <span class="k">return</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">function</span> name <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  commands
+</span></span><span class="line"><span class="cl">  <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">name <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  commands
+</span></span><span class="line"><span class="cl">  <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="use-local-variables-in-shell-functions">Use local variables in shell functions</h3>
 <p>Local variables are accessible only within the shell function
@@ -924,30 +924,30 @@ terminates.</p>
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="c1"># local-vars: script to demonstrate local variables</span>
-
-<span class="nv">foo</span><span class="o">=</span><span class="m">0</span>   <span class="c1"># global</span>
-
-func1<span class="o">()</span>
-<span class="o">{</span>
-  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">1</span>   <span class="c1"># local</span>
-  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-
-func2<span class="o">()</span>
-<span class="o">{</span>
-  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">2</span>   <span class="c1"># local</span>
-  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
-func1
-<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
-func2
-<span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># local-vars: script to demonstrate local variables</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">foo</span><span class="o">=</span><span class="m">0</span>   <span class="c1"># global</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func1<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">1</span>   <span class="c1"># local</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func2<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">foo</span><span class="o">=</span><span class="m">2</span>   <span class="c1"># local</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;func1 foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">func1
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">func2
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;global foo = </span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -959,13 +959,13 @@ func2
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./local-vars
-global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
-func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">1</span>
-global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
-func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">2</span>
-global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./local-vars
+</span></span><span class="line"><span class="cl">global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">func1 <span class="nv">foo</span> <span class="o">=</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">global <span class="nv">foo</span> <span class="o">=</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We see that the assignment of values to the local variable foo within
 both shell functions has no effect on the value of foo defined outside the
@@ -1083,7 +1083,7 @@ functions.</p>
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -1100,7 +1100,7 @@ functions.</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

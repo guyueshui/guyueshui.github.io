@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -150,16 +150,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> __    __               __           __               ____    ___                       
-/\ \  /\ \             /\ \      __ /\ \             /\  _`\ /\_ \                      
-\ `\`\\/&#39;/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
- `\ `\ /&#39;/\ \/\ \  /&#39;___\ \  _ `\/\ \\/      /&#39;,__\   \ \  _ &lt;&#39;\ \ \   / __`\  /&#39;_ `\   
-   `\ \ \\ \ \_\ \/\ \__/\ \ \ \ \ \ \      /\__, `\   \ \ \L\ \\_\ \_/\ \L\ \/\ \L\ \  
-     \ \_\\/`____ \ \____\\ \_\ \_\ \_\     \/\____/    \ \____//\____\ \____/\ \____ \ 
-      \/_/ `/___/&gt; \/____/ \/_/\/_/\/_/      \/___/      \/___/ \/____/\/___/  \/___L\ \
-              /\___/                                                             /\____/
-              \/__/                                                              \_/__/ &#39;`
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> __    __               __           __               ____    ___                       
+</span></span><span class="line"><span class="cl">/\ \  /\ \             /\ \      __ /\ \             /\  _`\ /\_ \                      
+</span></span><span class="line"><span class="cl">\ `\`\\/&#39;/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
+</span></span><span class="line"><span class="cl"> `\ `\ /&#39;/\ \/\ \  /&#39;___\ \  _ `\/\ \\/      /&#39;,__\   \ \  _ &lt;&#39;\ \ \   / __`\  /&#39;_ `\   
+</span></span><span class="line"><span class="cl">   `\ \ \\ \ \_\ \/\ \__/\ \ \ \ \ \ \      /\__, `\   \ \ \L\ \\_\ \_/\ \L\ \/\ \L\ \  
+</span></span><span class="line"><span class="cl">     \ \_\\/`____ \ \____\\ \_\ \_\ \_\     \/\____/    \ \____//\____\ \____/\ \____ \ 
+</span></span><span class="line"><span class="cl">      \/_/ `/___/&gt; \/____/ \/_/\/_/\/_/      \/___/      \/___/ \/____/\/___/  \/___L\ \
+</span></span><span class="line"><span class="cl">              /\___/                                                             /\____/
+</span></span><span class="line"><span class="cl">              \/__/                                                              \_/__/ &#39;`
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此页内容多为软件使用技巧，绝大部分内容来自互联网，如有侵权，请与<a href="mailto:guyueshui002@gmail.com">我</a>联系。也有部分内容系自己使用软件所得的一些经验，仅供参考。</p>
 <h2 id="ffmepg">FFmepg</h2>
@@ -169,8 +169,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mkv out.gif
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mkv out.gif
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：加速播放。假设原视频 60 fps，输出降到 30 fps，丢掉一半的帧。</p>
 <div class="highlight"><div class="chroma">
@@ -178,8 +178,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">60</span> -i input.mkv -r <span class="m">30</span> out.gif
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -r <span class="m">60</span> -i input.mkv -r <span class="m">30</span> out.gif
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：不想丢帧。将输入扩大一倍，输出保留原样。</p>
 <div class="highlight"><div class="chroma">
@@ -187,8 +187,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ffmpeg -r <span class="m">120</span> -i input.mkv -r <span class="m">60</span> out.gif
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -r <span class="m">120</span> -i input.mkv -r <span class="m">60</span> out.gif
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：不想全转。从视频的第2秒开始，截取3秒转化为gif。</p>
 <div class="highlight"><div class="chroma">
@@ -197,9 +197,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif</span>
-ffmpeg -t <span class="m">3</span> -ss 00:00:02 -i input.mkv out-clip.gif
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif</span>
+</span></span><span class="line"><span class="cl">ffmpeg -t <span class="m">3</span> -ss 00:00:02 -i input.mkv out-clip.gif
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：控制转化质量。</p>
 <div class="highlight"><div class="chroma">
@@ -208,9 +208,9 @@ ffmpeg -t <span class="m">3</span> -ss 00:00:02 -i input.mkv out-clip.gif
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
-ffmpeg -i input.mkv -b 2048k out.gif
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mkv -b 2048k out.gif
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="imagemagick">ImageMagick</h2>
@@ -221,8 +221,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 1920x1080 src.jpg dst.jpg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">convert -resize 1920x1080 src.jpg dst.jpg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：按百分比转换大小。</p>
 <div class="highlight"><div class="chroma">
@@ -230,8 +230,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 50%x50% src.jpg dst.jpg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">convert -resize 50%x50% src.jpg dst.jpg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又：忽略原始宽高比。</p>
 <div class="highlight"><div class="chroma">
@@ -239,8 +239,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">convert -resize 300x300! src.jpg dst.jpg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">convert -resize 300x300! src.jpg dst.jpg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="shell">Shell</h2>
@@ -269,8 +269,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">command</span> <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>或者如果你不想看到任何输出，使用</p>
 <div class="highlight"><div class="chroma">
@@ -278,8 +278,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>如此你可以继续使用当前shell</li>
@@ -295,8 +295,8 @@ ffmpeg -i input.mkv -b 2048k out.gif
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">nohup <span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nohup <span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>等价于以上的操作。单纯的<code>nohup command</code>会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。</p>
 <h3 id="同时输出到console和文件">同时输出到console和文件</h3>
@@ -307,9 +307,9 @@ ffmpeg -i input.mkv -b 2048k out.gif
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand &gt; SomeFile.txt  <span class="c1"># overwrite</span>
-SomeCommand &gt;&gt; SomeFile.txt <span class="c1"># append</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">SomeCommand &gt; SomeFile.txt  <span class="c1"># overwrite</span>
+</span></span><span class="line"><span class="cl">SomeCommand &gt;&gt; SomeFile.txt <span class="c1"># append</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将命令输出(stdout)及报错(stderr)重定向到文件：</p>
 <div class="highlight"><div class="chroma">
@@ -318,9 +318,9 @@ SomeCommand &gt;&gt; SomeFile.txt <span class="c1"># append</span>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand <span class="p">&amp;</span>&gt; SomeFile.txt
-SomeCommand <span class="p">&amp;</span>&gt;&gt; SomeFile.txt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">SomeCommand <span class="p">&amp;</span>&gt; SomeFile.txt
+</span></span><span class="line"><span class="cl">SomeCommand <span class="p">&amp;</span>&gt;&gt; SomeFile.txt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>同时输出到console和文件：</p>
 <div class="highlight"><div class="chroma">
@@ -329,9 +329,9 @@ SomeCommand <span class="p">&amp;</span>&gt;&gt; SomeFile.txt
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee SomeFile.txt     <span class="c1"># overwrite</span>
-SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a SomeFile.txt  <span class="c1"># append</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee SomeFile.txt     <span class="c1"># overwrite</span>
+</span></span><span class="line"><span class="cl">SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a SomeFile.txt  <span class="c1"># append</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -357,27 +357,27 @@ SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span clas
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">          || visible in terminal ||   visible in file   || existing
-  Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
-==========++==========+==========++==========+==========++===========
-    &gt;     ||    no    |   yes    ||   yes    |    no    || overwrite
-    &gt;&gt;    ||    no    |   yes    ||   yes    |    no    ||  append
-          ||          |          ||          |          ||
-   2&gt;     ||   yes    |    no    ||    no    |   yes    || overwrite
-   2&gt;&gt;    ||   yes    |    no    ||    no    |   yes    ||  append
-          ||          |          ||          |          ||
-   &amp;&gt;     ||    no    |    no    ||   yes    |   yes    || overwrite
-   &amp;&gt;&gt;    ||    no    |    no    ||   yes    |   yes    ||  append
-          ||          |          ||          |          ||
- | tee    ||   yes    |   yes    ||   yes    |    no    || overwrite
- | tee -a ||   yes    |   yes    ||   yes    |    no    ||  append
-          ||          |          ||          |          ||
- n.e. (*) ||   yes    |   yes    ||    no    |   yes    || overwrite
- n.e. (*) ||   yes    |   yes    ||    no    |   yes    ||  append
-          ||          |          ||          |          ||
-|&amp; tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
-|&amp; tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">          || visible in terminal ||   visible in file   || existing
+</span></span><span class="line"><span class="cl">  Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
+</span></span><span class="line"><span class="cl">==========++==========+==========++==========+==========++===========
+</span></span><span class="line"><span class="cl">    &gt;     ||    no    |   yes    ||   yes    |    no    || overwrite
+</span></span><span class="line"><span class="cl">    &gt;&gt;    ||    no    |   yes    ||   yes    |    no    ||  append
+</span></span><span class="line"><span class="cl">          ||          |          ||          |          ||
+</span></span><span class="line"><span class="cl">   2&gt;     ||   yes    |    no    ||    no    |   yes    || overwrite
+</span></span><span class="line"><span class="cl">   2&gt;&gt;    ||   yes    |    no    ||    no    |   yes    ||  append
+</span></span><span class="line"><span class="cl">          ||          |          ||          |          ||
+</span></span><span class="line"><span class="cl">   &amp;&gt;     ||    no    |    no    ||   yes    |   yes    || overwrite
+</span></span><span class="line"><span class="cl">   &amp;&gt;&gt;    ||    no    |    no    ||   yes    |   yes    ||  append
+</span></span><span class="line"><span class="cl">          ||          |          ||          |          ||
+</span></span><span class="line"><span class="cl"> | tee    ||   yes    |   yes    ||   yes    |    no    || overwrite
+</span></span><span class="line"><span class="cl"> | tee -a ||   yes    |   yes    ||   yes    |    no    ||  append
+</span></span><span class="line"><span class="cl">          ||          |          ||          |          ||
+</span></span><span class="line"><span class="cl"> n.e. (*) ||   yes    |   yes    ||    no    |   yes    || overwrite
+</span></span><span class="line"><span class="cl"> n.e. (*) ||   yes    |   yes    ||    no    |   yes    ||  append
+</span></span><span class="line"><span class="cl">          ||          |          ||          |          ||
+</span></span><span class="line"><span class="cl">|&amp; tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
+</span></span><span class="line"><span class="cl">|&amp; tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref:</p>
 <ol>
@@ -400,18 +400,18 @@ SomeCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span clas
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># See the pid of the user&#39;s login process.</span>
-$ who -u
-yychi    tty1         2020-02-19 21:06  旧        <span class="m">460</span>
-
-<span class="c1"># Let him know he will be kick off.</span>
-$ <span class="nb">echo</span> <span class="s2">&#34;You&#39;ll be kick off by system administrator.&#34;</span> <span class="p">|</span> write yychi
-
-<span class="c1"># Kick off.</span>
-$ <span class="nb">kill</span> -9 <span class="m">460</span>
-
-<span class="c1"># Done.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># See the pid of the user&#39;s login process.</span>
+</span></span><span class="line"><span class="cl">$ who -u
+</span></span><span class="line"><span class="cl">yychi    tty1         2020-02-19 21:06  旧        <span class="m">460</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Let him know he will be kick off.</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;You&#39;ll be kick off by system administrator.&#34;</span> <span class="p">|</span> write yychi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Kick off.</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">kill</span> -9 <span class="m">460</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Done.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref: <a href="https://www.putorius.net/kick-user-off-linux-system.html">https://www.putorius.net/kick-user-off-linux-system.html</a></p>
 <hr>
@@ -422,9 +422,9 @@ $ <span class="nb">kill</span> -9 <span class="m">460</span>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ find --help
-Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[</span>-L<span class="o">]</span> <span class="o">[</span>-P<span class="o">]</span> <span class="o">[</span>-Olevel<span class="o">]</span> <span class="o">[</span>-D help<span class="p">|</span>tree<span class="p">|</span>search<span class="p">|</span>stat<span class="p">|</span>rates<span class="p">|</span>opt<span class="p">|</span>exec<span class="o">]</span> <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ find --help
+</span></span><span class="line"><span class="cl">Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[</span>-L<span class="o">]</span> <span class="o">[</span>-P<span class="o">]</span> <span class="o">[</span>-Olevel<span class="o">]</span> <span class="o">[</span>-D help<span class="p">|</span>tree<span class="p">|</span>search<span class="p">|</span>stat<span class="p">|</span>rates<span class="p">|</span>opt<span class="p">|</span>exec<span class="o">]</span> <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>前面的选项不常用，初级使用只需掌握</p>
 <div class="highlight"><div class="chroma">
@@ -432,8 +432,8 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><code>path</code> - search path</li>
@@ -473,8 +473,8 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find path -regex <span class="s2">&#34;&lt;regex&gt;&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find path -regex <span class="s2">&#34;&lt;regex&gt;&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但是默认的正则表达式引擎我也不知道是啥，反正不解析我习惯的那种正则语法。故使用：</p>
 <div class="highlight"><div class="chroma">
@@ -482,8 +482,8 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">find . -regextype posix-extended -regex <span class="s2">&#34;.*\.(log|aux|blg)&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -regextype posix-extended -regex <span class="s2">&#34;.*\.(log|aux|blg)&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上述命令找出当前文件夹及子文件夹所有后缀名为<code>log</code>,<code>aux</code>,<code>blg</code>的文件。</p>
 <p><strong>几个例子</strong></p>
@@ -512,18 +512,18 @@ Usage: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查找somefile中匹配到something的行</span>
-$ grep <span class="s2">&#34;something&#34;</span> somefile
-
-<span class="c1"># 定位something所在的行并将接下来的3行一并输出</span>
-$ grep <span class="s2">&#34;something&#34;</span> somefile -A <span class="m">3</span>
-
-<span class="c1"># 定位something所在的行并将之前的3行一并输出</span>
-$ grep <span class="s2">&#34;something&#34;</span> somefile -B <span class="m">3</span>
-
-<span class="c1"># 定位something所在的行并将上下3行一并输出</span>
-$ grep <span class="s2">&#34;something&#34;</span> somefile -C <span class="m">3</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查找somefile中匹配到something的行</span>
+</span></span><span class="line"><span class="cl">$ grep <span class="s2">&#34;something&#34;</span> somefile
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 定位something所在的行并将接下来的3行一并输出</span>
+</span></span><span class="line"><span class="cl">$ grep <span class="s2">&#34;something&#34;</span> somefile -A <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 定位something所在的行并将之前的3行一并输出</span>
+</span></span><span class="line"><span class="cl">$ grep <span class="s2">&#34;something&#34;</span> somefile -B <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 定位something所在的行并将上下3行一并输出</span>
+</span></span><span class="line"><span class="cl">$ grep <span class="s2">&#34;something&#34;</span> somefile -C <span class="m">3</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>使用正则表达式</strong></p>
 <p><code>grep</code>支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的<code>grep</code>实现方式不同，详见手册。一般extend最为常用，语法为</p>
@@ -533,9 +533,9 @@ $ grep <span class="s2">&#34;something&#34;</span> somefile -C <span class="m">3
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在somefile中查找包含his或者her的行</span>
-$ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在somefile中查找包含his或者her的行</span>
+</span></span><span class="line"><span class="cl">$ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref:</p>
 <ul>
@@ -549,9 +549,9 @@ $ grep -E <span class="s2">&#34;his|her&#34;</span> somefile
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ whatis xargs
-xargs <span class="o">(</span>1<span class="o">)</span>            - build and execute <span class="nb">command</span> lines from standard input
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ whatis xargs
+</span></span><span class="line"><span class="cl">xargs <span class="o">(</span>1<span class="o">)</span>            - build and execute <span class="nb">command</span> lines from standard input
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref:</p>
 <ul>
@@ -567,9 +567,9 @@ xargs <span class="o">(</span>1<span class="o">)</span>            - build and e
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ whatis cut
-cut <span class="o">(</span>1<span class="o">)</span>              - remove sections from each line of files
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ whatis cut
+</span></span><span class="line"><span class="cl">cut <span class="o">(</span>1<span class="o">)</span>              - remove sections from each line of files
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>基本用法：</p>
 <div class="highlight"><div class="chroma">
@@ -586,17 +586,17 @@ cut <span class="o">(</span>1<span class="o">)</span>              - remove sect
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 以:为分隔符分割每行，并选择第1,2,4列输出</span>
-$ cut -d: -f1,2,4 /etc/passwd
-root❌0
-bin❌1
-daemon❌2
-mail❌12
-ftp❌11
-http❌33
-nobody❌65534
-dbus❌81
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 以:为分隔符分割每行，并选择第1,2,4列输出</span>
+</span></span><span class="line"><span class="cl">$ cut -d: -f1,2,4 /etc/passwd
+</span></span><span class="line"><span class="cl">root❌0
+</span></span><span class="line"><span class="cl">bin❌1
+</span></span><span class="line"><span class="cl">daemon❌2
+</span></span><span class="line"><span class="cl">mail❌12
+</span></span><span class="line"><span class="cl">ftp❌11
+</span></span><span class="line"><span class="cl">http❌33
+</span></span><span class="line"><span class="cl">nobody❌65534
+</span></span><span class="line"><span class="cl">dbus❌81
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="git">Git</h2>
@@ -607,8 +607,8 @@ dbus❌81
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git log --oneline --abbrev-commit --all --graph --decoreate --color
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git log --oneline --abbrev-commit --all --graph --decoreate --color
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>来获得更美观易读的输出。但是每次输入这么多肯定很烦人，使用</p>
 <div class="highlight"><div class="chroma">
@@ -616,8 +616,8 @@ dbus❌81
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git config --global alias.graph <span class="s2">&#34;log --graph --oneline --decorate=short&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git config --global alias.graph <span class="s2">&#34;log --graph --oneline --decorate=short&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>增加一个全局别名，这个别名对于任何地方的 <code>git</code> 都适用。如此一来，键入 <code>git graph</code> 会等效于</p>
 <div class="highlight"><div class="chroma">
@@ -625,8 +625,8 @@ dbus❌81
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git log --graph --oneline --decorate<span class="o">=</span>short
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log --graph --oneline --decorate<span class="o">=</span>short
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>样例输出：</p>
 <div class="highlight"><div class="chroma">
@@ -642,16 +642,16 @@ dbus❌81
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git graph
-
-* 36f2d65 <span class="o">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span class="o">)</span> Forget it
-* 9b4a6d7 Update ref list
-* 3931d4d Using relative path <span class="k">for</span> image
-* ba18821 Upload pics
-* ceca69a fixed reference
-* be15df2 fixed picture address
-* 97a36f3 Initial commit
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ git graph
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* 36f2d65 <span class="o">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span class="o">)</span> Forget it
+</span></span><span class="line"><span class="cl">* 9b4a6d7 Update ref list
+</span></span><span class="line"><span class="cl">* 3931d4d Using relative path <span class="k">for</span> image
+</span></span><span class="line"><span class="cl">* ba18821 Upload pics
+</span></span><span class="line"><span class="cl">* ceca69a fixed reference
+</span></span><span class="line"><span class="cl">* be15df2 fixed picture address
+</span></span><span class="line"><span class="cl">* 97a36f3 Initial commit
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>忽略已经添加的文件</strong></p>
 <div class="highlight"><div class="chroma">
@@ -659,8 +659,8 @@ dbus❌81
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rm --cached &lt;somefiles&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>推送本地分支到远程</strong></p>
 <div class="highlight"><div class="chroma">
@@ -669,9 +669,9 @@ dbus❌81
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 远程分支如果不存在，则自动创建。</span>
-git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 远程分支如果不存在，则自动创建。</span>
+</span></span><span class="line"><span class="cl">git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>拉取远程分支到本地</strong></p>
 <div class="highlight"><div class="chroma">
@@ -683,12 +683,12 @@ git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 从远程分支切换（并创建，如果不存在）本地分支</span>
-git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
-
-<span class="c1"># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
-git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 从远程分支切换（并创建，如果不存在）本地分支</span>
+</span></span><span class="line"><span class="cl">git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
+</span></span><span class="line"><span class="cl">git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>删除commit历史</strong></p>
 <p>如果不小心将隐私信息推送至远程仓库（如github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的commit历史查到你所做的更改，所以这种情况下必须删除之前所有的commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除master分支，将新建的分支重命名为master，再推送到远程强制覆盖<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
@@ -713,24 +713,24 @@ git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Check out to a temporary branch:</span>
-git checkout --orphan TEMP_BRANCH
-
-<span class="c1"># Add all the files:</span>
-git add -A
-
-<span class="c1"># Commit the changes:</span>
-git commit -am <span class="s2">&#34;Initial commit&#34;</span>
-
-<span class="c1"># Delete the old branch:</span>
-git branch -D master
-
-<span class="c1"># Rename the temporary branch to master:</span>
-git branch -m master
-
-<span class="c1"># Finally, force update to our repository:</span>
-git push -f origin master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Check out to a temporary branch:</span>
+</span></span><span class="line"><span class="cl">git checkout --orphan TEMP_BRANCH
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add all the files:</span>
+</span></span><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Commit the changes:</span>
+</span></span><span class="line"><span class="cl">git commit -am <span class="s2">&#34;Initial commit&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Delete the old branch:</span>
+</span></span><span class="line"><span class="cl">git branch -D master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Rename the temporary branch to master:</span>
+</span></span><span class="line"><span class="cl">git branch -m master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Finally, force update to our repository:</span>
+</span></span><span class="line"><span class="cl">git push -f origin master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>合并某个文件到当前分支</strong></p>
 <p>例如当前在master分支，希望合并某个分支dev的某个或多个文件到当前分支：</p>
@@ -739,8 +739,8 @@ git push -f origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git checkout dev file1 file2 ...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout dev file1 file2 ...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支master_temp，然后在master_temp中checkout，最后再将master_temp分支merge到master分支：</p>
 <div class="highlight"><div class="chroma">
@@ -758,18 +758,18 @@ git push -f origin master
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Create a branch based on master</span>
-git checkout -b master_temp
-
-<span class="c1"># Chechkout file1 from dev to master_temp</span>
-git checkout dev file1
-git commit -m <span class="s2">&#34;checkout file1 from dev&#34;</span>
-
-<span class="c1"># Switch to master and merge, then delete</span>
-git checkout master
-git merge master_temp
-git branch -d master_temp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Create a branch based on master</span>
+</span></span><span class="line"><span class="cl">git checkout -b master_temp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Chechkout file1 from dev to master_temp</span>
+</span></span><span class="line"><span class="cl">git checkout dev file1
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;checkout file1 from dev&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Switch to master and merge, then delete</span>
+</span></span><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">git merge master_temp
+</span></span><span class="line"><span class="cl">git branch -d master_temp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref: <a href="https://segmentfault.com/a/1190000008360855">https://segmentfault.com/a/1190000008360855</a></p>
 <p><strong>Git merge</strong></p>
@@ -782,10 +782,10 @@ git branch -d master_temp
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a---b---c---d---e (master)
-    \
-     `--A---B---C (dev)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a---b---c---d---e (master)
+</span></span><span class="line"><span class="cl">    \
+</span></span><span class="line"><span class="cl">     `--A---B---C (dev)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>你当前在master分支的e节点，你要merge dev分支。其实就是将A、B、C三个commit在master分支上重现，仿佛master分支上曾经也做过这些改动。那么冲突的来源就是你在两个分支中，对同一个文件作了不同的改动，如何解决不言而喻。</p>
 <p>小朋友，你是否有很多？</p>
@@ -809,13 +809,13 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># see remote status</span>
-git remote -v
-
-<span class="c1"># add upstream if not exist one</span>
-git remote add upstream https://github.com/&lt;origin_owner&gt;/&lt;origin_repo&gt;.git
-git remote -v
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># see remote status</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add upstream if not exist one</span>
+</span></span><span class="line"><span class="cl">git remote add upstream https://github.com/&lt;origin_owner&gt;/&lt;origin_repo&gt;.git
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>从上游仓库 fetch 分支和提交点，提交给本地 master，并会被存储在一个本地分支 upstream/master</p>
 <div class="highlight"><div class="chroma">
@@ -823,8 +823,8 @@ git remote -v
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git fetch upstream
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git fetch upstream
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>切换到任意分支，merge已经fetch的分支即可：</p>
 <div class="highlight"><div class="chroma">
@@ -833,9 +833,9 @@ git remote -v
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git checkout somebrach
-git merge upstream/master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout somebrach
+</span></span><span class="line"><span class="cl">git merge upstream/master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>see: <a href="https://www.zhihu.com/question/28676261">https://www.zhihu.com/question/28676261</a></p>
 <p>Ref:</p>
@@ -854,12 +854,12 @@ git merge upstream/master
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># show the content of a.cpp in specific commit HEAD^</span>
-git show HEAD^:a.cpp
-
-<span class="c1"># that&#39;s done</span>
-git show HEAD^:a.cpp &gt; b.cpp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># show the content of a.cpp in specific commit HEAD^</span>
+</span></span><span class="line"><span class="cl">git show HEAD^:a.cpp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># that&#39;s done</span>
+</span></span><span class="line"><span class="cl">git show HEAD^:a.cpp &gt; b.cpp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref: search &ldquo;git-checkout older revision of a file under a new name&rdquo; in stack overflow</p>
 <p><strong>查看已被跟踪的文件</strong></p>
@@ -868,8 +868,8 @@ git show HEAD^:a.cpp &gt; b.cpp
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git ls-files
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git ls-files
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref: search &ldquo;how can i make git show a list of the files that are being tracked&rdquo; in stack overflow</p>
 <p><strong>submodule</strong></p>
@@ -904,33 +904,33 @@ git show HEAD^:a.cpp &gt; b.cpp
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># help</span>
-git submodule --help
-
-<span class="c1"># 添加submodule</span>
-<span class="c1">#   1. 进入目标子文件夹</span>
-git submodule add https://github.com/imtianx/liba.git
-
-<span class="c1"># 更新submodule</span>
-<span class="nb">cd</span> xxx
-git pull
-git submodule update --recursive
-
-<span class="c1"># 在主目录下更新submodule liba</span>
-git submodule update --remote liba
-
-<span class="c1"># 删除submodule</span>
-vim .gitmodules <span class="c1"># 删除相应条目</span>
-vim .git/config <span class="c1"># 删除相应条目</span>
-rm -rf .git/modules/liba <span class="c1"># 删除对应的git文件夹</span>
-
-<span class="c1"># 在克隆时连同submodule一并克隆</span>
-git clone https://github.com/imtianx/MainProject.git --recursive
-<span class="c1"># is equivalent to</span>
-git clone https://github.com/imtianx/MainProject.git
-git submodule init
-git submodule update
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># help</span>
+</span></span><span class="line"><span class="cl">git submodule --help
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加submodule</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   1. 进入目标子文件夹</span>
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/imtianx/liba.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新submodule</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> xxx
+</span></span><span class="line"><span class="cl">git pull
+</span></span><span class="line"><span class="cl">git submodule update --recursive
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在主目录下更新submodule liba</span>
+</span></span><span class="line"><span class="cl">git submodule update --remote liba
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除submodule</span>
+</span></span><span class="line"><span class="cl">vim .gitmodules <span class="c1"># 删除相应条目</span>
+</span></span><span class="line"><span class="cl">vim .git/config <span class="c1"># 删除相应条目</span>
+</span></span><span class="line"><span class="cl">rm -rf .git/modules/liba <span class="c1"># 删除对应的git文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在克隆时连同submodule一并克隆</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/imtianx/MainProject.git --recursive
+</span></span><span class="line"><span class="cl"><span class="c1"># is equivalent to</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/imtianx/MainProject.git
+</span></span><span class="line"><span class="cl">git submodule init
+</span></span><span class="line"><span class="cl">git submodule update
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ref:</p>
 <ol>
@@ -945,8 +945,8 @@ git submodule update
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -I/usr/local/include
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">g++ main.cpp -I/usr/local/include
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>自定义链接静态或动态库</p>
 <div class="highlight"><div class="chroma">
@@ -955,9 +955,9 @@ git submodule update
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -L/path/to/lib_file
-g++ main.cpp -L/usr/lib64 -lcurl -lssl
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">g++ main.cpp -L/path/to/lib_file
+</span></span><span class="line"><span class="cl">g++ main.cpp -L/usr/lib64 -lcurl -lssl
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面第二个命令链接了<code>/usr/lib64/</code>目录下的<code>libcurl.so</code>和<code>libssl.so</code>两个动态库文件。静态库也是同样链接。说起来静态库，想起了最近折腾的一个东西，你可能会想把多个静态库合成一个静态库，想当然的直接用<code>ar</code>合并，但是不行，必须要把两个静态库全解压出来，再合并所有的object file. 参见：<a href="https://www.cnblogs.com/fnlingnzb-learner/p/8127456.html">here</a></p>
 <p>生成机器码</p>
@@ -966,8 +966,8 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -c
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">g++ main.cpp -c
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成汇编代码</p>
 <div class="highlight"><div class="chroma">
@@ -975,8 +975,8 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -S
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">g++ main.cpp -S
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>仅预编译</p>
 <div class="highlight"><div class="chroma">
@@ -984,8 +984,8 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp -E &gt; main.i
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">g++ main.cpp -E &gt; main.i
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="aria2c">Aria2c</h2>
@@ -1014,8 +1014,8 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;bgm.mp3&#34;</span> <span class="na">autostart</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;20&#34;</span> <span class="na">hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;bgm.mp3&#34;</span> <span class="na">autostart</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;20&#34;</span> <span class="na">hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又，添加可以控制播放的音乐。</p>
 <div class="highlight"><div class="chroma">
@@ -1023,8 +1023,8 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">autoplay</span><span class="o">=</span><span class="s">&#34;autoplay&#34;</span> <span class="na">controls</span><span class="o">=</span><span class="s">&#34;controls&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;loop&#34;</span> <span class="na">preload</span><span class="o">=</span><span class="s">&#34;auto&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;music.mp3&#34;</span><span class="p">&gt;</span>Your browser doesn&#39;t support H5 audio flag!<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">autoplay</span><span class="o">=</span><span class="s">&#34;autoplay&#34;</span> <span class="na">controls</span><span class="o">=</span><span class="s">&#34;controls&#34;</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;loop&#34;</span> <span class="na">preload</span><span class="o">=</span><span class="s">&#34;auto&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;music.mp3&#34;</span><span class="p">&gt;</span>Your browser doesn&#39;t support H5 audio flag!<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="使用xrandr设置多屏显示">使用<code>xrandr</code>设置多屏显示</h2>
@@ -1090,65 +1090,65 @@ g++ main.cpp -L/usr/lib64 -lcurl -lssl
 </span><span class="lnt">58
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ xrandr
-Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">1920</span> x 1080, maximum <span class="m">8192</span> x <span class="m">8192</span>
-eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 294mm x 165mm
-   1920x1080     59.93*+
-   1680x1050     59.95    59.88
-   1400x1050     59.98
-   1600x900      59.99    59.94    59.95    59.82
-   1280x1024     60.02
-   1400x900      59.96    59.88
-   1280x960      60.00
-   1440x810      60.00    59.97
-   1368x768      59.88    59.85
-   1280x800      59.99    59.97    59.81    59.91
-   1280x720      60.00    59.99    59.86    59.74
-   1024x768      60.04    60.00
-   960x720       60.00
-   928x696       60.05
-   896x672       60.01
-   1024x576      59.95    59.96    59.90    59.82
-   960x600       59.93    60.00
-   960x540       59.96    59.99    59.63    59.82
-   800x600       60.00    60.32    56.25
-   840x525       60.01    59.88
-   864x486       59.92    59.57
-   700x525       59.98
-   800x450       59.95    59.82
-   640x512       60.02
-   700x450       59.96    59.88
-   640x480       60.00    59.94
-   720x405       59.51    58.99
-   684x384       59.88    59.85
-   640x400       59.88    59.98
-   640x360       59.86    59.83    59.84    59.32
-   512x384       60.00
-   512x288       60.00    59.92
-   480x270       59.63    59.82
-   400x300       60.32    56.34
-   432x243       59.92    59.57
-   320x240       60.05
-   360x202       59.51    59.13
-   320x180       59.84    59.32
-DP-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
-HDMI-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
-HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 527mm x 296mm
-   1920x1080     60.00*+  60.00    50.00    59.94
-   1920x1080i    60.00    60.00    50.00    59.94
-   1600x1200     60.00
-   1280x1024     75.02    60.02
-   1152x864      75.00
-   1280x720      60.00    60.00    50.00    59.94
-   1024x768      75.03    60.00
-   800x600       75.00    60.32
-   720x576       50.00    50.00
-   720x576i      50.00    50.00
-   720x480       60.00    60.00    59.94    59.94    59.94
-   720x480i      60.00    60.00    59.94    59.94
-   640x480       75.00    60.00    59.94    59.94
-   720x400       70.08
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ xrandr
+</span></span><span class="line"><span class="cl">Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">1920</span> x 1080, maximum <span class="m">8192</span> x <span class="m">8192</span>
+</span></span><span class="line"><span class="cl">eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 294mm x 165mm
+</span></span><span class="line"><span class="cl">   1920x1080     59.93*+
+</span></span><span class="line"><span class="cl">   1680x1050     59.95    59.88
+</span></span><span class="line"><span class="cl">   1400x1050     59.98
+</span></span><span class="line"><span class="cl">   1600x900      59.99    59.94    59.95    59.82
+</span></span><span class="line"><span class="cl">   1280x1024     60.02
+</span></span><span class="line"><span class="cl">   1400x900      59.96    59.88
+</span></span><span class="line"><span class="cl">   1280x960      60.00
+</span></span><span class="line"><span class="cl">   1440x810      60.00    59.97
+</span></span><span class="line"><span class="cl">   1368x768      59.88    59.85
+</span></span><span class="line"><span class="cl">   1280x800      59.99    59.97    59.81    59.91
+</span></span><span class="line"><span class="cl">   1280x720      60.00    59.99    59.86    59.74
+</span></span><span class="line"><span class="cl">   1024x768      60.04    60.00
+</span></span><span class="line"><span class="cl">   960x720       60.00
+</span></span><span class="line"><span class="cl">   928x696       60.05
+</span></span><span class="line"><span class="cl">   896x672       60.01
+</span></span><span class="line"><span class="cl">   1024x576      59.95    59.96    59.90    59.82
+</span></span><span class="line"><span class="cl">   960x600       59.93    60.00
+</span></span><span class="line"><span class="cl">   960x540       59.96    59.99    59.63    59.82
+</span></span><span class="line"><span class="cl">   800x600       60.00    60.32    56.25
+</span></span><span class="line"><span class="cl">   840x525       60.01    59.88
+</span></span><span class="line"><span class="cl">   864x486       59.92    59.57
+</span></span><span class="line"><span class="cl">   700x525       59.98
+</span></span><span class="line"><span class="cl">   800x450       59.95    59.82
+</span></span><span class="line"><span class="cl">   640x512       60.02
+</span></span><span class="line"><span class="cl">   700x450       59.96    59.88
+</span></span><span class="line"><span class="cl">   640x480       60.00    59.94
+</span></span><span class="line"><span class="cl">   720x405       59.51    58.99
+</span></span><span class="line"><span class="cl">   684x384       59.88    59.85
+</span></span><span class="line"><span class="cl">   640x400       59.88    59.98
+</span></span><span class="line"><span class="cl">   640x360       59.86    59.83    59.84    59.32
+</span></span><span class="line"><span class="cl">   512x384       60.00
+</span></span><span class="line"><span class="cl">   512x288       60.00    59.92
+</span></span><span class="line"><span class="cl">   480x270       59.63    59.82
+</span></span><span class="line"><span class="cl">   400x300       60.32    56.34
+</span></span><span class="line"><span class="cl">   432x243       59.92    59.57
+</span></span><span class="line"><span class="cl">   320x240       60.05
+</span></span><span class="line"><span class="cl">   360x202       59.51    59.13
+</span></span><span class="line"><span class="cl">   320x180       59.84    59.32
+</span></span><span class="line"><span class="cl">DP-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+</span></span><span class="line"><span class="cl">HDMI-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+</span></span><span class="line"><span class="cl">HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 527mm x 296mm
+</span></span><span class="line"><span class="cl">   1920x1080     60.00*+  60.00    50.00    59.94
+</span></span><span class="line"><span class="cl">   1920x1080i    60.00    60.00    50.00    59.94
+</span></span><span class="line"><span class="cl">   1600x1200     60.00
+</span></span><span class="line"><span class="cl">   1280x1024     75.02    60.02
+</span></span><span class="line"><span class="cl">   1152x864      75.00
+</span></span><span class="line"><span class="cl">   1280x720      60.00    60.00    50.00    59.94
+</span></span><span class="line"><span class="cl">   1024x768      75.03    60.00
+</span></span><span class="line"><span class="cl">   800x600       75.00    60.32
+</span></span><span class="line"><span class="cl">   720x576       50.00    50.00
+</span></span><span class="line"><span class="cl">   720x576i      50.00    50.00
+</span></span><span class="line"><span class="cl">   720x480       60.00    60.00    59.94    59.94    59.94
+</span></span><span class="line"><span class="cl">   720x480i      60.00    60.00    59.94    59.94
+</span></span><span class="line"><span class="cl">   640x480       75.00    60.00    59.94    59.94
+</span></span><span class="line"><span class="cl">   720x400       70.08
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>观察输出可知，连接了两个显示器(eDP-1, HDMI-2)，其中eDP-1是主显示器。如果第二块屏幕无显示，执行下面的命令。</p>
 <div class="highlight"><div class="chroma">
@@ -1156,8 +1156,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output HDMI-2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又，指定分辨率为1920x1080，</p>
 <div class="highlight"><div class="chroma">
@@ -1165,8 +1165,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --mode 1920x1080
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output HDMI-2 --mode 1920x1080
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又，设置为右侧扩展屏，即光标向右可移动至第二块屏，</p>
 <div class="highlight"><div class="chroma">
@@ -1174,8 +1174,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --right-of eDP-1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output HDMI-2 --right-of eDP-1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又，连接上第二块屏，想关掉内置显示屏，（警告：不要随便关掉内置屏）</p>
 <div class="highlight"><div class="chroma">
@@ -1183,8 +1183,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --off
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output eDP-1 --off
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>又，开启内置屏。</p>
 <div class="highlight"><div class="chroma">
@@ -1192,8 +1192,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --auto
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output eDP-1 --auto
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="网络">网络</h2>
@@ -1203,8 +1203,8 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">netstat -tulpn <span class="p">|</span> grep LISTEN
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">netstat -tulpn <span class="p">|</span> grep LISTEN
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <h2 id="htop基本操作">Htop基本操作</h2>
@@ -1298,7 +1298,7 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -1315,7 +1315,7 @@ HDMI-2 connected 1920x1080+0+0 <span class="o">(</span>normal left inverted righ
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

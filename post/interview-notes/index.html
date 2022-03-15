@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/interview-notes/" />
@@ -238,19 +238,19 @@ A: new/delete在C++中是运算符，但malloc/free是继承自C的内存管理�
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">base</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">base</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;derived&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="n">base</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">derived</span><span class="p">();</span>
-<span class="n">pb</span><span class="o">-&gt;</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">base</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">base</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;derived&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">base</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">derived</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">pb</span><span class="o">-&gt;</span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>A: derived. 虚函数的动态绑定，根据运行时类型调用对应的版本，虽然是基类指针，但实际上是派生类对象，所以调用派生类中的函数。动态绑定是C++支持多态的根本原因。关于动态绑定，参见：<a href="https://www.learncpp.com/cpp-tutorial/122-virtual-functions/">here</a>.</p>
 <p>另外，定义虚函数会增加空间开销，一旦定义了虚函数，就会生成虚函数表和虚指针，动态绑定实际上是通过查表来确定具体调用哪个版本的函数。另外构造函数不能声明为虚函数，析构函数可以，但析构函数不能声明为纯虚函数。</p>
@@ -290,36 +290,36 @@ A: 重载指函数签名（函数原型）不同的两个函数名字相同，�
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::f(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::f(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">// test
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Derived</span> <span class="n">dobj</span><span class="p">;</span>
-    <span class="n">Base</span><span class="o">*</span> <span class="n">pd</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dobj</span><span class="p">;</span>
-    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>       <span class="c1">// Base::f(int)
-</span><span class="c1"></span>    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>    <span class="c1">// Base::g(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">f</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::f(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::g(float)
-</span><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>      <span class="c1">// Derived::g(int)
-</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::f(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Base::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::f(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(float)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Derived::g(int)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// test
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Derived</span> <span class="n">dobj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Base</span><span class="o">*</span> <span class="n">pd</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dobj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>       <span class="c1">// Base::f(int)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">pd</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>    <span class="c1">// Base::g(float)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">f</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::f(float)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mf">3.3f</span><span class="p">);</span>   <span class="c1">// Derived::g(float)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">dobj</span><span class="p">.</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>      <span class="c1">// Derived::g(int)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>子类中g发生了重载。而基类指针调用f时，发现是虚函数，会去查表（发生动态绑定），但子类中并没有相应的重写（override），子类中的f仅仅是另一个函数，所以查表得知还是调用基类的f; 基类指针调用g时，发现不是虚函数，直接调用基类的g. 此间，子类的两个g对基类的g都是隐藏！</p>
 <p>Q：memcpy 和 memmove 的区别
@@ -463,13 +463,13 @@ A: 不知道。</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">required int32 hp;
-optional int32 lv;
-===saved===
-
-optional int32 mp;
-===readed===
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">required int32 hp;
+</span></span><span class="line"><span class="cl">optional int32 lv;
+</span></span><span class="line"><span class="cl">===saved===
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">optional int32 mp;
+</span></span><span class="line"><span class="cl">===readed===
+</span></span></code></pre></td></tr></table>
 </div>
 </div>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？</li>
 <li>实现一个带max()函数的栈？</li>
@@ -503,20 +503,20 @@ optional int32 mp;
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat /proc/sys/net/ipv4/tcp_tw_reuse
-<span class="m">2</span>
-
-$ whatis sysctl
-sysctl <span class="o">(</span>2<span class="o">)</span>           - read/write system parameters
-sysctl <span class="o">(</span>8<span class="o">)</span>           - configure kernel parameters at runtime
-
-$ sysctl net/ipv4
-net.ipv4.cipso_cache_bucket_size <span class="o">=</span> <span class="m">10</span>
-net.ipv4.cipso_cache_enable <span class="o">=</span> <span class="m">1</span>
-net.ipv4.cipso_rbm_optfmt <span class="o">=</span> <span class="m">0</span>
-net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat /proc/sys/net/ipv4/tcp_tw_reuse
+</span></span><span class="line"><span class="cl"><span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ whatis sysctl
+</span></span><span class="line"><span class="cl">sysctl <span class="o">(</span>2<span class="o">)</span>           - read/write system parameters
+</span></span><span class="line"><span class="cl">sysctl <span class="o">(</span>8<span class="o">)</span>           - configure kernel parameters at runtime
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ sysctl net/ipv4
+</span></span><span class="line"><span class="cl">net.ipv4.cipso_cache_bucket_size <span class="o">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl">net.ipv4.cipso_cache_enable <span class="o">=</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">net.ipv4.cipso_rbm_optfmt <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="白山云科技">白山云科技</h2>
 <p>(Sept. 20)</p>
@@ -797,7 +797,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -814,7 +814,7 @@ net.ipv4.conf.all.accept_local <span class="o">=</span> <span class="m">0</span>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/" />
@@ -190,9 +190,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1111 1111   # -(2^7 - 1) = -127
-0111 1111   #  (2^7 - 1) =  127
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1111 1111   # -(2^7 - 1) = -127
+</span></span><span class="line"><span class="cl">0111 1111   #  (2^7 - 1) =  127
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但从排列组合来看，8位能够表达的数字共有$2^8 = 256$个，而$-127 \sim 127$只有255个数。还有一个数跑哪去了呢。答案是0，0有两种表示方法：</p>
 <div class="highlight"><div class="chroma">
@@ -201,9 +201,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1000 0000   # -0
-0000 0000   # +0
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1000 0000   # -0
+</span></span><span class="line"><span class="cl">0000 0000   # +0
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这无疑是一种浪费，我们选择下面那个数表示0。而将上面的1000 0000（首先它表示一个负数，负数用补码表示，因此它应该是代表-128的补码）用于表示-128，如此一来，8bit的表达范围扩展到$-128 \sim 127$，正好$256=2^8$个数。</p>
 <p>至于为什么用1000 0000来表示-128，此中还是有些门道，来看-127的三码：</p>
@@ -214,10 +214,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1111 1111   # -127原码
-1000 0000   # -127反码
-1000 0001   # -127补码
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1111 1111   # -127原码
+</span></span><span class="line"><span class="cl">1000 0000   # -127反码
+</span></span><span class="line"><span class="cl">1000 0001   # -127补码
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如此一来-128的补码就等于-127的补码减一得：1000 0000. 关于负数为什么用补码表示，其实是为了做加法，计算机内没有减法器，只有加法器，具体参见上文。以上我只是用8bit数举例，实际计算机中int可能有32bit，以此类推。</p>
 <p>以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727.html</p>
@@ -294,11 +294,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">~n + 1 = -n
--(~n + 1) = n
--~n - 1 = n
--~n = n+1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~n + 1 = -n
+</span></span><span class="line"><span class="cl">-(~n + 1) = n
+</span></span><span class="line"><span class="cl">-~n - 1 = n
+</span></span><span class="line"><span class="cl">-~n = n+1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="计算-n-1">计算 n-1</h3>
 <p><code>~-n</code>:</p>
@@ -309,10 +309,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">n-1 = -(-n+1)
--n+1 = -(~-n) &lt;--- n+1 = -~n
-n-1 = ~-n
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n-1 = -(-n+1)
+</span></span><span class="line"><span class="cl">-n+1 = -(~-n) &lt;--- n+1 = -~n
+</span></span><span class="line"><span class="cl">n-1 = ~-n
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</h3>
 <p><code>x = a ^ b ^ x</code>：如果x=a，则相当于对b翻转两次，结果自然是b；如果x=b，那么b^b=0，0异或任何数都没有效果，故结果是a.</p>
@@ -345,28 +345,28 @@ n-1 = ~-n
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// the expression expands two:
-</span><span class="c1"></span><span class="mi">1</span><span class="p">).</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_b = b ^ (a^b) = a, temp_a = (a^b)
-</span><span class="c1"></span><span class="mi">2</span><span class="p">).</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_a = temp_a ^ final_b = (a^b) ^ a = b
-</span><span class="c1"></span>
-<span class="c1">// as you know, xor twice does nothing!
-</span><span class="c1"></span>
-<span class="c1">// ---------------------------------------------//
-</span><span class="c1">// if you doesn&#39;t understand, read the following:
-</span><span class="c1">// read from right to left
-</span><span class="c1">// now we are reading `a ^= b`
-</span><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="c1">// tag this tmp_a = a ^ b
-</span><span class="c1"></span>
-<span class="c1">// we are reading `b ^= a ^= b`
-</span><span class="c1"></span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span>
-
-<span class="c1">// we are reading `a ^= b ^= a ^= b`
-</span><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">tmp_a</span> <span class="o">^</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-
-<span class="c1">// at last
-</span><span class="c1"></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// the expression expands two:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">1</span><span class="p">).</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_b = b ^ (a^b) = a, temp_a = (a^b)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2</span><span class="p">).</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// now final_a = temp_a ^ final_b = (a^b) ^ a = b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// as you know, xor twice does nothing!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ---------------------------------------------//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// if you doesn&#39;t understand, read the following:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// read from right to left
+</span></span></span><span class="line"><span class="cl"><span class="c1">// now we are reading `a ^= b`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="c1">// tag this tmp_a = a ^ b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// we are reading `b ^= a ^= b`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// we are reading `a ^= b ^= a ^= b`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">--&gt;</span> <span class="o">=</span> <span class="n">tmp_a</span> <span class="o">^</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// at last
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="判断是否为2的幂">判断是否为2的幂</h3>
 <p><code>n &amp; (n-1)</code>：如果n是2的幂，则</p>
@@ -378,11 +378,11 @@ n-1 = ~-n
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">n</span>   <span class="o">=</span> <span class="mb">0b100000</span><span class="p">...</span>
-<span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mb">0b011111</span><span class="p">...</span>
-<span class="c1">// now n &amp; (n-1) = 0, we can judge if it is 0
-</span><span class="c1">// to determine wether n is a power of 2.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">n</span>   <span class="o">=</span> <span class="mb">0b100000</span><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mb">0b011111</span><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// now n &amp; (n-1) = 0, we can judge if it is 0
+</span></span></span><span class="line"><span class="cl"><span class="c1">// to determine wether n is a power of 2.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="对2的n次方取余">对2的n次方取余</h3>
 <p><code>m &amp; ((1&lt;&lt;n) - 1)</code>:</p>
@@ -393,10 +393,10 @@ n-1 = ~-n
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span>      <span class="o">=</span> <span class="mb">0b10000</span><span class="p">...</span> <span class="c1">// is the nth power of 2
-</span><span class="c1"></span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="o">=</span> <span class="mb">0b01111</span><span class="p">...</span>
-<span class="n">m</span> <span class="o">&amp;</span> <span class="p">((</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// keep the bits lower than n
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span>      <span class="o">=</span> <span class="mb">0b10000</span><span class="p">...</span> <span class="c1">// is the nth power of 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="o">=</span> <span class="mb">0b01111</span><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">&amp;</span> <span class="p">((</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// keep the bits lower than n
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="取n的第m低位"><strong>取n的第m低位</strong></h3>
 <p><code>(n &gt;&gt; (m-1)) &amp; 1</code>: 右移m-1位，最低位即为原从低到高第m位</p>
@@ -515,7 +515,7 @@ n-1 = ~-n
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -532,7 +532,7 @@ n-1 = ~-n
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

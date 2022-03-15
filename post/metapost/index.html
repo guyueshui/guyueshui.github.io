@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/metapost/" />
@@ -193,20 +193,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">% file:///hello.mp
-prologues := 3;
-outputtemplate := &#34;%j-%c.mps&#34;;
-outputformat := &#34;mps&#34;;
-
-beginfig(1);
-  draw (0,0)--(11,0)--(11,11)--(0,11)--cycle;
-endfig;
-
-beginfig(2);
-  draw (0,0)..(11,0)..(11,11)..(0,11)..cycle;
-endfig;
-end
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% file:///hello.mp
+</span></span><span class="line"><span class="cl">prologues := 3;
+</span></span><span class="line"><span class="cl">outputtemplate := &#34;%j-%c.mps&#34;;
+</span></span><span class="line"><span class="cl">outputformat := &#34;mps&#34;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">beginfig(1);
+</span></span><span class="line"><span class="cl">  draw (0,0)--(11,0)--(11,11)--(0,11)--cycle;
+</span></span><span class="line"><span class="cl">endfig;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">beginfig(2);
+</span></span><span class="line"><span class="cl">  draw (0,0)..(11,0)..(11,11)..(0,11)..cycle;
+</span></span><span class="line"><span class="cl">endfig;
+</span></span><span class="line"><span class="cl">end
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>几点说明：</p>
 <ul>
@@ -223,11 +223,11 @@ end
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(x);
-  draw something;
-  draw anything;
-endfig;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(x);
+</span></span><span class="line"><span class="cl">  draw something;
+</span></span><span class="line"><span class="cl">  draw anything;
+</span></span><span class="line"><span class="cl">endfig;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>括号中的x替换为数字，类似图片id. 一个源文件中可以有多个<code>beginfig--endfig</code>块，编译后每个块对应一张图片。</p>
 <p>编译<code>hello.mp</code>后即可得到两张图片：</p>
@@ -242,14 +242,14 @@ endfig;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mpost hello.mp
-This is MetaPost, version 2.00 <span class="o">(</span>TeX Live 2018<span class="o">)</span> <span class="o">(</span>kpathsea version 6.3.0<span class="o">)</span>
-<span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/mpost.mp
-<span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/plain.mp
-Preloading the plain mem file, version 1.005<span class="o">)</span> <span class="o">)</span> <span class="o">(</span>./hello.mp <span class="o">[</span>1<span class="o">]</span> <span class="o">[</span>2<span class="o">]</span> <span class="o">)</span>
-<span class="m">2</span> output files written: hello-1.mps .. hello-2.mps
-Transcript written on tmp.log.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mpost hello.mp
+</span></span><span class="line"><span class="cl">This is MetaPost, version 2.00 <span class="o">(</span>TeX Live 2018<span class="o">)</span> <span class="o">(</span>kpathsea version 6.3.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/mpost.mp
+</span></span><span class="line"><span class="cl"><span class="o">(</span>/usr/local/texlive/2018/texmf-dist/metapost/base/plain.mp
+</span></span><span class="line"><span class="cl">Preloading the plain mem file, version 1.005<span class="o">)</span> <span class="o">)</span> <span class="o">(</span>./hello.mp <span class="o">[</span>1<span class="o">]</span> <span class="o">[</span>2<span class="o">]</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="m">2</span> output files written: hello-1.mps .. hello-2.mps
+</span></span><span class="line"><span class="cl">Transcript written on tmp.log.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><center>
 <figure>
@@ -276,15 +276,15 @@ Transcript written on tmp.log.
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(3);
-  z0 = (0,0);
-  z1 = (60,40);
-  z2 = (40,90);
-  z3 = (10,70);
-  z4 = (30,50);
-  draw z0..z1..z2..z3..z4;
-endfig
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(3);
+</span></span><span class="line"><span class="cl">  z0 = (0,0);
+</span></span><span class="line"><span class="cl">  z1 = (60,40);
+</span></span><span class="line"><span class="cl">  z2 = (40,90);
+</span></span><span class="line"><span class="cl">  z3 = (10,70);
+</span></span><span class="line"><span class="cl">  z4 = (30,50);
+</span></span><span class="line"><span class="cl">  draw z0..z1..z2..z3..z4;
+</span></span><span class="line"><span class="cl">endfig
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure>
   <center>
@@ -323,16 +323,16 @@ endfig
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(0)
-  u:=1cm;
-  pair a,b; path p; pen mypen;
-  a = (0,0); b = (3u,4u);
-  p = a--b;
-  mypen = pencircle scaled 1mm;
-  pickup mypen;
-  draw p;
-endfig;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(0)
+</span></span><span class="line"><span class="cl">  u:=1cm;
+</span></span><span class="line"><span class="cl">  pair a,b; path p; pen mypen;
+</span></span><span class="line"><span class="cl">  a = (0,0); b = (3u,4u);
+</span></span><span class="line"><span class="cl">  p = a--b;
+</span></span><span class="line"><span class="cl">  mypen = pencircle scaled 1mm;
+</span></span><span class="line"><span class="cl">  pickup mypen;
+</span></span><span class="line"><span class="cl">  draw p;
+</span></span><span class="line"><span class="cl">endfig;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/img/posted/mpost/demo-0.svg" alt=""></p>
 <p>All MetaPost variable types:</p>
@@ -397,12 +397,12 @@ endfig;
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">beginfig(4);
-  for i=0 upto 9:
-    draw (0,0){dir 45}..{dir 10a}{6cm, 0};
-  endfor
-endfig;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(4);
+</span></span><span class="line"><span class="cl">  for i=0 upto 9:
+</span></span><span class="line"><span class="cl">    draw (0,0){dir 45}..{dir 10a}{6cm, 0};
+</span></span><span class="line"><span class="cl">  endfor
+</span></span><span class="line"><span class="cl">endfig;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure>
   <center>
@@ -526,7 +526,7 @@ endfig;
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -543,7 +543,7 @@ endfig;
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

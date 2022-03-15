@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/tex-sty-basic/" />
@@ -208,47 +208,47 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
-</span><span class="c">% yychi (guyueshui002@gmail.com)
-</span><span class="c">% 2019-09-25 10:10
-</span><span class="c"></span>
-<span class="k">\NeedsTeXFormat</span><span class="nb">{</span>LaTeX2e<span class="nb">}</span>[1994/06/01]
-<span class="k">\ProvidesPackage</span><span class="nb">{</span>zhfont<span class="nb">}</span>[General zh<span class="nb">_</span>CN font setting for tex.]
-
-<span class="k">\ifx\zhfontpath\undefined</span>
-  <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\zhfontpath</span><span class="nb">}{</span>/path/to/font<span class="nb">}</span>
-<span class="k">\else</span>
-  <span class="k">\message</span><span class="nb">{</span><span class="k">\string\zhfontpath\space</span> is defined by some others.<span class="nb">}</span>
-<span class="k">\fi</span>
-
-<span class="k">\RequirePackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
-<span class="k">\setCJKmainfont</span><span class="na">[Path=\zhfontpath, BoldFont=方正小标宋_GBK.ttf, ItalicFont=方正仿宋_GBK.ttf]</span><span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-<span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-<span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-
-<span class="c">%%% font alias
-</span><span class="c"></span><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzxbs<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>FZXBSJW.TTF<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzhei<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzkai<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正楷体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzfs<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正仿宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-
-<span class="c">%% 使用ctex系document，这些字体已被定义，所以做个case
-</span><span class="c"></span><span class="k">\ifx\songti\undefined</span>
-  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzxbs<span class="nb">}}</span>   <span class="c">% 宋体
-</span><span class="c"></span><span class="k">\fi</span>
-<span class="k">\ifx\heiti\undefined</span>
-  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzhei<span class="nb">}}</span>    <span class="c">% 黑体
-</span><span class="c"></span><span class="k">\fi</span>
-<span class="k">\ifx\kaiti\undefined</span>
-  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\kaiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzkai<span class="nb">}}</span>    <span class="c">% 楷体
-</span><span class="c"></span><span class="k">\fi</span>
-<span class="k">\ifx\fangsong\undefined</span>
-  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\fangsong</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzfs<span class="nb">}}</span>  <span class="c">% 仿宋
-</span><span class="c"></span><span class="k">\fi</span>
-
-<span class="k">\endinput</span>
-<span class="c">% vim:ft=tex
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="c">% This package provides a zh_CN font customization for convinience.
+</span></span></span><span class="line"><span class="cl"><span class="c">% yychi (guyueshui002@gmail.com)
+</span></span></span><span class="line"><span class="cl"><span class="c">% 2019-09-25 10:10
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="k">\NeedsTeXFormat</span><span class="nb">{</span>LaTeX2e<span class="nb">}</span>[1994/06/01]
+</span></span><span class="line"><span class="cl"><span class="k">\ProvidesPackage</span><span class="nb">{</span>zhfont<span class="nb">}</span>[General zh<span class="nb">_</span>CN font setting for tex.]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\zhfontpath\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\zhfontpath</span><span class="nb">}{</span>/path/to/font<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\else</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\message</span><span class="nb">{</span><span class="k">\string\zhfontpath\space</span> is defined by some others.<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\RequirePackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKmainfont</span><span class="na">[Path=\zhfontpath, BoldFont=方正小标宋_GBK.ttf, ItalicFont=方正仿宋_GBK.ttf]</span><span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%%% font alias
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzxbs<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>FZXBSJW.TTF<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzhei<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzkai<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正楷体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fzfs<span class="nb">}</span>[Path=<span class="k">\zhfontpath</span>]<span class="nb">{</span>方正仿宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%% 使用ctex系document，这些字体已被定义，所以做个case
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\ifx\songti\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\songti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzxbs<span class="nb">}}</span>   <span class="c">% 宋体
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\heiti\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzhei<span class="nb">}}</span>    <span class="c">% 黑体
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\kaiti\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\kaiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzkai<span class="nb">}}</span>    <span class="c">% 楷体
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\fangsong\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\fangsong</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fzfs<span class="nb">}}</span>  <span class="c">% 仿宋
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\endinput</span>
+</span></span><span class="line"><span class="cl"><span class="c">% vim:ft=tex
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过例子来学习，不失为一个好方法。上面的就是我为自己自定义的字体配置的宏包，还包含了一定的控制流呢。<s>鬼知道我查这些关键字查了多久。</s>要想设置中文并成功排版出来，必须使用<code>xeCJK</code>红包。里面包含的三条主要设定及其意义如下：</p>
 <div class="highlight"><div class="chroma">
@@ -261,13 +261,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span>[Path=<span class="k">\zhfontpath</span>,
-                BoldFont=方正小标宋<span class="nb">_</span>GBK.ttf,
-                ItalicFont=方正仿宋<span class="nb">_</span>GBK.ttf]
-                <span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>                     <span class="c">% 设置中文主字体
-</span><span class="c"></span><span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>    <span class="c">% 设置中文无衬线字体
-</span><span class="c"></span><span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>  <span class="c">% 设置中文等宽字体
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\setCJKmainfont</span>[Path=<span class="k">\zhfontpath</span>,
+</span></span><span class="line"><span class="cl">                BoldFont=方正小标宋<span class="nb">_</span>GBK.ttf,
+</span></span><span class="line"><span class="cl">                ItalicFont=方正仿宋<span class="nb">_</span>GBK.ttf]
+</span></span><span class="line"><span class="cl">                <span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>                     <span class="c">% 设置中文主字体
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>    <span class="c">% 设置中文无衬线字体
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>  <span class="c">% 设置中文等宽字体
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面三条命令就设定好了中文排版主字体，无衬线以及等宽字体。注意如果是已安装的字体，则不需要指定<code>Path</code>和文件名后缀。比如我列一下我已经安装的中文字体：</p>
 <div class="highlight"><div class="chroma">
@@ -279,12 +279,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ fc-list :lang<span class="o">=</span>zh
-/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc: 文泉驿等宽正黑,WenQuanYi Zen Hei Mono,文泉驛等寬正黑:style<span class="o">=</span>Regular
-/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿微米黑,WenQuanYi Micro Hei,文泉驛微米黑:style<span class="o">=</span>Regular
-/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿等宽微米黑,WenQuanYi Micro Hei Mono,文泉驛等寬微米黑:style<span class="o">=</span>Regular
-/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc: 文泉驿正黑,WenQuanYi Zen Hei,文泉驛正黑:style<span class="o">=</span>Regular
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ fc-list :lang<span class="o">=</span>zh
+</span></span><span class="line"><span class="cl">/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc: 文泉驿等宽正黑,WenQuanYi Zen Hei Mono,文泉驛等寬正黑:style<span class="o">=</span>Regular
+</span></span><span class="line"><span class="cl">/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿微米黑,WenQuanYi Micro Hei,文泉驛微米黑:style<span class="o">=</span>Regular
+</span></span><span class="line"><span class="cl">/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc: 文泉驿等宽微米黑,WenQuanYi Micro Hei Mono,文泉驛等寬微米黑:style<span class="o">=</span>Regular
+</span></span><span class="line"><span class="cl">/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc: 文泉驿正黑,WenQuanYi Zen Hei,文泉驛正黑:style<span class="o">=</span>Regular
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>则相应的字体设定为：</p>
 <div class="highlight"><div class="chroma">
@@ -294,10 +294,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="k">\setCJKmainfont</span><span class="na">[BoldFont=somefont,ItalicFont=somefont]</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
-<span class="k">\setCJKsansfont</span><span class="nb">{</span>WenQuanYi Zen Hei<span class="nb">}</span>
-<span class="k">\setCJKmonofont</span><span class="nb">{</span>WenQuanYi Zen Hei Mono<span class="nb">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\setCJKmainfont</span><span class="na">[BoldFont=somefont,ItalicFont=somefont]</span><span class="nb">{</span>WenQuanYi Micro Hei<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKsansfont</span><span class="nb">{</span>WenQuanYi Zen Hei<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\setCJKmonofont</span><span class="nb">{</span>WenQuanYi Zen Hei Mono<span class="nb">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>后面就是定义一些常用中文字体：宋体、黑体、楷体、仿宋等。注意在使用ctex系文档时，自定义的名字可能已被定义，比如使用<code>\documentclass{ctextart}</code>，<code>\songti</code>命令已被定义，如果使用了我们自定义的宏包<code>zhfont</code>，则会报错命令重复定义。此时可以用<code>\renewcommand</code>强制重新定义，也可以使用ctex默认的。总之，我这里加了条件主要是为了学一下TeX里面的控制流。</p>
 <h2 id="宏包选项">宏包选项</h2>
@@ -347,47 +347,47 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="c">% This package provides a zh_CN font customization for convinience.
-</span><span class="c">% yychi (guyueshui002@gmail.com)
-</span><span class="c">% 2019-09-25 10:10
-</span><span class="c"></span>
-<span class="k">\NeedsTeXFormat</span><span class="nb">{</span>LaTeX2e<span class="nb">}</span>[1994/06/01]
-<span class="k">\ProvidesPackage</span><span class="nb">{</span>zhfont<span class="nb">}</span>[General zh<span class="nb">_</span>CN font setting for tex.]
-<span class="k">\DeclareOption</span><span class="nb">{</span>typography<span class="nb">}{</span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\tp</span><span class="nb">}{}}</span>
-<span class="k">\DeclareOption*</span><span class="nb">{</span><span class="c">%
-</span><span class="c"></span>  <span class="k">\PackageWarning</span><span class="nb">{</span>zhfont<span class="nb">}{</span>Unknown option ‘<span class="k">\CurrentOption</span>’<span class="nb">}</span><span class="c">%
-</span><span class="c"></span><span class="nb">}</span>
-<span class="c">% IMPORTANT!!!, all declareoption should before this,
-</span><span class="c">% see: https://es.overleaf.com/learn/latex/Writing_your_own_class
-</span><span class="c"></span><span class="k">\ProcessOptions\relax</span>
-
-<span class="k">\ifx\zhfontpath\undefined</span>
-  <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\zhfontpath</span><span class="nb">}{</span>/home/yychi/Documents/FontsCollection/zh<span class="nb">_</span>cn/<span class="nb">}</span>
-<span class="k">\else</span>
-  <span class="k">\message</span><span class="nb">{</span><span class="k">\string\zhfontpath\space</span> is defined by some others.<span class="nb">}</span>
-<span class="k">\fi</span>
-
-<span class="k">\RequirePackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
-<span class="k">\ifx\tp\undefined</span>
-  <span class="k">\setCJKmainfont</span>[
-        Path = <span class="k">\zhfontpath</span>,
-        BoldFont = 方正小标宋<span class="nb">_</span>GBK.ttf,
-        ItalicFont = 方正仿宋<span class="nb">_</span>GBK.ttf
-  ]<span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-  <span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-  <span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
-<span class="k">\else</span>
-  <span class="k">\setCJKmainfont</span>[
-      Path = <span class="k">\zhfontpath</span> zhuzi<span class="nb">_</span>old<span class="nb">_</span>mincho/,
-      BoldFont = FZFWZhuZiAOldMinchoB.TTF,
-      ItalicFont = FZFWZhuZGDLMCJW.TTF,
-    ]<span class="nb">{</span>FZFWZhuZiAOldMinchoR.TTF<span class="nb">}</span>
-  <span class="k">\setmainfont</span><span class="nb">{</span>EB Garamond<span class="nb">}</span>
-  <span class="c">%\setmonofont{Consolas}
-</span><span class="c"></span><span class="k">\fi</span>
-
-<span class="c">% 下同
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="c">% This package provides a zh_CN font customization for convinience.
+</span></span></span><span class="line"><span class="cl"><span class="c">% yychi (guyueshui002@gmail.com)
+</span></span></span><span class="line"><span class="cl"><span class="c">% 2019-09-25 10:10
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="k">\NeedsTeXFormat</span><span class="nb">{</span>LaTeX2e<span class="nb">}</span>[1994/06/01]
+</span></span><span class="line"><span class="cl"><span class="k">\ProvidesPackage</span><span class="nb">{</span>zhfont<span class="nb">}</span>[General zh<span class="nb">_</span>CN font setting for tex.]
+</span></span><span class="line"><span class="cl"><span class="k">\DeclareOption</span><span class="nb">{</span>typography<span class="nb">}{</span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\tp</span><span class="nb">}{}}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\DeclareOption*</span><span class="nb">{</span><span class="c">%
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">\PackageWarning</span><span class="nb">{</span>zhfont<span class="nb">}{</span>Unknown option ‘<span class="k">\CurrentOption</span>’<span class="nb">}</span><span class="c">%
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="c">% IMPORTANT!!!, all declareoption should before this,
+</span></span></span><span class="line"><span class="cl"><span class="c">% see: https://es.overleaf.com/learn/latex/Writing_your_own_class
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\ProcessOptions\relax</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\zhfontpath\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\zhfontpath</span><span class="nb">}{</span>/home/yychi/Documents/FontsCollection/zh<span class="nb">_</span>cn/<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\else</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\message</span><span class="nb">{</span><span class="k">\string\zhfontpath\space</span> is defined by some others.<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\RequirePackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\ifx\tp\undefined</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\setCJKmainfont</span>[
+</span></span><span class="line"><span class="cl">        Path = <span class="k">\zhfontpath</span>,
+</span></span><span class="line"><span class="cl">        BoldFont = 方正小标宋<span class="nb">_</span>GBK.ttf,
+</span></span><span class="line"><span class="cl">        ItalicFont = 方正仿宋<span class="nb">_</span>GBK.ttf
+</span></span><span class="line"><span class="cl">  ]<span class="nb">{</span>方正书宋<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\setCJKsansfont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正黑体<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\setCJKmonofont</span><span class="na">[Path=\zhfontpath]</span><span class="nb">{</span>方正中等线<span class="nb">_</span>GBK.ttf<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\else</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\setCJKmainfont</span>[
+</span></span><span class="line"><span class="cl">      Path = <span class="k">\zhfontpath</span> zhuzi<span class="nb">_</span>old<span class="nb">_</span>mincho/,
+</span></span><span class="line"><span class="cl">      BoldFont = FZFWZhuZiAOldMinchoB.TTF,
+</span></span><span class="line"><span class="cl">      ItalicFont = FZFWZhuZGDLMCJW.TTF,
+</span></span><span class="line"><span class="cl">    ]<span class="nb">{</span>FZFWZhuZiAOldMinchoR.TTF<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">\setmainfont</span><span class="nb">{</span>EB Garamond<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c">%\setmonofont{Consolas}
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% 下同
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>此中，<code>\Declareoption{opt_name}{expression}</code>，表示宏包提供选项opt_name，如果你在<code>\usepackage</code>的时候传递了参数opt_name，那么expression将被执行。而<code>\DeclareOption*{expression}</code>表示如果你传递了宏包中未提供的选项，那么expression将被执行。这里我为宏包zhfont提供了选项typography。如果再使用该宏包时传递了该选项，那么zhfont内部会定义一条命令<code>\tp</code>，后面通过判断<code>\tp</code>有没有被定义来选择不同的字体族，就达到了一个选项，切换字体的效果。</p>
 <p>具体来说，如果使用<code>\usepackage[typography]{zhfont}</code>，将使用&quot;FZFWZhuZiAOldMinchoR.TTF&quot;这一套字体排版，而如果没有传递该参数，则使用方正书宋排版。好了，时间有限，这里仅做一个快速的记录，以便之后参考。未完待续……</p>
@@ -502,7 +502,7 @@
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -519,7 +519,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

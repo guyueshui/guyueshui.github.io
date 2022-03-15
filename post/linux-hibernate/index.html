@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-hibernate/" />
@@ -190,16 +190,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat /etc/fstab
-<span class="c1"># &lt;file system&gt;             &lt;mount point&gt;  &lt;type&gt;  &lt;options&gt;  &lt;dump&gt;  &lt;pass&gt;</span>
-<span class="c1"># /dev/nvme0n1p5</span>
-<span class="nv">UUID</span><span class="o">=</span>547054ce-bb1b-40e4-a38d-24507d31d5ca   /           ext4        rw,relatime   <span class="m">0</span> <span class="m">1</span>
-
-<span class="nv">UUID</span><span class="o">=</span>6E76-7D08          /boot/efi   vfat        rw,relatime,fmask<span class="o">=</span>0022,dmask<span class="o">=</span>0022,codepage<span class="o">=</span>437,iocharset<span class="o">=</span>iso8859-1,shortname<span class="o">=</span>mixed,utf8,errors<span class="o">=</span>remount-ro   <span class="m">0</span> <span class="m">2</span>
-
-<span class="c1"># /dev/nvme0n1p7</span>
-<span class="nv">UUID</span><span class="o">=</span>4227170f-0a4f-4a8e-a4fd-0d91f46f54af   none        swap        defaults,pri<span class="o">=</span>-0 <span class="m">0</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat /etc/fstab
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;file system&gt;             &lt;mount point&gt;  &lt;type&gt;  &lt;options&gt;  &lt;dump&gt;  &lt;pass&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>547054ce-bb1b-40e4-a38d-24507d31d5ca   /           ext4        rw,relatime   <span class="m">0</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>6E76-7D08          /boot/efi   vfat        rw,relatime,fmask<span class="o">=</span>0022,dmask<span class="o">=</span>0022,codepage<span class="o">=</span>437,iocharset<span class="o">=</span>iso8859-1,shortname<span class="o">=</span>mixed,utf8,errors<span class="o">=</span>remount-ro   <span class="m">0</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p7</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>4227170f-0a4f-4a8e-a4fd-0d91f46f54af   none        swap        defaults,pri<span class="o">=</span>-0 <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>系统启动时会读取该文件，按照其中的描述挂载对应的分区。默认生成的<code>fstab</code>中，swap分区的类型是<code>swap</code>，将它改为<code>none</code>.</p>
 <p>以下命令均可以查看分区信息：</p>
@@ -233,33 +233,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ lsblk
-NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda           8:0    <span class="m">0</span> 223.6G  <span class="m">0</span> disk 
-├─sda1        8:1    <span class="m">0</span>   110G  <span class="m">0</span> part /home/yychi/EXTRA
-└─sda2        8:2    <span class="m">0</span> 113.6G  <span class="m">0</span> part 
-nvme0n1     259:0    <span class="m">0</span> 238.5G  <span class="m">0</span> disk 
-├─nvme0n1p1 259:1    <span class="m">0</span>   100M  <span class="m">0</span> part /boot/efi
-├─nvme0n1p2 259:2    <span class="m">0</span>    16M  <span class="m">0</span> part 
-├─nvme0n1p3 259:3    <span class="m">0</span> 119.5G  <span class="m">0</span> part 
-├─nvme0n1p4 259:4    <span class="m">0</span>   798M  <span class="m">0</span> part 
-├─nvme0n1p5 259:5    <span class="m">0</span>    65G  <span class="m">0</span> part /
-├─nvme0n1p6 259:6    <span class="m">0</span>    49G  <span class="m">0</span> part /home
-└─nvme0n1p7 259:7    <span class="m">0</span>   4.1G  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
-
-$ sudo blkid -o list
-device           fs_type  label     mount point          UUID
-----------------------------------------------------------------------------------------------
-/dev/nvme0n1p1   vfat     ESP       /boot/efi            6E76-7D08
-/dev/nvme0n1p2                      （未挂载）      
-/dev/nvme0n1p3   ntfs     OS        （未挂载）      CADC772DDC7712C5
-/dev/nvme0n1p4   ntfs               （未挂载）      624AD5CA4AD59B5D
-/dev/nvme0n1p5   ext4     ROOT      /                    547054ce-bb1b-40e4-a38d-24507d31d5ca
-/dev/nvme0n1p6   ext4     HOME      /home                1e23c2e3-6b73-465a-bd60-355b1bc4060b
-/dev/nvme0n1p7   swap               <span class="o">[</span>SWAP<span class="o">]</span>               4227170f-0a4f-4a8e-a4fd-0d91f46f54af
-/dev/sda1        ext4     DATA      /home/yychi/EXTRA    e66f87ee-33d8-4aaa-bff0-400df2276ef7
-/dev/sda2        ntfs               （未挂载）      07B60D0A64472B59
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ lsblk
+</span></span><span class="line"><span class="cl">NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+</span></span><span class="line"><span class="cl">sda           8:0    <span class="m">0</span> 223.6G  <span class="m">0</span> disk 
+</span></span><span class="line"><span class="cl">├─sda1        8:1    <span class="m">0</span>   110G  <span class="m">0</span> part /home/yychi/EXTRA
+</span></span><span class="line"><span class="cl">└─sda2        8:2    <span class="m">0</span> 113.6G  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">nvme0n1     259:0    <span class="m">0</span> 238.5G  <span class="m">0</span> disk 
+</span></span><span class="line"><span class="cl">├─nvme0n1p1 259:1    <span class="m">0</span>   100M  <span class="m">0</span> part /boot/efi
+</span></span><span class="line"><span class="cl">├─nvme0n1p2 259:2    <span class="m">0</span>    16M  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">├─nvme0n1p3 259:3    <span class="m">0</span> 119.5G  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">├─nvme0n1p4 259:4    <span class="m">0</span>   798M  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">├─nvme0n1p5 259:5    <span class="m">0</span>    65G  <span class="m">0</span> part /
+</span></span><span class="line"><span class="cl">├─nvme0n1p6 259:6    <span class="m">0</span>    49G  <span class="m">0</span> part /home
+</span></span><span class="line"><span class="cl">└─nvme0n1p7 259:7    <span class="m">0</span>   4.1G  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ sudo blkid -o list
+</span></span><span class="line"><span class="cl">device           fs_type  label     mount point          UUID
+</span></span><span class="line"><span class="cl">----------------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p1   vfat     ESP       /boot/efi            6E76-7D08
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p2                      （未挂载）      
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p3   ntfs     OS        （未挂载）      CADC772DDC7712C5
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p4   ntfs               （未挂载）      624AD5CA4AD59B5D
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p5   ext4     ROOT      /                    547054ce-bb1b-40e4-a38d-24507d31d5ca
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p6   ext4     HOME      /home                1e23c2e3-6b73-465a-bd60-355b1bc4060b
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p7   swap               <span class="o">[</span>SWAP<span class="o">]</span>               4227170f-0a4f-4a8e-a4fd-0d91f46f54af
+</span></span><span class="line"><span class="cl">/dev/sda1        ext4     DATA      /home/yychi/EXTRA    e66f87ee-33d8-4aaa-bff0-400df2276ef7
+</span></span><span class="line"><span class="cl">/dev/sda2        ntfs               （未挂载）      07B60D0A64472B59
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="添加恢复分区的内核参数">添加恢复分区的内核参数</h2>
 <div class="highlight"><div class="chroma">
@@ -269,10 +269,10 @@ device           fs_type  label     mount point          UUID
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看当前内核启动命令</span>
-$ cat /proc/cmdline
-<span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看当前内核启动命令</span>
+</span></span><span class="line"><span class="cl">$ cat /proc/cmdline
+</span></span><span class="line"><span class="cl"><span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看到，内核的启动参数中<code>resume=/dev/nvme0n1p7</code>这一项就指定了从该分区恢复，而该分区正是swap分区。</p>
 <p>那么如何修改内核的命令行参数呢？找到你所使用的boot manager（启动引导）程序，更改相应的配置。我使用的是<a href="https://wiki.archlinux.org/index.php/REFInd">rEFInd</a>，需要做的更改为：</p>
@@ -283,10 +283,10 @@ $ cat /proc/cmdline
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># file: /boot/refind_linux.conf
-&#34;Boot with standard options&#34;  &#34;ro root=/dev/nvme0n1p5 rw resume=/dev/nvme0n1p7&#34;
-&#34;Boot to single-user mode&#34;    &#34;ro root=/dev/nvme0n1p5 single&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># file: /boot/refind_linux.conf
+</span></span><span class="line"><span class="cl">&#34;Boot with standard options&#34;  &#34;ro root=/dev/nvme0n1p5 rw resume=/dev/nvme0n1p7&#34;
+</span></span><span class="line"><span class="cl">&#34;Boot to single-user mode&#34;    &#34;ro root=/dev/nvme0n1p5 single&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>直接在第一行最后的参数列表里加上<code>rw resume=/dev/nvme0n1p7</code>即可。Ubuntu默认使用grub作为引导，这个网上教程更为详尽，此处就不再复制粘贴了。</p>
 <h2 id="重新生成启动镜像">重新生成启动镜像</h2>
@@ -296,8 +296,8 @@ $ cat /proc/cmdline
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mkinitcpio -P
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkinitcpio -P
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>重新生成启动镜像，使更改生效，最后重启系统。</p>
 <p>重新进入系统之后，</p>
@@ -307,9 +307,9 @@ $ cat /proc/cmdline
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat /proc/cmdline
-<span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat /proc/cmdline
+</span></span><span class="line"><span class="cl"><span class="se">\\</span>boot<span class="se">\v</span>mlinuz-linux ro <span class="nv">root</span><span class="o">=</span>/dev/nvme0n1p5 rw <span class="nv">resume</span><span class="o">=</span>/dev/nvme0n1p7 <span class="nv">initrd</span><span class="o">=</span>boot<span class="se">\i</span>nitramfs-linux.img
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果参数列表里有<code>resume=/dev/nvme0n1p7</code>则说明设置成功。你可以打开一个程序，然后</p>
 <div class="highlight"><div class="chroma">
@@ -317,8 +317,8 @@ $ cat /proc/cmdline
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl hibernate
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl hibernate
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>令系统休眠，然后再按下电源开关，系统会自动恢复之前的工作环境。</p>
 <p>今天先这样，写的不够详细，改日再完善吧~</p>
@@ -379,9 +379,9 @@ $ cat /proc/cmdline
           <a href="/tags/hibernate/">hibernate</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/graduate-summary/">
+        <a class="prev" href="/post/python-iterables/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">毕业总结</span>
+            <span class="prev-text nav-default">Python Iterables</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/post/tex-sty-basic/">
@@ -443,7 +443,7 @@ $ cat /proc/cmdline
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -460,7 +460,7 @@ $ cat /proc/cmdline
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

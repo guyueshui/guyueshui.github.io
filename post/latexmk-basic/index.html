@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/latexmk-basic/" />
@@ -167,8 +167,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pdflatex someting.tex
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pdflatex someting.tex
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出，让你一窥Tex排版系统的内裤（→_→，一本正经胡说八道中……）。还记得Archlinux的哲学名言吗？&ndash;Keep it simple and stupid (KISS)&ndash;说得太对了呀！</p>
 <p>但是啊说到写论文，肯定要有引用文献的啦，这就麻烦了，每次更新参考文献和交叉引用都需要四步走：</p>
@@ -180,11 +180,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pdflatex a.tex  <span class="c1"># 生成aux文件，下一步bibtex才能知道需要引用哪几个文献</span>
-bibtex a        <span class="c1"># 生成bbl文件，及将.bib里面的元数据展开成符合tex语法的bibitem</span>
-pdflatex a.tex  <span class="c1"># 刷新引用，可能残留一些问号</span>
-pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pdflatex a.tex  <span class="c1"># 生成aux文件，下一步bibtex才能知道需要引用哪几个文献</span>
+</span></span><span class="line"><span class="cl">bibtex a        <span class="c1"># 生成bbl文件，及将.bib里面的元数据展开成符合tex语法的bibitem</span>
+</span></span><span class="line"><span class="cl">pdflatex a.tex  <span class="c1"># 刷新引用，可能残留一些问号</span>
+</span></span><span class="line"><span class="cl">pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这就忍不了了吧？其实我还是能忍的，因为不是每次更新文献就重新编译，可以写一大段再更新一次，这就省事儿多了。真正原因是我像用VS code写latex，下了一个插件叫Latex Workshop，它默认使用pdflatex编译，但我写中文必须要用xelatex编译，而且必须要完成自动化。</p>
 <p>我看到可以用latexmk，所以就去简单研究了下，下面进入正题。</p>
@@ -194,8 +194,8 @@ pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">latexmk
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>默认情况下会自动编译当前文件夹下所有tex文件，默认使用pdflatex引擎。</p>
 <p>如果想编译得到PDF文件，则直接加上选项：</p>
@@ -204,8 +204,8 @@ pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk -pdf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">latexmk -pdf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果想编译单个文件：</p>
 <div class="highlight"><div class="chroma">
@@ -213,8 +213,8 @@ pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk single_file.tex
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">latexmk single_file.tex
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>要删除临时文件：</p>
 <div class="highlight"><div class="chroma">
@@ -223,9 +223,9 @@ pdflatex a.tex  <span class="c1"># 产生最终结果，所有引用正确显示
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">latexmk -c
-latexmk -C <span class="c1">## 删除（包含输出文件）</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">latexmk -c
+</span></span><span class="line"><span class="cl">latexmk -C <span class="c1">## 删除（包含输出文件）</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="配置文件">配置文件</h2>
 <ul>
@@ -249,19 +249,19 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-perl" data-lang="perl"><span class="nv">$dvi_previewer</span> <span class="o">=</span> <span class="s">&#39;start xdvi -watchfile 1.5&#39;</span><span class="p">;</span>
-<span class="nv">$ps_previewer</span>  <span class="o">=</span> <span class="s">&#39;start gv --watch&#39;</span><span class="p">;</span>
-<span class="nv">$pdf_previewer</span> <span class="o">=</span> <span class="s">&#39;start evince&#39;</span><span class="p">;</span>
-
-<span class="nv">$pdf_mode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                              <span class="c1"># tex -&gt; pdf</span>
-<span class="c1"># $pdf_mode = 2;                            # tex -&gt; ps -&gt; pdf</span>
-<span class="c1"># $pdf_mode = 5;                            # use xelatex, see `man latexmk`</span>
-<span class="nv">$postscript_mode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                       <span class="c1"># tex -&gt; ps</span>
-<span class="nv">@defalut_files</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;main.tex&#39;</span><span class="p">,</span> <span class="s">&#39;niam.tex&#39;</span><span class="p">);</span>  <span class="c1"># 指定要编译的文件</span>
-
-<span class="nv">$pdflatex</span> <span class="o">=</span> <span class="s">&#39;pdflatex -interaction=nonstopmode -synctex=1 %O %S&#39;</span><span class="p">;</span>
-<span class="nv">$xelatex</span> <span class="o">=</span> <span class="s">&#39;xelatex -no-pdf -interaction=nonstopmode -synctex=1 %O %S&#39;</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-perl" data-lang="perl"><span class="line"><span class="cl"><span class="nv">$dvi_previewer</span> <span class="o">=</span> <span class="s">&#39;start xdvi -watchfile 1.5&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ps_previewer</span>  <span class="o">=</span> <span class="s">&#39;start gv --watch&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$pdf_previewer</span> <span class="o">=</span> <span class="s">&#39;start evince&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$pdf_mode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                              <span class="c1"># tex -&gt; pdf</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $pdf_mode = 2;                            # tex -&gt; ps -&gt; pdf</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $pdf_mode = 5;                            # use xelatex, see `man latexmk`</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$postscript_mode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                       <span class="c1"># tex -&gt; ps</span>
+</span></span><span class="line"><span class="cl"><span class="nv">@defalut_files</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;main.tex&#39;</span><span class="p">,</span> <span class="s">&#39;niam.tex&#39;</span><span class="p">);</span>  <span class="c1"># 指定要编译的文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$pdflatex</span> <span class="o">=</span> <span class="s">&#39;pdflatex -interaction=nonstopmode -synctex=1 %O %S&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$xelatex</span> <span class="o">=</span> <span class="s">&#39;xelatex -no-pdf -interaction=nonstopmode -synctex=1 %O %S&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="references">References</h2>
 <ul>
@@ -370,7 +370,7 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -387,7 +387,7 @@ latexmk -C <span class="c1">## 删除（包含输出文件）</span>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

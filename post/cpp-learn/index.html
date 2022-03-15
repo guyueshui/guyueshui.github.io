@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/cpp-learn/" />
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/cpp-learn/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2019-08-28T22:52:32+08:00" />
+<meta property="article:modified_time" content="2022-03-15T00:00:00+00:00" />
 
 <meta itemprop="name" content="C&#43;&#43; 学习笔记">
 <meta itemprop="description" content="诚如是，Life is too short to learn c&#43;&#43;. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权">
-<meta itemprop="dateModified" content="2019-08-28T22:52:32+08:00" />
-<meta itemprop="wordCount" content="2082">
+<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2674">
 <meta itemprop="keywords" content="cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C&#43;&#43; 学习笔记"/>
 <meta name="twitter:description" content="诚如是，Life is too short to learn c&#43;&#43;. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权"/>
@@ -141,7 +141,7 @@
       <h1 class="post-title">C&#43;&#43; 学习笔记</h1>
 
       <div class="post-meta">
-        <span class="post-time"> August 28, 2019 </span>
+        <span class="post-time"> March 15, 2022 </span>
         <div class="post-category">
             <a href="/categories/notes/"> Notes </a>
             </div>
@@ -170,6 +170,14 @@
     <li><a href="#模板">模板</a>
       <ul>
         <li><a href="#重载与特化">重载与特化</a></li>
+      </ul>
+    </li>
+    <li><a href="#预编译">预编译</a>
+      <ul>
+        <li><a href="#include"><code>#include</code></a></li>
+        <li><a href="#macro-defines">Macro defines</a></li>
+        <li><a href="#object-like-macros-dont-affect-other-preprocessor-directives">Object-like macros don’t affect other preprocessor directives</a></li>
+        <li><a href="#the-scope-of-defines">The scope of defines</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -288,28 +296,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">A</span>
-<span class="p">{</span>
-  <span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
-  <span class="kt">void</span> <span class="nf">fun</span><span class="p">();</span>
-  <span class="p">...</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="n">A</span><span class="o">::</span><span class="n">a</span> <span class="o">=</span> <span class="mi">233</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">B</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">fun</span><span class="p">();</span>
-  <span class="p">...</span>
-<span class="k">private</span><span class="o">:</span>
-  <span class="k">static</span> <span class="n">string</span> <span class="n">str_</span><span class="p">;</span>
-  <span class="kt">bool</span> <span class="n">done_</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">str_</span> <span class="o">=</span> <span class="s">&#34;hello, i am static&#34;</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="nf">fun</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">A</span><span class="o">::</span><span class="n">a</span> <span class="o">=</span> <span class="mi">233</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">B</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="n">fun</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="n">string</span> <span class="n">str_</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">done_</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">str_</span> <span class="o">=</span> <span class="s">&#34;hello, i am static&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="析构函数的调用时机">析构函数的调用时机</h2>
 <p>The destructor is called whenever an object&rsquo;s lifetime ends, which includes</p>
@@ -321,7 +329,7 @@
 <li>end of the full expression, for nameless temporaries</li>
 <li>stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.</li>
 </ul>
-<p>c.f. <a href="https://en.cppreference.com/w/cpp/language/destructor">https://en.cppreference.com/w/cpp/language/destructor</a></p>
+<p>cf. <a href="https://en.cppreference.com/w/cpp/language/destructor">https://en.cppreference.com/w/cpp/language/destructor</a></p>
 <h2 id="内存布局">内存布局</h2>
 <h3 id="结构体">结构体</h3>
 <p>C++规范在“结构”上使用了和C相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。</p>
@@ -339,17 +347,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span>
-    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>     <span class="c1">// memory location #1
-</span><span class="c1"></span>    <span class="kt">int</span> <span class="nl">b</span> <span class="p">:</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// memory location #2
-</span><span class="c1"></span>    <span class="kt">int</span> <span class="nl">c</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="c1">// memory location #2 (continued)
-</span><span class="c1"></span>    <span class="kt">char</span>  <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="kt">int</span> <span class="nl">d</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">// memory location #3
-</span><span class="c1"></span>    <span class="k">struct</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="nl">ee</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// memory location #4
-</span><span class="c1"></span>    <span class="p">}</span> <span class="n">e</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">obj</span><span class="p">;</span> <span class="c1">// The object &#39;obj&#39; consists of 4 separate memory locations
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>     <span class="c1">// memory location #1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nl">b</span> <span class="p">:</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// memory location #2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nl">c</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="c1">// memory location #2 (continued)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span>  <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nl">d</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">// memory location #3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="nl">ee</span> <span class="p">:</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// memory location #4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="n">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">obj</span><span class="p">;</span> <span class="c1">// The object &#39;obj&#39; consists of 4 separate memory locations
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>类的静态成员不占用类的空间，静态成员在程序数据段中。</li>
@@ -370,16 +378,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>              <span class="c1">// #1 ：模板重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>             <span class="c1">// #2 ：模板重载
-</span><span class="c1"></span><span class="kt">void</span>                     <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>         <span class="c1">// #3 ：非模板重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>            <span class="c1">// #4 ： #1 的特化
-</span><span class="c1"></span>
-<span class="n">f</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>        <span class="c1">// 调用 #1
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #2
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>        <span class="c1">// 调用 #3
-</span><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>          <span class="c1">// 调用 #4
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>              <span class="c1">// #1 ：模板重载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>             <span class="c1">// #2 ：模板重载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span>                     <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>         <span class="c1">// #3 ：非模板重载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>            <span class="c1">// #4 ： #1 的特化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>        <span class="c1">// 调用 #1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>        <span class="c1">// 调用 #3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>          <span class="c1">// 调用 #4
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意只有非模板和初等模板重载参与重载决议。特化不是重载，且不受考虑。只有在重载决议选择最佳匹配初等函数模板后，才检验其特化以查看何为最佳匹配。</p>
 <div class="highlight"><div class="chroma">
@@ -391,15 +399,134 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>    <span class="c1">// #1 ：所有类型的重载
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span> <span class="c1">// #2 ：为指向 int 的指针特化 #1
-</span><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>   <span class="c1">// #3 ：所有指针类型的重载
-</span><span class="c1"></span>
-<span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>    <span class="c1">// #1 ：所有类型的重载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;&gt;</span>          <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span> <span class="c1">// #2 ：为指向 int 的指针特化 #1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">);</span>   <span class="c1">// #3 ：所有指针类型的重载
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>即重载的优先级要高于特化。</p>
 <p>关于模板函数重载的更多内容，参考<a href="https://en.cppreference.com/w/cpp/language/function_template">function_template</a>。</p>
+<h2 id="预编译">预编译</h2>
+<p>Cf. <a href="https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/">https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/</a></p>
+<h3 id="include"><code>#include</code></h3>
+<p>When you #include a file, the preprocessor replaces the #include directive with the contents of the included file. The included contents are then preprocessed (along with the rest of the file), and then compiled.</p>
+<h3 id="macro-defines">Macro defines</h3>
+<p>The #define directive can be used to create a macro. In C++, a macro is a rule that defines how input text is converted into replacement output text.</p>
+<p>There are two basic types of macros: <em>object-like macros</em>, and <em>function-like macros</em>.
+Object-like macros can be defined in one of two ways:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define identifier
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define identifier substitution_text
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="object-like-macros-dont-affect-other-preprocessor-directives">Object-like macros don’t affect other preprocessor directives</h3>
+<p>结论：宏展开在预编译指令(Preprocessor directives)无效。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define PRINT_JOE
+</span></span></span><span class="line"><span class="cl"><span class="cp">#ifdef PRINT_JOE    </span><span class="c1">// 此处会否将&#39;PRINT_JOE&#39;替换为空呢？
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Macros only cause text substitution for normal code. Other preprocessor commands are ignored. Consequently, the PRINT_JOE in #ifdef PRINT_JOE is left alone.</p>
+<p>For example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define FOO 9 </span><span class="c1">// Here&#39;s a macro substitution
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef FOO </span><span class="c1">// This FOO does not get replaced because it’s part of another preprocessor directive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">FOO</span><span class="p">;</span> <span class="c1">// This FOO gets replaced with 9 because it&#39;s part of the normal code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>In actuality, the output of the preprocessor contains no directives at all &ndash; they are all resolved/stripped out before compilation, because the compiler wouldn’t know what to do with them.</p>
+<h3 id="the-scope-of-defines">The scope of defines</h3>
+<p>Once the preprocessor has finished, all defined identifiers from that file are discarded. <strong>This means that directives are only valid from the point of definition to the end of the file in which they are defined</strong>. Directives defined in one code file do not have impact on other code files in the same project.</p>
+<p>宏定义仅在本文件有效，一旦预编译阶段结束，所有宏都将失效。因为，预编译就是将所有的预编译指令都处理掉，该替换的替换（宏展开），该选择的选择，该丢弃的丢弃（条件编译），然后交给编译器去编译，谨记：编译器是读不懂预编译指令的！</p>
+<p>Consider the following example:</p>
+<p>function.cpp:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">doSomething</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef PRINT
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Printing!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp">#ifndef PRINT
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Not printing!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>main.cpp:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">doSomething</span><span class="p">();</span> <span class="c1">// forward declaration for function doSomething()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define PRINT
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">doSomething</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The above program will print:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Not printing!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Even though PRINT was defined in main.cpp, that doesn’t have any impact on any of the code in function.cpp (PRINT is only #defined from the point of definition to the end of main.cpp). This will be of consequence when we discuss header guards in a future lesson.</p>
 <h2 id="references">References</h2>
 
     </div>
@@ -412,7 +539,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        August 28, 2019
+        March 15, 2022
         
     </span>
   </p>
@@ -441,13 +568,9 @@
           <a href="/tags/cpp/">cpp</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/concurrent-programming/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">多线程学习笔记</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/blog-trans/">
-            <span class="next-text nav-default">博客迁移记录</span>
+        
+        <a class="next" href="/post/python-metaclass/">
+            <span class="next-text nav-default">A point of python metaclass</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -505,7 +628,7 @@
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -522,7 +645,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 

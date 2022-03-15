@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.90.1 with theme even" />
+<meta name="generator" content="Hugo 0.94.2 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
@@ -266,17 +266,17 @@ cat /proc/loadavg           # 查看系统负载
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
-head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
-cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
-uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
-cat /proc/cpuinfo           <span class="c1"># 查看 CPU 信息</span>
-hostname                    <span class="c1"># 查看计算机名字</span>
-env                         <span class="c1"># 列出环境变量</span>
-lsmod                       <span class="c1"># 列出加载的内核模块</span>
-uptime                      <span class="c1"># 查看系统运行时间、负载、用户数量</span>
-cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
+</span></span><span class="line"><span class="cl">cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
+</span></span><span class="line"><span class="cl">uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
+</span></span><span class="line"><span class="cl">cat /proc/cpuinfo           <span class="c1"># 查看 CPU 信息</span>
+</span></span><span class="line"><span class="cl">hostname                    <span class="c1"># 查看计算机名字</span>
+</span></span><span class="line"><span class="cl">env                         <span class="c1"># 列出环境变量</span>
+</span></span><span class="line"><span class="cl">lsmod                       <span class="c1"># 列出加载的内核模块</span>
+</span></span><span class="line"><span class="cl">uptime                      <span class="c1"># 查看系统运行时间、负载、用户数量</span>
+</span></span><span class="line"><span class="cl">cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="内存外存">内存外存</h2>
 <div class="highlight"><div class="chroma">
@@ -293,17 +293,17 @@ cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
-grep MemTotal /proc/meminfo <span class="c1"># 查看内存总量</span>
-grep MemFree /proc/meminfo  <span class="c1"># 查看空闲内存总量</span>
-df -h                       <span class="c1"># 查看各分区使用情况</span>
-fdisk -l                    <span class="c1"># 查看所有分区</span>
-swapon -s                   <span class="c1"># 查看所有交换分区</span>
-hdparm -i /dev/hda          <span class="c1"># 查看 IDE 磁盘的参数</span>
-dmesg <span class="p">|</span> grep IDE            <span class="c1"># 查看系统启动时 IDE 磁盘的状态</span>
-mount <span class="p">|</span> column -t           <span class="c1"># 查看各分区的挂载状态</span>
-du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的大小</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
+</span></span><span class="line"><span class="cl">grep MemTotal /proc/meminfo <span class="c1"># 查看内存总量</span>
+</span></span><span class="line"><span class="cl">grep MemFree /proc/meminfo  <span class="c1"># 查看空闲内存总量</span>
+</span></span><span class="line"><span class="cl">df -h                       <span class="c1"># 查看各分区使用情况</span>
+</span></span><span class="line"><span class="cl">fdisk -l                    <span class="c1"># 查看所有分区</span>
+</span></span><span class="line"><span class="cl">swapon -s                   <span class="c1"># 查看所有交换分区</span>
+</span></span><span class="line"><span class="cl">hdparm -i /dev/hda          <span class="c1"># 查看 IDE 磁盘的参数</span>
+</span></span><span class="line"><span class="cl">dmesg <span class="p">|</span> grep IDE            <span class="c1"># 查看系统启动时 IDE 磁盘的状态</span>
+</span></span><span class="line"><span class="cl">mount <span class="p">|</span> column -t           <span class="c1"># 查看各分区的挂载状态</span>
+</span></span><span class="line"><span class="cl">du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的大小</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="网络状态">网络状态</h2>
 <div class="highlight"><div class="chroma">
@@ -317,14 +317,14 @@ du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的�
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
-ip addr show                <span class="c1"># 同上</span>
-iptables -L                 <span class="c1"># 查看 iptables 防火墙</span>
-route -n                    <span class="c1"># 查看本机路由表</span>
-netstat -lntp               <span class="c1"># 查看所有监听端口</span>
-netstat -antp               <span class="c1"># 查看所有已建立的连接</span>
-netstat -s                  <span class="c1"># 查看网络统计信息</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
+</span></span><span class="line"><span class="cl">ip addr show                <span class="c1"># 同上</span>
+</span></span><span class="line"><span class="cl">iptables -L                 <span class="c1"># 查看 iptables 防火墙</span>
+</span></span><span class="line"><span class="cl">route -n                    <span class="c1"># 查看本机路由表</span>
+</span></span><span class="line"><span class="cl">netstat -lntp               <span class="c1"># 查看所有监听端口</span>
+</span></span><span class="line"><span class="cl">netstat -antp               <span class="c1"># 查看所有已建立的连接</span>
+</span></span><span class="line"><span class="cl">netstat -s                  <span class="c1"># 查看网络统计信息</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="用户状态相关">用户状态相关</h2>
 <div class="highlight"><div class="chroma">
@@ -338,14 +338,14 @@ netstat -s                  <span class="c1"># 查看网络统计信息</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
-who                         <span class="c1"># 查看活动用户</span>
-id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
-cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
-cut -d: -f1 /etc/group      <span class="c1"># 查看系统所有组</span>
-usermod -a -G group1,group2 user  <span class="c1"># 将用户追加到组</span>
-groups user                 <span class="c1"># 查看用户所属的组</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
+</span></span><span class="line"><span class="cl">who                         <span class="c1"># 查看活动用户</span>
+</span></span><span class="line"><span class="cl">id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
+</span></span><span class="line"><span class="cl">cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
+</span></span><span class="line"><span class="cl">cut -d: -f1 /etc/group      <span class="c1"># 查看系统所有组</span>
+</span></span><span class="line"><span class="cl">usermod -a -G group1,group2 user  <span class="c1"># 将用户追加到组</span>
+</span></span><span class="line"><span class="cl">groups user                 <span class="c1"># 查看用户所属的组</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考：https://linux.cn/article-10768-1.html</p>
 <h2 id="进程状态相关">进程状态相关</h2>
@@ -356,10 +356,10 @@ groups user                 <span class="c1"># 查看用户所属的组</span>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ps -ef                      <span class="c1"># 查看所有进程</span>
-ps aux                      <span class="c1"># 同上</span>
-top                         <span class="c1"># 动态显示进程状态</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps -ef                      <span class="c1"># 查看所有进程</span>
+</span></span><span class="line"><span class="cl">ps aux                      <span class="c1"># 同上</span>
+</span></span><span class="line"><span class="cl">top                         <span class="c1"># 动态显示进程状态</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="添加用户到组">添加用户到组</h2>
 <div class="highlight"><div class="chroma">
@@ -367,8 +367,8 @@ top                         <span class="c1"># 动态显示进程状态</span>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usermod -aG &lt;group&gt; &lt;user&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -aG &lt;group&gt; &lt;user&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -475,7 +475,7 @@ top                         <span class="c1"># 动态显示进程状态</span>
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
@@ -492,7 +492,7 @@ top                         <span class="c1"># 动态显示进程状态</span>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
 
 
 
