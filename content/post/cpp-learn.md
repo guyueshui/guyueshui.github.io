@@ -1,7 +1,7 @@
 ---
 title: "C++ 学习笔记"
 date: Wed Aug 28 2019
-lastmod: 2019-08-28T22:52:32+08:00
+lastmod: 2022-03-15
 keywords: []
 categories: [Notes]
 tags: [cpp]
@@ -110,7 +110,7 @@ The destructor is called whenever an object's lifetime ends, which includes
 - end of the full expression, for nameless temporaries
 - stack unwinding (栈回溯), for objects with automatic storage duration when an exception escapes their block, uncaught.
 
-c.f. https://en.cppreference.com/w/cpp/language/destructor
+cf. https://en.cppreference.com/w/cpp/language/destructor
 
 ## 内存布局
 
@@ -161,6 +161,89 @@ f(new int(1)); // 调用 #3 ，即使通过 #1 的特化会是完美匹配
 即重载的优先级要高于特化。
 
 关于模板函数重载的更多内容，参考[function_template][1]。
+
+
+## 预编译
+
+Cf. https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/
+
+### `#include`
+
+When you #include a file, the preprocessor replaces the #include directive with the contents of the included file. The included contents are then preprocessed (along with the rest of the file), and then compiled.
+
+### Macro defines
+
+The #define directive can be used to create a macro. In C++, a macro is a rule that defines how input text is converted into replacement output text.
+
+There are two basic types of macros: *object-like macros*, and *function-like macros*.
+Object-like macros can be defined in one of two ways:
+
+```cpp
+#define identifier
+#define identifier substitution_text
+```
+
+### Object-like macros don’t affect other preprocessor directives
+
+结论：宏展开在预编译指令(Preprocessor directives)无效。
+
+```cpp
+#define PRINT_JOE
+#ifdef PRINT_JOE    // 此处会否将'PRINT_JOE'替换为空呢？
+// ...
+```
+Macros only cause text substitution for normal code. Other preprocessor commands are ignored. Consequently, the PRINT_JOE in #ifdef PRINT_JOE is left alone.
+
+For example:
+```cpp
+#define FOO 9 // Here's a macro substitution
+
+#ifdef FOO // This FOO does not get replaced because it’s part of another preprocessor directive
+    std::cout << FOO; // This FOO gets replaced with 9 because it's part of the normal code
+#endif
+```
+In actuality, the output of the preprocessor contains no directives at all -- they are all resolved/stripped out before compilation, because the compiler wouldn’t know what to do with them.
+
+### The scope of defines
+
+Once the preprocessor has finished, all defined identifiers from that file are discarded. **This means that directives are only valid from the point of definition to the end of the file in which they are defined**. Directives defined in one code file do not have impact on other code files in the same project.
+
+宏定义仅在本文件有效，一旦预编译阶段结束，所有宏都将失效。因为，预编译就是将所有的预编译指令都处理掉，该替换的替换（宏展开），该选择的选择，该丢弃的丢弃（条件编译），然后交给编译器去编译，谨记：编译器是读不懂预编译指令的！
+
+Consider the following example:
+
+function.cpp:
+```cpp
+#include <iostream>
+
+void doSomething()
+{
+#ifdef PRINT
+    std::cout << "Printing!";
+#endif
+#ifndef PRINT
+    std::cout << "Not printing!";
+#endif
+}
+```
+main.cpp:
+```cpp
+void doSomething(); // forward declaration for function doSomething()
+
+#define PRINT
+
+int main()
+{
+    doSomething();
+    return 0;
+}
+```
+The above program will print:
+
+```
+Not printing!
+```
+Even though PRINT was defined in main.cpp, that doesn’t have any impact on any of the code in function.cpp (PRINT is only #defined from the point of definition to the end of main.cpp). This will be of consequence when we discuss header guards in a future lesson.
 
 ## References
 
