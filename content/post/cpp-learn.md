@@ -1,6 +1,6 @@
 ---
 title: "C++ 学习笔记"
-date: Wed Aug 28 2019
+date: 2019-08-28
 lastmod: 2022-03-15
 keywords: []
 categories: [Notes]
