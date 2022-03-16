@@ -1,7 +1,7 @@
 ---
 title: "C++ 学习笔记"
 date: 2019-08-28
-lastmod: 2022-03-15
+lastmod: 2022-03-16
 keywords: []
 categories: [Notes]
 tags: [cpp]
@@ -244,6 +244,129 @@ The above program will print:
 Not printing!
 ```
 Even though PRINT was defined in main.cpp, that doesn’t have any impact on any of the code in function.cpp (PRINT is only #defined from the point of definition to the end of main.cpp). This will be of consequence when we discuss header guards in a future lesson.
+
+
+## Header files
+
+Cf. https://www.learncpp.com/cpp-tutorial/header-files/
+
+对于多文件项目，文件是单独编译的。要想调用一个自定义函数，linker必须能找到这个函数在哪里定义。
+
+```cpp
+int add(int, int);  // forward declaration
+
+int main()
+{
+    // add(3, 5);
+    return 0;
+}
+```
+上述文件是可以编译通过的，因为没有发生对`add`的调用，所以linker不会去找`add`的定义（当然如果要找也找不到）。
+
+但是如果某处发起了对`add`的调用（例如去掉注释），那么上述程序在link阶段会报错：
+```shell
+yychi@~> clang test_linker.cpp
+/usr/bin/ld: /tmp/test_linker-e1bb8b.o: in function `main':
+test_linker.cpp:(.text+0x1a): undefined reference to `add(int, int)'
+clang-13: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+在多文件编程时，往往需要forawrd declaration，这些前置声明必须在其他某个地方被定义且只被定义一次。这样，linker才能正确的完成链接。任何重复定义或未定义都会在link阶段报错。
+
+考虑如下例子：
+
+add.cpp:
+```cpp
+int add(int x, int y)
+{
+    return x + y;
+}
+```
+
+main.cpp:
+```cpp
+#include <stdio.h>
+
+int add(int, int);
+
+int main()
+{
+    int x = 1, y = 2;
+    int z = add(x, y);
+    printf("z=%d\n", z);
+    return 0;
+}
+```
+在编译main.cpp的时候，因为有`add`的前置声明，所以可以通过。但为了link的时候能够找到`add`的定义，add.cpp必须也被编译，所以正确的编译方式应该是：
+```shell
+$ clang main.cpp add.cpp
+```
+
+### Use of header files
+
+从上面的论述我们隐约可见，在多文件编程中，我们可能会大量的使用前置声明（forward declaration），一旦文件多起来，这将非常枯燥。所以头文件的出现就是为了解决这个问题：把所有的声明放在一起。
+
+Let’s write a header file to relieve us of this burden. Writing a header file is surprisingly easy, as header files only consist of two parts:
+
+1. A header guard.
+2. The actual content of the header file, which should be the forward declarations for all of the identifiers we want other files to be able to see.
+
+add.h:
+```cpp
+// 1) We really should have a header guard here, but will omit it for simplicity (we'll cover header guards in the next lesson)
+
+// 2) This is the content of the .h file, which is where the declarations go
+int add(int x, int y); // function prototype for add.h -- don't forget the semicolon!
+```
+
+main.cpp:
+```cpp
+#include "add.h" // Insert contents of add.h at this point.  Note use of double quotes here.
+#include <iostream>
+
+int main()
+{
+    std::cout << "The sum of 3 and 4 is " << add(3, 4) << '\n';
+    return 0;
+}
+```
+
+add.cpp:
+```cpp
+#include "add.h" // Insert contents of add.h at this point.  Note use of double quotes here.
+
+int add(int x, int y)
+{
+    return x + y;
+}
+```
+When the preprocessor processes the `#include "add.h"` line, it copies the contents of *add.h* into the current file at that point. Because our *add.h* contains a forward declaration for function *add*, that forward declaration will be copied into *main.cpp*. The end result is a program that is functionally the same as the one where we manually added the forward declaration at the top of *main.cpp*.
+
+Consequently, our program will compile and link correctly.
+![](https://www.learncpp.com/images/CppTutorial/Section1/IncludeHeader.png?ezimgfmt=rs:647x377/rscb2/ng:webp/ngcb2)
+
+### Two wrong cases
+
+![header has function definition](wrong_header.png)
+
+如上图所示，会产生一个重复定义的错误。由于add.h中包含了函数定义，而非前置声明。编译main.cpp的时候，add.h中的代码插入到main.cpp中，产生一次`add`函数的定义。同理，编译add.cpp的时候也定义了一次`add`函数。link阶段会发生歧义，以致报错。
+
+此时如果不编译add.cpp其实是可行的：
+![compile main.cpp only](header2.png)
+
+但谁又能保证只有一个文件`#include "add.h"`呢？所以头文件中应该只包含声明，而不应该包含实现。
+
+> The primary purpose of a header file is to propagate declarations to code files.
+
+Key insight: Header files allow us to put declarations in one location and then import them wherever we need them. This can save a lot of typing in multi-file programs.
+
+Header files should generally not contain function and variable definitions, so as not to violate the one definition rule. An exception is made for symbolic constants (which we cover in lesson [4.15 -- Symbolic constants: const and constexpr variables](https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbolic-constants/)).
+
+**标准库自动链接**
+
+When it comes to functions and variables, it’s worth keeping in mind that header files typically only contain function and variable declarations, not function and variable definitions (otherwise a violation of the one definition rule could result). std::cout is forward declared in the iostream header, but defined as part of the C++ standard library, which is automatically linked into your program during the linker phase.
+
+![cout](cout.png)
 
 ## References
 
