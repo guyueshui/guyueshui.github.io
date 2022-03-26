@@ -80,3 +80,8 @@ top                         # 动态显示进程状态
 ```bash
 usermod -aG <group> <user>
 ```
+
+**查看文件夹内所有文件**
+```bash
+ls -lR somedir | grep "^-" | wc -l
+```
