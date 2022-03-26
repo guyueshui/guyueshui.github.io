@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.94.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
@@ -111,7 +111,7 @@ cat /proc/loadavg           # 查看系统负载
 
 "><meta itemprop="datePublished" content="2019-03-07T19:22:02+00:00" />
 <meta itemprop="dateModified" content="2019-09-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="578">
+<meta itemprop="wordCount" content="598">
 <meta itemprop="keywords" content="常用命令,reference," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux 使用指北"/>
 <meta name="twitter:description" content="本文主要引用 Liam Huang 的博客。
@@ -368,6 +368,15 @@ cat /proc/loadavg           # 查看系统负载
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -aG &lt;group&gt; &lt;user&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>查看文件夹内所有文件</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -lR somedir <span class="p">|</span> grep <span class="s2">&#34;^-&#34;</span> <span class="p">|</span> wc -l
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

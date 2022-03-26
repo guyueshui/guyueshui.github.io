@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Dec 2021 12:55:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Mar 2022 18:45:16 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux开机无声音</title>
+      <link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link>
+      <pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid>
+      <description>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一</description>
+    </item>
+    
+    <item>
+      <title>Linux笔记本触摸板水平滚动问题</title>
+      <link>https://guyueshui.github.io/post/touchpad-horiz-scroll/</link>
+      <pubDate>Fri, 25 Mar 2022 23:03:59 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/touchpad-horiz-scroll/</guid>
+      <description>自打使用linux系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于</description>
+    </item>
+    
     <item>
       <title>A point of python metaclass</title>
       <link>https://guyueshui.github.io/post/python-metaclass/</link>

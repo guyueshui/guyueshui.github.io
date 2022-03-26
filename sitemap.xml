@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guyueshui.github.io/categories/</loc>
+    <lastmod>2022-03-26T18:45:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/categories/linux/</loc>
+    <lastmod>2022-03-26T18:45:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</loc>
+    <lastmod>2022-03-26T18:45:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/</loc>
+    <lastmod>2022-03-26T18:45:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/</loc>
+    <lastmod>2022-03-26T18:45:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/post/touchpad-horiz-scroll/</loc>
+    <lastmod>2022-03-25T23:03:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/post/python-metaclass/</loc>
     <lastmod>2021-12-12T12:55:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,21 +51,7 @@
   </url>
   
   <url>
-    <loc>https://guyueshui.github.io/categories/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/categories/notes/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/post/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -38,13 +66,6 @@
   
   <url>
     <loc>https://guyueshui.github.io/tags/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -66,13 +87,6 @@
   
   <url>
     <loc>https://guyueshui.github.io/tags/hibernate/</loc>
-    <lastmod>2020-07-13T22:44:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/categories/linux/</loc>
     <lastmod>2020-07-13T22:44:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
