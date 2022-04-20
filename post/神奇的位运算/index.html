@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.95.0 with theme even" />
+<meta name="generator" content="Hugo 0.97.3 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/" />
@@ -54,7 +54,7 @@
 <meta itemprop="name" content="神奇的位运算">
 <meta itemprop="description" content="In editing&hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch"><meta itemprop="datePublished" content="2019-04-08T10:35:16+00:00" />
 <meta itemprop="dateModified" content="2021-06-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2135">
+<meta itemprop="wordCount" content="2270">
 <meta itemprop="keywords" content="位运算,trick,cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="神奇的位运算"/>
 <meta name="twitter:description" content="In editing&hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch"/>
@@ -156,6 +156,7 @@
   <ul>
     <li><a href="#必备知识">必备知识</a></li>
     <li><a href="#常见的位运算">常见的位运算</a></li>
+    <li><a href="#summary-from-learncppcom">Summary from learncpp.com</a></li>
     <li><a href="#applications">Applications</a>
       <ul>
         <li><a href="#除以乘以2">除以/乘以2</a></li>
@@ -277,7 +278,52 @@
 <li><code>|</code>：按位或</li>
 <li><code>^</code>：按位异或</li>
 </ul>
-<h2 id="applications">Applications</h2>
+<h2 id="summary-from-learncppcom">Summary from learncpp.com</h2>
+<p>Cf. <a href="https://www.learncpp.com/cpp-tutorial/bit-manipulation-with-bitwise-operators-and-bit-masks/">https://www.learncpp.com/cpp-tutorial/bit-manipulation-with-bitwise-operators-and-bit-masks/</a></p>
+<p>Summarizing how to set, clear, toggle, and query bit flags:</p>
+<p>To query bit states, we use bitwise AND:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">option4</span><span class="p">)</span> <span class="p">...</span> <span class="c1">// if option4 is set, do something
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>To set bits (turn on), we use bitwise OR:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">flags</span> <span class="o">|=</span> <span class="n">option4</span><span class="p">;</span> <span class="c1">// turn option 4 on.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">flags</span> <span class="o">|=</span> <span class="p">(</span><span class="n">option4</span> <span class="o">|</span> <span class="n">option5</span><span class="p">);</span> <span class="c1">// turn options 4 and 5 on.
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>To clear bits (turn off), we use bitwise AND with bitwise NOT:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">option4</span><span class="p">;</span> <span class="c1">// turn option 4 off
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">option4</span> <span class="o">|</span> <span class="n">option5</span><span class="p">);</span> <span class="c1">// turn options 4 and 5 off
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>To flip bit states, we use bitwise XOR:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">flags</span> <span class="o">^=</span> <span class="n">option4</span><span class="p">;</span> <span class="c1">// flip option4 from on to off, or vice versa
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">flags</span> <span class="o">^=</span> <span class="p">(</span><span class="n">option4</span> <span class="o">|</span> <span class="n">option5</span><span class="p">);</span> <span class="c1">// flip options 4 and 5
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="applications">Applications</h2>
 <h3 id="除以乘以2">除以/乘以2</h3>
 <p><code>n &gt;&gt; 1</code>: 右移一位，低位的1被忽略，floor(n/2).
 <code>n &lt;&lt; 1</code>: 左移一位，低位补0，n * 2.</p>

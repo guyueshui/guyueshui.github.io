@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.95.0 with theme even" />
+<meta name="generator" content="Hugo 0.97.3 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/tricks/" />
@@ -54,7 +54,7 @@
 <meta itemprop="name" content="Useful Tricks">
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"><meta itemprop="datePublished" content="2019-01-17T22:19:05+00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05+00:00" />
-<meta itemprop="wordCount" content="5150">
+<meta itemprop="wordCount" content="5482">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Useful Tricks"/>
 <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"/>
@@ -937,7 +937,68 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 <li><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git-工具-子模块</a></li>
 <li><a href="https://juejin.im/post/6844903572950401038">Git 子模块：git submodule</a></li>
 </ol>
-<hr>
+<p><strong>如何撤销本地commit</strong></p>
+<p>有时候本地add了一写diff，随手commit了，接着又有些diff可以共用这个commit，就想撤销刚刚的commit，把所有的diff合并在一起作为一次commit。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># for more info, type git reset -h</span>
+</span></span><span class="line"><span class="cl">git reset --soft &lt;commit_id&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>修改已提交的commit message</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># commit_id至少比要修改的那个commit早一个版本</span>
+</span></span><span class="line"><span class="cl">git rebase -i &lt;commit_id&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出 rebase 的 commit 列表，不包含 &lt;commit id&gt;</span>
+</span></span><span class="line"><span class="cl">$ git rebase -i &lt;commit id&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 最近 3 条</span>
+</span></span><span class="line"><span class="cl">$ git rebase -i HEAD~3
+</span></span><span class="line"><span class="cl"><span class="c1"># 本地仓库没 push 到远程仓库的 commit 信息</span>
+</span></span><span class="line"><span class="cl">$ git rebase -i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># vi 下，找到需要修改的 commit 记录，`pick` 修改为 `edit` 或 `e`，`:wq` 保存退出</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 重复执行如下命令直到完成</span>
+</span></span><span class="line"><span class="cl">$ git commit --amend --message<span class="o">=</span><span class="s2">&#34;modify message by daodaotest&#34;</span> --author<span class="o">=</span><span class="s2">&#34;jiangliheng &lt;jiang_liheng@163.com&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">$ git rebase --continue
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 中间也可跳过或退出 rebase 模式</span>
+</span></span><span class="line"><span class="cl">$ git rebase --skip
+</span></span><span class="line"><span class="cl">$ git rebase --abort
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果只是更改last commit</span>
+</span></span><span class="line"><span class="cl">git commit --amend
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
 <h2 id="command-g">Command <code>g++</code></h2>
 <p>自定义包含路径</p>
 <div class="highlight"><div class="chroma">
