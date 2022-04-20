@@ -511,6 +511,41 @@ Ref:
 2. [Git 子模块：git submodule](https://juejin.im/post/6844903572950401038)
 
 
+**如何撤销本地commit**
+
+有时候本地add了一写diff，随手commit了，接着又有些diff可以共用这个commit，就想撤销刚刚的commit，把所有的diff合并在一起作为一次commit。
+```bash
+# for more info, type git reset -h
+git reset --soft <commit_id>
+```
+
+**修改已提交的commit message**
+
+```bash
+# commit_id至少比要修改的那个commit早一个版本
+git rebase -i <commit_id>
+
+# 列出 rebase 的 commit 列表，不包含 <commit id>
+$ git rebase -i <commit id>
+# 最近 3 条
+$ git rebase -i HEAD~3
+# 本地仓库没 push 到远程仓库的 commit 信息
+$ git rebase -i
+
+# vi 下，找到需要修改的 commit 记录，`pick` 修改为 `edit` 或 `e`，`:wq` 保存退出
+# 重复执行如下命令直到完成
+$ git commit --amend --message="modify message by daodaotest" --author="jiangliheng <jiang_liheng@163.com>"
+$ git rebase --continue
+
+# 中间也可跳过或退出 rebase 模式
+$ git rebase --skip
+$ git rebase --abort
+
+# 如果只是更改last commit
+git commit --amend
+```
+
+
 ----------------
 
 ## Command `g++`
