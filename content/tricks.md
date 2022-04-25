@@ -545,6 +545,32 @@ $ git rebase --abort
 git commit --amend
 ```
 
+**Git rebase**
+
+Cf. https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+
+`rebase`和`merge`都是将另一分支的提交（commit）集成到当前分支的方法。而merge会保留两条分支的所有commit，然后解决冲突，然后形成一个merge commit，从git log上来看，原本线性的提交历史分了叉，然后又合了并。而rebase则是基于当前分支的某次提交去重现另一个分支，rebase之后依然能够保留提交历史的线性状态。
+
+```
+a---b---c---d---e (master)
+    \
+     `--A---B---C (dev)
+```
+> From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you'd created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It's very important to understand that even though the branch looks the same, it's composed of entirely new commits.
+>
+> The primary reason for rebasing is to maintain a linear project history. For example, consi der a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch's history clean so it appears as if you've been working off the latest main branch.
+>
+> You have two options for integrating your feature into the main branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history. The following diagram demonstrates how rebasing onto the main branch facilitates a fast-forward merge.
+>
+> Rebasing is a common way to integrate upstream changes into your local repository. Pulling in upstream changes with Git merge results in a superfluous merge commit every time you want to see how the project has progressed. On the other hand, rebasing is like saying, “I want to base my changes on what everybody has already done.”
+
+注：写这个的时候，我自己对rebase的理解也很模糊。
+
+任何时候不清楚的时候请终止rebase:
+```bash
+git rebase --abort
+```
+反复操练几次，git有友好的提示信息。
 
 ----------------
 
