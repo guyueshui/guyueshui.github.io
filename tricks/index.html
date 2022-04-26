@@ -54,7 +54,7 @@
 <meta itemprop="name" content="Useful Tricks">
 <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"><meta itemprop="datePublished" content="2019-01-17T22:19:05+00:00" />
 <meta itemprop="dateModified" content="2019-01-17T22:19:05+00:00" />
-<meta itemprop="wordCount" content="5482">
+<meta itemprop="wordCount" content="5991">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Useful Tricks"/>
 <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 __ __ __ __ ____ ___ /\ \ /\ \ /\ \ __ /\ \ /\ _`\ /\_ \ \ `\`\\/&#39;/__ __ ___\ \ \___ /\_\\ \/ ____ \ \ \L\ \//\ \ ___ __ `\ `\ /&#39;/\ \/\ \ /&#39;___\ \ _ `\/\ \\/ /&#39;,__\ \ \ _ &lt;&#39;\ \ \ / __`\ /&#39;_ `\ `\ \ \\ \ \_\"/>
@@ -998,7 +998,39 @@ A: <code>git checkout -b newbranch 62ecb3 &amp;&amp; git rebase --onto master 76
 </span></span><span class="line"><span class="cl">git commit --amend
 </span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><p><strong>Git rebase</strong></p>
+<p>Cf. <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></p>
+<p><code>rebase</code>和<code>merge</code>都是将另一分支的提交（commit）集成到当前分支的方法。而merge会保留两条分支的所有commit，然后解决冲突，然后形成一个merge commit，从git log上来看，原本线性的提交历史分了叉，然后又合了并。而rebase则是基于当前分支的某次提交去重现另一个分支，rebase之后依然能够保留提交历史的线性状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a---b---c---d---e (master)
+</span></span><span class="line"><span class="cl">    \
+</span></span><span class="line"><span class="cl">     `--A---B---C (dev)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you&rsquo;d created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It&rsquo;s very important to understand that even though the branch looks the same, it&rsquo;s composed of entirely new commits.</p>
+<p>The primary reason for rebasing is to maintain a linear project history. For example, consi der a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch&rsquo;s history clean so it appears as if you&rsquo;ve been working off the latest main branch.</p>
+<p>You have two options for integrating your feature into the main branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history. The following diagram demonstrates how rebasing onto the main branch facilitates a fast-forward merge.</p>
+<p>Rebasing is a common way to integrate upstream changes into your local repository. Pulling in upstream changes with Git merge results in a superfluous merge commit every time you want to see how the project has progressed. On the other hand, rebasing is like saying, “I want to base my changes on what everybody has already done.”</p>
+</blockquote>
+<p>注：写这个的时候，我自己对rebase的理解也很模糊。</p>
+<p>任何时候不清楚的时候请终止rebase:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rebase --abort
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>反复操练几次，git有友好的提示信息。</p>
+<hr>
 <h2 id="command-g">Command <code>g++</code></h2>
 <p>自定义包含路径</p>
 <div class="highlight"><div class="chroma">

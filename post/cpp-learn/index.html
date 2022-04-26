@@ -54,7 +54,7 @@
 <meta itemprop="name" content="C&#43;&#43; 学习笔记">
 <meta itemprop="description" content="诚如是，Life is too short to learn c&#43;&#43;. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权"><meta itemprop="datePublished" content="2019-08-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="7279">
+<meta itemprop="wordCount" content="7775">
 <meta itemprop="keywords" content="cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C&#43;&#43; 学习笔记"/>
 <meta name="twitter:description" content="诚如是，Life is too short to learn c&#43;&#43;. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权"/>
@@ -201,7 +201,11 @@
         <li><a href="#字节序">字节序</a></li>
       </ul>
     </li>
-    <li><a href="#链接linkage">链接（Linkage）</a></li>
+    <li><a href="#链接linkage">链接（Linkage）</a>
+      <ul>
+        <li><a href="#external-linkage">External linkage</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -1315,6 +1319,83 @@ Object-like macros can be defined in one of two ways:</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>noting that the <code>g_x</code> has the value 22 which is defined in a.cpp, we find out the global non-const variable has external linkage. And the properly compilation and linking show that global const has internal linkage.</p>
+<h3 id="external-linkage">External linkage</h3>
+<p>Cf. <a href="https://www.learncpp.com/cpp-tutorial/external-linkage/">https://www.learncpp.com/cpp-tutorial/external-linkage/</a></p>
+<p>An identifier with <strong>external linkage</strong> can be seen and used both from the file in which it is defined, and from other code files (via a forward declaration). In this sense, identifiers with external linkage are truly “global” in that they can be used anywhere in your program!</p>
+<p><strong>Functions have external linkage by default</strong></p>
+<p>In order to call a function defined in another file, you must place a <code>forward declaration</code> for the function in any other files wishing to use the function. <u>The forward declaration tells the compiler about the existence of the function, and the linker connects the function calls to the actual function definition.</u></p>
+<p><strong>Global variables with external linkage</strong></p>
+<p>Global variables with external linkage are sometimes called <strong>external variables</strong>. To make a global variable external (and thus accessible by other files), we can use the <code>extern</code> keyword to do so:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">g_x</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">};</span> <span class="c1">// non-constant globals are external by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">g_y</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span> <span class="c1">// const globals can be defined as extern, making them external
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">g_z</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span> <span class="c1">// constexpr globals can be defined as extern, making them external (but this is useless, see the note in the next section)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Non-const global variables are external by default (if used, the <code>extern</code> keyword will be ignored).</p>
+<p>To actually use an external global variable that has been defined in another file, you also must place a <code>forward declaration</code> for the global variable in any other files wishing to use the variable. For variables, creating a forward declaration is also done via the <code>extern</code> keyword (with no initialization value).</p>
+<p>Here is an example of using a variable forward declaration:</p>
+<p>a.cpp:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// global variable definitions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">g_x</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">};</span> <span class="c1">// non-constant globals have external linkage by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">g_y</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span> <span class="c1">// this extern gives g_y external linkage
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>main.cpp:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="kt">int</span> <span class="n">g_x</span><span class="p">;</span> <span class="c1">// this extern is a forward declaration of a variable named g_x that is defined somewhere else
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">g_y</span><span class="p">;</span> <span class="c1">// this extern is a forward declaration of a const variable named g_y that is defined somewhere else
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">g_x</span><span class="p">;</span> <span class="c1">// prints 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note that the <code>extern</code> keyword has different meanings in different contexts. In some contexts, <code>extern</code> means “give this variable external linkage”. In other contexts, <code>extern</code> means “this is a forward declaration for an external variable that is defined somewhere else”.</p>
+<p><strong>Summary</strong></p>
+<p><em>Scope</em> determines where a variable is accessible. <em>Duration</em> determines where a variable is created and destroyed. <em>Linkage</em> determines whether the variable can be exported to another file or not.</p>
 <h2 id="references">References</h2>
 <ol>
 <li><a href="https://www.ruanyifeng.com/blog/2016/11/byte-order.html">理解字节序</a></li>

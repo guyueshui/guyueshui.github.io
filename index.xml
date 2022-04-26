@@ -6,7 +6,16 @@
     <description>Recent content on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Mar 2022 18:45:16 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2022 23:52:04 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 中的 static 关键字</title>
+      <link>https://guyueshui.github.io/post/static-in-cpp/</link>
+      <pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/static-in-cpp/</guid>
+      <description>Static members 1 2 3 4 5 6 7 8 9 10 11 12 13 class A { public: // non-static member (i.e., `data` is not visible in `fun1` static fun1(); fun2(); private: int data; static int sata; }; A a; a.fun1(); // valid, equivalent to the following A::fun1(); 静态成员不能访问非静态成员（因为静态成员独</description>
+    </item>
+    
     <item>
       <title>Linux开机无声音</title>
       <link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link>
