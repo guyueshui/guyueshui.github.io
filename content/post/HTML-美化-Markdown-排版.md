@@ -1,7 +1,7 @@
 ---
 title: HTML 美化 Markdown 排版
 date: 2018-12-16 00:04:38
-lastmod: 2019-08-25
+lastmod: 2022-04-27
 categories: ['Techniques']
 tags: [排版, 美化, html]
 
@@ -93,6 +93,8 @@ look<sup>at</sup><sub>me</sub>
 
 ## 4. 插图控制
 
+### 大小控制
+
 ```html
 <!-- 类似的可以设置 height="100" -->
 <img src="miwa.png" width="100" alt="miwa-width=100" />
@@ -102,7 +104,58 @@ look<sup>at</sup><sub>me</sub>
 
 <img src="/img/miwa.png" width="100" alt="miwa-width=100" />
 
-![miwa](/img/miwa.png)
+![miwa](/img/miwa.png "miwa gutarissimo")
+
+### 图标题
+```html
+![hover text](https://hbimg.huaban.com/fe01cdf198b7da8ffec56f52fcf505acffca258a1fb3a-j6MBCO_/fw/480/format/webp "sample caption")
+<figcaption>颇有意境的美少女</figcaption>
+```
+
+![hover text](https://hbimg.huaban.com/fe01cdf198b7da8ffec56f52fcf505acffca258a1fb3a-j6MBCO_/fw/480/format/webp "sample caption")
+<figcaption>颇有意境的美少女</figcaption>
+
+如此能生效的原因是本站加载了名为`figcaption`的css，所以这个标签能够被正确排版。使用本主题[^a]只需要在主题文件夹下的`_custom.scss`中增加:
+
+```scss
+// file: <site-root>/themes/even/assets/sass/_custom/_custom.scss
+figcaption {
+  // background-color: #222;
+  color: gray;
+  padding: 3px;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+```
+即可。
+
+
+## 5. ShortCode
+
+Hugo提供了[ShortCode][1]功能，简单来说就是强大的html替换模版，因为直接在markdown里面写html会显得冗长，所以将一个个排版样式作为ShortCode提供给用户使用。详情参考文档，这里列举一些本主题[^a]提供的ShortCode.
+
+> 不建议使用ShortCode，因为脱离了hugo，这些元素就无法渲染了。为了保持markdown源文件的兼容性，不推荐使用此功能。
+
+```html
+{{% center %}}
+{{% bilibili BV1qs411D7Po %}}
+sample b23 video desc
+{{% /center %}}
+```
+> 完球，上述代码段已经是展开后的形式了，应该是hugo转网页的时候一定会做替换，目前还没找到escape的方法，先将就着看吧。
+
+可排版出如下内容
+
+{{% center %}}
+{{% bilibili BV1qs411D7Po %}}
+sample bilibli video desc
+{{% /center %}}
+
+但其实上述内容在普通
+![](raw-shortcode.png)  
+<figcaption>ShortCode在vscode中的排版效果</figcaption>
+
 
 ## Reference
 
@@ -111,3 +164,8 @@ look<sup>at</sup><sub>me</sub>
 
 - [[HEXO] NexT 主题提高博客颜值](https://walesexcitedmei.github.io/2018/08/30/HEXO-NexT-%E4%B8%BB%E9%A2%98%E6%8F%90%E9%AB%98%E5%8D%9A%E5%AE%A2%E9%A2%9C%E5%80%BC/)
 - [HTML 元素](http://www.w3school.com.cn/html/html_elements.asp)
+
+[^a]: [Hugo theme even][1]
+
+[1]: https://github.com/olOwOlo/hugo-theme-even
+[2]: https://gohugo.io/content-management/shortcodes/
