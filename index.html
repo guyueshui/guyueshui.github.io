@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.97.3 with theme even" />
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/" />
@@ -69,7 +69,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s log</a>
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -85,10 +85,10 @@
         <li class="mobile-menu-item">Tags</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/tricks/">
         <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -102,7 +102,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s log</a>
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
 </div>
 
 
@@ -118,9 +118,9 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
         <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -133,6 +133,37 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/archlinx-keyring-broken/">Archlinx重置keyring</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> May 1, 2022 </span>
+      <div class="post-category">
+          <a href="/categories/notes/"> notes </a>
+          <a href="/categories/linux/"> linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，原来是GPG存的key需要更新信息了。由于</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman-key --refresh-keys
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行过程漫长，我新开了一个窗口直接<code>pacman -Syu</code>了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/archlinx-keyring-broken/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/static-in-cpp/">C&#43;&#43; 中的 static 关键字</a></h1>
@@ -297,25 +328,6 @@
     </div>
     <div class="read-more">
       <a href="/post/tex-sty-basic/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/latexmk-basic/">Latexmk基础用法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> April 13, 2020 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      怎么想到用latexmk的呢？写论文呗！ 本来呢，我一直习惯于使用命令行手敲 1 pdflatex someting.tex 千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出
-    </div>
-    <div class="read-more">
-      <a href="/post/latexmk-basic/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

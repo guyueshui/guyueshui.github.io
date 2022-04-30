@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.97.3 with theme even" />
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/bit-field-struct/" />
@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/bit-field-struct/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-08-06T20:43:02+00:00" />
-<meta property="article:modified_time" content="2019-08-06T20:43:02+00:00" />
+<meta property="article:modified_time" content="2022-05-01T02:13:24+08:00" />
 
 <meta itemprop="name" content="位域结构体简介">
 <meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"><meta itemprop="datePublished" content="2019-08-06T20:43:02+00:00" />
-<meta itemprop="dateModified" content="2019-08-06T20:43:02+00:00" />
+<meta itemprop="dateModified" content="2022-05-01T02:13:24+08:00" />
 <meta itemprop="wordCount" content="1892">
 <meta itemprop="keywords" content="cpp,结构体,位运算," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="位域结构体简介"/>
@@ -72,7 +72,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s log</a>
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -88,10 +88,10 @@
         <li class="mobile-menu-item">Tags</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/tricks/">
         <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -105,7 +105,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s log</a>
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
 </div>
 
 
@@ -121,9 +121,9 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
         <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -470,7 +470,7 @@ Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 �
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        August 6, 2019
+        May 1, 2022
         
     </span>
   </p>
@@ -480,21 +480,7 @@ Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 �
     <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">Reward</label>
-  <div class="qr-code">
-    
-    <label class="qr-code-image" for="reward">
-        <img class="image" src="/img/me/wechat-qr.png">
-        <span>wechat</span>
-      </label>
-    <label class="qr-code-image" for="reward">
-        <img class="image" src="/img/me/alipay-qr.jpg">
-        <span>alipay</span>
-      </label>
-  </div>
-</div><footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/cpp/">cpp</a>
           <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>

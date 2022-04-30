@@ -16,14 +16,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！
+" /><meta name="keywords" content="水阙, yychi" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.97.3 with theme even" />
+<meta name="generator" content="Hugo 0.98.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" />
@@ -45,19 +46,19 @@
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="记一次重装 Linux" />
-<meta property="og:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的" />
+<meta property="og:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-08-13T10:07:05+00:00" />
-<meta property="article:modified_time" content="2018-08-13T10:07:05+00:00" />
+<meta property="article:modified_time" content="2022-05-01T02:13:24+08:00" />
 
 <meta itemprop="name" content="记一次重装 Linux">
-<meta itemprop="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的"><meta itemprop="datePublished" content="2018-08-13T10:07:05+00:00" />
-<meta itemprop="dateModified" content="2018-08-13T10:07:05+00:00" />
-<meta itemprop="wordCount" content="1569">
+<meta itemprop="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"><meta itemprop="datePublished" content="2018-08-13T10:07:05+00:00" />
+<meta itemprop="dateModified" content="2022-05-01T02:13:24+08:00" />
+<meta itemprop="wordCount" content="1762">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="记一次重装 Linux"/>
-<meta name="twitter:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的"/>
+<meta name="twitter:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -72,7 +73,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s log</a>
+    <a href="/" class="logo">Yychi&#39;s Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -88,10 +89,10 @@
         <li class="mobile-menu-item">Tags</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/tricks/">
         <li class="mobile-menu-item">Tricks</li>
+      </a><a href="/sketch/">
+        <li class="mobile-menu-item">Sketch</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -105,7 +106,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s log</a>
+  <a href="/" class="logo">Yychi&#39;s Blog</a>
 </div>
 
 
@@ -121,9 +122,9 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
         <a class="menu-item-link" href="/tricks/">Tricks</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/sketch/">Sketch</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -161,13 +162,18 @@
         <li><a href="#字体">字体</a></li>
       </ul>
     </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#intel集成显卡滚动屏幕出现撕裂现象">intel集成显卡滚动屏幕出现撕裂现象</a></li>
+        <li><a href="#启用nvidia独显">启用nvidia独显</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
       <p>放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 <code>startx</code> 启动 gnome-session 失败。几经解决未果，只好重装！</p>
-<!-- more -->
 <h2 id="安装-archlinux">安装 Archlinux</h2>
 <p>基本安装步骤都是按照 ArchWiki 上的 <a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Installation Guide</a> 以及简书上的一篇文章 <a href="https://www.jianshu.com/p/82a40aac52aa">虚拟机安装Archlinux的简易步骤</a>.</p>
 <p>安装过程主要可以分为以下几个步骤：</p>
@@ -412,7 +418,32 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">fc-list :lang<span class="o">=</span>zh <span class="c1"># 查看支持中文的字体</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="intel集成显卡滚动屏幕出现撕裂现象">intel集成显卡滚动屏幕出现撕裂现象</h3>
+<p>可能有用的链接</p>
+<ol>
+<li><a href="https://wiki.archlinux.org/title/Intel_graphics#Xorg_configuration">https://wiki.archlinux.org/title/Intel_graphics#Xorg_configuration</a></li>
+</ol>
+<p>如何查看当前加载的显卡驱动：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lspci -v <span class="p">|</span> grep -A20 VGA
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>查看nvidia则<code>grep 3D</code></p>
+<p>按照<a href="https://wiki.archlinux.org/title/Intel_graphics#Tearing">archwiki上所说</a>，结果启动X报错，说没有intel这个module，后来发现应该<code>xf86-video-intel</code>这个驱动没装的原因。装了之后，再启动就没有屏幕撕裂现象了。</p>
+<blockquote>
+<p>搁置了这么久终于解决了屏幕撕裂的问题，呼！</p>
+</blockquote>
+<h3 id="启用nvidia独显">启用nvidia独显</h3>
+<p>可能有用的链接</p>
+<ol>
+<li><a href="https://howto.lintel.in/install-nvidia-arch-linux/">https://howto.lintel.in/install-nvidia-arch-linux/</a></li>
+<li><a href="https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration">https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration</a></li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -423,7 +454,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        August 13, 2018
+        May 1, 2022
         
     </span>
   </p>
@@ -433,21 +464,7 @@
     <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">Reward</label>
-  <div class="qr-code">
-    
-    <label class="qr-code-image" for="reward">
-        <img class="image" src="/img/me/wechat-qr.png">
-        <span>wechat</span>
-      </label>
-    <label class="qr-code-image" for="reward">
-        <img class="image" src="/img/me/alipay-qr.jpg">
-        <span>alipay</span>
-      </label>
-  </div>
-</div><footer class="post-footer">
+<footer class="post-footer">
       
       <nav class="post-nav">
         <a class="prev" href="/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/">

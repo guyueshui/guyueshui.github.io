@@ -77,7 +77,7 @@
       <pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</guid>
-      <description>Markdown 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://daringfireball.net/projects/markdown/syntax&#34;&gt;Markdown&lt;/a&gt; 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来说说在使用 Markdown 排版的时候，如何引入一点 HTML 的技巧来帮助我们排版的更加好看。&lt;/p&gt;</description>
     </item>
     
     <item>

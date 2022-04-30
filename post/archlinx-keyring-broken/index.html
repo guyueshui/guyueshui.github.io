@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>鬼话 - 水阙</title>
+  <title>Archlinx重置keyring - 水阙</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="易之" /><meta name="description" content="看官，请随我来。 你说这大气好不奇妙。我们都知道大气对我们是有压力的，我们为什么感受不到，因为我们体内也有大气压着。哦，那么我们的肚皮不是要承" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查1，原来是GPG存的key需要更新信息了。由于
+1  pacman-key --refresh-keys   执行过程漫长，我新开了一个窗口直接pacman -Syu了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。
+" /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -26,7 +28,7 @@
 <meta name="generator" content="Hugo 0.98.0 with theme even" />
 
 
-<link rel="canonical" href="https://guyueshui.github.io/post/%E9%AC%BC%E8%AF%9D/" />
+<link rel="canonical" href="https://guyueshui.github.io/post/archlinx-keyring-broken/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,20 +46,47 @@
 <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
-<meta property="og:title" content="鬼话" />
-<meta property="og:description" content="看官，请随我来。 你说这大气好不奇妙。我们都知道大气对我们是有压力的，我们为什么感受不到，因为我们体内也有大气压着。哦，那么我们的肚皮不是要承" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/%E9%AC%BC%E8%AF%9D/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2013-08-06T21:29:49+08:00" />
-<meta property="article:modified_time" content="2020-03-25T15:11:49+08:00" />
+<meta property="og:title" content="Archlinx重置keyring" />
+<meta property="og:description" content="今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查1，原来是GPG存的key需要更新信息了。由于
 
-<meta itemprop="name" content="鬼话">
-<meta itemprop="description" content="看官，请随我来。 你说这大气好不奇妙。我们都知道大气对我们是有压力的，我们为什么感受不到，因为我们体内也有大气压着。哦，那么我们的肚皮不是要承"><meta itemprop="datePublished" content="2013-08-06T21:29:49+08:00" />
-<meta itemprop="dateModified" content="2020-03-25T15:11:49+08:00" />
-<meta itemprop="wordCount" content="673">
-<meta itemprop="keywords" content="碎碎念," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="鬼话"/>
-<meta name="twitter:description" content="看官，请随我来。 你说这大气好不奇妙。我们都知道大气对我们是有压力的，我们为什么感受不到，因为我们体内也有大气压着。哦，那么我们的肚皮不是要承"/>
+
+1
+
+
+pacman-key --refresh-keys
+
+
+执行过程漫长，我新开了一个窗口直接pacman -Syu了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyueshui.github.io/post/archlinx-keyring-broken/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-01T00:25:52+08:00" />
+<meta property="article:modified_time" content="2022-05-01T02:13:24+08:00" />
+
+<meta itemprop="name" content="Archlinx重置keyring">
+<meta itemprop="description" content="今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查1，原来是GPG存的key需要更新信息了。由于
+
+
+1
+
+
+pacman-key --refresh-keys
+
+
+执行过程漫长，我新开了一个窗口直接pacman -Syu了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。"><meta itemprop="datePublished" content="2022-05-01T00:25:52+08:00" />
+<meta itemprop="dateModified" content="2022-05-01T02:13:24+08:00" />
+<meta itemprop="wordCount" content="361">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Archlinx重置keyring"/>
+<meta name="twitter:description" content="今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查1，原来是GPG存的key需要更新信息了。由于
+
+
+1
+
+
+pacman-key --refresh-keys
+
+
+执行过程漫长，我新开了一个窗口直接pacman -Syu了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,12 +167,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">鬼话</h1>
+      <h1 class="post-title">Archlinx重置keyring</h1>
 
       <div class="post-meta">
-        <span class="post-time"> August 6, 2013 </span>
+        <span class="post-time"> May 1, 2022 </span>
         <div class="post-category">
-            <a href="/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+            <a href="/categories/notes/"> notes </a>
+            <a href="/categories/linux/"> linux </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -152,45 +182,78 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>看官，请随我来。</p>
-<p>你说这大气好不奇妙。我们都知道大气对我们是有压力的，我们为什么感受不到，因为我们体内也有大气压着。哦，那么我们的肚皮不是要承受两份压力吗，那怎么受得了？哦，肚皮是有厚度的，可不能忽略，为什么压不扁呢？大概组成肚皮的层层细胞间也是有大气的，那既然细胞外有大气，那细胞里也要有的，不然不是把细胞压炸了？那细胞壁呢？它是有厚度的，可不能忽略。它是不是像肚皮一样也是由众多微不可见的东西组成的呢？我们之所以知道肚皮、细胞，那是人家告诉的。若是人家没说，我们会这样想，这是由众多的那组成的，那是由众多的这组成的，这样它们都失去了名字，就没什么区别。如果细胞壁想肚皮一样是由众多的某某组成，那这众多的某某又会诞生出下一个系统，如此生生不息，众多的系统都未命名的话，那么排列就无需先后。从中任意挑一个出来既是老祖宗，又是重孙子。就像数轴一样，任意数都可向两侧无限延伸。小而又小是什么？大而又大是什么？照刚才所说，都未命名的话，其实极小与极大是没区别的。一株小草也可以与一颗恒星相提并论。万物都是平等的系统，恒星包含了无限的微粒，小草也是。何为大，何为小，何为物，何为我，都没什么意思。<strong>无极之内，在极之外</strong>。世界本就是模糊朦胧混沌的，婴儿的大脑是最高的境界。看官可能会说，婴儿可不知道这些，更没有思考过这些。其实这就像一开始的陌路，和最终相忘江湖的两个人，表面上没有任何区别，但其中确有种种微妙。老庄说的至人无己，至人的大脑大概是和婴儿一样的，至人确有了质的飞越。从无中来，再到无中去，这便是一生的修行！老人和婴儿便是一个系统的出入口，其始亦是终。</p>
-
+      <p>今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，原来是GPG存的key需要更新信息了。由于</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman-key --refresh-keys
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行过程漫长，我新开了一个窗口直接<code>pacman -Syu</code>了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。</p>
+<p>一切看起来相安无事，但当我下次执行<code>pacman</code>相关指令的时候，会频繁报错，keyring有问题，然后我再想像之前那样刷新的时候呢，gpg报了一大堆看不懂的错误。这下糟了，看起来我是把所有key都弄坏了。于是一不做二不休，直接重置算了。</p>
+<p>重置过程参考<a href="https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/">此处</a>，摘要如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf /etc/pacman.d/gnupg
+</span></span><span class="line"><span class="cl">pacman-key --init
+</span></span><span class="line"><span class="cl">pacman-key --populate
+</span></span><span class="line"><span class="cl">pacman -Syu
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="references">References</h2>
+<ol>
+<li><a href="https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/">GnuPG-2.1 与 pacman 密钥环</a></li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.jianshu.com/p/1db80e403cca">Archlinux 长时间未更新报错</a>：containerd: 来自 &ldquo;Santiago Torres-Arias <a href="mailto:santiago@archlinux.org">santiago@archlinux.org</a>&rdquo; 的签名是未知信任的&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">易之</span>
+    <span class="item-content">Yychi</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        March 25, 2020
+        May 1, 2022
         
     </span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">License</span>
-    <span class="item-content">Origin</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
 <footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/post/%E6%9D%91%E4%B8%9C%E5%A4%B4/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">村东头</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/%E6%9D%82%E8%AE%B0/">
-            <span class="next-text nav-default">杂记</span>
+        
+        <a class="next" href="/post/static-in-cpp/">
+            <span class="next-text nav-default">C&#43;&#43; 中的 static 关键字</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
