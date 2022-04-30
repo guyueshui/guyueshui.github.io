@@ -54,12 +54,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   url = "/categories/"
 [[menu.main]]
   name = "Sketch"
-  weight = 5
+  weight = 6
   identifier = "sketch"
   url = "/sketch/"
 [[menu.main]]
   name = "Tricks"
-  weight = 6
+  weight = 5
   identifier = "tricks"
   url = "/tricks/"
 [[menu.main]]
@@ -80,11 +80,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
                 # See https://github.com/liriliri/eruda
   since = "2018"  # Site creation time
   # site info (optional)
-  logoTitle = "Yychi's log" # default: the title value
+  logoTitle = "Yychi's Blog" # default: the title value
   keywords = ["水阙", "yychi"]
   description = "向往水的温柔，在心底打着卷儿。"
   # paginate of archives, tags and categories
-  archivePaginate = 15
+  archivePaginate = 25
   # show 'xx Posts In Total' in archive page?
   showArchiveCount = true
   # The date format to use; for a list of valid formats, 
@@ -190,7 +190,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     pagePV = true
 
   [params.reward]           # 文章打赏
-    enable = true
+    enable = false
     wechat = "/img/me/wechat-qr.png" # 微信二维码
     alipay = "/img/me/alipay-qr.jpg" # 支付宝二维码
 

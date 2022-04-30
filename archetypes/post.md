@@ -1,7 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-lastmod: {{ .Date }}
 keywords: []
 categories: []
 tags: []
@@ -10,3 +9,4 @@ mathjax: false
 
 ---
 
+<!--more-->
