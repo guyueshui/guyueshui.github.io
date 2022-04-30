@@ -1,13 +1,14 @@
 ---
 title: HTML 美化 Markdown 排版
 date: 2018-12-16 00:04:38
-lastmod: 2022-04-27
 categories: ['Techniques']
 tags: [排版, 美化, html]
 
 ---
 
 [Markdown](https://daringfireball.net/projects/markdown/syntax) 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来说说在使用 Markdown 排版的时候，如何引入一点 HTML 的技巧来帮助我们排版的更加好看。
+
+<!--more-->
 
 ## 1. 对齐控制
 

@@ -1,7 +1,6 @@
 ---
 title: "博客迁移记录"
 date: 2019-08-25T16:00:50+08:00
-lastmod: 2020-03-16
 keywords: []
 categories: [Notes]
 tags: [字体, 美化, 个性化]
@@ -222,9 +221,12 @@ Hugo的部署，没有Hexo那样一步到位，每次都要手动操作。以至
 
 > 注意：此前需要在你的Hugo配置文件中更改相应的`baseURL`. 例如，更改为`baseURL = "https://<username>.github.io"`
 
+近日，又发现一个比较好的迁移指引[^d]，文章十分翔实。
+
 [^a]: [.Format | Hugo][4]
 [^b]: [Hugo 建站记录][7]
 [^c]: [Get Started with the Google Fonts API][9]
+[^d]: [Hugo 与 Hexo 的异同](https://io-oi.me/tech/hugo-vs-hexo)
 
 [1]: https://hexo.io
 [2]: https://gohugo.io

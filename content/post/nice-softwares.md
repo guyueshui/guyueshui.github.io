@@ -1,7 +1,6 @@
 ---
 title: "小内存机器的自我救赎"
-date: Thu Mar 12 2020
-lastmod: 2020-03-12T09:46:54+08:00
+date: 2020-03-12
 keywords: []
 categories: [应用推荐]
 tags: []
@@ -28,6 +27,8 @@ mathjax: false
 ## 截图
 
 - [flameshot][1]: gnome-screenshot的替代品，支持截图后标记，复制到剪贴板；平台：Linux
+    - `flameshot gui`: 直接打开截屏功能，更多参考`flameshot -h`.
+- [peek][11]: 小巧易用的录屏软件，支持录制gif, mp4, webm等格式。
 
 ## 效率
 
@@ -50,3 +51,4 @@ mathjax: false
 [8]: https://pwmt.org/projects/zathura/
 [9]: https://www.musicpd.org/
 [10]: https://github.com/davatorium/rofi
+[11]:https://github.com/phw/peek
