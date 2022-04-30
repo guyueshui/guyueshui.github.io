@@ -6,7 +6,7 @@ categories: ['Linux']
 
 放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 `startx` 启动 gnome-session 失败。几经解决未果，只好重装！
 
-<!-- more -->
+<!--more-->
 
 ## 安装 Archlinux
 
@@ -184,3 +184,28 @@ fc-list | grep userfonts
 ```sh
 fc-list :lang=zh # 查看支持中文的字体
 ```
+
+## Troubleshooting
+
+### intel集成显卡滚动屏幕出现撕裂现象
+
+可能有用的链接
+
+1. https://wiki.archlinux.org/title/Intel_graphics#Xorg_configuration
+
+如何查看当前加载的显卡驱动：
+```bash
+lspci -v | grep -A20 VGA
+```
+查看nvidia则`grep 3D`
+
+按照[archwiki上所说](https://wiki.archlinux.org/title/Intel_graphics#Tearing)，结果启动X报错，说没有intel这个module，后来发现应该`xf86-video-intel`这个驱动没装的原因。装了之后，再启动就没有屏幕撕裂现象了。
+
+> 搁置了这么久终于解决了屏幕撕裂的问题，呼！
+
+### 启用nvidia独显
+
+可能有用的链接
+
+1. https://howto.lintel.in/install-nvidia-arch-linux/
+2. https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration

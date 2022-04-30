@@ -1,7 +1,6 @@
 ---
 title: "C++ 学习笔记"
 date: 2019-08-28
-lastmod: 2022-03-16
 keywords: []
 categories: [Notes]
 tags: [cpp]
@@ -814,9 +813,103 @@ Note that the `extern` keyword has different meanings in different contexts. In 
 
 *Scope* determines where a variable is accessible. *Duration* determines where a variable is created and destroyed. *Linkage* determines whether the variable can be exported to another file or not.
 
+## Inline function
+
+考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时inline function就是你的最佳选择。关于合适使用inline function，下面这段话给了一定的意见：
+
+> For functions that are large and/or perform complex tasks, the overhead of the function call is typically insignificant compared to the amount of time the function takes to run. However, for small functions, the overhead costs can be larger than the time needed to actually execute the function’s code! In cases where a small function is called often, using a function can result in a significant performance penalty over writing the same code in-place.
+
+Inline function的好处包括：
+
+1. 没有函数调用的开销
+2. 编译器对展开后的代码有更大的优化空间（如常量替换）
+
+However, inline expansion has its own potential cost: if the body of the function being expanded takes more instructions than the function call being replaced, then each inline expansion will cause the executable to grow larger. Larger executables tend to be slower (due to not fitting as well in caches).
+
+> 注意：inline只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。
+
+However, in modern C++, the `inline` keyword is no longer used to request that a function be expanded inline. There are quite a few reasons for this:
+
+- Using `inline` to request inline expansion is a form of premature optimization, and misuse could actually harm performance.
+- The `inline` keyword is just a hint -- the compiler is completely free to ignore a request to inline a function. This is likely to be the result if you try to inline a lengthy function! **The compiler is also free to perform inline expansion of functions that do not use the `inline` keyword**  as part of its normal set of optimizations.
+- The `inline` keyword is defined at the wrong level of granularity. We use the `inline` keyword on a function declaration, but inline expansion is actually determined per function call. It may be beneficial to expand some function calls and detrimental to expand others, and there is no syntax to affect this.
+
+注意：在modern cpp中，用inline修饰的不违反ODR（one definition rule），因此可用于
+
+- 头文件中修饰常量作为global const的最佳方案[^b]
+- 头文件中修饰constexpr函数[^a]使所有include该文件的源文件都能使用该函数，注意constexpr函数是默认inline的
+
+> Allowing functions with a constexpr return type to be evaluated at either compile-time or runtime was allowed so that a single function can serve both cases. Otherwise, you’d need to have separate functions (a constexpr version and a non-constexpr version) -- and since return type isn’t considered in function overload resolution, you’d have to name the functions different things!
+>
+> A constexpr function that is eligible to be evaluated at compile-time will only be evaluated at compile-time if the return value is used where a constant expression is required. Otherwise, compile-time evaluation is not guaranteed.
+>
+> Thus, a constexpr function is better thought of as “can be used in a constant expression”, not “will be evaluated at compile-time”.
+
+## Unnamed namespace
+
+An **unnamed namespace** (also called an **anonymous namespace**) is a namespace that is defined without a name, like so:
+```cpp
+#include <iostream>
+
+namespace // unnamed namespace
+{
+    void doSomething() // can only be accessed in this file
+    {
+        std::cout << "v1\n";
+    }
+}
+
+int main()
+{
+    doSomething(); // we can call doSomething() without a namespace prefix
+
+    return 0;
+}
+```
+
+特点：
+
+1. All content declared in an unnamed namespace is treated as if it is part of the parent namespace.
+2. All identifiers inside an unnamed namespace are treated as if they had **internal linkage**.
+
+解决的问题：Unnamed namespaces will also keep user-defined types (something we’ll discuss in a later lesson) local to the file, something for which there is no alternative equivalent mechanism to do.
+
+**About `switch` clause**
+
+*Put another way, defining a variable without an initializer is just telling the compiler that the variable is now in scope from that point on. This happens at compile time, and doesn’t require the definition to actually be executed at runtime.*
+
+```cpp
+int calculate(int x, int y, char op)
+{
+    int ret = 0;
+    switch (op)
+    {
+    case '+':
+        return x + y;
+        case '-':
+        return x - y;
+        case '*':
+        return x * y;
+        case '/':
+        return x / y;
+        case '%':
+        return x % y;
+        default:
+        throw std::invalid_arguments("invalid operator");
+    }
+}
+```
+
+
+
 ## References
 
 1. [理解字节序][2]
 
 [1]: https://en.cppreference.com/w/cpp/language/function_template
 [2]: https://www.ruanyifeng.com/blog/2016/11/byte-order.html
+[3]: https://www.learncpp.com/cpp-tutorial/constexpr-and-consteval-functions/
+[4]: https://www.learncpp.com/cpp-tutorial/sharing-global-constants-across-multiple-files-using-inline-variables/
+
+[^a]: [6.14 — Constexpr and consteval functions][3]
+[^b]: [6.9 — Sharing global constants across multiple files (using inline variables)][4]
