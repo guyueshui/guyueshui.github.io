@@ -4,6 +4,10 @@ date: 2018-12-14 13:59:49
 comment: false
 
 ---
+## 2022 年 5 月
+
+shell字符串截取：http://c.biancheng.net/view/1120.html
+
 ## 2022 年 4 月
 
 Posix扩展正则表达式: https://imliuda.com/post/16
