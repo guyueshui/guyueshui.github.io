@@ -10,6 +10,7 @@ comment: false
 - [Yihui Xie](https://yihui.org/cn/)：有个性，有思想的博客（单方面友链）。
 - [Kai Qi](https://jiandan94.github.io/)：统计学博士在读，有内涵的哥们。
 - [Ryan](https://ruanzz.github.io)：同学。
+- [dou.lu](https://dou.lu/1591.x)：果然有趣的灵魂就是那么吸引人。
 
 ## Algorithms
 
@@ -50,6 +51,7 @@ comment: false
 - [中国哲学书电子化计划](https://ctext.org/)
 - [历代诗词赋骈曲杂集](http://www.readers365.com/scfpq/index.htm)
 - [搜韵](https://sou-yun.com/index.aspx)
+- [书法](https://www.zgbk.com/dzb/jy/sfxx/)
 
 ### Fonts
 

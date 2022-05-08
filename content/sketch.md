@@ -6,7 +6,7 @@ comment: false
 ---
 ## 2022 年 5 月
 
-shell字符串截取：http://c.biancheng.net/view/1120.html
+shell字符串截取: http://c.biancheng.net/view/1120.html
 
 ## 2022 年 4 月
 
