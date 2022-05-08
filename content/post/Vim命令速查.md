@@ -1,7 +1,7 @@
 ---
 title: Vim Quick Reference
 date: 2018-12-20 19:17:54
-categories: ['Techniques']
+categories: [tech]
 tags: ['vim','reference']
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: GDB 基本用法
 date: 2019-08-18 16:14:24
-categories: [Techniques]
+categories: [tech]
 tags: [debug, gdb, cpp]
 ---
 

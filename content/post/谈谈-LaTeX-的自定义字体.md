@@ -1,7 +1,7 @@
 ---
 title: 快速自定义 LaTeX 排版字体
 date: 2019-03-08 15:41:10
-categories: ['Techniques']
+categories: [tech]
 lastmod: 2021-03-01
 tags: ['排版','latex','字体']
 ---

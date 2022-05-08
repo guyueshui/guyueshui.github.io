@@ -2,7 +2,7 @@
 title: Newifi Mini 安装 PandoraBox
 date: 2017-02-21 16:01:55
 tags: [路由器,个性化,刷机]
-categories: ['Techniques']
+categories: [tech]
 ---
 
 首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。

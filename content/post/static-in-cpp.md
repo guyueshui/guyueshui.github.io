@@ -34,6 +34,12 @@ A::fun1();
 3. 静态成员一般定义在类的外部，因为每个对象都共享静态成员，避免多次定义
 4. View static member as a normal function that has nothing to do with the class, except you must use `::` to access static members
 
+<!--more-->
+
+test for *emphsize 中文*, 再来一次..强调中文..
+
+<iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/come-alive/1323997788?i=1323998083&theme=light"></iframe>
+
 
 ## Static local variables
 
@@ -94,7 +100,7 @@ int main()
 Each time incrementAndPrint() is called, a variable named value is created and assigned the value of 1. incrementAndPrint() increments value to 2, and then prints the value of 2. When incrementAndPrint() is finished running, the variable goes out of scope and is destroyed.
 
 Static duration (using static keyword):
-```cpp
+```cpp {linenos=table,hl_lines=[8,"15-17"],linenostart=199}
 #include <iostream>
 
 void incrementAndPrint()
@@ -168,6 +174,8 @@ int main()
 }
 ```
 Thus, when applied to a local variable, the static keyword defines the local variable as having static duration, meaning the variable will only be created once, and will not be destroyed until the end of the program.
+
+To be continued...
 
 
 ## References

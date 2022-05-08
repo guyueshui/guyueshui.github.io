@@ -1,7 +1,7 @@
 ---
 title: Melody 主题的一些个人更改
 date: 2018-12-19 14:31:24
-categories: ['Techniques']
+categories: [tech]
 tags: [美化, 个性化]
 
 ---

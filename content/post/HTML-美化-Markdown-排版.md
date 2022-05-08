@@ -1,7 +1,7 @@
 ---
 title: HTML 美化 Markdown 排版
 date: 2018-12-16 00:04:38
-categories: ['Techniques']
+categories: [tech]
 tags: [排版, 美化, html]
 
 ---
@@ -156,6 +156,62 @@ sample bilibli video desc
 但其实上述内容在普通
 ![](raw-shortcode.png)  
 <figcaption>ShortCode在vscode中的排版效果</figcaption>
+
+
+## 6. 代码高亮
+
+> NOTE: 这个功能依赖hugo，不建议使用。
+
+Cf. https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences
+
+<pre style="word-wrap: break-word; white-space: pre-wrap;">
+```go  {linenos=table,hl_lines=[8,"15-17"],linenostart=199}
+// GetTitleFunc returns a func that can be used to transform a string to
+// title case.
+//
+// The supported styles are
+//
+// - "Go" (strings.Title)
+// - "AP" (see https://www.apstylebook.com/)
+// - "Chicago" (see https://www.chicagomanualofstyle.org/home.html)
+//
+// If an unknown or empty style is provided, AP style is what you get.
+func GetTitleFunc(style string) func(s string) string {
+  switch strings.ToLower(style) {
+  case "go":
+    return strings.Title
+  case "chicago":
+    return transform.NewTitleConverter(transform.ChicagoStyle)
+  default:
+    return transform.NewTitleConverter(transform.APStyle)
+  }
+}
+```
+</pre>
+会排版出如下效果
+
+```go  {linenos=table,hl_lines=[8,"15-17"],linenostart=199}
+// GetTitleFunc returns a func that can be used to transform a string to
+// title case.
+//
+// The supported styles are
+//
+// - "Go" (strings.Title)
+// - "AP" (see https://www.apstylebook.com/)
+// - "Chicago" (see https://www.chicagomanualofstyle.org/home.html)
+//
+// If an unknown or empty style is provided, AP style is what you get.
+func GetTitleFunc(style string) func(s string) string {
+  switch strings.ToLower(style) {
+  case "go":
+    return strings.Title
+  case "chicago":
+    return transform.NewTitleConverter(transform.ChicagoStyle)
+  default:
+    return transform.NewTitleConverter(transform.APStyle)
+  }
+}
+```
 
 
 ## Reference
