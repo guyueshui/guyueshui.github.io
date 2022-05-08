@@ -10,10 +10,10 @@ theme = "even"
 footnoteReturnLinkContents = "↩"
 
 # Syntax highlighting by Chroma. NOTE: Don't enable `highlightInClient` and `chroma` at the same time!
-pygmentsOptions = "linenos=table"
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
+# pygmentsOptions = "linenos=inline"
+# pygmentsCodefences = true
+# pygmentsUseClasses = true
+# pygmentsCodefencesGuessSyntax = true
 
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 9                                              # 首页每页显示的文章数
@@ -31,7 +31,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [frontmatter]
   # see: https://io-oi.me/tech/hugo-vs-hexo/#%E5%85%B6%E5%AE%83%E6%96%B9%E9%9D%A2
-  lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+  lastmod = ["lastmod", ":fileModTime", ":git", ":default"]
 
 
 # [permalinks]
@@ -245,6 +245,7 @@ isHTML = true
 
 [params.reveal_hugo]
 theme = "moon"
+highlight_theme = "github"
 
 #####################
 #  Markup settings  #
@@ -285,14 +286,17 @@ theme = "moon"
       unsafe = true # set to true for rendering raw html.
       xhtml = false
   [markup.highlight]
+    anchorLineNos = false
+    lineAnchors = ''
     codeFences = true
     guessSyntax = false
     hl_Lines = ""
     lineNoStart = 1
-    lineNos = false
+    lineNos = true
     lineNumbersInTable = true
-    noClasses = true
-    style = "monokai"
+    noClasses = false
+    noHl = false
+    style = 'github'
     tabWidth = 4
   [markup.tableOfContents]
     endLevel = 3
