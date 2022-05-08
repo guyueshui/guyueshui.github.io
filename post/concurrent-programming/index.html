@@ -54,7 +54,7 @@
 <meta itemprop="name" content="多线程学习笔记">
 <meta itemprop="description" content="开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢">
 <meta itemprop="dateModified" content="2019-08-29T21:40:23+08:00" />
-<meta itemprop="wordCount" content="1554">
+<meta itemprop="wordCount" content="1543">
 <meta itemprop="keywords" content="多线程,并发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多线程学习笔记"/>
 <meta name="twitter:description" content="开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢"/>
@@ -189,35 +189,18 @@
 <li>捋清楚了之后再开始动手写。</li>
 </ol>
 <p>调用<code>t.join()</code>的作用类似于，如果线程结束，主线程执行到join就可以立即返回，如果线程为结束，主线程执行到join会阻塞，直到线程结束。然后主线程继续执行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">            main  thread1
-</span></span><span class="line"><span class="cl">              +      +
-</span></span><span class="line"><span class="cl">              |      |
-</span></span><span class="line"><span class="cl">              |      |
-</span></span><span class="line"><span class="cl">              |      |
-</span></span><span class="line"><span class="cl">              |      |
-</span></span><span class="line"><span class="cl">thread1.join()+------+
-</span></span><span class="line"><span class="cl">              |
-</span></span><span class="line"><span class="cl">              |
-</span></span><span class="line"><span class="cl">              |
-</span></span><span class="line"><span class="cl">              v
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果某线程申请占有互斥量时，该互斥量被其他线程占有，则会引起该线程阻塞。</p>
+<pre tabindex="0"><code>            main  thread1
+              +      +
+              |      |
+              |      |
+              |      |
+              |      |
+thread1.join()+------+
+              |
+              |
+              |
+              v
+</code></pre><p>如果某线程申请占有互斥量时，该互斥量被其他线程占有，则会引起该线程阻塞。</p>
 <p>一般来说线程安全性很难保证，但只有两种操作可以保证线程安全性，</p>
 <ol>
 <li>基本的原子操作</li>

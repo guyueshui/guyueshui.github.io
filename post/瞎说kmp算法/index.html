@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-04-04T00:05:41+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="瞎说 KMP 算法">
 <meta itemprop="description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导"><meta itemprop="datePublished" content="2019-04-04T00:05:41+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="2660">
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="2585">
 <meta itemprop="keywords" content="算法,模式匹配," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="瞎说 KMP 算法"/>
 <meta name="twitter:description" content="前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导"/>
@@ -177,115 +177,58 @@
 <p>长长的博文一大堆，相信你也很珍惜时间，我就长话短说（偷懒找个借口:p）。**这个算法是干嘛的？**它解决的问题是，给定一个字符串，我们称之为主角K，然后你要在一个比它长的配角Z中找到我们的主角。翻译一下：在父串中寻找给定的子串，返回匹配索引。比如说<code>K = king</code>，<code>Z = zookingmonkey</code>，很显然，Z中有与K相同的子串，返回索引<code>4</code>.</p>
 <h2 id="常规方法">常规方法</h2>
 <p>沿用Jake Boxer的例子，设<code>K = abababca</code>，<code>Z = bacbababaabcbab</code>. 常规的方法是从头开始比较，比如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="cm">/* 
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * `|` denotes a match
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * `x` denotes a dismatch
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">2</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">3</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">4</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">5</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">|||||</span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">6</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">7</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="o">|||</span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">8</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">9</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">---&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">FOUND</span><span class="o">!</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>以上就是正常思考的方法，维护一个指针<code>p</code>，指向第一次开始比的位置，然后依次比下去， 跟踪匹配的位数 ，如果全部匹配，返回<code>p</code>，如果有一个不匹配，直接右移一位，<code>p = p+1</code>. 接着如法炮制，从第一个字符依次比下去。设父串Z的长度为 <code>n</code>，子串K的长度为<code>m</code>，那么上述方法最坏情况下要比较<code>m*n</code>次，时间复杂度为<code>O(mn)</code>.</p>
+<pre tabindex="0"><code>/* 
+ * `|` denotes a match
+ * `x` denotes a dismatch
+ */
+
+(1):
+bacbababaabcbab
+x
+abababca
+
+(2):
+bacbababaabcbab
+ |x
+ abababca
+
+(3):
+bacbababaabcbab
+  x
+  abababca
+
+(4):
+bacbababaabcbab
+   x
+   abababca
+
+(5):
+bacbababaabcbab
+    |||||x
+    abababca
+
+(6):
+bacbababaabcbab
+     x
+     abababca
+
+(7):
+bacbababaabcbab
+      |||x
+      abababca
+
+(8):
+bacbababaabcbab
+       x
+       abababca
+
+(9):
+bacbababaabcbab|
+               |
+        abababca
+
+---&gt; return NOT FOUND!
+</code></pre><p>以上就是正常思考的方法，维护一个指针<code>p</code>，指向第一次开始比的位置，然后依次比下去， 跟踪匹配的位数 ，如果全部匹配，返回<code>p</code>，如果有一个不匹配，直接右移一位，<code>p = p+1</code>. 接着如法炮制，从第一个字符依次比下去。设父串Z的长度为 <code>n</code>，子串K的长度为<code>m</code>，那么上述方法最坏情况下要比较<code>m*n</code>次，时间复杂度为<code>O(mn)</code>.</p>
 <p>KMP算法要做的事情的，就是根据子串K的特征，在<strong>移位</strong>和<strong>比较</strong>的时候实现一个跳步！减少了比较次数。</p>
 <p>但是要根据子串K的特征，哪又是什么样的？该如何刻画呢？这就要说到下面的 partial match table 了。</p>
 <h2 id="partial-match-table">Partial Match Table</h2>
@@ -367,227 +310,105 @@ PMT 是一个表（table）， PMV 是一个值（value）。PMT中的元素就�
 <h3 id="又">又</h3>
 <p>下面讲讲我理解的PMT的计算方式。因为PMV (partial match value) 是最大公共子串的长度，哪两个公共？前缀集和后缀集！那么我们比较的时候肯定要分别在两个集合中找字符串长度一致的两个串，考察它们是否相等。依次从长度为1，2，3&hellip;这么一直找下去，如果有更长的公共串，就更新PMV。</p>
 <p>具体来说，给我一个字符串<code>str = ababa</code>，我可以这样来计算它的PMV. 想象有一块木板插空该字符串，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a|baba =&gt; a, baba
-</span></span><span class="line"><span class="cl">ab|aba =&gt; ab, aba
-</span></span><span class="line"><span class="cl">aba|ba =&gt; aba, ba
-</span></span><span class="line"><span class="cl">abab|a =&gt; abab, a
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>每次插空，我都可以得到一个前缀和一个后缀。从上面的结果来看，产生的次序还有一定的对称性。那么我计算它的PMV时，直接这样比较：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(1). a|baba &lt;=&gt; abab|a ---&gt; PMV = 1
-</span></span><span class="line"><span class="cl">(2). ab|aba &lt;=&gt; aba|ba ---&gt; PMV = 3
-</span></span><span class="line"><span class="cl">( ). aba|ba &lt;=&gt; ab|aba ---&gt; it returns to step (2)
-</span></span><span class="line"><span class="cl">( ). abab|a &lt;=&gt; a|baba ---&gt; it returns to step (1)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">---&gt; return PMV = 3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>即每次划分之后，我直接考察它对称的划分，然后比较前缀后缀是否相等，进而更新PMV.</p>
+<pre tabindex="0"><code>a|baba =&gt; a, baba
+ab|aba =&gt; ab, aba
+aba|ba =&gt; aba, ba
+abab|a =&gt; abab, a
+</code></pre><p>每次插空，我都可以得到一个前缀和一个后缀。从上面的结果来看，产生的次序还有一定的对称性。那么我计算它的PMV时，直接这样比较：</p>
+<pre tabindex="0"><code>(1). a|baba &lt;=&gt; abab|a ---&gt; PMV = 1
+(2). ab|aba &lt;=&gt; aba|ba ---&gt; PMV = 3
+( ). aba|ba &lt;=&gt; ab|aba ---&gt; it returns to step (2)
+( ). abab|a &lt;=&gt; a|baba ---&gt; it returns to step (1)
+
+---&gt; return PMV = 3
+</code></pre><p>即每次划分之后，我直接考察它对称的划分，然后比较前缀后缀是否相等，进而更新PMV.</p>
 <h2 id="pmt-怎么用">PMT 怎么用</h2>
 <p>实际上这一段也算是转述Jake Boxer的话，再次感谢！</p>
 <blockquote>
 <p>KMP算法要做的事情的，就是根据子串K的特征，在<strong>移位</strong>和<strong>比较</strong>的时候实现一个跳步！减少了比较次数。</p>
 </blockquote>
 <p>之前提到KMP的主要思想就是跳步，现在是时候来看看它是怎么个跳法了。同样的父串<code>Z = bacbababaabcbab</code>，子串<code>K = abababca</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="cm">/*
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * `|` denotes a match
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * `x` denotes a dismatch
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * `~` denotes a jump
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">2</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">3</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">4</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nf">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="mi">5</span><span class="p">):</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">bacbababaabcbab</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">|||||</span><span class="n">x</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">abababca</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">!</span><span class="n">ATTENTION</span><span class="o">!</span><span class="w"> </span><span class="n">I</span><span class="s1">&#39;LL JUMP
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">(6):
-</span></span></span><span class="line"><span class="cl"><span class="s1">bacbababaabcbab
-</span></span></span><span class="line"><span class="cl"><span class="s1">    ~~|||x
-</span></span></span><span class="line"><span class="cl"><span class="s1">      abababca
-</span></span></span><span class="line"><span class="cl"><span class="s1">!JUMP AGAIN!
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">(7):
-</span></span></span><span class="line"><span class="cl"><span class="s1">bacbababaabcbab|
-</span></span></span><span class="line"><span class="cl"><span class="s1">      ~~       |
-</span></span></span><span class="line"><span class="cl"><span class="s1">        abababca
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">---&gt; return NOT FOUND!
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>为什么你跳得这么兴奋？为什么可以这么跳？我想应该有人和我当初一样，虽然你跳的很好，但是我一脸懵逼(＃°Д°).</p>
+<pre tabindex="0"><code>/*
+ * `|` denotes a match
+ * `x` denotes a dismatch
+ * `~` denotes a jump
+ */
+
+(1):
+bacbababaabcbab
+x
+abababca
+
+(2):
+bacbababaabcbab
+ |x
+ abababca
+
+(3):
+bacbababaabcbab
+  x
+  abababca
+
+(4):
+bacbababaabcbab
+   x
+   abababca
+
+(5):
+bacbababaabcbab
+    |||||x
+    abababca
+!ATTENTION! I&#39;LL JUMP
+
+(6):
+bacbababaabcbab
+    ~~|||x
+      abababca
+!JUMP AGAIN!
+
+(7):
+bacbababaabcbab|
+      ~~       |
+        abababca
+
+---&gt; return NOT FOUND!
+</code></pre><p>为什么你跳得这么兴奋？为什么可以这么跳？我想应该有人和我当初一样，虽然你跳的很好，但是我一脸懵逼(＃°Д°).</p>
 <p>我们把来看step5到step6的跳步拎出来看看，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(5):
-</span></span><span class="line"><span class="cl">bacbababaabcbab
-</span></span><span class="line"><span class="cl">    |||||x
-</span></span><span class="line"><span class="cl">    abababca
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">(5.1):
-</span></span><span class="line"><span class="cl">****ababa******
-</span></span><span class="line"><span class="cl">    |||||x
-</span></span><span class="line"><span class="cl">    ababa***
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>从step5到step5.1我什么也没干，只是把一些碍眼的东西替换成了<code>*</code>号。我们可以看到的是，step5匹配了5个字符，匹配的是K的开头向后5个字符。让我们回头看看这个子串的PMV，查表得知<code>f(&quot;ababa&quot;)=3</code>. 这个“3”代表着什么？它代表了子串<code>ababa</code>的长度为3的前缀一定等于长度为3的后缀，因为这就是PMV的物理意义啊，同志们！所以我可以跳步！直接将前缀<code>abc</code>挪到与后缀<code>abc</code>对齐！</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">aba|ba &lt;=&gt; ab|aba
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">---&gt; jump:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ababa
-</span></span><span class="line"><span class="cl">~~|||
-</span></span><span class="line"><span class="cl">  ababa
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>我不但可以跳步2，我还知道后面的3个字符比都不用比，肯定和父串match，所以我直接从第4个字符开始比。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(5):
-</span></span><span class="line"><span class="cl">bacbababaabcbab
-</span></span><span class="line"><span class="cl">    |||||x
-</span></span><span class="line"><span class="cl">    abababca
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">(5.1):
-</span></span><span class="line"><span class="cl">****ababa******
-</span></span><span class="line"><span class="cl">    |||||x
-</span></span><span class="line"><span class="cl">    ababa***
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">(6):
-</span></span><span class="line"><span class="cl">bacbababaabcbab
-</span></span><span class="line"><span class="cl">    ~~|||x
-</span></span><span class="line"><span class="cl">      abababca
-</span></span><span class="line"><span class="cl">         |
-</span></span><span class="line"><span class="cl">         start point for comparison
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
+<pre tabindex="0"><code>(5):
+bacbababaabcbab
+    |||||x
+    abababca
+
+(5.1):
+****ababa******
+    |||||x
+    ababa***
+</code></pre><p>从step5到step5.1我什么也没干，只是把一些碍眼的东西替换成了<code>*</code>号。我们可以看到的是，step5匹配了5个字符，匹配的是K的开头向后5个字符。让我们回头看看这个子串的PMV，查表得知<code>f(&quot;ababa&quot;)=3</code>. 这个“3”代表着什么？它代表了子串<code>ababa</code>的长度为3的前缀一定等于长度为3的后缀，因为这就是PMV的物理意义啊，同志们！所以我可以跳步！直接将前缀<code>abc</code>挪到与后缀<code>abc</code>对齐！</p>
+<pre tabindex="0"><code>aba|ba &lt;=&gt; ab|aba
+
+---&gt; jump:
+
+ababa
+~~|||
+  ababa
+</code></pre><p>我不但可以跳步2，我还知道后面的3个字符比都不用比，肯定和父串match，所以我直接从第4个字符开始比。</p>
+<pre tabindex="0"><code>(5):
+bacbababaabcbab
+    |||||x
+    abababca
+
+(5.1):
+****ababa******
+    |||||x
+    ababa***
+
+(6):
+bacbababaabcbab
+    ~~|||x
+      abababca
+         |
+         start point for comparison
+</code></pre><p>如果将PMT存在一个数组里，数组下表从0开始的话，那么每次跳步的长度就可以用一个公式来刻画：</p>
 <div style="text-align:center">
     <code>
         jump_chars = PML - PMT[PML-1]
@@ -614,7 +435,7 @@ A: 可以说PMT就是待匹配字符串的本体了。</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

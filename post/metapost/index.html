@@ -54,7 +54,7 @@
 <meta itemprop="name" content="Metapost学习笔记">
 <meta itemprop="description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;"><meta itemprop="datePublished" content="2020-03-31T09:20:44+08:00" />
 <meta itemprop="dateModified" content="2020-03-31T09:20:44+08:00" />
-<meta itemprop="wordCount" content="1130">
+<meta itemprop="wordCount" content="1091">
 <meta itemprop="keywords" content="metapost,作图," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Metapost学习笔记"/>
 <meta name="twitter:description" content="想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&hellip;"/>
@@ -176,60 +176,31 @@
 <p>介绍什么的，我其实不太关心，所以就不写了……</p>
 <h2 id="一个简单的例子">一个简单的例子</h2>
 <p>和C语言一样，Metapost有一个源文件<code>xxx.mp</code>，有一个编译器<code>mpost</code>，然后编译之，即得到图片（默认后缀<code>.mps</code>）。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% file:///hello.mp
-</span></span><span class="line"><span class="cl">prologues := 3;
-</span></span><span class="line"><span class="cl">outputtemplate := &#34;%j-%c.mps&#34;;
-</span></span><span class="line"><span class="cl">outputformat := &#34;mps&#34;;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">beginfig(1);
-</span></span><span class="line"><span class="cl">  draw (0,0)--(11,0)--(11,11)--(0,11)--cycle;
-</span></span><span class="line"><span class="cl">endfig;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">beginfig(2);
-</span></span><span class="line"><span class="cl">  draw (0,0)..(11,0)..(11,11)..(0,11)..cycle;
-</span></span><span class="line"><span class="cl">endfig;
-</span></span><span class="line"><span class="cl">end
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>几点说明：</p>
+<pre tabindex="0"><code class="language-mp" data-lang="mp">% file:///hello.mp
+prologues := 3;
+outputtemplate := &#34;%j-%c.mps&#34;;
+outputformat := &#34;mps&#34;;
+
+beginfig(1);
+  draw (0,0)--(11,0)--(11,11)--(0,11)--cycle;
+endfig;
+
+beginfig(2);
+  draw (0,0)..(11,0)..(11,11)..(0,11)..cycle;
+endfig;
+end
+</code></pre><p>几点说明：</p>
 <ul>
 <li>Metapost语句以分号结尾，<strong>除了最后的<code>end</code></strong>!</li>
 <li>设置<code>prologues:=3</code>会在生成的图像文件<code>.ps</code>中嵌入字体信息，这会增加图片大小</li>
 <li>默认单位：PostScript Points (1/72in = 0.352777&hellip; mm)</li>
 </ul>
 <p>这里简单说一下源码结构，和LaTeX一样，Metapost有导言区，可以做一些设置之类的工作。如<code>hello.mp</code>中前三句就设置了输出文件格式，以及文件名规范等。然后作图部分主要由<code>beginfig--endfig</code>块控制。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(x);
-</span></span><span class="line"><span class="cl">  draw something;
-</span></span><span class="line"><span class="cl">  draw anything;
-</span></span><span class="line"><span class="cl">endfig;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>括号中的x替换为数字，类似图片id. 一个源文件中可以有多个<code>beginfig--endfig</code>块，编译后每个块对应一张图片。</p>
+<pre tabindex="0"><code class="language-mp" data-lang="mp">beginfig(x);
+  draw something;
+  draw anything;
+endfig;
+</code></pre><p>括号中的x替换为数字，类似图片id. 一个源文件中可以有多个<code>beginfig--endfig</code>块，编译后每个块对应一张图片。</p>
 <p>编译<code>hello.mp</code>后即可得到两张图片：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -264,29 +235,15 @@
 </figure>
 </center>
 <p>Metapost按坐标画图非常简单，将坐标点一个一个连起来就行了，注意到<code>--</code>表示直线连接，<code>..</code>表示平滑的曲线连接。和众多编程语言一样，你也可以定义变量方便重复使用。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(3);
-</span></span><span class="line"><span class="cl">  z0 = (0,0);
-</span></span><span class="line"><span class="cl">  z1 = (60,40);
-</span></span><span class="line"><span class="cl">  z2 = (40,90);
-</span></span><span class="line"><span class="cl">  z3 = (10,70);
-</span></span><span class="line"><span class="cl">  z4 = (30,50);
-</span></span><span class="line"><span class="cl">  draw z0..z1..z2..z3..z4;
-</span></span><span class="line"><span class="cl">endfig
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure>
+<pre tabindex="0"><code class="language-mp" data-lang="mp">beginfig(3);
+  z0 = (0,0);
+  z1 = (60,40);
+  z2 = (40,90);
+  z3 = (10,70);
+  z4 = (30,50);
+  draw z0..z1..z2..z3..z4;
+endfig
+</code></pre><figure>
   <center>
     <object data="/img/posted/mpost/hello-3.svg" type="image/svg+xml" width="150" height="150">
     </object>
@@ -310,31 +267,16 @@
 <li><code>pen</code>: (implicit) pen for stroking</li>
 </ul>
 <p>比如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(0)
-</span></span><span class="line"><span class="cl">  u:=1cm;
-</span></span><span class="line"><span class="cl">  pair a,b; path p; pen mypen;
-</span></span><span class="line"><span class="cl">  a = (0,0); b = (3u,4u);
-</span></span><span class="line"><span class="cl">  p = a--b;
-</span></span><span class="line"><span class="cl">  mypen = pencircle scaled 1mm;
-</span></span><span class="line"><span class="cl">  pickup mypen;
-</span></span><span class="line"><span class="cl">  draw p;
-</span></span><span class="line"><span class="cl">endfig;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="/img/posted/mpost/demo-0.svg" alt=""></p>
+<pre tabindex="0"><code class="language-mp" data-lang="mp">beginfig(0)
+  u:=1cm;
+  pair a,b; path p; pen mypen;
+  a = (0,0); b = (3u,4u);
+  p = a--b;
+  mypen = pencircle scaled 1mm;
+  pickup mypen;
+  draw p;
+endfig;
+</code></pre><p><img src="/img/posted/mpost/demo-0.svg" alt=""></p>
 <p>All MetaPost variable types:</p>
 <table>
 <thead>
@@ -388,23 +330,12 @@
 </table>
 <h2 id="弯曲控制">弯曲控制</h2>
 <p>我们已经知道使用<code>..</code>可以让Metapost在两点之间画出平滑的曲线，尽管它画的很好（默认使用<a href="https://zh.wikipedia.org/zh-cn/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A">贝塞尔曲线</a>），但有时候我们往往需要控制哪里该要陡一点，哪里平缓一点。对于这种需求，Metapost同样提供了精细粒度的控制方法。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">beginfig(4);
-</span></span><span class="line"><span class="cl">  for i=0 upto 9:
-</span></span><span class="line"><span class="cl">    draw (0,0){dir 45}..{dir 10a}{6cm, 0};
-</span></span><span class="line"><span class="cl">  endfor
-</span></span><span class="line"><span class="cl">endfig;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure>
+<pre tabindex="0"><code class="language-mp" data-lang="mp">beginfig(4);
+  for i=0 upto 9:
+    draw (0,0){dir 45}..{dir 10a}{6cm, 0};
+  endfor
+endfig;
+</code></pre><figure>
   <center>
     <object data="/img/posted/mpost/hello-4.svg" type="image/svg+xml" width="300"> 
     </object>

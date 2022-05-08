@@ -54,7 +54,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/linux-hibernate/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-07-13T22:44:33+08:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="Linux的休眠">
 <meta itemprop="description" content="先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。
@@ -62,8 +62,8 @@
 睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠的特点就是“睡得快”和“醒得快”。对于笔记本来说，合上盖子就睡了，打开盖子你的工作区间即刻就能恢复，很是方便。但是睡眠有一个缺点，就是要给内存供电，一旦断电，你的镜像数据就会丢失，工作区间将不复存在。当然这来自于内存的固有特点，建议百度RAM。
 休眠：将工作镜像写入硬盘（disk，ROM），这样你也可以恢复工作区间。只是睡下去和醒过来的时间比内存慢不少。但是，它有一个好处就是断电了也不会丢失数据。当你再次开机，系统就会从硬盘里面读取镜像，恢复你的工作区间。
 "><meta itemprop="datePublished" content="2020-07-13T22:44:33+08:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="5370">
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="5366">
 <meta itemprop="keywords" content="hibernate," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux的休眠"/>
 <meta name="twitter:description" content="先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。
@@ -295,19 +295,10 @@
 </div>
 </div><p>可以看到，内核的启动参数中<code>resume=/dev/nvme0n1p7</code>这一项就指定了从该分区恢复，而该分区正是swap分区。</p>
 <p>那么如何修改内核的命令行参数呢？找到你所使用的boot manager（启动引导）程序，更改相应的配置。我使用的是<a href="https://wiki.archlinux.org/index.php/REFInd">rEFInd</a>，需要做的更改为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># file: /boot/refind_linux.conf
-</span></span><span class="line"><span class="cl">&#34;Boot with standard options&#34;  &#34;ro root=/dev/nvme0n1p5 rw resume=/dev/nvme0n1p7&#34;
-</span></span><span class="line"><span class="cl">&#34;Boot to single-user mode&#34;    &#34;ro root=/dev/nvme0n1p5 single&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>直接在第一行最后的参数列表里加上<code>rw resume=/dev/nvme0n1p7</code>即可。Ubuntu默认使用grub作为引导，这个网上教程更为详尽，此处就不再复制粘贴了。</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"># file: /boot/refind_linux.conf
+&#34;Boot with standard options&#34;  &#34;ro root=/dev/nvme0n1p5 rw resume=/dev/nvme0n1p7&#34;
+&#34;Boot to single-user mode&#34;    &#34;ro root=/dev/nvme0n1p5 single&#34;
+</code></pre><p>直接在第一行最后的参数列表里加上<code>rw resume=/dev/nvme0n1p7</code>即可。Ubuntu默认使用grub作为引导，这个网上教程更为详尽，此处就不再复制粘贴了。</p>
 <h2 id="重新生成启动镜像">重新生成启动镜像</h2>
 <p>作完更改之后，使用</p>
 <div class="highlight"><div class="chroma">
@@ -531,15 +522,8 @@ unreliable, the platform firmware may be responsible for the failures.</p>
 <ul>
 <li>When an <a href="https://wiki.archlinux.org/title/Initramfs" title="Initramfs">initramfs</a> with the <code>base</code> hook is used, which is the default, the <code>resume</code> hook is required in <code>/etc/mkinitcpio.conf</code>. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the <code>resume</code> hook must go <em>after</em> the <code>udev</code> hook. This example was made starting from the default hook configuration:</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HOOKS=(base udev autodetect keyboard modconf block filesystems **resume** fsck)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Remember to <a href="https://wiki.archlinux.org/title/Regenerate_the_initramfs" title="Regenerate the initramfs">regenerate the initramfs</a> for these changes to take effect.</p>
+<pre tabindex="0"><code>HOOKS=(base udev autodetect keyboard modconf block filesystems **resume** fsck)
+</code></pre><p>Remember to <a href="https://wiki.archlinux.org/title/Regenerate_the_initramfs" title="Regenerate the initramfs">regenerate the initramfs</a> for these changes to take effect.</p>
 <ul>
 <li>When an initramfs with the <code>systemd</code> hook is used, a resume mechanism is already provided, and no further hooks need to be added.</li>
 </ul>
@@ -761,7 +745,7 @@ unreliable, the platform firmware may be responsible for the failures.</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

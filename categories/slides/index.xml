@@ -27,7 +27,7 @@
       <guid>https://guyueshui.github.io/slide/aaa/</guid>
       <description>Hello world! This is my first slide.
 $e=mc^2$
- Hello Mars! This is my second slide.
+1 2 3 4  int main() { return 0; }   1 2 3 4 5  package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) }    Hello Mars! This is my second slide.
  Vertical slide 1 This is verticle slide.
  Vertical slide 2  </description>
     </item>

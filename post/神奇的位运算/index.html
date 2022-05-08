@@ -54,7 +54,7 @@
 <meta itemprop="name" content="神奇的位运算">
 <meta itemprop="description" content="In editing&hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch"><meta itemprop="datePublished" content="2019-04-08T10:35:16+00:00" />
 <meta itemprop="dateModified" content="2021-06-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2270">
+<meta itemprop="wordCount" content="2256">
 <meta itemprop="keywords" content="位运算,trick,cpp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="神奇的位运算"/>
 <meta name="twitter:description" content="In editing&hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch"/>
@@ -185,42 +185,17 @@
 <p>摘要：按1 byte来算，1的机器数为0000 0001，原码、反码、补码均为 0000 0001. -1的机器数为1000 0001，原码为机器数、反码为1111 1110，补码为1111 1111.
 总结来说：最高位用作符号位，0表示正数，1表示负数。正数的原、反、补码一样。负数的反码为除符号位外按位取反，补码为反码加1.</p>
 <p>为什么C系语言中，int的范围为$-2^{n-1} \sim 2^{n-1} - 1$，其中n为bit数。同样以1 byte来算，8bit能够表达的有符号范围如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1111 1111   # -(2^7 - 1) = -127
-</span></span><span class="line"><span class="cl">0111 1111   #  (2^7 - 1) =  127
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>但从排列组合来看，8位能够表达的数字共有$2^8 = 256$个，而$-127 \sim 127$只有255个数。还有一个数跑哪去了呢。答案是0，0有两种表示方法：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1000 0000   # -0
-</span></span><span class="line"><span class="cl">0000 0000   # +0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这无疑是一种浪费，我们选择下面那个数表示0。而将上面的1000 0000（首先它表示一个负数，负数用补码表示，因此它应该是代表-128的补码）用于表示-128，如此一来，8bit的表达范围扩展到$-128 \sim 127$，正好$256=2^8$个数。</p>
+<pre tabindex="0"><code>1111 1111   # -(2^7 - 1) = -127
+0111 1111   #  (2^7 - 1) =  127
+</code></pre><p>但从排列组合来看，8位能够表达的数字共有$2^8 = 256$个，而$-127 \sim 127$只有255个数。还有一个数跑哪去了呢。答案是0，0有两种表示方法：</p>
+<pre tabindex="0"><code>1000 0000   # -0
+0000 0000   # +0
+</code></pre><p>这无疑是一种浪费，我们选择下面那个数表示0。而将上面的1000 0000（首先它表示一个负数，负数用补码表示，因此它应该是代表-128的补码）用于表示-128，如此一来，8bit的表达范围扩展到$-128 \sim 127$，正好$256=2^8$个数。</p>
 <p>至于为什么用1000 0000来表示-128，此中还是有些门道，来看-127的三码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1111 1111   # -127原码
-</span></span><span class="line"><span class="cl">1000 0000   # -127反码
-</span></span><span class="line"><span class="cl">1000 0001   # -127补码
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如此一来-128的补码就等于-127的补码减一得：1000 0000. 关于负数为什么用补码表示，其实是为了做加法，计算机内没有减法器，只有加法器，具体参见上文。以上我只是用8bit数举例，实际计算机中int可能有32bit，以此类推。</p>
+<pre tabindex="0"><code>1111 1111   # -127原码
+1000 0000   # -127反码
+1000 0001   # -127补码
+</code></pre><p>如此一来-128的补码就等于-127的补码减一得：1000 0000. 关于负数为什么用补码表示，其实是为了做加法，计算机内没有减法器，只有加法器，具体参见上文。以上我只是用8bit数举例，实际计算机中int可能有32bit，以此类推。</p>
 <p>以下部分转载自：http://www.cnblogs.com/junsky/archive/2009/08/06/1540727.html</p>
 <p>假设有一个 int 类型的数，值为5，那么，我们知道它在计算机中表示为：</p>
 <p><code>00000000 00000000 00000000 00000101</code></p>
@@ -332,35 +307,16 @@
 <code>(n ^ -1) + 1</code>：-1的二进制全是1，按位异或之后得到的等价与按位取反。</p>
 <h3 id="计算-n1">计算 n+1</h3>
 <p><code>-(~n)</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~n + 1 = -n
-</span></span><span class="line"><span class="cl">-(~n + 1) = n
-</span></span><span class="line"><span class="cl">-~n - 1 = n
-</span></span><span class="line"><span class="cl">-~n = n+1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="计算-n-1">计算 n-1</h3>
+<pre tabindex="0"><code>~n + 1 = -n
+-(~n + 1) = n
+-~n - 1 = n
+-~n = n+1
+</code></pre><h3 id="计算-n-1">计算 n-1</h3>
 <p><code>~-n</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n-1 = -(-n+1)
-</span></span><span class="line"><span class="cl">-n+1 = -(~-n) &lt;--- n+1 = -~n
-</span></span><span class="line"><span class="cl">n-1 = ~-n
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</h3>
+<pre tabindex="0"><code>n-1 = -(-n+1)
+-n+1 = -(~-n) &lt;--- n+1 = -~n
+n-1 = ~-n
+</code></pre><h3 id="ifxa-xb-ifxb-xa">if(x==a) x=b; if(x==b) x=a;</h3>
 <p><code>x = a ^ b ^ x</code>：如果x=a，则相当于对b翻转两次，结果自然是b；如果x=b，那么b^b=0，0异或任何数都没有效果，故结果是a.</p>
 <h3 id="判断奇偶">判断奇偶</h3>
 <p><code>n &amp; 1</code>: 如果结果为1，则表明n的最低位为1，n为奇数；反之为偶数。</p>

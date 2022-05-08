@@ -54,7 +54,7 @@
 <meta itemprop="name" content="面试经历及笔记">
 <meta itemprop="description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1"><meta itemprop="datePublished" content="2019-07-08T20:14:17+00:00" />
 <meta itemprop="dateModified" content="2019-10-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="10429">
+<meta itemprop="wordCount" content="10423">
 <meta itemprop="keywords" content="interview," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="面试经历及笔记"/>
 <meta name="twitter:description" content="总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C&#43;&#43;相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1"/>
@@ -453,25 +453,13 @@ A: 不知道。</p>
 <li>我们知道proto文件，使用proto文件有什么好处？</li>
 <li>大概知道protobuf的压缩原理吗？比方说如何编码int32.</li>
 <li>现在有一个老版本的protobuf序列化之后的字符串，但是后来又新加了一个变量。具体来说，
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">required int32 hp;
-</span></span><span class="line"><span class="cl">optional int32 lv;
-</span></span><span class="line"><span class="cl">===saved===
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">optional int32 mp;
-</span></span><span class="line"><span class="cl">===readed===
-</span></span></code></pre></td></tr></table>
-</div>
-</div>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？</li>
+<pre tabindex="0"><code>required int32 hp;
+optional int32 lv;
+===saved===
+
+optional int32 mp;
+===readed===
+</code></pre>我们知道，proto是支持这种添加之后，仍然能够正确反序列化旧版本的字符串。你知道protobuf是怎么做的吗？</li>
 <li>实现一个带max()函数的栈？</li>
 <li>使用辅助栈，需要额外O(n)的空间，如果没有这么多空间给你，假设只有O(logn)，如何优化？（没答出来）</li>
 <li>说说你对boost::asio的理解？</li>

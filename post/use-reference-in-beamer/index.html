@@ -16,7 +16,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="Needs polish!
+前略。
+Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。
+" /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -45,19 +48,25 @@
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="在 Beamer 中使用参考文献" />
-<meta property="og:description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新" />
+<meta property="og:description" content="Needs polish!
+前略。
+Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/use-reference-in-beamer/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-01-03T16:05:47+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="在 Beamer 中使用参考文献">
-<meta itemprop="description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新"><meta itemprop="datePublished" content="2019-01-03T16:05:47+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="476">
+<meta itemprop="description" content="Needs polish!
+前略。
+Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。"><meta itemprop="datePublished" content="2019-01-03T16:05:47+00:00" />
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="474">
 <meta itemprop="keywords" content="latex,beamer,排版," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Beamer 中使用参考文献"/>
-<meta name="twitter:description" content="Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新"/>
+<meta name="twitter:description" content="Needs polish!
+前略。
+Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -143,7 +152,7 @@
       <div class="post-meta">
         <span class="post-time"> January 3, 2019 </span>
         <div class="post-category">
-            <a href="/categories/techniques/"> Techniques </a>
+            <a href="/categories/tech/"> tech </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -154,11 +163,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#使用-bibtex">使用 bibtex</a></li>
-      </ul>
-    </li>
+    <li><a href="#使用-bibtex">使用 bibtex</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -168,8 +173,7 @@
       <p><font color="red">Needs polish!</font></p>
 <p>前略。</p>
 <p>Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 <code>\cite</code>，搞得我走了不少弯路（其实是可以的）。</p>
-<!-- more -->
-<h3 id="使用-bibtex">使用 bibtex</h3>
+<h2 id="使用-bibtex">使用 bibtex</h2>
 <p>假设你有 <code>mybeamer.tex</code> 文件，在同目录下新建 <code>mybeamer.bib</code> 文件（其实只是纯文本，特殊后缀而已）。将你所有需要引用的文献条目写入该文献中。比如，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -248,24 +252,10 @@
 </blockquote>
 <p><strong>编译顺序（这很重要）</strong></p>
 <p>首先用<code>pdflatex</code>或者<code>xelatex</code>编译你的 tex 文件<code>mybeamer.tex</code>，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pdflatex mybeamer.tex
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样会在当前目录产生一个<code>.aux</code>文件。然后使用<code>bibtex</code>编译该文件，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bibtex mybeamer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后再用<code>pdflatex</code>编译一遍。此时应该会出现应用错误，小问号等警告。此时<strong>再用<code>pdflatex</code>编译一遍</strong>即可。如果出现了其他错误，删掉所有 <code>.bbl, .aux</code> 文件，重复以上操作。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pdflatex mybeamer.tex
+</span></span></code></pre></div><p>这样会在当前目录产生一个<code>.aux</code>文件。然后使用<code>bibtex</code>编译该文件，</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bibtex mybeamer
+</span></span></code></pre></div><p>然后再用<code>pdflatex</code>编译一遍。此时应该会出现应用错误，小问号等警告。此时<strong>再用<code>pdflatex</code>编译一遍</strong>即可。如果出现了其他错误，删掉所有 <code>.bbl, .aux</code> 文件，重复以上操作。</p>
 <p>总结一下四个步骤：</p>
 <ol>
 <li><code>pdflatex mybeamer.tex</code></li>
@@ -278,7 +268,6 @@
 <li><a href="https://en.wikibooks.org/wiki/LaTeX/Presentations">LaTeX/Presentations</a></li>
 <li><a href="https://www.zhihu.com/question/30344123/answer/53377390">LaTeX到底怎么加bib？？ - 知乎</a></li>
 </ul>
-
     </div>
 
     <div class="post-copyright">
@@ -289,7 +278,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

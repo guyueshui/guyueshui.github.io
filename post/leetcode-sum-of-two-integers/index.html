@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/leetcode-sum-of-two-integers/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-03-26T14:53:51+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="LeetCode: Sum of Two Integers">
 <meta itemprop="description" content="记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的&#43;或-. 原题地址：https://leetcode.com/pr"><meta itemprop="datePublished" content="2019-03-26T14:53:51+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="1037">
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="1032">
 <meta itemprop="keywords" content="cpp,leetcode,位运算," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LeetCode: Sum of Two Integers"/>
 <meta name="twitter:description" content="记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的&#43;或-. 原题地址：https://leetcode.com/pr"/>
@@ -248,15 +248,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>除了将递归写成了迭代，其余部分都是照着第一段代码来的。重要的是为什么是这样？为什么会有</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a + b == (a^b) + (a&amp;b)&lt;&lt;1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>现在我们挨个来看看<code>a^b</code>、<code>a&amp;b</code>到底是啥？首先<code>a^b</code>，<code>^</code>是C++中的按位异或运算符，它的运算表为：</p>
+<pre tabindex="0"><code>a + b == (a^b) + (a&amp;b)&lt;&lt;1
+</code></pre><p>现在我们挨个来看看<code>a^b</code>、<code>a&amp;b</code>到底是啥？首先<code>a^b</code>，<code>^</code>是C++中的按位异或运算符，它的运算表为：</p>
 <ul>
 <li>1^1 = 0</li>
 <li>0^0 = 0</li>
@@ -264,21 +257,11 @@
 <li>0^1 = 1</li>
 </ul>
 <p>现在我们把它竖过来看，或许你会发现一点东西：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">       1011  &lt;---+ a   X           1011
-</span></span><span class="line"><span class="cl">     ^ 1010  &lt;---+ b   X         + 1010
-</span></span><span class="line"><span class="cl">a^b= -------           X    a+b= -------
-</span></span><span class="line"><span class="cl">       0001            X          10101
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这好像就是二进制的加法呀？除了没有进位！那么进位在哪里呢？我们把目光转向<code>a&amp;b</code>，<code>&amp;</code>是C++按位与运算符，它的运算表如下：</p>
+<pre tabindex="0"><code>       1011  &lt;---+ a   X           1011
+     ^ 1010  &lt;---+ b   X         + 1010
+a^b= -------           X    a+b= -------
+       0001            X          10101
+</code></pre><p>这好像就是二进制的加法呀？除了没有进位！那么进位在哪里呢？我们把目光转向<code>a&amp;b</code>，<code>&amp;</code>是C++按位与运算符，它的运算表如下：</p>
 <ul>
 <li>0&amp;0 = 0</li>
 <li>0&amp;1 = 0</li>
@@ -320,7 +303,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

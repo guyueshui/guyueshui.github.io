@@ -54,7 +54,7 @@
 <meta itemprop="name" content="服务端开发预备知识">
 <meta itemprop="description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程">
 <meta itemprop="dateModified" content="2019-09-06T19:37:55+08:00" />
-<meta itemprop="wordCount" content="12606">
+<meta itemprop="wordCount" content="12589">
 <meta itemprop="keywords" content="操作系统,网络,tcp,udp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="服务端开发预备知识"/>
 <meta name="twitter:description" content="操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程"/>
@@ -434,47 +434,24 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">200(OK 客户端发过来的数据被正常处理
-</span></span><span class="line"><span class="cl">204(Not Content 正常响应，没有实体
-</span></span><span class="line"><span class="cl">206(Partial Content 范围请求，返回部分数据，响应报文中由Content-Range指定实体内容
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">301(Moved Permanently) 永久重定向
-</span></span><span class="line"><span class="cl">302(Found) 临时重定向，规范要求，方法名不变，但是都会改变
-</span></span><span class="line"><span class="cl">303(See Other) 和302类似，但必须用GET方法
-</span></span><span class="line"><span class="cl">304(Not Modified) 状态未改变， 配合(If-Match、If-Modified-Since、If-None_Match、If-Range、If-Unmodified-Since)
-</span></span><span class="line"><span class="cl">307(Temporary Redirect) 临时重定向，不该改变请求方法
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">400(Bad Request) 请求报文语法错误
-</span></span><span class="line"><span class="cl">401 (unauthorized) 需要认证
-</span></span><span class="line"><span class="cl">403(Forbidden) 服务器拒绝访问对应的资源
-</span></span><span class="line"><span class="cl">404(Not Found) 服务器上无法找到资源
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">500(Internal Server Error)服务器故障
-</span></span><span class="line"><span class="cl">503(Service Unavailable) 服务器处于超负载或正在停机维护
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="references">References</h2>
+<pre tabindex="0"><code>200(OK 客户端发过来的数据被正常处理
+204(Not Content 正常响应，没有实体
+206(Partial Content 范围请求，返回部分数据，响应报文中由Content-Range指定实体内容
+
+301(Moved Permanently) 永久重定向
+302(Found) 临时重定向，规范要求，方法名不变，但是都会改变
+303(See Other) 和302类似，但必须用GET方法
+304(Not Modified) 状态未改变， 配合(If-Match、If-Modified-Since、If-None_Match、If-Range、If-Unmodified-Since)
+307(Temporary Redirect) 临时重定向，不该改变请求方法
+
+400(Bad Request) 请求报文语法错误
+401 (unauthorized) 需要认证
+403(Forbidden) 服务器拒绝访问对应的资源
+404(Not Found) 服务器上无法找到资源
+
+500(Internal Server Error)服务器故障
+503(Service Unavailable) 服务器处于超负载或正在停机维护
+</code></pre><h2 id="references">References</h2>
 <ol>
 <li><a href="https://juejin.im/post/5ad4465d6fb9a028da7d0117">5分钟让你明白HTTP协议</a></li>
 <li><a href="https://www.jianshu.com/p/b1ab4a170c3c">LRU缓存算法</a></li>

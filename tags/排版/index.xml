@@ -31,7 +31,9 @@
       <pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid>
-      <description>Needs polish! 前略。 Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 \cite，搞得我走了不少弯路（其实是可以的）。 使用 bibtex 假设你有 mybeamer.tex 文件，在同目录下新</description>
+      <description>&lt;p&gt;&lt;font color=&#34;red&#34;&gt;Needs polish!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;前略。&lt;/p&gt;
+&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description>
     </item>
     
     <item>

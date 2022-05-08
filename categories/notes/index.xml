@@ -31,7 +31,47 @@
       <pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/static-in-cpp/</guid>
-      <description>Static members 1 2 3 4 5 6 7 8 9 10 11 12 13 class A { public: // non-static member (i.e., `data` is not visible in `fun1` static fun1(); fun2(); private: int data; static int sata; }; A a; a.fun1(); // valid, equivalent to the following A::fun1(); 静态成员不能访问非静态成员（因为静态成员独</description>
+      <description>&lt;h2 id=&#34;static-members&#34;&gt;Static members&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// non-static member (i.e., `data` is not visible in `fun1`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;fun2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;// valid, equivalent to the following
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;静态成员不能访问非静态成员（因为静态成员独立与类的实例（即对象）而存在，为了在没有对象被创建的情况下，静态成员还是可以使用，所以不能访问非静态成员。）&lt;/li&gt;
+&lt;li&gt;同理，类的任何对象不包含静态数据成员&lt;/li&gt;
+&lt;li&gt;静态成员不与对象，不与&lt;code&gt;this&lt;/code&gt;指针发生交互，作为结果，静态成员函数不能声明为&lt;code&gt;const&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可以通过类的对象调用静态成员函数，但此调用跟对象的状态并无关系，也就是说换个对象来调用是等价的，都等价于使用类名加域作用符来调用&lt;/li&gt;
+&lt;li&gt;静态成员一般定义在类的外部，因为每个对象都共享静态成员，避免多次定义&lt;/li&gt;
+&lt;li&gt;View static member as a normal function that has nothing to do with the class, except you must use &lt;code&gt;::&lt;/code&gt; to access static members&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
@@ -76,7 +116,7 @@
       <pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid>
-      <description>先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso.</description>
+      <description>先看环境： $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso. :ssssssso. Terminal: urxvt :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz</description>
     </item>
     
     <item>

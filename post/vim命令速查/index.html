@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?" /><meta name="keywords" content="水阙, yychi" />
 
 
 
@@ -45,19 +45,19 @@
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="Vim Quick Reference" />
-<meta property="og:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you" />
+<meta property="og:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-12-20T19:17:54+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="Vim Quick Reference">
-<meta itemprop="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you"><meta itemprop="datePublished" content="2018-12-20T19:17:54+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="1608">
+<meta itemprop="description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?"><meta itemprop="datePublished" content="2018-12-20T19:17:54+00:00" />
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="1605">
 <meta itemprop="keywords" content="vim,reference," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim Quick Reference"/>
-<meta name="twitter:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely 1 [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you"/>
+<meta name="twitter:description" content="This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -143,7 +143,7 @@
       <div class="post-meta">
         <span class="post-time"> December 20, 2018 </span>
         <div class="post-category">
-            <a href="/categories/techniques/"> Techniques </a>
+            <a href="/categories/tech/"> tech </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -194,15 +194,8 @@
 <!-- more -->
 <h2 id="general-pattern">General Pattern</h2>
 <p>A vim operation consists of three parts, namely</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[OPERATOR][NUMBER][MOTION]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>where</p>
+<pre tabindex="0"><code>[OPERATOR][NUMBER][MOTION]
+</code></pre><p>where</p>
 <ul>
 <li><code>OPERATOR</code> - what you want to do? This mainly covers copy, cut, paste, etc.</li>
 <li><code>NUMBER</code> - how many times do you want? It&rsquo;s nothing but repeating the operation <code>NUMBER</code> times, and it&rsquo;s <strong>optional</strong>.</li>
@@ -331,15 +324,8 @@
 </ul>
 <p><strong>More detail</strong></p>
 <p>It has a general pattern:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">:[range]s/from/to/[flags]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The default range is current line. See some examples:</p>
+<pre tabindex="0"><code>:[range]s/from/to/[flags]
+</code></pre><p>The default range is current line. See some examples:</p>
 <ul>
 <li><code>:1,10s/from/to</code> - search and replace between line 1 and 10 (included)</li>
 <li><code>:10s/from/to/</code> - search and replace only in line 10</li>
@@ -503,15 +489,8 @@
 <li>delete lines with <code>&lt;space&gt;</code> or <code>&lt;tab&gt;</code> as beginning: <code>%s/^[ |\t]*$//</code> or <code>g/^[ |\t]*$/d</code></li>
 </ul>
 <p>Note that pattern in regex scoped by <code>\(&lt;pattern&gt;\)</code> can be refered as <code>\1</code>, <code>\2</code>, etc. in the latter statement. For example, I want to replace every &ldquo;abc&hellip;xyz&rdquo; to &ldquo;xyz&hellip;abc&rdquo;, just write like this</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">%s/\(abc\)\(.*\)\(xyz\)/\3\2\1/g
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+<pre tabindex="0"><code>%s/\(abc\)\(.*\)\(xyz\)/\3\2\1/g
+</code></pre><hr>
 <h2 id="advanced-tricks">Advanced Tricks</h2>
 <h3 id="auto-complete">Auto Complete</h3>
 <p>In insert mode, press <code>^p</code>, vim will give you a list of all words you have typed, kind of auto complete.</p>
@@ -647,7 +626,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

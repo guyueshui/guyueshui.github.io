@@ -54,7 +54,7 @@
 <meta itemprop="name" content="A collection of some coding problems">
 <meta itemprop="description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta itemprop="datePublished" content="2019-04-07T19:31:59+00:00" />
 <meta itemprop="dateModified" content="2019-09-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="15976">
+<meta itemprop="wordCount" content="15834">
 <meta itemprop="keywords" content="算法,动态规划,编程," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A collection of some coding problems"/>
 <meta name="twitter:description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"/>
@@ -364,32 +364,14 @@ $$</p>
 <p>输出描述：
 输出一个整数，表示最少需要携带的硬币数量。如果无解，则输出$-1$.</p>
 <p>示例输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">20 4
-</span></span><span class="line"><span class="cl">1
-</span></span><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">5
-</span></span><span class="line"><span class="cl">10
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>示例输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">5
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>20 4
+1
+2
+5
+10
+</code></pre><p>示例输出：</p>
+<pre tabindex="0"><code>5
+</code></pre><blockquote>
 <p>思路：一拿到就让人联想到动态规划。但其实不是，因为它的条件是要构成所有1到m之间的面值。所以就得从1到m慢慢凑出来。假设当前选择的硬币已经可以构成[1, i], 那么我当然下次在选面值的之后，会很理想的去寻找一个面值为i+1的硬币。这样我可以使我构造的最大面值尽可能的大。如果这个面值大于m了，那我们就完事儿了。这是贪心的思想。具体来说，比方已选的硬币可以构造出1到5之间的任何面值，那我在选择一个面值为6的硬币，就可以构造出1到11之间的任何面值。所以我们从面值为1的开始加，记录当前可以构造的最大面值max_constructed，在选择下一个硬币的时候，优先选择面值&lt;=max_constructed+1的硬币。
 参考：https://blog.csdn.net/MOU_IT/article/details/89057036</p>
 </blockquote>
@@ -609,45 +591,18 @@ $$</p>
 <p>output:
 一个整数，表示最少需要准备的舞曲数目。</p>
 <p>示例输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">3 3
-</span></span><span class="line"><span class="cl">2 1 2
-</span></span><span class="line"><span class="cl">2 1 3
-</span></span><span class="line"><span class="cl">2 2 3
-</span></span><span class="line"><span class="cl">1 1
-</span></span><span class="line"><span class="cl">2 1 3
-</span></span><span class="line"><span class="cl">2 2 3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>示例输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">对于样例2，我们只需要两首舞曲，第一首舞曲安排（1,1），（2,3），（3,2）；第二首舞曲安排（1,2），(2,1)，（3,3）。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>3 3
+2 1 2
+2 1 3
+2 2 3
+1 1
+2 1 3
+2 2 3
+</code></pre><p>示例输出：</p>
+<pre tabindex="0"><code>2
+</code></pre><p>说明：</p>
+<pre tabindex="0"><code>对于样例2，我们只需要两首舞曲，第一首舞曲安排（1,1），（2,3），（3,2）；第二首舞曲安排（1,2），(2,1)，（3,3）。
+</code></pre><blockquote>
 <p>思路：乍一看好象很难，不知道怎么处理。其实只要仔细看清楚题目要求：要求每个刃都能得到满足！这很重要，即便还有一个我喜欢的人没跟我跳，就得再放一首歌让我跳！了解到这个需求之后，问题就变的简单了，只要统计出每个人心仪人的数量，以及被心仪的数量，对所有人求一个最大值就行了。
 参考：https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec</p>
 </blockquote>
@@ -842,27 +797,14 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 </div><h2 id="题六斜线填充">题六：斜线填充</h2>
 <p>给定n x m的矩阵，按照从右上往左下的斜线填充 1 到 n*m 的值。
 例如，对于一个3x3的矩阵,</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1 2 4
-</span></span><span class="line"><span class="cl">3 5 7
-</span></span><span class="line"><span class="cl">6 8 9 (3x3)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">1  2  4  7
-</span></span><span class="line"><span class="cl">3  5  8 10
-</span></span><span class="line"><span class="cl">6  9 11 12  (3x4)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>1 2 4
+3 5 7
+6 8 9 (3x3)
+
+1  2  4  7
+3  5  8 10
+6  9 11 12  (3x4)
+</code></pre><blockquote>
 <p>思路：干就完了。先填充左上角的三角区域，再填充右下角的三角区域。注意边界条件，无论行或列到达边界，记得跳转。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -985,27 +927,14 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 </div>
 </div><h2 id="题七螺旋矩阵">题七：螺旋矩阵</h2>
 <p>按顺时针填充螺旋填充矩阵。例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">9 8 7
-</span></span><span class="line"><span class="cl">2 1 6
-</span></span><span class="line"><span class="cl">3 4 5 (3x3)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">12 11 10 9
-</span></span><span class="line"><span class="cl"> 3  2  1 8
-</span></span><span class="line"><span class="cl"> 4  5  6 7 (3x4)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>9 8 7
+2 1 6
+3 4 5 (3x3)
+
+12 11 10 9
+ 3  2  1 8
+ 4  5  6 7 (3x4)
+</code></pre><blockquote>
 <p>Idea: Imagine there are for borders that surround the matrix. We walk through the mat, and once achieve a border, we change the direction. Each time we finished a circle, we will shrink our border, and start next circle. After we fill (row * col) elems in the matrix, we are done!</p>
 <p>Note: this solution is the most elegant in my opinion, for it&rsquo;s simple boundray case.</p>
 </blockquote>
@@ -1197,42 +1126,19 @@ Reference: <a href="https://www.cnblogs.com/ranjiewen/p/8059336.html">https://ww
 <p>输出描述：
 对于每次鼠标点击，输出本次点击到的窗口id。如果没有点击到窗口，输出-1.</p>
 <p>示例输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2 4
-</span></span><span class="line"><span class="cl">100 100 100 100
-</span></span><span class="line"><span class="cl">10 10 150 150
-</span></span><span class="line"><span class="cl">105 105
-</span></span><span class="line"><span class="cl">180 180
-</span></span><span class="line"><span class="cl">105 105
-</span></span><span class="line"><span class="cl">1 1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>示例输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">1
-</span></span><span class="line"><span class="cl">1
-</span></span><span class="line"><span class="cl">-1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
+<pre tabindex="0"><code>2 4
+100 100 100 100
+10 10 150 150
+105 105
+180 180
+105 105
+1 1
+</code></pre><p>示例输出：</p>
+<pre tabindex="0"><code>2
+1
+1
+-1
+</code></pre><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1447,24 +1353,10 @@ Input consists of two integers, P and Q (1&lt;=P,Q &lt;= 1000), which represent 
 Output consists of two integers, R and C. R indicates the row index of P/Q in the Stern-Brocot tree, C indicates the index of P/Q in that row.
 Both R and C are base 1. We promise the position of P/Q is always in the first 12 rows of the Stern-Brocot tree, which means R&lt;=12.</p>
 <p>Sample input:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">5 3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Sample output:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">4 6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>5 3
+</code></pre><p>Sample output:</p>
+<pre tabindex="0"><code>4 6
+</code></pre><blockquote>
 <p>Idea: tree structure is natural for recursion.</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1671,63 +1563,22 @@ Both R and C are base 1. We promise the position of P/Q is always in the first 1
 </blockquote>
 <p>小Q想要给他的朋友发送一个神秘的字符串，但是他发现字符串过长了，于是小Q发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的m个相同的字符串S将会压缩为[m|S]（m为一个整数且1&lt;=m&lt;=100），例如字符串ABCABCABC将会被压缩为[3|ABC]，现在小Q的同学收到了小Q发送过来的字符串，你能帮助他进行解压缩么？</p>
 <p>输入描述：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入第一行包含一个字符串S，代表压缩后的字符串。
-</span></span><span class="line"><span class="cl">S的长度&lt;=1000;
-</span></span><span class="line"><span class="cl">S仅包含大写字母、[、]、|;
-</span></span><span class="line"><span class="cl">解压缩后的字符串长度不超过100000;
-</span></span><span class="line"><span class="cl">压缩递归层数不超过10层;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出描述：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输出一个字符串，代表解压后的字符串。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输入示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HG[3|B[2|CA]]F
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HGBCACABCACABCACAF
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HG[3|B[2|CA]]F -&gt;
-</span></span><span class="line"><span class="cl">HG[3|BCACA]F -&gt;
-</span></span><span class="line"><span class="cl">HGBCACABCACABCACAF
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>输入第一行包含一个字符串S，代表压缩后的字符串。
+S的长度&lt;=1000;
+S仅包含大写字母、[、]、|;
+解压缩后的字符串长度不超过100000;
+压缩递归层数不超过10层;
+</code></pre><p>输出描述：</p>
+<pre tabindex="0"><code>输出一个字符串，代表解压后的字符串。
+</code></pre><p>输入示例：</p>
+<pre tabindex="0"><code>HG[3|B[2|CA]]F
+</code></pre><p>输出示例：</p>
+<pre tabindex="0"><code>HGBCACABCACABCACAF
+</code></pre><p>说明：</p>
+<pre tabindex="0"><code>HG[3|B[2|CA]]F -&gt;
+HG[3|BCACA]F -&gt;
+HGBCACABCACABCACAF
+</code></pre><blockquote>
 <p>个人觉得我的解法很烂，而且太繁琐，但是目前还想不出更好的。代码也写的比较乱orz. 主要想法是遍历一遍字符串，如果不是特定的压缩模式，直接添加到结果中就好，如果遇到了特殊模式（[3|AB]），将该模式提取出来交给另一个函数解码，模式可能递归存在，所以使用一个栈确保提取出正确的模式。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1920,36 +1771,16 @@ Both R and C are base 1. We promise the position of P/Q is always in the first 1
 <p>输出描述：
 m行每行一个数表示答案</p>
 <p>输入示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">2 1 4 3
-</span></span><span class="line"><span class="cl">4
-</span></span><span class="line"><span class="cl">1 2 0 2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明：
+<pre tabindex="0"><code>2
+2 1 4 3
+4
+1 2 0 2
+</code></pre><p>输出示例：</p>
+<pre tabindex="0"><code>0
+6
+6
+0
+</code></pre><p>说明：
 初始序列2 1 4 3
 $2^{q_1} = 2$ -&gt; 第一次：1 2 3 4 -&gt; 逆序对数0
 $2^{q_2} = 4$ -&gt; 第二次：4 3 2 1 -&gt; 逆序对数6
@@ -2287,33 +2118,17 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>附运行结果，体会一下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">0.185ms for mergesort
-</span></span><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">6
-</span></span><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">0.068ms for inplace mergesort
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>差了3倍左右！</p>
+<pre tabindex="0"><code>0
+6
+6
+0
+0.185ms for mergesort
+0
+6
+6
+0
+0.068ms for inplace mergesort
+</code></pre><p>差了3倍左右！</p>
 <h2 id="josephus-problem">Josephus Problem</h2>
 <blockquote>
 <p>这个问题是以弗拉维奥·约瑟夫命名的，他是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。</p>
@@ -2332,30 +2147,13 @@ $2^{q_4} = 4$ -&gt; 第四次：1 2 3 4 -&gt; 逆序对数0</p>
 接着从 $m \mod n$ 开始报数，接下来又会是谁被处决呢？</p>
 <p>等等，先来看看问题是什么，我希望知道幸免者的编号。在n个人，报m个数的设定下，我希望知道幸免者编号，假设这个编号就是$f(n,m)$, 这里 $f$ 是个神奇的函数，我只要告诉它 n 和 m 它就能告诉我最后幸存者的编号。如果我能找到 $f(n, m)$ 和 $f(n-1, m)$ 的递推关系式，那将是极好的。</p>
 <p>在第一趟之后，报数从编号 $k = m \mod n$ 开始，但是此时只有 n-1个人，我还是想知道幸存者的编号。如果此时将编号重新映射一下，比如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">k   -&gt; 0
-</span></span><span class="line"><span class="cl">k+1 -&gt; 1
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">k-2 -&gt; n-2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>那么问题就变成了 n-1 个人，从0开始报数，报到 m-1 被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 $f(n-1, m)$. 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是 x，那么映射回原编号 y</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">y = (x+k) mod n
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>于是，如果我们能够知道 $f(n-1, m)$, 那么</p>
+<pre tabindex="0"><code>k   -&gt; 0
+k+1 -&gt; 1
+...
+k-2 -&gt; n-2
+</code></pre><p>那么问题就变成了 n-1 个人，从0开始报数，报到 m-1 被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 $f(n-1, m)$. 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是 x，那么映射回原编号 y</p>
+<pre tabindex="0"><code>y = (x+k) mod n
+</code></pre><p>于是，如果我们能够知道 $f(n-1, m)$, 那么</p>
 <p>$$
 f(n, m) = (f(n-1,m) + m) \mod n.
 $$</p>
@@ -2393,26 +2191,11 @@ $$</p>
 <p>输出描述：
 输出最终结果的期望，保留两位小数。</p>
 <p>示例输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">2 2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>示例输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1.75
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>2
+2 2
+</code></pre><p>示例输出：</p>
+<pre tabindex="0"><code>1.75
+</code></pre><blockquote>
 <p>主要考察事件概率的计算。</p>
 </blockquote>
 <p>假设有3个骰子，最大点数分别为2,3,4点。那么扔n个骰子，最终结果为1的概率如下</p>
@@ -2545,62 +2328,29 @@ $$</p>
 <p>输出描述：</p>
 <p>对于每一组样例，输出一个字符串。如果该二叉树是一颗递增树，则输出YES，否则输出NO。</p>
 <p>样例输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">8
-</span></span><span class="line"><span class="cl">2 -1 -1
-</span></span><span class="line"><span class="cl">1 5 3
-</span></span><span class="line"><span class="cl">4 -1 6
-</span></span><span class="line"><span class="cl">2 -1 -1
-</span></span><span class="line"><span class="cl">3 0 2
-</span></span><span class="line"><span class="cl">2 4 7
-</span></span><span class="line"><span class="cl">7 -1 -1
-</span></span><span class="line"><span class="cl">2 -1 -1
-</span></span><span class="line"><span class="cl">8
-</span></span><span class="line"><span class="cl">21 6 -1
-</span></span><span class="line"><span class="cl">52 4 -1
-</span></span><span class="line"><span class="cl">80 0 3
-</span></span><span class="line"><span class="cl">31 7 -1
-</span></span><span class="line"><span class="cl">21 -1 -1
-</span></span><span class="line"><span class="cl">59 -1 -1
-</span></span><span class="line"><span class="cl">50 5 -1
-</span></span><span class="line"><span class="cl">48 -1 1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>样例输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">YES
-</span></span><span class="line"><span class="cl">NO
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>2
+8
+2 -1 -1
+1 5 3
+4 -1 6
+2 -1 -1
+3 0 2
+2 4 7
+7 -1 -1
+2 -1 -1
+8
+21 6 -1
+52 4 -1
+80 0 3
+31 7 -1
+21 -1 -1
+59 -1 -1
+50 5 -1
+48 -1 1
+</code></pre><p>样例输出：</p>
+<pre tabindex="0"><code>YES
+NO
+</code></pre><blockquote>
 <p>这题最恶心的是输入格式，居然不是直接给一颗建好的二叉树的根节点，而是给数据让你自己建树。处理输入还比较麻烦，首先每个节点都有编号，得先存起来，然后一个一个构造节点，然后再连接起来，关键是连好以后，头节点在哪？还得找一下，最后的判断，实际上是二叉树的层次遍历，遍历得到一个向量，判断是否为严格单调递增即可。</p>
 </blockquote>
 <p><img src="/img/posted/tree.png" alt=""></p>
@@ -2866,38 +2616,17 @@ $$</p>
 <p>现有一个地图，由横线与竖线组成（参考围棋棋盘），起点在左上角，终点在右下角。每次行走只能沿线移动到相邻的点，每走一步产生一个开销。计算从起点到终点的最小开销为多少。</p>
 <p>输入描述：
 $m \times n$ 的地图表示如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">3
-</span></span><span class="line"><span class="cl">3
-</span></span><span class="line"><span class="cl">1 3 4
-</span></span><span class="line"><span class="cl">2 1 2
-</span></span><span class="line"><span class="cl">4 3 1
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">其中m=3，n=3表示3*3的矩阵
-</span></span><span class="line"><span class="cl">行走路径为：下&gt;右&gt;右&gt;下
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出描述：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">路径总长：1+2+1+2+1=7
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>3
+3
+1 3 4
+2 1 2
+4 3 1
+
+其中m=3，n=3表示3*3的矩阵
+行走路径为：下&gt;右&gt;右&gt;下
+</code></pre><p>输出描述：</p>
+<pre tabindex="0"><code>路径总长：1+2+1+2+1=7
+</code></pre><blockquote>
 <p>动态规划入门题，可惜我当时碰到DP就慌，而且只会递归DP，自顶向下，复杂度会高很多。</p>
 </blockquote>
 <p>假设用一个矩阵，名字就叫dp，表示最优结果。dp(i,j)表示从起点到坐标(i,j)的最小开销。很容易得到递推关系：</p>
@@ -3069,30 +2798,13 @@ $$</p>
 <p>输出描述：
 输出一个数组，每个数据表示原来在队列中的位置，用空格隔开，表示出列顺序</p>
 <p>输入实例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">6 3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">3 6 4 2 5 1
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">说明：6个人排成一排，原始位置编号1-6，最终输出为3 6 4 2 5 1，
-</span></span><span class="line"><span class="cl">表示的是原来编号为3的第一个出列，编号为1的最后出列。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>6 3
+</code></pre><p>输出示例：</p>
+<pre tabindex="0"><code>3 6 4 2 5 1
+
+说明：6个人排成一排，原始位置编号1-6，最终输出为3 6 4 2 5 1，
+表示的是原来编号为3的第一个出列，编号为1的最后出列。
+</code></pre><blockquote>
 <p>思路：类似于约瑟夫环，使用链表模拟整个过程即可。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -3231,36 +2943,16 @@ $$</p>
 </blockquote>
 <p>有N辆车要陆续通过一座最大承重为W的桥，其中第i辆车的重量为w[i], 过桥时间为t[i]. 要求：第辆车上桥时间不早于第i-1辆车上桥的时间；i任意时刻桥上所有车辆的总重量不超过W。那么，所有车辆都通过这座桥的所需的最短时间是多少？</p>
 <p>输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">第一行输入两个整数N，W（1 &lt;= N, W &lt;= 100000）
-</span></span><span class="line"><span class="cl">第二行输入N个整数w[1]到w[N]（1 &lt;= w[i] &lt;= W）
-</span></span><span class="line"><span class="cl">第三行输入N个整数t[1]到t[N]（1 &lt;= t[i] &lt;= 10000）
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">4 2
-</span></span><span class="line"><span class="cl">1 1 1 1
-</span></span><span class="line"><span class="cl">2 1 2 2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">4
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>第一行输入两个整数N，W（1 &lt;= N, W &lt;= 100000）
+第二行输入N个整数w[1]到w[N]（1 &lt;= w[i] &lt;= W）
+第三行输入N个整数t[1]到t[N]（1 &lt;= t[i] &lt;= 10000）
+
+4 2
+1 1 1 1
+2 1 2 2
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>4
+</code></pre><blockquote>
 <p>干就完了，模拟！</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -4343,42 +4035,19 @@ $$</p>
 <p>原题：https://leetcode.com/problems/rotate-array/</p>
 <p>Given an array, rotate the array to the right by k steps, where k is non-negative.</p>
 <p>Example 1:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [1,2,3,4,5,6,7] and k = 3
-</span></span><span class="line"><span class="cl">Output: [5,6,7,1,2,3,4]
-</span></span><span class="line"><span class="cl">Explanation:
-</span></span><span class="line"><span class="cl">rotate 1 steps to the right: [7,1,2,3,4,5,6]
-</span></span><span class="line"><span class="cl">rotate 2 steps to the right: [6,7,1,2,3,4,5]
-</span></span><span class="line"><span class="cl">rotate 3 steps to the right: [5,6,7,1,2,3,4]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Example 2:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [-1,-100,3,99] and k = 2
-</span></span><span class="line"><span class="cl">Output: [3,99,-1,-100]
-</span></span><span class="line"><span class="cl">Explanation: 
-</span></span><span class="line"><span class="cl">rotate 1 steps to the right: [99,-1,-100,3]
-</span></span><span class="line"><span class="cl">rotate 2 steps to the right: [3,99,-1,-100]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Note:</p>
+<pre tabindex="0"><code>Input: [1,2,3,4,5,6,7] and k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+</code></pre><p>Example 2:</p>
+<pre tabindex="0"><code>Input: [-1,-100,3,99] and k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+</code></pre><p>Note:</p>
 <ul>
 <li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</li>
 <li>Could you do it in-place with O(1) extra space?</li>
@@ -4440,17 +4109,9 @@ $$</p>
 <p>原题：https://leetcode.com/problems/move-zeroes/</p>
 <p>Given an array nums, write a function to move all 0&rsquo;s to the end of it while maintaining the relative order of the non-zero elements.</p>
 <p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [0,1,0,3,12]
-</span></span><span class="line"><span class="cl">Output: [1,3,12,0,0]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Note:</p>
+<pre tabindex="0"><code>Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
+</code></pre><p>Note:</p>
 <ul>
 <li>You must do this in-place without making a copy of the array.</li>
 <li>Minimize the total number of operations.</li>
@@ -4512,28 +4173,12 @@ $$</p>
 <p>From: <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode125</a>.</p>
 <p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
 <p>Example 1:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [3,2,1,5,6,4] and k = 2
-</span></span><span class="line"><span class="cl">Output: 5
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Example 2:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [3,2,3,1,2,4,5,5,6] and k = 4
-</span></span><span class="line"><span class="cl">Output: 4
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Note: You may assume k is always valid, 1 ≤ k ≤ array&rsquo;s length.</p>
+<pre tabindex="0"><code>Input: [3,2,1,5,6,4] and k = 2
+Output: 5
+</code></pre><p>Example 2:</p>
+<pre tabindex="0"><code>Input: [3,2,3,1,2,4,5,5,6] and k = 4
+Output: 4
+</code></pre><p>Note: You may assume k is always valid, 1 ≤ k ≤ array&rsquo;s length.</p>
 <blockquote>
 <p>思路：利用快排的partition思想，每次选取一个pivot，将数组分为小于pivot和大于pivot的两部分。此时pivot的index就是排好序之后的index，与k相比，如果出较小，则在后半部分（大于pivot）再次划分，如果较大，则在前半部分划分。直到划分出来的pivot的index等于k。还要注意的是，这样找出来的是第k小，用数组长度减一下，才是第k大，注意index的变换。</p>
 </blockquote>
@@ -4647,19 +4292,10 @@ $$</p>
 <p>From: <a href="https://leetcode-cn.com/problems/maximum-subarray/">LeetCode53</a>.</p>
 <p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
 <p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Input: [-2,1,-3,4,-1,2,1,-5,4],
-</span></span><span class="line"><span class="cl">Output: 6
-</span></span><span class="line"><span class="cl">Explanation: [4,-1,2,1] has the largest sum = 6.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+<pre tabindex="0"><code>Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+</code></pre><blockquote>
 <p>设置两个变量，一个记录当前连加的值，另一个记录目前位置最大连续子序列，迭代更新。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">

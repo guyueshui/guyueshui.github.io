@@ -13,7 +13,7 @@
       <pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid>
-      <description>先看环境： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso.</description>
+      <description>先看环境： $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso. :ssssssso. Terminal: urxvt :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz</description>
     </item>
     
   </channel>

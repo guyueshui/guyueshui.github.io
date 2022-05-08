@@ -10,10 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="/reveal-js/css/reset.css">
 <link rel="stylesheet" href="/reveal-js/css/reveal.css"><link rel="stylesheet" href="/reveal-js/css/theme/moon.css" id="theme">
-<link rel="stylesheet" href="/highlight-js/default.min.css">
+<link rel="stylesheet" href="/highlight-js/github.min.css">
     
   </head>
   <body>
+    
     <div class="reveal">
       <div class="slides">
   
@@ -48,7 +49,7 @@ $$</p>
   document.getElementsByTagName('head')[0].appendChild(link);
 </script>
 
-<script type="application/json" id="reveal-hugo-site-params">{"theme":"moon"}</script>
+<script type="application/json" id="reveal-hugo-site-params">{"highlight_theme":"github","theme":"moon"}</script>
 <script type="application/json" id="reveal-hugo-page-params">null</script>
 
 <script src="/reveal-js/js/reveal.js"></script>
@@ -97,6 +98,20 @@ $$</p>
 
 
     
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
     
   </body>
 </html>

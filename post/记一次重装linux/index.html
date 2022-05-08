@@ -50,12 +50,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-08-13T10:07:05+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="记一次重装 Linux">
 <meta itemprop="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"><meta itemprop="datePublished" content="2018-08-13T10:07:05+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="1762">
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="1753">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="记一次重装 Linux"/>
 <meta name="twitter:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"/>
@@ -338,40 +338,19 @@
 <p>例如要将下载好的 Alegreya.zip 字体安装到系统，只需要将其解压：
 <img src="https://s2.ax1x.com/2019/01/18/kpjOAO.png" alt=""></p>
 <p>可以看到里面的字体文件。挑几个解释一下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Alegreya-Regular.ttf    # 常规字体
-</span></span><span class="line"><span class="cl">Alegreya-Italic.ttf    # 斜体
-</span></span><span class="line"><span class="cl">Alegreya-Bold.ttf    # 粗体
-</span></span><span class="line"><span class="cl">Alegreya-BoldItalic.ttf    # 粗斜体
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>一般而言，虽然一个字体包里面可能有很多字体文件，很多变体（粗体，特粗，细，特细等），我们只需要安装以上四种变体基本上就足够了。在 TeXLive 中，如果指定了字体族，那么其中的 <code>\emph</code> 和 <code>\textbf</code>命令会自动寻找相应的变体来排版。</p>
+<pre tabindex="0"><code>Alegreya-Regular.ttf    # 常规字体
+Alegreya-Italic.ttf    # 斜体
+Alegreya-Bold.ttf    # 粗体
+Alegreya-BoldItalic.ttf    # 粗斜体
+</code></pre><p>一般而言，虽然一个字体包里面可能有很多字体文件，很多变体（粗体，特粗，细，特细等），我们只需要安装以上四种变体基本上就足够了。在 TeXLive 中，如果指定了字体族，那么其中的 <code>\emph</code> 和 <code>\textbf</code>命令会自动寻找相应的变体来排版。</p>
 <p><strong>复制到指定目录</strong></p>
 <p>将这四个文件复制到系统字体文件夹</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 用户字体目录
-</span></span><span class="line"><span class="cl">~/.local/share/fonts
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 系统字体目录
-</span></span><span class="line"><span class="cl">/usr/share/fonts
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>为了便于管理，可以在系统字体目录下新建一个文件夹存放用户后续安装的字体，例如</p>
+<pre tabindex="0"><code># 用户字体目录
+~/.local/share/fonts
+
+# 系统字体目录
+/usr/share/fonts
+</code></pre><p>为了便于管理，可以在系统字体目录下新建一个文件夹存放用户后续安装的字体，例如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -454,7 +433,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>

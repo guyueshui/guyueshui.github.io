@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/bit-field-struct/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-08-06T20:43:02+00:00" />
-<meta property="article:modified_time" content="2022-05-06T22:40:54+08:00" />
+<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
 
 <meta itemprop="name" content="位域结构体简介">
 <meta itemprop="description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"><meta itemprop="datePublished" content="2019-08-06T20:43:02+00:00" />
-<meta itemprop="dateModified" content="2022-05-06T22:40:54+08:00" />
-<meta itemprop="wordCount" content="1892">
+<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
+<meta itemprop="wordCount" content="1888">
 <meta itemprop="keywords" content="cpp,结构体,位运算," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="位域结构体简介"/>
 <meta name="twitter:description" content="最近实习接触到一个新的知识点，C/C&#43;&#43;的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)"/>
@@ -164,15 +164,8 @@
 <p>以下开始摘抄自：<a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">here</a></p>
 <p>位段(bit-field)是以位为单位来定义结构体(或联合体)中的成员变量所占的空间。含有位段的结构体(联合体)称为位段结构。采用位段结构既能够节省空间，又方便于操作。</p>
 <p>位段的定义格式为:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">type [var]: digits
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
+<pre tabindex="0"><code>type [var]: digits
+</code></pre><p>其中type只能为int，unsigned int，signed int三种类型(int型能不能表示负数视编译器而定，比如VC中int就默认是signed int，能够表示负数)。位段名称var是可选参数，即可以省略。digits表示该位段所占的二进制位数。</p>
 <p>举个例子，你可以这样定义一个位域结构体：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -430,19 +423,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上述程序的输出为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">length:    65535
-</span></span><span class="line"><span class="cl">flags:       255
-</span></span><span class="line"><span class="cl">num:          -1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>解释一下为什么num成员的值为-1：
+<pre tabindex="0"><code>length:    65535
+flags:       255
+num:          -1
+</code></pre><p>解释一下为什么num成员的值为-1：
 首先num设置的比特位为8，而num的类型为int，是有符号的。对于有符号的整数，计算机内部使用补码表示的。
 0xff 换成二进制
 1111 1111
@@ -470,7 +454,7 @@ Ycm提示这里发生了隐式截断。255被截断成了-1. 如果换成 0x11 �
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        May 6, 2022
+        May 8, 2022
         
     </span>
   </p>
