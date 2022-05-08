@@ -4,14 +4,33 @@ date: 2020-03-23
 outputs: ["Reveal"]
 layout: "list"
 categories: [slides]
+markup:
+  highlight:
+    codeFences: false
 
 ---
 
 # Hello world!
 
-This is my first slide.
+This is my first `slide`.
 
 $e=mc^2$
+
+```cpp
+int main()
+{
+    return 0;
+}
+```
+
+{{< highlight go >}}
+package main
+import "fmt"
+func main() {
+    fmt.Println("Hello world!")
+}
+{{< /highlight >}}
+
 
 ---
 
