@@ -479,6 +479,8 @@ label-time-font = 8
 
 一路折腾下来，发现 polybar 其实很友好。配置逻辑也非常清晰，有点怀疑自己当初为什么没有配置好它，反而觉得很难用。所以啊，作者写这个软件也不是为了刁难人的，一开始的时候也并没有这么复杂。我们入手呢，就要从作者一开始写出来的那样，能用出最基础的功能就好了。然后需求都是后来加上去的。有用户提，作者考虑做，或者作者自己想到的功能，才会在后面一步步添加上去。最终成为一个功能相对完善的软件。每个东西都有它的学习曲线，我们可能已经适应了平缓的山坡，突然面对一个陡峭的山峰之时，便不好应对了。但是千里之行，始于足下！我们始终要抓住它们最初的样子，或者说雏形，然后想一想它们是如何发展过来的，顺着这条线路走下去，自然觉得一切合情合理，也有勇气和信心去学了！然后当我们学会一个又一个软件之后，或许会发现它们可能有异曲同工之妙。那便是学到了！
 
+如果你恰巧喜欢我的配置，猛击[这里][8]获取之。
+
 ## Reference
 
 - [Polybar wiki][4]
@@ -493,3 +495,4 @@ label-time-font = 8
 [5]: https://github.com/jaagr/dots/tree/master/.config/polybar/testing
 [6]: https://fontawesome.com/cheatsheet?from=io
 [7]: https://www.musicpd.org/
+[8]: https://github.com/guyueshui/dotfiles/blob/master/.config/polybar/config

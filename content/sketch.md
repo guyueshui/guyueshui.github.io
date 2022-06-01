@@ -8,6 +8,41 @@ comment: false
 
 shell字符串截取: http://c.biancheng.net/view/1120.html
 
+--------------------
+
+hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使），此时可采用
+```bash {linenos=false}
+$ hugo server --config even-config.toml --gc
+```
+
+---
+
+The memory that a program uses is typically divided into a few different areas, called segments:
+
+-   The code segment (also called a text segment), where the compiled program sits in memory. The code segment is typically read-only.
+-   The bss segment (also called the uninitialized data segment), where zero-initialized global and static variables are stored.
+-   The data segment (also called the initialized data segment), where initialized global and static variables are stored.
+-   The heap, where dynamically allocated variables are allocated from.
+-   The call stack, where function parameters, local variables, and other function-related information are stored.
+
+The heap has advantages and disadvantages:
+
+-   Allocating memory on the heap is comparatively slow.
+-   Allocated memory stays allocated until it is specifically deallocated (beware memory leaks) or the application ends (at which point the OS should clean it up).
+-   Dynamically allocated memory must be accessed through a pointer. Dereferencing a pointer is slower than accessing a variable directly.
+-   Because the heap is a big pool of memory, large arrays, structures, or classes can be allocated here.
+
+The stack has advantages and disadvantages:
+
+-   Allocating memory on the stack is comparatively fast.
+-   Memory allocated on the stack stays in scope as long as it is on the stack. It is destroyed when it is popped off the stack.
+-   All memory allocated on the stack is known at compile time. Consequently, this memory can be accessed directly through a variable.
+-   Because the stack is relatively small, it is generally not a good idea to do anything that eats up lots of stack space. This includes passing by value or creating local variables of large arrays or other memory-intensive structures.
+
+
+
+Cf. https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/
+
 ## 2022 年 4 月
 
 Posix扩展正则表达式: https://imliuda.com/post/16
