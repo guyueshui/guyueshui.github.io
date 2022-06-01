@@ -194,7 +194,7 @@
       <guid>https://guyueshui.github.io/slide/bbb/</guid>
       <description>The Title Sub Title
 Yychi | SIST
- Slide 2 here comes $e=mc^2$.
+Slide 2 here comes $e=mc^2$.
 $$ \mathbb{T} \mapsto A $$</description>
     </item>
     
@@ -205,9 +205,9 @@ $$ \mathbb{T} \mapsto A $$</description>
       
       <guid>https://guyueshui.github.io/slide/ccc/</guid>
       <description>Hello world! This is my first slide.
- Hello Mars! This is my second slide.
- Vertical slide 1 This is verticle slide.
- Vertical slide 2  </description>
+Hello Mars! This is my second slide.
+Vertical slide 1 This is verticle slide.
+Vertical slide 2 </description>
     </item>
     
     <item>
@@ -218,9 +218,9 @@ $$ \mathbb{T} \mapsto A $$</description>
       <guid>https://guyueshui.github.io/slide/aaa/</guid>
       <description>Hello world! This is my first slide.
 $e=mc^2$
-1 2 3 4  int main() { return 0; }   1 2 3 4 5  package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) }    Hello Mars! This is my second slide.
- Vertical slide 1 This is verticle slide.
- Vertical slide 2  </description>
+1 2 3 4 int main() { return 0; } 1 2 3 4 5 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) } Hello Mars! This is my second slide.
+Vertical slide 1 This is verticle slide.
+Vertical slide 2 </description>
     </item>
     
     <item>
@@ -249,7 +249,7 @@ $e=mc^2$
       <guid>https://guyueshui.github.io/post/shell-intro/</guid>
       <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
 Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
-1 2  [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos   Why not display an asterisk?</description>
+1 2 [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos Why not display an asterisk? That&amp;rsquo;s expansion!</description>
     </item>
     
     <item>
@@ -260,7 +260,7 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
       <guid>https://guyueshui.github.io/post/nn-notes/</guid>
       <description>Hello here.
 CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
- take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
+take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
     </item>
     
     <item>
@@ -353,8 +353,8 @@ CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output
       <guid>https://guyueshui.github.io/slide/tf-quick-start/</guid>
       <description>Introduction to TensorFlow A Quick Start
 Yychi Fyu @SIST, ShanghaiTech
- Outline  TF Primitives  tensor graphs session variable placeholder   An Example   High-level overview Computation Graph: The structure of TF.
- operators as nodes tensors as links   1 2 3 4 5 6 7  import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y)   Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph:  How can we actually see a tensor?</description>
+Outline TF Primitives tensor graphs session variable placeholder An Example High-level overview Computation Graph: The structure of TF.
+operators as nodes tensors as links 1 2 3 4 5 6 7 import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y) Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph: How can we actually see a tensor?</description>
     </item>
     
     <item>
@@ -364,7 +364,7 @@ Yychi Fyu @SIST, ShanghaiTech
       
       <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
       <description>Declaration: this article is in long time editing&amp;hellip;
- Here comes some beautiful recursive solutions to some problems.
+Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
 Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
     </item>
@@ -533,7 +533,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/exponetial-distribution/</guid>
-      <description>Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
+      <description>Story The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
     </item>
     
     <item>
@@ -587,7 +587,7 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       <pubDate>Fri, 14 Dec 2018 13:59:49 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/sketch/</guid>
-      <description>2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html 2022 年 4 月 Posix扩展正则表达式: https://imliuda.com/post/16 2020 年 11 月 给老婆买了一加8T，性价比太高了吧！内存翻一倍只加300块！ 2020 年</description>
+      <description>2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使）</description>
     </item>
     
     <item>
@@ -1074,9 +1074,9 @@ There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an
       
       <guid>https://guyueshui.github.io/post/hello-world/</guid>
       <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick Start Create a new post 1  $ hexo new &amp;#34;My New Post&amp;#34;   More info: Writing
-Run server 1  $ hexo server   More info: Server
-Generate static files 1  $ hexo generate   More info: Generating</description>
+Quick Start Create a new post 1 $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing
+Run server 1 $ hexo server More info: Server
+Generate static files 1 $ hexo generate More info: Generating</description>
     </item>
     
   </channel>

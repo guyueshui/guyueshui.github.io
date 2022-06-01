@@ -13,7 +13,7 @@
       <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
       
       <guid>https://guyueshui.github.io/post/exponetial-distribution/</guid>
-      <description>Story  The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
+      <description>Story The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
     </item>
     
   </channel>

@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yychi" /><meta name="description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html 2022 年 4 月 Posix扩展正则表达式: https://imliuda.com/post/16 2020 年 11 月 给老婆买了一加8T，性价比太高了吧！内存翻一倍只加300块！ 2020 年" /><meta name="keywords" content="水阙, yychi" />
+<meta name="author" content="Yychi" /><meta name="description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使）" /><meta name="keywords" content="水阙, yychi" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.98.0 with theme even" />
+<meta name="generator" content="Hugo 0.100.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/sketch/" />
@@ -45,19 +45,19 @@
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
 
 <meta property="og:title" content="札记" />
-<meta property="og:description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html 2022 年 4 月 Posix扩展正则表达式: https://imliuda.com/post/16 2020 年 11 月 给老婆买了一加8T，性价比太高了吧！内存翻一倍只加300块！ 2020 年" />
+<meta property="og:description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使）" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/sketch/" /><meta property="article:section" content="" />
 <meta property="article:published_time" content="2018-12-14T13:59:49+00:00" />
-<meta property="article:modified_time" content="2022-05-08T23:15:33+08:00" />
+<meta property="article:modified_time" content="2022-06-01T20:40:12+08:00" />
 
 <meta itemprop="name" content="札记">
-<meta itemprop="description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html 2022 年 4 月 Posix扩展正则表达式: https://imliuda.com/post/16 2020 年 11 月 给老婆买了一加8T，性价比太高了吧！内存翻一倍只加300块！ 2020 年"><meta itemprop="datePublished" content="2018-12-14T13:59:49+00:00" />
-<meta itemprop="dateModified" content="2022-05-08T23:15:33+08:00" />
-<meta itemprop="wordCount" content="14314">
+<meta itemprop="description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使）"><meta itemprop="datePublished" content="2018-12-14T13:59:49+00:00" />
+<meta itemprop="dateModified" content="2022-06-01T20:40:12+08:00" />
+<meta itemprop="wordCount" content="14659">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="札记"/>
-<meta name="twitter:description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html 2022 年 4 月 Posix扩展正则表达式: https://imliuda.com/post/16 2020 年 11 月 给老婆买了一加8T，性价比太高了吧！内存翻一倍只加300块！ 2020 年"/>
+<meta name="twitter:description" content="2022 年 5 月 shell字符串截取: http://c.biancheng.net/view/1120.html hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使）"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -139,6 +139,33 @@
   <div class="post-content">
     <h2 id="2022-年-5-月">2022 年 5 月</h2>
 <p>shell字符串截取: <a href="http://c.biancheng.net/view/1120.html">http://c.biancheng.net/view/1120.html</a></p>
+<hr>
+<p>hugo起本地服时，偶尔会出现本地文件已经修改，但预览网站还是未更改的状态（多次重新关闭/启动服务都不好使），此时可采用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo server --config even-config.toml --gc
+</span></span></code></pre></div><hr>
+<p>The memory that a program uses is typically divided into a few different areas, called segments:</p>
+<ul>
+<li>The code segment (also called a text segment), where the compiled program sits in memory. The code segment is typically read-only.</li>
+<li>The bss segment (also called the uninitialized data segment), where zero-initialized global and static variables are stored.</li>
+<li>The data segment (also called the initialized data segment), where initialized global and static variables are stored.</li>
+<li>The heap, where dynamically allocated variables are allocated from.</li>
+<li>The call stack, where function parameters, local variables, and other function-related information are stored.</li>
+</ul>
+<p>The heap has advantages and disadvantages:</p>
+<ul>
+<li>Allocating memory on the heap is comparatively slow.</li>
+<li>Allocated memory stays allocated until it is specifically deallocated (beware memory leaks) or the application ends (at which point the OS should clean it up).</li>
+<li>Dynamically allocated memory must be accessed through a pointer. Dereferencing a pointer is slower than accessing a variable directly.</li>
+<li>Because the heap is a big pool of memory, large arrays, structures, or classes can be allocated here.</li>
+</ul>
+<p>The stack has advantages and disadvantages:</p>
+<ul>
+<li>Allocating memory on the stack is comparatively fast.</li>
+<li>Memory allocated on the stack stays in scope as long as it is on the stack. It is destroyed when it is popped off the stack.</li>
+<li>All memory allocated on the stack is known at compile time. Consequently, this memory can be accessed directly through a variable.</li>
+<li>Because the stack is relatively small, it is generally not a good idea to do anything that eats up lots of stack space. This includes passing by value or creating local variables of large arrays or other memory-intensive structures.</li>
+</ul>
+<p>Cf. <a href="https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/">https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/</a></p>
 <h2 id="2022-年-4-月">2022 年 4 月</h2>
 <p>Posix扩展正则表达式: <a href="https://imliuda.com/post/16">https://imliuda.com/post/16</a></p>
 <h2 id="2020-年-11-月">2020 年 11 月</h2>
@@ -1165,7 +1192,7 @@ A: <a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">
 
 
 
-<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+<script type="text/javascript" src="/js/main.min.191509a5c8442abdb6eb5020a332fd59bdd83a7e78a2d2241108df9113504292.js"></script>
 
 
 

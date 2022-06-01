@@ -15,7 +15,7 @@
       <guid>https://guyueshui.github.io/slide/bbb/</guid>
       <description>The Title Sub Title
 Yychi | SIST
- Slide 2 here comes $e=mc^2$.
+Slide 2 here comes $e=mc^2$.
 $$ \mathbb{T} \mapsto A $$</description>
     </item>
     
@@ -26,9 +26,9 @@ $$ \mathbb{T} \mapsto A $$</description>
       
       <guid>https://guyueshui.github.io/slide/ccc/</guid>
       <description>Hello world! This is my first slide.
- Hello Mars! This is my second slide.
- Vertical slide 1 This is verticle slide.
- Vertical slide 2  </description>
+Hello Mars! This is my second slide.
+Vertical slide 1 This is verticle slide.
+Vertical slide 2 </description>
     </item>
     
     <item>
@@ -39,9 +39,9 @@ $$ \mathbb{T} \mapsto A $$</description>
       <guid>https://guyueshui.github.io/slide/aaa/</guid>
       <description>Hello world! This is my first slide.
 $e=mc^2$
-1 2 3 4  int main() { return 0; }   1 2 3 4 5  package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) }    Hello Mars! This is my second slide.
- Vertical slide 1 This is verticle slide.
- Vertical slide 2  </description>
+1 2 3 4 int main() { return 0; } 1 2 3 4 5 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) } Hello Mars! This is my second slide.
+Vertical slide 1 This is verticle slide.
+Vertical slide 2 </description>
     </item>
     
     <item>
@@ -52,8 +52,8 @@ $e=mc^2$
       <guid>https://guyueshui.github.io/slide/tf-quick-start/</guid>
       <description>Introduction to TensorFlow A Quick Start
 Yychi Fyu @SIST, ShanghaiTech
- Outline  TF Primitives  tensor graphs session variable placeholder   An Example   High-level overview Computation Graph: The structure of TF.
- operators as nodes tensors as links   1 2 3 4 5 6 7  import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y)   Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph:  How can we actually see a tensor?</description>
+Outline TF Primitives tensor graphs session variable placeholder An Example High-level overview Computation Graph: The structure of TF.
+operators as nodes tensors as links 1 2 3 4 5 6 7 import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y) Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph: How can we actually see a tensor?</description>
     </item>
     
   </channel>
