@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yychi Fyu</title>
+<style>
+/* font define */
+@font-face {
+  font-family: Linux Libertine O;
+  src: url("/fonts/Libertine/LinLibertine_R.otf");
+}
+
+body {
+    color: #000000;
+    background: #EEEEEE;
+    line-height: 1.2;
+    margin: 40px 0;
+}
+footer {
+    text-align: center;
+    font-size: smaller;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#resume {
+    font-family: 'Linux Libertine O', 'Times New Roman', 'Noto Serif SC', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 60px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 4px #AAAAAA;
+    -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+    font-size: 130%;
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0.8em 0 0.3em 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    }
+ul {
+    padding: 0;
+    margin: 0 1.5em;
+    }
+/* ul immediately after h1 = contact list */
+h1 + ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    }
+h1 + ul > li {
+    display: inline;
+    white-space: pre;
+    list-style-type: none;
+}
+h1 + ul > li:after {
+    content: "  \2022  ";
+}
+h1 + ul > li:last-child:after {
+    content: "";
+}
+/* p immediately after contact list = summary */
+h1 + ul + p {
+    margin: 1em 0;
+}
+
+/* a datedline style */
+datedline {
+    margin-right: -30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media print {
+    body {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+    #resume {
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    /* Make links black in PDF */
+    /* Move this outside the print block to apply this in HTML too */
+    a, a:link, a:visited, a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+}
+@page {
+    /* Change margins and paper size of PDF */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@page */
+    size: letter;
+    margin: 0.5in 0.8in;
+}
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 16pt;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF !important;
+    }
+    #resume {
+        margin: 0;
+        padding: 1em;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
+</head>
+<body>
+<div id="resume">
+<!-- The (first) h1 will be used as the <title> of the HTML page -->
+<h1>Yychi Fyu</h1>
+<!-- The unordered list immediately after the h1 will be formatted on a single
+line. It is intended to be used for contact details -->
+<ul>
+<li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#117;&#121;&#117;&#101;&#121;&#105;&#122;&#104;&#105;&#64;&#113;&#113;&#46;&#99;&#111;&#109;">&#103;&#117;&#121;&#117;&#101;&#121;&#105;&#122;&#104;&#105;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a></li>
+<li><a href="https://guyueshui.github.io">guyueshui.github.io</a></li>
+<li>杭州</li>
+</ul>
+<!-- The paragraph after the h1 and ul and before the first h2 is optional. It
+is intended to be used for a short summary. -->
+<!-- CEO and Software Engineer with knowledge of applied information theory,
+including optimizing lossless compression schema of both the length-limited and
+adaptive variants. -->
+<!-- <small>Email me for a published PDF version.</small> -->
+
+<h2>教育背景</h2>
+<h3><span><strong>中国科学院大学</strong> 上海</span> <span>2017.09 &ndash; 2020.07</span></h3>
+<p><em>硕士，信息与通信工程，GPA：3.53 / 4</em><br />
+研究方向：机器学习、信息论</p>
+<h3><span><strong>武汉理工大学</strong> 湖北，武汉</span> <span>2013.09 &ndash; 2017.06</span></h3>
+<p><em>理学学士，信息与计算科学，GPA：3.721 / 5，专业排名：1 / 43</em></p>
+<h2>科研项目</h2>
+<!-- You have to wrap the "left" and "right" half of these headings in spans by
+hand -->
+<h3><span><strong>半监督生成对抗网络（在研）</strong></span> <span>2019.02 &ndash; 至今</span></h3>
+<p>基于<a href="https://papers.nips.cc/paper/6399-infogan-interpretable-representation-learning-by-information-maximizing-generative-adversarial-nets.pdf">文章1</a>以及<a href="https://arxiv.org/pdf/1707.04487.pdf">文章2</a>，从信息论的角度探究输入噪声的分布情况对生成器性能的影响，从而
+指导设计出更好的噪声分布，提升网络的性能，并尝试从信息论的角度解释参数的意义和模型合理性。</p>
+<h3><span><strong>使用深度学习模型预测基因表达量的高低</strong></span> <span>2018.10 &ndash; 2019.01</span></h3>
+<p>在NIPS2017的<a href="https://papers.nips.cc/paper/7255-attend-and-predict-understanding-gene-regulation-by-selective-attention-on-chromatin.pdf">文章</a>基础上，复现了其主要工作。使用 bedtools 和 samtools 将原始的生物大数据
+提取出组蛋白修饰信号与基因表达的对应关系。使用 CNN 训练获得权重，输出分类结果。</p>
+<p>数据预处理是该文章实现的难点。从数据的下载、剪接，到有效信息的提取，接触并动手写了一些 Shell 和 Python 脚本。</p>
+<h3><span><strong>使用机器学习方法解决保险市场预测问题</strong></span> <span>2018.05</span></h3>
+<p>使用 SVM 分析保险业务客户的历史信息，训练模型并预测有办理保险意向的客户，并对客户的理赔概率进行分析，从而制定不同的联系策略，最大化保险公司收益。</p>
+<h2>工作经历</h2>
+<h3><span><strong>网易（杭州）网络有限技术公司</strong>  杭州</span> <span>2020.08 &ndash; 至今</span></h3>
+<p><em>Starry 工作室，游戏研发工程师</em></p>
+<ul>
+<li>
+<p>任务系统</p>
+<ul>
+<li>参与开发了一套灵活的任务系统：实现了条件之间的与或非嵌套，将任务输出与条件解耦；通过基本单元之间的自由连接，可以配置出丰富的任务内容</li>
+<li>开发任务编辑器并实现了一套易扩展的实时数据检查系统，有效降低了错误配置的概率</li>
+<li>实现了任务编辑的预览功能：任务数据编辑过程中，可随时在客户端预览该任务，有助于编辑过程中的自测，极大简化了此前验证任务流程的繁琐性</li>
+<li>打通了任务编辑器与其他工具（对话、战场、单位编辑器等）的编辑流程，在编辑任务时能够很方便地创建对话，单位，副本等数据</li>
+</ul>
+</li>
+<li>
+<p>对话系统</p>
+<ul>
+<li>开发了一套带分支可回溯的线性对话系统</li>
+<li>开发了对话编辑器：可视化创建/摆放 NPC，对话内容实时预览，满足常见对话表现需求</li>
+</ul>
+</li>
+<li>
+<p>商城、物品拆解、维修、委托等游戏功能</p>
+</li>
+</ul>
+<h2>实习经历</h2>
+<h3><span><strong>盛趣游戏</strong>   上海</span> <span>2019.07 &ndash; 2019.09</span></h3>
+<p><em>服务器引擎部，游戏开发实习生</em> 学习了 Asio、Protobuf、Cmake 等工具。会用 Asio 写基本的网络程序，会用 pb 封装自定义消息，会用 cmake 实现自动化构建。期间也学习了 Unix 系统网络 API，会调用系统 API 进行简单的 socket 编程。</p>
+<h3><span><strong>顽岩资产</strong> 上海</span> <span>2019年夏</span></h3>
+<p><em>软件开发实习生</em> 实习期间学习了综合交易平台 CTP 的工作机制，API 的调用以及数据的获取。并类比尝试使用比特币交易平台火币网 API 获取行情数据，转换成自己所需的格式。</p>
+<h2>工作技能</h2>
+<ul>
+<li>熟悉常用的算法和数据结构，如链表、栈和队列、树、堆等</li>
+<li>熟悉 C++ 基本特性，熟悉 STL，如顺序容器、泛型算法</li>
+<li>熟悉 Python 脚本语言，有相关开发经验</li>
+<li>熟悉 git、svn 两种版本管理工具</li>
+<li>熟悉常用的 Linux 命令，PC 使用 Linux 系统已有 7 年余，有一定的 Linux 基础</li>
+<li>通过国家英语六级，有较好的英文阅读能力</li>
+</ul>
+<h2>其他</h2>
+<ul>
+<li><datedline>EE142 基础信息论本科生助教<span></span> <span>2018 年秋</span></datedline></li>
+<li><datedline><span>上海科技大学 SSIST 国际会议志愿者 </span> <span>2018.07</span></datedline></li>
+<li><datedline><span>上海科技大学 SWILD 国际会议志愿者</span> <span>2018.06</span></datedline></li>
+<li><datedline><span>SI140 概率论与数理统计本科生助教</span> <span>2017 年秋</span></datedline></li>
+<li><datedline><span>武汉理工大学校级三好学生</span> <span>2015.11</span></datedline></li>
+<li><datedline><span>华中地区大学生数学建模邀请赛三等奖</span> <span>2015.05</span></datedline></li>
+<li><datedline><span>武汉理工大学国家励志奖学金</span> <span>2014, 2015</span></datedline></li>
+</ul></div>
+</body>
+<footer>
+Last modified at 2022-07-15 20:40:38.
+</footer>
+</html>
