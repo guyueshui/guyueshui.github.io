@@ -36,6 +36,7 @@ mathjax: false
 - [Taskwarrior][5]: A command-line todo manager, 不要因为它的强大而忘记使用它的初衷。
 - [ranger][7]: File manager in terminal, 三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。
 - [rofi][10]: dmenu替代品，窗口切换，应用启动器，简约大方，纯文本构成。
+- [Everything][12]: windows平台，免费且简单易用的全局搜索器，该有的都有。
 
 ## 学习
 
@@ -51,4 +52,5 @@ mathjax: false
 [8]: https://pwmt.org/projects/zathura/
 [9]: https://www.musicpd.org/
 [10]: https://github.com/davatorium/rofi
-[11]:https://github.com/phw/peek
+[11]: https://github.com/phw/peek
+[12]: https://www.voidtools.com/zh-cn/

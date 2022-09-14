@@ -5,6 +5,10 @@ comment: false
 
 ---
 
+## My Advisor
+
+- [Youlong Wu](https://faculty.sist.shanghaitech.edu.cn/faculty/wyl/)：研究生阶段的导师，像学长一样亲切，在生活和学习上给了我很多的帮助。
+
 ## Meaningful Blogs
 
 - [Yihui Xie](https://yihui.org/cn/)：有个性，有思想的博客（单方面友链）。
