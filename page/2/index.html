@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.101.0 with theme even" />
+<meta name="generator" content="Hugo 0.103.1 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/" />
@@ -133,6 +133,31 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-hibernate/">Linux的休眠</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> July 13, 2020 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。</p>
+<ul>
+<li>睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠的特点就是“睡得快”和“醒得快”。对于笔记本来说，合上盖子就睡了，打开盖子你的工作区间即刻就能恢复，很是方便。但是睡眠有一个缺点，就是要给内存供电，一旦断电，你的镜像数据就会丢失，工作区间将不复存在。当然这来自于内存的固有特点，建议百度RAM。</li>
+<li>休眠：将工作镜像写入硬盘（disk，ROM），这样你也可以恢复工作区间。只是睡下去和醒过来的时间比内存慢不少。但是，它有一个好处就是断电了也不会丢失数据。当你再次开机，系统就会从硬盘里面读取镜像，恢复你的工作区间。</li>
+</ul>
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-hibernate/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/tex-sty-basic/">一个really simple的LaTeX宏包</a></h1>
@@ -297,29 +322,6 @@ Expansion Each time you type a command line and press the Enter key, bash perfor
     </div>
     <div class="read-more">
       <a href="/post/shell-intro/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/nn-notes/">Nueral Network Learning Notes</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> October 29, 2019 </span>
-      <div class="post-category">
-          <a href="/categories/notes/"> notes </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Hello here.
-CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
-take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).
-    </div>
-    <div class="read-more">
-      <a href="/post/nn-notes/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
