@@ -4,6 +4,16 @@ date: 2018-12-14 13:59:49
 comment: false
 
 ---
+
+## 2022 年 10 月
+
+大喜：喜得一女。
+![xiaoxiaoshang](shiang_origin.jpg)
+
+## 2022 年 9 月
+
+愈发觉得个人博客，还是要多些原创内容。抄的学习笔记，发布出来自己都不会看的。只有自己动手写的，费心整理的，日后回顾才有记忆。
+
 ## 2022 年 5 月
 
 shell字符串截取: http://c.biancheng.net/view/1120.html
