@@ -187,15 +187,6 @@ take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think 
     </item>
     
     <item>
-      <title>C&#43;&#43; 学习笔记</title>
-      <link>https://guyueshui.github.io/post/cpp-learn/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/cpp-learn/</guid>
-      <description>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权</description>
-    </item>
-    
-    <item>
       <title>博客迁移记录</title>
       <link>https://guyueshui.github.io/post/blog-trans/</link>
       <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>

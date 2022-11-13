@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.103.1 with theme even" />
+<meta name="generator" content="Hugo 0.105.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/" />
@@ -133,6 +133,48 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/bit-field-struct/">位域结构体简介</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> August 6, 2019 </span>
+      <div class="post-category">
+          <a href="/categories/notes/"> Notes </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      最近实习接触到一个新的知识点，C/C++的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)
+    </div>
+    <div class="read-more">
+      <a href="/post/bit-field-struct/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/interview-notes/">面试经历及笔记</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> July 8, 2019 </span>
+      <div class="post-category">
+          <a href="/categories/notes/"> Notes </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C++相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1
+    </div>
+    <div class="read-more">
+      <a href="/post/interview-notes/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/the-beauty-of-recursion/">The Beauty of Recursion</a></h1>
@@ -279,76 +321,6 @@ Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequ
     </div>
     <div class="read-more">
       <a href="/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">快速自定义 LaTeX 排版字体</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> March 8, 2019 </span>
-      <div class="post-category">
-          <a href="/categories/tech/"> tech </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      字体设置 在导言区引入fontspec包：\usepackage{fontspec} 使用如下命令自定义字体： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
-    </div>
-    <div class="read-more">
-      <a href="/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/">Linux 使用指北</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> March 7, 2019 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>本文主要引用 <a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang</a> 的博客。</p>
-<h2 id="系统相关">系统相关</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
-</span></span><span class="line"><span class="cl">head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
-</span></span><span class="line"><span class="cl">cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
-</span></span><span class="line"><span class="cl">uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
-</span></span><span class="line"><span class="cl">cat /proc/cpuinfo           <span class="c1"># 查看 CPU 信息</span>
-</span></span><span class="line"><span class="cl">hostname                    <span class="c1"># 查看计算机名字</span>
-</span></span><span class="line"><span class="cl">env                         <span class="c1"># 列出环境变量</span>
-</span></span><span class="line"><span class="cl">lsmod                       <span class="c1"># 列出加载的内核模块</span>
-</span></span><span class="line"><span class="cl">uptime                      <span class="c1"># 查看系统运行时间、负载、用户数量</span>
-</span></span><span class="line"><span class="cl">cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
