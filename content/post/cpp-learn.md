@@ -2,8 +2,8 @@
 title: "C++ 学习笔记"
 date: 2019-08-28
 keywords: []
-categories: [Notes]
-tags: [cpp]
+categories: [tech]
+tags: [cpp, note]
 mathjax: false
 
 ---
@@ -69,6 +69,8 @@ C++ 规定了虚函数的行为，但将实现方法留给了编译器的作者�
 | bool             |     1 |
 
 指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。
+
+> NOTE: 类成员函数指针一般为普通指针的两倍大小。
 
 literal `5.0`类型为`double`，`5.0f`类型为`float`。不加`f`后缀默认`double`.
 
@@ -900,16 +902,72 @@ int calculate(int x, int y, char op)
 }
 ```
 
+## Pointer to functions
+
+The syntax for creating a non-const function pointer is one of the ugliest things you will ever see in C++:
+
+```cpp {linenos=false}
+// fcnPtr is a pointer to a function that takes no arguments and returns an integer
+int (*fcnPtr)();
+```
+
+In the above snippet, fcnPtr is a pointer to a function that has no parameters and returns an integer. fcnPtr can point to any function that matches this type.
+
+To make a const function pointer, the const goes after the asterisk:
+
+```cpp {linenos=false}
+int (*const fcnPtr)();
+```
+If you put the const before the int, then that would indicate the function being pointed to would return a const int.
+
+<!--more-->
+
+Note that the type (parameters and return type) of the function pointer must match the type of the function. Here are some examples of this:
+```cpp
+// function prototypes
+int foo();
+double goo();
+int hoo(int x);
+
+// function pointer assignments
+int (*fcnPtr1)(){ &foo }; // okay
+int (*fcnPtr2)(){ &goo }; // wrong -- return types don't match!
+double (*fcnPtr4)(){ &goo }; // okay
+fcnPtr1 = &hoo; // wrong -- fcnPtr1 has no parameters, but hoo() does
+int (*fcnPtr3)(int){ &hoo }; // okay
+```
+Unlike fundamental types, C++ *will* implicitly convert a function into a function pointer if needed (so you don't need to use the address-of operator (&) to get the function's address). However, it will not implicitly convert function pointers to void pointers, or vice-versa.
+
+## Calling a function using a function pointer
+
+The other primary thing you can do with a function pointer is use it to actually call the function. There are two ways to do this:
+```cpp {hl_Lines=   6}
+int foo(int x) { return x; }
+int main()
+{
+    int (*fcnPtr)(int){ &foo }; // Initialize fcnPtr with function foo
+    (*fcnPtr)(5); // call function foo(5) via explict dereference of fcnPtr.
+    fcnPtr(5); // call function foo(5) via implicit dereference of fcnPtr.
+    return 0;
+}
+```
+As you can see, the implicit dereference method looks just like a normal function call -- which is what you'd expect, since **normal function names are pointers to functions anyway**! However, some older compilers do not support the implicit dereference method, but all modern compilers should.
+
+> One interesting note: Default parameters won’t work for functions called through function pointers. Default parameters are resolved at compile-time (that is, if you don’t supply an argument for a defaulted parameter, the compiler substitutes one in for you when the code is compiled). However, function pointers are resolved at run-time. Consequently, default parameters can not be resolved when making a function call with a function pointer. You’ll explicitly have to pass in values for any defaulted parameters in this case.
+
 
 
 ## References
 
 1. [理解字节序][2]
+2. [12.1 — Function Pointers][5]
+
 
 [1]: https://en.cppreference.com/w/cpp/language/function_template
 [2]: https://www.ruanyifeng.com/blog/2016/11/byte-order.html
 [3]: https://www.learncpp.com/cpp-tutorial/constexpr-and-consteval-functions/
 [4]: https://www.learncpp.com/cpp-tutorial/sharing-global-constants-across-multiple-files-using-inline-variables/
+[5]: https://www.learncpp.com/cpp-tutorial/function-pointers/
 
 [^a]: [6.14 — Constexpr and consteval functions][3]
 [^b]: [6.9 — Sharing global constants across multiple files (using inline variables)][4]
