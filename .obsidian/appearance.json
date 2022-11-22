@@ -1,0 +1,10 @@
+{
+  "theme": "obsidian",
+  "textFontFamily": "Linux Libertine Display O,FZFW ZhuZi A Old Mincho",
+  "baseFontSize": 18,
+  "monospaceFontFamily": "Consolas",
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "accentColor": "",
+  "enabledCssSnippets": []
+}
