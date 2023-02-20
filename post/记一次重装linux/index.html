@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0 with theme even" />
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
 
 
 <link rel="canonical" href="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" />
@@ -50,12 +50,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-08-13T10:07:05+00:00" />
-<meta property="article:modified_time" content="2022-11-23T01:03:34+08:00" />
-
+<meta property="article:modified_time" content="2023-02-20T20:46:32+08:00" />
 <meta itemprop="name" content="记一次重装 Linux">
 <meta itemprop="description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"><meta itemprop="datePublished" content="2018-08-13T10:07:05+00:00" />
-<meta itemprop="dateModified" content="2022-11-23T01:03:34+08:00" />
-<meta itemprop="wordCount" content="1753">
+<meta itemprop="dateModified" content="2023-02-20T20:46:32+08:00" />
+<meta itemprop="wordCount" content="2276">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="记一次重装 Linux"/>
 <meta name="twitter:description" content="放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！"/>
@@ -144,7 +143,7 @@
       <div class="post-meta">
         <span class="post-time"> August 13, 2018 </span>
         <div class="post-category">
-            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/linux/"> linux </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -166,6 +165,7 @@
       <ul>
         <li><a href="#intel集成显卡滚动屏幕出现撕裂现象">intel集成显卡滚动屏幕出现撕裂现象</a></li>
         <li><a href="#启用nvidia独显">启用nvidia独显</a></li>
+        <li><a href="#外接鼠标无法使用">外接鼠标无法使用</a></li>
       </ul>
     </li>
   </ul>
@@ -423,6 +423,85 @@ Alegreya-BoldItalic.ttf    # 粗斜体
 <li><a href="https://howto.lintel.in/install-nvidia-arch-linux/">https://howto.lintel.in/install-nvidia-arch-linux/</a></li>
 <li><a href="https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration">https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration</a></li>
 </ol>
+<h3 id="外接鼠标无法使用">外接鼠标无法使用</h3>
+<p>一直以来，我都是使用笔记本自带的触摸板工作。近日弄了台显示器，大屏看得多爽呀。那就笔记本自带的触摸板和键盘都不用了，统统用外接的。结果接上去发现鼠标压根就没用，有线的无线的都试了。几经排查，是由于此前将输入驱动换成了<a href="/post/touchpad-horiz-scroll#libinput">libinput</a>，没有专门为鼠标配置驱动。</p>
+<p>参考<a href="https://wiki.archlinux.org/title/Libinput#Via_Xorg_configuration_file">archwiki</a>，配置如下：</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"># file: /etc/X11/xorg.conf.d/40-libinput.conf
+Section &#34;InputClass&#34;
+        Identifier &#34;touchpad&#34;
+        MatchIsTouchpad &#34;on&#34;
+        Driver &#34;libinput&#34;
+        Option &#34;AccelerationProfile&#34; &#34;2&#34;
+        Option &#34;Sensitivity&#34; &#34;0.1&#34;
+        Option &#34;Tapping&#34; &#34;on&#34;
+        Option &#34;ClickMethod&#34; &#34;clickfinger&#34;
+        Option &#34;TappingButtonMap&#34; &#34;lrm&#34;
+        Option &#34;NaturalScrolling&#34; &#34;on&#34;
+EndSection
+
+# 以下为新增
+Section &#34;InputClass&#34;
+  Identifier   &#34;system-mouse&#34;
+  MatchIsPointer &#34;on&#34;
+  Driver       &#34;libinput&#34;
+EndSection
+</code></pre><p>退出X，重新进入之后，外接鼠标就可以正常工作了。</p>
+<p>可以从Xlog中得到印证：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yychi@~/.local/share/xorg&gt; grep -i libinput Xorg.0.log
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.488<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> LoadModule: <span class="s2">&#34;libinput&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.488<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Loading /usr/lib/xorg/modules/input/libinput_drv.so
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.489<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Module libinput: <span class="nv">vendor</span><span class="o">=</span><span class="s2">&#34;X.Org Foundation&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.490<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Power Button&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.510<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Video Bus&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.513<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Video Bus&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.517<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Sleep Button&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.521<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Logitech Wireless Keyboard PID:4023&#39;</span>  <span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.524<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> libinput: Logitech Wireless Keyboard PID:4023: needs a virtual subdevice
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.527<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Logitech Wireless Mouse&#39;</span>  <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.532<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Logitech Wireless Mouse&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.532<span class="o">]</span> <span class="o">(</span>EE<span class="o">)</span> libinput: Logitech Wireless Mouse: Failed to create a device <span class="k">for</span> /dev/input/mouse2
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.532<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> UnloadModule: <span class="s2">&#34;libinput&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.533<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;XiaoMi USB 2.0 Webcam: XiaoMi U&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.537<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;ELAN2301:00 04F3:306B Mouse&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.542<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;ELAN2301:00 04F3:306B Mouse&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.542<span class="o">]</span> <span class="o">(</span>EE<span class="o">)</span> libinput: ELAN2301:00 04F3:306B Mouse: Failed to create a device <span class="k">for</span> /dev/input/mouse0
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.542<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> UnloadModule: <span class="s2">&#34;libinput&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.543<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;ELAN2301:00 04F3:306B Touchpad&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.552<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;AT Translated Set 2 keyboard&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.559<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Wireless hotkeys&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.591<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> Using input driver <span class="s1">&#39;libinput&#39;</span> <span class="k">for</span> <span class="s1">&#39;Logitech Wireless Keyboard PID:4023&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>   759.591<span class="o">]</span> <span class="o">(</span>II<span class="o">)</span> libinput: Logitech Wireless Keyboard PID:4023: is a virtual subdevice
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>#1和#2处就是外接的罗技无线键鼠套装。</p>
     </div>
 
     <div class="post-copyright">
@@ -433,7 +512,7 @@ Alegreya-BoldItalic.ttf    # 粗斜体
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        November 23, 2022
+        February 20, 2023
         
     </span>
   </p>
@@ -510,7 +589,7 @@ Alegreya-BoldItalic.ttf    # 粗斜体
   <span class="copyright-year">
     &copy; 
     2018 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
   </span>
 </div>
 
