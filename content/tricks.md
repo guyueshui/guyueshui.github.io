@@ -723,6 +723,25 @@ xrandr --output eDP-1 --off
 xrandr --output eDP-1 --auto
 ```
 
+某些情况下会无法检测显示器的最大分辨率，此时需要手动设置显示器的分辨率。参考[此处](https://wiki.archlinuxcn.org/zh-hans/Xrandr#%E6%B7%BB%E5%8A%A0%E6%9C%AA%E8%A2%AB%E6%A3%80%E6%B5%8B%E5%88%B0%E7%9A%84%E6%9C%89%E6%95%88%E5%88%86%E8%BE%A8%E7%8E%87)。
+
+```bash
+# 获取参数值
+$ cvt 2560 1440
+# 2560x1440 59.96 Hz (CVT 3.69M9) hsync: 89.52 kHz; pclk: 312.25 MHz
+Modeline "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
+
+# 新建mode
+$ xrandr --newmode "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
+
+# 为指定显示设备add mode
+$ xrandr --addmode HDMI2 "2560x1440_60.00"
+
+# 指定显示器分辨率
+$ xrandr --output HDMI2 --mode "2560x1440_60.00"
+```
+> 如果显示屏分辨率更改成功但窗口显示不完整（即只有左上角以指定分辨率显示，其他部分空白），可以尝试关闭内置显示屏，此时显示器应该能以完整窗口显示内容。
+
 --------
 
 ## 网络
