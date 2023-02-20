@@ -1,5 +1,5 @@
 ---
-title: "Archlinx重置keyring"
+title: "Archlinux重置keyring"
 date: 2022-05-01T00:25:52+08:00
 keywords: []
 categories: [notes,linux]
