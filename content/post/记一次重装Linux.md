@@ -1,7 +1,9 @@
 ---
 title: 记一次重装 Linux
 date: 2018-08-13 10:07:05
-categories: ['Linux'] 
+lastmod: 2023-02-20 18:51
+categories: [linux] 
+
 ---
 
 放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 `startx` 启动 gnome-session 失败。几经解决未果，只好重装！
@@ -209,3 +211,61 @@ lspci -v | grep -A20 VGA
 
 1. https://howto.lintel.in/install-nvidia-arch-linux/
 2. https://wiki.archlinux.org/title/NVIDIA#Xorg_configuration
+
+### 外接鼠标无法使用
+
+一直以来，我都是使用笔记本自带的触摸板工作。近日弄了台显示器，大屏看得多爽呀。那就笔记本自带的触摸板和键盘都不用了，统统用外接的。结果接上去发现鼠标压根就没用，有线的无线的都试了。几经排查，是由于此前将输入驱动换成了[libinput](/post/touchpad-horiz-scroll#libinput)，没有专门为鼠标配置驱动。
+
+参考[archwiki](https://wiki.archlinux.org/title/Libinput#Via_Xorg_configuration_file)，配置如下：
+```conf
+# file: /etc/X11/xorg.conf.d/40-libinput.conf
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "AccelerationProfile" "2"
+        Option "Sensitivity" "0.1"
+        Option "Tapping" "on"
+        Option "ClickMethod" "clickfinger"
+        Option "TappingButtonMap" "lrm"
+        Option "NaturalScrolling" "on"
+EndSection
+
+# 以下为新增
+Section "InputClass"
+  Identifier   "system-mouse"
+  MatchIsPointer "on"
+  Driver       "libinput"
+EndSection
+```
+退出X，重新进入之后，外接鼠标就可以正常工作了。
+
+可以从Xlog中得到印证：
+```bash
+yychi@~/.local/share/xorg> grep -i libinput Xorg.0.log
+[   759.488] (II) LoadModule: "libinput"
+[   759.488] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[   759.489] (II) Module libinput: vendor="X.Org Foundation"
+[   759.490] (II) Using input driver 'libinput' for 'Power Button'
+[   759.510] (II) Using input driver 'libinput' for 'Video Bus'
+[   759.513] (II) Using input driver 'libinput' for 'Video Bus'
+[   759.517] (II) Using input driver 'libinput' for 'Sleep Button'
+[   759.521] (II) Using input driver 'libinput' for 'Logitech Wireless Keyboard PID:4023'  # 1
+[   759.524] (II) libinput: Logitech Wireless Keyboard PID:4023: needs a virtual subdevice
+[   759.527] (II) Using input driver 'libinput' for 'Logitech Wireless Mouse'  # 2
+[   759.532] (II) Using input driver 'libinput' for 'Logitech Wireless Mouse'
+[   759.532] (EE) libinput: Logitech Wireless Mouse: Failed to create a device for /dev/input/mouse2
+[   759.532] (II) UnloadModule: "libinput"
+[   759.533] (II) Using input driver 'libinput' for 'XiaoMi USB 2.0 Webcam: XiaoMi U'
+[   759.537] (II) Using input driver 'libinput' for 'ELAN2301:00 04F3:306B Mouse'
+[   759.542] (II) Using input driver 'libinput' for 'ELAN2301:00 04F3:306B Mouse'
+[   759.542] (EE) libinput: ELAN2301:00 04F3:306B Mouse: Failed to create a device for /dev/input/mouse0
+[   759.542] (II) UnloadModule: "libinput"
+[   759.543] (II) Using input driver 'libinput' for 'ELAN2301:00 04F3:306B Touchpad'
+[   759.552] (II) Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[   759.559] (II) Using input driver 'libinput' for 'Wireless hotkeys'
+[   759.591] (II) Using input driver 'libinput' for 'Logitech Wireless Keyboard PID:4023'
+[   759.591] (II) libinput: Logitech Wireless Keyboard PID:4023: is a virtual subdevice
+```
+
+#1和#2处就是外接的罗技无线键鼠套装。
