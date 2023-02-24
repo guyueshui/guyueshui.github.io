@@ -1,7 +1,7 @@
 ---
 title: "V3Ray的配置笔记"
 date: 2021-12-07T22:05:42+08:00
-lastmod: 2021-12-07T22:05:42+08:00
+lastmod: 2023-02-24 18:56
 keywords: []
 categories: [Notes]
 tags: []
@@ -383,6 +383,37 @@ systemctl status v2ray  # 查看服务运行情况
 ```
 
 暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被ban，故摘录部分，有条件的推荐去看原教程，十分详细！
+
+## Troubleshooting
+
+### Failed to dial WebSocket
+
+```
+V2Ray 5.3.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.20 linux/amd64)
+A unified platform for anti-censorship.
+2023/02/24 10:12:47 [Warning] V2Ray 5.3.0 started
+2023/02/24 10:13:00 [Warning] [3406089800] app/dispatcher: default route for tcp:www.google.com:443
+2023/02/24 10:13:00 tcp:127.0.0.1:59658 accepted tcp:www.google.com:443 [out-0]
+2023/02/24 10:13:31 [Warning] [3395754372] app/dispatcher: default route for tcp:www.google.com:443
+2023/02/24 10:13:31 tcp:127.0.0.1:54836 accepted tcp:www.google.com:443 [out-0]
+2023/02/24 10:13:33 [Warning] [3406089800] app/proxyman/outbound: failed to process outbound traffic > proxy/vmess/outbound: failed to find an available destination > common/retry: [transport/internet/websocket: failed to dial WebSocket > transport/internet/websocket: failed to dial to (wss://xxx.xxx.xxx.xxx/abc):  > transport/internet/websocket: dial TLS connection failed > dial tcp xxx.xxx.xxx.xxx:10086: i/o timeout transport/internet/websocket: failed to dial WebSocket > transport/internet/websocket: failed to dial to (wss:////xxx.xxx.xxx.xxx/abc):  > transport/internet/websocket: dial TLS connection failed > dial tcp xxx.xxx.xxx.xxx:10086: operation was canceled] > common/retry: all retry attempts failed
+```
+
+参考链接： https://woj.app/7223.html
+
+此前遇到上述问题，经过排查之后就是端口号无法访问了，也不知道是哪一环出了问题。换了端口号之后就可以了。
+
+```json
+"outbounds":[
+    {
+        "protocol":"vmess",
+        "settings":{
+            "vnext":[
+                {
+                    "port":443,  // -> 886
+                }]}}]
+```
+
 
 ## References
 
