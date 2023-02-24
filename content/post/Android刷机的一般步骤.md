@@ -139,6 +139,20 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 
 > Note: 注意刷包步骤：先 rom 包，后补丁包。不过还是建议刷完 rom 重启一次，再进 rec 刷补丁包比较稳妥。
 
+### A/B slot刷机
+
+对于新版A/B slot机器，刷机步骤为：
+
+1. 刷rom（如果rom自带recovery，会将twrp覆盖，此时需要立刻刷一遍twrp，确保重启后的recovery是twrp）
+2. 重启到recovery（twrp），这一步将会切到正确的slot
+3. 重启系统
+
+参考：
+
+1. https://forum.xda-developers.com/t/a-b-slots-flashing-in-twrp.3887321/
+2. https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/?newsletter_popup=1
+3. https://forum.xda-developers.com/t/how-to-fix-unable-to-mount-data-internal-storage-0mb-in-twrp-permanently.3830897/
+
 ## 3. Troubleshooting
 
 ---------------------
