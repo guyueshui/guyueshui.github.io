@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-09-18T23:00:05+00:00" />
-<meta property="article:modified_time" content="2023-02-20T20:46:32+08:00" />
+<meta property="article:modified_time" content="2023-02-24T21:30:45+08:00" />
 <meta itemprop="name" content="Android 刷机的一般步骤">
 <meta itemprop="description" content="1. 事前准备 先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好"><meta itemprop="datePublished" content="2018-09-18T23:00:05+00:00" />
-<meta itemprop="dateModified" content="2023-02-20T20:46:32+08:00" />
-<meta itemprop="wordCount" content="2349">
+<meta itemprop="dateModified" content="2023-02-24T21:30:45+08:00" />
+<meta itemprop="wordCount" content="2482">
 <meta itemprop="keywords" content="android,刷机," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android 刷机的一般步骤"/>
 <meta name="twitter:description" content="1. 事前准备 先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好"/>
@@ -154,7 +154,11 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#1-事前准备">1. 事前准备</a></li>
-    <li><a href="#2-刷机">2. 刷机</a></li>
+    <li><a href="#2-刷机">2. 刷机</a>
+      <ul>
+        <li><a href="#ab-slot刷机">A/B slot刷机</a></li>
+      </ul>
+    </li>
     <li><a href="#3-troubleshooting">3. Troubleshooting</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
@@ -250,6 +254,19 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 <blockquote>
 <p>Note: 注意刷包步骤：先 rom 包，后补丁包。不过还是建议刷完 rom 重启一次，再进 rec 刷补丁包比较稳妥。</p>
 </blockquote>
+<h3 id="ab-slot刷机">A/B slot刷机</h3>
+<p>对于新版A/B slot机器，刷机步骤为：</p>
+<ol>
+<li>刷rom（如果rom自带recovery，会将twrp覆盖，此时需要立刻刷一遍twrp，确保重启后的recovery是twrp）</li>
+<li>重启到recovery（twrp），这一步将会切到正确的slot</li>
+<li>重启系统</li>
+</ol>
+<p>参考：</p>
+<ol>
+<li><a href="https://forum.xda-developers.com/t/a-b-slots-flashing-in-twrp.3887321/">https://forum.xda-developers.com/t/a-b-slots-flashing-in-twrp.3887321/</a></li>
+<li><a href="https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/?newsletter_popup=1">https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/?newsletter_popup=1</a></li>
+<li><a href="https://forum.xda-developers.com/t/how-to-fix-unable-to-mount-data-internal-storage-0mb-in-twrp-permanently.3830897/">https://forum.xda-developers.com/t/how-to-fix-unable-to-mount-data-internal-storage-0mb-in-twrp-permanently.3830897/</a></li>
+</ol>
 <h2 id="3-troubleshooting">3. Troubleshooting</h2>
 <hr>
 <p><strong><code>adb</code> 或 <code>fastboot</code> 报错：insufficient permission / permission denied</strong></p>
@@ -291,7 +308,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        February 20, 2023
+        February 24, 2023
         
     </span>
   </p>

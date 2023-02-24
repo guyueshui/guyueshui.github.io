@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 水阙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 06 Nov 2022 19:00:00 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 21:07:16 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swap扩容</title>
+      <link>https://guyueshui.github.io/post/extend-swap/</link>
+      <pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/post/extend-swap/</guid>
+      <description>&lt;!--
+由于涉及到磁盘分区，一般来说swap分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
+
+可以通过如下步骤设置一个swap分区：
+```bash
+mkswap /dev/swap_partition
+swapon /dev/swap_partition
+```
+--&gt;
+&lt;p&gt;先前安装系统的时候，swap分区给小了（机器内存的一半）。我的笔记本内存8G，swap给了4G，当系统已用内存超过4G，会导致无法&lt;a href=&#34;https://guyueshui.github.io/post/linux-hibernate#%E7%A1%AE%E4%BF%9Dswap%E5%88%86%E5%8C%BA%E8%B6%B3%E5%A4%9F%E5%A4%A7&#34;&gt;休眠&lt;/a&gt;。如果swap给的和本机内存一样大，那么就不会存在swap放不下当前工作镜像的问题。但重新分区追加swap显然不现实，所以只能让两块swap拼凑一下，达到总体有8G可用swap的效果。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>喜女</title>
       <link>https://guyueshui.github.io/post/birth-of-shang/</link>

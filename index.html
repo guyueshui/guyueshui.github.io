@@ -134,6 +134,37 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/extend-swap/">Swap扩容</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> February 24, 2023 </span>
+      <div class="post-category">
+          <a href="/categories/tech/"> tech </a>
+          <a href="/categories/linux/"> linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <!--
+由于涉及到磁盘分区，一般来说swap分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
+
+可以通过如下步骤设置一个swap分区：
+```bash
+mkswap /dev/swap_partition
+swapon /dev/swap_partition
+```
+-->
+<p>先前安装系统的时候，swap分区给小了（机器内存的一半）。我的笔记本内存8G，swap给了4G，当系统已用内存超过4G，会导致无法<a href="/post/linux-hibernate#%E7%A1%AE%E4%BF%9Dswap%E5%88%86%E5%8C%BA%E8%B6%B3%E5%A4%9F%E5%A4%A7">休眠</a>。如果swap给的和本机内存一样大，那么就不会存在swap放不下当前工作镜像的问题。但重新分区追加swap显然不现实，所以只能让两块swap拼凑一下，达到总体有8G可用swap的效果。</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/extend-swap/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/birth-of-shang/">喜女</a></h1>
     <div class="post-meta">
       <span class="post-time"> November 6, 2022 </span>
@@ -346,27 +377,6 @@
     </div>
     <div class="read-more">
       <a href="/post/python-coroutine-with-yield/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/python-metaclass/">A point of python metaclass</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> December 12, 2021 </span>
-      <div class="post-category">
-          <a href="/categories/notes/"> Notes </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary
-    </div>
-    <div class="read-more">
-      <a href="/post/python-metaclass/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

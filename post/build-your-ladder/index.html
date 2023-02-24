@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guyueshui.github.io/post/build-your-ladder/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-12-07T22:05:42+08:00" />
-<meta property="article:modified_time" content="2021-12-07T22:05:42+08:00" />
+<meta property="article:modified_time" content="2023-02-24T21:30:45+08:00" />
 <meta itemprop="name" content="V3Ray的配置笔记">
 <meta itemprop="description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><meta itemprop="datePublished" content="2021-12-07T22:05:42+08:00" />
-<meta itemprop="dateModified" content="2021-12-07T22:05:42+08:00" />
-<meta itemprop="wordCount" content="2997">
+<meta itemprop="dateModified" content="2023-02-24T21:30:45+08:00" />
+<meta itemprop="wordCount" content="3205">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="V3Ray的配置笔记"/>
 <meta name="twitter:description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"/>
@@ -161,6 +161,11 @@
       </ul>
     </li>
     <li><a href="#启动">启动</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#failed-to-dial-websocket">Failed to dial WebSocket</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -799,7 +804,41 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被ban，故摘录部分，有条件的推荐去看原教程，十分详细！</p>
-<h2 id="references">References</h2>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="failed-to-dial-websocket">Failed to dial WebSocket</h3>
+<pre tabindex="0"><code>V2Ray 5.3.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.20 linux/amd64)
+A unified platform for anti-censorship.
+2023/02/24 10:12:47 [Warning] V2Ray 5.3.0 started
+2023/02/24 10:13:00 [Warning] [3406089800] app/dispatcher: default route for tcp:www.google.com:443
+2023/02/24 10:13:00 tcp:127.0.0.1:59658 accepted tcp:www.google.com:443 [out-0]
+2023/02/24 10:13:31 [Warning] [3395754372] app/dispatcher: default route for tcp:www.google.com:443
+2023/02/24 10:13:31 tcp:127.0.0.1:54836 accepted tcp:www.google.com:443 [out-0]
+2023/02/24 10:13:33 [Warning] [3406089800] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vmess/outbound: failed to find an available destination &gt; common/retry: [transport/internet/websocket: failed to dial WebSocket &gt; transport/internet/websocket: failed to dial to (wss://xxx.xxx.xxx.xxx/abc):  &gt; transport/internet/websocket: dial TLS connection failed &gt; dial tcp xxx.xxx.xxx.xxx:10086: i/o timeout transport/internet/websocket: failed to dial WebSocket &gt; transport/internet/websocket: failed to dial to (wss:////xxx.xxx.xxx.xxx/abc):  &gt; transport/internet/websocket: dial TLS connection failed &gt; dial tcp xxx.xxx.xxx.xxx:10086: operation was canceled] &gt; common/retry: all retry attempts failed
+</code></pre><p>参考链接： <a href="https://woj.app/7223.html">https://woj.app/7223.html</a></p>
+<p>此前遇到上述问题，经过排查之后就是端口号无法访问了，也不知道是哪一环出了问题。换了端口号之后就可以了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;outbounds&#34;</span><span class="err">:</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;vmess&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;settings&#34;</span><span class="p">:{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;vnext&#34;</span><span class="p">:[</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;port&#34;</span><span class="p">:</span><span class="mi">443</span><span class="p">,</span>  <span class="c1">// -&gt; 886
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">}]}}]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="references">References</h2>
 <ol>
 <li><a href="https://guide.v2fly.org/advanced/tls.html#%E4%BD%BF%E7%94%A8-acme-sh-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6">新 V2Ray 白话文指南</a></li>
 </ol>
@@ -825,7 +864,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        December 7, 2021
+        February 24, 2023
         
     </span>
   </p>
