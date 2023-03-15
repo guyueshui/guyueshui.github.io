@@ -1,133 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>linux on 水阙</title>
-    <link>https://guyueshui.github.io/categories/linux/</link>
-    <description>Recent content in linux on 水阙</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 24 Feb 2023 21:07:16 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Swap扩容</title>
-      <link>https://guyueshui.github.io/post/extend-swap/</link>
-      <pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/extend-swap/</guid>
-      <description>&lt;!--
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on 水阙</title><link>https://guyueshui.github.io/categories/linux/</link><description>Recent content in linux on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 24 Feb 2023 21:07:16 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Swap扩容</title><link>https://guyueshui.github.io/post/extend-swap/</link><pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate><guid>https://guyueshui.github.io/post/extend-swap/</guid><description>&lt;!--
 由于涉及到磁盘分区，一般来说swap分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
-
 可以通过如下步骤设置一个swap分区：
 ```bash
 mkswap /dev/swap_partition
 swapon /dev/swap_partition
 ```
---&gt;
-&lt;p&gt;先前安装系统的时候，swap分区给小了（机器内存的一半）。我的笔记本内存8G，swap给了4G，当系统已用内存超过4G，会导致无法&lt;a href=&#34;https://guyueshui.github.io/post/linux-hibernate#%E7%A1%AE%E4%BF%9Dswap%E5%88%86%E5%8C%BA%E8%B6%B3%E5%A4%9F%E5%A4%A7&#34;&gt;休眠&lt;/a&gt;。如果swap给的和本机内存一样大，那么就不会存在swap放不下当前工作镜像的问题。但重新分区追加swap显然不现实，所以只能让两块swap拼凑一下，达到总体有8G可用swap的效果。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Archlinux重置keyring</title>
-      <link>https://guyueshui.github.io/post/archlinx-keyring-broken/</link>
-      <pubDate>Sun, 01 May 2022 00:25:52 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/archlinx-keyring-broken/</guid>
-      <description>&lt;p&gt;今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，原来是GPG存的key需要更新信息了。由于&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --refresh-keys
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;执行过程漫长，我新开了一个窗口直接&lt;code&gt;pacman -Syu&lt;/code&gt;了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Linux开机无声音</title>
-      <link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link>
-      <pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid>
-      <description>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一</description>
-    </item>
-    
-    <item>
-      <title>Linux笔记本触摸板水平滚动问题</title>
-      <link>https://guyueshui.github.io/post/touchpad-horiz-scroll/</link>
-      <pubDate>Fri, 25 Mar 2022 23:03:59 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/touchpad-horiz-scroll/</guid>
-      <description>自打使用linux系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于</description>
-    </item>
-    
-    <item>
-      <title>Linux的休眠</title>
-      <link>https://guyueshui.github.io/post/linux-hibernate/</link>
-      <pubDate>Mon, 13 Jul 2020 22:44:33 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/linux-hibernate/</guid>
-      <description>&lt;p&gt;先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠的特点就是“睡得快”和“醒得快”。对于笔记本来说，合上盖子就睡了，打开盖子你的工作区间即刻就能恢复，很是方便。但是睡眠有一个缺点，就是要给内存供电，一旦断电，你的镜像数据就会丢失，工作区间将不复存在。当然这来自于内存的固有特点，建议百度RAM。&lt;/li&gt;
-&lt;li&gt;休眠：将工作镜像写入硬盘（disk，ROM），这样你也可以恢复工作区间。只是睡下去和醒过来的时间比内存慢不少。但是，它有一个好处就是断电了也不会丢失数据。当你再次开机，系统就会从硬盘里面读取镜像，恢复你的工作区间。&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Linux 使用指北</title>
-      <link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link>
-      <pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid>
-      <description>&lt;p&gt;本文主要引用 &lt;a href=&#34;https://liam.page/2016/11/06/Linux-Info-Cheatsheet/&#34;&gt;Liam Huang&lt;/a&gt; 的博客。&lt;/p&gt;
-&lt;h2 id=&#34;系统相关&#34;&gt;系统相关&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsb_release -a              &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;head -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; /etc/issue        &lt;span class=&#34;c1&#34;&gt;# 查看操作系统版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/version           &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uname -a                    &lt;span class=&#34;c1&#34;&gt;# 查看操作系统内核信息、CPU 信息&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/cpuinfo           &lt;span class=&#34;c1&#34;&gt;# 查看 CPU 信息&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hostname                    &lt;span class=&#34;c1&#34;&gt;# 查看计算机名字&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;env                         &lt;span class=&#34;c1&#34;&gt;# 列出环境变量&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsmod                       &lt;span class=&#34;c1&#34;&gt;# 列出加载的内核模块&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uptime                      &lt;span class=&#34;c1&#34;&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/loadavg           &lt;span class=&#34;c1&#34;&gt;# 查看系统负载&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>记一次重装 Linux</title>
-      <link>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link>
-      <pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid>
-      <description>&lt;p&gt;放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 &lt;code&gt;startx&lt;/code&gt; 启动 gnome-session 失败。几经解决未果，只好重装！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用 Tar 备份 Archlinux</title>
-      <link>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</link>
-      <pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</guid>
-      <description>Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统</description>
-    </item>
-    
-  </channel>
-</rss>
+-->
+&lt;p>先前安装系统的时候，swap分区给小了（机器内存的一半）。我的笔记本内存8G，swap给了4G，当系统已用内存超过4G，会导致无法&lt;a href="https://guyueshui.github.io/post/linux-hibernate#%E7%A1%AE%E4%BF%9Dswap%E5%88%86%E5%8C%BA%E8%B6%B3%E5%A4%9F%E5%A4%A7">休眠&lt;/a>。如果swap给的和本机内存一样大，那么就不会存在swap放不下当前工作镜像的问题。但重新分区追加swap显然不现实，所以只能让两块swap拼凑一下，达到总体有8G可用swap的效果。&lt;/p></description></item><item><title>Archlinux重置keyring</title><link>https://guyueshui.github.io/post/archlinx-keyring-broken/</link><pubDate>Sun, 01 May 2022 00:25:52 +0800</pubDate><guid>https://guyueshui.github.io/post/archlinx-keyring-broken/</guid><description>&lt;p>今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，原来是GPG存的key需要更新信息了。由于&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pacman-key --refresh-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行过程漫长，我新开了一个窗口直接&lt;code>pacman -Syu&lt;/code>了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。&lt;/p></description></item><item><title>Linux开机无声音</title><link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link><pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate><guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid><description>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一</description></item><item><title>Linux笔记本触摸板水平滚动问题</title><link>https://guyueshui.github.io/post/touchpad-horiz-scroll/</link><pubDate>Fri, 25 Mar 2022 23:03:59 +0800</pubDate><guid>https://guyueshui.github.io/post/touchpad-horiz-scroll/</guid><description>自打使用linux系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于</description></item><item><title>Linux的休眠</title><link>https://guyueshui.github.io/post/linux-hibernate/</link><pubDate>Mon, 13 Jul 2020 22:44:33 +0800</pubDate><guid>https://guyueshui.github.io/post/linux-hibernate/</guid><description>&lt;p>先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。&lt;/p>
+&lt;ul>
+&lt;li>睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠的特点就是“睡得快”和“醒得快”。对于笔记本来说，合上盖子就睡了，打开盖子你的工作区间即刻就能恢复，很是方便。但是睡眠有一个缺点，就是要给内存供电，一旦断电，你的镜像数据就会丢失，工作区间将不复存在。当然这来自于内存的固有特点，建议百度RAM。&lt;/li>
+&lt;li>休眠：将工作镜像写入硬盘（disk，ROM），这样你也可以恢复工作区间。只是睡下去和醒过来的时间比内存慢不少。但是，它有一个好处就是断电了也不会丢失数据。当你再次开机，系统就会从硬盘里面读取镜像，恢复你的工作区间。&lt;/li>
+&lt;/ul></description></item><item><title>Linux 使用指北</title><link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate><guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid><description>&lt;p>本文主要引用 &lt;a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang&lt;/a> 的博客。&lt;/p>
+&lt;h2 id="系统相关">系统相关&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">lsb_release -a &lt;span class="c1"># 查看操作系统版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">head -n &lt;span class="m">1&lt;/span> /etc/issue &lt;span class="c1"># 查看操作系统版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /proc/version &lt;span class="c1"># 查看操作系统内核信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uname -a &lt;span class="c1"># 查看操作系统内核信息、CPU 信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /proc/cpuinfo &lt;span class="c1"># 查看 CPU 信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hostname &lt;span class="c1"># 查看计算机名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">env &lt;span class="c1"># 列出环境变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsmod &lt;span class="c1"># 列出加载的内核模块&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uptime &lt;span class="c1"># 查看系统运行时间、负载、用户数量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /proc/loadavg &lt;span class="c1"># 查看系统负载&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>记一次重装 Linux</title><link>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link><pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid><description>&lt;p>放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 &lt;code>startx&lt;/code> 启动 gnome-session 失败。几经解决未果，只好重装！&lt;/p></description></item><item><title>使用 Tar 备份 Archlinux</title><link>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</link><pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</guid><description>Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统</description></item></channel></rss>

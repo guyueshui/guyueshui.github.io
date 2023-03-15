@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>cnn on 水阙</title>
-    <link>https://guyueshui.github.io/tags/cnn/</link>
-    <description>Recent content in cnn on 水阙</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 29 Oct 2019 10:45:03 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nueral Network Learning Notes</title>
-      <link>https://guyueshui.github.io/post/nn-notes/</link>
-      <pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/nn-notes/</guid>
-      <description>Hello here.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cnn on 水阙</title><link>https://guyueshui.github.io/tags/cnn/</link><description>Recent content in cnn on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 29 Oct 2019 10:45:03 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml"/><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>Hello here.
 CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
-take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
-    </item>
-    
-  </channel>
-</rss>
+take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description></item></channel></rss>

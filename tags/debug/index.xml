@@ -1,30 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>debug on 水阙</title>
-    <link>https://guyueshui.github.io/tags/debug/</link>
-    <description>Recent content in debug on 水阙</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 18 Aug 2019 16:14:24 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GDB 基本用法</title>
-      <link>https://guyueshui.github.io/post/basic-gdb-usages/</link>
-      <pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid>
-      <description>&lt;p&gt;废话以后有时间再加。&lt;/p&gt;
-&lt;p&gt;首先编译时开启调试选项：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g++ main.cpp -g -O0
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为0，即不优化。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>debug on 水阙</title><link>https://guyueshui.github.io/tags/debug/</link><description>Recent content in debug on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 16:14:24 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml"/><item><title>GDB 基本用法</title><link>https://guyueshui.github.io/post/basic-gdb-usages/</link><pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate><guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid><description>&lt;p>废话以后有时间再加。&lt;/p>
+&lt;p>首先编译时开启调试选项：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">g++ main.cpp -g -O0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>-O0&lt;/code>指定编译器的优化级别为0，即不优化。&lt;/p></description></item></channel></rss>

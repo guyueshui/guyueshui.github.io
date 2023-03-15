@@ -1,812 +1,531 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>V3Ray的配置笔记 - 水阙</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Yychi" /><meta name="description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了" /><meta name="keywords" content="水阙, yychi" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.110.0 with theme even" />
-
-
-<link rel="canonical" href="https://guyueshui.github.io/post/build-your-ladder/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/sass/main.min.01ca264237f4437d074cf6c8cbab3db51634492b8d9acda6b073090c785d6cbb.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
-
-<meta property="og:title" content="V3Ray的配置笔记" />
-<meta property="og:description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/build-your-ladder/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-12-07T22:05:42+08:00" />
-<meta property="article:modified_time" content="2023-02-24T21:30:45+08:00" />
-<meta itemprop="name" content="V3Ray的配置笔记">
-<meta itemprop="description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><meta itemprop="datePublished" content="2021-12-07T22:05:42+08:00" />
-<meta itemprop="dateModified" content="2023-02-24T21:30:45+08:00" />
-<meta itemprop="wordCount" content="3205">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="V3Ray的配置笔记"/>
-<meta name="twitter:description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tricks/">
-        <li class="mobile-menu-item">Tricks</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tricks/">Tricks</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">V3Ray的配置笔记</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> December 7, 2021 </span>
-        <div class="post-category">
-            <a href="/categories/notes/"> Notes </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#注册域名">注册域名</a></li>
-    <li><a href="#证书生成">证书生成</a>
-      <ul>
-        <li><a href="#安装-acmesh">安装 acme.sh</a></li>
-        <li><a href="#使用-acmesh-生成证书">使用 acme.sh 生成证书</a></li>
-      </ul>
-    </li>
-    <li><a href="#启动">启动</a></li>
-    <li><a href="#troubleshooting">Troubleshooting</a>
-      <ul>
-        <li><a href="#failed-to-dial-websocket">Failed to dial WebSocket</a></li>
-      </ul>
-    </li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>V3Ray的配置笔记 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.111.3 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/build-your-ladder/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.651de86251ddc73a34038bb147ea19626ef5f3544a594e731576dd8b8bc28c52.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto+Serif+SC"><meta property="og:title" content="V3Ray的配置笔记"><meta property="og:description" content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/build-your-ladder/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-12-07T22:05:42+08:00"><meta property="article:modified_time" content="2023-03-15T22:36:59+08:00"><meta itemprop=name content="V3Ray的配置笔记"><meta itemprop=description content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><meta itemprop=datePublished content="2021-12-07T22:05:42+08:00"><meta itemprop=dateModified content="2023-03-15T22:36:59+08:00"><meta itemprop=wordCount content="3205"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="V3Ray的配置笔记"><meta name=twitter:description content="学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>V3Ray的配置笔记</h1><div class=post-meta><span class=post-time>December 7, 2021</span><div class=post-category><a href=/categories/notes/>Notes</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#注册域名>注册域名</a></li><li><a href=#证书生成>证书生成</a><ul><li><a href=#安装-acmesh>安装 acme.sh</a></li><li><a href=#使用-acmesh-生成证书>使用 acme.sh 生成证书</a></li></ul></li><li><a href=#启动>启动</a></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#failed-to-dial-websocket>Failed to dial WebSocket</a></li></ul></li><li><a href=#references>References</a></li></ul></nav></div></div><div class=post-content><p>学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。
 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了。遂于昨晚开启修补
-之旅，无奈运气不太好，每一环节都出了问题，最终搞到凌晨3点才重新爬上了梯子。</p>
-<p>想来主要是之前对照的教程遗失，整个流程又有很多细节，难免忘记，遂记此篇。（顺便
+之旅，无奈运气不太好，每一环节都出了问题，最终搞到凌晨3点才重新爬上了梯子。</p><p>想来主要是之前对照的教程遗失，整个流程又有很多细节，难免忘记，遂记此篇。（顺便
 吐槽如今网上教程已经不胜枚举，但优质的教程却少有输出。以至于想要弄清楚某个事情
 的来龙去脉，就必须博采众家所长，取其精华，弃其糟粕。有没有一个教程站出来拍拍
 胸脯说：少年，你只要看我就够了Orz！当然，此篇仅是个笔记，不为服务他人，只为提醒
-自己。）</p>
-<p>V2Ray是一个较为先进的网络工具，他的用途很多，但大多数人用它来搞建筑。原理就是
+自己。）</p><p>V2Ray是一个较为先进的网络工具，他的用途很多，但大多数人用它来搞建筑。原理就是
 你有一台可访问外网的机器A，你与该机器可以通信，在A中运行一个v2ray（充当服务端），
 在终端设备运行一个v2ray（充当客户端），然后两方配制能对得上，就可以将你访问外网
 的流量转发给机器A，由A发出该请求，收到回复后还是通过A转发回给终端机。这就完成了
-一次外网访问。</p>
-<p>v2ray的难点在于配置文件<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>的编写，不过好在现在有很多辅助你生成配置文件的工具。
-咱当初可是辛辛苦苦对着文档敲的，不贴上来太可惜了：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">/// config_server.json
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;access&#34;</span><span class="p">:</span> <span class="s2">&#34;/var/log/v2ray/access.log&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;/var/log/v2ray/error.log&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;loglevel&#34;</span><span class="p">:</span> <span class="s2">&#34;warning&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;stats&#34;</span><span class="p">:</span> <span class="p">{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;inbounds&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;vmess&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;clients&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">          <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;your_uuid&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;alterId&#34;</span><span class="p">:</span> <span class="mi">32</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;in-0&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;streamSettings&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;network&#34;</span><span class="p">:</span> <span class="s2">&#34;ws&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;security&#34;</span><span class="p">:</span> <span class="s2">&#34;tls&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;wsSettings&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/somepath&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;headers&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;host&#34;</span><span class="p">:</span> <span class="s2">&#34;somehost.com&#34;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;tlsSettings&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;certificates&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">              <span class="nt">&#34;certificateFile&#34;</span><span class="p">:</span> <span class="s2">&#34;/etc/v2ray/v2ray.crt&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">              <span class="nt">&#34;keyFile&#34;</span><span class="p">:</span> <span class="s2">&#34;/etc/v2ray/v2ray.key&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">          <span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;outbounds&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;direct&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;freedom&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;blocked&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;blackhole&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;routing&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;domainStrategy&#34;</span><span class="p">:</span> <span class="s2">&#34;AsIs&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rules&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;field&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;ip&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;geoip:private&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;outboundTag&#34;</span><span class="p">:</span> <span class="s2">&#34;blocked&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;policy&#34;</span><span class="p">:</span> <span class="p">{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;reverse&#34;</span><span class="p">:</span> <span class="p">{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transport&#34;</span><span class="p">:</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span><span class="lnt">87
-</span><span class="lnt">88
-</span><span class="lnt">89
-</span><span class="lnt">90
-</span><span class="lnt">91
-</span><span class="lnt">92
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">/// config_client.json
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;stats&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;inbounds&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;port&#34;</span><span class="p">:</span><span class="s2">&#34;1080&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;socks&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;auth&#34;</span><span class="p">:</span><span class="s2">&#34;noauth&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;udp&#34;</span><span class="p">:</span><span class="kc">true</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span><span class="s2">&#34;in-0&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;port&#34;</span><span class="p">:</span><span class="s2">&#34;8080&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;http&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span><span class="s2">&#34;in-1&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;outbounds&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;vmess&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;vnext&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">          <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;address&#34;</span><span class="p">:</span><span class="s2">&#34;your_host_address&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;port&#34;</span><span class="p">:</span><span class="mi">443</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;users&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">              <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nt">&#34;id&#34;</span><span class="p">:</span><span class="s2">&#34;your_uuid&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="nt">&#34;alterId&#34;</span><span class="p">:</span><span class="mi">32</span>
-</span></span><span class="line"><span class="cl">              <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="p">]</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span><span class="s2">&#34;out-0&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;streamSettings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;network&#34;</span><span class="p">:</span><span class="s2">&#34;ws&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;security&#34;</span><span class="p">:</span><span class="s2">&#34;tls&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;wsSettings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;path&#34;</span><span class="p">:</span><span class="s2">&#34;/somepath&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;headers&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;host&#34;</span><span class="p">:</span> <span class="s2">&#34;somehost.com&#34;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;tlsSettings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;allowInsecure&#34;</span><span class="p">:</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span><span class="s2">&#34;direct&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;freedom&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:{}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span><span class="s2">&#34;blocked&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;blackhole&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:{}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;routing&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;domainStrategy&#34;</span><span class="p">:</span><span class="s2">&#34;IPOnDemand&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rules&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;type&#34;</span><span class="p">:</span><span class="s2">&#34;field&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;ip&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;geoip:private&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;outboundTag&#34;</span><span class="p">:</span><span class="s2">&#34;direct&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;type&#34;</span><span class="p">:</span><span class="s2">&#34;field&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;ip&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;geoip:cn&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;inboundTag&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;in-0&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;in-1&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;outboundTag&#34;</span><span class="p">:</span><span class="s2">&#34;direct&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;policy&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;reverse&#34;</span><span class="p">:{},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transport&#34;</span><span class="p">:{}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>仔细看看server的配置，其实用到了WS+TLS的方式，这样的配置隐蔽性较好，不容易被封。
-但这种配置的成本也相对较高，首先得弄个域名和机器A的ip绑定。即通过<code>ping somehost.com</code>能够翻译成机器A的ip。</p>
-<h2 id="注册域名">注册域名</h2>
-<p>上免费域名注册站：https://my.freenom.com/domains.php ，</p>
-<p><img src="freenom.png" alt="freenom"></p>
-<p>随便敲一个域名，检查是否可用，注册成功后如下图所示：</p>
-<p><img src="freenom_manage_domain.png" alt=""></p>
-<p><img src="freenom_2.png" alt="">
-<img src="freenom_3.png" alt=""></p>
-<p>此处需要为域名配置解析服务器，可以用腾讯云<a href="https://console.dnspod.cn/dns/list">域名解析服务</a>，下图中点击“添加域名”，配置成功后会得到两个域名解析服务器地址，将这两个地址填入上图的Nameserver1和Nameserver2中即可。</p>
-<p><img src="dnspod.png" alt="pic alt" title="opt title"></p>
-<p>至此，一个域名到ip的绑定关系就配置完成，可以ping一下试试：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">me@~&gt; ping somehost.com
-</span></span><span class="line"><span class="cl">PING somehost.com <span class="o">(</span>xxx.yyy.zzz.aaa<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> 字节的数据。
-</span></span><span class="line"><span class="cl"><span class="m">64</span> 字节，来自 xx.com <span class="o">(</span>xxx.yyy.zzz.aaa<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">52</span> 时间<span class="o">=</span><span class="m">193</span> 毫秒
-</span></span><span class="line"><span class="cl">--- somehost.com ping 统计 ---
-</span></span><span class="line"><span class="cl">已发送 <span class="m">4</span> 个包， 已接收 <span class="m">4</span> 个包, 0% packet loss, <span class="nb">time</span> 3003ms
-</span></span><span class="line"><span class="cl">rtt min/avg/max/mdev <span class="o">=</span> 159.025/202.023/239.194/29.721 ms
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中，<code>somehost.com</code>为之前申请的域名，<code>xxx.yyy.zzz.aaa</code>为机器A的ip。</p>
-<h2 id="证书生成">证书生成</h2>
-<p><em>此段摘抄自https://guide.v2fly.org/advanced/tls.html#证书生成</em></p>
-<p>TLS 是证书认证机制，所以使用 TLS 需要证书，证书也有免费付费的，同样的这里使用免费证书，证书认证机构为<a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>。 证书的生成有许多方法，这里使用的是比较简单的方法：使用<a href="https://github.com/Neilpang/acme.sh">acme.sh</a>脚本生成，本部分说明部分内容参考于<a href="https://github.com/Neilpang/acme.sh/blob/master/README.md">acme.sh README</a>。</p>
-<p>证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，建议使用 ECC 证书。</p>
-<p>以下只给出 ECC 证书的部分。</p>
-<p>证书生成只需在服务器上操作。</p>
-<h3 id="安装-acmesh">安装 acme.sh</h3>
-<p>执行以下命令，acme.sh 会安装到 ~/.acme.sh 目录下。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ curl  https://get.acme.sh <span class="p">|</span> sh
-</span></span><span class="line"><span class="cl">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-</span></span><span class="line"><span class="cl">                               Dload  Upload   Total   Spent    Left  Speed
-</span></span><span class="line"><span class="cl"><span class="m">100</span>   <span class="m">671</span>  <span class="m">100</span>   <span class="m">671</span>    <span class="m">0</span>     <span class="m">0</span>    <span class="m">680</span>      <span class="m">0</span> --:--:-- --:--:-- --:--:--   <span class="m">679</span>
-</span></span><span class="line"><span class="cl">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-</span></span><span class="line"><span class="cl">                               Dload  Upload   Total   Spent    Left  Speed
-</span></span><span class="line"><span class="cl"><span class="m">100</span>  112k  <span class="m">100</span>  112k    <span class="m">0</span>     <span class="m">0</span>   690k      <span class="m">0</span> --:--:-- --:--:-- --:--:--  693k
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:32 GMT 2016<span class="o">]</span> Installing from online archive.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:32 GMT 2016<span class="o">]</span> Downloading https://github.com/Neilpang/acme.sh/archive/master.tar.gz
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Extracting master.tar.gz
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Installing to /home/user/.acme.sh
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Installed to /home/user/.acme.sh/acme.sh
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Installing <span class="nb">alias</span> to <span class="s1">&#39;/home/user/.profile&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> OK, Close and reopen your terminal to start using acme.sh
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Installing cron job
-</span></span><span class="line"><span class="cl">no crontab <span class="k">for</span> user
-</span></span><span class="line"><span class="cl">no crontab <span class="k">for</span> user
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Good, bash is found, so change the shebang to use bash as preferred.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> OK
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri <span class="m">30</span> Dec 01:03:33 GMT 2016<span class="o">]</span> Install success!
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果安装报错，那么可能是因为系统缺少 <a href="https://github.com/Neilpang/acme.sh/wiki/Install-preparations">acme.sh 所需要的依赖项</a>，acme.sh 的依赖项主要是 socat，我们通过以下命令来安装这些依赖项，然后重新安装一遍 acme.sh:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ sudo apt-get install openssl cron socat curl
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="使用-acmesh-生成证书">使用 acme.sh 生成证书</h3>
-<h4 id="证书生成-1">证书生成</h4>
-<p>执行以下命令生成证书：</p>
-<p>以下的命令会临时监听 80 端口，请确保执行该命令前 80 端口没有使用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ ~/.acme.sh/acme.sh --issue -d mydomain.me --standalone --keylength ec-256 --force
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> Standalone mode.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> Single <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;mydomain.me&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> Getting domain auth token <span class="k">for</span> each domain
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> Getting webroot <span class="k">for</span> <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;mydomain.me&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> <span class="nv">_w</span><span class="o">=</span><span class="s1">&#39;no&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:12 HKT 2016<span class="o">]</span> Getting new-authz <span class="k">for</span> <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;mydomain.me&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:14 HKT 2016<span class="o">]</span> The new-authz request is ok.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:14 HKT 2016<span class="o">]</span> mydomain.me is already verified, skip.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:14 HKT 2016<span class="o">]</span> mydomain.me is already verified, skip http-01.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:14 HKT 2016<span class="o">]</span> mydomain.me is already verified, skip http-01.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:14 HKT 2016<span class="o">]</span> Verify finished, start to sign.
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:16 HKT 2016<span class="o">]</span> Cert success.
-</span></span><span class="line"><span class="cl">-----BEGIN CERTIFICATE-----
-</span></span><span class="line"><span class="cl">MIIEMTCCAxmgAwIBAgISA1+gJF5zwUDjNX/6Xzz5fo3lMA0GCSqGSIb3DQEBCwUA
-</span></span><span class="line"><span class="cl">MEoxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MSMwIQYDVQQD
-</span></span><span class="line"><span class="cl">ExpMZXQncyBFbmNyeXB0IEF1dGhvcml0eSBYMzAeFw0xNjEyMjkyMzU5MDBaFw0x
-</span></span><span class="line"><span class="cl">NzAzMjkyMzU5MDBaMBcxFTATBgNVBAMTDHdlYWtzYW5kLmNvbTBZMBMGByqGSM49
-</span></span><span class="line"><span class="cl">****************************************************************
-</span></span><span class="line"><span class="cl">4p40tm0aMB837XQ9jeAXvXulhVH/7/wWZ8/vkUUvuHSCYHagENiq/3DYj4a85Iw9
-</span></span><span class="line"><span class="cl">+6u1r7atYHJ2VwqSamiyTGDQuhc5wdXIQxY/YQQqkAmn5tLsTZnnOavc4plANT40
-</span></span><span class="line"><span class="cl">zweiG8vcIvMVnnkM0TSz8G1yzv1nOkruN3ozQkLMu6YS7lk/ENBN7DBtYVSmJeU2
-</span></span><span class="line"><span class="cl">VAXE+zgRaP7JFOqK6DrOwhyE2LSgae83Wq/XgXxjfIo1Zmn2UmlE0sbdNKBasnf9
-</span></span><span class="line"><span class="cl">gPUI45eltrjcv8FCSTOUcT7PWCa3
-</span></span><span class="line"><span class="cl">-----END CERTIFICATE-----
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:16 HKT 2016<span class="o">]</span> Your cert is in  /root/.acme.sh/mydomain.me_ecc/mydomain.me.cer
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:16 HKT 2016<span class="o">]</span> Your cert key is in  /root/.acme.sh/mydomain.me_ecc/mydomain.me.key
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:16 HKT 2016<span class="o">]</span> The intermediate CA cert is in  /root/.acme.sh/mydomain.me_ecc/ca.cer
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Fri Dec <span class="m">30</span> 08:59:16 HKT 2016<span class="o">]</span> And the full chain certs is there:  /root/.acme.sh/mydomain.me_ecc/fullchain.cer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>--keylength</code> 表示密钥长度，后面的值可以是 <code>ec-256</code> 、<code>ec-384</code>、<code>2048</code>、<code>3072</code>、<code>4096</code>、<code>8192</code>，带有 <code>ec</code> 表示生成的是 ECC 证书，没有则是 RSA 证书。在安全性上 256 位的 ECC 证书等同于 3072 位的 RSA 证书。</p>
-<h4 id="证书更新">证书更新</h4>
-<p>由于 Let&rsquo;s Encrypt 的证书有效期只有 3 个月，因此需要 90 天至少要更新一次证书，acme.sh 脚本会每 60 天自动更新证书。也可以手动更新。</p>
-<p>手动更新证书，执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ ~/.acme.sh/acme.sh --renew -d mydomain.com --force --ecc
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>由于本例中将证书生成到 /etc/v2ray/ 文件夹，更新证书之后还得把新证书生成到 /etc/v2ray。</p>
-<h4 id="安装证书和密钥">安装证书和密钥</h4>
-<p>将证书和密钥安装到 /etc/v2ray 中：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --ecc <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                          --fullchain-file /etc/v2ray/v2ray.crt <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                          --key-file /etc/v2ray/v2ray.key
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意：无论什么情况，密钥(即上面的 v2ray.key)都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考<a href="https://github.com/Neilpang/acme.sh/wiki/Options-and-Params">acme.sh 的手册</a></p>
-<p><em>摘抄完毕。</em></p>
-<h2 id="启动">启动</h2>
-<p>在机器A上执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ /usr/bin/v2ray/v2ray
-</span></span><span class="line"><span class="cl">V2Ray 4.44.0 <span class="o">(</span>V2Fly, a community-driven edition of V2Ray.<span class="o">)</span> Custom <span class="o">(</span>go1.17.3 linux/amd64<span class="o">)</span>
-</span></span><span class="line"><span class="cl">A unified platform <span class="k">for</span> anti-censorship.
-</span></span><span class="line"><span class="cl">2021/12/11 00:22:25 Using config from env:  /usr/bin/v2ray/config.json
-</span></span><span class="line"><span class="cl">2021/12/11 00:22:25 <span class="o">[</span>Info<span class="o">]</span> main/jsonem: Reading config: /usr/bin/v2ray/config.json
-</span></span><span class="line"><span class="cl">2021/12/11 00:22:26 <span class="o">[</span>Warning<span class="o">]</span> V2Ray 4.44.0 started
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>但是这样会占用终端，虽然可以让它后台运行，但始终不优雅。我们可以将v2ray做成一项system service.</p>
-<p>编写服务单元文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-service" data-lang="service"><span class="line"><span class="cl"><span class="c1"># file:///etc/systemd/system/v2ray.service</span>
-</span></span><span class="line"><span class="cl"><span class="k">[Unit]</span>
-</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">V2Ray Service</span>
-</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
-</span></span><span class="line"><span class="cl"><span class="na">Wants</span><span class="o">=</span><span class="s">network.target</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># This service runs as root. You may consider to run it as another user for security concerns.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># By uncommenting the following two lines, this service will run as user v2ray/v2ray.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># More discussion at https://github.com/v2ray/v2ray-core/issues/1011</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># User=v2ray</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Group=v2ray</span>
-</span></span><span class="line"><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
-</span></span><span class="line"><span class="cl"><span class="na">PIDFile</span><span class="o">=</span><span class="s">/run/v2ray.pid</span>
-</span></span><span class="line"><span class="cl"><span class="na">Environment</span><span class="o">=</span><span class="s">V2RAY_LOCATION_ASSET=/etc/v2ray</span>
-</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/v2ray/v2ray -config /etc/v2ray/config.json</span>
-</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Don&#39;t restart in the case of configuration error</span>
-</span></span><span class="line"><span class="cl"><span class="na">RestartPreventExitStatus</span><span class="o">=</span><span class="s">23</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
-</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样一来可以使用<code>systemctl</code>来管理其启动和关闭，使用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">systemctl start v2ray   <span class="c1"># 启动</span>
-</span></span><span class="line"><span class="cl">systemctl restart v2ray <span class="c1"># 重新启动</span>
-</span></span><span class="line"><span class="cl">systemclt stop v2ray    <span class="c1"># 停止</span>
-</span></span><span class="line"><span class="cl">systemctl enable/disable v2ray  <span class="c1"># 设置是否开机启动</span>
-</span></span><span class="line"><span class="cl">systemctl status v2ray  <span class="c1"># 查看服务运行情况</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被ban，故摘录部分，有条件的推荐去看原教程，十分详细！</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="failed-to-dial-websocket">Failed to dial WebSocket</h3>
-<pre tabindex="0"><code>V2Ray 5.3.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.20 linux/amd64)
+一次外网访问。</p><p>v2ray的难点在于配置文件<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>的编写，不过好在现在有很多辅助你生成配置文件的工具。
+咱当初可是辛辛苦苦对着文档敲的，不贴上来太可惜了：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=c1>/// config_server.json
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;log&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;access&#34;</span><span class=p>:</span> <span class=s2>&#34;/var/log/v2ray/access.log&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;error&#34;</span><span class=p>:</span> <span class=s2>&#34;/var/log/v2ray/error.log&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;loglevel&#34;</span><span class=p>:</span> <span class=s2>&#34;warning&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;dns&#34;</span><span class=p>:</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;stats&#34;</span><span class=p>:</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;inbounds&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;port&#34;</span><span class=p>:</span> <span class=mi>443</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span> <span class=s2>&#34;vmess&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;clients&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>          <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;your_uuid&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;alterId&#34;</span><span class=p>:</span> <span class=mi>32</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span> <span class=s2>&#34;in-0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;streamSettings&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;network&#34;</span><span class=p>:</span> <span class=s2>&#34;ws&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;security&#34;</span><span class=p>:</span> <span class=s2>&#34;tls&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;wsSettings&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;/somepath&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;headers&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;host&#34;</span><span class=p>:</span> <span class=s2>&#34;somehost.com&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;tlsSettings&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;certificates&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span>
+</span></span><span class=line><span class=cl>              <span class=nt>&#34;certificateFile&#34;</span><span class=p>:</span> <span class=s2>&#34;/etc/v2ray/v2ray.crt&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>              <span class=nt>&#34;keyFile&#34;</span><span class=p>:</span> <span class=s2>&#34;/etc/v2ray/v2ray.key&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>          <span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>],</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;outbounds&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span> <span class=s2>&#34;direct&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span> <span class=s2>&#34;freedom&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span> <span class=s2>&#34;blocked&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span> <span class=s2>&#34;blackhole&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>],</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;routing&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;domainStrategy&#34;</span><span class=p>:</span> <span class=s2>&#34;AsIs&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;rules&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>      <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;field&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;ip&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;geoip:private&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;outboundTag&#34;</span><span class=p>:</span> <span class=s2>&#34;blocked&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;policy&#34;</span><span class=p>:</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;reverse&#34;</span><span class=p>:</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;transport&#34;</span><span class=p>:</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span><span class=lnt>90
+</span><span class=lnt>91
+</span><span class=lnt>92
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=c1>/// config_client.json
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;log&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;dns&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;stats&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;inbounds&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;port&#34;</span><span class=p>:</span><span class=s2>&#34;1080&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;socks&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;auth&#34;</span><span class=p>:</span><span class=s2>&#34;noauth&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;udp&#34;</span><span class=p>:</span><span class=kc>true</span>
+</span></span><span class=line><span class=cl>      <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span><span class=s2>&#34;in-0&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;port&#34;</span><span class=p>:</span><span class=s2>&#34;8080&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;http&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span><span class=s2>&#34;in-1&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>],</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;outbounds&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;vmess&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;vnext&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>          <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;address&#34;</span><span class=p>:</span><span class=s2>&#34;your_host_address&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;port&#34;</span><span class=p>:</span><span class=mi>443</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;users&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>              <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&#34;id&#34;</span><span class=p>:</span><span class=s2>&#34;your_uuid&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&#34;alterId&#34;</span><span class=p>:</span><span class=mi>32</span>
+</span></span><span class=line><span class=cl>              <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>]</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span><span class=s2>&#34;out-0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;streamSettings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;network&#34;</span><span class=p>:</span><span class=s2>&#34;ws&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;security&#34;</span><span class=p>:</span><span class=s2>&#34;tls&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;wsSettings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;path&#34;</span><span class=p>:</span><span class=s2>&#34;/somepath&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;headers&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;host&#34;</span><span class=p>:</span> <span class=s2>&#34;somehost.com&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;tlsSettings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&#34;allowInsecure&#34;</span><span class=p>:</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span><span class=s2>&#34;direct&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;freedom&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:{}</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;tag&#34;</span><span class=p>:</span><span class=s2>&#34;blocked&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;blackhole&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;settings&#34;</span><span class=p>:{}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>],</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;routing&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;domainStrategy&#34;</span><span class=p>:</span><span class=s2>&#34;IPOnDemand&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;rules&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>      <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;type&#34;</span><span class=p>:</span><span class=s2>&#34;field&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;ip&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;geoip:private&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;outboundTag&#34;</span><span class=p>:</span><span class=s2>&#34;direct&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;type&#34;</span><span class=p>:</span><span class=s2>&#34;field&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;ip&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;geoip:cn&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;inboundTag&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;in-0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;in-1&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;outboundTag&#34;</span><span class=p>:</span><span class=s2>&#34;direct&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;policy&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;reverse&#34;</span><span class=p>:{},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;transport&#34;</span><span class=p>:{}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>仔细看看server的配置，其实用到了WS+TLS的方式，这样的配置隐蔽性较好，不容易被封。
+但这种配置的成本也相对较高，首先得弄个域名和机器A的ip绑定。即通过<code>ping somehost.com</code>能够翻译成机器A的ip。</p><h2 id=注册域名>注册域名</h2><p>上免费域名注册站：https://my.freenom.com/domains.php ，</p><p><img src=freenom.png alt=freenom></p><p>随便敲一个域名，检查是否可用，注册成功后如下图所示：</p><p><img src=freenom_manage_domain.png alt></p><p><img src=freenom_2.png alt>
+<img src=freenom_3.png alt></p><p>此处需要为域名配置解析服务器，可以用腾讯云<a href=https://console.dnspod.cn/dns/list>域名解析服务</a>，下图中点击“添加域名”，配置成功后会得到两个域名解析服务器地址，将这两个地址填入上图的Nameserver1和Nameserver2中即可。</p><p><img src=dnspod.png alt="pic alt" title="opt title"></p><p>至此，一个域名到ip的绑定关系就配置完成，可以ping一下试试：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>me@~&gt; ping somehost.com
+</span></span><span class=line><span class=cl>PING somehost.com <span class=o>(</span>xxx.yyy.zzz.aaa<span class=o>)</span> 56<span class=o>(</span>84<span class=o>)</span> 字节的数据。
+</span></span><span class=line><span class=cl><span class=m>64</span> 字节，来自 xx.com <span class=o>(</span>xxx.yyy.zzz.aaa<span class=o>)</span>: <span class=nv>icmp_seq</span><span class=o>=</span><span class=m>1</span> <span class=nv>ttl</span><span class=o>=</span><span class=m>52</span> 时间<span class=o>=</span><span class=m>193</span> 毫秒
+</span></span><span class=line><span class=cl>--- somehost.com ping 统计 ---
+</span></span><span class=line><span class=cl>已发送 <span class=m>4</span> 个包， 已接收 <span class=m>4</span> 个包, 0% packet loss, <span class=nb>time</span> 3003ms
+</span></span><span class=line><span class=cl>rtt min/avg/max/mdev <span class=o>=</span> 159.025/202.023/239.194/29.721 ms
+</span></span></code></pre></td></tr></table></div></div><p>其中，<code>somehost.com</code>为之前申请的域名，<code>xxx.yyy.zzz.aaa</code>为机器A的ip。</p><h2 id=证书生成>证书生成</h2><p><em>此段摘抄自https://guide.v2fly.org/advanced/tls.html#证书生成</em></p><p>TLS 是证书认证机制，所以使用 TLS 需要证书，证书也有免费付费的，同样的这里使用免费证书，证书认证机构为<a href=https://letsencrypt.org/>Let&rsquo;s Encrypt</a>。 证书的生成有许多方法，这里使用的是比较简单的方法：使用<a href=https://github.com/Neilpang/acme.sh>acme.sh</a>脚本生成，本部分说明部分内容参考于<a href=https://github.com/Neilpang/acme.sh/blob/master/README.md>acme.sh README</a>。</p><p>证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，建议使用 ECC 证书。</p><p>以下只给出 ECC 证书的部分。</p><p>证书生成只需在服务器上操作。</p><h3 id=安装-acmesh>安装 acme.sh</h3><p>执行以下命令，acme.sh 会安装到 ~/.acme.sh 目录下。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ curl  https://get.acme.sh <span class=p>|</span> sh
+</span></span><span class=line><span class=cl>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span class=line><span class=cl>                               Dload  Upload   Total   Spent    Left  Speed
+</span></span><span class=line><span class=cl><span class=m>100</span>   <span class=m>671</span>  <span class=m>100</span>   <span class=m>671</span>    <span class=m>0</span>     <span class=m>0</span>    <span class=m>680</span>      <span class=m>0</span> --:--:-- --:--:-- --:--:--   <span class=m>679</span>
+</span></span><span class=line><span class=cl>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span class=line><span class=cl>                               Dload  Upload   Total   Spent    Left  Speed
+</span></span><span class=line><span class=cl><span class=m>100</span>  112k  <span class=m>100</span>  112k    <span class=m>0</span>     <span class=m>0</span>   690k      <span class=m>0</span> --:--:-- --:--:-- --:--:--  693k
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:32 GMT 2016<span class=o>]</span> Installing from online archive.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:32 GMT 2016<span class=o>]</span> Downloading https://github.com/Neilpang/acme.sh/archive/master.tar.gz
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Extracting master.tar.gz
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Installing to /home/user/.acme.sh
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Installed to /home/user/.acme.sh/acme.sh
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Installing <span class=nb>alias</span> to <span class=s1>&#39;/home/user/.profile&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> OK, Close and reopen your terminal to start using acme.sh
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Installing cron job
+</span></span><span class=line><span class=cl>no crontab <span class=k>for</span> user
+</span></span><span class=line><span class=cl>no crontab <span class=k>for</span> user
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Good, bash is found, so change the shebang to use bash as preferred.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> OK
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri <span class=m>30</span> Dec 01:03:33 GMT 2016<span class=o>]</span> Install success!
+</span></span></code></pre></td></tr></table></div></div><p>如果安装报错，那么可能是因为系统缺少 <a href=https://github.com/Neilpang/acme.sh/wiki/Install-preparations>acme.sh 所需要的依赖项</a>，acme.sh 的依赖项主要是 socat，我们通过以下命令来安装这些依赖项，然后重新安装一遍 acme.sh:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ sudo apt-get install openssl cron socat curl
+</span></span></code></pre></td></tr></table></div></div><h3 id=使用-acmesh-生成证书>使用 acme.sh 生成证书</h3><h4 id=证书生成-1>证书生成</h4><p>执行以下命令生成证书：</p><p>以下的命令会临时监听 80 端口，请确保执行该命令前 80 端口没有使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ ~/.acme.sh/acme.sh --issue -d mydomain.me --standalone --keylength ec-256 --force
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> Standalone mode.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> Single <span class=nv>domain</span><span class=o>=</span><span class=s1>&#39;mydomain.me&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> Getting domain auth token <span class=k>for</span> each domain
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> Getting webroot <span class=k>for</span> <span class=nv>domain</span><span class=o>=</span><span class=s1>&#39;mydomain.me&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> <span class=nv>_w</span><span class=o>=</span><span class=s1>&#39;no&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:12 HKT 2016<span class=o>]</span> Getting new-authz <span class=k>for</span> <span class=nv>domain</span><span class=o>=</span><span class=s1>&#39;mydomain.me&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:14 HKT 2016<span class=o>]</span> The new-authz request is ok.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:14 HKT 2016<span class=o>]</span> mydomain.me is already verified, skip.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:14 HKT 2016<span class=o>]</span> mydomain.me is already verified, skip http-01.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:14 HKT 2016<span class=o>]</span> mydomain.me is already verified, skip http-01.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:14 HKT 2016<span class=o>]</span> Verify finished, start to sign.
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:16 HKT 2016<span class=o>]</span> Cert success.
+</span></span><span class=line><span class=cl>-----BEGIN CERTIFICATE-----
+</span></span><span class=line><span class=cl>MIIEMTCCAxmgAwIBAgISA1+gJF5zwUDjNX/6Xzz5fo3lMA0GCSqGSIb3DQEBCwUA
+</span></span><span class=line><span class=cl>MEoxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MSMwIQYDVQQD
+</span></span><span class=line><span class=cl>ExpMZXQncyBFbmNyeXB0IEF1dGhvcml0eSBYMzAeFw0xNjEyMjkyMzU5MDBaFw0x
+</span></span><span class=line><span class=cl>NzAzMjkyMzU5MDBaMBcxFTATBgNVBAMTDHdlYWtzYW5kLmNvbTBZMBMGByqGSM49
+</span></span><span class=line><span class=cl>****************************************************************
+</span></span><span class=line><span class=cl>4p40tm0aMB837XQ9jeAXvXulhVH/7/wWZ8/vkUUvuHSCYHagENiq/3DYj4a85Iw9
+</span></span><span class=line><span class=cl>+6u1r7atYHJ2VwqSamiyTGDQuhc5wdXIQxY/YQQqkAmn5tLsTZnnOavc4plANT40
+</span></span><span class=line><span class=cl>zweiG8vcIvMVnnkM0TSz8G1yzv1nOkruN3ozQkLMu6YS7lk/ENBN7DBtYVSmJeU2
+</span></span><span class=line><span class=cl>VAXE+zgRaP7JFOqK6DrOwhyE2LSgae83Wq/XgXxjfIo1Zmn2UmlE0sbdNKBasnf9
+</span></span><span class=line><span class=cl>gPUI45eltrjcv8FCSTOUcT7PWCa3
+</span></span><span class=line><span class=cl>-----END CERTIFICATE-----
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:16 HKT 2016<span class=o>]</span> Your cert is in  /root/.acme.sh/mydomain.me_ecc/mydomain.me.cer
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:16 HKT 2016<span class=o>]</span> Your cert key is in  /root/.acme.sh/mydomain.me_ecc/mydomain.me.key
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:16 HKT 2016<span class=o>]</span> The intermediate CA cert is in  /root/.acme.sh/mydomain.me_ecc/ca.cer
+</span></span><span class=line><span class=cl><span class=o>[</span>Fri Dec <span class=m>30</span> 08:59:16 HKT 2016<span class=o>]</span> And the full chain certs is there:  /root/.acme.sh/mydomain.me_ecc/fullchain.cer
+</span></span></code></pre></td></tr></table></div></div><p><code>--keylength</code> 表示密钥长度，后面的值可以是 <code>ec-256</code> 、<code>ec-384</code>、<code>2048</code>、<code>3072</code>、<code>4096</code>、<code>8192</code>，带有 <code>ec</code> 表示生成的是 ECC 证书，没有则是 RSA 证书。在安全性上 256 位的 ECC 证书等同于 3072 位的 RSA 证书。</p><h4 id=证书更新>证书更新</h4><p>由于 Let&rsquo;s Encrypt 的证书有效期只有 3 个月，因此需要 90 天至少要更新一次证书，acme.sh 脚本会每 60 天自动更新证书。也可以手动更新。</p><p>手动更新证书，执行：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ ~/.acme.sh/acme.sh --renew -d mydomain.com --force --ecc
+</span></span></code></pre></td></tr></table></div></div><p>由于本例中将证书生成到 /etc/v2ray/ 文件夹，更新证书之后还得把新证书生成到 /etc/v2ray。</p><h4 id=安装证书和密钥>安装证书和密钥</h4><p>将证书和密钥安装到 /etc/v2ray 中：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --ecc <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>                          --fullchain-file /etc/v2ray/v2ray.crt <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>                          --key-file /etc/v2ray/v2ray.key
+</span></span></code></pre></td></tr></table></div></div><p>注意：无论什么情况，密钥(即上面的 v2ray.key)都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考<a href=https://github.com/Neilpang/acme.sh/wiki/Options-and-Params>acme.sh 的手册</a></p><p><em>摘抄完毕。</em></p><h2 id=启动>启动</h2><p>在机器A上执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$ /usr/bin/v2ray/v2ray
+</span></span><span class=line><span class=cl>V2Ray 4.44.0 <span class=o>(</span>V2Fly, a community-driven edition of V2Ray.<span class=o>)</span> Custom <span class=o>(</span>go1.17.3 linux/amd64<span class=o>)</span>
+</span></span><span class=line><span class=cl>A unified platform <span class=k>for</span> anti-censorship.
+</span></span><span class=line><span class=cl>2021/12/11 00:22:25 Using config from env:  /usr/bin/v2ray/config.json
+</span></span><span class=line><span class=cl>2021/12/11 00:22:25 <span class=o>[</span>Info<span class=o>]</span> main/jsonem: Reading config: /usr/bin/v2ray/config.json
+</span></span><span class=line><span class=cl>2021/12/11 00:22:26 <span class=o>[</span>Warning<span class=o>]</span> V2Ray 4.44.0 started
+</span></span></code></pre></td></tr></table></div></div><p>但是这样会占用终端，虽然可以让它后台运行，但始终不优雅。我们可以将v2ray做成一项system service.</p><p>编写服务单元文件<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-service data-lang=service><span class=line><span class=cl><span class=c1># file:///etc/systemd/system/v2ray.service</span>
+</span></span><span class=line><span class=cl><span class=k>[Unit]</span>
+</span></span><span class=line><span class=cl><span class=na>Description</span><span class=o>=</span><span class=s>V2Ray Service</span>
+</span></span><span class=line><span class=cl><span class=na>After</span><span class=o>=</span><span class=s>network.target</span>
+</span></span><span class=line><span class=cl><span class=na>Wants</span><span class=o>=</span><span class=s>network.target</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>[Service]</span>
+</span></span><span class=line><span class=cl><span class=c1># This service runs as root. You may consider to run it as another user for security concerns.</span>
+</span></span><span class=line><span class=cl><span class=c1># By uncommenting the following two lines, this service will run as user v2ray/v2ray.</span>
+</span></span><span class=line><span class=cl><span class=c1># More discussion at https://github.com/v2ray/v2ray-core/issues/1011</span>
+</span></span><span class=line><span class=cl><span class=c1># User=v2ray</span>
+</span></span><span class=line><span class=cl><span class=c1># Group=v2ray</span>
+</span></span><span class=line><span class=cl><span class=na>Type</span><span class=o>=</span><span class=s>simple</span>
+</span></span><span class=line><span class=cl><span class=na>PIDFile</span><span class=o>=</span><span class=s>/run/v2ray.pid</span>
+</span></span><span class=line><span class=cl><span class=na>Environment</span><span class=o>=</span><span class=s>V2RAY_LOCATION_ASSET=/etc/v2ray</span>
+</span></span><span class=line><span class=cl><span class=na>ExecStart</span><span class=o>=</span><span class=s>/usr/bin/v2ray/v2ray -config /etc/v2ray/config.json</span>
+</span></span><span class=line><span class=cl><span class=na>Restart</span><span class=o>=</span><span class=s>on-failure</span>
+</span></span><span class=line><span class=cl><span class=c1># Don&#39;t restart in the case of configuration error</span>
+</span></span><span class=line><span class=cl><span class=na>RestartPreventExitStatus</span><span class=o>=</span><span class=s>23</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>[Install]</span>
+</span></span><span class=line><span class=cl><span class=na>WantedBy</span><span class=o>=</span><span class=s>multi-user.target</span>
+</span></span></code></pre></td></tr></table></div></div><p>这样一来可以使用<code>systemctl</code>来管理其启动和关闭，使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>systemctl start v2ray   <span class=c1># 启动</span>
+</span></span><span class=line><span class=cl>systemctl restart v2ray <span class=c1># 重新启动</span>
+</span></span><span class=line><span class=cl>systemclt stop v2ray    <span class=c1># 停止</span>
+</span></span><span class=line><span class=cl>systemctl enable/disable v2ray  <span class=c1># 设置是否开机启动</span>
+</span></span><span class=line><span class=cl>systemctl status v2ray  <span class=c1># 查看服务运行情况</span>
+</span></span></code></pre></td></tr></table></div></div><p>暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被ban，故摘录部分，有条件的推荐去看原教程，十分详细！</p><h2 id=troubleshooting>Troubleshooting</h2><h3 id=failed-to-dial-websocket>Failed to dial WebSocket</h3><pre tabindex=0><code>V2Ray 5.3.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.20 linux/amd64)
 A unified platform for anti-censorship.
 2023/02/24 10:12:47 [Warning] V2Ray 5.3.0 started
 2023/02/24 10:13:00 [Warning] [3406089800] app/dispatcher: default route for tcp:www.google.com:443
@@ -814,158 +533,42 @@ A unified platform for anti-censorship.
 2023/02/24 10:13:31 [Warning] [3395754372] app/dispatcher: default route for tcp:www.google.com:443
 2023/02/24 10:13:31 tcp:127.0.0.1:54836 accepted tcp:www.google.com:443 [out-0]
 2023/02/24 10:13:33 [Warning] [3406089800] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vmess/outbound: failed to find an available destination &gt; common/retry: [transport/internet/websocket: failed to dial WebSocket &gt; transport/internet/websocket: failed to dial to (wss://xxx.xxx.xxx.xxx/abc):  &gt; transport/internet/websocket: dial TLS connection failed &gt; dial tcp xxx.xxx.xxx.xxx:10086: i/o timeout transport/internet/websocket: failed to dial WebSocket &gt; transport/internet/websocket: failed to dial to (wss:////xxx.xxx.xxx.xxx/abc):  &gt; transport/internet/websocket: dial TLS connection failed &gt; dial tcp xxx.xxx.xxx.xxx:10086: operation was canceled] &gt; common/retry: all retry attempts failed
-</code></pre><p>参考链接： <a href="https://woj.app/7223.html">https://woj.app/7223.html</a></p>
-<p>此前遇到上述问题，经过排查之后就是端口号无法访问了，也不知道是哪一环出了问题。换了端口号之后就可以了。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;outbounds&#34;</span><span class="err">:</span><span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;protocol&#34;</span><span class="p">:</span><span class="s2">&#34;vmess&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;settings&#34;</span><span class="p">:{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;vnext&#34;</span><span class="p">:[</span>
-</span></span><span class="line"><span class="cl">                <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;port&#34;</span><span class="p">:</span><span class="mi">443</span><span class="p">,</span>  <span class="c1">// -&gt; 886
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">}]}}]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="references">References</h2>
-<ol>
-<li><a href="https://guide.v2fly.org/advanced/tls.html#%E4%BD%BF%E7%94%A8-acme-sh-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6">新 V2Ray 白话文指南</a></li>
-</ol>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://www.v2ray.com/chapter_02/">V2Ray配置文档</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://segmentfault.com/a/1190000014740871">如何编写一个Systemd Service</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Yychi</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        February 24, 2023
-        
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-<footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/python-metaclass/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">A point of python metaclass</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/python-iterables/">
-            <span class="next-text nav-default">Python Iterables</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz',
-        appKey: 'fjzzXaIgPDyMlxqtN0oBWeNN',
-        notify:  false ,
-        verify:  false ,
-        avatar:'mm',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        visitor:  false 
-    });
-  </script>
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
-  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2018 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+</code></pre><p>参考链接： <a href=https://woj.app/7223.html>https://woj.app/7223.html</a></p><p>此前遇到上述问题，经过排查之后就是端口号无法访问了，也不知道是哪一环出了问题。换了端口号之后就可以了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;outbounds&#34;</span><span class=err>:</span><span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;protocol&#34;</span><span class=p>:</span><span class=s2>&#34;vmess&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;settings&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;vnext&#34;</span><span class=p>:[</span>
+</span></span><span class=line><span class=cl>                <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=nt>&#34;port&#34;</span><span class=p>:</span><span class=mi>443</span><span class=p>,</span>  <span class=c1>// -&gt; 886
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=p>}]}}]</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=references>References</h2><ol><li><a href=https://guide.v2fly.org/advanced/tls.html#%E4%BD%BF%E7%94%A8-acme-sh-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6>新 V2Ray 白话文指南</a></li></ol><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://www.v2ray.com/chapter_02/>V2Ray配置文档</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p><a href=https://segmentfault.com/a/1190000014740871>如何编写一个Systemd Service</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>March 15, 2023</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/python-metaclass/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">A point of python metaclass</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/python-iterables/><span class="next-text nav-default">Python Iterables</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz",appKey:"fjzzXaIgPDyMlxqtN0oBWeNN",notify:!1,verify:!1,avatar:"mm",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a>
+<a href=https://guyueshui.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2018 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

@@ -1,0 +1,230 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>从零开始构建家庭共享存储 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="一切都要从前几天给手机刷新ROM，导致数据丢失说起。
+前些日子，我的RedmiK40S MIUI13突然给我自动更新至MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是MIUI版本的提升，更是Android 12到13的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在a12上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上XDA找ROM，随便下了几个，准备动手。
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.111.3 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/share-storage-with-family/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.651de86251ddc73a34038bb147ea19626ef5f3544a594e731576dd8b8bc28c52.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto+Serif+SC"><meta property="og:title" content="从零开始构建家庭共享存储"><meta property="og:description" content="一切都要从前几天给手机刷新ROM，导致数据丢失说起。
+前些日子，我的RedmiK40S MIUI13突然给我自动更新至MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是MIUI版本的提升，更是Android 12到13的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在a12上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上XDA找ROM，随便下了几个，准备动手。"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/share-storage-with-family/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-14T09:24:57+08:00"><meta property="article:modified_time" content="2023-03-15T22:36:59+08:00"><meta itemprop=name content="从零开始构建家庭共享存储"><meta itemprop=description content="一切都要从前几天给手机刷新ROM，导致数据丢失说起。
+前些日子，我的RedmiK40S MIUI13突然给我自动更新至MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是MIUI版本的提升，更是Android 12到13的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在a12上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上XDA找ROM，随便下了几个，准备动手。"><meta itemprop=datePublished content="2023-03-14T09:24:57+08:00"><meta itemprop=dateModified content="2023-03-15T22:36:59+08:00"><meta itemprop=wordCount content="4334"><meta itemprop=keywords content="webdav,共享存储,"><meta name=twitter:card content="summary"><meta name=twitter:title content="从零开始构建家庭共享存储"><meta name=twitter:description content="一切都要从前几天给手机刷新ROM，导致数据丢失说起。
+前些日子，我的RedmiK40S MIUI13突然给我自动更新至MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是MIUI版本的提升，更是Android 12到13的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在a12上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上XDA找ROM，随便下了几个，准备动手。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>从零开始构建家庭共享存储</h1><div class=post-meta><span class=post-time>March 14, 2023</span><div class=post-category><a href=/categories/tech/>tech</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#给路由器刷openwrt>给路由器刷OpenWrt</a></li><li><a href=#openwrt路由器部署webdav服务器>OpenWrt路由器部署WebDAV服务器</a></li><li><a href=#luci后端更改>LuCI后端更改</a></li><li><a href=#lighttpd-启用-https>Lighttpd 启用 HTTPS</a></li><li><a href=#网页端访问>网页端访问</a><ul><li><a href=#加载webdav-js>加载webdav-js</a></li></ul></li><li><a href=#alist文件共享服务>Alist文件共享服务</a></li><li><a href=#一点体验优化>一点体验优化</a></li><li><a href=#总结>总结</a></li></ul></nav></div></div><div class=post-content><p>一切都要从前几天给手机刷新ROM，导致数据丢失说起。</p><p>前些日子，我的RedmiK40S MIUI13突然给我自动更新至MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是MIUI版本的提升，更是Android 12到13的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在a12上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上XDA找ROM，随便下了几个，准备动手。</p><p>我自觉这么多年刷机从未失手，再不济也能在recovery里面把数据迁移出来再进行格式化。不成想多年未刷机，出了个新名词"a/b slot". 一下子给我整懵了，在刷完rom之后的第一次启动卡logo. 然后再进recovery直接给我把data分区锁上了。换了几个recovery还是无法解锁data, 最后只能无情format data. <strong>数据无价啊！</strong></p><p>后来翻了几篇帖子，弄弄a/b slot到底是啥意思，放在下面供以后参考吧：</p><ol><li><a href=https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda>How A/B Partitions and Seamless Updates Affect Custom Development on XDA</a></li><li><a href=https://forum.xda-developers.com/t/how-to-fix-unable-to-mount-data-internal-storage-0mb-in-twrp-permanently.3830897/>How to fix unable to mount data internal storage 0mb in twrp permanently</a></li><li><a href=https://forum.xda-developers.com/t/a-b-slots-flashing-in-twrp.3887321/>A/B slots flashing in TWRP</a></li></ol><p>此外，这次踩坑在<a href=/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/#ab-slot%E5%88%B7%E6%9C%BA>此处</a>做了简单记录。</p><p>折腾一宿加一天之后，终于用上了新ROM，贴几张美图：</p><table><tr><td><img src=munch1.png border=0></td><td><img src=munch2.png border=0></td><td><img src=munch3.png border=0></td></tr></table><hr><p>言归正传，新ROM装好之后，发现钛备份在a12创建的备份，如果还原应用数据，统统都会闪退。感概一波钛备份的过时之后，我寻到了两个替代品：</p><ol><li><a href=https://f-droid.org/en/packages/com.machiav3lli.backup/>Neo Backup</a></li><li><a href=https://www.coolapk.com/apk/com.xayah.databackup>Data Backup</a></li></ol><p>并且这次迎来了新的需求：在本地备份app数据之后，即时在移动硬盘上做一个备份。于是我想起来，我的小米路由器3具有一个USB接口。<strong>有没有可能将移动硬盘插在路由器上，然后连接该路由器的设备都可以访问这个移动硬盘呢？</strong></p><p>然后兴冲冲的打开小米路由器的管理界面，发现文件共享需要下载他的软件，过于辣鸡了。一怒之下，给小米路由器3刷了OpenWrt<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><h2 id=给路由器刷openwrt>给路由器刷OpenWrt</h2><p>这个网上教程很多，列举一下：</p><ol><li><a href=https://schaepher.github.io/2019/10/12/xiaomi-router-r3-openwrt/>小米路由3 刷 OpenWRT</a></li><li><a href=https://blog.kidhero.club/p/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E5%88%B7%E6%9C%BA%E8%AE%B0%E5%BD%95/>小米路由器3刷机记录</a></li><li><a href=https://openwrt.org/toh/xiaomi/mir3#get_sshdropbear_access>[OpenWrt Wiki] Xiaomi Mi WiFi R3 (Mi Wifi Router 3 / MIR3 / MI3)</a></li><li><a href=https://www.awaimai.com/2852.html>小米路由器3刷机潘多拉(Openwrt)以及刷回教程</a></li></ol><p>看这几篇应该够了，其中需要注意的点：</p><ol><li>用于开启ssh功能的U盘必须是fat文件系统；</li><li>先刷开发版固件，再降级到miwifi_r3_all_55ac7_2.11.20.bin，2.11.20版本更容易打开ssh.</li></ol><h2 id=openwrt路由器部署webdav服务器>OpenWrt路由器部署WebDAV服务器</h2><p>刷好之后，打开网关地址进入管理界面，如下图所示：</p><p><img src=x-wrt-luci.png alt="LuCI of X-Wrt"></p><p>LuCI（Lua Configuration Interface）是OpenWrt的前端管理界面，默认基于uhttpd运行，而它不支持WebDAV，所以我们换一个支持的 &ndash; <a href=https://redmine.lighttpd.net/projects/lighttpd/wiki>lighttpd</a>.</p><p>下面是我安装的lighttpd的相关软件包，可以用luci前端安装，也可以ssh到路由器执行<code>opkg install lighttpd-xxx</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@X-WRT-27AD:~# opkg list-installed <span class=p>|</span> grep lighttpd
+</span></span><span class=line><span class=cl>lighttpd - 1.4.69-1
+</span></span><span class=line><span class=cl>lighttpd-mod-auth - 1.4.69-1
+</span></span><span class=line><span class=cl>lighttpd-mod-authn_file - 1.4.69-1
+</span></span><span class=line><span class=cl>lighttpd-mod-cgi - 1.4.69-1
+</span></span><span class=line><span class=cl>lighttpd-mod-openssl - 1.4.69-1
+</span></span><span class=line><span class=cl>lighttpd-mod-webdav - 1.4.69-1
+</span></span></code></pre></td></tr></table></div></div><p>接下来就需要编辑配置文件了，lighttpd的配置文件位于<code>/etc/lighttpd</code>下。经过配置的目录结构如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@X-WRT-27AD:/etc/lighttpd# ls -R
+</span></span><span class=line><span class=cl>.:
+</span></span><span class=line><span class=cl>certs          conf.d         lighttpd.conf  lighttpd.user  mime.conf
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>./certs:
+</span></span><span class=line><span class=cl>lighttpd.pem
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>./conf.d:
+</span></span><span class=line><span class=cl>20-auth.conf        30-cgi.conf         30-webdav.conf      99-luci.conf
+</span></span><span class=line><span class=cl>20-authn_file.conf  30-openssl.conf     50-http.conf
+</span></span></code></pre></td></tr></table></div></div><p>Lighttpd采用模块化的配置方式，主配置文件为<code>lightttpd.conf</code>，其会自动将<code>conf.d</code>文件夹中的配置加载出来。所以我们对单模块做配置，只需要在conf.d文件夹中新增相关配置文件即可。</p><p>例如，conf.d中的30-webdav.conf就是WebDAV服务相关的配置：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>server.modules += ( &#34;mod_webdav&#34; )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$HTTP[&#34;url&#34;] =~ &#34;^/dav($|/)&#34; {
+</span></span><span class=line><span class=cl>  webdav.activate = &#34;enable&#34;
+</span></span><span class=line><span class=cl>  webdav.sqlite-db-name = home_dir + &#34;/webdav.db&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  ## add by yychi, see: https://openwrt.org/docs/guide-user/services/nas/webdav
+</span></span><span class=line><span class=cl>  server.document-root := &#34;/mnt/sda4/&#34;  # 用作WebDAV存储的根目录
+</span></span><span class=line><span class=cl>  auth.backend = &#34;plain&#34;
+</span></span><span class=line><span class=cl>  auth.backend.plain.userfile = conf_dir + &#34;/lighttpd.user&#34;  # 用户&amp;密码配置
+</span></span><span class=line><span class=cl>  auth.cache = (&#34;max-age&#34; =&gt; &#34;3600&#34;)  # 输入密码后的过期时间
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  ## 用户路径配置
+</span></span><span class=line><span class=cl>  auth.require := (
+</span></span><span class=line><span class=cl>    &#34;/dav/yychi&#34; =&gt; (&#34;method&#34; =&gt; &#34;basic&#34;, &#34;realm&#34; =&gt; &#34;disk for yychi&#34;, &#34;require&#34; =&gt; &#34;user=yychi|user=admin,
+</span></span><span class=line><span class=cl>    &#34;/dav/yukynn&#34; =&gt; (&#34;method&#34; =&gt; &#34;basic&#34;, &#34;realm&#34; =&gt; &#34;disk for yukynn&#34;, &#34;require&#34; =&gt; &#34;user=yukynn|user=admin,
+</span></span><span class=line><span class=cl>    &#34;/dav/&#34; =&gt; (&#34;method&#34; =&gt; &#34;basic&#34;, &#34;realm&#34; =&gt; &#34;WebDAV Server&#34;, &#34;require&#34; =&gt; &#34;valid-user&#34;),
+</span></span><span class=line><span class=cl>  )
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><p>其中重要的地方我都加了注释，猛击<a href=https://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_Configuration>这里</a>详细了解配置语法。简单说明下第三行是个<a href=https://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_Configuration#Conditional-Configuration>条件配置</a>，意思是url匹配后面这个正则表达式的话，scope里面的配置才生效。其中，home_dir和conf_dir这两个变量均来自于父文件夹的lighttpd.conf:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@X-WRT-27AD:/etc/lighttpd# cat lighttpd.conf 
+</span></span><span class=line><span class=cl><span class=c1>### Configuration Variables (potentially used in /etc/lighttpd/conf.d/*.conf)</span>
+</span></span><span class=line><span class=cl>var.log_root    <span class=o>=</span> <span class=s2>&#34;/var/log/lighttpd/&#34;</span>
+</span></span><span class=line><span class=cl>var.server_root <span class=o>=</span> <span class=s2>&#34;/www/&#34;</span>
+</span></span><span class=line><span class=cl>var.state_dir   <span class=o>=</span> <span class=s2>&#34;/var/run/&#34;</span>
+</span></span><span class=line><span class=cl>var.home_dir    <span class=o>=</span> <span class=s2>&#34;/var/lib/lighttpd/&#34;</span>
+</span></span><span class=line><span class=cl>var.conf_dir    <span class=o>=</span> <span class=s2>&#34;/etc/lighttpd&#34;</span>
+</span></span><span class=line><span class=cl>var.vhosts_dir  <span class=o>=</span> server_root + <span class=s2>&#34;/vhosts&#34;</span>
+</span></span><span class=line><span class=cl>var.cache_dir   <span class=o>=</span> <span class=s2>&#34;/var/cache/lighttpd&#34;</span>
+</span></span><span class=line><span class=cl>var.socket_dir  <span class=o>=</span> home_dir + <span class=s2>&#34;/sockets&#34;</span>
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></td></tr></table></div></div><p>接下来配置WebDAV的用户和密码，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> yychi:123456 &gt;&gt; /etc/lighttpd/lighttpd.user
+</span></span></code></pre></td></tr></table></div></div><p>可以配置多个用户，以及简单的权限管理。比如我的配置<code>/dav/yychi</code>文件夹只能给用户yychi或admin访问，<code>/dav/yukynn</code>文件夹只能给yukyyn或admin访问。</p><blockquote><p>这里认证方式是明文密码，其实还有其他方式，不过需要安装其他包，觉得太麻烦，而且是局域网比较安全所以就不管了。</p></blockquote><p>配置到现在就差不多了，让我们启动一下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>service uhttpd stop  <span class=c1># 关闭uhttpd</span>
+</span></span><span class=line><span class=cl>service uhttpd disable  <span class=c1># 取消uhttpd的自启动</span>
+</span></span><span class=line><span class=cl>service lighttpd start
+</span></span><span class=line><span class=cl>service lighttpd <span class=nb>enable</span>
+</span></span></code></pre></td></tr></table></div></div><p>用同一局域网下的手机连接验证一下：
+<img src=xplore-webdav.png alt=xplore-webdav></p><p>Ok, 现在我们已经在路由器上部署好了WebDAV server.</p><h2 id=luci后端更改>LuCI后端更改</h2><p>如果你打开网关地址（X-Wrt默认是192.168.15.1），你会发现LuCI已经打不开了。当然了，因为我们关闭了LuCI的后端uhttpd，现在我们要把LuCI后端改为lighttpd，这一点<a href=https://openwrt.org/docs/guide-user/luci/luci.on.lighttpd>OpenWrt Wiki</a>上有很详细的教程，这里我们就简短概括一下。</p><p>主要使用lighttpd的cgi功能，使得当用浏览器访问网关地址时，重定向到luci启动的cgi脚本。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@X-WRT-27AD:/www/cgi-bin# ls
+</span></span><span class=line><span class=cl>cgi-backup    cgi-download  cgi-exec      cgi-upload    luci
+</span></span></code></pre></td></tr></table></div></div><p>这里的<code>luci</code>就是启动脚本。</p><p>具体配置参考这里：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>root@X-WRT-27AD:/etc/lighttpd/conf.d# cat 99-luci.conf 
+</span></span><span class=line><span class=cl><span class=c1>## Necessary LUCI configuration</span>
+</span></span><span class=line><span class=cl><span class=c1>## see: https://openwrt.org/docs/guide-user/luci/luci.on.lighttpd</span>
+</span></span><span class=line><span class=cl>cgi.assign +<span class=o>=</span> <span class=o>(</span> <span class=s2>&#34;/cgi-bin/luci&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span>,
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;/cgi-bin/cgi-backup&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span>,
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;/cgi-bin/cgi-download&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span>,
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;/cgi-bin/cgi-exec&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span>,
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;/cgi-bin/cgi-upload&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span> <span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>server.username :<span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>server.groupname :<span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>最后，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>service lighttpd restart
+</span></span></code></pre></td></tr></table></div></div><p>重启lighttpd查看效果，现在访问网关地址应该可以打开LuCI了。</p><h2 id=lighttpd-启用-https>Lighttpd 启用 HTTPS</h2><p>到这一步为止，我们已经无痛在OpenWrt上搭建了一个WebDAV server，你可以插个移动硬盘上去，然后使用任意支持webdav协议的客户端去操作这块存储空间，LuCI也能访问了，很好。</p><p>然而偏偏有些应用，他不支持http，他强制让你使用https，确实，够安全。但对于局域网来说，难免有些多次一举。我说的就是<a href=https://foldersync.io/>FolderSync</a>，这是个好应用，可以将本地文件夹与云端（OneDrive, DropBox, WebDAV等）文件夹进行双向同步，详询酷安#foldersync话题。但我确实恼他不支持http协议。</p><p>没办法，只好安排一下。由于我是局域网内使用，而FolderSync其实也开了个后门，他支持自签名证书。
+<img src=foldersync-webdav-conf.png alt></p><p>那我们就给他安排一下，参考这篇<a href=https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToSimpleSSL>wiki</a>，非常简单。</p><h2 id=网页端访问>网页端访问</h2><p>你是否想在浏览器中也能访问WebDAV server？Lighttpd自带一个简单的页面，可通过以下配置开启：</p><pre tabindex=0><code># Override the /dav/ folder configured in 30-webdav.conf
+$HTTP[&#34;url&#34;] =~ &#34;^/dav($|/)&#34; {
+  # The root / is ovveriden by an alais in turris-root.conf so we must add another override
+  alias.url = ( &#34;/dav/&#34; =&gt; &#34;/srv/disk/dav/&#34; )
+  server.document-root := &#34;/srv/disk/&#34;
+  auth.backend := &#34;plain&#34;
+  auth.backend.plain.userfile := &#34;/etc/lighttpd/webdav.shadow&#34;
+  auth.require := (&#34;&#34;=&gt;(&#34;method&#34;=&gt;&#34;basic&#34;,&#34;realm&#34;=&gt;&#34;webdav&#34;,&#34;require&#34;=&gt;&#34;valid-user&#34;))
+  # (Optional) add a directory index to see files from a browser
+  server.dir-listing := &#34;enable&#34;  # 这里
+  dir-listing.encoding := &#34;utf-8&#34; # 和这里
+  webdav.sqlite-db-name := &#34;/etc/lighttpd/webdav_lock.db&#34;
+}
+</code></pre><p>cf. <a href=https://gist.github.com/stokito/77c42f8aff2dade91621c1051f73e58c>https://gist.github.com/stokito/77c42f8aff2dade91621c1051f73e58c</a></p><p>加上上面两行配置，重启下lighttpd，然后打开 192.168.15.1/dav 即可访问webdav server：
+<img src=lighttpd-webdav-browser.png alt></p><p>这个界面只能读，不能写。</p><h3 id=加载webdav-js>加载webdav-js</h3><p>OpenWrt的<a href=https://openwrt.org/docs/guide-user/services/nas/webdav#browser_ui_for_the_webdav_share>wiki</a>上提到一个方法可以让你在浏览器中访问webdav server，是通过在根目录创建一个index.html文件实现的。这个文件里面引入了<a href=https://github.com/dom111/webdav-js>webdav-js</a>，作为一个精简的web client，他支持对webdav server的写入操作（包括上传文件，创建文件夹，复制，移动，重命名等）。所以我们在根目录创建一个这样的文件，就可以看到如下界面：
+<img src=webdav-js-browser.png alt></p><p>原本这中方法有个问题，wiki中也有提到：就是子文件夹中没有这个index.html，因此访问子文件夹就无法展示了。但加了lighttpd本身的网页前端之后，每个子文件夹都是可访问的，我猜想应该是开启dir-listing选项之后，访问的时候会自动生成index文件。而因为webdav-js缓存的缘故，跳转到子文件夹，只有里面包含index文件，就可以进行访问，即便子文件夹中的index文件没有加载webdav-js. 这样一来，就只需要在根目录添加一个加载了webdav-js的index文件，就能浏览任意子目录的效果。</p><h2 id=alist文件共享服务>Alist文件共享服务</h2><p>一路走来，我们在局域网搭建了一个WebDAV server, 实现了局域网内的文件共享。但是WebDAV client对于父母一辈的其实不太友好。而网页端也很简陋，如果他们想打开网页直接看视频什么的，还不够方便。</p><p>又忽然联想到家里还有一台旧笔记本躺在那里吃灰。于是翻将出来直接格式化，装了个archlinux，不过没装图形界面。由于路由器的性能毕竟吃紧，把移动硬盘接在旧电脑上做文件服务器才是正理。我准备在这台机器上部署一个<a href=https://github.com/Xhofe/alist>Alist</a>服务器，archlinux直接</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yay -S alist
+</span></span></code></pre></td></tr></table></div></div><p>即可安装。也可以使用官方文档中的一键脚本进行安装，使用脚本安装之后的路径在：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yychi@dell-inspiron /opt/alist&gt; ls
+</span></span><span class=line><span class=cl>alist*  data/
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>yychi@dell-inspiron /opt/alist&gt; ifconfig
+</span></span><span class=line><span class=cl>enp2s0: <span class=nv>flags</span><span class=o>=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class=m>1500</span>
+</span></span><span class=line><span class=cl>        inet 192.168.15.233  netmask 255.255.255.0  broadcast 192.168.15.255
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 运行alist server</span>
+</span></span><span class=line><span class=cl>yychi@dell-inspiron /opt/alist&gt; ./alist server
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> reading config file: data/config.json        
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> load config from env with prefix: ALIST_     
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> init logrus...                               
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> start server @ 0.0.0.0:5244                  
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> success load storage: <span class=o>[</span>/disk<span class=o>]</span>, driver: <span class=o>[</span>Local<span class=o>]</span> 
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> success load storage: <span class=o>[</span>/home/yychi<span class=o>]</span>, driver: <span class=o>[</span>Local<span class=o>]</span> 
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> Aria2 not ready.                             
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:01<span class=o>]</span> qbittorrent not ready.                       
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:02<span class=o>]</span> success load storage: <span class=o>[</span>/Aliyunpan/来自分享<span class=o>]</span>, driver: <span class=o>[</span>AliyundriveOpen<span class=o>]</span> 
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:02<span class=o>]</span> success load storage: <span class=o>[</span>/Aliyunpan/电影<span class=o>]</span>, driver: <span class=o>[</span>AliyundriveOpen<span class=o>]</span> 
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:02<span class=o>]</span> success load storage: <span class=o>[</span>/Aliyunpan/动漫<span class=o>]</span>, driver: <span class=o>[</span>AliyundriveOpen<span class=o>]</span> 
+</span></span><span class=line><span class=cl>INFO<span class=o>[</span>2023-03-15 13:38:02<span class=o>]</span> success load storage: <span class=o>[</span>/Aliyunpan/电视剧<span class=o>]</span>, driver: <span class=o>[</span>AliyundriveOpen<span class=o>]</span> 
+</span></span></code></pre></td></tr></table></div></div><p>运行之后，就可以在浏览器输入 http://192.168.15.233:5244 打开alist界面了。
+<img src=alist-webui.png alt></p><p>上面是我配置之后的样子<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>。更多关于alist的配置，网上多不胜数，我就不献丑了。</p><p>Alist支持文件交互，就像云盘一样，可以上传/下载文件，在线播放音视频图片等，也可以用作WebDAV server, 更可以挂载阿里云盘，总之功能多多，值得一玩。</p><h2 id=一点体验优化>一点体验优化</h2><p>上面说到，我将废弃的笔记本（dell-inspiron）用作文件服务器，它需要7*24小时开机，妥妥的就是一个正经的服务器。那万一停电了，路由器重启了，就是服务器ip变了怎么办？我还得去路由器上或者服务器本身上面去看看ip, 这显然很麻烦。所以必须给dell-inspiron一个固定的ip. 使用OpenWrt很容易做到这一点。
+<img src=dhcp-static-ip.png alt></p><p>甚至可以做个主机名映射，不用再记烦人的ip.
+<img src=name-map.png alt></p><figcaption>this is figcaption</figcaption><p>这样就可以通过域名来访问文件服务。
+<img src=alist-video.png alt>
+<img src=alist-music.png alt></p><h2 id=总结>总结</h2><p>至此，我们就搭建了一个家庭共享存储。只要连上指定局域网，就可以访问并操作共享存储，而且可以基于Alist在线观看影视，十分方便。不过还有个痛点就是这个局域网其实是楼下路由器的子网，如果连楼下wifi，就无法访问了。本来可以通过配置静态路由实现，但楼下路由偏偏不支持配置，只能先搁置一下了。</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>说是OpenWrt，其实是中文社区的fork，X-Wrt.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>你可能看到了https, 其实也是我为了使用FolderSync给加的自签名证书，仅限局域网内部用用。&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>March 15, 2023</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/webdav/>webdav</a>
+<a href=/tags/%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8/>共享存储</a></div><nav class=post-nav><a class=next href=/post/extend-swap/><span class="next-text nav-default">Swap扩容</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz",appKey:"fjzzXaIgPDyMlxqtN0oBWeNN",notify:!1,verify:!1,avatar:"mm",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a>
+<a href=https://guyueshui.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2018 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

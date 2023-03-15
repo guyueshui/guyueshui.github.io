@@ -1,653 +1,339 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux开机无声音 - 水阙</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Yychi" /><meta name="description" content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一" /><meta name="keywords" content="水阙, yychi" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.110.0 with theme even" />
-
-
-<link rel="canonical" href="https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/sass/main.min.01ca264237f4437d074cf6c8cbab3db51634492b8d9acda6b073090c785d6cbb.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
-
-<meta property="og:title" content="Linux开机无声音" />
-<meta property="og:description" content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-03-26T18:45:16+08:00" />
-<meta property="article:modified_time" content="2022-03-26T18:45:16+08:00" />
-<meta itemprop="name" content="Linux开机无声音">
-<meta itemprop="description" content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"><meta itemprop="datePublished" content="2022-03-26T18:45:16+08:00" />
-<meta itemprop="dateModified" content="2022-03-26T18:45:16+08:00" />
-<meta itemprop="wordCount" content="2355">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux开机无声音"/>
-<meta name="twitter:description" content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tricks/">
-        <li class="mobile-menu-item">Tricks</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tricks/">Tricks</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Linux开机无声音</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> March 26, 2022 </span>
-        <div class="post-category">
-            <a href="/categories/linux/"> linux </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。</p>
-<p>但问题始终要解决的，我总不可能每次开机的时候旁边都有个有线耳机吧。所以要解决这个问题，可从以下两个路子着手：</p>
-<ol>
-<li>彻底解决这个问题，每次开机正常有声音，插入耳机，则声音通过耳机输出；</li>
-<li>退而求其次，能在开机之后不需要插拔耳机，也能将外部扬声器声音释放出来，比如一个shell命令激活。</li>
-</ol>
-<p>目前我只做到了第二种，尚未完美解决。</p>
-<p>记录一下排查问题的大致流程：</p>
-<p>首先上网查了一下相关问题，怀疑是pulseaudio的问题，结果偶然某一次正常播放音频的时候，我发现杀掉pulseaudio的进程竟然毫无影响，因此可能不是它的问题。</p>
-<p>然后查看alsamixer得知：</p>
-<p><img src="AlsaMixer.png" alt=""></p>
-<p>可以看到有两张声卡，一个是<code>default</code>，一个是<code>HDA Intel PCH</code>，但其实我只有一张声卡</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ aplay -l
-</span></span><span class="line"><span class="cl">**** List of PLAYBACK Hardware Devices ****
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 0: ALC255 Analog <span class="o">[</span>ALC255 Analog<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 3: HDMI <span class="m">0</span> <span class="o">[</span>HDMI 0<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 7: HDMI <span class="m">1</span> <span class="o">[</span>HDMI 1<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 8: HDMI <span class="m">2</span> <span class="o">[</span>HDMI 2<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 9: HDMI <span class="m">3</span> <span class="o">[</span>HDMI 3<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span><span class="line"><span class="cl">card 0: PCH <span class="o">[</span>HDA Intel PCH<span class="o">]</span>, device 10: HDMI <span class="m">4</span> <span class="o">[</span>HDMI 4<span class="o">]</span>
-</span></span><span class="line"><span class="cl">  Subdevices: 1/1
-</span></span><span class="line"><span class="cl">  Subdevice <span class="c1">#0: subdevice #0</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时我观察到在无声音的状态下使用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yychi@~&gt; speaker-test -c <span class="m">2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">speaker-test 1.2.6
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Playback device is default
-</span></span><span class="line"><span class="cl">Stream parameters are 48000Hz, S16_LE, <span class="m">2</span> channels
-</span></span><span class="line"><span class="cl">Using <span class="m">16</span> octaves of pink noise
-</span></span><span class="line"><span class="cl">Rate <span class="nb">set</span> to 48000Hz <span class="o">(</span>requested 48000Hz<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Buffer size range from <span class="m">96</span> to <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl">Period size range from <span class="m">32</span> to <span class="m">349526</span>
-</span></span><span class="line"><span class="cl">Using max buffer size <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Periods</span> <span class="o">=</span> <span class="m">4</span>
-</span></span><span class="line"><span class="cl">was <span class="nb">set</span> <span class="nv">period_size</span> <span class="o">=</span> <span class="m">262144</span>
-</span></span><span class="line"><span class="cl">was <span class="nb">set</span> <span class="nv">buffer_size</span> <span class="o">=</span> <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl"> <span class="m">0</span> - Front Left
-</span></span><span class="line"><span class="cl"> <span class="m">1</span> - Front Right
-</span></span><span class="line"><span class="cl">^CTime per <span class="nv">period</span> <span class="o">=</span> 10.942892
-</span></span><span class="line"><span class="cl">yychi@~&gt; speaker-test -c <span class="m">2</span> -D hw:0
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">speaker-test 1.2.6
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Playback device is hw:0
-</span></span><span class="line"><span class="cl">Stream parameters are 48000Hz, S16_LE, <span class="m">2</span> channels
-</span></span><span class="line"><span class="cl">Using <span class="m">16</span> octaves of pink noise
-</span></span><span class="line"><span class="cl">Rate <span class="nb">set</span> to 48000Hz <span class="o">(</span>requested 48000Hz<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Buffer size range from <span class="m">64</span> to <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl">Period size range from <span class="m">32</span> to <span class="m">524288</span>
-</span></span><span class="line"><span class="cl">Using max buffer size <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Periods</span> <span class="o">=</span> <span class="m">4</span>
-</span></span><span class="line"><span class="cl">was <span class="nb">set</span> <span class="nv">period_size</span> <span class="o">=</span> <span class="m">262144</span>
-</span></span><span class="line"><span class="cl">was <span class="nb">set</span> <span class="nv">buffer_size</span> <span class="o">=</span> <span class="m">1048576</span>
-</span></span><span class="line"><span class="cl"> <span class="m">0</span> - Front Left
-</span></span><span class="line"><span class="cl"> <span class="m">1</span> - Front Right
-</span></span><span class="line"><span class="cl">^CTime per <span class="nv">period</span> <span class="o">=</span> 5.761266
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>测试扬声器的时候，指定device为<code>hw:0</code>总能够发出声音，此时便想到很可能是系统默认的播放设备（playback）不对，因此按照<a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card">archwiki上的教程</a>设置了默认声卡。其实就是新建一个文件然后重启：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># file: ~/.asoundrc</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">pcm.!default <span class="o">{</span>
-</span></span><span class="line"><span class="cl">   <span class="nb">type</span> hw
-</span></span><span class="line"><span class="cl">   card PCH
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ctl.!default <span class="o">{</span>
-</span></span><span class="line"><span class="cl">   <span class="nb">type</span> hw
-</span></span><span class="line"><span class="cl">   card PCH
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>重启之后果然立刻就有声音了，正当我被折腾成功的喜悦包围之时，我试着将耳机插入耳机孔，tmd根本就没效果。这不完犊子了吗，修好了外放，耳机失效了。接着就是一顿找，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">alsactl restore
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>拯救了耳机的输出，但没有完全拯救，因为这个时候耳机和外部扬声器都有声音。也就是说，他不会根据耳机的插拔而切换输出了，而是两方都有输出。</p>
-<p>然而就是根据耳机插拔自动切换输出设备的功能，在我设置了默认声卡之后，一直得不到解决。此前，虽然需要插拔一下耳机，外部扬声器才能播放声音，好歹耳机的插拔还是能正常生效的。所以，我还是删掉了默认声卡的配置，转而寻求“开机后如何切换sound playback”。直到我找到<a href="https://unix.stackexchange.com/questions/62818/how-can-i-switch-between-different-audio-output-hardware-using-the-shell">参考1</a>.</p>
-<p>其中提到&quot;card-profile&quot;这个概念，听起来像是声卡的情景模式，通过如下命令列出所有支持的card-profiles:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span><span class="lnt">87
-</span><span class="lnt">88
-</span><span class="lnt">89
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yychi@~&gt; pacmd list-cards
-</span></span><span class="line"><span class="cl"><span class="m">1</span> card<span class="o">(</span>s<span class="o">)</span> available.
-</span></span><span class="line"><span class="cl">    index: <span class="m">0</span>
-</span></span><span class="line"><span class="cl">	name: &lt;alsa_card.pci-0000_00_1f.3&gt;
-</span></span><span class="line"><span class="cl">	driver: &lt;module-alsa-card.c&gt;
-</span></span><span class="line"><span class="cl">	owner module: <span class="m">6</span>
-</span></span><span class="line"><span class="cl">	properties:
-</span></span><span class="line"><span class="cl">		alsa.card <span class="o">=</span> <span class="s2">&#34;0&#34;</span>
-</span></span><span class="line"><span class="cl">		alsa.card_name <span class="o">=</span> <span class="s2">&#34;HDA Intel PCH&#34;</span>
-</span></span><span class="line"><span class="cl">		alsa.long_card_name <span class="o">=</span> <span class="s2">&#34;HDA Intel PCH at 0xb4220000 irq 135&#34;</span>
-</span></span><span class="line"><span class="cl">		alsa.driver_name <span class="o">=</span> <span class="s2">&#34;snd_hda_intel&#34;</span>
-</span></span><span class="line"><span class="cl">		device.bus_path <span class="o">=</span> <span class="s2">&#34;pci-0000:00:1f.3&#34;</span>
-</span></span><span class="line"><span class="cl">		sysfs.path <span class="o">=</span> <span class="s2">&#34;/devices/pci0000:00/0000:00:1f.3/sound/card0&#34;</span>
-</span></span><span class="line"><span class="cl">		device.bus <span class="o">=</span> <span class="s2">&#34;pci&#34;</span>
-</span></span><span class="line"><span class="cl">		device.vendor.id <span class="o">=</span> <span class="s2">&#34;8086&#34;</span>
-</span></span><span class="line"><span class="cl">		device.vendor.name <span class="o">=</span> <span class="s2">&#34;Intel Corporation&#34;</span>
-</span></span><span class="line"><span class="cl">		device.product.id <span class="o">=</span> <span class="s2">&#34;9d71&#34;</span>
-</span></span><span class="line"><span class="cl">		device.product.name <span class="o">=</span> <span class="s2">&#34;Sunrise Point-LP HD Audio&#34;</span>
-</span></span><span class="line"><span class="cl">		device.form_factor <span class="o">=</span> <span class="s2">&#34;internal&#34;</span>
-</span></span><span class="line"><span class="cl">		device.string <span class="o">=</span> <span class="s2">&#34;0&#34;</span>
-</span></span><span class="line"><span class="cl">		device.description <span class="o">=</span> <span class="s2">&#34;内置音频&#34;</span>
-</span></span><span class="line"><span class="cl">		module-udev-detect.discovered <span class="o">=</span> <span class="s2">&#34;1&#34;</span>
-</span></span><span class="line"><span class="cl">		device.icon_name <span class="o">=</span> <span class="s2">&#34;audio-card-pci&#34;</span>
-</span></span><span class="line"><span class="cl">	profiles:
-</span></span><span class="line"><span class="cl">		input:analog-stereo: 模拟立体声 输入 <span class="o">(</span>priority 32833, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:analog-stereo: 模拟立体声 输出 <span class="o">(</span>priority 39268, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:analog-stereo+input:analog-stereo: 模拟立体声双工 <span class="o">(</span>priority 39333, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo: Digital Stereo <span class="o">(</span>HDMI<span class="o">)</span> 输出 <span class="o">(</span>priority 5900, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo+input:analog-stereo: Digital Stereo <span class="o">(</span>HDMI<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 5965, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround: Digital Surround 5.1 <span class="o">(</span>HDMI<span class="o">)</span> 输出 <span class="o">(</span>priority 800, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround+input:analog-stereo: Digital Surround 5.1 <span class="o">(</span>HDMI<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 865, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71: Digital Surround 7.1 <span class="o">(</span>HDMI<span class="o">)</span> 输出 <span class="o">(</span>priority 800, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71+input:analog-stereo: Digital Surround 7.1 <span class="o">(</span>HDMI<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 865, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra1: Digital Stereo <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 <span class="o">(</span>priority 5700, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra1+input:analog-stereo: Digital Stereo <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 5765, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra1: Digital Surround 5.1 <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra1+input:analog-stereo: Digital Surround 5.1 <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra1: Digital Surround 7.1 <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra1+input:analog-stereo: Digital Surround 7.1 <span class="o">(</span>HDMI 2<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra2: Digital Stereo <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 <span class="o">(</span>priority 5700, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra2+input:analog-stereo: Digital Stereo <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 5765, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra2: Digital Surround 5.1 <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra2+input:analog-stereo: Digital Surround 5.1 <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra2: Digital Surround 7.1 <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra2+input:analog-stereo: Digital Surround 7.1 <span class="o">(</span>HDMI 3<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra3: Digital Stereo <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 <span class="o">(</span>priority 5700, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra3+input:analog-stereo: Digital Stereo <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 5765, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra3: Digital Surround 5.1 <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra3+input:analog-stereo: Digital Surround 5.1 <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra3: Digital Surround 7.1 <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra3+input:analog-stereo: Digital Surround 7.1 <span class="o">(</span>HDMI 4<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra4: Digital Stereo <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 <span class="o">(</span>priority 5700, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-stereo-extra4+input:analog-stereo: Digital Stereo <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 5765, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra4: Digital Surround 5.1 <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround-extra4+input:analog-stereo: Digital Surround 5.1 <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra4: Digital Surround 7.1 <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 <span class="o">(</span>priority 600, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		output:hdmi-surround71-extra4+input:analog-stereo: Digital Surround 7.1 <span class="o">(</span>HDMI 5<span class="o">)</span> 输出 + 模拟立体声 输入 <span class="o">(</span>priority 665, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		off: 关 <span class="o">(</span>priority 0, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">	active profile: &lt;output:hdmi-stereo-extra1+input:analog-stereo&gt;
-</span></span><span class="line"><span class="cl">	sinks:
-</span></span><span class="line"><span class="cl">		alsa_output.pci-0000_00_1f.3.hdmi-stereo-extra1/#0: 内置音频 Digital Stereo <span class="o">(</span>HDMI 2<span class="o">)</span>
-</span></span><span class="line"><span class="cl">	sources:
-</span></span><span class="line"><span class="cl">		alsa_output.pci-0000_00_1f.3.hdmi-stereo-extra1.monitor/#0: Monitor of 内置音频 Digital Stereo <span class="o">(</span>HDMI 2<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		alsa_input.pci-0000_00_1f.3.analog-stereo/#1: 内置音频 模拟立体声
-</span></span><span class="line"><span class="cl">	ports:
-</span></span><span class="line"><span class="cl">		analog-input-mic: Microphone <span class="o">(</span>priority 8700, latency offset <span class="m">0</span> usec, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;audio-input-microphone&#34;</span>
-</span></span><span class="line"><span class="cl">		analog-output-speaker: Speakers <span class="o">(</span>priority 10000, latency offset <span class="m">0</span> usec, available: unknown<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;audio-speakers&#34;</span>
-</span></span><span class="line"><span class="cl">		analog-output-headphones: Headphones <span class="o">(</span>priority 9900, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;audio-headphones&#34;</span>
-</span></span><span class="line"><span class="cl">		hdmi-output-0: HDMI / DisplayPort <span class="o">(</span>priority 5900, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>  <span class="c1"># available: yes if headphone plugged</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;video-display&#34;</span>
-</span></span><span class="line"><span class="cl">		hdmi-output-1: HDMI / DisplayPort <span class="m">2</span> <span class="o">(</span>priority 5800, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;video-display&#34;</span>
-</span></span><span class="line"><span class="cl">		hdmi-output-2: HDMI / DisplayPort <span class="m">3</span> <span class="o">(</span>priority 5700, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;video-display&#34;</span>
-</span></span><span class="line"><span class="cl">		hdmi-output-3: HDMI / DisplayPort <span class="m">4</span> <span class="o">(</span>priority 5600, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;video-display&#34;</span>
-</span></span><span class="line"><span class="cl">		hdmi-output-4: HDMI / DisplayPort <span class="m">5</span> <span class="o">(</span>priority 5500, latency offset <span class="m">0</span> usec, available: no<span class="o">)</span>
-</span></span><span class="line"><span class="cl">			properties:
-</span></span><span class="line"><span class="cl">				device.icon_name <span class="o">=</span> <span class="s2">&#34;video-display&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>接着</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>设置声卡的情景模式，敲完之后外部扬声器就有声音了，而且耳机插拔也是正常生效的。值得注意的是，插入耳机后，上述注释处就变成yes了。</p>
-<p>这个问题暂时解决到这里，等以后有时间看能否完全解决！</p>
-<p>当天更新：重启之后发现不用重新再走一遍上述流程，可以看到&quot;active profile: <a href="output:hdmi-stereo-extra1+input:analog-stereo">output:hdmi-stereo-extra1+input:analog-stereo</a>&ldquo;已经持久化改变了。那么这个问题就算解决啦！</p>
-<h2 id="references">References</h2>
-<ol>
-<li><a href="https://unix.stackexchange.com/questions/62818/how-can-i-switch-between-different-audio-output-hardware-using-the-shell">How can I switch between different audio output hardware using the shell?</a></li>
-<li><a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card">Archwiki: Advanced Linux Sound Architecture</a></li>
-<li><a href="https://bbs.archlinux.org/viewtopic.php?pid=981405#p981405/">[SOLVED] sound not working</a></li>
-</ol>
-
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Yychi</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        March 26, 2022
-        
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-<footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/static-in-cpp/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">C&#43;&#43; 中的 static 关键字</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/touchpad-horiz-scroll/">
-            <span class="next-text nav-default">Linux笔记本触摸板水平滚动问题</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz',
-        appKey: 'fjzzXaIgPDyMlxqtN0oBWeNN',
-        notify:  false ,
-        verify:  false ,
-        avatar:'mm',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        visitor:  false 
-    });
-  </script>
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
-  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2018 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Linux开机无声音 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.111.3 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.651de86251ddc73a34038bb147ea19626ef5f3544a594e731576dd8b8bc28c52.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto+Serif+SC"><meta property="og:title" content="Linux开机无声音"><meta property="og:description" content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-03-26T18:45:16+08:00"><meta property="article:modified_time" content="2022-03-26T18:45:16+08:00"><meta itemprop=name content="Linux开机无声音"><meta itemprop=description content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"><meta itemprop=datePublished content="2022-03-26T18:45:16+08:00"><meta itemprop=dateModified content="2022-03-26T18:45:16+08:00"><meta itemprop=wordCount content="2355"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux开机无声音"><meta name=twitter:description content="问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Linux开机无声音</h1><div class=post-meta><span class=post-time>March 26, 2022</span><div class=post-category><a href=/categories/linux/>linux</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#references>References</a></li></ul></nav></div></div><div class=post-content><p>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。</p><p>但问题始终要解决的，我总不可能每次开机的时候旁边都有个有线耳机吧。所以要解决这个问题，可从以下两个路子着手：</p><ol><li>彻底解决这个问题，每次开机正常有声音，插入耳机，则声音通过耳机输出；</li><li>退而求其次，能在开机之后不需要插拔耳机，也能将外部扬声器声音释放出来，比如一个shell命令激活。</li></ol><p>目前我只做到了第二种，尚未完美解决。</p><p>记录一下排查问题的大致流程：</p><p>首先上网查了一下相关问题，怀疑是pulseaudio的问题，结果偶然某一次正常播放音频的时候，我发现杀掉pulseaudio的进程竟然毫无影响，因此可能不是它的问题。</p><p>然后查看alsamixer得知：</p><p><img src=AlsaMixer.png alt></p><p>可以看到有两张声卡，一个是<code>default</code>，一个是<code>HDA Intel PCH</code>，但其实我只有一张声卡</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ aplay -l
+</span></span><span class=line><span class=cl>**** List of PLAYBACK Hardware Devices ****
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 0: ALC255 Analog <span class=o>[</span>ALC255 Analog<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 3: HDMI <span class=m>0</span> <span class=o>[</span>HDMI 0<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 7: HDMI <span class=m>1</span> <span class=o>[</span>HDMI 1<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 8: HDMI <span class=m>2</span> <span class=o>[</span>HDMI 2<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 9: HDMI <span class=m>3</span> <span class=o>[</span>HDMI 3<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span><span class=line><span class=cl>card 0: PCH <span class=o>[</span>HDA Intel PCH<span class=o>]</span>, device 10: HDMI <span class=m>4</span> <span class=o>[</span>HDMI 4<span class=o>]</span>
+</span></span><span class=line><span class=cl>  Subdevices: 1/1
+</span></span><span class=line><span class=cl>  Subdevice <span class=c1>#0: subdevice #0</span>
+</span></span></code></pre></td></tr></table></div></div><p>此时我观察到在无声音的状态下使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yychi@~&gt; speaker-test -c <span class=m>2</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>speaker-test 1.2.6
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Playback device is default
+</span></span><span class=line><span class=cl>Stream parameters are 48000Hz, S16_LE, <span class=m>2</span> channels
+</span></span><span class=line><span class=cl>Using <span class=m>16</span> octaves of pink noise
+</span></span><span class=line><span class=cl>Rate <span class=nb>set</span> to 48000Hz <span class=o>(</span>requested 48000Hz<span class=o>)</span>
+</span></span><span class=line><span class=cl>Buffer size range from <span class=m>96</span> to <span class=m>1048576</span>
+</span></span><span class=line><span class=cl>Period size range from <span class=m>32</span> to <span class=m>349526</span>
+</span></span><span class=line><span class=cl>Using max buffer size <span class=m>1048576</span>
+</span></span><span class=line><span class=cl><span class=nv>Periods</span> <span class=o>=</span> <span class=m>4</span>
+</span></span><span class=line><span class=cl>was <span class=nb>set</span> <span class=nv>period_size</span> <span class=o>=</span> <span class=m>262144</span>
+</span></span><span class=line><span class=cl>was <span class=nb>set</span> <span class=nv>buffer_size</span> <span class=o>=</span> <span class=m>1048576</span>
+</span></span><span class=line><span class=cl> <span class=m>0</span> - Front Left
+</span></span><span class=line><span class=cl> <span class=m>1</span> - Front Right
+</span></span><span class=line><span class=cl>^CTime per <span class=nv>period</span> <span class=o>=</span> 10.942892
+</span></span><span class=line><span class=cl>yychi@~&gt; speaker-test -c <span class=m>2</span> -D hw:0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>speaker-test 1.2.6
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Playback device is hw:0
+</span></span><span class=line><span class=cl>Stream parameters are 48000Hz, S16_LE, <span class=m>2</span> channels
+</span></span><span class=line><span class=cl>Using <span class=m>16</span> octaves of pink noise
+</span></span><span class=line><span class=cl>Rate <span class=nb>set</span> to 48000Hz <span class=o>(</span>requested 48000Hz<span class=o>)</span>
+</span></span><span class=line><span class=cl>Buffer size range from <span class=m>64</span> to <span class=m>1048576</span>
+</span></span><span class=line><span class=cl>Period size range from <span class=m>32</span> to <span class=m>524288</span>
+</span></span><span class=line><span class=cl>Using max buffer size <span class=m>1048576</span>
+</span></span><span class=line><span class=cl><span class=nv>Periods</span> <span class=o>=</span> <span class=m>4</span>
+</span></span><span class=line><span class=cl>was <span class=nb>set</span> <span class=nv>period_size</span> <span class=o>=</span> <span class=m>262144</span>
+</span></span><span class=line><span class=cl>was <span class=nb>set</span> <span class=nv>buffer_size</span> <span class=o>=</span> <span class=m>1048576</span>
+</span></span><span class=line><span class=cl> <span class=m>0</span> - Front Left
+</span></span><span class=line><span class=cl> <span class=m>1</span> - Front Right
+</span></span><span class=line><span class=cl>^CTime per <span class=nv>period</span> <span class=o>=</span> 5.761266
+</span></span></code></pre></td></tr></table></div></div><p>测试扬声器的时候，指定device为<code>hw:0</code>总能够发出声音，此时便想到很可能是系统默认的播放设备（playback）不对，因此按照<a href=https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card>archwiki上的教程</a>设置了默认声卡。其实就是新建一个文件然后重启：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=c1># file: ~/.asoundrc</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pcm.!default <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=nb>type</span> hw
+</span></span><span class=line><span class=cl>   card PCH
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ctl.!default <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=nb>type</span> hw
+</span></span><span class=line><span class=cl>   card PCH
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>重启之后果然立刻就有声音了，正当我被折腾成功的喜悦包围之时，我试着将耳机插入耳机孔，tmd根本就没效果。这不完犊子了吗，修好了外放，耳机失效了。接着就是一顿找，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>alsactl restore
+</span></span></code></pre></td></tr></table></div></div><p>拯救了耳机的输出，但没有完全拯救，因为这个时候耳机和外部扬声器都有声音。也就是说，他不会根据耳机的插拔而切换输出了，而是两方都有输出。</p><p>然而就是根据耳机插拔自动切换输出设备的功能，在我设置了默认声卡之后，一直得不到解决。此前，虽然需要插拔一下耳机，外部扬声器才能播放声音，好歹耳机的插拔还是能正常生效的。所以，我还是删掉了默认声卡的配置，转而寻求“开机后如何切换sound playback”。直到我找到<a href=https://unix.stackexchange.com/questions/62818/how-can-i-switch-between-different-audio-output-hardware-using-the-shell>参考1</a>.</p><p>其中提到"card-profile"这个概念，听起来像是声卡的情景模式，通过如下命令列出所有支持的card-profiles:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yychi@~&gt; pacmd list-cards
+</span></span><span class=line><span class=cl><span class=m>1</span> card<span class=o>(</span>s<span class=o>)</span> available.
+</span></span><span class=line><span class=cl>    index: <span class=m>0</span>
+</span></span><span class=line><span class=cl>	name: &lt;alsa_card.pci-0000_00_1f.3&gt;
+</span></span><span class=line><span class=cl>	driver: &lt;module-alsa-card.c&gt;
+</span></span><span class=line><span class=cl>	owner module: <span class=m>6</span>
+</span></span><span class=line><span class=cl>	properties:
+</span></span><span class=line><span class=cl>		alsa.card <span class=o>=</span> <span class=s2>&#34;0&#34;</span>
+</span></span><span class=line><span class=cl>		alsa.card_name <span class=o>=</span> <span class=s2>&#34;HDA Intel PCH&#34;</span>
+</span></span><span class=line><span class=cl>		alsa.long_card_name <span class=o>=</span> <span class=s2>&#34;HDA Intel PCH at 0xb4220000 irq 135&#34;</span>
+</span></span><span class=line><span class=cl>		alsa.driver_name <span class=o>=</span> <span class=s2>&#34;snd_hda_intel&#34;</span>
+</span></span><span class=line><span class=cl>		device.bus_path <span class=o>=</span> <span class=s2>&#34;pci-0000:00:1f.3&#34;</span>
+</span></span><span class=line><span class=cl>		sysfs.path <span class=o>=</span> <span class=s2>&#34;/devices/pci0000:00/0000:00:1f.3/sound/card0&#34;</span>
+</span></span><span class=line><span class=cl>		device.bus <span class=o>=</span> <span class=s2>&#34;pci&#34;</span>
+</span></span><span class=line><span class=cl>		device.vendor.id <span class=o>=</span> <span class=s2>&#34;8086&#34;</span>
+</span></span><span class=line><span class=cl>		device.vendor.name <span class=o>=</span> <span class=s2>&#34;Intel Corporation&#34;</span>
+</span></span><span class=line><span class=cl>		device.product.id <span class=o>=</span> <span class=s2>&#34;9d71&#34;</span>
+</span></span><span class=line><span class=cl>		device.product.name <span class=o>=</span> <span class=s2>&#34;Sunrise Point-LP HD Audio&#34;</span>
+</span></span><span class=line><span class=cl>		device.form_factor <span class=o>=</span> <span class=s2>&#34;internal&#34;</span>
+</span></span><span class=line><span class=cl>		device.string <span class=o>=</span> <span class=s2>&#34;0&#34;</span>
+</span></span><span class=line><span class=cl>		device.description <span class=o>=</span> <span class=s2>&#34;内置音频&#34;</span>
+</span></span><span class=line><span class=cl>		module-udev-detect.discovered <span class=o>=</span> <span class=s2>&#34;1&#34;</span>
+</span></span><span class=line><span class=cl>		device.icon_name <span class=o>=</span> <span class=s2>&#34;audio-card-pci&#34;</span>
+</span></span><span class=line><span class=cl>	profiles:
+</span></span><span class=line><span class=cl>		input:analog-stereo: 模拟立体声 输入 <span class=o>(</span>priority 32833, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:analog-stereo: 模拟立体声 输出 <span class=o>(</span>priority 39268, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:analog-stereo+input:analog-stereo: 模拟立体声双工 <span class=o>(</span>priority 39333, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo: Digital Stereo <span class=o>(</span>HDMI<span class=o>)</span> 输出 <span class=o>(</span>priority 5900, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo+input:analog-stereo: Digital Stereo <span class=o>(</span>HDMI<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 5965, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround: Digital Surround 5.1 <span class=o>(</span>HDMI<span class=o>)</span> 输出 <span class=o>(</span>priority 800, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround+input:analog-stereo: Digital Surround 5.1 <span class=o>(</span>HDMI<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 865, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71: Digital Surround 7.1 <span class=o>(</span>HDMI<span class=o>)</span> 输出 <span class=o>(</span>priority 800, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71+input:analog-stereo: Digital Surround 7.1 <span class=o>(</span>HDMI<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 865, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra1: Digital Stereo <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 <span class=o>(</span>priority 5700, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra1+input:analog-stereo: Digital Stereo <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 5765, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra1: Digital Surround 5.1 <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra1+input:analog-stereo: Digital Surround 5.1 <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra1: Digital Surround 7.1 <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra1+input:analog-stereo: Digital Surround 7.1 <span class=o>(</span>HDMI 2<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra2: Digital Stereo <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 <span class=o>(</span>priority 5700, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra2+input:analog-stereo: Digital Stereo <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 5765, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra2: Digital Surround 5.1 <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra2+input:analog-stereo: Digital Surround 5.1 <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra2: Digital Surround 7.1 <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra2+input:analog-stereo: Digital Surround 7.1 <span class=o>(</span>HDMI 3<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra3: Digital Stereo <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 <span class=o>(</span>priority 5700, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra3+input:analog-stereo: Digital Stereo <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 5765, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra3: Digital Surround 5.1 <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra3+input:analog-stereo: Digital Surround 5.1 <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra3: Digital Surround 7.1 <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra3+input:analog-stereo: Digital Surround 7.1 <span class=o>(</span>HDMI 4<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra4: Digital Stereo <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 <span class=o>(</span>priority 5700, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-stereo-extra4+input:analog-stereo: Digital Stereo <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 5765, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra4: Digital Surround 5.1 <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround-extra4+input:analog-stereo: Digital Surround 5.1 <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra4: Digital Surround 7.1 <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 <span class=o>(</span>priority 600, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>		output:hdmi-surround71-extra4+input:analog-stereo: Digital Surround 7.1 <span class=o>(</span>HDMI 5<span class=o>)</span> 输出 + 模拟立体声 输入 <span class=o>(</span>priority 665, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>		off: 关 <span class=o>(</span>priority 0, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>	active profile: &lt;output:hdmi-stereo-extra1+input:analog-stereo&gt;
+</span></span><span class=line><span class=cl>	sinks:
+</span></span><span class=line><span class=cl>		alsa_output.pci-0000_00_1f.3.hdmi-stereo-extra1/#0: 内置音频 Digital Stereo <span class=o>(</span>HDMI 2<span class=o>)</span>
+</span></span><span class=line><span class=cl>	sources:
+</span></span><span class=line><span class=cl>		alsa_output.pci-0000_00_1f.3.hdmi-stereo-extra1.monitor/#0: Monitor of 内置音频 Digital Stereo <span class=o>(</span>HDMI 2<span class=o>)</span>
+</span></span><span class=line><span class=cl>		alsa_input.pci-0000_00_1f.3.analog-stereo/#1: 内置音频 模拟立体声
+</span></span><span class=line><span class=cl>	ports:
+</span></span><span class=line><span class=cl>		analog-input-mic: Microphone <span class=o>(</span>priority 8700, latency offset <span class=m>0</span> usec, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;audio-input-microphone&#34;</span>
+</span></span><span class=line><span class=cl>		analog-output-speaker: Speakers <span class=o>(</span>priority 10000, latency offset <span class=m>0</span> usec, available: unknown<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;audio-speakers&#34;</span>
+</span></span><span class=line><span class=cl>		analog-output-headphones: Headphones <span class=o>(</span>priority 9900, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;audio-headphones&#34;</span>
+</span></span><span class=line><span class=cl>		hdmi-output-0: HDMI / DisplayPort <span class=o>(</span>priority 5900, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>  <span class=c1># available: yes if headphone plugged</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;video-display&#34;</span>
+</span></span><span class=line><span class=cl>		hdmi-output-1: HDMI / DisplayPort <span class=m>2</span> <span class=o>(</span>priority 5800, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;video-display&#34;</span>
+</span></span><span class=line><span class=cl>		hdmi-output-2: HDMI / DisplayPort <span class=m>3</span> <span class=o>(</span>priority 5700, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;video-display&#34;</span>
+</span></span><span class=line><span class=cl>		hdmi-output-3: HDMI / DisplayPort <span class=m>4</span> <span class=o>(</span>priority 5600, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;video-display&#34;</span>
+</span></span><span class=line><span class=cl>		hdmi-output-4: HDMI / DisplayPort <span class=m>5</span> <span class=o>(</span>priority 5500, latency offset <span class=m>0</span> usec, available: no<span class=o>)</span>
+</span></span><span class=line><span class=cl>			properties:
+</span></span><span class=line><span class=cl>				device.icon_name <span class=o>=</span> <span class=s2>&#34;video-display&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>接着</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
+</span></span></code></pre></td></tr></table></div></div><p>设置声卡的情景模式，敲完之后外部扬声器就有声音了，而且耳机插拔也是正常生效的。值得注意的是，插入耳机后，上述注释处就变成yes了。</p><p>这个问题暂时解决到这里，等以后有时间看能否完全解决！</p><p>当天更新：重启之后发现不用重新再走一遍上述流程，可以看到"active profile: <a href=output:hdmi-stereo-extra1+input:analog-stereo>output:hdmi-stereo-extra1+input:analog-stereo</a>&ldquo;已经持久化改变了。那么这个问题就算解决啦！</p><h2 id=references>References</h2><ol><li><a href=https://unix.stackexchange.com/questions/62818/how-can-i-switch-between-different-audio-output-hardware-using-the-shell>How can I switch between different audio output hardware using the shell?</a></li><li><a href=https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card>Archwiki: Advanced Linux Sound Architecture</a></li><li><a href="https://bbs.archlinux.org/viewtopic.php?pid=981405#p981405/">[SOLVED] sound not working</a></li></ol></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>March 26, 2022</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/static-in-cpp/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">C++ 中的 static 关键字</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/touchpad-horiz-scroll/><span class="next-text nav-default">Linux笔记本触摸板水平滚动问题</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz",appKey:"fjzzXaIgPDyMlxqtN0oBWeNN",notify:!1,verify:!1,avatar:"mm",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a>
+<a href=https://guyueshui.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2018 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

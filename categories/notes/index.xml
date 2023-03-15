@@ -1,321 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>notes on 水阙</title>
-    <link>https://guyueshui.github.io/categories/notes/</link>
-    <description>Recent content in notes on 水阙</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 01 May 2022 00:25:52 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Archlinux重置keyring</title>
-      <link>https://guyueshui.github.io/post/archlinx-keyring-broken/</link>
-      <pubDate>Sun, 01 May 2022 00:25:52 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/archlinx-keyring-broken/</guid>
-      <description>&lt;p&gt;今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，原来是GPG存的key需要更新信息了。由于&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --refresh-keys
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;执行过程漫长，我新开了一个窗口直接&lt;code&gt;pacman -Syu&lt;/code&gt;了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43; 中的 static 关键字</title>
-      <link>https://guyueshui.github.io/post/static-in-cpp/</link>
-      <pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/static-in-cpp/</guid>
-      <description>&lt;h2 id=&#34;static-members&#34;&gt;Static members&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// non-static member (i.e., `data` is not visible in `fun1`
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;fun2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;// valid, equivalent to the following
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ol&gt;
-&lt;li&gt;静态成员不能访问非静态成员（因为静态成员独立与类的实例（即对象）而存在，为了在没有对象被创建的情况下，静态成员还是可以使用，所以不能访问非静态成员。）&lt;/li&gt;
-&lt;li&gt;同理，类的任何对象不包含静态数据成员&lt;/li&gt;
-&lt;li&gt;静态成员不与对象，不与&lt;code&gt;this&lt;/code&gt;指针发生交互，作为结果，静态成员函数不能声明为&lt;code&gt;const&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;可以通过类的对象调用静态成员函数，但此调用跟对象的状态并无关系，也就是说换个对象来调用是等价的，都等价于使用类名加域作用符来调用&lt;/li&gt;
-&lt;li&gt;静态成员一般定义在类的外部，因为每个对象都共享静态成员，避免多次定义&lt;/li&gt;
-&lt;li&gt;View static member as a normal function that has nothing to do with the class, except you must use &lt;code&gt;::&lt;/code&gt; to access static members&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>A point of python metaclass</title>
-      <link>https://guyueshui.github.io/post/python-metaclass/</link>
-      <pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/python-metaclass/</guid>
-      <description>Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&amp;rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary</description>
-    </item>
-    
-    <item>
-      <title>V3Ray的配置笔记</title>
-      <link>https://guyueshui.github.io/post/build-your-ladder/</link>
-      <pubDate>Tue, 07 Dec 2021 22:05:42 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/build-your-ladder/</guid>
-      <description>学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了</description>
-    </item>
-    
-    <item>
-      <title>Python Iterables</title>
-      <link>https://guyueshui.github.io/post/python-iterables/</link>
-      <pubDate>Sun, 21 Feb 2021 22:26:30 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/python-iterables/</guid>
-      <description>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己</description>
-    </item>
-    
-    <item>
-      <title>一个really simple的LaTeX宏包</title>
-      <link>https://guyueshui.github.io/post/tex-sty-basic/</link>
-      <pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/tex-sty-basic/</guid>
-      <description>众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近</description>
-    </item>
-    
-    <item>
-      <title>Gnome应用启动缓慢</title>
-      <link>https://guyueshui.github.io/post/gnome-app-slow-start/</link>
-      <pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid>
-      <description>先看环境： $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso. :ssssssso. Terminal: urxvt :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz</description>
-    </item>
-    
-    <item>
-      <title>Metapost学习笔记</title>
-      <link>https://guyueshui.github.io/post/metapost/</link>
-      <pubDate>Tue, 31 Mar 2020 09:20:44 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/metapost/</guid>
-      <description>想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>转义字符到底是什么</title>
-      <link>https://guyueshui.github.io/post/what-is-escape-character/</link>
-      <pubDate>Wed, 18 Mar 2020 22:41:06 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/what-is-escape-character/</guid>
-      <description>转义字符到底是啥？ 实不相瞒我就是因为不知道才写下这篇文章，不，准确的说是这篇笔记orz，既然是笔记，无所谓抄不抄了。每次说到转义字符，多少有</description>
-    </item>
-    
-    <item>
-      <title>Brief Introduction to Shell Script</title>
-      <link>https://guyueshui.github.io/post/shell-intro/</link>
-      <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/shell-intro/</guid>
-      <description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>notes on 水阙</title><link>https://guyueshui.github.io/categories/notes/</link><description>Recent content in notes on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 May 2022 00:25:52 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Archlinux重置keyring</title><link>https://guyueshui.github.io/post/archlinx-keyring-broken/</link><pubDate>Sun, 01 May 2022 00:25:52 +0800</pubDate><guid>https://guyueshui.github.io/post/archlinx-keyring-broken/</guid><description>&lt;p>今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，原来是GPG存的key需要更新信息了。由于&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pacman-key --refresh-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行过程漫长，我新开了一个窗口直接&lt;code>pacman -Syu&lt;/code>了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。&lt;/p></description></item><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members">Static members&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-c++" data-lang="c++">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">A&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">public&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// non-static member (i.e., `data` is not visible in `fun1`
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">static&lt;/span> &lt;span class="n">fun1&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">fun2&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">private&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">static&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">sata&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">A&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fun1&lt;/span>&lt;span class="p">();&lt;/span> &lt;span class="c1">// valid, equivalent to the following
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">A&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">fun1&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol>
+&lt;li>静态成员不能访问非静态成员（因为静态成员独立与类的实例（即对象）而存在，为了在没有对象被创建的情况下，静态成员还是可以使用，所以不能访问非静态成员。）&lt;/li>
+&lt;li>同理，类的任何对象不包含静态数据成员&lt;/li>
+&lt;li>静态成员不与对象，不与&lt;code>this&lt;/code>指针发生交互，作为结果，静态成员函数不能声明为&lt;code>const&lt;/code>&lt;/li>
+&lt;li>可以通过类的对象调用静态成员函数，但此调用跟对象的状态并无关系，也就是说换个对象来调用是等价的，都等价于使用类名加域作用符来调用&lt;/li>
+&lt;li>静态成员一般定义在类的外部，因为每个对象都共享静态成员，避免多次定义&lt;/li>
+&lt;li>View static member as a normal function that has nothing to do with the class, except you must use &lt;code>::&lt;/code> to access static members&lt;/li>
+&lt;/ol></description></item><item><title>A point of python metaclass</title><link>https://guyueshui.github.io/post/python-metaclass/</link><pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate><guid>https://guyueshui.github.io/post/python-metaclass/</guid><description>Create class dynamically Python doc says: By default, classes are constructed using type(). The class body is executed in a new namespace and the class name is bound locally to the result of type(name, bases, namespace). That&amp;rsquo;s means, a class statement is equivalent to the call of type method with three arguments: name: name of the class bases: tuple of the parent class (for inheritance, can be empty) attrs: dictionary</description></item><item><title>V3Ray的配置笔记</title><link>https://guyueshui.github.io/post/build-your-ladder/</link><pubDate>Tue, 07 Dec 2021 22:05:42 +0800</pubDate><guid>https://guyueshui.github.io/post/build-your-ladder/</guid><description>学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了</description></item><item><title>Python Iterables</title><link>https://guyueshui.github.io/post/python-iterables/</link><pubDate>Sun, 21 Feb 2021 22:26:30 +0800</pubDate><guid>https://guyueshui.github.io/post/python-iterables/</guid><description>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己</description></item><item><title>一个really simple的LaTeX宏包</title><link>https://guyueshui.github.io/post/tex-sty-basic/</link><pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate><guid>https://guyueshui.github.io/post/tex-sty-basic/</guid><description>众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近</description></item><item><title>Gnome应用启动缓慢</title><link>https://guyueshui.github.io/post/gnome-app-slow-start/</link><pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate><guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid><description>先看环境： $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso. :ssssssso. Terminal: urxvt :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz</description></item><item><title>Metapost学习笔记</title><link>https://guyueshui.github.io/post/metapost/</link><pubDate>Tue, 31 Mar 2020 09:20:44 +0800</pubDate><guid>https://guyueshui.github.io/post/metapost/</guid><description>想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动orz&amp;hellip;</description></item><item><title>转义字符到底是什么</title><link>https://guyueshui.github.io/post/what-is-escape-character/</link><pubDate>Wed, 18 Mar 2020 22:41:06 +0800</pubDate><guid>https://guyueshui.github.io/post/what-is-escape-character/</guid><description>转义字符到底是啥？ 实不相瞒我就是因为不知道才写下这篇文章，不，准确的说是这篇笔记orz，既然是笔记，无所谓抄不抄了。每次说到转义字符，多少有</description></item><item><title>Brief Introduction to Shell Script</title><link>https://guyueshui.github.io/post/shell-intro/</link><pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate><guid>https://guyueshui.github.io/post/shell-intro/</guid><description>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;1. I just take some most important things out of the book.
 Expansion Each time you type a command line and press the Enter key, bash performs several processes upon the text before it carries out your command. Just look an example:
-1 2 [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos Why not display an asterisk? That&amp;rsquo;s expansion!</description>
-    </item>
-    
-    <item>
-      <title>Nueral Network Learning Notes</title>
-      <link>https://guyueshui.github.io/post/nn-notes/</link>
-      <pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/nn-notes/</guid>
-      <description>Hello here.
+1 2 [me@linuxbox ~]$ echo * Desktop Documents ls-output.txt Music Pictures Public Templates Videos Why not display an asterisk? That&amp;rsquo;s expansion!</description></item><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 10:45:03 +0800</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>Hello here.
 CNN Conv Layer Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.
-take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description>
-    </item>
-    
-    <item>
-      <title>服务端开发预备知识</title>
-      <link>https://guyueshui.github.io/post/server-develop-preliminaries/</link>
-      <pubDate>Fri, 06 Sep 2019 19:37:55 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid>
-      <description>操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程</description>
-    </item>
-    
-    <item>
-      <title>设计模式学习笔记</title>
-      <link>https://guyueshui.github.io/post/design-pattern-notes/</link>
-      <pubDate>Mon, 02 Sep 2019 11:05:10 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/design-pattern-notes/</guid>
-      <description>如无特殊声明：本文所有UML图均出自《图说设计模式》。在此特别鸣谢！ Singleton 单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例</description>
-    </item>
-    
-    <item>
-      <title>多线程学习笔记</title>
-      <link>https://guyueshui.github.io/post/concurrent-programming/</link>
-      <pubDate>Thu, 29 Aug 2019 21:40:23 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/concurrent-programming/</guid>
-      <description>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢</description>
-    </item>
-    
-    <item>
-      <title>博客迁移记录</title>
-      <link>https://guyueshui.github.io/post/blog-trans/</link>
-      <pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/blog-trans/</guid>
-      <description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description>
-    </item>
-    
-    <item>
-      <title>位域结构体简介</title>
-      <link>https://guyueshui.github.io/post/bit-field-struct/</link>
-      <pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/bit-field-struct/</guid>
-      <description>最近实习接触到一个新的知识点，C/C++的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)</description>
-    </item>
-    
-    <item>
-      <title>面试经历及笔记</title>
-      <link>https://guyueshui.github.io/post/interview-notes/</link>
-      <pubDate>Mon, 08 Jul 2019 20:14:17 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/interview-notes/</guid>
-      <description>总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C++相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1</description>
-    </item>
-    
-    <item>
-      <title>The Beauty of Recursion</title>
-      <link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link>
-      <pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid>
-      <description>Declaration: this article is in long time editing&amp;hellip;
+take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B. a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).</description></item><item><title>服务端开发预备知识</title><link>https://guyueshui.github.io/post/server-develop-preliminaries/</link><pubDate>Fri, 06 Sep 2019 19:37:55 +0800</pubDate><guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid><description>操作系统 摘自《程序员面试白皮书》 进程vs.线程 进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程</description></item><item><title>设计模式学习笔记</title><link>https://guyueshui.github.io/post/design-pattern-notes/</link><pubDate>Mon, 02 Sep 2019 11:05:10 +0800</pubDate><guid>https://guyueshui.github.io/post/design-pattern-notes/</guid><description>如无特殊声明：本文所有UML图均出自《图说设计模式》。在此特别鸣谢！ Singleton 单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例</description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Thu, 29 Aug 2019 21:40:23 +0800</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。 注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢</description></item><item><title>博客迁移记录</title><link>https://guyueshui.github.io/post/blog-trans/</link><pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate><guid>https://guyueshui.github.io/post/blog-trans/</guid><description>终于还是干了！很早以前就有了这个想法，起初使用Hexo搭的博客，折腾了一段时间，选了一个不错的主题Melody。一切都进行的很好，直到有一天</description></item><item><title>位域结构体简介</title><link>https://guyueshui.github.io/post/bit-field-struct/</link><pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate><guid>https://guyueshui.github.io/post/bit-field-struct/</guid><description>最近实习接触到一个新的知识点，C/C++的位域结构体。 以下开始摘抄自：here 位段(bit-field)是以位为单位来定义结构体(或联合体)</description></item><item><title>面试经历及笔记</title><link>https://guyueshui.github.io/post/interview-notes/</link><pubDate>Mon, 08 Jul 2019 20:14:17 +0000</pubDate><guid>https://guyueshui.github.io/post/interview-notes/</guid><description>总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！ C++相关 Q: std::vector push_back 的复杂度是多少？ A: O(1), amortized constant. Q: vector从1</description></item><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>Declaration: this article is in long time editing&amp;hellip;
 Here comes some beautiful recursive solutions to some problems.
 Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description>
-    </item>
-    
-    <item>
-      <title>神奇的位运算</title>
-      <link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
-      <pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
-      <description>In editing&amp;hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch</description>
-    </item>
-    
-    <item>
-      <title>A collection of some coding problems</title>
-      <link>https://guyueshui.github.io/post/coding-problems/</link>
-      <pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/coding-problems/</guid>
-      <description>场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个</description>
-    </item>
-    
-    <item>
-      <title>瞎说 KMP 算法</title>
-      <link>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</guid>
-      <description>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导</description>
-    </item>
-    
-    <item>
-      <title>初尝 C&#43;&#43; 类设计</title>
-      <link>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</link>
-      <pubDate>Tue, 02 Apr 2019 21:31:40 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</guid>
-      <description>最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想</description>
-    </item>
-    
-    <item>
-      <title>LeetCode: Sum of Two Integers</title>
-      <link>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</link>
-      <pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</guid>
-      <description>记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的+或-. 原题地址：https://leetcode.com/pr</description>
-    </item>
-    
-    <item>
-      <title>浅谈 Logistic 回归</title>
-      <link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link>
-      <pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid>
-      <description>In editing&amp;hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description>
-    </item>
-    
-    <item>
-      <title>Matrix Factorization</title>
-      <link>https://guyueshui.github.io/post/matrix-factorization/</link>
-      <pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/matrix-factorization/</guid>
-      <description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
+Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description></item><item><title>神奇的位运算</title><link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link><pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid><description>In editing&amp;hellip; 必备知识 首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/arch</description></item><item><title>A collection of some coding problems</title><link>https://guyueshui.github.io/post/coding-problems/</link><pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate><guid>https://guyueshui.github.io/post/coding-problems/</guid><description>场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个</description></item><item><title>瞎说 KMP 算法</title><link>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</link><pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</guid><description>前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导</description></item><item><title>初尝 C++ 类设计</title><link>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</link><pubDate>Tue, 02 Apr 2019 21:31:40 +0000</pubDate><guid>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</guid><description>最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道编程题。 小B最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想</description></item><item><title>LeetCode: Sum of Two Integers</title><link>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</link><pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate><guid>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</guid><description>记录一下LeetCode做的一道题。要求实现两个整数的加法，但不能使用内置的+或-. 原题地址：https://leetcode.com/pr</description></item><item><title>浅谈 Logistic 回归</title><link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link><pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid><description>In editing&amp;hellip; Logistic回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid函数的引入 如果把我比作一张白纸，在我的知识储备中，现在</description></item><item><title>Matrix Factorization</title><link>https://guyueshui.github.io/post/matrix-factorization/</link><pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate><guid>https://guyueshui.github.io/post/matrix-factorization/</guid><description>Preliminaries Def: A matrix $A \in M_n$ is normal if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.
 Def: A complex matrix $A$ is unitary if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is orthogonal if $BB^T = I$ or $B^TB = I$.
-There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description>
-    </item>
-    
-    <item>
-      <title>Exponential Distribution</title>
-      <link>https://guyueshui.github.io/post/exponetial-distribution/</link>
-      <pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/exponetial-distribution/</guid>
-      <description>Story The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description>
-    </item>
-    
-    <item>
-      <title>常用结论的证明记录</title>
-      <link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link>
-      <pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid>
-      <description>高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}</description>
-    </item>
-    
-    <item>
-      <title>最大熵对应的概率分布</title>
-      <link>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link>
-      <pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid>
-      <description>最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优</description>
-    </item>
-    
-  </channel>
-</rss>
+There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.</description></item><item><title>Exponential Distribution</title><link>https://guyueshui.github.io/post/exponetial-distribution/</link><pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate><guid>https://guyueshui.github.io/post/exponetial-distribution/</guid><description>Story The Exponential distribution is the continuous counterpart to the Geometric distribution. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.</description></item><item><title>常用结论的证明记录</title><link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link><pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid><description>高斯分布的微分熵 $X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}</description></item><item><title>最大熵对应的概率分布</title><link>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link><pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid><description>最大熵定理 设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为 $$ h(X) = - \int p(x)\log p(x) dx $$ 其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。 考虑如下优</description></item></channel></rss>

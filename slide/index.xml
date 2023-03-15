@@ -1,60 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Slides on 水阙</title>
-    <link>https://guyueshui.github.io/slide/</link>
-    <description>Recent content in Slides on 水阙</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 23 Mar 2020 15:56:44 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bbb</title>
-      <link>https://guyueshui.github.io/slide/bbb/</link>
-      <pubDate>Mon, 23 Mar 2020 15:56:44 +0800</pubDate>
-      
-      <guid>https://guyueshui.github.io/slide/bbb/</guid>
-      <description>The Title Sub Title
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 水阙</title><link>https://guyueshui.github.io/slide/</link><description>Recent content in Slides on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Mar 2020 15:56:44 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/slide/index.xml" rel="self" type="application/rss+xml"/><item><title>Bbb</title><link>https://guyueshui.github.io/slide/bbb/</link><pubDate>Mon, 23 Mar 2020 15:56:44 +0800</pubDate><guid>https://guyueshui.github.io/slide/bbb/</guid><description>The Title Sub Title
 Yychi | SIST
 Slide 2 here comes $e=mc^2$.
-$$ \mathbb{T} \mapsto A $$</description>
-    </item>
-    
-    <item>
-      <title>CCC</title>
-      <link>https://guyueshui.github.io/slide/ccc/</link>
-      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/slide/ccc/</guid>
-      <description>Hello world! This is my first slide.
+$$ \mathbb{T} \mapsto A $$</description></item><item><title>CCC</title><link>https://guyueshui.github.io/slide/ccc/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/ccc/</guid><description>Hello world! This is my first slide.
 Hello Mars! This is my second slide.
 Vertical slide 1 This is verticle slide.
-Vertical slide 2 </description>
-    </item>
-    
-    <item>
-      <title>Demo Slides</title>
-      <link>https://guyueshui.github.io/slide/aaa/</link>
-      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/slide/aaa/</guid>
-      <description>Hello world! This is my first slide.
+Vertical slide 2</description></item><item><title>Demo Slides</title><link>https://guyueshui.github.io/slide/aaa/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/aaa/</guid><description>Hello world! This is my first slide.
 $e=mc^2$
 1 2 3 4 int main() { return 0; } 1 2 3 4 5 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) } Hello Mars! This is my second slide.
 Vertical slide 1 This is verticle slide.
-Vertical slide 2 </description>
-    </item>
-    
-    <item>
-      <title>Tf Quick Start</title>
-      <link>https://guyueshui.github.io/slide/tf-quick-start/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://guyueshui.github.io/slide/tf-quick-start/</guid>
-      <description>Introduction to TensorFlow A Quick Start
+Vertical slide 2</description></item><item><title>Tf Quick Start</title><link>https://guyueshui.github.io/slide/tf-quick-start/</link><pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/tf-quick-start/</guid><description>Introduction to TensorFlow A Quick Start
 Yychi Fyu @SIST, ShanghaiTech
 Outline TF Primitives tensor graphs session variable placeholder An Example High-level overview Computation Graph: The structure of TF.
-operators as nodes tensors as links 1 2 3 4 5 6 7 import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y) Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph: How can we actually see a tensor?</description>
-    </item>
-    
-  </channel>
-</rss>
+operators as nodes tensors as links 1 2 3 4 5 6 7 import tensorflow as tf W = tf.constant([[1, 2]]) x = tf.constant([[3], [4]]) b = tf.constant(5) y = tf.matmul(W, x) + b print(y) Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32) The above codes &amp;ldquo;describe&amp;rdquo; a computation graph: How can we actually see a tensor?</description></item></channel></rss>

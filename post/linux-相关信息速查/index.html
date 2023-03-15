@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux 使用指北 - 水阙</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Yychi" /><meta name="description" content="本文主要引用 Liam Huang 的博客。
-系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作系统内核信息、CPU 信息 cat /proc/cpuinfo # 查看 CPU 信息 hostname # 查看计算机名字 env # 列出环境变量 lsmod # 列出加载的内核模块 uptime # 查看系统运行时间、负载、用户数量 cat /proc/loadavg # 查看系统负载 " /><meta name="keywords" content="水阙, yychi" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.110.0 with theme even" />
-
-
-<link rel="canonical" href="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/sass/main.min.01ca264237f4437d074cf6c8cbab3db51634492b8d9acda6b073090c785d6cbb.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
-
-<meta property="og:title" content="Linux 使用指北" />
-<meta property="og:description" content="本文主要引用 Liam Huang 的博客。
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Linux 使用指北 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="本文主要引用 Liam Huang 的博客。
+系统相关 1 2 3 4 5 6 7 8 9 10 lsb_release -a # 查看操作系统版本 head -n 1 /etc/issue # 查看操作系统版本 cat /proc/version # 查看操作系统内核信息 uname -a # 查看操作系统内核信息、CPU 信息 cat /proc/cpuinfo # 查看 CPU 信息 hostname # 查看计算机名字 env # 列出环境变量 lsmod # 列出加载的内核模块 uptime # 查看系统运行时间、负载、用户数量 cat /proc/loadavg # 查看系统负载 "><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.111.3 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.651de86251ddc73a34038bb147ea19626ef5f3544a594e731576dd8b8bc28c52.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto+Serif+SC"><meta property="og:title" content="Linux 使用指北"><meta property="og:description" content="本文主要引用 Liam Huang 的博客。
 系统相关
 
 
@@ -74,13 +28,7 @@ uptime                      # 查看系统运行时间、负载、用户数量
 cat /proc/loadavg           # 查看系统负载
 
 
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-07T19:22:02+00:00" />
-<meta property="article:modified_time" content="2019-09-16T00:00:00+00:00" />
-<meta itemprop="name" content="Linux 使用指北">
-<meta itemprop="description" content="本文主要引用 Liam Huang 的博客。
+"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-03-07T19:22:02+00:00"><meta property="article:modified_time" content="2019-09-16T00:00:00+00:00"><meta itemprop=name content="Linux 使用指北"><meta itemprop=description content="本文主要引用 Liam Huang 的博客。
 系统相关
 
 
@@ -108,12 +56,7 @@ uptime                      # 查看系统运行时间、负载、用户数量
 cat /proc/loadavg           # 查看系统负载
 
 
-"><meta itemprop="datePublished" content="2019-03-07T19:22:02+00:00" />
-<meta itemprop="dateModified" content="2019-09-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="598">
-<meta itemprop="keywords" content="常用命令,reference," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux 使用指北"/>
-<meta name="twitter:description" content="本文主要引用 Liam Huang 的博客。
+"><meta itemprop=datePublished content="2019-03-07T19:22:02+00:00"><meta itemprop=dateModified content="2019-09-16T00:00:00+00:00"><meta itemprop=wordCount content="598"><meta itemprop=keywords content="常用命令,reference,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux 使用指北"><meta name=twitter:description content="本文主要引用 Liam Huang 的博客。
 系统相关
 
 
@@ -141,359 +84,108 @@ uptime                      # 查看系统运行时间、负载、用户数量
 cat /proc/loadavg           # 查看系统负载
 
 
-"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tricks/">
-        <li class="mobile-menu-item">Tricks</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tricks/">Tricks</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Linux 使用指北</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> March 7, 2019 </span>
-        <div class="post-category">
-            <a href="/categories/linux/"> Linux </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#系统相关">系统相关</a></li>
-    <li><a href="#内存外存">内存外存</a></li>
-    <li><a href="#网络状态">网络状态</a></li>
-    <li><a href="#用户状态相关">用户状态相关</a></li>
-    <li><a href="#进程状态相关">进程状态相关</a></li>
-    <li><a href="#添加用户到组">添加用户到组</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>本文主要引用 <a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang</a> 的博客。</p>
-<h2 id="系统相关">系统相关</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsb_release -a              <span class="c1"># 查看操作系统版本</span>
-</span></span><span class="line"><span class="cl">head -n <span class="m">1</span> /etc/issue        <span class="c1"># 查看操作系统版本</span>
-</span></span><span class="line"><span class="cl">cat /proc/version           <span class="c1"># 查看操作系统内核信息</span>
-</span></span><span class="line"><span class="cl">uname -a                    <span class="c1"># 查看操作系统内核信息、CPU 信息</span>
-</span></span><span class="line"><span class="cl">cat /proc/cpuinfo           <span class="c1"># 查看 CPU 信息</span>
-</span></span><span class="line"><span class="cl">hostname                    <span class="c1"># 查看计算机名字</span>
-</span></span><span class="line"><span class="cl">env                         <span class="c1"># 列出环境变量</span>
-</span></span><span class="line"><span class="cl">lsmod                       <span class="c1"># 列出加载的内核模块</span>
-</span></span><span class="line"><span class="cl">uptime                      <span class="c1"># 查看系统运行时间、负载、用户数量</span>
-</span></span><span class="line"><span class="cl">cat /proc/loadavg           <span class="c1"># 查看系统负载</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="内存外存">内存外存</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">free -m                     <span class="c1"># 查看物理内存和交换区的使用情况</span>
-</span></span><span class="line"><span class="cl">grep MemTotal /proc/meminfo <span class="c1"># 查看内存总量</span>
-</span></span><span class="line"><span class="cl">grep MemFree /proc/meminfo  <span class="c1"># 查看空闲内存总量</span>
-</span></span><span class="line"><span class="cl">df -h                       <span class="c1"># 查看各分区使用情况</span>
-</span></span><span class="line"><span class="cl">fdisk -l                    <span class="c1"># 查看所有分区</span>
-</span></span><span class="line"><span class="cl">swapon -s                   <span class="c1"># 查看所有交换分区</span>
-</span></span><span class="line"><span class="cl">hdparm -i /dev/hda          <span class="c1"># 查看 IDE 磁盘的参数</span>
-</span></span><span class="line"><span class="cl">dmesg <span class="p">|</span> grep IDE            <span class="c1"># 查看系统启动时 IDE 磁盘的状态</span>
-</span></span><span class="line"><span class="cl">mount <span class="p">|</span> column -t           <span class="c1"># 查看各分区的挂载状态</span>
-</span></span><span class="line"><span class="cl">du -sh &lt;目录名&gt;              <span class="c1"># 查看指定目录的大小</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="网络状态">网络状态</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ifconfig                    <span class="c1"># 查看所有网络接口的属性</span>
-</span></span><span class="line"><span class="cl">ip addr show                <span class="c1"># 同上</span>
-</span></span><span class="line"><span class="cl">iptables -L                 <span class="c1"># 查看 iptables 防火墙</span>
-</span></span><span class="line"><span class="cl">route -n                    <span class="c1"># 查看本机路由表</span>
-</span></span><span class="line"><span class="cl">netstat -lntp               <span class="c1"># 查看所有监听端口</span>
-</span></span><span class="line"><span class="cl">netstat -antp               <span class="c1"># 查看所有已建立的连接</span>
-</span></span><span class="line"><span class="cl">netstat -s                  <span class="c1"># 查看网络统计信息</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="用户状态相关">用户状态相关</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">w                           <span class="c1"># 查看活动用户以及他们在做什么</span>
-</span></span><span class="line"><span class="cl">who                         <span class="c1"># 查看活动用户</span>
-</span></span><span class="line"><span class="cl">id &lt;用户名&gt;                  <span class="c1"># 查看用户的 ID、组信息</span>
-</span></span><span class="line"><span class="cl">cut -d: -f1 /etc/passwd     <span class="c1"># 查看系统中所有用户</span>
-</span></span><span class="line"><span class="cl">cut -d: -f1 /etc/group      <span class="c1"># 查看系统所有组</span>
-</span></span><span class="line"><span class="cl">usermod -a -G group1,group2 user  <span class="c1"># 将用户追加到组</span>
-</span></span><span class="line"><span class="cl">groups user                 <span class="c1"># 查看用户所属的组</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>参考：https://linux.cn/article-10768-1.html</p>
-<h2 id="进程状态相关">进程状态相关</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps -ef                      <span class="c1"># 查看所有进程</span>
-</span></span><span class="line"><span class="cl">ps aux                      <span class="c1"># 同上</span>
-</span></span><span class="line"><span class="cl">top                         <span class="c1"># 动态显示进程状态</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="添加用户到组">添加用户到组</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -aG &lt;group&gt; &lt;user&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>查看文件夹内所有文件</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -lR somedir <span class="p">|</span> grep <span class="s2">&#34;^-&#34;</span> <span class="p">|</span> wc -l
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Yychi</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        September 16, 2019
-        
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a>
-          <a href="/tags/reference/">reference</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">快速自定义 LaTeX 排版字体</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/%E8%B0%88%E8%B0%88%E6%8A%A5%E4%BB%BB%E5%AE%89%E4%B9%A6/">
-            <span class="next-text nav-default">《报任安书》</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz',
-        appKey: 'fjzzXaIgPDyMlxqtN0oBWeNN',
-        notify:  false ,
-        verify:  false ,
-        avatar:'mm',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        visitor:  false 
-    });
-  </script>
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
-  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2018 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Linux 使用指北</h1><div class=post-meta><span class=post-time>March 7, 2019</span><div class=post-category><a href=/categories/linux/>Linux</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#系统相关>系统相关</a></li><li><a href=#内存外存>内存外存</a></li><li><a href=#网络状态>网络状态</a></li><li><a href=#用户状态相关>用户状态相关</a></li><li><a href=#进程状态相关>进程状态相关</a></li><li><a href=#添加用户到组>添加用户到组</a></li></ul></nav></div></div><div class=post-content><p>本文主要引用 <a href=https://liam.page/2016/11/06/Linux-Info-Cheatsheet/>Liam Huang</a> 的博客。</p><h2 id=系统相关>系统相关</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>lsb_release -a              <span class=c1># 查看操作系统版本</span>
+</span></span><span class=line><span class=cl>head -n <span class=m>1</span> /etc/issue        <span class=c1># 查看操作系统版本</span>
+</span></span><span class=line><span class=cl>cat /proc/version           <span class=c1># 查看操作系统内核信息</span>
+</span></span><span class=line><span class=cl>uname -a                    <span class=c1># 查看操作系统内核信息、CPU 信息</span>
+</span></span><span class=line><span class=cl>cat /proc/cpuinfo           <span class=c1># 查看 CPU 信息</span>
+</span></span><span class=line><span class=cl>hostname                    <span class=c1># 查看计算机名字</span>
+</span></span><span class=line><span class=cl>env                         <span class=c1># 列出环境变量</span>
+</span></span><span class=line><span class=cl>lsmod                       <span class=c1># 列出加载的内核模块</span>
+</span></span><span class=line><span class=cl>uptime                      <span class=c1># 查看系统运行时间、负载、用户数量</span>
+</span></span><span class=line><span class=cl>cat /proc/loadavg           <span class=c1># 查看系统负载</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=内存外存>内存外存</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>free -m                     <span class=c1># 查看物理内存和交换区的使用情况</span>
+</span></span><span class=line><span class=cl>grep MemTotal /proc/meminfo <span class=c1># 查看内存总量</span>
+</span></span><span class=line><span class=cl>grep MemFree /proc/meminfo  <span class=c1># 查看空闲内存总量</span>
+</span></span><span class=line><span class=cl>df -h                       <span class=c1># 查看各分区使用情况</span>
+</span></span><span class=line><span class=cl>fdisk -l                    <span class=c1># 查看所有分区</span>
+</span></span><span class=line><span class=cl>swapon -s                   <span class=c1># 查看所有交换分区</span>
+</span></span><span class=line><span class=cl>hdparm -i /dev/hda          <span class=c1># 查看 IDE 磁盘的参数</span>
+</span></span><span class=line><span class=cl>dmesg <span class=p>|</span> grep IDE            <span class=c1># 查看系统启动时 IDE 磁盘的状态</span>
+</span></span><span class=line><span class=cl>mount <span class=p>|</span> column -t           <span class=c1># 查看各分区的挂载状态</span>
+</span></span><span class=line><span class=cl>du -sh &lt;目录名&gt;              <span class=c1># 查看指定目录的大小</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=网络状态>网络状态</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ifconfig                    <span class=c1># 查看所有网络接口的属性</span>
+</span></span><span class=line><span class=cl>ip addr show                <span class=c1># 同上</span>
+</span></span><span class=line><span class=cl>iptables -L                 <span class=c1># 查看 iptables 防火墙</span>
+</span></span><span class=line><span class=cl>route -n                    <span class=c1># 查看本机路由表</span>
+</span></span><span class=line><span class=cl>netstat -lntp               <span class=c1># 查看所有监听端口</span>
+</span></span><span class=line><span class=cl>netstat -antp               <span class=c1># 查看所有已建立的连接</span>
+</span></span><span class=line><span class=cl>netstat -s                  <span class=c1># 查看网络统计信息</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=用户状态相关>用户状态相关</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>w                           <span class=c1># 查看活动用户以及他们在做什么</span>
+</span></span><span class=line><span class=cl>who                         <span class=c1># 查看活动用户</span>
+</span></span><span class=line><span class=cl>id &lt;用户名&gt;                  <span class=c1># 查看用户的 ID、组信息</span>
+</span></span><span class=line><span class=cl>cut -d: -f1 /etc/passwd     <span class=c1># 查看系统中所有用户</span>
+</span></span><span class=line><span class=cl>cut -d: -f1 /etc/group      <span class=c1># 查看系统所有组</span>
+</span></span><span class=line><span class=cl>usermod -a -G group1,group2 user  <span class=c1># 将用户追加到组</span>
+</span></span><span class=line><span class=cl>groups user                 <span class=c1># 查看用户所属的组</span>
+</span></span></code></pre></td></tr></table></div></div><p>参考：https://linux.cn/article-10768-1.html</p><h2 id=进程状态相关>进程状态相关</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ps -ef                      <span class=c1># 查看所有进程</span>
+</span></span><span class=line><span class=cl>ps aux                      <span class=c1># 同上</span>
+</span></span><span class=line><span class=cl>top                         <span class=c1># 动态显示进程状态</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=添加用户到组>添加用户到组</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>usermod -aG &lt;group&gt; &lt;user&gt;
+</span></span></code></pre></td></tr></table></div></div><p><strong>查看文件夹内所有文件</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ls -lR somedir <span class=p>|</span> grep <span class=s2>&#34;^-&#34;</span> <span class=p>|</span> wc -l
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>September 16, 2019</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/>常用命令</a>
+<a href=/tags/reference/>reference</a></div><nav class=post-nav><a class=prev href=/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">快速自定义 LaTeX 排版字体</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/%E8%B0%88%E8%B0%88%E6%8A%A5%E4%BB%BB%E5%AE%89%E4%B9%A6/><span class="next-text nav-default">《报任安书》</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz",appKey:"fjzzXaIgPDyMlxqtN0oBWeNN",notify:!1,verify:!1,avatar:"mm",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a>
+<a href=https://guyueshui.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2018 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

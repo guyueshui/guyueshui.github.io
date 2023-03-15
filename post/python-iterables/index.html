@@ -1,566 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Python Iterables - 水阙</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Yychi" /><meta name="description" content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己" /><meta name="keywords" content="水阙, yychi" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.110.0 with theme even" />
-
-
-<link rel="canonical" href="https://guyueshui.github.io/post/python-iterables/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<link href="/sass/main.min.01ca264237f4437d074cf6c8cbab3db51634492b8d9acda6b073090c785d6cbb.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC">
-
-<meta property="og:title" content="Python Iterables" />
-<meta property="og:description" content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://guyueshui.github.io/post/python-iterables/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-02-21T22:26:30+08:00" />
-<meta property="article:modified_time" content="2021-02-21T22:26:30+08:00" />
-<meta itemprop="name" content="Python Iterables">
-<meta itemprop="description" content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"><meta itemprop="datePublished" content="2021-02-21T22:26:30+08:00" />
-<meta itemprop="dateModified" content="2021-02-21T22:26:30+08:00" />
-<meta itemprop="wordCount" content="1387">
-<meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python Iterables"/>
-<meta name="twitter:description" content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Yychi&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tricks/">
-        <li class="mobile-menu-item">Tricks</li>
-      </a><a href="/sketch/">
-        <li class="mobile-menu-item">Sketch</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-
-  
-
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Yychi&#39;s Blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tricks/">Tricks</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/sketch/">Sketch</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Python Iterables</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> February 21, 2021 </span>
-        <div class="post-category">
-            <a href="/categories/notes/"> notes </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#iterable-和-iterator">Iterable 和 Iterator</a></li>
-    <li><a href="#for-循环">For 循环</a></li>
-    <li><a href="#generator-expressions-and-list-comprehensions">Generator Expressions and List Comprehensions</a></li>
-    <li><a href="#generator-function">Generator Function</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <p>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己的见解，因有此篇。</p>
-<h2 id="iterable-和-iterator">Iterable 和 Iterator</h2>
-<p>为了理解generator，必须先搞清楚iterable和iterator<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
-<blockquote>
-<ul>
-<li>An <strong>iterable</strong> object is an object that implements <code>__iter__</code>, which is expected to return an iterator object.</li>
-<li>An <strong>iterator</strong> is an object that implements <code>__next__</code>, which is expected to return the next element of the iterable object that returned it, and raise a StopIteration exception when no more elements are available.</li>
-</ul>
-</blockquote>
-<p>讲真，iterable和iterator的定义就是这么的朴实无华。但要彻底理解，还需费些功夫。先来看个例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyIterator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">raise</span> <span class="ne">StopIteration</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyIterable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">MyIterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">my_iterable</span> <span class="o">=</span> <span class="n">MyIterable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_iterable</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>上面实现了一个iterable和iterator，iterable必须实现<code>__iter__</code>方法，并返回一个iterator，在上面的例子中我返回了自己实现的一个iterator。当然也可以这样写：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyIterable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cur</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">raise</span> <span class="ne">StopIteration</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">my_iterable</span> <span class="o">=</span> <span class="n">MyIterable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_iterable</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时<code>MyIterable</code>既是iterable又是iterator。那既然能够写在一起，为什么聪明的人们要把这两个概念区分开呢？以下<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>给出了部分解释：</p>
-<blockquote>
-<p>Iterators and iterables can be separate objects, but they don’t have to. Nothing is holding us back here. If you want, you can create a single object that is both an iterator and an iterable. You just need to implement both <code>__iter__</code> and <code>__next__</code>.</p>
-<p>So why did the wise men and women building the language decide to split these concepts? It has to do with keeping state. An iterator needs to maintain information on the position, e.g. the pointer into an internal data object like a list. In other words: it must keep track of which element to return next.</p>
-<p>If the iterable itself maintains that state, you can only use it in one loop at a time. Otherwise, the other loop(s) would interfere with the state of the first loop. By returning a new iterator object, with its own state, we don’t have this problem. This comes in handy especially when you’re working with concurrency.</p>
-</blockquote>
-<h2 id="for-循环">For 循环</h2>
-<p>Python中的<code>for x in y</code>要求<code>y</code>为iterable，具体地，以下两段代码效果相同：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># &lt;==&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">break</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>以上遗漏一点：</p>
-<blockquote>
-<p>Python expects iterable objects in several different contexts, the most important being the for statement. In the statement <code>for X in Y</code>, <code>Y</code> must be an iterator or some object for which iter() can create an iterator. These two statements are equivalent:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></blockquote>
-<p>Note that you can only go forward in an iterator; there’s no way to get the previous element, reset the iterator, or make a copy of it. Iterator objects can optionally provide these additional capabilities, but the iterator protocol only specifies the <code>__next__()</code> method. Functions may therefore consume all of the iterator’s output, and if you need to do something different with the same stream, you’ll have to create a new iterator.</p>
-<h2 id="generator-expressions-and-list-comprehensions">Generator Expressions and List Comprehensions</h2>
-<p>生成器表达式和列表推导式是Python中常用的两个语法。列表推导式生成一个列表，生成表达式生成一个iterator。看下面的例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ge</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">lc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">ge</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">ge</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">lc</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">ge</span><span class="p">),</span> <span class="nb">iter</span><span class="p">(</span><span class="n">ge</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">ge</span><span class="o">.</span><span class="fm">__next__</span><span class="p">(),</span> <span class="n">ge</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ge</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ge</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">test2</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x7f5221c61f90</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">generator</span><span class="s1">&#39;&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">test2</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x7f5221c61f90</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">test2</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x7f5221c61f90</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到，列表推导式直接生成一个列表，而生成表达式则是返回一个iterator，并且它也是一个iterable。值得注意的是：</p>
-<ul>
-<li>列表推导式使用<code>[]</code>包围</li>
-<li>生成表达式使用<code>()</code>包围</li>
-<li>generator是iterator</li>
-<li>iterator只能遍历一次，当元素耗尽，再次遍历直接抛出StopIteration</li>
-</ul>
-<blockquote>
-<p>可将iterator理解为只能遍历一次的iterable。</p>
-</blockquote>
-<p>特别地，以下代码等价：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">(</span> <span class="n">expression</span> <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">sequence1</span> <span class="k">if</span> <span class="n">condition1</span>
-</span></span><span class="line"><span class="cl">             <span class="k">for</span> <span class="n">expr2</span> <span class="ow">in</span> <span class="n">sequence2</span> <span class="k">if</span> <span class="n">condition2</span>
-</span></span><span class="line"><span class="cl">             <span class="o">...</span>
-</span></span><span class="line"><span class="cl">             <span class="k">for</span> <span class="n">exprN</span> <span class="ow">in</span> <span class="n">sequenceN</span> <span class="k">if</span> <span class="n">conditionN</span> <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># &lt;==&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">expr1</span> <span class="ow">in</span> <span class="n">sequence1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">condition1</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">continue</span>   <span class="c1"># Skip this element</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">expr2</span> <span class="ow">in</span> <span class="n">sequence2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">condition2</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="k">continue</span>   <span class="c1"># Skip this element</span>
-</span></span><span class="line"><span class="cl">        <span class="o">...</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">exprN</span> <span class="ow">in</span> <span class="n">sequenceN</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">conditionN</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">                <span class="k">continue</span>   <span class="c1"># Skip this element</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># Output the value of the expression.</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="generator-function">Generator Function</h2>
-<p>pass, to be continued&hellip;</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://wiki.python.org/moin/Iterator">Iterator</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://python.land/deep-dives/python-iterator">Python iterator basics (how they work + examples)</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Yychi</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        February 21, 2021
-        
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/python/">python</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/build-your-ladder/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">V3Ray的配置笔记</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/linux-hibernate/">
-            <span class="next-text nav-default">Linux的休眠</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz',
-        appKey: 'fjzzXaIgPDyMlxqtN0oBWeNN',
-        notify:  false ,
-        verify:  false ,
-        avatar:'mm',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        visitor:  false 
-    });
-  </script>
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:guyueshui002@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/guyueshui" class="iconfont icon-github" title="github"></a>
-  <a href="https://guyueshui.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2018 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yychi</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Python Iterables - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.111.3 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/python-iterables/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.651de86251ddc73a34038bb147ea19626ef5f3544a594e731576dd8b8bc28c52.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto+Serif+SC"><meta property="og:title" content="Python Iterables"><meta property="og:description" content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/python-iterables/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-02-21T22:26:30+08:00"><meta property="article:modified_time" content="2021-02-21T22:26:30+08:00"><meta itemprop=name content="Python Iterables"><meta itemprop=description content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"><meta itemprop=datePublished content="2021-02-21T22:26:30+08:00"><meta itemprop=dateModified content="2021-02-21T22:26:30+08:00"><meta itemprop=wordCount content="1387"><meta itemprop=keywords content="python,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python Iterables"><meta name=twitter:description content="Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Python Iterables</h1><div class=post-meta><span class=post-time>February 21, 2021</span><div class=post-category><a href=/categories/notes/>notes</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#iterable-和-iterator>Iterable 和 Iterator</a></li><li><a href=#for-循环>For 循环</a></li><li><a href=#generator-expressions-and-list-comprehensions>Generator Expressions and List Comprehensions</a></li><li><a href=#generator-function>Generator Function</a></li></ul></nav></div></div><div class=post-content><p>Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己的见解，因有此篇。</p><h2 id=iterable-和-iterator>Iterable 和 Iterator</h2><p>为了理解generator，必须先搞清楚iterable和iterator<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>。</p><blockquote><ul><li>An <strong>iterable</strong> object is an object that implements <code>__iter__</code>, which is expected to return an iterator object.</li><li>An <strong>iterator</strong> is an object that implements <code>__next__</code>, which is expected to return the next element of the iterable object that returned it, and raise a StopIteration exception when no more elements are available.</li></ul></blockquote><p>讲真，iterable和iterator的定义就是这么的朴实无华。但要彻底理解，还需费些功夫。先来看个例子：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyIterator</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>data</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>data</span> <span class=o>=</span> <span class=n>data</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__next__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>data</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>+=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>data</span><span class=p>[</span><span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>-</span> <span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>raise</span> <span class=ne>StopIteration</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyIterable</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>data</span> <span class=o>=</span> <span class=p>[</span><span class=mi>4</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__iter__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>MyIterator</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>my_iterable</span> <span class=o>=</span> <span class=n>MyIterable</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>my_iterable</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><p>上面实现了一个iterable和iterator，iterable必须实现<code>__iter__</code>方法，并返回一个iterator，在上面的例子中我返回了自己实现的一个iterator。当然也可以这样写：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyIterable</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>data</span> <span class=o>=</span> <span class=p>[</span><span class=mi>4</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=n>cur</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__iter__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__next__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>data</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>+=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>data</span><span class=p>[</span><span class=bp>self</span><span class=o>.</span><span class=n>cur</span> <span class=o>-</span> <span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>raise</span> <span class=ne>StopIteration</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>my_iterable</span> <span class=o>=</span> <span class=n>MyIterable</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>my_iterable</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><p>此时<code>MyIterable</code>既是iterable又是iterator。那既然能够写在一起，为什么聪明的人们要把这两个概念区分开呢？以下<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>给出了部分解释：</p><blockquote><p>Iterators and iterables can be separate objects, but they don’t have to. Nothing is holding us back here. If you want, you can create a single object that is both an iterator and an iterable. You just need to implement both <code>__iter__</code> and <code>__next__</code>.</p><p>So why did the wise men and women building the language decide to split these concepts? It has to do with keeping state. An iterator needs to maintain information on the position, e.g. the pointer into an internal data object like a list. In other words: it must keep track of which element to return next.</p><p>If the iterable itself maintains that state, you can only use it in one loop at a time. Otherwise, the other loop(s) would interfere with the state of the first loop. By returning a new iterator object, with its own state, we don’t have this problem. This comes in handy especially when you’re working with concurrency.</p></blockquote><h2 id=for-循环>For 循环</h2><p>Python中的<code>for x in y</code>要求<code>y</code>为iterable，具体地，以下两段代码效果相同：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>y</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># &lt;==&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>it</span> <span class=o>=</span> <span class=nb>iter</span><span class=p>(</span><span class=n>y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>a</span> <span class=o>=</span> <span class=nb>next</span><span class=p>(</span><span class=n>it</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>StopIteration</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>break</span>
+</span></span></code></pre></td></tr></table></div></div><p>以上遗漏一点：</p><blockquote><p>Python expects iterable objects in several different contexts, the most important being the for statement. In the statement <code>for X in Y</code>, <code>Y</code> must be an iterator or some object for which iter() can create an iterator. These two statements are equivalent:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>iter</span><span class=p>(</span><span class=n>obj</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>obj</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div></blockquote><p>Note that you can only go forward in an iterator; there’s no way to get the previous element, reset the iterator, or make a copy of it. Iterator objects can optionally provide these additional capabilities, but the iterator protocol only specifies the <code>__next__()</code> method. Functions may therefore consume all of the iterator’s output, and if you need to do something different with the same stream, you’ll have to create a new iterator.</p><h2 id=generator-expressions-and-list-comprehensions>Generator Expressions and List Comprehensions</h2><p>生成器表达式和列表推导式是Python中常用的两个语法。列表推导式生成一个列表，生成表达式生成一个iterator。看下面的例子：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>test2</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>lst</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=o>-</span><span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=o>-</span><span class=mi>4</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=n>ge</span> <span class=o>=</span> <span class=p>(</span><span class=nb>abs</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>lst</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>lc</span> <span class=o>=</span> <span class=p>[</span><span class=nb>abs</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>lst</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>ge</span><span class=p>,</span> <span class=nb>type</span><span class=p>(</span><span class=n>ge</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>lc</span><span class=p>,</span> <span class=nb>type</span><span class=p>(</span><span class=n>lc</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=nb>next</span><span class=p>(</span><span class=n>ge</span><span class=p>),</span> <span class=nb>iter</span><span class=p>(</span><span class=n>ge</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>ge</span><span class=o>.</span><span class=fm>__next__</span><span class=p>(),</span> <span class=n>ge</span><span class=o>.</span><span class=fm>__iter__</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>ge</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>ge</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=o>&lt;</span><span class=n>generator</span> <span class=nb>object</span> <span class=n>test2</span><span class=o>.&lt;</span><span class=nb>locals</span><span class=o>&gt;.&lt;</span><span class=n>genexpr</span><span class=o>&gt;</span> <span class=n>at</span> <span class=mh>0x7f5221c61f90</span><span class=o>&gt;</span> <span class=o>&lt;</span><span class=k>class</span> <span class=err>&#39;</span><span class=nc>generator</span><span class=s1>&#39;&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>]</span> <span class=o>&lt;</span><span class=k>class</span> <span class=err>&#39;</span><span class=nc>list</span><span class=s1>&#39;&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>1</span> <span class=o>&lt;</span><span class=n>generator</span> <span class=nb>object</span> <span class=n>test2</span><span class=o>.&lt;</span><span class=nb>locals</span><span class=o>&gt;.&lt;</span><span class=n>genexpr</span><span class=o>&gt;</span> <span class=n>at</span> <span class=mh>0x7f5221c61f90</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>2</span> <span class=o>&lt;</span><span class=n>generator</span> <span class=nb>object</span> <span class=n>test2</span><span class=o>.&lt;</span><span class=nb>locals</span><span class=o>&gt;.&lt;</span><span class=n>genexpr</span><span class=o>&gt;</span> <span class=n>at</span> <span class=mh>0x7f5221c61f90</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=mi>4</span>
+</span></span></code></pre></td></tr></table></div></div><p>可以看到，列表推导式直接生成一个列表，而生成表达式则是返回一个iterator，并且它也是一个iterable。值得注意的是：</p><ul><li>列表推导式使用<code>[]</code>包围</li><li>生成表达式使用<code>()</code>包围</li><li>generator是iterator</li><li>iterator只能遍历一次，当元素耗尽，再次遍历直接抛出StopIteration</li></ul><blockquote><p>可将iterator理解为只能遍历一次的iterable。</p></blockquote><p>特别地，以下代码等价：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=p>(</span> <span class=n>expression</span> <span class=k>for</span> <span class=n>expr</span> <span class=ow>in</span> <span class=n>sequence1</span> <span class=k>if</span> <span class=n>condition1</span>
+</span></span><span class=line><span class=cl>             <span class=k>for</span> <span class=n>expr2</span> <span class=ow>in</span> <span class=n>sequence2</span> <span class=k>if</span> <span class=n>condition2</span>
+</span></span><span class=line><span class=cl>             <span class=o>...</span>
+</span></span><span class=line><span class=cl>             <span class=k>for</span> <span class=n>exprN</span> <span class=ow>in</span> <span class=n>sequenceN</span> <span class=k>if</span> <span class=n>conditionN</span> <span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># &lt;==&gt;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>expr1</span> <span class=ow>in</span> <span class=n>sequence1</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=ow>not</span> <span class=p>(</span><span class=n>condition1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>continue</span>   <span class=c1># Skip this element</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>expr2</span> <span class=ow>in</span> <span class=n>sequence2</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=ow>not</span> <span class=p>(</span><span class=n>condition2</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=k>continue</span>   <span class=c1># Skip this element</span>
+</span></span><span class=line><span class=cl>        <span class=o>...</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>exprN</span> <span class=ow>in</span> <span class=n>sequenceN</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=ow>not</span> <span class=p>(</span><span class=n>conditionN</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=k>continue</span>   <span class=c1># Skip this element</span>
+</span></span><span class=line><span class=cl>            <span class=c1># Output the value of the expression.</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=generator-function>Generator Function</h2><p>pass, to be continued&mldr;</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://wiki.python.org/moin/Iterator>Iterator</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p><a href=https://python.land/deep-dives/python-iterator>Python iterator basics (how they work + examples)</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>February 21, 2021</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/python/>python</a></div><nav class=post-nav><a class=prev href=/post/build-your-ladder/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">V3Ray的配置笔记</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/linux-hibernate/><span class="next-text nav-default">Linux的休眠</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script>
+<script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"GiggnUHAwYrkisc4eEXrCuUu-gzGzoHsz",appKey:"fjzzXaIgPDyMlxqtN0oBWeNN",notify:!1,verify:!1,avatar:"mm",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!",visitor:!1})</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a>
+<a href=https://guyueshui.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>site pv: <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span></span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>site uv: <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span></span></div><span class=copyright-year>&copy;
+2018 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
