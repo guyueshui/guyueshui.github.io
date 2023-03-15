@@ -67,6 +67,24 @@ pacstrap -i /mnt base base-devel net-tools
 
 后续就是 arch-chroot 到新安装系统中进行相关设置：hostname，hosts，时区，locale 等。这些在 Installation Guide 中均有提及，不再赘述。
 
+> update: 2023-03-11 13:04
+
+这次安装之后发现时间不同步，且installation guide里面也没有提及，特此记录。开启自动对时的命令：
+```bash
+timedateclt set-ntp 1
+
+# see effects
+timedatectl
+               Local time: Sat 2023-03-11 13:06:39 CST
+           Universal time: Sat 2023-03-11 05:06:39 UTC
+                 RTC time: Sat 2023-03-11 05:06:39
+                Time zone: Asia/Shanghai (CST, +0800)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+```
+这样，时间就对了。
+
 **6.小结**
 
 以上，一个新的 Archlinux 就安装完成了。不过这只是一个简陋的系统，还没有进行配置，只能用终端输命令的那种。后续配置参考简书那篇文章。
