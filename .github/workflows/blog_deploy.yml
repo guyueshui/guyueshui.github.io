@@ -21,7 +21,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
+          submodules: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -30,7 +30,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --config even-config.toml
+        run: hugo --config even-config.toml --minify --gc --cleanDestinationDir
 
       - name: Deploy to master
         uses: peaceiris/actions-gh-pages@v2
