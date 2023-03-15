@@ -1,5 +1,6 @@
 *.toml
-themes
+themes/*
+!themes/even
 public
 .vscode
 
