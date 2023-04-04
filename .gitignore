@@ -3,6 +3,7 @@ themes/*
 !themes/even
 public
 .vscode
+.hugo_build.lock
 
 # add obsidian stuff
 .obsidian/*
