@@ -42,7 +42,7 @@ h2 {
     border-bottom: 1px solid #000000;
     text-transform: uppercase;
     font-size: 130%;
-    margin: 1em 0 0 0;
+    margin: 1em 0 10px 0;
     padding: 0;
 }
 h3 {
@@ -54,13 +54,17 @@ h3 {
     justify-content: space-between;
 }
 p {
-    margin: 0 0 0.5em 0;
+    margin: 0.25em 0 0.25em 0;
     padding: 0;
     }
 ul {
     padding: 0;
     margin: 0 1.5em;
     }
+li {
+  margin-top: 0.25em;
+  margin-bottom: .25em;
+}
 /* ul immediately after h1 = contact list */
 h1 + ul {
     text-align: center;
@@ -105,6 +109,11 @@ datedline {
         background: none;
         box-shadow: none;
         -webkit-box-shadow: none;
+    }
+    /* Do not underline abbr tags in PDF */
+    abbr {
+        text-decoration: none;
+        font-variant: none;
     }
     /* Make links black in PDF */
     /* Move this outside the print block to apply this in HTML too */
@@ -166,7 +175,7 @@ adaptive variants. -->
 <h2>科研项目</h2>
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
-<h3><span><strong>基于生成对抗网络的分类模型研究</strong></span> <span>2019.02 &ndash; 至今</span></h3>
+<h3><span><strong>基于生成对抗网络的分类模型研究</strong></span> <span>2019.02 &ndash; 2020.02</span></h3>
 <p>基于<a href="https://papers.nips.cc/paper/6399-infogan-interpretable-representation-learning-by-information-maximizing-generative-adversarial-nets.pdf">文章1</a>以及<a href="https://arxiv.org/pdf/1707.04487.pdf">文章2</a>，从信息论的角度探究输入噪声的分布情况对生成器性能的影响，从而指导设计出更好的噪声分布，提升网络的性能，并尝试从信息论的角度解释参数的意义和模型合理性。</p>
 <ul>
 <li>发表文章：<a href="http://journal.ucas.ac.cn/CN/10.7523/j.ucas.2020.0037">基于互信息约束的生成对抗网络分类模型研究. 中国科学院大学学报. 2021 Jun 1:75.</a></li>
@@ -178,7 +187,7 @@ hand -->
 <h3><span><strong>使用机器学习方法解决保险市场预测问题</strong></span> <span>2018.05</span></h3>
 <p>使用 SVM 分析保险业务客户的历史信息，训练模型并预测有办理保险意向的客户，并对客户的理赔概率进行分析，从而制定不同的联系策略，最大化保险公司收益。</p>
 <h2>工作经历</h2>
-<h3><span><strong>网易（杭州）网络有限技术公司</strong>  杭州</span> <span>2020.08 &ndash; 至今</span></h3>
+<h3><span><strong>网易（杭州）网络有限技术公司</strong>  杭州</span> <span>2020.08 &ndash; 2023.01</span></h3>
 <p><em>Starry 工作室，游戏研发工程师</em></p>
 <ul>
 <li>
@@ -229,6 +238,6 @@ hand -->
 </ul></div>
 </body>
 <footer>
-Last modified at 2022-07-26 00:51:19.
+Last modified at 2023-04-04 12:22:37.
 </footer>
 </html>

@@ -1,13 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>notes on 水阙</title><link>https://guyueshui.github.io/categories/notes/</link><description>Recent content in notes on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 May 2022 00:25:52 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Archlinux重置keyring</title><link>https://guyueshui.github.io/post/archlinx-keyring-broken/</link><pubDate>Sun, 01 May 2022 00:25:52 +0800</pubDate><guid>https://guyueshui.github.io/post/archlinx-keyring-broken/</guid><description>&lt;p>今天pacman安装一个软件包的时候，突然提示XX作者的GPG key不受信任，网上一查&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，原来是GPG存的key需要更新信息了。由于&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pacman-key --refresh-keys
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>执行过程漫长，我新开了一个窗口直接&lt;code>pacman -Syu&lt;/code>了。果不其然，看起来一切都好了。然后回头发现还在更新keyring，心想：我都完活了，你还没执行完，遂直接杀了进程。&lt;/p></description></item><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members">Static members&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on 水阙</title><link>https://guyueshui.github.io/categories/notes/</link><description>Recent content in Notes on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Apr 2022 23:52:04 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members">Static members&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
