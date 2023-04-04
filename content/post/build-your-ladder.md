@@ -335,6 +335,15 @@ $ sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --ecc \
 
 *摘抄完毕。*
 
+## 证书生成（Re）
+
+给一个域名添加证书：
+
+1. [使用 ACME.SH 申请并安装 Let’s Encrypt SSL 证书][10]
+2. [使用acme.sh免费申请HTTPS证书][11][^c]
+3. [局域网内搭建浏览器可信任的SSL证书][12]
+4. [How to use DNS API - acme.sh wiki][13]
+
 ## 启动
 
 在机器A上执行
@@ -423,6 +432,7 @@ A unified platform for anti-censorship.
 
 [^a]: [V2Ray配置文档][2]
 [^b]: [如何编写一个Systemd Service][9]
+[^c]: 关于证书的科普写的很好，不懂证书是个啥的可以参考下。
 
 
 [1]: https://guide.v2fly.org/advanced/tls.html#%E4%BD%BF%E7%94%A8-acme-sh-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6
@@ -434,4 +444,7 @@ A unified platform for anti-censorship.
 [7]: https://github.com/Neilpang/acme.sh/wiki/Install-preparations
 [8]: https://github.com/Neilpang/acme.sh/wiki/Options-and-Params
 [9]: https://segmentfault.com/a/1190000014740871
-
+[10]:https://blog.exsvc.cn/article/acme-sh-ssl-install.html
+[11]:https://wsgzao.github.io/post/acme/
+[12]:https://www.tangyuecan.com/2021/12/17/%e5%b1%80%e5%9f%9f%e7%bd%91%e5%86%85%e6%90%ad%e5%bb%ba%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8f%af%e4%bf%a1%e4%bb%bb%e7%9a%84ssl%e8%af%81%e4%b9%a6/
+[13]:https://github.com/acmesh-official/acme.sh/wiki/dnsapi
