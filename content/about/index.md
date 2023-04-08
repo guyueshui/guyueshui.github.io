@@ -18,6 +18,7 @@ Welcome! This blog is mainly written for self-reference, which covers math, tech
 | 2020-03-25 | Add many old articles                             |
 | 2020-11-14 | Auto deploy with [Github Actions][6]              |
 | 2021-02-10 | Change comment system from gitment to [valine][7] |
+| 2023-04-08 | Add local [search][8] scheme, not perfect though  |
 
 ## Me
 
@@ -43,3 +44,4 @@ I am yychi, a student.
 [5]: https://github.com/imsun/gitment
 [6]: https://github.com/marketplace?type=actions
 [7]: https://valine.js.org/
+[8]: https://github.com/guyueshui/hugo-theme-even/commit/10f7ac37c822a22c106225513c0f070f2d7438ff
