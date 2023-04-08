@@ -38,20 +38,15 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 #   post = "/:year/:month/:title/"
 
 [[menu.main]]
+  name = "More"
+  weight = 1
+  identifier = "more"
+  url = "/links/"
+[[menu.main]]
   name = "Archives"
   weight = 2
   identifier = "archives"
   url = "/post/"
-[[menu.main]]
-  name = "Tags"
-  weight = 3
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 4
-  identifier = "categories"
-  url = "/categories/"
 [[menu.main]]
   name = "Sketch"
   weight = 6
