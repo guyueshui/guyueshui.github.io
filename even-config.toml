@@ -38,13 +38,18 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 #   post = "/:year/:month/:title/"
 
 [[menu.main]]
+  name = "Search"
+  weight = 2
+  identifier = "search"
+  url = "/search/"
+[[menu.main]]
   name = "More"
-  weight = 1
+  weight = 3
   identifier = "more"
   url = "/links/"
 [[menu.main]]
   name = "Archives"
-  weight = 2
+  weight = 4
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
@@ -122,7 +127,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.publicCDN] # load these files from public cdn 启用公共CDN，需自行定义
     enable = true
-    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
+    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>'
     slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
     fancyboxJS = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
     fancyboxCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">'
