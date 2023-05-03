@@ -2,8 +2,8 @@
 title: "小内存机器的自我救赎"
 date: 2020-03-12
 keywords: []
-categories: [应用推荐]
-tags: []
+categories: []
+tags: [tools, tiny apps, 小而精]
 draft: false
 mathjax: false
 
@@ -37,6 +37,7 @@ mathjax: false
 - [ranger][7]: File manager in terminal, 三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。
 - [rofi][10]: dmenu替代品，窗口切换，应用启动器，简约大方，纯文本构成。
 - [Everything][12]: windows平台，免费且简单易用的全局搜索器，该有的都有。
+- [QTTabBar][13]: 众所周知，windows文件管理器十分难用，尤其是不支持tab，所以，它来了。
 
 ## 学习
 
@@ -54,3 +55,4 @@ mathjax: false
 [10]: https://github.com/davatorium/rofi
 [11]: https://github.com/phw/peek
 [12]: https://www.voidtools.com/zh-cn/
+[13]: http://qttabbar.wikidot.com/

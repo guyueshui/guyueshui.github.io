@@ -19,6 +19,7 @@ Welcome! This blog is mainly written for self-reference, which covers math, tech
 | 2020-11-14 | Auto deploy with [Github Actions][6]              |
 | 2021-02-10 | Change comment system from gitment to [valine][7] |
 | 2023-04-08 | Add local [search][8] scheme, not perfect though  |
+| 2023-04-10 | Search in a more efficient way, refer to [here][9]|
 
 ## Me
 
@@ -45,3 +46,4 @@ I am yychi, a student.
 [6]: https://github.com/marketplace?type=actions
 [7]: https://valine.js.org/
 [8]: https://github.com/guyueshui/hugo-theme-even/commit/10f7ac37c822a22c106225513c0f070f2d7438ff
+[9]: https://www.softwarecraftsperson.com/posts/2021-05-01-client-side-search-fuse/
