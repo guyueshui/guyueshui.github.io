@@ -23,10 +23,7 @@ mathjax: false
 2. [How to fix unable to mount data internal storage 0mb in twrp permanently][2]
 3. [A/B slots flashing in TWRP][3]
 
-此外，这次踩坑在[此处](/post/android刷机的一般步骤/#ab-slot刷机)做了简单记录。
-
-
-折腾一宿加一天之后，终于用上了新ROM，贴几张美图：
+此外，这次踩坑在[此处](/post/android刷机的一般步骤/#ab-slot刷机)做了简单记录。折腾一宿加一天之后，终于用上了新ROM，贴几张美图：
 
 <table><tr>
 <td><img src=munch1.png border=0></td>
