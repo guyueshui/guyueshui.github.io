@@ -61,7 +61,7 @@
 @media print {
     /* hide these elements when print */
     .post-copyright, .post-footer, 
-    #vcomments, footer, .back-to-top, .post-toc {
+    #vcomments, footer, #back-to-top, .post-toc {
         display: none;
     }
 }
