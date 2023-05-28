@@ -185,8 +185,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.busuanzi]         # count web traffic by busuanzi
     enable = true
-    siteUV = true
-    sitePV = true
+    siteUV = false
+    sitePV = false
     pagePV = true
 
   [params.reward]           # 文章打赏
