@@ -55,6 +55,23 @@
     text-align: unset;
 }
 
+/* p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+} */
+
+p:lang(en) {
+    /* text-align: left; */
+    hyphens: auto; /* 西文自动断词，包括以下两个 -<vendor>-hyphens 的兼容性选项 */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+}
+
+footer {
+    font-size: smaller;
+    line-height: 1.5;
+}
+
 /**
  * This field controls print behaviour.
  */
