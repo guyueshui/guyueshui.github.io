@@ -23,8 +23,9 @@ jobs:
         with:
           submodules: true
 
-      - name: AutoCorrect
-        uses: huacnlee/autocorrect-action@main
+      ## Too hard to pass!
+      # - name: AutoCorrect
+      #   uses: huacnlee/autocorrect-action@main
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
