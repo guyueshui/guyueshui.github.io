@@ -18,7 +18,7 @@ tags: ['android', '刷机']
 
 而设备锁，恰恰就是一个安全保障，在对方想要取缔官方 rec 的时候，它出来阻拦：不让你换！而大多数官方的 rec 功能相对简单，并且有官方自己写的保护程序在里面。如果要强行刷机，至少也得先把数据丢了。这某种程度上说明，对方拿不到你的数据，即使他拥有了你的设备！所以对一些商务高层人士，这层防护显得尤为重要。
 
-至此，你应当明白，解开设备锁的**风险**！那么如何判断手机是否已经解锁了呢？方法至少有两种，其一是进入 bootloader 界面（关于如何进入BL界面以及adb工具的设置请先自己解决，暂时没时间写），执行
+至此，你应当明白，解开设备锁的**风险**！那么如何判断手机是否已经解锁了呢？方法至少有两种，其一是进入 bootloader 界面（关于如何进入 BL 界面以及 adb 工具的设置请先自己解决，暂时没时间写），执行
 
 ```
 $ fastboot oem get-bootinfo
@@ -58,7 +58,7 @@ Installed as /usr/bin/adb
 
 **下载刷机包**
 
-这个就考验个人搜索能力了。一般而言在各自机型的官方论坛上找：一加论坛，MIUI论坛都是不错的选择。
+这个就考验个人搜索能力了。一般而言在各自机型的官方论坛上找：一加论坛，MIUI 论坛都是不错的选择。
 
 其次可以在 [XDA](https://forum.xda-developers.com/) 上找，这是个国外比较活跃的 Android 论坛，里面有很多大牛发各种第三方 Rom 包。一般热门机型都可以在 XDA 上找到自己满意的 Rom.
 
@@ -76,7 +76,7 @@ Installed as /usr/bin/adb
 
 **刷入第三方 Recovery**
 
-在确保手机与电脑正确（开启USB调试）连接下，在命令行敲
+在确保手机与电脑正确（开启 USB 调试）连接下，在命令行敲
 ```
 $ adb devices
     xxxxxx device
@@ -102,11 +102,11 @@ $ fastboot flash recovery twrp-xxx.img
 ```
 $ fastboot reboot
 ```
-重启手机，然后同时按住`电源键 + 音量下键`（有些手机不一样，自行摸索） 进入 rec. 也可以等开机后输入
+重启手机，然后同时按住`电源键 + 音量下键`（有些手机不一样，自行摸索）进入 rec. 也可以等开机后输入
 ```
 $ adb reboot recovery
 ```
-进入rec.
+进入 rec.
 
 **刷机**
 
@@ -131,7 +131,7 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 
 完了！一般重启需要一些时间，请耐心等待一下。
 
-**补丁（root包， gapps包）**
+**补丁（root 包，gapps 包）**
 
 - Root：推荐 [Supersu](http://www.supersu.com/) 或者 [Magisk](https://www.xda-developers.com/how-to-install-magisk/)
 - Gapps：推荐 [Opengapps](https://opengapps.org/). Google 大法好，不带 Google 框架的安卓不是 Android！
@@ -139,12 +139,12 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 
 > Note: 注意刷包步骤：先 rom 包，后补丁包。不过还是建议刷完 rom 重启一次，再进 rec 刷补丁包比较稳妥。
 
-### A/B slot刷机
+### A/B slot 刷机
 
-对于新版A/B slot机器，刷机步骤为：
+对于新版 A/B slot 机器，刷机步骤为：
 
-1. 刷rom（如果rom自带recovery，会将twrp覆盖，此时需要立刻刷一遍twrp，确保重启后的recovery是twrp）
-2. 重启到recovery（twrp），这一步将会切到正确的slot
+1. 刷 rom（如果 rom 自带 recovery，会将 twrp 覆盖，此时需要立刻刷一遍 twrp，确保重启后的 recovery 是 twrp）
+2. 重启到 recovery（twrp），这一步将会切到正确的 slot
 3. 重启系统
 
 参考：
@@ -159,7 +159,7 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 
 **`adb` 或 `fastboot` 报错：insufficient permission / permission denied**
 
-请按照 [https://developer.android.com/studio/run/device](https://developer.android.com/studio/run/device) 提示操作，唯一需要注意的是USB供应商ID. 可以用 `lsusb` 来判断。
+请按照 [https://developer.android.com/studio/run/device](https://developer.android.com/studio/run/device) 提示操作，唯一需要注意的是 USB 供应商 ID. 可以用 `lsusb` 来判断。
 
 连接手机之前：
 ```

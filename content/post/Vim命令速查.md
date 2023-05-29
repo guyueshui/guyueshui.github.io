@@ -321,9 +321,9 @@ In general, all your copy and paste operations are performed at register `"` by 
 
 ## Reference
 
-1. [Vim操作](https://github.com/ruanyf/articles/blob/master/dev/vim/operation.md)
+1. [Vim 操作](https://github.com/ruanyf/articles/blob/master/dev/vim/operation.md)
 2. [在 Vim 中优雅地查找和替换](https://harttle.land/2016/08/08/vim-search-in-file.html)
 3. [简明 Vim 练级攻略](https://globalinheart.wordpress.com/2011/09/07/%E7%AE%80%E6%98%8E-vim-%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5/)
 4. [Vim Cheat Sheet](https://vim.rtorr.com/)
 5. [Vim cheatsheet](https://devhints.io/vim)
-6. [Vim查找替换及正则表达式的使用](https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/)
+6. [Vim 查找替换及正则表达式的使用](https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/)

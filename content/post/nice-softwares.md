@@ -13,35 +13,35 @@ mathjax: false
 
 ## 下载
 
-- [aria2c][2]: 命令行下载工具，支持下载种子、磁力等。有RPC模式，配合WebUI使用更佳。参考[简介](/tricks/#aria2c)。
+- [aria2c][2]: 命令行下载工具，支持下载种子、磁力等。有 RPC 模式，配合 WebUI 使用更佳。参考[简介](/tricks/#aria2c)。
 
 ## 多媒体
 
-- [mpv][3]: 命令行多媒体播放器，拥有较强的扩展性和自定义的空间，另外我自己体验上来看比mplayer要流畅，mplayer在我的机子上有丢帧，而mpv无明显丢帧。
-- [mpd/mpc][9]: 音乐播放，没有界面。mpd作为服务端，mpc作为客户端，占用内存非常低。
+- [mpv][3]: 命令行多媒体播放器，拥有较强的扩展性和自定义的空间，另外我自己体验上来看比 mplayer 要流畅，mplayer 在我的机子上有丢帧，而 mpv 无明显丢帧。
+- [mpd/mpc][9]: 音乐播放，没有界面。mpd 作为服务端，mpc 作为客户端，占用内存非常低。
 
 ## 文档
 
-- [zathura][8]: A vim-like pdf reader. vim系快捷键，小而轻，但功能也相对较少。
+- [zathura][8]: A vim-like pdf reader. vim 系快捷键，小而轻，但功能也相对较少。
 
 ## 截图
 
-- [flameshot][1]: gnome-screenshot的替代品，支持截图后标记，复制到剪贴板；平台：Linux
+- [flameshot][1]: gnome-screenshot 的替代品，支持截图后标记，复制到剪贴板；平台：Linux
     - `flameshot gui`: 直接打开截屏功能，更多参考`flameshot -h`.
-- [peek][11]: 小巧易用的录屏软件，支持录制gif, mp4, webm等格式。
+- [peek][11]: 小巧易用的录屏软件，支持录制 gif, mp4, webm 等格式。
 
 ## 效率
 
 - [xpad][4]: 小而轻的桌面便签。
-- [Taskwarrior][5]: A command-line todo manager, 不要因为它的强大而忘记使用它的初衷。
-- [ranger][7]: File manager in terminal, 三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。
-- [rofi][10]: dmenu替代品，窗口切换，应用启动器，简约大方，纯文本构成。
-- [Everything][12]: windows平台，免费且简单易用的全局搜索器，该有的都有。
-- [QTTabBar][13]: 众所周知，windows文件管理器十分难用，尤其是不支持tab，所以，它来了。
+- [Taskwarrior][5]: A command-line todo manager，不要因为它的强大而忘记使用它的初衷。
+- [ranger][7]: File manager in terminal，三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。
+- [rofi][10]: dmenu 替代品，窗口切换，应用启动器，简约大方，纯文本构成。
+- [Everything][12]: windows 平台，免费且简单易用的全局搜索器，该有的都有。
+- [QTTabBar][13]: 众所周知，windows 文件管理器十分难用，尤其是不支持 tab，所以，它来了。
 
 ## 学习
 
-- [GoldenDict][6]: 离线词典，支持在线页面查词，接有道，维基等，可以看做是Linux上的Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。
+- [GoldenDict][6]: 离线词典，支持在线页面查词，接有道，维基等，可以看做是 Linux 上的 Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。
 
 [1]: https://flameshot.js.org/#/
 [2]: https://aria2.github.io

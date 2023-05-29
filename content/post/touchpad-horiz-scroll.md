@@ -1,5 +1,5 @@
 ---
-title: "Linux笔记本触摸板水平滚动问题"
+title: "Linux 笔记本触摸板水平滚动问题"
 date: 2022-03-25T23:03:59+08:00
 lastmod: 2022-03-25T23:03:59+08:00
 keywords: []
@@ -10,7 +10,7 @@ mathjax: false
 
 ---
 
-自打使用linux系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于实现了！
+自打使用 linux 系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于实现了！
 
 ## Synaptics
 
@@ -38,23 +38,23 @@ EndSection
 ```
 但很奇怪，一直以来水平滚动一直没生效。其实想来也是乌龙，是我抄错了：
 ```sh
-# 正确的应该是Horiz而非Horizon
+# 正确的应该是 Horiz 而非 Horizon
 Option "HorizEdgeScroll" "on"
 Option "HorizTwoFingerScroll" "on"
 ```
 其实只要改正并重启一下，事情就完美解决了。可惜我一直没发现，还尝试研究为啥水平滚动不生效呢，他文档明明这么写了，难道是诓我？
 
-`synclient`是用于实时更改synaptics驱动参数的命令行工具，使用
+`synclient`是用于实时更改 synaptics 驱动参数的命令行工具，使用
 ```bash
 synclient HorizTwoFingerScroll=1
 ```
-即可开启水平滚动。事情本应到此结束，但是我惊讶的发现synaptics驱动已经停止维护，archwiki上已经推荐大家使用`libinput`了。
+即可开启水平滚动。事情本应到此结束，但是我惊讶的发现 synaptics 驱动已经停止维护，archwiki 上已经推荐大家使用`libinput`了。
 
 ## Libinput
 
 Cf. https://wiki.archlinux.org/title/Libinput
 
-参考archwiki直接把触摸板输入驱动换成`libinput`，尤其值得注意，如果`/etc/X11/xorg.conf.d`中需要移除（最好先备份）之前的synaptic driver的配置文件，比如我的:
+参考 archwiki 直接把触摸板输入驱动换成`libinput`，尤其值得注意，如果`/etc/X11/xorg.conf.d`中需要移除（最好先备份）之前的 synaptic driver 的配置文件，比如我的：
 ```bash
 rm /etc/X11/xorg.conf.d/70-synaptics.conf
 ```
@@ -85,7 +85,7 @@ EndSection
 
 **特别注意**
 
-注意到文件夹中还有一个文件`00-keyboard.conf`，由于我们换了驱动，而libinput是所有输入的驱动，包括键盘，所以必须适当更改该文件，否则重启进来之后你会发现键盘失效！
+注意到文件夹中还有一个文件`00-keyboard.conf`，由于我们换了驱动，而 libinput 是所有输入的驱动，包括键盘，所以必须适当更改该文件，否则重启进来之后你会发现键盘失效！
 ```bash
 ychi@/etc/X11/xorg.conf.d> cat 00-keyboard.conf
 # Written by systemd-localed(8), read by systemd-localed and Xorg. It's
@@ -94,7 +94,7 @@ ychi@/etc/X11/xorg.conf.d> cat 00-keyboard.conf
 Section "InputClass"
         Identifier "system-keyboard"
         MatchIsKeyboard "on"
-        Driver "libinput"	# 这行必须指定driver为libinput，否则重启后键盘无法输入
+        Driver "libinput"	# 这行必须指定 driver 为 libinput，否则重启后键盘无法输入
         Option "XkbLayout" "cn"
 EndSection
 ```
@@ -114,7 +114,7 @@ yychi@/etc/X11/xorg.conf.d> xinput
     ↳ XiaoMi USB 2.0 Webcam: XiaoMi U         	id=10	[slave  keyboard (3)]
     ↳ AT Translated Set 2 keyboard            	id=12	[slave  keyboard (3)]
     ↳ Wireless hotkeys                        	id=13	[slave  keyboard (3)]
-yychi@/etc/X11/xorg.conf.d> xinput list-props 11	# 由上可知id=11为触摸板
+yychi@/etc/X11/xorg.conf.d> xinput list-props 11	# 由上可知 id=11 为触摸板
 Device 'ELAN2301:00 04F3:306B Touchpad':
 	Device Enabled (189):	1
 	Coordinate Transformation Matrix (191):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
@@ -164,7 +164,7 @@ Device 'ELAN2301:00 04F3:306B Touchpad':
 
 ## Libinput-gestures
 
-`libinput-gestures`是一个脚本工具，它可以接收`libinput`的event并作出相应的action，进而达到手势操作的目地。具体可参考3.
+`libinput-gestures`是一个脚本工具，它可以接收`libinput`的 event 并作出相应的 action，进而达到手势操作的目地。具体可参考 3.
 
 
 ## References

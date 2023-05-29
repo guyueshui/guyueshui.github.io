@@ -1,5 +1,5 @@
 ---
-title: "Latexmk基础用法"
+title: "Latexmk 基础用法"
 date: 2020-04-13T23:50:55+08:00
 lastmod: 2020-04-13T23:50:55+08:00
 keywords: []
@@ -10,33 +10,33 @@ mathjax: false
 
 ---
 
-怎么想到用latexmk的呢？写论文呗！
+怎么想到用 latexmk 的呢？写论文呗！
 
 本来呢，我一直习惯于使用命令行手敲
 ```bash
 pdflatex someting.tex
 ```
-千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出，让你一窥Tex排版系统的内裤（→_→，一本正经胡说八道中……）。还记得Archlinux的哲学名言吗？--Keep it simple and stupid (KISS)--说得太对了呀！
+千万别小看这种重复劳动，它不仅帮你加深记忆，还有最完整的输出，让你一窥 Tex 排版系统的内裤（→_→，一本正经胡说八道中……）。还记得 Archlinux 的哲学名言吗？--Keep it simple and stupid (KISS)--说得太对了呀！
 
 但是啊说到写论文，肯定要有引用文献的啦，这就麻烦了，每次更新参考文献和交叉引用都需要四步走：
 ```bash
-pdflatex a.tex  # 生成aux文件，下一步bibtex才能知道需要引用哪几个文献
-bibtex a        # 生成bbl文件，及将.bib里面的元数据展开成符合tex语法的bibitem
+pdflatex a.tex  # 生成 aux 文件，下一步 bibtex 才能知道需要引用哪几个文献
+bibtex a        # 生成 bbl 文件，及将.bib 里面的元数据展开成符合 tex 语法的 bibitem
 pdflatex a.tex  # 刷新引用，可能残留一些问号
 pdflatex a.tex  # 产生最终结果，所有引用正确显示
 ```
-这就忍不了了吧？其实我还是能忍的，因为不是每次更新文献就重新编译，可以写一大段再更新一次，这就省事儿多了。真正原因是我像用VS code写latex，下了一个插件叫Latex Workshop，它默认使用pdflatex编译，但我写中文必须要用xelatex编译，而且必须要完成自动化。
+这就忍不了了吧？其实我还是能忍的，因为不是每次更新文献就重新编译，可以写一大段再更新一次，这就省事儿多了。真正原因是我像用 VS code 写 latex，下了一个插件叫 Latex Workshop，它默认使用 pdflatex 编译，但我写中文必须要用 xelatex 编译，而且必须要完成自动化。
 
-我看到可以用latexmk，所以就去简单研究了下，下面进入正题。
+我看到可以用 latexmk，所以就去简单研究了下，下面进入正题。
 
 ## 命令行使用
 
 ```bash
 latexmk
 ```
-默认情况下会自动编译当前文件夹下所有tex文件，默认使用pdflatex引擎。
+默认情况下会自动编译当前文件夹下所有 tex 文件，默认使用 pdflatex 引擎。
 
-如果想编译得到PDF文件，则直接加上选项：
+如果想编译得到 PDF 文件，则直接加上选项：
 ```bash
 latexmk -pdf
 ```

@@ -20,7 +20,7 @@ comment: false
 
 ## FFmepg
 
-### 转视频为gif
+### 转视频为 gif
 
 ```bash
 ffmpeg -i input.mkv out.gif
@@ -33,9 +33,9 @@ ffmpeg -r 60 -i input.mkv -r 30 out.gif
 ```sh
 ffmpeg -r 120 -i input.mkv -r 60 out.gif
 ```
-又：不想全转。从视频的第2秒开始，截取3秒转化为gif。
+又：不想全转。从视频的第 2 秒开始，截取 3 秒转化为 gif。
 ```sh
-## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif
+## 从视频中第二秒开始，截取时长为 3 秒的片段转化为 gif
 ffmpeg -t 3 -ss 00:00:02 -i input.mkv out-clip.gif
 ```
 又：控制转化质量。
@@ -44,17 +44,17 @@ ffmpeg -t 3 -ss 00:00:02 -i input.mkv out-clip.gif
 ffmpeg -i input.mkv -b 2048k out.gif
 ```
 
-### VOB转MP4
+### VOB 转 MP4
 
 cf. http://www.ruhuamtv.com/thread-9782-1-1.html
 ```bash
 ffmpeg -i 源视频.vob -c:v libx264 -vf yadif -crf 18 目标视频.mp4
 ```
-又：合并VOB文件。
+又：合并 VOB 文件。
 ```bash
 cat VTS_01_1.VOB VTS_01_2.VOB | ffmpeg -y -i - -fflags genpts -vcodec copy -acodec copy ../output.VOB
 ```
-又：合并mp4文件。
+又：合并 mp4 文件。
 see: https://www.tais3.com/others/983.html
 ```bash
 #! /bin/bash
@@ -71,7 +71,7 @@ rm *.ts
 
 参考：[FFMPEG 合并视频文件（无损）](https://www.tais3.com/others/983.html)
 
-### TS转MP4
+### TS 转 MP4
 
 ```bash
 ffmpeg -y -i your_file.ts -vcodec copy -acodec copy -map 0:v -map 0:a your_file.mp4
@@ -106,16 +106,16 @@ convert -resize 50%x50% src.jpg dst.jpg
 ```bash
 convert -resize 300x300! src.jpg dst.jpg
 ```
-又：多张图片合成gif。
+又：多张图片合成 gif。
 ```bash
 magick DSC_52{01..09}.JPG out.gif
-magick -delay 10 *.jpg out.gif  # 指定每张持续10ms
+magick -delay 10 *.jpg out.gif  # 指定每张持续 10ms
 ```
 又：更改分辨率。
 ```bash
-mogrify -resize 50%x50% *.jpg  # 所有jpg缩放至50%，不加百分号默认单位px（像素）
+mogrify -resize 50%x50% *.jpg  # 所有 jpg 缩放至 50%，不加百分号默认单位 px（像素）
 ```
-又，裁切gif。
+又，裁切 gif。
 ```bash
 #
 magick c.gif -coalesce -repage 0x0 -crop 600x600+175+0 +repage output.gif
@@ -151,8 +151,8 @@ cf. https://stackoverflow.com/a/14036766
 ### 任务控制
 
 1. 执行`command`
-2. 按`^z`挂起当前job
-4. 按`bg`后台继续该job
+2. 按`^z`挂起当前 job
+4. 按`bg`后台继续该 job
 3. 按`fg`召回前台
 
 ### 后台运行命令
@@ -165,12 +165,12 @@ command &
 command &> /dev/null &
 ```
 
-- 如此你可以继续使用当前shell
+- 如此你可以继续使用当前 shell
 - 使用`bg`查看是否有任务在后台运行
 - 使用`jobs`查看后台任务
 - 使用`fg`将任务召回前台
-- 不能退出shell，否则进程会被杀掉
-- **使用`disown`丢掉进程，可以退出shell**
+- 不能退出 shell，否则进程会被杀掉
+- **使用`disown`丢掉进程，可以退出 shell**
 
 又：
 ```sh
@@ -178,19 +178,19 @@ nohup command &> /dev/null &
 ```
 等价于以上的操作。单纯的`nohup command`会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。
 
-### 同时输出到console和文件
+### 同时输出到 console 和文件
 
 将命令输出重定向到文件：
 ```bash
 SomeCommand > SomeFile.txt  # overwrite
 SomeCommand >> SomeFile.txt # append
 ```
-将命令输出(stdout)及报错(stderr)重定向到文件：
+将命令输出 (stdout) 及报错 (stderr) 重定向到文件：
 ```bash
 SomeCommand &> SomeFile.txt
 SomeCommand &>> SomeFile.txt
 ```
-同时输出到console和文件：
+同时输出到 console 和文件：
 ```bash
 SomeCommand 2>&1 | tee SomeFile.txt     # overwrite
 SomeCommand 2>&1 | tee -a SomeFile.txt  # append
@@ -258,10 +258,10 @@ find [path...] [expression]
 
 - `path` - search path
 - `expression` - expands to `-options [-print -exec -ok]`
-    + `-options`: 指定find常用选项
-    + `-print`: 将匹配到的文件写入标准输出[默认]
+    + `-options`: 指定 find 常用选项
+    + `-print`: 将匹配到的文件写入标准输出 [默认]
     + `-exec`: 在匹配到的文件上执行一串命令。格式为`<command> {} \;`，注意 {} 和 \; 之间的空格。
-        * `find . -size 0 -exec rm {} \;` - 删除当前目录下size为0的文件
+        * `find . -size 0 -exec rm {} \;` - 删除当前目录下 size 为 0 的文件
         * `rm -i $(find . -size 0)` - 同上
         * `find . -size 0 | xargs rm -f &` - 同上
     + `-ok`: 同上，执行命令前会询问
@@ -269,7 +269,7 @@ find [path...] [expression]
 **常用选项**
 
 - name - 按照文件名查找
-    + `find <dir> -name "*.cpp"`: 在目录dir下查找后缀为cpp的文件
+    + `find <dir> -name "*.cpp"`: 在目录 dir 下查找后缀为 cpp 的文件
     + `-name`默认不支持正则表达式，顶多支持通配符`*`
 - perm - 按照文件权限查找
 - user - 按照文件所有者查找
@@ -293,7 +293,7 @@ find . -regextype posix-extended -regex ".*\.(log|aux|blg)"
 
 - `find . -name "*name*"` - 找出当前文件夹文件名包含“name”的文件
 - `find . ! -type d -print` - 在当前目录查找非目录文件
-- `find . -newer file1 ! file2` - 查找比file1新但比file2旧的文件
+- `find . -newer file1 ! file2` - 查找比 file1 新但比 file2 旧的文件
 - `find -type d -empty | xargs -n 1 rmdir` - 批量删除当前目录下的空文件夹
 - `find -tyle l -exec ls -l {} +` - 找出当前文件夹下损坏的软连接
 
@@ -303,24 +303,24 @@ find . -regextype posix-extended -regex ".*\.(log|aux|blg)"
 
 最基本用法：
 ```bash
-# 查找somefile中匹配到something的行
+# 查找 somefile 中匹配到 something 的行
 $ grep "something" somefile
 
-# 定位something所在的行并将接下来的3行一并输出
+# 定位 something 所在的行并将接下来的 3 行一并输出
 $ grep "something" somefile -A 3
 
-# 定位something所在的行并将之前的3行一并输出
+# 定位 something 所在的行并将之前的 3 行一并输出
 $ grep "something" somefile -B 3
 
-# 定位something所在的行并将上下3行一并输出
+# 定位 something 所在的行并将上下 3 行一并输出
 $ grep "something" somefile -C 3
 ```
 
 **使用正则表达式**
 
-`grep`支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的`grep`实现方式不同，详见手册。一般extend最为常用，语法为
+`grep`支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的`grep`实现方式不同，详见手册。一般 extend 最为常用，语法为
 ```bash
-# 在somefile中查找包含his或者her的行
+# 在 somefile 中查找包含 his 或者 her 的行
 $ grep -E "his|her" somefile
 ```
 
@@ -339,7 +339,7 @@ xargs (1)            - build and execute command lines from standard input
 
 Ref:
 
-- [xargs命令：一个给其他命令传递参数的过滤器](http://c.biancheng.net/linux/xargs.html)
+- [xargs 命令：一个给其他命令传递参数的过滤器](http://c.biancheng.net/linux/xargs.html)
 
 
 --------------
@@ -358,7 +358,7 @@ cut (1)              - remove sections from each line of files
 基本用法：
 
 ```bash
-# 以:为分隔符分割每行，并选择第1,2,4列输出
+# 以：为分隔符分割每行，并选择第 1,2,4 列输出
 $ cut -d: -f1,2,4 /etc/passwd
 root:x:0
 bin:x:1
@@ -422,9 +422,9 @@ git checkout -b <local_branch> origin/<remote_branch>
 git fetch origin <remote_brach>:<local_branch>
 ```
 
-**删除commit历史**
+**删除 commit 历史**
 
-如果不小心将隐私信息推送至远程仓库（如github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的commit历史查到你所做的更改，所以这种情况下必须删除之前所有的commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除master分支，将新建的分支重命名为master，再推送到远程强制覆盖[^a]。
+如果不小心将隐私信息推送至远程仓库（如 github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的 commit 历史查到你所做的更改，所以这种情况下必须删除之前所有的 commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除 master 分支，将新建的分支重命名为 master，再推送到远程强制覆盖 [^a]。
 ```bash
 # Check out to a temporary branch:
 git checkout --orphan TEMP_BRANCH
@@ -449,11 +449,11 @@ git push -f origin master
 
 **合并某个文件到当前分支**
 
-例如当前在master分支，希望合并某个分支dev的某个或多个文件到当前分支：
+例如当前在 master 分支，希望合并某个分支 dev 的某个或多个文件到当前分支：
 ```bash
 git checkout dev file1 file2 ...
 ```
-但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支master_temp，然后在master_temp中checkout，最后再将master_temp分支merge到master分支：
+但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支 master_temp，然后在 master_temp 中 checkout，最后再将 master_temp 分支 merge 到 master 分支：
 ```bash
 # Create a branch based on master
 git checkout -b master_temp
@@ -474,28 +474,28 @@ Ref: https://segmentfault.com/a/1190000008360855
 
 当你觉得很多时候对于一个命令的很多子命令或者选项不是很清晰，而且查了忘，忘了查，那多半是你不理解它的工作机制。或者说它对你来说不是那么自然易懂，这个时候就需要深入以下，了解以下它的基本原理，帮助自己理解，以便记忆。
 
-`git merge`就是如此，你要知道merge的含义是什么？它其实就是在被merge的分支上重现要merge的commits. 比如说：
+`git merge`就是如此，你要知道 merge 的含义是什么？它其实就是在被 merge 的分支上重现要 merge 的 commits. 比如说：
 ```
 a---b---c---d---e (master)
     \
      `--A---B---C (dev)
 ```
-你当前在master分支的e节点，你要merge dev分支。其实就是将A、B、C三个commit在master分支上重现，仿佛master分支上曾经也做过这些改动。那么冲突的来源就是你在两个分支中，对同一个文件作了不同的改动，如何解决不言而喻。
+你当前在 master 分支的 e 节点，你要 merge dev 分支。其实就是将 A、B、C 三个 commit 在 master 分支上重现，仿佛 master 分支上曾经也做过这些改动。那么冲突的来源就是你在两个分支中，对同一个文件作了不同的改动，如何解决不言而喻。
 
 小朋友，你是否有很多？
 
-Q: 我想只重现B节点怎么办？<br />
-A: `git checkout master && git cherry-pick 62ecb3`，这里`62ecb3`是节点B的commit标识。
+Q: 我想只重现 B 节点怎么办？<br />
+A: `git checkout master && git cherry-pick 62ecb3`，这里`62ecb3`是节点 B 的 commit 标识。
 
-Q: 我想重现A-B，但不要C怎么办？<br />
-A: `git checkout -b newbranch 62ecb3 && git rebase --onto master 76cada^`，这里`76cada`是A节点的commit标识。先基于B创建一个分支，这个分支包含了A节点的改动，然后rebase到master上去，结果就是A和B重现在master分支上。
+Q: 我想重现 A-B，但不要 C 怎么办？<br />
+A: `git checkout -b newbranch 62ecb3 && git rebase --onto master 76cada^`，这里`76cada`是 A 节点的 commit 标识。先基于 B 创建一个分支，这个分支包含了 A 节点的改动，然后 rebase 到 master 上去，结果就是 A 和 B 重现在 master 分支上。
 
 Ref:
 
 1. https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git
 2. [Cherry-Picking specific commits from another branch](https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch/)
 
-**Fork之后如何同步fork源的更新**
+**Fork 之后如何同步 fork 源的更新**
 
 ```bash
 # see remote status
@@ -509,7 +509,7 @@ git remote -v
 ```bash
 git fetch upstream
 ```
-切换到任意分支，merge已经fetch的分支即可：
+切换到任意分支，merge 已经 fetch 的分支即可：
 ```bash
 git checkout somebrach
 git merge upstream/master
@@ -545,29 +545,29 @@ Ref: search "how can i make git show a list of the files that are being tracked"
 
 **submodule**
 
-git submodule本质上是指向一个其他仓库的链接，默认clone不会将submodule对应的仓库克隆下来。
+git submodule 本质上是指向一个其他仓库的链接，默认 clone 不会将 submodule 对应的仓库克隆下来。
 ```bash
 # help
 git submodule --help
 
-# 添加submodule
+# 添加 submodule
 #   1. 进入目标子文件夹
 git submodule add https://github.com/imtianx/liba.git
 
-# 更新submodule
+# 更新 submodule
 cd xxx
 git pull
 git submodule update --recursive
 
-# 在主目录下更新submodule liba
+# 在主目录下更新 submodule liba
 git submodule update --remote liba
 
-# 删除submodule
+# 删除 submodule
 vim .gitmodules # 删除相应条目
 vim .git/config # 删除相应条目
-rm -rf .git/modules/liba # 删除对应的git文件夹
+rm -rf .git/modules/liba # 删除对应的 git 文件夹
 
-# 在克隆时连同submodule一并克隆
+# 在克隆时连同 submodule 一并克隆
 git clone https://github.com/imtianx/MainProject.git --recursive
 # is equivalent to
 git clone https://github.com/imtianx/MainProject.git
@@ -577,22 +577,22 @@ git submodule update
 
 Ref:
 
-1. [Git-工具-子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
+1. [Git-工具 - 子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
 2. [Git 子模块：git submodule](https://juejin.im/post/6844903572950401038)
 
 
-**如何撤销本地commit**
+**如何撤销本地 commit**
 
-有时候本地add了一写diff，随手commit了，接着又有些diff可以共用这个commit，就想撤销刚刚的commit，把所有的diff合并在一起作为一次commit。
+有时候本地 add 了一写 diff，随手 commit 了，接着又有些 diff 可以共用这个 commit，就想撤销刚刚的 commit，把所有的 diff 合并在一起作为一次 commit。
 ```bash
 # for more info, type git reset -h
 git reset --soft <commit_id>
 ```
 
-**修改已提交的commit message**
+**修改已提交的 commit message**
 
 ```bash
-# commit_id至少比要修改的那个commit早一个版本
+# commit_id 至少比要修改的那个 commit 早一个版本
 git rebase -i <commit_id>
 
 # 列出 rebase 的 commit 列表，不包含 <commit id>
@@ -611,7 +611,7 @@ $ git rebase --continue
 $ git rebase --skip
 $ git rebase --abort
 
-# 如果只是更改last commit
+# 如果只是更改 last commit
 git commit --amend
 ```
 
@@ -619,7 +619,7 @@ git commit --amend
 
 Cf. https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 
-`rebase`和`merge`都是将另一分支的提交（commit）集成到当前分支的方法。而merge会保留两条分支的所有commit，然后解决冲突，然后形成一个merge commit，从git log上来看，原本线性的提交历史分了叉，然后又合了并。而rebase则是基于当前分支的某次提交去重现另一个分支，rebase之后依然能够保留提交历史的线性状态。
+`rebase`和`merge`都是将另一分支的提交（commit）集成到当前分支的方法。而 merge 会保留两条分支的所有 commit，然后解决冲突，然后形成一个 merge commit，从 git log 上来看，原本线性的提交历史分了叉，然后又合了并。而 rebase 则是基于当前分支的某次提交去重现另一个分支，rebase 之后依然能够保留提交历史的线性状态。
 
 ```
 a---b---c---d---e (master)
@@ -634,13 +634,13 @@ a---b---c---d---e (master)
 >
 > Rebasing is a common way to integrate upstream changes into your local repository. Pulling in upstream changes with Git merge results in a superfluous merge commit every time you want to see how the project has progressed. On the other hand, rebasing is like saying, “I want to base my changes on what everybody has already done.”
 
-注：写这个的时候，我自己对rebase的理解也很模糊。
+注：写这个的时候，我自己对 rebase 的理解也很模糊。
 
-任何时候不清楚的时候请终止rebase:
+任何时候不清楚的时候请终止 rebase:
 ```bash
 git rebase --abort
 ```
-反复操练几次，git有友好的提示信息。
+反复操练几次，git 有友好的提示信息。
 
 ----------------
 
@@ -656,7 +656,7 @@ g++ main.cpp -I/usr/local/include
 g++ main.cpp -L/path/to/lib_file
 g++ main.cpp -L/usr/lib64 -lcurl -lssl
 ```
-上面第二个命令链接了`/usr/lib64/`目录下的`libcurl.so`和`libssl.so`两个动态库文件。静态库也是同样链接。说起来静态库，想起了最近折腾的一个东西，你可能会想把多个静态库合成一个静态库，想当然的直接用`ar`合并，但是不行，必须要把两个静态库全解压出来，再合并所有的object file. 参见：[here](https://www.cnblogs.com/fnlingnzb-learner/p/8127456.html)
+上面第二个命令链接了`/usr/lib64/`目录下的`libcurl.so`和`libssl.so`两个动态库文件。静态库也是同样链接。说起来静态库，想起了最近折腾的一个东西，你可能会想把多个静态库合成一个静态库，想当然的直接用`ar`合并，但是不行，必须要把两个静态库全解压出来，再合并所有的 object file. 参见：[here](https://www.cnblogs.com/fnlingnzb-learner/p/8127456.html)
 
 生成机器码
 ```bash
@@ -677,9 +677,9 @@ g++ main.cpp -E > main.i
 
 ## Aria2c
 
-[aria2c](https://aria2.github.io/) 是个好东西。支持连接，磁力，种子下载。轻量且强大，可直接使用，也可作为服务端，配合WebUI使用。
+[aria2c](https://aria2.github.io/) 是个好东西。支持连接，磁力，种子下载。轻量且强大，可直接使用，也可作为服务端，配合 WebUI 使用。
 
-- 配置：参考 [aria2配置示例](https://binux.blog/2012/12/aria2-examples/)
+- 配置：参考 [aria2 配置示例](https://binux.blog/2012/12/aria2-examples/)
 - WebUI:
   - [YAAW](http://binux.github.io/yaaw/demo/)
   - [ziahamza](https://ziahamza.github.io/webui-aria2/#)
@@ -694,11 +694,11 @@ Note: jsonrpc 地址格式为 `http://token:<rpc-secret>@hostname:port/jsonrpc`
 
 ## MPV
 
-[MPV](https://mpv.io) 是一个轻量、简约、跨平台的播放器。据我自己体验，在Linux下比mplayer播放效果要好，mplayer倍速会掉帧，而mpv则不太明显。
+[MPV](https://mpv.io) 是一个轻量、简约、跨平台的播放器。据我自己体验，在 Linux 下比 mplayer 播放效果要好，mplayer 倍速会掉帧，而 mpv 则不太明显。
 
 ## HTML
 
-给网页添加BGM。
+给网页添加 BGM。
 ```html
 <embed src="bgm.mp3" autostart="true" loop="true" width="300" height="20" hidden="true">
 ```
@@ -771,11 +771,11 @@ HDMI-2 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 527mm 
    640x480       75.00    60.00    59.94    59.94
    720x400       70.08
 ```
-观察输出可知，连接了两个显示器(eDP-1, HDMI-2)，其中eDP-1是主显示器。如果第二块屏幕无显示，执行下面的命令。
+观察输出可知，连接了两个显示器 (eDP-1, HDMI-2)，其中 eDP-1 是主显示器。如果第二块屏幕无显示，执行下面的命令。
 ```bash
 xrandr --output HDMI-2
 ```
-又，指定分辨率为1920x1080，
+又，指定分辨率为 1920x1080，
 ```bash
 xrandr --output HDMI-2 --mode 1920x1080
 ```
@@ -800,10 +800,10 @@ $ cvt 2560 1440
 # 2560x1440 59.96 Hz (CVT 3.69M9) hsync: 89.52 kHz; pclk: 312.25 MHz
 Modeline "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
 
-# 新建mode
+# 新建 mode
 $ xrandr --newmode "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
 
-# 为指定显示设备add mode
+# 为指定显示设备 add mode
 $ xrandr --addmode HDMI2 "2560x1440_60.00"
 
 # 指定显示器分辨率
@@ -822,27 +822,27 @@ netstat -tulpn | grep LISTEN
 
 --------
 
-## Htop基本操作
+## Htop 基本操作
 
-Htop类似于top，但比top更现代化，支持鼠标操作，支持颜色主题。在命令行键入htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)
+Htop 类似于 top，但比 top 更现代化，支持鼠标操作，支持颜色主题。在命令行键入 htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)
 
 ![](/img/htop.jpg)
 
-平均负载区的三个数字分别表示过去5、10、15分钟系统的平均负载。进程区每一列的意义分别是：
+平均负载区的三个数字分别表示过去 5、10、15 分钟系统的平均负载。进程区每一列的意义分别是：
 - PID: 进程号
 - USER: 进程所有者的用户名
 - PRI: 优先级别
-- NI: NICE值（优先级别数值），越小优先级越高
+- NI: NICE 值（优先级别数值），越小优先级越高
 - VIRT: 虚拟内存
 - RES: 物理内存
 - SHR: 共享内存
-- S: 进程状态（S[leep], R[unning], Z[ombie], N表示优先级为负数）
-- CPU%: 该进程占用的CPU使用率
+- S: 进程状态（S[leep], R[unning], Z[ombie], N 表示优先级为负数）
+- CPU%: 该进程占用的 CPU 使用率
 - MEM%: 该进程占用的物理内存和总内存的百分比
-- TIME+: 该进程启动后占用的CPU时间
+- TIME+: 该进程启动后占用的 CPU 时间
 - Command: 该进程的启动命令
 
-常用快捷键可在htop界面按?显示。
+常用快捷键可在 htop 界面按？显示。
 
 - H: 显示/隐藏用户子线程
 - Space: 标记进程
@@ -852,5 +852,5 @@ Htop类似于top，但比top更现代化，支持鼠标操作，支持颜色主�
 
 # Reference
 
-- [linux下视频转gif](https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/)
+- [linux 下视频转 gif](https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/)
 - [Running Bash Commands in the Background the Right Way [Linux]](https://www.maketecheasier.com/run-bash-commands-background-linux/)

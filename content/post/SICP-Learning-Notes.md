@@ -53,6 +53,6 @@ Convince yourself something is right.
 
 Wishful thinking is crucial!
 
-Lisp没有循环，靠递归的procedure实现迭代，这并不表示procedure展开的process也是递归的。区分递归和迭代的核心是是否需要辅助空间跟踪程序运行的状态。
+Lisp 没有循环，靠递归的 procedure 实现迭代，这并不表示 procedure 展开的 process 也是递归的。区分递归和迭代的核心是是否需要辅助空间跟踪程序运行的状态。
 
 **Case analysis is more powerful than you thought!** Trust me.

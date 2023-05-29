@@ -74,4 +74,4 @@ bibtex mybeamer
 ## References
 
 - [LaTeX/Presentations](https://en.wikibooks.org/wiki/LaTeX/Presentations)
-- [LaTeX到底怎么加bib？？ - 知乎](https://www.zhihu.com/question/30344123/answer/53377390)
+- [LaTeX 到底怎么加 bib？？ - 知乎](https://www.zhihu.com/question/30344123/answer/53377390)

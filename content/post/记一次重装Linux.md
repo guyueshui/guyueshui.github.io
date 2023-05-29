@@ -12,20 +12,20 @@ categories: [linux]
 
 ## 安装 Archlinux
 
-基本安装步骤都是按照 ArchWiki 上的 [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 以及简书上的一篇文章 [虚拟机安装Archlinux的简易步骤](https://www.jianshu.com/p/82a40aac52aa).
+基本安装步骤都是按照 ArchWiki 上的 [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 以及简书上的一篇文章 [虚拟机安装 Archlinux 的简易步骤](https://www.jianshu.com/p/82a40aac52aa).
 
 安装过程主要可以分为以下几个步骤：
 
 **1.分区**
 
-一般而言只需要分 3 个区：根（`/`），用户主目录(`/home`) 以及 `swap` 交换。贴一下我的分区图
+一般而言只需要分 3 个区：根（`/`），用户主目录 (`/home`) 以及 `swap` 交换。贴一下我的分区图
 ![分区信息](https://s2.ax1x.com/2019/01/18/kpjHnx.png)
 
-可以看到，一块磁盘 (disk) 被分成很多的分区 (partition) . 其中，稍微现代一点的电脑主板都启用了 [UEFI](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))，所以在磁盘第一个分区是 [ESP](https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 分区。这个分区中就包含了所有可启动系统的启动文件。在没有安装 Linux 之前，它里面只包含有 Windows 自带的启动文件。在安装完成 Linux 后，由于有两个可启动的系统，所以需要一个引导程序([rEFInd](https://wiki.archlinux.org/index.php/REFInd), Grub 等)来将选择权交给用户。
+可以看到，一块磁盘 (disk) 被分成很多的分区 (partition) . 其中，稍微现代一点的电脑主板都启用了 [UEFI](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))，所以在磁盘第一个分区是 [ESP](https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 分区。这个分区中就包含了所有可启动系统的启动文件。在没有安装 Linux 之前，它里面只包含有 Windows 自带的启动文件。在安装完成 Linux 后，由于有两个可启动的系统，所以需要一个引导程序 ([rEFInd](https://wiki.archlinux.org/index.php/REFInd), Grub 等) 来将选择权交给用户。
 
 上图中的最后三个分区即为 Linux 系统的分区。分区大小的划分事实上很讲究，我根据之前的经验，`/home` 分 50GB 够用了，如果不放什么大型视频和音频文件的话。swap 分区的大小一般为已安装内存的一半，比如我的系统内存 8GB，swap 就分 4GB.
 
-如今（2023-02-24 21:18）已经领略到swap不够用带来的[弊端](/post/linux-hibernate#确保swap分区足够大)。并提供一种[swap扩容](/post/extend-swap)的方法。
+如今（2023-02-24 21:18）已经领略到 swap 不够用带来的[弊端](/post/linux-hibernate#确保swap分区足够大)。并提供一种[swap 扩容](/post/extend-swap)的方法。
 
 **2.格式化分区**
 
@@ -42,7 +42,7 @@ mkfs.ext4 /dev/nvme0n1p7
 ```sh
 mount /dev/nvme0n1p5 /mnt
 mount /dev/nvme0n1p6 /mnt/home
-# boot分区其实应该单独分出来
+# boot 分区其实应该单独分出来
 # 但是我们已经有了 esp 分区
 # 要和原来的 Windows 兼容
 # 只需要将该 esp 分区挂载到 /boot/efi 目录下
@@ -69,7 +69,7 @@ pacstrap -i /mnt base base-devel net-tools
 
 > update: 2023-03-11 13:04
 
-这次安装之后发现时间不同步，且installation guide里面也没有提及，特此记录。开启自动对时的命令：
+这次安装之后发现时间不同步，且 installation guide 里面也没有提及，特此记录。开启自动对时的命令：
 ```bash
 timedateclt set-ntp 1
 
@@ -209,7 +209,7 @@ fc-list :lang=zh # 查看支持中文的字体
 
 ## Troubleshooting
 
-### intel集成显卡滚动屏幕出现撕裂现象
+### intel 集成显卡滚动屏幕出现撕裂现象
 
 可能有用的链接
 
@@ -219,13 +219,13 @@ fc-list :lang=zh # 查看支持中文的字体
 ```bash
 lspci -v | grep -A20 VGA
 ```
-查看nvidia则`grep 3D`
+查看 nvidia 则`grep 3D`
 
-按照[archwiki上所说](https://wiki.archlinux.org/title/Intel_graphics#Tearing)，结果启动X报错，说没有intel这个module，后来发现应该`xf86-video-intel`这个驱动没装的原因。装了之后，再启动就没有屏幕撕裂现象了。
+按照[archwiki 上所说](https://wiki.archlinux.org/title/Intel_graphics#Tearing)，结果启动 X 报错，说没有 intel 这个 module，后来发现应该`xf86-video-intel`这个驱动没装的原因。装了之后，再启动就没有屏幕撕裂现象了。
 
 > 搁置了这么久终于解决了屏幕撕裂的问题，呼！
 
-### 启用nvidia独显
+### 启用 nvidia 独显
 
 可能有用的链接
 
@@ -258,9 +258,9 @@ Section "InputClass"
   Driver       "libinput"
 EndSection
 ```
-退出X，重新进入之后，外接鼠标就可以正常工作了。
+退出 X，重新进入之后，外接鼠标就可以正常工作了。
 
-可以从Xlog中得到印证：
+可以从 Xlog 中得到印证：
 ```bash
 yychi@~/.local/share/xorg> grep -i libinput Xorg.0.log
 [   759.488] (II) LoadModule: "libinput"
@@ -288,4 +288,4 @@ yychi@~/.local/share/xorg> grep -i libinput Xorg.0.log
 [   759.591] (II) libinput: Logitech Wireless Keyboard PID:4023: is a virtual subdevice
 ```
 
-#1和#2处就是外接的罗技无线键鼠套装。
+#1 和#2 处就是外接的罗技无线键鼠套装。

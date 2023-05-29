@@ -11,11 +11,11 @@ tags: [debug, gdb, cpp]
 ```bash
 g++ main.cpp -g -O0
 ```
-`-O0`指定编译器的优化级别为0，即不优化。
+`-O0`指定编译器的优化级别为 0，即不优化。
 
 <!--more-->
 
-然后编译出来的可执行文件，默认名字是`a.out`. 直接了当，用gdb打开之，
+然后编译出来的可执行文件，默认名字是`a.out`. 直接了当，用 gdb 打开之，
 ```bash
 gdb a.out
 ```
@@ -25,7 +25,7 @@ gdb a.out
 (gdb) break 10  // create breakpoint at line 10
 (gdb) break main  // create breakpoint at the entrance of main
 ```
-使用`list`在gdb中查看代码块以确定你要在哪一行设置断点（这就很麻烦，所以一般直接在main函数打个断点，然后单步去run）。
+使用`list`在 gdb 中查看代码块以确定你要在哪一行设置断点（这就很麻烦，所以一般直接在 main 函数打个断点，然后单步去 run）。
 
 设好断点以后，使用`run`启动程序，程序会在断点处停顿，等待你的输入指令。
 ![gdb-demo](gdb-demo.png)
@@ -36,6 +36,6 @@ gdb a.out
 
 ## 备注
 
-- GDB里面的命令都有缩写（break=b, next=n, step=s, ...）
+- GDB 里面的命令都有缩写（break=b, next=n, step=s, ...）
 - 什么命令也不敲直接回车默认执行上一条命令
 - 使用`help <command>`来获取相关命令的使用帮助

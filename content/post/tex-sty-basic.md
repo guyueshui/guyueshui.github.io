@@ -1,5 +1,5 @@
 ---
-title: "一个really simple的LaTeX宏包"
+title: "一个 really simple 的 LaTeX 宏包"
 date: 2020-04-26T09:25:09+08:00
 lastmod: 2021-03-11
 keywords: []
@@ -10,11 +10,11 @@ mathjax: false
 
 ---
 
-众所周知，LaTeX是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起MS Word，简直不知道高到哪里去。就拿最近写论文的事来说，我先用TeX码好字，然后要投的那个刊需要用Word提交。转格式转了我一下午带一晚上，太痛苦了。深刻的体会到什么叫自以为是，MS Word自作聪明地给你调格式。当你敲下回车之后，天知道它又会自动帮你做些什么？！
+众所周知，LaTeX 是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起 MS Word，简直不知道高到哪里去。就拿最近写论文的事来说，我先用 TeX 码好字，然后要投的那个刊需要用 Word 提交。转格式转了我一下午带一晚上，太痛苦了。深刻的体会到什么叫自以为是，MS Word 自作聪明地给你调格式。当你敲下回车之后，天知道它又会自动帮你做些什么？！
 
-好了，闲话少叙。这次主要是记录一下在使用LaTeX排版中文的时候，觉得每次都要定义字体很麻烦。于是干脆写成一个宏包的形式。之后的文档中如果需要排中文，直接导入这个包，就可以直接使用啦。说是宏包，实际上里面只包含自定义字体，惭愧惭愧，我并不是TeX专家。
+好了，闲话少叙。这次主要是记录一下在使用 LaTeX 排版中文的时候，觉得每次都要定义字体很麻烦。于是干脆写成一个宏包的形式。之后的文档中如果需要排中文，直接导入这个包，就可以直接使用啦。说是宏包，实际上里面只包含自定义字体，惭愧惭愧，我并不是 TeX 专家。
 
-一个TeX宏包大概长成下面这个样子：
+一个 TeX 宏包大概长成下面这个样子：
 ```tex
 % This package provides a zh_CN font customization for convinience.
 % yychi (guyueshui002@gmail.com)
@@ -40,7 +40,7 @@ mathjax: false
 \setCJKfamilyfont{fzkai}[Path=\zhfontpath]{方正楷体_GBK.ttf}
 \setCJKfamilyfont{fzfs}[Path=\zhfontpath]{方正仿宋_GBK.ttf}
 
-%% 使用ctex系document，这些字体已被定义，所以做个case
+%% 使用 ctex 系 document，这些字体已被定义，所以做个 case
 \ifx\songti\undefined
   \newcommand*{\songti}{\CJKfamily{fzxbs}}   % 宋体
 \fi
@@ -80,13 +80,13 @@ $ fc-list :lang=zh
 \setCJKsansfont{WenQuanYi Zen Hei}
 \setCJKmonofont{WenQuanYi Zen Hei Mono}
 ```
-后面就是定义一些常用中文字体：宋体、黑体、楷体、仿宋等。注意在使用ctex系文档时，自定义的名字可能已被定义，比如使用`\documentclass{ctextart}`，`\songti`命令已被定义，如果使用了我们自定义的宏包`zhfont`，则会报错命令重复定义。此时可以用`\renewcommand`强制重新定义，也可以使用ctex默认的。总之，我这里加了条件主要是为了学一下TeX里面的控制流。
+后面就是定义一些常用中文字体：宋体、黑体、楷体、仿宋等。注意在使用 ctex 系文档时，自定义的名字可能已被定义，比如使用`\documentclass{ctextart}`，`\songti`命令已被定义，如果使用了我们自定义的宏包`zhfont`，则会报错命令重复定义。此时可以用`\renewcommand`强制重新定义，也可以使用 ctex 默认的。总之，我这里加了条件主要是为了学一下 TeX 里面的控制流。
 
 ## 宏包选项
 
-今天我们来谈谈如何给宏包传递选项，众所周知，形如`\usepackage[option1,option2]{xx}`的意思是给宏包xx传递了option1, option2参数，那么宏包内部是如何处理这些选项的呢？趁着这次自定义字体，我们来看看。
+今天我们来谈谈如何给宏包传递选项，众所周知，形如`\usepackage[option1,option2]{xx}`的意思是给宏包 xx 传递了 option1, option2 参数，那么宏包内部是如何处理这些选项的呢？趁着这次自定义字体，我们来看看。
 
-首先我建议过一遍`clsguide.pdf`，如果你的电脑上安装完整的tex-live（确切来说是安装了tex的documents），你可以使用`texdoc clsguide`来打开该文档。由于时间原因我决定先放结果，再稍作解释。
+首先我建议过一遍`clsguide.pdf`，如果你的电脑上安装完整的 tex-live（确切来说是安装了 tex 的 documents），你可以使用`texdoc clsguide`来打开该文档。由于时间原因我决定先放结果，再稍作解释。
 ```tex
 % This package provides a zh_CN font customization for convinience.
 % yychi (guyueshui002@gmail.com)
@@ -129,7 +129,7 @@ $ fc-list :lang=zh
 
 % 下同
 ```
-此中，`\Declareoption{opt_name}{expression}`，表示宏包提供选项opt_name，如果你在`\usepackage`的时候传递了参数opt_name，那么expression将被执行。而`\DeclareOption*{expression}`表示如果你传递了宏包中未提供的选项，那么expression将被执行。这里我为宏包zhfont提供了选项typography。如果再使用该宏包时传递了该选项，那么zhfont内部会定义一条命令`\tp`，后面通过判断`\tp`有没有被定义来选择不同的字体族，就达到了一个选项，切换字体的效果。
+此中，`\Declareoption{opt_name}{expression}`，表示宏包提供选项 opt_name，如果你在`\usepackage`的时候传递了参数 opt_name，那么 expression 将被执行。而`\DeclareOption*{expression}`表示如果你传递了宏包中未提供的选项，那么 expression 将被执行。这里我为宏包 zhfont 提供了选项 typography。如果再使用该宏包时传递了该选项，那么 zhfont 内部会定义一条命令`\tp`，后面通过判断`\tp`有没有被定义来选择不同的字体族，就达到了一个选项，切换字体的效果。
 
 具体来说，如果使用`\usepackage[typography]{zhfont}`，将使用"FZFWZhuZiAOldMinchoR.TTF"这一套字体排版，而如果没有传递该参数，则使用方正书宋排版。好了，时间有限，这里仅做一个快速的记录，以便之后参考。未完待续……
 

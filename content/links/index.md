@@ -64,13 +64,13 @@ comment: false
 
 ### Fonts
 
-- [文泉驿](http://wenq.org/wqy2/index.cgi)：Linux下的标配中文字体。
-- [思源](https://source.typekit.com/source-han-serif/#get-the-fonts)[^a]：Adobe和Google联合出品，包含宋体、黑体、等宽三种类型，linux下宋体首选。
+- [文泉驿](http://wenq.org/wqy2/index.cgi)：Linux 下的标配中文字体。
+- [思源](https://source.typekit.com/source-han-serif/#get-the-fonts)[^a]：Adobe 和 Google 联合出品，包含宋体、黑体、等宽三种类型，linux 下宋体首选。
 - [文鼎](https://ifontcloud.com.tw/index/browse.jsp?lang=zh&country=TW)：湾湾出的，有点古朴的气质。
 - [汉仪](http://www.hanyi.com.cn/productList.php)：现代汉语的精致字体。
 - [方正](http://www.foundertype.com/index.php/FindFont/index)：书报排版标配字体族。
 - [Google Fonts](https://fonts.google.com/): 种类繁多的英文字体。
 - [Font Awesome](https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started): 流行的图标字体。
-- [Libertine font](http://libertine-fonts.org/download/): SICP书本排版主体字体，个人觉得非常好看，包含 sans-serif 和 serif 两族。
+- [Libertine font](http://libertine-fonts.org/download/): SICP 书本排版主体字体，个人觉得非常好看，包含 sans-serif 和 serif 两族。
 
-[^a]:Archlinux下使用`pacman -S $(pacman -Ssq "adobe-source-han.*cn")`安装之。
+[^a]:Archlinux 下使用`pacman -S $(pacman -Ssq "adobe-source-han.*cn")`安装之。

@@ -40,7 +40,7 @@ tags: ['排版','latex','字体']
 
 **直接使用字体文件**
 
-LaTeX可以直接使用未安装的字体文件进行排版，但要指定字体文件的位置等信息。
+LaTeX 可以直接使用未安装的字体文件进行排版，但要指定字体文件的位置等信息。
 ```tex
 \setCJKmainfont[
     Path = ./fonts/zh_cn/ , % specify the file location
@@ -102,12 +102,12 @@ COMMAND | STYLE
 --------|------
 `\textbf` | 粗体
 `\textit` | 斜体
-`\textsl` | slanted斜体
+`\textsl` | slanted 斜体
 `\textsc` | 小体大写文本
 `\underline` | 下划线
 `\texttt` | 打字机字族，调用`\setmonofont{}`所设置的字体
 `\textsf` | 无称线字族，调用`\setsansfont{}`所设置的字体
-`\textrm` | 罗马字族，调用m`\setmainfont{}`所设置的字体
+`\textrm` | 罗马字族，调用`\setmainfont{}`所设置的字体
 
 ## 扩展包
 
@@ -130,7 +130,7 @@ COMMAND | STYLE
 
 > 首先，行距就是相邻两行文字之间的距离。在下面的图片中，两个下划线之间的长度就叫行距。行距的调节一般使用倍数，比如两倍行距。而“单倍行距”又根据字体、字号、软件的不同而改变（不同软件中有不同的定义，没有一个通用的值）。在 LaTeX 里面也有这些概念，在你定义字号的时候，“单倍行距”也随之确定。更改时，我们更改的是“单倍行距”的倍数。
 
-在导言区使用`\linespread{2.0}`可设置2倍行距。
+在导言区使用`\linespread{2.0}`可设置 2 倍行距。
 
 ### 缩进
 
@@ -175,5 +175,5 @@ COMMAND | STYLE
 
 ## References
 
-1. [LaTeX系列笔记(5)-行距](https://zhuanlan.zhihu.com/p/138408387)
+1. [LaTeX 系列笔记 (5)-行距](https://zhuanlan.zhihu.com/p/138408387)
 

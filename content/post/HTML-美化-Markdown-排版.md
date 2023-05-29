@@ -116,7 +116,7 @@ look<sup>at</sup><sub>me</sub>
 ![hover text](https://hbimg.huaban.com/fe01cdf198b7da8ffec56f52fcf505acffca258a1fb3a-j6MBCO_/fw/480/format/webp "sample caption")
 <figcaption>颇有意境的美少女</figcaption>
 
-如此能生效的原因是本站加载了名为`figcaption`的css，所以这个标签能够被正确排版。使用本主题[^a]只需要在主题文件夹下的`_custom.scss`中增加:
+如此能生效的原因是本站加载了名为`figcaption`的 css，所以这个标签能够被正确排版。使用本主题 [^a] 只需要在主题文件夹下的`_custom.scss`中增加：
 
 ```scss
 // file: <site-root>/themes/even/assets/sass/_custom/_custom.scss
@@ -134,9 +134,9 @@ figcaption {
 
 ## 5. ShortCode
 
-Hugo提供了[ShortCode][1]功能，简单来说就是强大的html替换模版，因为直接在markdown里面写html会显得冗长，所以将一个个排版样式作为ShortCode提供给用户使用。详情参考文档，这里列举一些本主题[^a]提供的ShortCode.
+Hugo 提供了 [ShortCode][1] 功能，简单来说就是强大的 html 替换模版，因为直接在 markdown 里面写 html 会显得冗长，所以将一个个排版样式作为 ShortCode 提供给用户使用。详情参考文档，这里列举一些本主题[^a]提供的 ShortCode.
 
-> 不建议使用ShortCode，因为脱离了hugo，这些元素就无法渲染了。为了保持markdown源文件的兼容性，不推荐使用此功能。
+> 不建议使用 ShortCode，因为脱离了 hugo，这些元素就无法渲染了。为了保持 markdown 源文件的兼容性，不推荐使用此功能。
 
 ```html
 {{% center %}}
@@ -144,7 +144,7 @@ Hugo提供了[ShortCode][1]功能，简单来说就是强大的html替换模版�
 sample b23 video desc
 {{% /center %}}
 ```
-> 完球，上述代码段已经是展开后的形式了，应该是hugo转网页的时候一定会做替换，目前还没找到escape的方法，先将就着看吧。
+> 完球，上述代码段已经是展开后的形式了，应该是 hugo 转网页的时候一定会做替换，目前还没找到 escape 的方法，先将就着看吧。
 
 可排版出如下内容
 
@@ -155,12 +155,12 @@ sample bilibli video desc
 
 但其实上述内容在普通
 ![](raw-shortcode.png)  
-<figcaption>ShortCode在vscode中的排版效果</figcaption>
+<figcaption>ShortCode 在 vscode 中的排版效果</figcaption>
 
 
 ## 6. 代码高亮
 
-> NOTE: 这个功能依赖hugo，不建议使用。
+> NOTE: 这个功能依赖 hugo，不建议使用。
 
 Cf. https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences
 

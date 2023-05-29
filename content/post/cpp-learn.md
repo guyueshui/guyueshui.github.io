@@ -8,12 +8,12 @@ mathjax: false
 
 ---
 
-诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。
+诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。
 
 ## Reactor v.s. Proactor
 
-- epll/wait: reactor模式，不停轮询，发现有事做，就做！
-- asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。
+- epll/wait: reactor 模式，不停轮询，发现有事做，就做！
+- asio: proactor 模式，先注册好事件，如果事情发生了，通过回调函数处理。
 
 ## 几个常用的宏
 
@@ -22,15 +22,15 @@ mathjax: false
 - `__FILE__`: filename of the file
 - `__DATE__` and `__TIME__`: as you wish
 
-## 不要在ctor里调用虚函数
+## 不要在 ctor 里调用虚函数
 
-总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和bug。
+总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和 bug。
 
-ctor应该设计的尽量简单，确保对象可以被正确构造。在ctor中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。
+ctor 应该设计的尽量简单，确保对象可以被正确构造。在 ctor 中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。
 
-## ctor不能是虚函数
+## ctor 不能是虚函数
 
-1. 从存储空间角度：虚函数对应一个vtable（虚函数表），这大家都知道，可是这个vtable其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到vtable，所以构造函数不能是虚函数。
+1. 从存储空间角度：虚函数对应一个 vtable（虚函数表），这大家都知道，可是这个 vtable 其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable 来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到 vtable，所以构造函数不能是虚函数。
 
 2. 从使用角度：虚函数主要用于在信息不全的情况下，能使重载的函数得到对应的调用。构造函数本身就是要初始化实例，那使用虚函数也没有实际意义呀。所以构造函数没有必要是虚函数。
 虚函数的作用在于通过父类的指针或者引用来调用它的时候能够变成调用子类的那个成员函数。而构造函数是在创建对象时自动调用的，不可能通过父类的指针或者引用去调用，因此也就规定构造函数不能是虚函数。
@@ -38,7 +38,7 @@ ctor应该设计的尽量简单，确保对象可以被正确构造。在ctor中
 3. 构造函数不需要是虚函数，也不允许是虚函数，因为创建一个对象时我们总是要明确指定对象的类型，尽管我们可能通过实验室的基类的指针或引用去访问它。但析构却不一定，我们往往通过基类的指针来销毁对象。这时候如果析构函数不是虚函数，就不能正确识别对象类型从而不能正确调用析构函数。
 
 —————————————————— 
-版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+版权声明：本文为 CSDN 博主「cainiao000001」的原创文章，遵循 CC 4.0 by-sa 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/cainiao000001/article/details/81603782
 
 ## 虚函数的工作原理
@@ -68,7 +68,7 @@ C++ 规定了虚函数的行为，但将实现方法留给了编译器的作者�
 | (unsigned) char  |     1 |
 | bool             |     1 |
 
-指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。
+指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是 16 为地址，指针即为 2 个字节，现在一般是 32 位系统，所以是 4 个字节，以后 64 位，则就为 8 个字节。
 
 > NOTE: 类成员函数指针一般为普通指针的两倍大小。
 
@@ -230,7 +230,7 @@ Cf. https://www.learncpp.com/cpp-tutorial/sharing-global-constants-across-multip
 
 ### 结构体
 
-C++规范在“结构”上使用了和C相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。
+C++ 规范在“结构”上使用了和 C 相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。
 
 ```cpp
 struct S {
@@ -260,10 +260,10 @@ Cf. http://www.catb.org/esr/structure-packing/
 从编译到函数模板的调用，编译器必须在非模板重载、模板重载和模板重载的特化间决定。
 
 ```cpp
-template< class T > void f(T);              // #1 ：模板重载
-template< class T > void f(T*);             // #2 ：模板重载
-void                     f(double);         // #3 ：非模板重载
-template<>          void f(int);            // #4 ： #1 的特化
+template< class T > void f(T);              // #1：模板重载
+template< class T > void f(T*);             // #2：模板重载
+void                     f(double);         // #3：非模板重载
+template<>          void f(int);            // #4： #1 的特化
 
 f('a');        // 调用 #1
 f(new int(1)); // 调用 #2
@@ -273,15 +273,15 @@ f(1);          // 调用 #4
 注意只有非模板和初等模板重载参与重载决议。特化不是重载，且不受考虑。只有在重载决议选择最佳匹配初等函数模板后，才检验其特化以查看何为最佳匹配。
 
 ```cpp
-template< class T > void f(T);    // #1 ：所有类型的重载
-template<>          void f(int*); // #2 ：为指向 int 的指针特化 #1
-template< class T > void f(T*);   // #3 ：所有指针类型的重载
+template< class T > void f(T);    // #1：所有类型的重载
+template<>          void f(int*); // #2：为指向 int 的指针特化 #1
+template< class T > void f(T*);   // #3：所有指针类型的重载
 
-f(new int(1)); // 调用 #3 ，即使通过 #1 的特化会是完美匹配
+f(new int(1)); // 调用 #3，即使通过 #1 的特化会是完美匹配
 ```
 即重载的优先级要高于特化。
 
-关于模板函数重载的更多内容，参考[function_template][1]。
+关于模板函数重载的更多内容，参考 [function_template][1]。
 
 
 ## 预编译
@@ -306,7 +306,7 @@ Object-like macros can be defined in one of two ways:
 
 ### Object-like macros don’t affect other preprocessor directives
 
-结论：宏展开在预编译指令(Preprocessor directives)无效。
+结论：宏展开在预编译指令 (Preprocessor directives) 无效。
 
 ```cpp
 #define PRINT_JOE
@@ -371,7 +371,7 @@ Even though PRINT was defined in main.cpp, that doesn’t have any impact on any
 
 Cf. https://www.learncpp.com/cpp-tutorial/header-files/
 
-对于多文件项目，文件是单独编译的。要想调用一个自定义函数，linker必须能找到这个函数在哪里定义。
+对于多文件项目，文件是单独编译的。要想调用一个自定义函数，linker 必须能找到这个函数在哪里定义。
 
 ```cpp
 int add(int, int);  // forward declaration
@@ -382,9 +382,9 @@ int main()
     return 0;
 }
 ```
-上述文件是可以编译通过的，因为没有发生对`add`的调用，所以linker不会去找`add`的定义（当然如果要找也找不到）。
+上述文件是可以编译通过的，因为没有发生对`add`的调用，所以 linker 不会去找`add`的定义（当然如果要找也找不到）。
 
-但是如果某处发起了对`add`的调用（例如去掉注释），那么上述程序在link阶段会报错：
+但是如果某处发起了对`add`的调用（例如去掉注释），那么上述程序在 link 阶段会报错：
 ```shell
 yychi@~> clang test_linker.cpp
 /usr/bin/ld: /tmp/test_linker-e1bb8b.o: in function `main':
@@ -392,7 +392,7 @@ test_linker.cpp:(.text+0x1a): undefined reference to `add(int, int)'
 clang-13: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-在多文件编程时，往往需要forawrd declaration，这些前置声明必须在其他某个地方被定义且只被定义一次。这样，linker才能正确的完成链接。任何重复定义或未定义都会在link阶段报错。
+在多文件编程时，往往需要 forawrd declaration，这些前置声明必须在其他某个地方被定义且只被定义一次。这样，linker 才能正确的完成链接。任何重复定义或未定义都会在 link 阶段报错。
 
 考虑如下例子：
 
@@ -418,7 +418,7 @@ int main()
     return 0;
 }
 ```
-在编译main.cpp的时候，因为有`add`的前置声明，所以可以通过。但为了link的时候能够找到`add`的定义，add.cpp必须也被编译，所以正确的编译方式应该是：
+在编译 main.cpp 的时候，因为有`add`的前置声明，所以可以通过。但为了 link 的时候能够找到`add`的定义，add.cpp 必须也被编译，所以正确的编译方式应该是：
 ```shell
 $ clang main.cpp add.cpp
 ```
@@ -470,9 +470,9 @@ Consequently, our program will compile and link correctly.
 
 ![header has function definition](wrong_header.png)
 
-如上图所示，会产生一个重复定义的错误。由于add.h中包含了函数定义，而非前置声明。编译main.cpp的时候，add.h中的代码插入到main.cpp中，产生一次`add`函数的定义。同理，编译add.cpp的时候也定义了一次`add`函数。link阶段会发生歧义，以致报错。
+如上图所示，会产生一个重复定义的错误。由于 add.h 中包含了函数定义，而非前置声明。编译 main.cpp 的时候，add.h 中的代码插入到 main.cpp 中，产生一次`add`函数的定义。同理，编译 add.cpp 的时候也定义了一次`add`函数。link 阶段会发生歧义，以致报错。
 
-此时如果不编译add.cpp其实是可行的：
+此时如果不编译 add.cpp 其实是可行的：
 ![compile main.cpp only](header2.png)
 
 但谁又能保证只有一个文件`#include "add.h"`呢？所以头文件中应该只包含声明，而不应该包含实现。
@@ -485,7 +485,7 @@ Header files should generally not contain function and variable definitions, so 
 
 **标准库自动链接**
 
-> 注意：clang不会自动链接，需要手动链接
+> 注意：clang 不会自动链接，需要手动链接
 > `clang main.cpp -lstdc++`
 
 When it comes to functions and variables, it’s worth keeping in mind that header files typically only contain function and variable declarations, not function and variable definitions (otherwise a violation of the one definition rule could result). std::cout is forward declared in the iostream header, but defined as part of the C++ standard library, which is automatically linked into your program during the linker phase.
@@ -519,9 +519,9 @@ Fortunately, the compiler and CPU do all the hard work here, so you generally do
 
 All you need to do is pick a data type for your object that best matches your desired use.
 
-谨记：内存只能存bit，只能寻址寻到byte这一层，如果数据按内存边界对齐，寻址会更快（一次读）。
+谨记：内存只能存 bit，只能寻址寻到 byte 这一层，如果数据按内存边界对齐，寻址会更快（一次读）。
 
-由于内存地址空间有限，且按bit寻址的场景很少，所以寻址单位一般是byte。A byte is a group of bits that are operated on as a unit. The modern standard is that a byte is comprised of 8 sequential bits.
+由于内存地址空间有限，且按 bit 寻址的场景很少，所以寻址单位一般是 byte。A byte is a group of bits that are operated on as a unit. The modern standard is that a byte is comprised of 8 sequential bits.
 
 ### 移位
 
@@ -567,26 +567,26 @@ right shift 1 bit(s) of b is: 2147483647
 
  */
 ```
-从内存连续bit来看，a和b都是存了4 byte的1，区别仅仅是data type不一样，导致了截然不同的结果。
+从内存连续 bit 来看，a 和 b 都是存了 4 byte 的 1，区别仅仅是 data type 不一样，导致了截然不同的结果。
 
 **移位操作**
 
 1. 右移
-   1. 无符号右移，低位丢失高位补0
-   2. 有符号右移，低位丢失，高位补符号位（正为0, 负为1）
-2. 左移：高位丢失，低位补0
+   1. 无符号右移，低位丢失高位补 0
+   2. 有符号右移，低位丢失，高位补符号位（正为 0，负为 1）
+2. 左移：高位丢失，低位补 0
 
-a和b左移一位都得到：
+a 和 b 左移一位都得到：
 ```
-0xfffffffe: 如果是int解释为-2, unsigned int解释为4294967294=2^32 - 2
+0xfffffffe: 如果是 int 解释为-2, unsigned int 解释为 4294967294=2^32 - 2
 ```
-a右移一位得到
+a 右移一位得到
 ```
-0xffffffff: 注意负数右移，高位补1，int解释为-1
+0xffffffff: 注意负数右移，高位补 1，int 解释为-1
 ```
-b右移一位得到
+b 右移一位得到
 ```
-0x7fffffff: 高位补0, unsigned int解释为2147483647=2^31-1
+0x7fffffff: 高位补 0, unsigned int 解释为 2147483647=2^31-1
 ```
 注意，负的可能左移成正的，因此，有符号的移位是不安全的。
 
@@ -610,9 +610,9 @@ int main()
 NOTE:
 
 1. 注意无符号数相减得负数会导致溢出
-2. usigned和`--`运算符，可能减至负数溢出
-3. 除非确定变量值非负，否则尽量避免使用unsigned
-4. 切忌不要在数学计算中混用unsigned和signed，此时signed会隐式转换为unsigned
+2. usigned 和`--`运算符，可能减至负数溢出
+3. 除非确定变量值非负，否则尽量避免使用 unsigned
+4. 切忌不要在数学计算中混用 unsigned 和 signed，此时 signed 会隐式转换为 unsigned
 5. unsigned numbers are preferred when dealing with bit manipulation
 6. `std::int8_t`和`std::uint8_t`可能知识`char`和`unsigned char`的别名，可能有坑（参考：https://www.learncpp.com/cpp-tutorial/introduction-to-type-conversion-and-static_cast/）
 
@@ -650,8 +650,8 @@ int main()
 {
     uint32_t a = 0x01020304;
     /*
-     * if it prints 4321, indicates 低位在前，对应little-endian
-     * it it prints 1234, indicates 高位在前，对应big-endian
+     * if it prints 4321, indicates 低位在前，对应 little-endian
+     * it it prints 1234, indicates 高位在前，对应 big-endian
      */
     print(&a, 4);
     return 0;
@@ -662,19 +662,19 @@ int main()
 4321
  */
 ```
-字节序就是计算机存储数据的时候将低位数据存在低位地址还是高位地址。举个例子，数值0x2211使用两个字节储存：高位字节是0x22，低位字节是0x11。
+字节序就是计算机存储数据的时候将低位数据存在低位地址还是高位地址。举个例子，数值 0x2211 使用两个字节储存：高位字节是 0x22，低位字节是 0x11。
 
 - 大端字节序：高位字节在前，低位字节在后，这是人类读写数值的方法。
-- 小端字节序：低位字节在前，高位字节在后，即以0x1122形式储存。
+- 小端字节序：低位字节在前，高位字节在后，即以 0x1122 形式储存。
 
 如果太多记不住，至少要记住：
 
-1. 字节序的概念: 读一段内存从低位向高位读（从左往右），先读到高位字节还是低位字节
+1. 字节序的概念：读一段内存从低位向高位读（从左往右），先读到高位字节还是低位字节
 2. 符合人类读写数值的方法是大端序（big-endian）
 
-既然如此，我们要判断一台机器是big-endian还是little-endian，只需要构造一端内存，按字节从低位地址向高位地址访问，看看低位地址存的是高位字节，还是低位字节即可。
+既然如此，我们要判断一台机器是 big-endian 还是 little-endian，只需要构造一端内存，按字节从低位地址向高位地址访问，看看低位地址存的是高位字节，还是低位字节即可。
 
-且看上述代码，构造了一个整数0x01020304，然后通过将首地址转成`char*`的方式去按字节读取内存中的值（这样做的目的是，`char*`可以逐字节的读取内存；而`int*`一次指针移动会移动`sizeof(int)`个字节）。读出来如果是符合书写习惯的1234, 则表明机器是big-endian, 反之little-endian.
+且看上述代码，构造了一个整数 0x01020304，然后通过将首地址转成`char*`的方式去按字节读取内存中的值（这样做的目的是，`char*`可以逐字节的读取内存；而`int*`一次指针移动会移动`sizeof(int)`个字节）。读出来如果是符合书写习惯的 1234，则表明机器是 big-endian，反之 little-endian.
 
 这也是一段内存的两种不同的解释方式，recall that **Because all data on a computer is just a sequence of bits, we use a data type (often called a “type” for short) to tell the compiler how to interpret the contents of memory in some meaningful way**.
 
@@ -817,18 +817,18 @@ Note that the `extern` keyword has different meanings in different contexts. In 
 
 ## Inline function
 
-考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时inline function就是你的最佳选择。关于合适使用inline function，下面这段话给了一定的意见：
+考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时 inline function 就是你的最佳选择。关于合适使用 inline function，下面这段话给了一定的意见：
 
 > For functions that are large and/or perform complex tasks, the overhead of the function call is typically insignificant compared to the amount of time the function takes to run. However, for small functions, the overhead costs can be larger than the time needed to actually execute the function’s code! In cases where a small function is called often, using a function can result in a significant performance penalty over writing the same code in-place.
 
-Inline function的好处包括：
+Inline function 的好处包括：
 
 1. 没有函数调用的开销
 2. 编译器对展开后的代码有更大的优化空间（如常量替换）
 
 However, inline expansion has its own potential cost: if the body of the function being expanded takes more instructions than the function call being replaced, then each inline expansion will cause the executable to grow larger. Larger executables tend to be slower (due to not fitting as well in caches).
 
-> 注意：inline只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。
+> 注意：inline 只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。
 
 However, in modern C++, the `inline` keyword is no longer used to request that a function be expanded inline. There are quite a few reasons for this:
 
@@ -836,10 +836,10 @@ However, in modern C++, the `inline` keyword is no longer used to request that
 - The `inline` keyword is just a hint -- the compiler is completely free to ignore a request to inline a function. This is likely to be the result if you try to inline a lengthy function! **The compiler is also free to perform inline expansion of functions that do not use the `inline` keyword**  as part of its normal set of optimizations.
 - The `inline` keyword is defined at the wrong level of granularity. We use the `inline` keyword on a function declaration, but inline expansion is actually determined per function call. It may be beneficial to expand some function calls and detrimental to expand others, and there is no syntax to affect this.
 
-注意：在modern cpp中，用inline修饰的不违反ODR（one definition rule），因此可用于
+注意：在 modern cpp 中，用 inline 修饰的不违反 ODR（one definition rule），因此可用于
 
-- 头文件中修饰常量作为global const的最佳方案[^b]
-- 头文件中修饰constexpr函数[^a]使所有include该文件的源文件都能使用该函数，注意constexpr函数是默认inline的
+- 头文件中修饰常量作为 global const 的最佳方案 [^b]
+- 头文件中修饰 constexpr 函数 [^a] 使所有 include 该文件的源文件都能使用该函数，注意 constexpr 函数是默认 inline 的
 
 > Allowing functions with a constexpr return type to be evaluated at either compile-time or runtime was allowed so that a single function can serve both cases. Otherwise, you’d need to have separate functions (a constexpr version and a non-constexpr version) -- and since return type isn’t considered in function overload resolution, you’d have to name the functions different things!
 >

@@ -22,11 +22,11 @@ tags: ['polybar', 个性化]
 
 ## 由浅入深
 
-这次呢，我从一个最简单的例子入手。从[这里][2]找到一个既好看，又简约的模板：
+这次呢，我从一个最简单的例子入手。从 [这里][2] 找到一个既好看，又简约的模板：
 
 ![Image adapted from ref](https://forum.archlabslinux.com/uploads/default/original/1X/13132e9654f0c10ed9c696caa501a40acc7e62fe.png)
 
-我将对应的配置复制到我自己的配置文件（`~/.config/polybar/config`）中:
+我将对应的配置复制到我自己的配置文件（`~/.config/polybar/config`）中：
 ```ini
 [bar/bar]
 background = #D93d3c3b
@@ -126,7 +126,7 @@ format-padding = 1
 ```sh
 polybar bar
 ```
-来运行配置文件中的 bar，其中“bar”为自定义的名字，在上面的配置文件中，这个 bar 的名字就是 “bar”。（参见`[bar/bar]`）
+来运行配置文件中的 bar，其中“bar”为自定义的名字，在上面的配置文件中，这个 bar 的名字就是“bar”。（参见`[bar/bar]`）
 
 不知道是什么原因，运行没有报错，但是我却看不见 bar 在哪里。╮(╯_╰)╭ 可能是它画在了屏幕之外的地方。于是我就将上面的参数改了改，终于，我看到了着个可爱又迷人的 bar 出现在我的桌面上。不过还是有几处乱码，可能是我安装的 Font Awesome 支持的字符不完整吧。
 
@@ -137,7 +137,7 @@ polybar bar
 
 ## 了解构造
 
-其实通过配置文件，我们可以学到很多东西。当然，前提是要有一个好的蓝本给你看。这就不得不提 polybar 的 [wiki][4]，以及作者给出的一些[示例][5]了。
+其实通过配置文件，我们可以学到很多东西。当然，前提是要有一个好的蓝本给你看。这就不得不提 polybar 的 [wiki][4]，以及作者给出的一些 [示例][5] 了。
 
 好了，现在蓝本已经有了。我想添加一个新的模块：比如现在的 Wi-Fi 模块只有下行速度，我要加一个上行速度，并且加上下行箭头。参照 wiki 中的 network 模块，我们可以修改如下：
 ```ini
@@ -247,7 +247,7 @@ ramp-load-7-foreground = #ff5555
 ```ini
 label = CPU %percentage%%
 ```
-顾名思义，它会输出CPU加一个变量，这个变量是一个百分比，就是当前CPU的平均使用率。可选的变量已经在 wiki 中给出。想要什么自己替换就行。
+顾名思义，它会输出 CPU 加一个变量，这个变量是一个百分比，就是当前 CPU 的平均使用率。可选的变量已经在 wiki 中给出。想要什么自己替换就行。
 
 再来看看第二部分，
 ```ini
@@ -260,7 +260,7 @@ ramp-load-5 = ▆
 ramp-load-6 = ▇
 ramp-load-7 = █
 ```
-`ramp-load`共有7个值，他会根据CPU使用率选择合适的值。简而言之，就是将100分成7个等级，使用率越高，就选用等级越高的图案显示。整合起来的效果就是随着百分比增加，显示的高度越高，类似一个性能监视窗，上下浮动。
+`ramp-load`共有 7 个值，他会根据 CPU 使用率选择合适的值。简而言之，就是将 100 分成 7 个等级，使用率越高，就选用等级越高的图案显示。整合起来的效果就是随着百分比增加，显示的高度越高，类似一个性能监视窗，上下浮动。
 
 这还不够，我们还可以做一点微小的工作。请看
 ```ini
@@ -273,7 +273,7 @@ ramp-load-5-foreground = #fba922
 ramp-load-6-foreground = #ff5555
 ramp-load-7-foreground = #ff5555
 ```
-这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告CPU使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：
+这里我们定义了每个等级展示字符的前景色。等级越高，颜色越红，表示警告 CPU 使用快超标了！这样整个变化就有了颜色相伴，更加直观！最后完成的效果如下：
 
 ![kpVXGt.gif](https://s2.ax1x.com/2019/01/17/kpVXGt.gif)
 
@@ -410,7 +410,7 @@ animation-charging-1-foreground = #fba922
 animation-charging-0-foreground = #ff5555
 animation-charging-framerate = 750
 ```
-上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照0、1、2的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：
+上面这段配置定义了充电时的动画，当你插上电源，电池图标会依次按照 0、1、2 的图案切换。然后每个图案都有各自的前景色，切换的速率是 750. 完成后的效果如下：
 
 ![kpQbCQ.gif](https://s2.ax1x.com/2019/01/17/kpQbCQ.gif)
 
@@ -421,7 +421,7 @@ animation-charging-framerate = 750
 > MPD (music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate client is needed.
 > <div style="text-align:right">──adpted from archwiki</div>
 
-MPD是一个轻量的本地音乐播放框架。需要和客户端（mpc）一起使用。大致分为几步：
+MPD 是一个轻量的本地音乐播放框架。需要和客户端（mpc）一起使用。大致分为几步：
 
 1. `$ mpd` 启动 mpd 进程
 2. `$ mpc add <MusicDir>` 添加本地音乐文件夹
@@ -479,7 +479,7 @@ label-time-font = 8
 
 一路折腾下来，发现 polybar 其实很友好。配置逻辑也非常清晰，有点怀疑自己当初为什么没有配置好它，反而觉得很难用。所以啊，作者写这个软件也不是为了刁难人的，一开始的时候也并没有这么复杂。我们入手呢，就要从作者一开始写出来的那样，能用出最基础的功能就好了。然后需求都是后来加上去的。有用户提，作者考虑做，或者作者自己想到的功能，才会在后面一步步添加上去。最终成为一个功能相对完善的软件。每个东西都有它的学习曲线，我们可能已经适应了平缓的山坡，突然面对一个陡峭的山峰之时，便不好应对了。但是千里之行，始于足下！我们始终要抓住它们最初的样子，或者说雏形，然后想一想它们是如何发展过来的，顺着这条线路走下去，自然觉得一切合情合理，也有勇气和信心去学了！然后当我们学会一个又一个软件之后，或许会发现它们可能有异曲同工之妙。那便是学到了！
 
-如果你恰巧喜欢我的配置，猛击[这里][8]获取之。
+如果你恰巧喜欢我的配置，猛击 [这里][8] 获取之。
 
 ## Reference
 

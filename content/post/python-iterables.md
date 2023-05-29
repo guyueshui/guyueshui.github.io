@@ -11,16 +11,16 @@ mathjax: false
 ---
 
 
-Python的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己的见解，因有此篇。
+Python 的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己的见解，因有此篇。
 
 ## Iterable 和 Iterator
 
-为了理解generator，必须先搞清楚iterable和iterator[^a]。
+为了理解 generator，必须先搞清楚 iterable 和 iterator[^a]。
 
 > - An **iterable** object is an object that implements `__iter__`, which is expected to return an iterator object.
 > - An **iterator** is an object that implements `__next__`, which is expected to return the next element of the iterable object that returned it, and raise a StopIteration exception when no more elements are available.
 
-讲真，iterable和iterator的定义就是这么的朴实无华。但要彻底理解，还需费些功夫。先来看个例子：
+讲真，iterable 和 iterator 的定义就是这么的朴实无华。但要彻底理解，还需费些功夫。先来看个例子：
 
 ```python
 class MyIterator(object):
@@ -51,7 +51,7 @@ for x in my_iterable:
 >>> 1
 ```
 
-上面实现了一个iterable和iterator，iterable必须实现`__iter__`方法，并返回一个iterator，在上面的例子中我返回了自己实现的一个iterator。当然也可以这样写：
+上面实现了一个 iterable 和 iterator，iterable 必须实现`__iter__`方法，并返回一个 iterator，在上面的例子中我返回了自己实现的一个 iterator。当然也可以这样写：
 
 
 ```python
@@ -78,7 +78,7 @@ for x in my_iterable:
 >>> 1
 ```
 
-此时`MyIterable`既是iterable又是iterator。那既然能够写在一起，为什么聪明的人们要把这两个概念区分开呢？以下[^b]给出了部分解释：
+此时`MyIterable`既是 iterable 又是 iterator。那既然能够写在一起，为什么聪明的人们要把这两个概念区分开呢？以下[^b]给出了部分解释：
 
 > Iterators and iterables can be separate objects, but they don’t have to. Nothing is holding us back here. If you want, you can create a single object that is both an iterator and an iterable. You just need to implement both `__iter__` and `__next__`.
 >
@@ -89,7 +89,7 @@ for x in my_iterable:
 
 ## For 循环
 
-Python中的`for x in y`要求`y`为iterable，具体地，以下两段代码效果相同：
+Python 中的`for x in y`要求`y`为 iterable，具体地，以下两段代码效果相同：
 
 ```python
 for x in y:
@@ -120,7 +120,7 @@ Note that you can only go forward in an iterator; there’s no way to get the pr
 
 ## Generator Expressions and List Comprehensions
 
-生成器表达式和列表推导式是Python中常用的两个语法。列表推导式生成一个列表，生成表达式生成一个iterator。看下面的例子：
+生成器表达式和列表推导式是 Python 中常用的两个语法。列表推导式生成一个列表，生成表达式生成一个 iterator。看下面的例子：
 ```python
 def test2():
     lst = [1, -2, 3, -4]
@@ -142,14 +142,14 @@ def test2():
 >>> 3
 >>> 4
 ```
-可以看到，列表推导式直接生成一个列表，而生成表达式则是返回一个iterator，并且它也是一个iterable。值得注意的是：
+可以看到，列表推导式直接生成一个列表，而生成表达式则是返回一个 iterator，并且它也是一个 iterable。值得注意的是：
 
 - 列表推导式使用`[]`包围
 - 生成表达式使用`()`包围
-- generator是iterator
-- iterator只能遍历一次，当元素耗尽，再次遍历直接抛出StopIteration
+- generator 是 iterator
+- iterator 只能遍历一次，当元素耗尽，再次遍历直接抛出 StopIteration
 
-> 可将iterator理解为只能遍历一次的iterable。
+> 可将 iterator 理解为只能遍历一次的 iterable。
 
 特别地，以下代码等价：
 ```python

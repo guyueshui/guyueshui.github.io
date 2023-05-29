@@ -1,5 +1,5 @@
 ---
-title: "V3Ray的配置笔记"
+title: "V3Ray 的配置笔记"
 date: 2021-12-07T22:05:42+08:00
 lastmod: 2023-02-24 18:56
 keywords: []
@@ -11,21 +11,21 @@ mathjax: false
 
 学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。
 寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了。遂于昨晚开启修补
-之旅，无奈运气不太好，每一环节都出了问题，最终搞到凌晨3点才重新爬上了梯子。
+之旅，无奈运气不太好，每一环节都出了问题，最终搞到凌晨 3 点才重新爬上了梯子。
 
 想来主要是之前对照的教程遗失，整个流程又有很多细节，难免忘记，遂记此篇。（顺便
 吐槽如今网上教程已经不胜枚举，但优质的教程却少有输出。以至于想要弄清楚某个事情
 的来龙去脉，就必须博采众家所长，取其精华，弃其糟粕。有没有一个教程站出来拍拍
-胸脯说：少年，你只要看我就够了Orz！当然，此篇仅是个笔记，不为服务他人，只为提醒
+胸脯说：少年，你只要看我就够了 Orz！当然，此篇仅是个笔记，不为服务他人，只为提醒
 自己。）
 
-V2Ray是一个较为先进的网络工具，他的用途很多，但大多数人用它来搞建筑。原理就是
-你有一台可访问外网的机器A，你与该机器可以通信，在A中运行一个v2ray（充当服务端），
-在终端设备运行一个v2ray（充当客户端），然后两方配制能对得上，就可以将你访问外网
-的流量转发给机器A，由A发出该请求，收到回复后还是通过A转发回给终端机。这就完成了
+V2Ray 是一个较为先进的网络工具，他的用途很多，但大多数人用它来搞建筑。原理就是
+你有一台可访问外网的机器 A，你与该机器可以通信，在 A 中运行一个 v2ray（充当服务端），
+在终端设备运行一个 v2ray（充当客户端），然后两方配制能对得上，就可以将你访问外网
+的流量转发给机器 A，由 A 发出该请求，收到回复后还是通过 A 转发回给终端机。这就完成了
 一次外网访问。
 
-v2ray的难点在于配置文件[^a]的编写，不过好在现在有很多辅助你生成配置文件的工具。
+v2ray 的难点在于配置文件[^a]的编写，不过好在现在有很多辅助你生成配置文件的工具。
 咱当初可是辛辛苦苦对着文档敲的，不贴上来太可惜了：
 
 ```json
@@ -196,13 +196,13 @@ v2ray的难点在于配置文件[^a]的编写，不过好在现在有很多辅�
 }
 ```
 
-仔细看看server的配置，其实用到了WS+TLS的方式，这样的配置隐蔽性较好，不容易被封。
-但这种配置的成本也相对较高，首先得弄个域名和机器A的ip绑定。即通过`ping somehost.com`能够翻译成机器A的ip。
+仔细看看 server 的配置，其实用到了 WS+TLS 的方式，这样的配置隐蔽性较好，不容易被封。
+但这种配置的成本也相对较高，首先得弄个域名和机器 A 的 ip 绑定。即通过`ping somehost.com`能够翻译成机器 A 的 ip。
 
 
 ## 注册域名
 
-上免费域名注册站：https://my.freenom.com/domains.php ，
+上免费域名注册站：https://my.freenom.com/domains.php，
 
 ![freenom](freenom.png)
 
@@ -213,28 +213,28 @@ v2ray的难点在于配置文件[^a]的编写，不过好在现在有很多辅�
 ![](freenom_2.png)
 ![](freenom_3.png)
 
-此处需要为域名配置解析服务器，可以用腾讯云[域名解析服务][3]，下图中点击“添加域名”，配置成功后会得到两个域名解析服务器地址，将这两个地址填入上图的Nameserver1和Nameserver2中即可。
+此处需要为域名配置解析服务器，可以用腾讯云 [域名解析服务][3]，下图中点击“添加域名”，配置成功后会得到两个域名解析服务器地址，将这两个地址填入上图的 Nameserver1 和 Nameserver2 中即可。
 
 ![pic alt](dnspod.png "opt title")
 
-至此，一个域名到ip的绑定关系就配置完成，可以ping一下试试：
+至此，一个域名到 ip 的绑定关系就配置完成，可以 ping 一下试试：
 ```sh
 me@~> ping somehost.com
 PING somehost.com (xxx.yyy.zzz.aaa) 56(84) 字节的数据。
 64 字节，来自 xx.com (xxx.yyy.zzz.aaa): icmp_seq=1 ttl=52 时间=193 毫秒
 --- somehost.com ping 统计 ---
-已发送 4 个包， 已接收 4 个包, 0% packet loss, time 3003ms
+已发送 4 个包， 已接收 4 个包，0% packet loss, time 3003ms
 rtt min/avg/max/mdev = 159.025/202.023/239.194/29.721 ms
 ```
-其中，`somehost.com`为之前申请的域名，`xxx.yyy.zzz.aaa`为机器A的ip。
+其中，`somehost.com`为之前申请的域名，`xxx.yyy.zzz.aaa`为机器 A 的 ip。
 
 ## 证书生成
 
-*此段摘抄自https://guide.v2fly.org/advanced/tls.html#证书生成*
+*此段摘抄自 https://guide.v2fly.org/advanced/tls.html#证书生成*
 
-TLS 是证书认证机制，所以使用 TLS 需要证书，证书也有免费付费的，同样的这里使用免费证书，证书认证机构为[Let's Encrypt][4]。 证书的生成有许多方法，这里使用的是比较简单的方法：使用[acme.sh][5]脚本生成，本部分说明部分内容参考于[acme.sh README][6]。
+TLS 是证书认证机制，所以使用 TLS 需要证书，证书也有免费付费的，同样的这里使用免费证书，证书认证机构为 [Let's Encrypt][4]。证书的生成有许多方法，这里使用的是比较简单的方法：使用 [acme.sh][5] 脚本生成，本部分说明部分内容参考于 [acme.sh README][6]。
 
-证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，建议使用 ECC 证书。
+证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全，也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，建议使用 ECC 证书。
 
 以下只给出 ECC 证书的部分。
 
@@ -330,7 +330,7 @@ $ sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --ecc \
                           --fullchain-file /etc/v2ray/v2ray.crt \
                           --key-file /etc/v2ray/v2ray.key
 ```
-注意：无论什么情况，密钥(即上面的 v2ray.key)都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考[acme.sh 的手册][8]
+注意：无论什么情况，密钥 (即上面的 v2ray.key) 都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考 [acme.sh 的手册][8]
 
 
 *摘抄完毕。*
@@ -340,13 +340,13 @@ $ sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --ecc \
 给一个域名添加证书：
 
 1. [使用 ACME.SH 申请并安装 Let’s Encrypt SSL 证书][10]
-2. [使用acme.sh免费申请HTTPS证书][11][^c]
-3. [局域网内搭建浏览器可信任的SSL证书][12]
+2. [使用 acme.sh 免费申请 HTTPS 证书][11][^c]
+3. [局域网内搭建浏览器可信任的 SSL 证书][12]
 4. [How to use DNS API - acme.sh wiki][13]
 
 ## 启动
 
-在机器A上执行
+在机器 A 上执行
 ```sh
 $ /usr/bin/v2ray/v2ray
 V2Ray 4.44.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.17.3 linux/amd64)
@@ -355,7 +355,7 @@ A unified platform for anti-censorship.
 2021/12/11 00:22:25 [Info] main/jsonem: Reading config: /usr/bin/v2ray/config.json
 2021/12/11 00:22:26 [Warning] V2Ray 4.44.0 started
 ```
-但是这样会占用终端，虽然可以让它后台运行，但始终不优雅。我们可以将v2ray做成一项system service.
+但是这样会占用终端，虽然可以让它后台运行，但始终不优雅。我们可以将 v2ray 做成一项 system service.
 
 编写服务单元文件[^b]:
 ```service
@@ -391,7 +391,7 @@ systemctl enable/disable v2ray  # 设置是否开机启动
 systemctl status v2ray  # 查看服务运行情况
 ```
 
-暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被ban，故摘录部分，有条件的推荐去看原教程，十分详细！
+暂时写到这里，客户端连接，以及服务器安装等，网上教程较多，不再赘述。因原教程被 ban，故摘录部分，有条件的推荐去看原教程，十分详细！
 
 ## Troubleshooting
 
@@ -408,7 +408,7 @@ A unified platform for anti-censorship.
 2023/02/24 10:13:33 [Warning] [3406089800] app/proxyman/outbound: failed to process outbound traffic > proxy/vmess/outbound: failed to find an available destination > common/retry: [transport/internet/websocket: failed to dial WebSocket > transport/internet/websocket: failed to dial to (wss://xxx.xxx.xxx.xxx/abc):  > transport/internet/websocket: dial TLS connection failed > dial tcp xxx.xxx.xxx.xxx:10086: i/o timeout transport/internet/websocket: failed to dial WebSocket > transport/internet/websocket: failed to dial to (wss:////xxx.xxx.xxx.xxx/abc):  > transport/internet/websocket: dial TLS connection failed > dial tcp xxx.xxx.xxx.xxx:10086: operation was canceled] > common/retry: all retry attempts failed
 ```
 
-参考链接： https://woj.app/7223.html
+参考链接：https://woj.app/7223.html
 
 此前遇到上述问题，经过排查之后就是端口号无法访问了，也不知道是哪一环出了问题。换了端口号之后就可以了。
 
@@ -430,8 +430,8 @@ A unified platform for anti-censorship.
 
 
 
-[^a]: [V2Ray配置文档][2]
-[^b]: [如何编写一个Systemd Service][9]
+[^a]: [V2Ray 配置文档][2]
+[^b]: [如何编写一个 Systemd Service][9]
 [^c]: 关于证书的科普写的很好，不懂证书是个啥的可以参考下。
 
 

@@ -66,9 +66,9 @@ cp /usr/share/fonts/userfonts/MartelSans-Regular.ttf $BLOG/source/fonts/
 
 从上面两张图可以看出，指定的字体是从网络加载而非本地。这样以来，执行 `hexo deploy` 命令部署之后，指定字体将会从正确的网络地址被加载，从而正确应用。
 
-## 去除hrline的动画效果
+## 去除 hrline 的动画效果
 
-Melody主题对于默认的hrline分割线做了效果，我不太喜欢，认为有失简约，移除之。另外hrline的上下间距也改小了一点。
+Melody 主题对于默认的 hrline 分割线做了效果，我不太喜欢，认为有失简约，移除之。另外 hrline 的上下间距也改小了一点。
 
 ```styl
 // $BLOG/themes/melody/source/css/_global/index.styl
@@ -100,7 +100,7 @@ hr
 
 ## 去除列表样式
 
-Melody主题对markdown的有序和无序列表做了css样式，不喜，移除之。
+Melody 主题对 markdown 的有序和无序列表做了 css 样式，不喜，移除之。
 
 ```styl
 // $BLOG/themes/melody/source/css/_layout/post.styl
@@ -177,5 +177,5 @@ ul
 ## Reference
 
 - [Use multiple @font-face rules in CSS](https://stackoverflow.com/questions/4872592/use-multiple-font-face-rules-in-css)
-- [Next主题自定义CSS样式（字体）](https://www.maoxuner.cn/2017/03/08/hexo-next-custom-style.html)
+- [Next 主题自定义 CSS 样式（字体）](https://www.maoxuner.cn/2017/03/08/hexo-next-custom-style.html)
 - [使用自定义字体](https://support.google.com/richmedia/answer/7214245?hl=zh-Hans)
