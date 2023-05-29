@@ -1,11 +1,11 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>A collection of some coding problems - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.112.4 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/coding-problems/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/sass/main.min.4db6eefa019323deeb0f96ac97b0195c6875d5cb6a98e30c1e245d54b43d54bc.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:title" content="A collection of some coding problems"><meta property="og:description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/coding-problems/"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-04-07T19:31:59+00:00"><meta property="article:modified_time" content="2019-09-01T00:00:00+00:00"><meta itemprop=name content="A collection of some coding problems"><meta itemprop=description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta itemprop=datePublished content="2019-04-07T19:31:59+00:00"><meta itemprop=dateModified content="2019-09-01T00:00:00+00:00"><meta itemprop=wordCount content="15873"><meta itemprop=keywords content="算法,动态规划,编程,"><meta name=twitter:card content="summary"><meta name=twitter:title content="A collection of some coding problems"><meta name=twitter:description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>A collection of some coding problems - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.112.5 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/coding-problems/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.4db6eefa019323deeb0f96ac97b0195c6875d5cb6a98e30c1e245d54b43d54bc.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:title" content="A collection of some coding problems"><meta property="og:description" content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta property="og:type" content="article"><meta property="og:url" content="https://guyueshui.github.io/post/coding-problems/"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-04-07T19:31:59+00:00"><meta property="article:modified_time" content="2019-09-01T00:00:00+00:00"><meta itemprop=name content="A collection of some coding problems"><meta itemprop=description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><meta itemprop=datePublished content="2019-04-07T19:31:59+00:00"><meta itemprop=dateModified content="2019-09-01T00:00:00+00:00"><meta itemprop=wordCount content="15563"><meta itemprop=keywords content="算法,动态规划,编程,"><meta name=twitter:card content="summary"><meta name=twitter:title content="A collection of some coding problems"><meta name=twitter:description content="场景题 题一：最高得分 一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/search/><li class=mobile-menu-item>Search</li></a><a href=/links/><li class=mobile-menu-item>More</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/search/>Search</a></li><li class=menu-item><a class=menu-item-link href=/links/>More</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>A collection of some coding problems</h1><div class=post-meta><span class=post-time>April 7, 2019</span><div class=post-category><a href=/categories/notes/>Notes</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#题一最高得分>题一：最高得分</a></li><li><a href=#题二最少硬币>题二：最少硬币</a></li><li><a href=#题三进制转换>题三：进制转换</a></li><li><a href=#题四舞会>题四：舞会</a></li><li><a href=#题五输出数组的全排列>题五：输出数组的全排列</a></li><li><a href=#题六斜线填充>题六：斜线填充</a></li><li><a href=#题七螺旋矩阵>题七：螺旋矩阵</a></li><li><a href=#题八点击窗口的索引>题八：点击窗口的索引</a></li><li><a href=#题九stern-brocot-tree>题九：Stern-Brocot Tree</a></li><li><a href=#题十解码字符串>题十：解码字符串</a></li><li><a href=#题十一重排并计算逆序数>题十一：重排并计算逆序数</a></li><li><a href=#josephus-problem>Josephus Problem</a></li><li><a href=#扔骰子的期望>扔骰子的期望</a></li><li><a href=#递增二叉树>递增二叉树</a></li><li><a href=#经过棋盘的最小开销>经过棋盘的最小开销</a></li><li><a href=#出列的顺序类约瑟夫环>出列的顺序（类约瑟夫环）</a></li><li><a href=#最短通行时间>最短通行时间</a></li></ul><ul><li><a href=#打印二叉树最右边的节点>打印二叉树最右边的节点</a></li><li><a href=#使用两个栈构造一个队列>使用两个栈构造一个队列</a></li><li><a href=#使用两个队列构造一个栈>使用两个队列构造一个栈</a></li><li><a href=#反向打印链表>反向打印链表</a></li><li><a href=#判断可能的出栈序列>判断可能的出栈序列</a></li><li><a href=#括号匹配>括号匹配</a></li><li><a href=#二叉树的层次遍历>二叉树的层次遍历</a></li><li><a href=#求整数的二进制表示中1的个数>求整数的二进制表示中“1”的个数</a></li><li><a href=#不可描述>不可描述</a></li><li><a href=#k轮换>K轮换</a></li><li><a href=#move-zeros>Move zeros</a></li><li><a href=#kth-largest-element-in-an-array>Kth Largest Element in an Array</a></li><li><a href=#最大连续子列>最大连续子列</a></li></ul></nav></div></div><div class=post-content><h1 id=场景题>场景题</h1><h2 id=题一最高得分>题一：最高得分</h2><p>一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之后，游戏结束。此时$N$个数字在玩家面前组成一个新的排列，这个数列每相邻两个数字之差的绝对值之和为玩家最终得分。假设玩家前面的$N$个数字从左到右标号为 $n_1,n_2, \dots, n_N$，则最终得分$S$的计算方式如下：
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/search/><li class=mobile-menu-item>Search</li></a><a href=/links/><li class=mobile-menu-item>More</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tricks/><li class=mobile-menu-item>Tricks</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/search/>Search</a></li><li class=menu-item><a class=menu-item-link href=/links/>More</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tricks/>Tricks</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>A collection of some coding problems</h1><div class=post-meta><span class=post-time>April 7, 2019</span><div class=post-category><a href=/categories/notes/>Notes</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#题一最高得分>题一：最高得分</a></li><li><a href=#题二最少硬币>题二：最少硬币</a></li><li><a href=#题三进制转换>题三：进制转换</a></li><li><a href=#题四舞会>题四：舞会</a></li><li><a href=#题五输出数组的全排列>题五：输出数组的全排列</a></li><li><a href=#题六斜线填充>题六：斜线填充</a></li><li><a href=#题七螺旋矩阵>题七：螺旋矩阵</a></li><li><a href=#题八点击窗口的索引>题八：点击窗口的索引</a></li><li><a href=#题九stern-brocot-tree>题九：Stern-Brocot Tree</a></li><li><a href=#题十解码字符串>题十：解码字符串</a></li><li><a href=#题十一重排并计算逆序数>题十一：重排并计算逆序数</a></li><li><a href=#josephus-problem>Josephus Problem</a></li><li><a href=#扔骰子的期望>扔骰子的期望</a></li><li><a href=#递增二叉树>递增二叉树</a></li><li><a href=#经过棋盘的最小开销>经过棋盘的最小开销</a></li><li><a href=#出列的顺序类约瑟夫环>出列的顺序（类约瑟夫环）</a></li><li><a href=#最短通行时间>最短通行时间</a></li></ul><ul><li><a href=#打印二叉树最右边的节点>打印二叉树最右边的节点</a></li><li><a href=#使用两个栈构造一个队列>使用两个栈构造一个队列</a></li><li><a href=#使用两个队列构造一个栈>使用两个队列构造一个栈</a></li><li><a href=#反向打印链表>反向打印链表</a></li><li><a href=#判断可能的出栈序列>判断可能的出栈序列</a></li><li><a href=#括号匹配>括号匹配</a></li><li><a href=#二叉树的层次遍历>二叉树的层次遍历</a></li><li><a href=#求整数的二进制表示中1的个数>求整数的二进制表示中“1”的个数</a></li><li><a href=#不可描述>不可描述</a></li><li><a href=#k-轮换>K 轮换</a></li><li><a href=#move-zeros>Move zeros</a></li><li><a href=#kth-largest-element-in-an-array>Kth Largest Element in an Array</a></li><li><a href=#最大连续子列>最大连续子列</a></li></ul></nav></div></div><div class=post-content><h1 id=场景题>场景题</h1><h2 id=题一最高得分>题一：最高得分</h2><p>一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之后，游戏结束。此时$N$个数字在玩家面前组成一个新的排列，这个数列每相邻两个数字之差的绝对值之和为玩家最终得分。假设玩家前面的$N$个数字从左到右标号为 $n_1,n_2, \dots, n_N$，则最终得分$S$的计算方式如下：
 $$
 S = \text{abs}(n_1-n_2) + \text{abs}(n_2-n_3) + \cdots + \text{abs}(n_{N-1} - n_N).
-$$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获得的最大得分。</p><blockquote><p>思路：拿到这个问题，感觉像是动态规划。得想办法把子问题拆出来。但是一般情况下，并不是这么好拆的。所以从最简单的用例开始。假设只有两个数，这很简单，无论怎么拿，得分都一样。再加一个数呢？你就要考虑从哪里先拿，然后再从哪里先拿的问题。假设现在有三个数，你从前端拿了一个数，则下一步你得考虑从哪里拿的增益比较大。从前端拿得到一个front_gain, 从末端拿得到一个back_gain. 你得比一比哪个会让你的得分最大化。然后下一步继续这样考虑，这就形成了一个递归步。就是说你已经拆出来了！专业店说就是你找除了递推关系式。
+$$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获得的最大得分。</p><blockquote><p>思路：拿到这个问题，感觉像是动态规划。得想办法把子问题拆出来。但是一般情况下，并不是这么好拆的。所以从最简单的用例开始。假设只有两个数，这很简单，无论怎么拿，得分都一样。再加一个数呢？你就要考虑从哪里先拿，然后再从哪里先拿的问题。假设现在有三个数，你从前端拿了一个数，则下一步你得考虑从哪里拿的增益比较大。从前端拿得到一个 front_gain，从末端拿得到一个 back_gain. 你得比一比哪个会让你的得分最大化。然后下一步继续这样考虑，这就形成了一个递归步。就是说你已经拆出来了！专业店说就是你找除了递推关系式。
 题外话：Case analysis is more powerful than you thought!</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -150,7 +150,7 @@ $$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获�
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题二最少硬币>题二：最少硬币</h2><blockquote><p>2019腾讯实习生笔试题</p></blockquote><p>小Q去商场购物，经常会遇到找零钱的问题。小Q现在手上有$n$种不同面值的硬币，每种面值的硬币有无限多个。为了方便购物，小Q希望带尽量少的硬币，并且要能组合出$1$到$m$之间（包含$1$和$m$）的所有面值。</p><p>输入描述：
+</span></span></code></pre></td></tr></table></div></div><h2 id=题二最少硬币>题二：最少硬币</h2><blockquote><p>2019 腾讯实习生笔试题</p></blockquote><p>小 Q 去商场购物，经常会遇到找零钱的问题。小 Q 现在手上有$n$种不同面值的硬币，每种面值的硬币有无限多个。为了方便购物，小 Q 希望带尽量少的硬币，并且要能组合出$1$到$m$之间（包含$1$和$m$）的所有面值。</p><p>输入描述：
 第一行包含两个整数$m, n ~(1 \le n \le 100, ~1 \le m \le 10^9)$，含义如题所述。
 接下来$n$行，每行一个整数，每$i+1$行的整数表示第$i$种硬币的面值。</p><p>输出描述：
 输出一个整数，表示最少需要携带的硬币数量。如果无解，则输出$-1$.</p><p>示例输入：</p><pre tabindex=0><code>20 4
@@ -159,7 +159,7 @@ $$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获�
 5
 10
 </code></pre><p>示例输出：</p><pre tabindex=0><code>5
-</code></pre><blockquote><p>思路：一拿到就让人联想到动态规划。但其实不是，因为它的条件是要构成所有1到m之间的面值。所以就得从1到m慢慢凑出来。假设当前选择的硬币已经可以构成[1, i], 那么我当然下次在选面值的之后，会很理想的去寻找一个面值为i+1的硬币。这样我可以使我构造的最大面值尽可能的大。如果这个面值大于m了，那我们就完事儿了。这是贪心的思想。具体来说，比方已选的硬币可以构造出1到5之间的任何面值，那我在选择一个面值为6的硬币，就可以构造出1到11之间的任何面值。所以我们从面值为1的开始加，记录当前可以构造的最大面值max_constructed，在选择下一个硬币的时候，优先选择面值&lt;=max_constructed+1的硬币。
+</code></pre><blockquote><p>思路：一拿到就让人联想到动态规划。但其实不是，因为它的条件是要构成所有 1 到 m 之间的面值。所以就得从 1 到 m 慢慢凑出来。假设当前选择的硬币已经可以构成 [1, i], 那么我当然下次在选面值的之后，会很理想的去寻找一个面值为 i+1 的硬币。这样我可以使我构造的最大面值尽可能的大。如果这个面值大于 m 了，那我们就完事儿了。这是贪心的思想。具体来说，比方已选的硬币可以构造出 1 到 5 之间的任何面值，那我在选择一个面值为 6 的硬币，就可以构造出 1 到 11 之间的任何面值。所以我们从面值为 1 的开始加，记录当前可以构造的最大面值 max_constructed，在选择下一个硬币的时候，优先选择面值&lt;=max_constructed+1 的硬币。
 参考：https://blog.csdn.net/MOU_IT/article/details/89057036</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -262,7 +262,7 @@ $$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获�
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题三进制转换>题三：进制转换</h2><blockquote><p>2019哈罗单车实习生笔试题</p></blockquote><p>将一个10进制整数转换成36进制的数，可以用0-9A-Z表示0-35.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=题三进制转换>题三：进制转换</h2><blockquote><p>2019 哈罗单车实习生笔试题</p></blockquote><p>将一个 10 进制整数转换成 36 进制的数，可以用 0-9A-Z 表示 0-35.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -345,12 +345,12 @@ $$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获�
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=题四舞会>题四：舞会</h2><blockquote><p>链接：https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec
-来源：牛客网</p></blockquote><p>今天，在冬木市举行了一场盛大的舞会。参加舞会的有n 位男士，从 1 到 n 编号；有 m 位女士，从 1 到 m 编号。对于每一位男士，他们心中都有各自心仪的一些女士，在这次舞会中，他们希望能与每一位自己心仪的女士跳一次舞。同样的，对于每一位女士，她们心中也有各自心仪的一些男士，她们也希望能与每一位自己心仪的男士跳一次舞。在舞会中，对于每一首舞曲，你可以选择一些男士和女士出来跳舞。但是显然的，一首舞曲中一位男士只能和一位女士跳舞，一位女士也只能和一位男士跳舞。由于舞会的时间有限，现在你想知道你最少需要准备多少首舞曲，才能使所有人的心愿都得到满足？</p><p>input:
-第一行包含两个整数n,m，表示男士和女士的人数。1≤n,m≤ 1000
-接下来n行，
-第i行表示编号为i的男士有ki个心仪的女生
-然后包含ki个不同的整数分别表示他心仪的女士的编号。
-接下来m行，以相同的格式描述每一位女士心仪的男士。</p><p>output:
+来源：牛客网</p></blockquote><p>今天，在冬木市举行了一场盛大的舞会。参加舞会的有 n 位男士，从 1 到 n 编号；有 m 位女士，从 1 到 m 编号。对于每一位男士，他们心中都有各自心仪的一些女士，在这次舞会中，他们希望能与每一位自己心仪的女士跳一次舞。同样的，对于每一位女士，她们心中也有各自心仪的一些男士，她们也希望能与每一位自己心仪的男士跳一次舞。在舞会中，对于每一首舞曲，你可以选择一些男士和女士出来跳舞。但是显然的，一首舞曲中一位男士只能和一位女士跳舞，一位女士也只能和一位男士跳舞。由于舞会的时间有限，现在你想知道你最少需要准备多少首舞曲，才能使所有人的心愿都得到满足？</p><p>input:
+第一行包含两个整数 n,m，表示男士和女士的人数。1≤n,m≤ 1000
+接下来 n 行，
+第 i 行表示编号为 i 的男士有 ki 个心仪的女生
+然后包含 ki 个不同的整数分别表示他心仪的女士的编号。
+接下来 m 行，以相同的格式描述每一位女士心仪的男士。</p><p>output:
 一个整数，表示最少需要准备的舞曲数目。</p><p>示例输入：</p><pre tabindex=0><code>3 3
 2 1 2
 2 1 3
@@ -359,7 +359,7 @@ $$</p><p>请计算玩家在以上游戏规则中把所有数字拿完可以获�
 2 1 3
 2 2 3
 </code></pre><p>示例输出：</p><pre tabindex=0><code>2
-</code></pre><p>说明：</p><pre tabindex=0><code>对于样例2，我们只需要两首舞曲，第一首舞曲安排（1,1），（2,3），（3,2）；第二首舞曲安排（1,2），(2,1)，（3,3）。
+</code></pre><p>说明：</p><pre tabindex=0><code>对于样例 2，我们只需要两首舞曲，第一首舞曲安排（1,1），（2,3），（3,2）；第二首舞曲安排（1,2），(2,1)，（3,3）。
 </code></pre><blockquote><p>思路：乍一看好象很难，不知道怎么处理。其实只要仔细看清楚题目要求：要求每个刃都能得到满足！这很重要，即便还有一个我喜欢的人没跟我跳，就得再放一首歌让我跳！了解到这个需求之后，问题就变的简单了，只要统计出每个人心仪人的数量，以及被心仪的数量，对所有人求一个最大值就行了。
 参考：https://www.nowcoder.com/questionTerminal/9efe02ab547d4a9995fc87a746d7eaec</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -532,8 +532,8 @@ Reference: <a href=https://www.cnblogs.com/ranjiewen/p/8059336.html>https://www.
 </span></span><span class=line><span class=cl>  <span class=n>Permute</span><span class=p>(</span><span class=n>arr</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题六斜线填充>题六：斜线填充</h2><p>给定n x m的矩阵，按照从右上往左下的斜线填充 1 到 n*m 的值。
-例如，对于一个3x3的矩阵,</p><pre tabindex=0><code>1 2 4
+</span></span></code></pre></td></tr></table></div></div><h2 id=题六斜线填充>题六：斜线填充</h2><p>给定 n x m 的矩阵，按照从右上往左下的斜线填充 1 到 n*m 的值。
+例如，对于一个 3x3 的矩阵，</p><pre tabindex=0><code>1 2 4
 3 5 7
 6 8 9 (3x3)
 
@@ -821,11 +821,11 @@ Reference: <a href=https://www.cnblogs.com/ranjiewen/p/8059336.html>https://www.
 </span></span><span class=line><span class=cl>  <span class=n>so</span><span class=p>.</span><span class=n>Print</span><span class=p>();</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题八点击窗口的索引>题八：点击窗口的索引</h2><blockquote><p>网易雷火游戏2019校招</p></blockquote><p>本题需要让你模拟一下在Windows系统里窗口和鼠标的点击操作，具体如下：</p><ol><li>屏幕分辨率为3840x2160，左上角坐标为(0, 0)，右下角坐标为(3839, 2159).</li><li>窗口是一个矩形的形状，由左上角坐标(x, y), 和宽高(w, h)四给数字来定位。左上角坐标为(x, y), 右下角坐标为(x+w, y+h). 其中左上角坐标一定会在屏幕范围内，其他一些部分可能会超过屏幕范围。</li><li>窗口的点击和遮挡规则同Windows，但是不考虑关闭窗口、最大化、最小化和强制置顶的情况。即，</li><li>如果发生重叠，后面打开的窗口会显示在前面打开的窗口上面</li><li>当鼠标发生一次点击的时候，需要判断点击到了哪个窗口，如果同个坐标有多个窗口，算点击到最上层的那个</li><li>当一个窗口被点击的时候，会浮动到最上层</li></ol><p>输入描述：
-每个测试输入包含1个测试用例。第一行为2个整数N，M。其中N表示打开窗口的数目，M表示鼠标点击的数目，其中$0&lt;N,M &lt; 1000$.
-接下来N行，每一行四个整数$x_i, y_i, w_i, h_i$, 分别表示第i个窗口（窗口id为i，从1开始计数）的左上角坐标以及宽高，初始时窗口是按输入的顺序依次打开。其中$0 \le x_i &lt; 3840$, $0 \le y_i &lt; 2160$, $0 &lt; w_i &lt; 3840$, $0 &lt; h_i &lt; 2160$.
-再接下来有M行，每一行两个整数$x_j, y_j$, 分别表示接下来发生的鼠标点击坐标。其中$0 \le x_j &lt; 3840, ~0 \le y_j &lt; 2160$</p><p>输出描述：
-对于每次鼠标点击，输出本次点击到的窗口id。如果没有点击到窗口，输出-1.</p><p>示例输入：</p><pre tabindex=0><code>2 4
+</span></span></code></pre></td></tr></table></div></div><h2 id=题八点击窗口的索引>题八：点击窗口的索引</h2><blockquote><p>网易雷火游戏 2019 校招</p></blockquote><p>本题需要让你模拟一下在 Windows 系统里窗口和鼠标的点击操作，具体如下：</p><ol><li>屏幕分辨率为 3840x2160，左上角坐标为 (0, 0)，右下角坐标为 (3839, 2159).</li><li>窗口是一个矩形的形状，由左上角坐标 (x, y), 和宽高 (w, h) 四给数字来定位。左上角坐标为 (x, y), 右下角坐标为 (x+w, y+h). 其中左上角坐标一定会在屏幕范围内，其他一些部分可能会超过屏幕范围。</li><li>窗口的点击和遮挡规则同 Windows，但是不考虑关闭窗口、最大化、最小化和强制置顶的情况。即，</li><li>如果发生重叠，后面打开的窗口会显示在前面打开的窗口上面</li><li>当鼠标发生一次点击的时候，需要判断点击到了哪个窗口，如果同个坐标有多个窗口，算点击到最上层的那个</li><li>当一个窗口被点击的时候，会浮动到最上层</li></ol><p>输入描述：
+每个测试输入包含 1 个测试用例。第一行为 2 个整数 N，M。其中 N 表示打开窗口的数目，M 表示鼠标点击的数目，其中$0&lt;N,M &lt; 1000$.
+接下来 N 行，每一行四个整数$x_i, y_i, w_i, h_i$, 分别表示第 i 个窗口（窗口 id 为 i，从 1 开始计数）的左上角坐标以及宽高，初始时窗口是按输入的顺序依次打开。其中$0 \le x_i &lt; 3840$, $0 \le y_i &lt; 2160$, $0 &lt; w_i &lt; 3840$, $0 &lt; h_i &lt; 2160$.
+再接下来有 M 行，每一行两个整数$x_j, y_j$, 分别表示接下来发生的鼠标点击坐标。其中$0 \le x_j &lt; 3840, ~0 \le y_j &lt; 2160$</p><p>输出描述：
+对于每次鼠标点击，输出本次点击到的窗口 id。如果没有点击到窗口，输出 -1.</p><p>示例输入：</p><pre tabindex=0><code>2 4
 100 100 100 100
 10 10 150 150
 105 105
@@ -1030,7 +1030,7 @@ Reference: <a href=https://www.cnblogs.com/ranjiewen/p/8059336.html>https://www.
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题九stern-brocot-tree>题九：Stern-Brocot Tree</h2><blockquote><p>网易雷火游戏2019校招</p></blockquote><p>The Stern-Brocot tree is an infinite complete binary tree in which the verices correspond one-for-one to the positive rational numbers, whose values are ordered from the left to the right as in a search tree.</p><p><img src=sb-tree.png alt="Stern-Brocot Tree"></p><p>Figure above shows a part of the Stern-Brocot tree, which has the first 4 rows. The value in the node is the mediant of the left and right fractions. The mediant of two fractions A/B and C/D is defined as (A+C)/(B+D).</p><p>To construct the Stern-Brocot tree, we first define the left fraction of the root node is 0/1, and the right fraction of the root node is 1/0. So the value in the root node is the mediant of 0/1 and 1/0, which is (0+1)/(1+0)=1/1. Then the value of root node becomes the right fraction of the left child, and the left fraction of the right child. For example, the 1st node in row2 has 0/1 as its left fraction and 1/1(which is the value of its parent node) as its right fraction. So the value of the 1st node on row2 is (0+1)(1+1)=1/2. For the same reason, the value of the 2nd node in row2 is (1+1)/(1+0)=2/1. This construction progress goes on infinity. As a result, every positive rational number can be found on the Stern-Brocot tree, and can be found only once.</p><p>Give a rational nunmber in form P/Q, find the position of P/Q in the Stern-Borcot tree.</p><p>Input description:
+</span></span></code></pre></td></tr></table></div></div><h2 id=题九stern-brocot-tree>题九：Stern-Brocot Tree</h2><blockquote><p>网易雷火游戏 2019 校招</p></blockquote><p>The Stern-Brocot tree is an infinite complete binary tree in which the verices correspond one-for-one to the positive rational numbers, whose values are ordered from the left to the right as in a search tree.</p><p><img src=sb-tree.png alt="Stern-Brocot Tree"></p><p>Figure above shows a part of the Stern-Brocot tree, which has the first 4 rows. The value in the node is the mediant of the left and right fractions. The mediant of two fractions A/B and C/D is defined as (A+C)/(B+D).</p><p>To construct the Stern-Brocot tree, we first define the left fraction of the root node is 0/1, and the right fraction of the root node is 1/0. So the value in the root node is the mediant of 0/1 and 1/0, which is (0+1)/(1+0)=1/1. Then the value of root node becomes the right fraction of the left child, and the left fraction of the right child. For example, the 1st node in row2 has 0/1 as its left fraction and 1/1(which is the value of its parent node) as its right fraction. So the value of the 1st node on row2 is (0+1)(1+1)=1/2. For the same reason, the value of the 2nd node in row2 is (1+1)/(1+0)=2/1. This construction progress goes on infinity. As a result, every positive rational number can be found on the Stern-Brocot tree, and can be found only once.</p><p>Give a rational nunmber in form P/Q, find the position of P/Q in the Stern-Borcot tree.</p><p>Input description:
 Input consists of two integers, P and Q (1&lt;=P,Q &lt;= 1000), which represent the rational number P/Q. We promise P and Q are relatively prime.</p><p>Output description:
 Output consists of two integers, R and C. R indicates the row index of P/Q in the Stern-Brocot tree, C indicates the index of P/Q in that row.
 Both R and C are base 1. We promise the position of P/Q is always in the first 12 rows of the Stern-Brocot tree, which means R&lt;=12.</p><p>Sample input:</p><pre tabindex=0><code>5 3
@@ -1191,7 +1191,7 @@ Both R and C are base 1. We promise the position of P/Q is always in the first 1
 </span></span><span class=line><span class=cl>  <span class=c1>// base case
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>if</span> <span class=p>(</span><span class=n>target</span> <span class=o>==</span> <span class=n>root</span><span class=p>.</span><span class=n>val</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  
-</span></span><span class=line><span class=cl>  <span class=c1>// 可以看到Stern-Brocot树具有二叉排序树的特征
+</span></span><span class=line><span class=cl>  <span class=c1>// 可以看到 Stern-Brocot 树具有二叉排序树的特征
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// left-child &lt; parent &lt; right-child
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>if</span> <span class=p>(</span><span class=n>target</span> <span class=o>&lt;</span> <span class=n>root</span><span class=p>.</span><span class=n>val</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>  <span class=p>{</span> <span class=c1>// go left
@@ -1227,18 +1227,18 @@ Both R and C are base 1. We promise the position of P/Q is always in the first 1
 </span></span><span class=line><span class=cl>  <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>row</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>col</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题十解码字符串>题十：解码字符串</h2><blockquote><p>腾讯2019校招</p></blockquote><p>小Q想要给他的朋友发送一个神秘的字符串，但是他发现字符串过长了，于是小Q发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的m个相同的字符串S将会压缩为[m|S]（m为一个整数且1&lt;=m&lt;=100），例如字符串ABCABCABC将会被压缩为[3|ABC]，现在小Q的同学收到了小Q发送过来的字符串，你能帮助他进行解压缩么？</p><p>输入描述：</p><pre tabindex=0><code>输入第一行包含一个字符串S，代表压缩后的字符串。
+</span></span></code></pre></td></tr></table></div></div><h2 id=题十解码字符串>题十：解码字符串</h2><blockquote><p>腾讯 2019 校招</p></blockquote><p>小 Q 想要给他的朋友发送一个神秘的字符串，但是他发现字符串过长了，于是小 Q 发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的 m 个相同的字符串 S 将会压缩为 [m|S]（m 为一个整数且 1&lt;=m&lt;=100），例如字符串 ABCABCABC 将会被压缩为 [3|ABC]，现在小 Q 的同学收到了小 Q 发送过来的字符串，你能帮助他进行解压缩么？</p><p>输入描述：</p><pre tabindex=0><code>输入第一行包含一个字符串 S，代表压缩后的字符串。
 S的长度&lt;=1000;
 S仅包含大写字母、[、]、|;
-解压缩后的字符串长度不超过100000;
-压缩递归层数不超过10层;
+解压缩后的字符串长度不超过 100000;
+压缩递归层数不超过 10 层;
 </code></pre><p>输出描述：</p><pre tabindex=0><code>输出一个字符串，代表解压后的字符串。
 </code></pre><p>输入示例：</p><pre tabindex=0><code>HG[3|B[2|CA]]F
 </code></pre><p>输出示例：</p><pre tabindex=0><code>HGBCACABCACABCACAF
 </code></pre><p>说明：</p><pre tabindex=0><code>HG[3|B[2|CA]]F -&gt;
 HG[3|BCACA]F -&gt;
 HGBCACABCACABCACAF
-</code></pre><blockquote><p>个人觉得我的解法很烂，而且太繁琐，但是目前还想不出更好的。代码也写的比较乱orz. 主要想法是遍历一遍字符串，如果不是特定的压缩模式，直接添加到结果中就好，如果遇到了特殊模式（[3|AB]），将该模式提取出来交给另一个函数解码，模式可能递归存在，所以使用一个栈确保提取出正确的模式。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</code></pre><blockquote><p>个人觉得我的解法很烂，而且太繁琐，但是目前还想不出更好的。代码也写的比较乱 orz. 主要想法是遍历一遍字符串，如果不是特定的压缩模式，直接添加到结果中就好，如果遇到了特殊模式（[3|AB]），将该模式提取出来交给另一个函数解码，模式可能递归存在，所以使用一个栈确保提取出正确的模式。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -1406,14 +1406,14 @@ HGBCACABCACABCACAF
 </span></span><span class=line><span class=cl>  <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>output</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=题十一重排并计算逆序数>题十一：重排并计算逆序数</h2><blockquote><p>腾讯2019校招</p></blockquote><p>作为程序员的小Q，它的数列和其他人的不太一样，他有$2^n$个数。老板问了小Q一共m次，每次给出一个整数$q_i$ (1&lt;=i&lt;=m)，要求小Q把这些数每$2^{q_i}$分为一组，然后把每组进行翻转，小Q想知道每次操作后整个序列中的逆序对个数是多少呢？</p><p>例如：
-对于序列1 3 4 2，逆序对有(4,2), (3,2)总数量为2.
-翻转之后为2 4 3 1，逆序对有(2,1), (4,3), (4,1), (3,1)总数量为4.</p><p>输入描述：
-第一行一个数n（0&lt;=n&lt;=20）
+</span></span></code></pre></td></tr></table></div></div><h2 id=题十一重排并计算逆序数>题十一：重排并计算逆序数</h2><blockquote><p>腾讯 2019 校招</p></blockquote><p>作为程序员的小 Q，它的数列和其他人的不太一样，他有$2^n$个数。老板问了小 Q 一共 m 次，每次给出一个整数$q_i$ (1&lt;=i&lt;=m)，要求小 Q 把这些数每$2^{q_i}$分为一组，然后把每组进行翻转，小 Q 想知道每次操作后整个序列中的逆序对个数是多少呢？</p><p>例如：
+对于序列 1 3 4 2，逆序对有 (4,2), (3,2) 总数量为 2.
+翻转之后为 2 4 3 1，逆序对有 (2,1), (4,3), (4,1), (3,1) 总数量为 4.</p><p>输入描述：
+第一行一个数 n（0&lt;=n&lt;=20）
 第二行$2^n$个数，表示初始序列（1&lt;=初始序列&lt;=$10^9$）
-第三行一个数m（1&lt;=m&lt;=$10^6$）
-第四行m个数表示$q_i$ (0&lt;=$q_i$&lt;=n)</p><p>输出描述：
-m行每行一个数表示答案</p><p>输入示例：</p><pre tabindex=0><code>2
+第三行一个数 m（1&lt;=m&lt;=$10^6$）
+第四行 m 个数表示$q_i$ (0&lt;=$q_i$&lt;=n)</p><p>输出描述：
+m 行每行一个数表示答案</p><p>输入示例：</p><pre tabindex=0><code>2
 2 1 4 3
 4
 1 2 0 2
@@ -1422,11 +1422,11 @@ m行每行一个数表示答案</p><p>输入示例：</p><pre tabindex=0><code>2
 6
 0
 </code></pre><p>说明：
-初始序列2 1 4 3
-$2^{q_1} = 2$ -> 第一次：1 2 3 4 -> 逆序对数0
-$2^{q_2} = 4$ -> 第二次：4 3 2 1 -> 逆序对数6
-$2^{q_3} = 1$ -> 第三次：4 3 2 1 -> 逆序对数6
-$2^{q_4} = 4$ -> 第四次：1 2 3 4 -> 逆序对数0</p><blockquote><p>首先如何计算逆序数，常用的方法是归并排序，可以顺带计算逆序数。但是由于我一开始用的是开销较大的归并，频繁的构造，复制vector，导致运行超时。后来改成了inplace的归并，速度明显提高很多。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+初始序列 2 1 4 3
+$2^{q_1} = 2$ -> 第一次：1 2 3 4 -> 逆序对数 0
+$2^{q_2} = 4$ -> 第二次：4 3 2 1 -> 逆序对数 6
+$2^{q_3} = 1$ -> 第三次：4 3 2 1 -> 逆序对数 6
+$2^{q_4} = 4$ -> 第四次：1 2 3 4 -> 逆序对数 0</p><blockquote><p>首先如何计算逆序数，常用的方法是归并排序，可以顺带计算逆序数。但是由于我一开始用的是开销较大的归并，频繁的构造，复制 vector，导致运行超时。后来改成了 inplace 的归并，速度明显提高很多。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -1758,15 +1758,15 @@ $2^{q_4} = 4$ -> 第四次：1 2 3 4 -> 逆序对数0</p><blockquote><p>首先�
 6
 0
 0.068ms for inplace mergesort
-</code></pre><p>差了3倍左右！</p><h2 id=josephus-problem>Josephus Problem</h2><blockquote><p>这个问题是以弗拉维奥·约瑟夫命名的，他是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。</p><div style=text-align:right>——维基百科</div></blockquote><p>描述：人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。（牛客网上类似的题<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>）</p><p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p><p>解法：维基百科<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>上也有，GeeksforGeeks<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>还有视频教程。</p><p>常见的有两种解法：</p><ul><li>单链表模拟</li><li>数学递推</li></ul><p>显然，假设n个人编号：$0,1,2,3,\dots,n-1$. 从0号开始报数（报数从0开始），报到m-1的将被处决，然后从下一个人开始报数。直到剩下最后一个人，赦免之。</p><p>第一趟：报到 m 的自然是编号为$(m-1) \mod n$.
-接着从 $m \mod n$ 开始报数，接下来又会是谁被处决呢？</p><p>等等，先来看看问题是什么，我希望知道幸免者的编号。在n个人，报m个数的设定下，我希望知道幸免者编号，假设这个编号就是$f(n,m)$, 这里 $f$ 是个神奇的函数，我只要告诉它 n 和 m 它就能告诉我最后幸存者的编号。如果我能找到 $f(n, m)$ 和 $f(n-1, m)$ 的递推关系式，那将是极好的。</p><p>在第一趟之后，报数从编号 $k = m \mod n$ 开始，但是此时只有 n-1个人，我还是想知道幸存者的编号。如果此时将编号重新映射一下，比如：</p><pre tabindex=0><code>k   -&gt; 0
+</code></pre><p>差了 3 倍左右！</p><h2 id=josephus-problem>Josephus Problem</h2><blockquote><p>这个问题是以弗拉维奥·约瑟夫命名的，他是 1 世纪的一名犹太历史学家。他在自己的日记中写道，他和他的 40 个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。</p><div style=text-align:right>——维基百科</div></blockquote><p>描述：人们站在一个等待被处决的圈子里。计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。在跳过指定数量的人之后，执行下一个人。对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。（牛客网上类似的题 <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>）</p><p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p><p>解法：维基百科 <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> 上也有，GeeksforGeeks<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> 还有视频教程。</p><p>常见的有两种解法：</p><ul><li>单链表模拟</li><li>数学递推</li></ul><p>显然，假设 n 个人编号：$0,1,2,3,\dots,n-1$. 从 0 号开始报数（报数从 0 开始），报到 m-1 的将被处决，然后从下一个人开始报数。直到剩下最后一个人，赦免之。</p><p>第一趟：报到 m 的自然是编号为$(m-1) \mod n$.
+接着从 $m \mod n$ 开始报数，接下来又会是谁被处决呢？</p><p>等等，先来看看问题是什么，我希望知道幸免者的编号。在 n 个人，报 m 个数的设定下，我希望知道幸免者编号，假设这个编号就是$f(n,m)$, 这里 $f$ 是个神奇的函数，我只要告诉它 n 和 m 它就能告诉我最后幸存者的编号。如果我能找到 $f(n, m)$ 和 $f(n-1, m)$ 的递推关系式，那将是极好的。</p><p>在第一趟之后，报数从编号 $k = m \mod n$ 开始，但是此时只有 n-1 个人，我还是想知道幸存者的编号。如果此时将编号重新映射一下，比如：</p><pre tabindex=0><code>k   -&gt; 0
 k+1 -&gt; 1
 ...
 k-2 -&gt; n-2
-</code></pre><p>那么问题就变成了 n-1 个人，从0开始报数，报到 m-1 被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 $f(n-1, m)$. 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是 x，那么映射回原编号 y</p><pre tabindex=0><code>y = (x+k) mod n
+</code></pre><p>那么问题就变成了 n-1 个人，从 0 开始报数，报到 m-1 被处决，完完全全成了一个拥有同样结构的问题，但是规模更小了。显然，这个问题的解是 $f(n-1, m)$. 但是呢，我们得到的编号却不是原来的编号了，得把编号还原回去。这很简单，假设得到的编号是 x，那么映射回原编号 y</p><pre tabindex=0><code>y = (x+k) mod n
 </code></pre><p>于是，如果我们能够知道 $f(n-1, m)$, 那么</p><p>$$
 f(n, m) = (f(n-1,m) + m) \mod n.
-$$</p><p>这就得到了递推公式，接着看一下边界条件，当n = 1时， $f(1, m) = 0$; 结束。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+$$</p><p>这就得到了递推公式，接着看一下边界条件，当 n = 1 时， $f(1, m) = 0$; 结束。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -1782,21 +1782,21 @@ $$</p><p>这就得到了递推公式，接着看一下边界条件，当n = 1时
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span><span class=n>Josephus</span><span class=p>(</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=n>m</span><span class=p>)</span> <span class=o>+</span> <span class=n>m</span><span class=p>)</span> <span class=o>%</span> <span class=n>n</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=扔骰子的期望>扔骰子的期望</h2><blockquote><p>拼多多2019校招正式批</p></blockquote><p>扔n个骰子，第i个骰子有可能掷出$X_i$种等概率的不同结果，数字从1到$X_i$. 比如$X_i = 2$, 就等可能的出现1点或2点。所有骰子的结果的最大值将作为最终结果。求最终结果的期望。</p><p>输入描述：
-第一行一个整数n，表示n个骰子。（1 &lt;= n &lt;= 50）
-第二行n个整数，表示每个骰子的结果数$X_i$. ($2 \le X_i \le 50$)</p><p>输出描述：
+</span></span></code></pre></td></tr></table></div></div><h2 id=扔骰子的期望>扔骰子的期望</h2><blockquote><p>拼多多 2019 校招正式批</p></blockquote><p>扔 n 个骰子，第 i 个骰子有可能掷出$X_i$种等概率的不同结果，数字从 1 到$X_i$. 比如$X_i = 2$, 就等可能的出现 1 点或 2 点。所有骰子的结果的最大值将作为最终结果。求最终结果的期望。</p><p>输入描述：
+第一行一个整数 n，表示 n 个骰子。（1 &lt;= n &lt;= 50）
+第二行 n 个整数，表示每个骰子的结果数$X_i$. ($2 \le X_i \le 50$)</p><p>输出描述：
 输出最终结果的期望，保留两位小数。</p><p>示例输入：</p><pre tabindex=0><code>2
 2 2
 </code></pre><p>示例输出：</p><pre tabindex=0><code>1.75
-</code></pre><blockquote><p>主要考察事件概率的计算。</p></blockquote><p>假设有3个骰子，最大点数分别为2,3,4点。那么扔n个骰子，最终结果为1的概率如下</p><p>$$
+</code></pre><blockquote><p>主要考察事件概率的计算。</p></blockquote><p>假设有 3 个骰子，最大点数分别为 2,3,4 点。那么扔 n 个骰子，最终结果为 1 的概率如下</p><p>$$
 P(1) = \frac{1}{2\times 3 \times 4} = \frac{1}{24}
-$$</p><p>同理，最终结果为2, 也就是说三个骰子中最大的点数为2, 考虑每个骰子都点数都小于或等于2的概率，再减去每个骰子都小于或等于1的概率，即为</p><p>$$
+$$</p><p>同理，最终结果为 2，也就是说三个骰子中最大的点数为 2，考虑每个骰子都点数都小于或等于 2 的概率，再减去每个骰子都小于或等于 1 的概率，即为</p><p>$$
 \begin{gathered}
 P(2) = \frac{2\times 2\times 2}{2 \times 3 \times 4} - \frac{1}{2\times 3 \times 4} = \frac{7}{24} \newline
 P(3) = \frac{2 \times 3 \times 3}{2 \times 3 \times 4} - \frac{2\times 2\times 2}{2 \times 3 \times 4} = \frac{10}{24} \newline
 P(4) = \frac{2 \times 3 \times 4}{2 \times 3 \times 4} - \frac{2\times 3\times 3}{2 \times 3 \times 4} = \frac{6}{24}
 \end{gathered}
-$$</p><p>这就求得了最终结果的所有可能的值对应的概率，可以看出相加为1, 现在可以求期望了。</p><blockquote><p>注意，当要求的点数大于当前骰子的最大点数时，那么该骰子掷出小于该点数的概率为1. 比如让一个最大点数为2的骰子掷出小于3的点数，显然概率为1.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+$$</p><p>这就求得了最终结果的所有可能的值对应的概率，可以看出相加为 1，现在可以求期望了。</p><blockquote><p>注意，当要求的点数大于当前骰子的最大点数时，那么该骰子掷出小于该点数的概率为 1. 比如让一个最大点数为 2 的骰子掷出小于 3 的点数，显然概率为 1.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -1894,7 +1894,7 @@ $$</p><p>这就求得了最终结果的所有可能的值对应的概率，可�
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=递增二叉树>递增二叉树</h2><blockquote><p>网易互娱2020校招正式批</p></blockquote><p>给定一颗二叉树，每个节点又一个正整数权值。若一棵二叉树，每一层的节点权值之和都严格小于下一层的节点权值之和，则称这颗二叉树为递增二叉树。现在给你一颗二叉树，请判断它是否是递增二叉树。</p><p>输入描述：</p><p>输入的第一行是一个正整数T（0 &lt; T &lt;= 50）。接下来有T组样例，对于每组样例，输入的第一行是一个正整数N，表示树的节点个数（0 &lt; N &lt;= 100，节点编号为0到N-1）。接下来是N行，第k行表示编号为k的节点，输入格式为：VALUE LEFT RIGHT，其中VALUE表示其权值，是一个不超过5000的自然数；LEFT和RIGHT分别表示该节点的左孩子编号和右孩子编号。如果其不存在左孩子或右孩子，则LEFT或RIGHT为-1.</p><p>输出描述：</p><p>对于每一组样例，输出一个字符串。如果该二叉树是一颗递增树，则输出YES，否则输出NO。</p><p>样例输入：</p><pre tabindex=0><code>2
+</span></span></code></pre></td></tr></table></div></div><h2 id=递增二叉树>递增二叉树</h2><blockquote><p>网易互娱 2020 校招正式批</p></blockquote><p>给定一颗二叉树，每个节点又一个正整数权值。若一棵二叉树，每一层的节点权值之和都严格小于下一层的节点权值之和，则称这颗二叉树为递增二叉树。现在给你一颗二叉树，请判断它是否是递增二叉树。</p><p>输入描述：</p><p>输入的第一行是一个正整数 T（0 &lt; T &lt;= 50）。接下来有 T 组样例，对于每组样例，输入的第一行是一个正整数 N，表示树的节点个数（0 &lt; N &lt;= 100，节点编号为 0 到 N-1）。接下来是 N 行，第 k 行表示编号为 k 的节点，输入格式为：VALUE LEFT RIGHT，其中 VALUE 表示其权值，是一个不超过 5000 的自然数；LEFT 和 RIGHT 分别表示该节点的左孩子编号和右孩子编号。如果其不存在左孩子或右孩子，则 LEFT 或 RIGHT 为 -1.</p><p>输出描述：</p><p>对于每一组样例，输出一个字符串。如果该二叉树是一颗递增树，则输出 YES，否则输出 NO。</p><p>样例输入：</p><pre tabindex=0><code>2
 8
 2 -1 -1
 1 5 3
@@ -1915,7 +1915,7 @@ $$</p><p>这就求得了最终结果的所有可能的值对应的概率，可�
 48 -1 1
 </code></pre><p>样例输出：</p><pre tabindex=0><code>YES
 NO
-</code></pre><blockquote><p>这题最恶心的是输入格式，居然不是直接给一颗建好的二叉树的根节点，而是给数据让你自己建树。处理输入还比较麻烦，首先每个节点都有编号，得先存起来，然后一个一个构造节点，然后再连接起来，关键是连好以后，头节点在哪？还得找一下，最后的判断，实际上是二叉树的层次遍历，遍历得到一个向量，判断是否为严格单调递增即可。</p></blockquote><p><img src=/img/posted/tree.png alt></p><p>上图是第一个样例画出来的二叉树，左边圆圈中对应的是节点编号，右边的数字是节点的权值。要画这棵树，首先画左边的编号之间的连接图，然后把对应编号换作节点的权值即可。那么头节点在哪呢？入度为0的就是了！</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</code></pre><blockquote><p>这题最恶心的是输入格式，居然不是直接给一颗建好的二叉树的根节点，而是给数据让你自己建树。处理输入还比较麻烦，首先每个节点都有编号，得先存起来，然后一个一个构造节点，然后再连接起来，关键是连好以后，头节点在哪？还得找一下，最后的判断，实际上是二叉树的层次遍历，遍历得到一个向量，判断是否为严格单调递增即可。</p></blockquote><p><img src=/img/posted/tree.png alt></p><p>上图是第一个样例画出来的二叉树，左边圆圈中对应的是节点编号，右边的数字是节点的权值。要画这棵树，首先画左边的编号之间的连接图，然后把对应编号换作节点的权值即可。那么头节点在哪呢？入度为 0 的就是了！</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -2163,17 +2163,17 @@ NO
 </span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=c1>// nodes released
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=经过棋盘的最小开销>经过棋盘的最小开销</h2><blockquote><p>58同城2020校招</p></blockquote><p>现有一个地图，由横线与竖线组成（参考围棋棋盘），起点在左上角，终点在右下角。每次行走只能沿线移动到相邻的点，每走一步产生一个开销。计算从起点到终点的最小开销为多少。</p><p>输入描述：
+</span></span></code></pre></td></tr></table></div></div><h2 id=经过棋盘的最小开销>经过棋盘的最小开销</h2><blockquote><p>58 同城 2020 校招</p></blockquote><p>现有一个地图，由横线与竖线组成（参考围棋棋盘），起点在左上角，终点在右下角。每次行走只能沿线移动到相邻的点，每走一步产生一个开销。计算从起点到终点的最小开销为多少。</p><p>输入描述：
 $m \times n$ 的地图表示如下</p><pre tabindex=0><code>3
 3
 1 3 4
 2 1 2
 4 3 1
 
-其中m=3，n=3表示3*3的矩阵
+其中 m=3，n=3 表示 3*3 的矩阵
 行走路径为：下&gt;右&gt;右&gt;下
 </code></pre><p>输出描述：</p><pre tabindex=0><code>路径总长：1+2+1+2+1=7
-</code></pre><blockquote><p>动态规划入门题，可惜我当时碰到DP就慌，而且只会递归DP，自顶向下，复杂度会高很多。</p></blockquote><p>假设用一个矩阵，名字就叫dp，表示最优结果。dp(i,j)表示从起点到坐标(i,j)的最小开销。很容易得到递推关系：</p><p>$$
+</code></pre><blockquote><p>动态规划入门题，可惜我当时碰到 DP 就慌，而且只会递归 DP，自顶向下，复杂度会高很多。</p></blockquote><p>假设用一个矩阵，名字就叫 dp，表示最优结果。dp(i,j) 表示从起点到坐标 (i,j) 的最小开销。很容易得到递推关系：</p><p>$$
 \text{dp}(i, j) =
 \begin{cases}
 \text{map}(i,j) + \min(\text{dp}(i, j-1), \text{dp}(i-1, j)) & i, j > 0\newline
@@ -2324,13 +2324,13 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>mincost</span><span class=p>(</span><span class=n>mat</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=出列的顺序类约瑟夫环>出列的顺序（类约瑟夫环）</h2><blockquote><p>VIVO 2020校招正式批</p></blockquote><p>将N个人排成一排，从第一个人开始报数，如果报数是M的倍数就出列，报道队尾后则回到队头继续报数，直到所有人都出列。</p><p>输入描述：
-输入2个正整数，空格分隔，第一个代表人数N，第二个代表M。</p><p>输出描述：
+</span></span></code></pre></td></tr></table></div></div><h2 id=出列的顺序类约瑟夫环>出列的顺序（类约瑟夫环）</h2><blockquote><p>VIVO 2020 校招正式批</p></blockquote><p>将 N 个人排成一排，从第一个人开始报数，如果报数是 M 的倍数就出列，报道队尾后则回到队头继续报数，直到所有人都出列。</p><p>输入描述：
+输入 2 个正整数，空格分隔，第一个代表人数 N，第二个代表 M。</p><p>输出描述：
 输出一个数组，每个数据表示原来在队列中的位置，用空格隔开，表示出列顺序</p><p>输入实例：</p><pre tabindex=0><code>6 3
 </code></pre><p>输出示例：</p><pre tabindex=0><code>3 6 4 2 5 1
 
-说明：6个人排成一排，原始位置编号1-6，最终输出为3 6 4 2 5 1，
-表示的是原来编号为3的第一个出列，编号为1的最后出列。
+说明：6 个人排成一排，原始位置编号 1-6，最终输出为 3 6 4 2 5 1，
+表示的是原来编号为 3 的第一个出列，编号为 1 的最后出列。
 </code></pre><blockquote><p>思路：类似于约瑟夫环，使用链表模拟整个过程即可。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -2455,9 +2455,9 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>e</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; &#34;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=最短通行时间>最短通行时间</h2><blockquote><p>度小满金融2020校招</p></blockquote><p>有N辆车要陆续通过一座最大承重为W的桥，其中第i辆车的重量为w[i], 过桥时间为t[i]. 要求：第辆车上桥时间不早于第i-1辆车上桥的时间；i任意时刻桥上所有车辆的总重量不超过W。那么，所有车辆都通过这座桥的所需的最短时间是多少？</p><p>输入：</p><pre tabindex=0><code>第一行输入两个整数N，W（1 &lt;= N, W &lt;= 100000）
-第二行输入N个整数w[1]到w[N]（1 &lt;= w[i] &lt;= W）
-第三行输入N个整数t[1]到t[N]（1 &lt;= t[i] &lt;= 10000）
+</span></span></code></pre></td></tr></table></div></div><h2 id=最短通行时间>最短通行时间</h2><blockquote><p>度小满金融 2020 校招</p></blockquote><p>有 N 辆车要陆续通过一座最大承重为 W 的桥，其中第 i 辆车的重量为 w[i], 过桥时间为 t[i]. 要求：第辆车上桥时间不早于第 i-1 辆车上桥的时间；i 任意时刻桥上所有车辆的总重量不超过 W。那么，所有车辆都通过这座桥的所需的最短时间是多少？</p><p>输入：</p><pre tabindex=0><code>第一行输入两个整数 N，W（1 &lt;= N, W &lt;= 100000）
+第二行输入 N 个整数 w[1] 到 w[N]（1 &lt;= w[i] &lt;= W）
+第三行输入 N 个整数 t[1] 到 t[N]（1 &lt;= t[i] &lt;= 10000）
 
 4 2
 1 1 1 1
@@ -2601,7 +2601,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>MinTime</span><span class=p>(</span><span class=n>car_weights</span><span class=p>,</span> <span class=n>pass_times</span><span class=p>,</span> <span class=n>max_weight</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h1 id=数据结构相关>数据结构相关</h1><p><strong>大部分出自<a href=https://www.nowcoder.com/ta/coding-interviews>《剑指Offer》</a></strong></p><h2 id=打印二叉树最右边的节点>打印二叉树最右边的节点</h2><p>给定一个二叉树，打印其每层最右边的节点的值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h1 id=数据结构相关>数据结构相关</h1><p><strong>大部分出自 <a href=https://www.nowcoder.com/ta/coding-interviews>《剑指 Offer》</a></strong></p><h2 id=打印二叉树最右边的节点>打印二叉树最右边的节点</h2><p>给定一个二叉树，打印其每层最右边的节点的值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -2951,7 +2951,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span></span><span class=line><span class=cl><span class=cm>     * confusing details.
 </span></span></span><span class=line><span class=cl><span class=cm>     */</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=判断可能的出栈序列>判断可能的出栈序列</h2><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=判断可能的出栈序列>判断可能的出栈序列</h2><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列 1,2,3,4,5 是某栈的压入顺序，序列 4,5,3,2,1 是该压栈序列对应的一个弹出序列，但 4,3,5,1,2 就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3077,7 +3077,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span><span class=lnt>24
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>  
-</span></span><span class=line><span class=cl>  <span class=kt>bool</span> <span class=n>isValid</span><span class=p>(</span><span class=n>string</span> <span class=n>s</span><span class=p>)</span> <span class=p>{</span>    <span class=c1>// 此解法还是比较elegant的
+</span></span><span class=line><span class=cl>  <span class=kt>bool</span> <span class=n>isValid</span><span class=p>(</span><span class=n>string</span> <span class=n>s</span><span class=p>)</span> <span class=p>{</span>    <span class=c1>// 此解法还是比较 elegant 的
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>stack</span><span class=o>&lt;</span><span class=kt>char</span><span class=o>&gt;</span> <span class=n>stk</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>        
 </span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=k>auto</span> <span class=o>&amp;</span><span class=nl>c</span> <span class=p>:</span> <span class=n>s</span><span class=p>)</span>
@@ -3089,7 +3089,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span><span class=line><span class=cl>        <span class=k>case</span> <span class=sc>&#39;[&#39;</span><span class=o>:</span> <span class=n>stk</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=sc>&#39;]&#39;</span><span class=p>);</span> <span class=k>break</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>        <span class=k>default</span><span class=o>:</span>
 </span></span><span class=line><span class=cl>        <span class=p>{</span>
-</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>stk</span><span class=p>.</span><span class=n>empty</span><span class=p>()</span> <span class=o>||</span> <span class=n>c</span> <span class=o>!=</span> <span class=n>stk</span><span class=p>.</span><span class=n>top</span><span class=p>())</span> <span class=c1>// 巧妙地判断了stk非空
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>stk</span><span class=p>.</span><span class=n>empty</span><span class=p>()</span> <span class=o>||</span> <span class=n>c</span> <span class=o>!=</span> <span class=n>stk</span><span class=p>.</span><span class=n>top</span><span class=p>())</span> <span class=c1>// 巧妙地判断了 stk 非空
 </span></span></span><span class=line><span class=cl><span class=c1></span>              <span class=k>return</span> <span class=nb>false</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>          <span class=k>else</span>
 </span></span><span class=line><span class=cl>              <span class=n>stk</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
@@ -3227,7 +3227,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span><span class=line><span class=cl>        <span class=n>build</span><span class=p>(</span><span class=n>p</span> <span class=o>-&gt;</span> <span class=n>right</span><span class=p>,</span> <span class=n>depth</span> <span class=o>+</span> <span class=mi>1</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=求整数的二进制表示中1的个数>求整数的二进制表示中“1”的个数</h2><p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=求整数的二进制表示中1的个数>求整数的二进制表示中“1”的个数</h2><p>输入一个整数，输出该数二进制表示中 1 的个数。其中负数用补码表示。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3291,9 +3291,9 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span><span class=line><span class=cl>    <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>NumOf1</span><span class=p>(</span><span class=n>N</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=不可描述>不可描述</h2><p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有
+</span></span></code></pre></td></tr></table></div></div><h2 id=不可描述>不可描述</h2><p>求出 1~13 的整数中 1 出现的次数，并算出 100~1300 的整数中 1 出现的次数？为此他特别数了一下 1~13 中包含 1 的数字有
 1、10、11、12、13
-因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+因此共出现 6 次，但是对于后面问题他就没辙了。ACMer 希望你们帮帮他，并把问题更加普遍化，可以很快的求出任意非负整数区间中 1 出现的次数（从 1 到 n 中 1 出现的次数）。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3461,7 +3461,7 @@ $$</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=
 </span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ones</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=k轮换>K轮换</h2><p>原题：https://leetcode.com/problems/rotate-array/</p><p>Given an array, rotate the array to the right by k steps, where k is non-negative.</p><p>Example 1:</p><pre tabindex=0><code>Input: [1,2,3,4,5,6,7] and k = 3
+</span></span></code></pre></td></tr></table></div></div><h2 id=k-轮换>K 轮换</h2><p>原题：https://leetcode.com/problems/rotate-array/</p><p>Given an array, rotate the array to the right by k steps, where k is non-negative.</p><p>Example 1:</p><pre tabindex=0><code>Input: [1,2,3,4,5,6,7] and k = 3
 Output: [5,6,7,1,2,3,4]
 Explanation:
 rotate 1 steps to the right: [7,1,2,3,4,5,6]
@@ -3472,7 +3472,7 @@ Output: [3,99,-1,-100]
 Explanation: 
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
-</code></pre><p>Note:</p><ul><li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</li><li>Could you do it in-place with O(1) extra space?</li></ul><blockquote><p>提供三种方法：第一种，效率最低，因为vector从头插入元素开销很大；第二种，花费额外的空间，来降低时间开销；第三种，挺好的，std::reverse用的是首尾交换元素，无额外空间开销。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</code></pre><p>Note:</p><ul><li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</li><li>Could you do it in-place with O(1) extra space?</li></ul><blockquote><p>提供三种方法：第一种，效率最低，因为 vector 从头插入元素开销很大；第二种，花费额外的空间，来降低时间开销；第三种，挺好的，std::reverse 用的是首尾交换元素，无额外空间开销。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3518,7 +3518,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=move-zeros>Move zeros</h2><p>原题：https://leetcode.com/problems/move-zeroes/</p><p>Given an array nums, write a function to move all 0&rsquo;s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:</p><pre tabindex=0><code>Input: [0,1,0,3,12]
 Output: [1,3,12,0,0]
-</code></pre><p>Note:</p><ul><li>You must do this in-place without making a copy of the array.</li><li>Minimize the total number of operations.</li></ul><blockquote><p>思路：记录数字0出现的个数count。如果当前数字是0，给count加一；如果不是0，将这个值往前挪count位。最后将最后count个元素置0.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</code></pre><p>Note:</p><ul><li>You must do this in-place without making a copy of the array.</li><li>Minimize the total number of operations.</li></ul><blockquote><p>思路：记录数字 0 出现的个数 count。如果当前数字是 0，给 count 加一；如果不是 0，将这个值往前挪 count 位。最后将最后 count 个元素置 0.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3566,7 +3566,7 @@ Output: [1,3,12,0,0]
 Output: 5
 </code></pre><p>Example 2:</p><pre tabindex=0><code>Input: [3,2,3,1,2,4,5,5,6] and k = 4
 Output: 4
-</code></pre><p>Note: You may assume k is always valid, 1 ≤ k ≤ array&rsquo;s length.</p><blockquote><p>思路：利用快排的partition思想，每次选取一个pivot，将数组分为小于pivot和大于pivot的两部分。此时pivot的index就是排好序之后的index，与k相比，如果出较小，则在后半部分（大于pivot）再次划分，如果较大，则在前半部分划分。直到划分出来的pivot的index等于k。还要注意的是，这样找出来的是第k小，用数组长度减一下，才是第k大，注意index的变换。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</code></pre><p>Note: You may assume k is always valid, 1 ≤ k ≤ array&rsquo;s length.</p><blockquote><p>思路：利用快排的 partition 思想，每次选取一个 pivot，将数组分为小于 pivot 和大于 pivot 的两部分。此时 pivot 的 index 就是排好序之后的 index，与 k 相比，如果出较小，则在后半部分（大于 pivot）再次划分，如果较大，则在前半部分划分。直到划分出来的 pivot 的 index 等于 k。还要注意的是，这样找出来的是第 k 小，用数组长度减一下，才是第 k 大，注意 index 的变换。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -3623,9 +3623,9 @@ Output: 4
 </span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Solution</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
 </span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>findKthLargest</span><span class=p>(</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;&amp;</span> <span class=n>nums</span><span class=p>,</span> <span class=kt>int</span> <span class=n>k</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=c1>// from 王小康：快排partition知道吧？
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// 就一刀一刀地劈开，劈一次你知道pivot的index，
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// 如果比k小，继续在右边劈，如果比k大，就在左边劈！
+</span></span><span class=line><span class=cl>    <span class=c1>// from 王小康：快排 partition 知道吧？
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// 就一刀一刀地劈开，劈一次你知道 pivot 的 index，
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// 如果比 k 小，继续在右边劈，如果比 k 大，就在左边劈！
 </span></span></span><span class=line><span class=cl><span class=c1></span>    
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span> <span class=k>throw</span> <span class=n>std</span><span class=o>::</span><span class=n>invalid_argument</span><span class=p>(</span><span class=s>&#34;empty arr&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>nums</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=k>return</span> <span class=n>nums</span><span class=p>.</span><span class=n>front</span><span class=p>();</span>

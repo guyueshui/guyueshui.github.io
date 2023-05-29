@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>note on 水阙</title><link>https://guyueshui.github.io/tags/note/</link><description>Recent content in note on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p>诚如是，Life is too short to learn c++. 此篇记录一些我在学习cpp过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>note on 水阙</title><link>https://guyueshui.github.io/tags/note/</link><description>Recent content in note on 水阙</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p>诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p>
 &lt;h2 id="reactor-vs-proactor">Reactor v.s. Proactor&lt;/h2>
 &lt;ul>
-&lt;li>epll/wait: reactor模式，不停轮询，发现有事做，就做！&lt;/li>
-&lt;li>asio: proactor模式，先注册好事件，如果事情发生了，通过回调函数处理。&lt;/li>
+&lt;li>epll/wait: reactor 模式，不停轮询，发现有事做，就做！&lt;/li>
+&lt;li>asio: proactor 模式，先注册好事件，如果事情发生了，通过回调函数处理。&lt;/li>
 &lt;/ul>
 &lt;h2 id="几个常用的宏">几个常用的宏&lt;/h2>
 &lt;ul>
@@ -11,13 +11,13 @@
 &lt;li>&lt;code>__FILE__&lt;/code>: filename of the file&lt;/li>
 &lt;li>&lt;code>__DATE__&lt;/code> and &lt;code>__TIME__&lt;/code>: as you wish&lt;/li>
 &lt;/ul>
-&lt;h2 id="不要在ctor里调用虚函数">不要在ctor里调用虚函数&lt;/h2>
-&lt;p>总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和bug。&lt;/p>
-&lt;p>ctor应该设计的尽量简单，确保对象可以被正确构造。在ctor中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。&lt;/p>
-&lt;h2 id="ctor不能是虚函数">ctor不能是虚函数&lt;/h2>
+&lt;h2 id="不要在-ctor-里调用虚函数">不要在 ctor 里调用虚函数&lt;/h2>
+&lt;p>总结来说：基类部分在派生类部分之前被构造，当基类构造函数执行时派生类中的数据成员还没被初始化。如果基类构造函数中的虚函数调用被解析成调用派生类的虚函数，而派生类的虚函数中又访问到未初始化的派生类数据，将导致程序出现一些未定义行为和 bug。&lt;/p>
+&lt;p>ctor 应该设计的尽量简单，确保对象可以被正确构造。在 ctor 中调用本类的非静态成员都是不安全的，因为他们还没被构造，而有些成员是依赖对象的，而此时对象还没有被成功构造。&lt;/p>
+&lt;h2 id="ctor-不能是虚函数">ctor 不能是虚函数&lt;/h2>
 &lt;ol>
 &lt;li>
-&lt;p>从存储空间角度：虚函数对应一个vtable（虚函数表），这大家都知道，可是这个vtable其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到vtable，所以构造函数不能是虚函数。&lt;/p>
+&lt;p>从存储空间角度：虚函数对应一个 vtable（虚函数表），这大家都知道，可是这个 vtable 其实是存储在对象的内存空间的。问题出来了，如果构造函数是虚的，就需要通过 vtable 来调用，可是对象还没有实例化，也就是内存空间还没有，无法找到 vtable，所以构造函数不能是虚函数。&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>从使用角度：虚函数主要用于在信息不全的情况下，能使重载的函数得到对应的调用。构造函数本身就是要初始化实例，那使用虚函数也没有实际意义呀。所以构造函数没有必要是虚函数。
@@ -28,7 +28,7 @@
 &lt;/li>
 &lt;/ol>
 &lt;p>——————————————————
-版权声明：本文为CSDN博主「cainiao000001」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+版权声明：本文为 CSDN 博主「cainiao000001」的原创文章，遵循 CC 4.0 by-sa 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/cainiao000001/article/details/81603782&lt;/p>
 &lt;h2 id="虚函数的工作原理">虚函数的工作原理&lt;/h2>
 &lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/60543586">https://zhuanlan.zhihu.com/p/60543586&lt;/a>&lt;/p>
@@ -80,7 +80,7 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。&lt;/p>
+&lt;p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是 16 为地址，指针即为 2 个字节，现在一般是 32 位系统，所以是 4 个字节，以后 64 位，则就为 8 个字节。&lt;/p>
 &lt;blockquote>
 &lt;p>NOTE: 类成员函数指针一般为普通指针的两倍大小。&lt;/p>
 &lt;/blockquote>
@@ -314,7 +314,7 @@ Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbol
 &lt;p>Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/sharing-global-constants-across-multiple-files-using-inline-variables/">https://www.learncpp.com/cpp-tutorial/sharing-global-constants-across-multiple-files-using-inline-variables/&lt;/a>&lt;/p>
 &lt;h2 id="内存布局">内存布局&lt;/h2>
 &lt;h3 id="结构体">结构体&lt;/h3>
-&lt;p>C++规范在“结构”上使用了和C相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。&lt;/p>
+&lt;p>C++ 规范在“结构”上使用了和 C 相同的，简单的内存布局原则：成员变量按其被声明的顺序排列，按具体实现所规定的对齐原则在内存地址上对齐。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -363,10 +363,10 @@ Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbol
 &lt;/span>&lt;span class="lnt">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #1 ：模板重载
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #2 ：模板重载
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">void&lt;/span> &lt;span class="nf">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">double&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #3 ：非模板重载
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #4 ： #1 的特化
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #1：模板重载
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #2：模板重载
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">void&lt;/span> &lt;span class="nf">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">double&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #3：非模板重载
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #4： #1 的特化
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sc">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// 调用 #1
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">));&lt;/span> &lt;span class="c1">// 调用 #2
@@ -384,15 +384,15 @@ Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbol
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #1 ：所有类型的重载
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #2 ：为指向 int 的指针特化 #1
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #3 ：所有指针类型的重载
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #1：所有类型的重载
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #2：为指向 int 的指针特化 #1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">template&lt;/span>&lt;span class="o">&amp;lt;&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">T&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// #3：所有指针类型的重载
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">));&lt;/span> &lt;span class="c1">// 调用 #3 ，即使通过 #1 的特化会是完美匹配
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">f&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">));&lt;/span> &lt;span class="c1">// 调用 #3，即使通过 #1 的特化会是完美匹配
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>即重载的优先级要高于特化。&lt;/p>
-&lt;p>关于模板函数重载的更多内容，参考&lt;a href="https://en.cppreference.com/w/cpp/language/function_template">function_template&lt;/a>。&lt;/p>
+&lt;p>关于模板函数重载的更多内容，参考 &lt;a href="https://en.cppreference.com/w/cpp/language/function_template">function_template&lt;/a>。&lt;/p>
 &lt;h2 id="预编译">预编译&lt;/h2>
 &lt;p>Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/">https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/&lt;/a>&lt;/p>
 &lt;h3 id="include">&lt;code>#include&lt;/code>&lt;/h3>
@@ -412,7 +412,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="object-like-macros-dont-affect-other-preprocessor-directives">Object-like macros don’t affect other preprocessor directives&lt;/h3>
-&lt;p>结论：宏展开在预编译指令(Preprocessor directives)无效。&lt;/p>
+&lt;p>结论：宏展开在预编译指令 (Preprocessor directives) 无效。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -507,7 +507,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/code>&lt;/pre>&lt;p>Even though PRINT was defined in main.cpp, that doesn’t have any impact on any of the code in function.cpp (PRINT is only #defined from the point of definition to the end of main.cpp). This will be of consequence when we discuss header guards in a future lesson.&lt;/p>
 &lt;h2 id="header-files">Header files&lt;/h2>
 &lt;p>Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/header-files/">https://www.learncpp.com/cpp-tutorial/header-files/&lt;/a>&lt;/p>
-&lt;p>对于多文件项目，文件是单独编译的。要想调用一个自定义函数，linker必须能找到这个函数在哪里定义。&lt;/p>
+&lt;p>对于多文件项目，文件是单独编译的。要想调用一个自定义函数，linker 必须能找到这个函数在哪里定义。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -528,8 +528,8 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>上述文件是可以编译通过的，因为没有发生对&lt;code>add&lt;/code>的调用，所以linker不会去找&lt;code>add&lt;/code>的定义（当然如果要找也找不到）。&lt;/p>
-&lt;p>但是如果某处发起了对&lt;code>add&lt;/code>的调用（例如去掉注释），那么上述程序在link阶段会报错：&lt;/p>
+&lt;/div>&lt;p>上述文件是可以编译通过的，因为没有发生对&lt;code>add&lt;/code>的调用，所以 linker 不会去找&lt;code>add&lt;/code>的定义（当然如果要找也找不到）。&lt;/p>
+&lt;p>但是如果某处发起了对&lt;code>add&lt;/code>的调用（例如去掉注释），那么上述程序在 link 阶段会报错：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -544,7 +544,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">clang-13: error: linker &lt;span class="nb">command&lt;/span> failed with &lt;span class="nb">exit&lt;/span> code &lt;span class="m">1&lt;/span> &lt;span class="o">(&lt;/span>use -v to see invocation&lt;span class="o">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>在多文件编程时，往往需要forawrd declaration，这些前置声明必须在其他某个地方被定义且只被定义一次。这样，linker才能正确的完成链接。任何重复定义或未定义都会在link阶段报错。&lt;/p>
+&lt;/div>&lt;p>在多文件编程时，往往需要 forawrd declaration，这些前置声明必须在其他某个地方被定义且只被定义一次。这样，linker 才能正确的完成链接。任何重复定义或未定义都会在 link 阶段报错。&lt;/p>
 &lt;p>考虑如下例子：&lt;/p>
 &lt;p>add.cpp:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -590,7 +590,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>在编译main.cpp的时候，因为有&lt;code>add&lt;/code>的前置声明，所以可以通过。但为了link的时候能够找到&lt;code>add&lt;/code>的定义，add.cpp必须也被编译，所以正确的编译方式应该是：&lt;/p>
+&lt;/div>&lt;p>在编译 main.cpp 的时候，因为有&lt;code>add&lt;/code>的前置声明，所以可以通过。但为了 link 的时候能够找到&lt;code>add&lt;/code>的定义，add.cpp 必须也被编译，所以正确的编译方式应该是：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -668,8 +668,8 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;img src="https://www.learncpp.com/images/CppTutorial/Section1/IncludeHeader.png?ezimgfmt=rs:647x377/rscb2/ng:webp/ngcb2" alt="">&lt;/p>
 &lt;h3 id="two-wrong-cases">Two wrong cases&lt;/h3>
 &lt;p>&lt;img src="wrong_header.png" alt="header has function definition">&lt;/p>
-&lt;p>如上图所示，会产生一个重复定义的错误。由于add.h中包含了函数定义，而非前置声明。编译main.cpp的时候，add.h中的代码插入到main.cpp中，产生一次&lt;code>add&lt;/code>函数的定义。同理，编译add.cpp的时候也定义了一次&lt;code>add&lt;/code>函数。link阶段会发生歧义，以致报错。&lt;/p>
-&lt;p>此时如果不编译add.cpp其实是可行的：
+&lt;p>如上图所示，会产生一个重复定义的错误。由于 add.h 中包含了函数定义，而非前置声明。编译 main.cpp 的时候，add.h 中的代码插入到 main.cpp 中，产生一次&lt;code>add&lt;/code>函数的定义。同理，编译 add.cpp 的时候也定义了一次&lt;code>add&lt;/code>函数。link 阶段会发生歧义，以致报错。&lt;/p>
+&lt;p>此时如果不编译 add.cpp 其实是可行的：
 &lt;img src="header2.png" alt="compile main.cpp only">&lt;/p>
 &lt;p>但谁又能保证只有一个文件&lt;code>#include &amp;quot;add.h&amp;quot;&lt;/code>呢？所以头文件中应该只包含声明，而不应该包含实现。&lt;/p>
 &lt;blockquote>
@@ -679,7 +679,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;p>Header files should generally not contain function and variable definitions, so as not to violate the one definition rule. An exception is made for symbolic constants (which we cover in lesson &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbolic-constants/">4.15 &amp;ndash; Symbolic constants: const and constexpr variables&lt;/a>).&lt;/p>
 &lt;p>&lt;strong>标准库自动链接&lt;/strong>&lt;/p>
 &lt;blockquote>
-&lt;p>注意：clang不会自动链接，需要手动链接
+&lt;p>注意：clang 不会自动链接，需要手动链接
 &lt;code>clang main.cpp -lstdc++&lt;/code>&lt;/p>
 &lt;/blockquote>
 &lt;p>When it comes to functions and variables, it’s worth keeping in mind that header files typically only contain function and variable declarations, not function and variable definitions (otherwise a violation of the one definition rule could result). std::cout is forward declared in the iostream header, but defined as part of the C++ standard library, which is automatically linked into your program during the linker phase.&lt;/p>
@@ -697,8 +697,8 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;p>Conversely, when the object is evaluated to produce a value, that sequence of bits is reconstituted back into the original value. Meaning that 0100 0001 is converted back into the value 65.&lt;/p>
 &lt;p>Fortunately, the compiler and CPU do all the hard work here, so you generally don’t need to worry about how values get converted into bit sequences and back.&lt;/p>
 &lt;p>All you need to do is pick a data type for your object that best matches your desired use.&lt;/p>
-&lt;p>谨记：内存只能存bit，只能寻址寻到byte这一层，如果数据按内存边界对齐，寻址会更快（一次读）。&lt;/p>
-&lt;p>由于内存地址空间有限，且按bit寻址的场景很少，所以寻址单位一般是byte。A byte is a group of bits that are operated on as a unit. The modern standard is that a byte is comprised of 8 sequential bits.&lt;/p>
+&lt;p>谨记：内存只能存 bit，只能寻址寻到 byte 这一层，如果数据按内存边界对齐，寻址会更快（一次读）。&lt;/p>
+&lt;p>由于内存地址空间有限，且按 bit 寻址的场景很少，所以寻址单位一般是 byte。A byte is a group of bits that are operated on as a unit. The modern standard is that a byte is comprised of 8 sequential bits.&lt;/p>
 &lt;h3 id="移位">移位&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -786,23 +786,23 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>从内存连续bit来看，a和b都是存了4 byte的1，区别仅仅是data type不一样，导致了截然不同的结果。&lt;/p>
+&lt;/div>&lt;p>从内存连续 bit 来看，a 和 b 都是存了 4 byte 的 1，区别仅仅是 data type 不一样，导致了截然不同的结果。&lt;/p>
 &lt;p>&lt;strong>移位操作&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>右移
 &lt;ol>
-&lt;li>无符号右移，低位丢失高位补0&lt;/li>
-&lt;li>有符号右移，低位丢失，高位补符号位（正为0, 负为1）&lt;/li>
+&lt;li>无符号右移，低位丢失高位补 0&lt;/li>
+&lt;li>有符号右移，低位丢失，高位补符号位（正为 0，负为 1）&lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;li>左移：高位丢失，低位补0&lt;/li>
+&lt;li>左移：高位丢失，低位补 0&lt;/li>
 &lt;/ol>
-&lt;p>a和b左移一位都得到：&lt;/p>
-&lt;pre tabindex="0">&lt;code>0xfffffffe: 如果是int解释为-2, unsigned int解释为4294967294=2^32 - 2
-&lt;/code>&lt;/pre>&lt;p>a右移一位得到&lt;/p>
-&lt;pre tabindex="0">&lt;code>0xffffffff: 注意负数右移，高位补1，int解释为-1
-&lt;/code>&lt;/pre>&lt;p>b右移一位得到&lt;/p>
-&lt;pre tabindex="0">&lt;code>0x7fffffff: 高位补0, unsigned int解释为2147483647=2^31-1
+&lt;p>a 和 b 左移一位都得到：&lt;/p>
+&lt;pre tabindex="0">&lt;code>0xfffffffe: 如果是 int 解释为-2, unsigned int 解释为 4294967294=2^32 - 2
+&lt;/code>&lt;/pre>&lt;p>a 右移一位得到&lt;/p>
+&lt;pre tabindex="0">&lt;code>0xffffffff: 注意负数右移，高位补 1，int 解释为-1
+&lt;/code>&lt;/pre>&lt;p>b 右移一位得到&lt;/p>
+&lt;pre tabindex="0">&lt;code>0x7fffffff: 高位补 0, unsigned int 解释为 2147483647=2^31-1
 &lt;/code>&lt;/pre>&lt;p>注意，负的可能左移成正的，因此，有符号的移位是不安全的。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -841,9 +841,9 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/div>&lt;p>NOTE:&lt;/p>
 &lt;ol>
 &lt;li>注意无符号数相减得负数会导致溢出&lt;/li>
-&lt;li>usigned和&lt;code>--&lt;/code>运算符，可能减至负数溢出&lt;/li>
-&lt;li>除非确定变量值非负，否则尽量避免使用unsigned&lt;/li>
-&lt;li>切忌不要在数学计算中混用unsigned和signed，此时signed会隐式转换为unsigned&lt;/li>
+&lt;li>usigned 和&lt;code>--&lt;/code>运算符，可能减至负数溢出&lt;/li>
+&lt;li>除非确定变量值非负，否则尽量避免使用 unsigned&lt;/li>
+&lt;li>切忌不要在数学计算中混用 unsigned 和 signed，此时 signed 会隐式转换为 unsigned&lt;/li>
 &lt;li>unsigned numbers are preferred when dealing with bit manipulation&lt;/li>
 &lt;li>&lt;code>std::int8_t&lt;/code>和&lt;code>std::uint8_t&lt;/code>可能知识&lt;code>char&lt;/code>和&lt;code>unsigned char&lt;/code>的别名，可能有坑（参考：https://www.learncpp.com/cpp-tutorial/introduction-to-type-conversion-and-static_cast/）&lt;/li>
 &lt;/ol>
@@ -919,8 +919,8 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">uint32_t&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x01020304&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">/*
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * if it prints 4321, indicates 低位在前，对应little-endian
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * it it prints 1234, indicates 高位在前，对应big-endian
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * if it prints 4321, indicates 低位在前，对应 little-endian
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * it it prints 1234, indicates 高位在前，对应 big-endian
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
@@ -932,18 +932,18 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>字节序就是计算机存储数据的时候将低位数据存在低位地址还是高位地址。举个例子，数值0x2211使用两个字节储存：高位字节是0x22，低位字节是0x11。&lt;/p>
+&lt;/div>&lt;p>字节序就是计算机存储数据的时候将低位数据存在低位地址还是高位地址。举个例子，数值 0x2211 使用两个字节储存：高位字节是 0x22，低位字节是 0x11。&lt;/p>
 &lt;ul>
 &lt;li>大端字节序：高位字节在前，低位字节在后，这是人类读写数值的方法。&lt;/li>
-&lt;li>小端字节序：低位字节在前，高位字节在后，即以0x1122形式储存。&lt;/li>
+&lt;li>小端字节序：低位字节在前，高位字节在后，即以 0x1122 形式储存。&lt;/li>
 &lt;/ul>
 &lt;p>如果太多记不住，至少要记住：&lt;/p>
 &lt;ol>
-&lt;li>字节序的概念: 读一段内存从低位向高位读（从左往右），先读到高位字节还是低位字节&lt;/li>
+&lt;li>字节序的概念：读一段内存从低位向高位读（从左往右），先读到高位字节还是低位字节&lt;/li>
 &lt;li>符合人类读写数值的方法是大端序（big-endian）&lt;/li>
 &lt;/ol>
-&lt;p>既然如此，我们要判断一台机器是big-endian还是little-endian，只需要构造一端内存，按字节从低位地址向高位地址访问，看看低位地址存的是高位字节，还是低位字节即可。&lt;/p>
-&lt;p>且看上述代码，构造了一个整数0x01020304，然后通过将首地址转成&lt;code>char*&lt;/code>的方式去按字节读取内存中的值（这样做的目的是，&lt;code>char*&lt;/code>可以逐字节的读取内存；而&lt;code>int*&lt;/code>一次指针移动会移动&lt;code>sizeof(int)&lt;/code>个字节）。读出来如果是符合书写习惯的1234, 则表明机器是big-endian, 反之little-endian.&lt;/p>
+&lt;p>既然如此，我们要判断一台机器是 big-endian 还是 little-endian，只需要构造一端内存，按字节从低位地址向高位地址访问，看看低位地址存的是高位字节，还是低位字节即可。&lt;/p>
+&lt;p>且看上述代码，构造了一个整数 0x01020304，然后通过将首地址转成&lt;code>char*&lt;/code>的方式去按字节读取内存中的值（这样做的目的是，&lt;code>char*&lt;/code>可以逐字节的读取内存；而&lt;code>int*&lt;/code>一次指针移动会移动&lt;code>sizeof(int)&lt;/code>个字节）。读出来如果是符合书写习惯的 1234，则表明机器是 big-endian，反之 little-endian.&lt;/p>
 &lt;p>这也是一段内存的两种不同的解释方式，recall that &lt;strong>Because all data on a computer is just a sequence of bits, we use a data type (often called a “type” for short) to tell the compiler how to interpret the contents of memory in some meaningful way&lt;/strong>.&lt;/p>
 &lt;h2 id="链接linkage">链接（Linkage）&lt;/h2>
 &lt;p>Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/internal-linkage/">https://www.learncpp.com/cpp-tutorial/internal-linkage/&lt;/a>&lt;/p>
@@ -1144,18 +1144,18 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;p>&lt;strong>Summary&lt;/strong>&lt;/p>
 &lt;p>&lt;em>Scope&lt;/em> determines where a variable is accessible. &lt;em>Duration&lt;/em> determines where a variable is created and destroyed. &lt;em>Linkage&lt;/em> determines whether the variable can be exported to another file or not.&lt;/p>
 &lt;h2 id="inline-function">Inline function&lt;/h2>
-&lt;p>考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时inline function就是你的最佳选择。关于合适使用inline function，下面这段话给了一定的意见：&lt;/p>
+&lt;p>考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时 inline function 就是你的最佳选择。关于合适使用 inline function，下面这段话给了一定的意见：&lt;/p>
 &lt;blockquote>
 &lt;p>For functions that are large and/or perform complex tasks, the overhead of the function call is typically insignificant compared to the amount of time the function takes to run. However, for small functions, the overhead costs can be larger than the time needed to actually execute the function’s code! In cases where a small function is called often, using a function can result in a significant performance penalty over writing the same code in-place.&lt;/p>
 &lt;/blockquote>
-&lt;p>Inline function的好处包括：&lt;/p>
+&lt;p>Inline function 的好处包括：&lt;/p>
 &lt;ol>
 &lt;li>没有函数调用的开销&lt;/li>
 &lt;li>编译器对展开后的代码有更大的优化空间（如常量替换）&lt;/li>
 &lt;/ol>
 &lt;p>However, inline expansion has its own potential cost: if the body of the function being expanded takes more instructions than the function call being replaced, then each inline expansion will cause the executable to grow larger. Larger executables tend to be slower (due to not fitting as well in caches).&lt;/p>
 &lt;blockquote>
-&lt;p>注意：inline只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。&lt;/p>
+&lt;p>注意：inline 只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。&lt;/p>
 &lt;/blockquote>
 &lt;p>However, in modern C++, the &lt;code>inline&lt;/code> keyword is no longer used to request that a function be expanded inline. There are quite a few reasons for this:&lt;/p>
 &lt;ul>
@@ -1163,10 +1163,10 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;li>The &lt;code>inline&lt;/code> keyword is just a hint &amp;ndash; the compiler is completely free to ignore a request to inline a function. This is likely to be the result if you try to inline a lengthy function! &lt;strong>The compiler is also free to perform inline expansion of functions that do not use the &lt;code>inline&lt;/code> keyword&lt;/strong> as part of its normal set of optimizations.&lt;/li>
 &lt;li>The &lt;code>inline&lt;/code> keyword is defined at the wrong level of granularity. We use the &lt;code>inline&lt;/code> keyword on a function declaration, but inline expansion is actually determined per function call. It may be beneficial to expand some function calls and detrimental to expand others, and there is no syntax to affect this.&lt;/li>
 &lt;/ul>
-&lt;p>注意：在modern cpp中，用inline修饰的不违反ODR（one definition rule），因此可用于&lt;/p>
+&lt;p>注意：在 modern cpp 中，用 inline 修饰的不违反 ODR（one definition rule），因此可用于&lt;/p>
 &lt;ul>
-&lt;li>头文件中修饰常量作为global const的最佳方案&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
-&lt;li>头文件中修饰constexpr函数&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>使所有include该文件的源文件都能使用该函数，注意constexpr函数是默认inline的&lt;/li>
+&lt;li>头文件中修饰常量作为 global const 的最佳方案 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>头文件中修饰 constexpr 函数 &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 使所有 include 该文件的源文件都能使用该函数，注意 constexpr 函数是默认 inline 的&lt;/li>
 &lt;/ul>
 &lt;blockquote>
 &lt;p>Allowing functions with a constexpr return type to be evaluated at either compile-time or runtime was allowed so that a single function can serve both cases. Otherwise, you’d need to have separate functions (a constexpr version and a non-constexpr version) &amp;ndash; and since return type isn’t considered in function overload resolution, you’d have to name the functions different things!&lt;/p>
