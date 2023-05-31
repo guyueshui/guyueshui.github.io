@@ -144,6 +144,14 @@ li {
     padding: 0
 }
 
+.footnotes p {
+    margin: unset;
+}
+
+.footnotes {
+    font-size: smaller;
+}
+
 .unselectable {
     -webkit-user-select: none;
     -moz-user-select: none;

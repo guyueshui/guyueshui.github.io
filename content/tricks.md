@@ -575,6 +575,10 @@ git submodule init
 git submodule update
 ```
 
+一般地，当某仓库中包含 submodule ./dir1 时，如果你只提交了 dir1 的内容，那么当前仓库是不会用上最新版本的 dir1 的。这在远程仓库中尤为显著。我的博客文件夹 BlogHugo 中包含了 themes/even 的 submodule, 每当我在 even 中改完样式推送到远端后（这里我 BlogHugo 仓库没有任何修改），发现 build 出来的网站压根没有使用最新的 submodule 里面的内容。究其原因，其实是父仓库默认会跟踪 submodule 的一个版本号。如果不在父仓库中显示更新要跟踪的版本号，则父仓库一直会跟踪之前的版本号。这是合理的，因为父子仓库独立开发，为了避免子仓库（submodule）的频繁提交对父仓库的构建产生影响，所以默认会跟踪一个版本号。
+
+正确的做法是，当 submodule 更新后，父仓库中 submodule 的版本号会产生一个修改，在父仓库中 add-commit 这个修改，就可以更新父仓库中引用的 submodule 版本号。
+
 Ref:
 
 1. [Git-工具 - 子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
