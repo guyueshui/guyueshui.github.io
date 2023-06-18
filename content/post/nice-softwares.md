@@ -3,7 +3,7 @@ title: "小内存机器的自我救赎"
 date: 2020-03-12
 keywords: []
 categories: []
-tags: [tools, tiny apps, 小而精]
+tags: [tools, tiny, apps, tool-list, software-list]
 draft: false
 mathjax: false
 
@@ -42,6 +42,36 @@ mathjax: false
 ## 学习
 
 - [GoldenDict][6]: 离线词典，支持在线页面查词，接有道，维基等，可以看做是 Linux 上的 Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。
+
+## VSCode 插件
+
+```bash
+$ code --list-extensions
+bungcip.better-toml
+tomoki1207.pdf
+huacnlee.autocorrect                   # 修正中英混合排版的问题
+huizhou.githd                          # git history, blame on single file
+mhutchie.git-graph                     # git graph
+KylinIDETeam.cmake-intellisence
+llvm-vs-code-extensions.vscode-clangd  # c++ dev
+twxs.cmake                             # cmake syntax support
+vadimcn.vscode-lldb                    # c++ debug
+vscodevim.vim
+```
+
+See: https://zhuanlan.zhihu.com/p/566365173.
+
+> 首先，当把鼠标停在某个函数，然后点击右键，会发现它多出了非常熟悉的选项。
+> 
+> 接着来试一下符号跳转，按住 Control，然后鼠标左键，就可以对函数进行跳转。
+> 
+> 它也可以对文件进行跳转，使用 Control+P，打开标识符搜索框。
+> 
+> 原来这个标识符搜索框是只可以搜索文件的，但现在可以搜索符号了，使用 @ ，是在当前文件夹下搜索一个标识符。
+> 
+> 这里比较少，就只有 main，可以多加两个函数：int fun1(){} 和 Void fun2(){}。再试试，就会发现它这里就有了三个标识符。
+> 
+> 除了能在当前文件中搜索外，还可以使用 # 来在全局搜索：Control+P，输入 #print 可以搜索 print，选择后，可以来到 studio 这个文件下。
 
 [1]: https://flameshot.js.org/#/
 [2]: https://aria2.github.io

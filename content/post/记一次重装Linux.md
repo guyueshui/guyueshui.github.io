@@ -135,9 +135,19 @@ iw wlp2s0 link
 
 另外，还有一种更加简单的方法，直接敲命令 `wifi-menu` 可以进行交互式 WiFi 连接，体验和图形界面一样。
 
-## 安装 Gnome
+## Post-install
 
-来日在填
+添加主用户（带 sudo 权限）：
+
+```bash
+useradd yychi -m         # -m表示创建家目录
+usermod yychi -aG yychi  # 加入yychi组
+passwd yychi             # 设置密码
+visudo  # 打开sudoers文件，并uncomment wheel组
+usermod yychi -aG wheel  # 将yychi加入wheel组，此时yychi可以使用sudo了
+```
+
+猛击[此处](https://gist.github.com/guyueshui/fd1ce8f3bd96dacee958a3b076e83394)获取所有显式安装的包名列表。
 
 ## 系统美化
 

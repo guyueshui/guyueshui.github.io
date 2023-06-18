@@ -53,6 +53,7 @@ comment: false
 - [Full Emoji List, v11.0](http://www.unicode.org/emoji/charts/full-emoji-list.html)
 - [Vim color scheme: space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
 - [SpaceVim](https://spacevim.org/cn/)
+- [WebGlSamples](https://webglsamples.org/aquarium/aquarium.html): browser performance test
 - 图床：[路过](https://imgchr.com/)、[sm.ms](https://sm.ms/)
 
 ### 修身养性
