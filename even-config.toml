@@ -57,11 +57,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   weight = 6
   identifier = "sketch"
   url = "/sketch/"
-[[menu.main]]
-  name = "Tricks"
-  weight = 5
-  identifier = "tricks"
-  url = "/tricks/"
+## remove this entry since i have better manaul site at https://pmanual.rtfd.io
+# [[menu.main]]
+#   name = "Tricks"
+#   weight = 5
+#   identifier = "tricks"
+#   url = "/tricks/"
 [[menu.main]]
   name = "About"
   weight = 7

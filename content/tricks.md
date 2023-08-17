@@ -607,6 +607,7 @@ $ git rebase -i HEAD~3
 $ git rebase -i
 
 # vi 下，找到需要修改的 commit 记录，`pick` 修改为 `edit` 或 `e`，`:wq` 保存退出
+# 或者较新版本的 `reword`
 # 重复执行如下命令直到完成
 $ git commit --amend --message="modify message by daodaotest" --author="jiangliheng <jiang_liheng@163.com>"
 $ git rebase --continue
@@ -618,6 +619,8 @@ $ git rebase --abort
 # 如果只是更改 last commit
 git commit --amend
 ```
+
+Cf. [github doc](https://docs.github.com/zh/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message).
 
 **Git rebase**
 
@@ -645,6 +648,18 @@ a---b---c---d---e (master)
 git rebase --abort
 ```
 反复操练几次，git 有友好的提示信息。
+
+**撤销上次rebase**
+
+```bash
+# 先使用 reflog查看分支变动历史
+$ git reflog
+
+# 选中rebase前的commit id (hash)
+$ git reset --hard <commit_id>
+```
+
+参考：[此处](https://juejin.cn/s/git%20%E6%92%A4%E9%94%80rebase)。
 
 ----------------
 

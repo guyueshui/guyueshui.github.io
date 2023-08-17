@@ -9,6 +9,7 @@ comment: false
 
 - [Categories](/categories/)
 - [Tags](/tags/)
+- [Personal Manual](https://pmanual.readthedocs.io)
 
 ## My Advisor
 
