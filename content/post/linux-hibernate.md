@@ -330,6 +330,92 @@ Type=oneshot
 ExecStart=/usr/lib/systemd/systemd-sleep hibernate
 ```
 
+## Re2: hibernation
+
+今天（2024-01-27），又出现了休眠问题，好在有了之前的经历，2H 就定位出来了。
+
+休眠失败，首先看 journal：
+```
+1月 27 19:32:12 MiBook-Air systemd[1]: Started User suspend actions.
+1月 27 19:32:12 MiBook-Air systemd[1]: Reached target Sleep.
+1月 27 19:32:12 MiBook-Air systemd[1]: Starting System Hibernate...
+1月 27 19:32:12 MiBook-Air systemd-sleep[11138]: Performing sleep operation 'hibernate'...
+1月 27 19:32:12 MiBook-Air kernel: PM: hibernation: hibernation entry
+1月 27 19:32:32 MiBook-Air kernel: Filesystems sync: 0.022 seconds
+1月 27 19:32:32 MiBook-Air kernel: Freezing user space processes
+1月 27 19:32:32 MiBook-Air kernel: Freezing user space processes completed (elapsed 0.003 seconds)
+1月 27 19:32:32 MiBook-Air kernel: OOM killer disabled.
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x00000000-0x00000fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x00058000-0x00058fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x0009e000-0x000fffff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x71c54000-0x71c54fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x71c80000-0x71c80fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x725d9000-0x725d9fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x725e9000-0x725e9fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x7312f000-0x73130fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x75388000-0x75c87fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x7bff2000-0x7bff7fff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x8be9e000-0x8cffdfff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Marking nosave pages: [mem 0x8cfff000-0xffffffff]
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Basic memory bitmaps created
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Preallocating image memory
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Allocated 791290 pages for snapshot
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: Allocated 3165160 kbytes in 1.56 seconds (2028.94 MB/s)
+1月 27 19:32:32 MiBook-Air kernel: Freezing remaining freezable tasks
+1月 27 19:32:32 MiBook-Air kernel: Freezing remaining freezable tasks completed (elapsed 0.001 seconds)
+1月 27 19:32:32 MiBook-Air kernel: printk: Suspending console(s) (use no_console_suspend to debug)
+1月 27 19:32:32 MiBook-Air kernel: ata1.00: Entering standby power mode
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: DRM: failed to idle channel 1 [DRM]
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: pci_pm_freeze(): nouveau_pmops_freeze+0x0/0x20 [nouveau] returns -16
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: failed to freeze async: error -16
+1月 27 19:32:32 MiBook-Air kernel: usb usb1: root hub lost power or was reset
+1月 27 19:32:32 MiBook-Air kernel: usb usb2: root hub lost power or was reset
+1月 27 19:32:32 MiBook-Air kernel: nvme nvme0: 4/0/0 default/read/poll queues
+1月 27 19:32:32 MiBook-Air kernel: usb 1-1: reset full-speed USB device number 2 using xhci_hcd
+
+...
+
+1月 27 19:32:32 MiBook-Air systemd-sleep[11138]: Failed to put system to sleep. System resumed again: Device or resource busy
+1月 27 19:32:32 MiBook-Air kernel: PM: hibernation: hibernation exit
+...
+1月 27 19:32:32 MiBook-Air systemd[1]: systemd-hibernate.service: Main process exited, code=exited, status=1/FAILURE
+1月 27 19:32:32 MiBook-Air systemd[1]: systemd-hibernate.service: Failed with result 'exit-code'.
+1月 27 19:32:32 MiBook-Air systemd[1]: Failed to start System Hibernate.
+1月 27 19:32:32 MiBook-Air systemd[1]: Dependency failed for System Hibernation.
+1月 27 19:32:32 MiBook-Air systemd[1]: hibernate.target: Job hibernate.target/start failed with result 'dependency'.
+1月 27 19:32:32 MiBook-Air systemd[1]: systemd-hibernate.service: Consumed 1.750s CPU time.
+1月 27 19:32:32 MiBook-Air systemd[1]: Stopped target Sleep.
+1月 27 19:32:32 MiBook-Air systemd-logind[379]: Operation 'sleep' finished.
+```
+
+可以看到，日志里清晰可见说了休眠失败，resume 到休眠前的状态。而往上溯源可以看到，失败原因是
+```
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: DRM: failed to idle channel 1 [DRM]
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: pci_pm_freeze(): nouveau_pmops_freeze+0x0/0x20 [nouveau] returns -16
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
+1月 27 19:32:32 MiBook-Air kernel: nouveau 0000:01:00.0: PM: failed to freeze async: error -16
+```
+根据这个线索搜索，最后发现直接 block nouveau 即可[^f]，即禁用 nvidia 的显卡。因为我的笔记本有两块显卡，一个 intel 的核显，一个 nvidia 的集显。在 linux 环境下为这集显我没少踩坑。
+```
+yychi@~> lspci -k | grep -A 2 -E "(VGA|3D)"
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02)
+    Subsystem: Xiaomi HD Graphics 620
+    Kernel driver in use: i915
+--
+01:00.0 3D controller: NVIDIA Corporation GP108M [GeForce MX150] (rev a1)
+    Subsystem: Xiaomi GP108M [GeForce MX150]
+    Kernel modules: nouveau
+```
+
+解决方法：直接加个文件`/etc/modprobe.d/nouveau_blacklist.conf`，重启后即可正常休眠。
+```
+ychi@~> cat /etc/modprobe.d/nouveau_blacklist.conf
+# block nouveau, otherwise hibernation will not work.
+# yychi, 2024.1
+blacklist nouveau
+```
+
 关于休眠，暂时探索至此...
 
 
@@ -348,6 +434,7 @@ ExecStart=/usr/lib/systemd/systemd-sleep hibernate
 [^c]: [Suspend/resume service files][14]
 [^d]: [Slock - lock on suspend][15]
 [^e]: 此处我用的是 [slock][15]，X 下一个非常简单轻巧的锁屏工具。简单到什么程度呢？它连配置文件都没有，想要自定义，必须改`config.h`然后重新编译！
+[^f]: 参考帖子：[[Solved]Issues with mesa][16].
 
 [1]: https://superuser.com/questions/1124966/is-hybrid-sleep-the-same-in-linux-as-in-windows
 [2]: https://askubuntu.com/questions/768136/how-can-i-hibernate-on-ubuntu-16-04/821122#821122
@@ -364,3 +451,4 @@ ExecStart=/usr/lib/systemd/systemd-sleep hibernate
 [13]: https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Configure_the_initramfs
 [14]: https://wiki.archlinux.org/title/Power_management#Sleep_hooks
 [15]: https://wiki.archlinux.org/title/Slock#Lock_on_suspend
+[16]: https://bbs.archlinux.org/viewtopic.php?id=248019
