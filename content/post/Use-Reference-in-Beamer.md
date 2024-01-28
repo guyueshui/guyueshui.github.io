@@ -71,7 +71,25 @@ bibtex mybeamer
 3. `pdflatex mybeamer.tex`
 4. `pdflatex mybeamer.tex`
 
+## 额外知识
+
+Beamer 中默认使用 sans 字体[^a]，可以使用`\usefonttheme{serif}`切换为衬线字体，推荐 slides 只给人阅读，不用做 presentation 时使用，毕竟衬线字体更好看一些。Beamer 中基本的定义字体方法如下：
+```tex
+%%
+%% Note that once use customizing fonts, switch to xelatex
+%%
+\usepackage{fontenc}
+\setsansfont{Varela Round}
+% \setsansfont{IM FELL DW Pica}
+\setmonofont{DejaVu Sans Mono}
+\setmathfont{Fira Sans}
+```
+
 ## References
 
 - [LaTeX/Presentations](https://en.wikibooks.org/wiki/LaTeX/Presentations)
 - [LaTeX 到底怎么加 bib？？ - 知乎](https://www.zhihu.com/question/30344123/answer/53377390)
+- [Changing font style using beamer](https://tex.stackexchange.com/questions/79420/changing-font-style-using-beamer)
+
+
+[^a]: 想想你在台上讲 slides，如果弄个细细的衬线字体，别人看的得多费劲。
