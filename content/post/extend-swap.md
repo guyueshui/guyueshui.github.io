@@ -75,3 +75,11 @@ UUID=4227170f-0a4f-4a8e-fads-jasdfkjaskf	none      	swap      	defaults,pri=-2	0
 
 另，使用`swapon -p <priority> <swap_partition>`为指定 swap 分区设置优先级。
 
+2024-01-28 更新：注意，上述 swap 分区的优先级必须使用正数才有效果，负数是内核专用（在这里相当于没设）。参考[这里](https://superuser.com/questions/173353/how-permanently-change-linux-swap-disk-priority)。我现在的设置是：
+```
+# extra swapfile, prefer use this swap file, as the swap partition is used for hibernation
+/home/yychi/EXTRA/swapfile                  none        swap        defaults,pri=2 0 0
+# /dev/nvme0n1p7
+UUID=4227170f-0a4f-4a8e-a4fd-0d91f46f54af       none            swap            defaults,pri=1  0 0
+```
+数值越大，优先级越高。
