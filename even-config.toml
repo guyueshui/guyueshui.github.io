@@ -21,9 +21,6 @@ disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
-[author]                  # essential                     # 必需
-  name = "Yychi"
-
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
   priority = 0.5
@@ -214,6 +211,9 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     #m-instagram = "http://localhost:1313"
     #n-gitlab = "http://localhost:1313"
     #o-bilibili = "http://localhost:1313"
+
+  [params.author]
+    name = "Yychi"
 
 [privacy]
   # See https://gohugo.io/about/hugo-and-gdpr/

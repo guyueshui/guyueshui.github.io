@@ -4,6 +4,7 @@ themes/*
 public
 .vscode
 .hugo_build.lock
+main.scss_*
 
 # add obsidian stuff
 .obsidian/*
