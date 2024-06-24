@@ -1,0 +1,174 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Android 手机备份攻略 - 水阙</title>
+<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content><meta name=description content="说起 Android 手机的备份，最先闯入眼帘的可能是 XX 搬机助手，某某手机搬家等一键式迁移手机数据的 APP，这些 APP 可以迁移的数据包括，联系人、通话记录、短信、应用（不包括应用数据）、照片视频、文件夹等，此外还包括一些系统设置例如 WIFI 密码1。
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.127.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/android-backup/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.4db6eefa019323deeb0f96ac97b0195c6875d5cb6a98e30c1e245d54b43d54bc.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/android-backup/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="Android 手机备份攻略"><meta property="og:description" content="说起 Android 手机的备份，最先闯入眼帘的可能是 XX 搬机助手，某某手机搬家等一键式迁移手机数据的 APP，这些 APP 可以迁移的数据包括，联系人、通话记录、短信、应用（不包括应用数据）、照片视频、文件夹等，此外还包括一些系统设置例如 WIFI 密码1。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2024-03-26T22:33:43+08:00"><meta property="article:modified_time" content="2024-06-25T00:49:35+08:00"><meta property="article:tag" content="Tech"><meta property="article:tag" content="Android"><meta property="article:tag" content="Backup"><meta property="article:tag" content="备份"><meta itemprop=name content="Android 手机备份攻略"><meta itemprop=description content="说起 Android 手机的备份，最先闯入眼帘的可能是 XX 搬机助手，某某手机搬家等一键式迁移手机数据的 APP，这些 APP 可以迁移的数据包括，联系人、通话记录、短信、应用（不包括应用数据）、照片视频、文件夹等，此外还包括一些系统设置例如 WIFI 密码1。"><meta itemprop=datePublished content="2024-03-26T22:33:43+08:00"><meta itemprop=dateModified content="2024-06-25T00:49:35+08:00"><meta itemprop=wordCount content="2336"><meta itemprop=keywords content="Tech,Android,Backup,备份"><meta name=twitter:card content="summary"><meta name=twitter:title content="Android 手机备份攻略"><meta name=twitter:description content="说起 Android 手机的备份，最先闯入眼帘的可能是 XX 搬机助手，某某手机搬家等一键式迁移手机数据的 APP，这些 APP 可以迁移的数据包括，联系人、通话记录、短信、应用（不包括应用数据）、照片视频、文件夹等，此外还包括一些系统设置例如 WIFI 密码1。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/search/><li class=mobile-menu-item>Search</li></a><a href=/links/><li class=mobile-menu-item>More</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/search/>Search</a></li><li class=menu-item><a class=menu-item-link href=/links/>More</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Android 手机备份攻略</h1><div class=post-meta><span class=post-time>March 26, 2024 </span><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#一全量媒体数据备份>一、全量媒体数据备份</a></li><li><a href=#二应用数据备份>二、应用数据备份</a></li><li><a href=#三增量备份>三、增量备份</a></li><li><a href=#总结>总结</a></li></ul></nav></div></div><div class=post-content><p>说起 Android 手机的备份，最先闯入眼帘的可能是 XX 搬机助手，某某手机搬家等一键式迁移手机数据的 APP，这些 APP 可以迁移的数据包括，联系人、通话记录、短信、应用（不包括应用数据）、照片视频、文件夹等，此外还包括一些系统设置例如 WIFI 密码<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>。</p><p>然而，这些 APP 存在以下几个缺点，</p><ol><li>它们必须索取很高的系统权限（用完即卸，倒也无所谓）；</li><li>随着 APP 的流氓化，里面某些功能点可能要收费（不差钱，也无所谓）；</li><li><strong>无法备份应用数据或应用数据备份不完备</strong>。</li></ol><p>对于一个 Android 手机，备份的极致追求是丝滑的换机/刷机体验。即，当我换了一部手机或是我刷了一个新的 ROM，我可以通过备份恢复完全恢复到我换机/刷机之前的样子，并且应用数据得以保留<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>。刷机暂且不论，因为媒体数据（存盘的照片、视频、文档等）一般不会丢失。但换机之后，希望原封不动的将想要的数据按照原始文件夹结构📁迁移到新手机。</p><p>为了达成以上目标，我摸索了一套 Android 手机的备份攻略。</p><h2 id=一全量媒体数据备份>一、全量媒体数据备份</h2><p>这一点可以使用命令行工具 tar 来完成。手机连上电脑或是装一个终端 APP（例如<a href=https://wiki.termux.com/wiki/Main_Page>Termux</a>），保证终端可以使用 tar 命令，然后准备一个纯文本文件，里面记录想要备份的文件夹路径或需要排除的文件夹路径。执行全量备份命令（其实就是将想要的文件打包），</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># 用于刷机前将媒体数据备份，防止刷坏需要格式化data分区。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>SDCARD_DIR</span><span class=o>=</span><span class=s2>&#34;/storage/emulated/0&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>EXEC_DIR</span><span class=o>=</span><span class=k>$(</span><span class=nb>cd</span> <span class=k>$(</span>dirname <span class=nv>$0</span><span class=k>)</span><span class=p>;</span> <span class=nb>pwd</span><span class=k>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;EXEC_DIR=</span><span class=nv>$EXEC_DIR</span><span class=s2>\n&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;SDCARD_DIR=</span><span class=nv>$SDCARD_DIR</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> <span class=nv>$SDCARD_DIR</span>
+</span></span><span class=line><span class=cl>tar --zstd <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    -cvf <span class=nv>$EXEC_DIR</span>/sdcard_backup_<span class=k>$(</span>date +<span class=s2>&#34;%Y-%m-%d&#34;</span><span class=k>)</span>.tar.zst <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    --exclude<span class=o>=</span><span class=s2>&#34;*/.*&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    -T <span class=nv>$EXEC_DIR</span>/pull_file_list.txt
+</span></span></code></pre></td></tr></table></div></div><p>猛击<a href=https://github.com/guyueshui/backup_script/blob/dev/yychi/>这里</a>获取备份和恢复脚本。</p><p>什么情况下需要做这一步？</p><ol><li>在刷机时如果你觉得很可能会丢失数据，需要全盘格式化，先执行一个备份操作，然后将备份数据包拷贝出来。</li><li>在换机之后，将媒体数据整个打包迁移到新手机。</li></ol><h2 id=二应用数据备份>二、应用数据备份</h2><p>应用数据备份一般需要借助专门的 APP，或是<a href=https://github.com/YAWAsau/backup_script>备份脚本</a>。Android 9 还是 10 以前，钛备份作为备份界一哥，其地位无人撼动。然而随着 Android 版本的升高，钛备份却跟不上其升级速度，导致出现很多低版本 Android 备份的应用数据无法在高版本 android 系统中还原。无奈之下弃之，所幸遇到了新的替代品：<a href=https://github.com/NeoApplications/Neo-Backup>NeoBackup</a>.</p><p>当然，凡是可以备份应用数据的都需要 root 权限，当今 android 手机刷个面具，弄个 root 还是很简单的。不要说 root 以后设备不安全之类的，root 只是一个权限，怎么使用还是看你——设备的拥有者。</p><p>NeoBackup 的使用在软件主页介绍的很详细。一般而言这些应用会有一个备份数据存放的文件夹（下称<code>backup_folder</code>），我们只要将这个文件夹备份好，那么在一个新手机上，先把这个备份文件夹还原过去，再装上 NeoBackup，即可在 APP 里面任意操作想要还原的应用。你可以还原一个或批量还原多个应用及其数据；也可以为一个已安装的应用，还原其数据；更可还原应用到以前的版本（应用降级）。</p><p>如此，将<code>backup_folder</code>作为一个媒体数据备份即可。</p><h2 id=三增量备份>三、增量备份</h2><p>备份一事，虽说无需过于频繁，但刷机前忘记备份最新数据的事情却时有发生。想一想，你最近几天拍的照片、刚刚下载的一本小说、昨天从同事那儿接收的文件、便签 APP 里记录的备忘录和待办事项。手机中的数据常用常新，而我们在刷机前，很难做到每次都全量备份一遍。一是我半个月前全量备份的数据包和我现在的又差得了多少呢？而是全量备份一次实在耗时，我必须立马刷机。</p><p>鉴于此种种，一个增量备份的补充显得格外重要。定期备份全量数据的压缩包，短期增量备份指定的文件夹（媒体、文档等）。这样的备份才能给宝贵的数据多上一层保险。</p><p>增量备份的一个基本要求，就是文件的时间戳不能随意修改。我尝试过 xplore+webdav 的方案，发现文件同步之后时间戳会丢失，也就是被同步的文件的时间戳会更新为操作时间而非源文件本来的时间。所以想着有没有工具可以在同步的时候保留时间戳呢？</p><p>rsync 应该有这个功能。那么思路有二：</p><ol><li>手机端安装 Termux 使用 rsync，PC 端开 ssh server，手机端向 PC 端推；</li><li>手机端开 ssh server，PC 端使用 rsync 从手机端拉数据。</li></ol><p>显然后者更方便，因为手机上操作 rsync（操作命令行）显然不如电脑方便。再者说来，第二种方法是以手机为中心，任何时候，手机端开启 ssh server，那么任何电脑装一下 rsync 就能和手机同步数据。如果是电脑插上硬盘，那么随便换电脑，只要插上备份硬盘就可以一直保证同步的两端是一致的。</p><p>手机端安装 SSHelper（参考 <a href=https://askubuntu.com/a/343740>https://askubuntu.com/a/343740</a>），PC 上配置 ssh 免密登陆，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat ~/.ssh/config
+</span></span><span class=line><span class=cl>Host munch
+</span></span><span class=line><span class=cl>    Hostname 192.168.6.13
+</span></span><span class=line><span class=cl>    Port <span class=m>2222</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ ssh munch
+</span></span><span class=line><span class=cl>SSHelper Version 13.2 Copyright 2018, P. Lutus
+</span></span><span class=line><span class=cl>client_input_hostkeys: received duplicated ssh-rsa host key
+</span></span><span class=line><span class=cl>Redmi_K40S:4.19.261-HellFire-X//jlk09i902i3rj
+</span></span><span class=line><span class=cl>u0_a299@localhost:~$
+</span></span></code></pre></td></tr></table></div></div><p>达到直接输入<code>ssh munch</code>就可以登陆的效果。</p><p>在备份盘对应手机用户根目录（对应手机目录通常为<code>/storage/emulated/0</code>）执行此脚本<code>rsync.sh</code>即可进行增量备份。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl>cat <span class=s>&lt;&lt; COMMENT
+</span></span></span><span class=line><span class=cl><span class=s>This script is used to backup some folders from mobile phone to here (the 
+</span></span></span><span class=line><span class=cl><span class=s>directory of a backup disk). To achieve this, you should
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s>1. have \`rsync\` installed in your PC;
+</span></span></span><span class=line><span class=cl><span class=s>2. start a ssh server on your mobile phone, i.e., SSHelper;
+</span></span></span><span class=line><span class=cl><span class=s>3. config your ssh login via .ssh/config and ssh-copy-id such that you can
+</span></span></span><span class=line><span class=cl><span class=s>   login your mobile simply with \`ssh munch\`.
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s>See: https://askubuntu.com/a/343740
+</span></span></span><span class=line><span class=cl><span class=s>COMMENT</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>set</span> -e <span class=c1># exit when error</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#exit 23</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>folers_to_sync</span><span class=o>=(</span>
+</span></span><span class=line><span class=cl>    Pictures
+</span></span><span class=line><span class=cl>    Snapseed
+</span></span><span class=line><span class=cl>    billing
+</span></span><span class=line><span class=cl>    Books
+</span></span><span class=line><span class=cl>    dictionary
+</span></span><span class=line><span class=cl>    Download
+</span></span><span class=line><span class=cl>    eudb_en
+</span></span><span class=line><span class=cl>    Fonts
+</span></span><span class=line><span class=cl>    GooglePinyinInput
+</span></span><span class=line><span class=cl>    neo_backuped_data
+</span></span><span class=line><span class=cl>    Music
+</span></span><span class=line><span class=cl>    Movies
+</span></span><span class=line><span class=cl>    <span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sync_folder<span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>[</span> ! -d <span class=nv>$1</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>        mkdir <span class=nv>$1</span>
+</span></span><span class=line><span class=cl>    <span class=k>fi</span>
+</span></span><span class=line><span class=cl>    rsync -auh --progress <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>        --size-only <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>        --exclude<span class=o>=</span><span class=s2>&#34;.*&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>        munch:SDCard/<span class=nv>$1</span>/ <span class=nv>$1</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>notify<span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;--- </span><span class=nv>$1</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> folder in <span class=si>${</span><span class=nv>folers_to_sync</span><span class=p>[*]</span><span class=si>}</span><span class=p>;</span> <span class=k>do</span>
+</span></span><span class=line><span class=cl>    notify <span class=s2>&#34;sync folder </span><span class=nv>$folder</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>    sync_folder <span class=nv>$folder</span>
+</span></span><span class=line><span class=cl>    echo<span class=p>;</span> <span class=nb>echo</span> <span class=c1># for two newlines</span>
+</span></span><span class=line><span class=cl><span class=k>done</span>
+</span></span></code></pre></td></tr></table></div></div><p>修改变量<code>folders_to_sync</code>来配置你的同步文件夹，如果文件夹里面没有新增，则此操作会很快。此操作仅会同步手机端新增的文件到 PC.</p><p>本段原帖参考我的<a href=https://github.com/guyueshui/guyueshui.github.io/issues/20>issue</a>.</p><h2 id=总结>总结</h2><p>刷机一时爽，一直刷机一直爽。前提是做好备份哈～</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>在不同类型的 ROM 上迁移系统设置是一个灾难，非常不建议这么做。因为不同的 ROM 相当于不同的 APP，你用一个应用的设置去覆盖另一个应用，后果可想而知了。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>即，应用是已经设置好的，打开之后不需要像新装一个应用一样重新设置，里面的使用记录也不会丢失。&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content></span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>June 25, 2024</span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/tech/>tech</a>
+<a href=/tags/android/>android</a>
+<a href=/tags/backup/>backup</a>
+<a href=/tags/%E5%A4%87%E4%BB%BD/>备份</a></div><nav class=post-nav><a class=next href=/post/%E9%BB%91%E5%B1%B1%E5%B0%8F%E5%A6%96/><span class="next-text nav-default">黑山小妖</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://giscus.app/client.js data-repo=guyueshui/guyueshui.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkxNDI4MTY5NTE=" data-category=Ideas data-category-id=DIC_kwDOCIM2t84CW4nN data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a><a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
+2018 -
+2024<span class=heart><i class="iconfont icon-heart"></i></span><span></span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
