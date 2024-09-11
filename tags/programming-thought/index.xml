@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming Thought on 水阙</title><link>https://guyueshui.github.io/tags/programming-thought/</link><description>Recent content in Programming Thought on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 29 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/programming-thought/index.xml" rel="self" type="application/rss+xml"/><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>Declaration: this article is in long time editing&amp;hellip;
-Here comes some beautiful recursive solutions to some problems.
-Examples Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.
-Fibonacci Numbers The first comes very famous Fibonacci Numbers, which is a sequence of 0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip; The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming Thought on 水阙</title><link>https://guyueshui.github.io/tags/programming-thought/</link><description>Recent content in Programming Thought on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 29 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/programming-thought/index.xml" rel="self" type="application/rss+xml"/><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>&lt;p>&lt;font color="red">Declaration: this article is in long time editing&amp;hellip;&lt;/font>&lt;/p>
+&lt;hr>
+&lt;p>Here comes some beautiful recursive solutions to some problems.&lt;/p>
+&lt;h2 id="examples">Examples&lt;/h2>
+&lt;p>Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.&lt;/p>
+&lt;h3 id="fibonacci-numbers">Fibonacci Numbers&lt;/h3>
+&lt;p>The first comes very famous Fibonacci Numbers, which is a sequence of
+0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip;
+The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).
+$$
+\text{fib}(n) = \begin{cases}
+n, &amp;amp;\text{ if } n \le 1 \newline
+\text{fib}(n-1) + \text{fib}(n-2), &amp;amp;\text{ if } n &amp;gt; 1.
+\end{cases}
+$$
+That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:&lt;/p></description></item></channel></rss>

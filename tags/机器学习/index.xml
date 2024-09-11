@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>机器学习 on 水阙</title><link>https://guyueshui.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 机器学习 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 25 Jun 2024 01:19:32 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>浅谈 Logistic 回归</title><link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link><pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid><description>In editing&amp;hellip; Logistic 回归属于分类模型！！！ 从最小二乘说起 线性回归 概率解释 Sigmoid 函数的引入 如果把我比作一张白纸，在我的知识储备中，现在只有线性回归。但是要处理分</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>机器学习 on 水阙</title><link>https://guyueshui.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 机器学习 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>浅谈 Logistic 回归</title><link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link><pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid><description>&lt;p>In editing&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Logistic 回归属于分类模型！！！&lt;/strong>&lt;/p>
+&lt;h2 id="从最小二乘说起">从最小二乘说起&lt;/h2>
+&lt;h2 id="线性回归">线性回归&lt;/h2>
+&lt;h2 id="概率解释">概率解释&lt;/h2>
+&lt;h2 id="sigmoid-函数的引入">Sigmoid 函数的引入&lt;/h2>
+&lt;p>如果把我比作一张白纸，在我的知识储备中，现在只有线性回归。但是要处理分类问题，我该怎么办？没办法，先考虑一个二分类问题，$y \in {0,1}$，我们准备霸王硬上弓，用回归模型套上去！
+$$
+y = h_{\theta}(x)
+$$&lt;/p></description></item></channel></rss>

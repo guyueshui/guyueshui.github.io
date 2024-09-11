@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on 水阙</title><link>https://guyueshui.github.io/tags/note/</link><description>Recent content in Note on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 25 Jun 2024 01:19:32 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p>诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note on 水阙</title><link>https://guyueshui.github.io/tags/note/</link><description>Recent content in Note on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p>诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p>
 &lt;h2 id="reactor-vs-proactor">Reactor v.s. Proactor&lt;/h2>
 &lt;ul>
 &lt;li>epll/wait: reactor 模式，不停轮询，发现有事做，就做！&lt;/li>
@@ -39,46 +39,46 @@
 &lt;p>具有虚函数的类的实例，都会在头部存一个指向虚函数表的指针。&lt;/p>
 &lt;h2 id="常见类型所占空间大小">常见类型所占空间大小&lt;/h2>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>TYPE&lt;/th>
-&lt;th style="text-align:right">Bytes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>(unsigned) int&lt;/td>
-&lt;td style="text-align:right">4&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>(unsigned) short&lt;/td>
-&lt;td style="text-align:right">2&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>(unsigned) long&lt;/td>
-&lt;td style="text-align:right">8&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>float&lt;/td>
-&lt;td style="text-align:right">4&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>double&lt;/td>
-&lt;td style="text-align:right">8&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>long double&lt;/td>
-&lt;td style="text-align:right">16&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>(unsigned) char&lt;/td>
-&lt;td style="text-align:right">1&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>bool&lt;/td>
-&lt;td style="text-align:right">1&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">TYPE&lt;/th>
+ &lt;th style="text-align: right">Bytes&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">(unsigned) int&lt;/td>
+ &lt;td style="text-align: right">4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">(unsigned) short&lt;/td>
+ &lt;td style="text-align: right">2&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">(unsigned) long&lt;/td>
+ &lt;td style="text-align: right">8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">float&lt;/td>
+ &lt;td style="text-align: right">4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">double&lt;/td>
+ &lt;td style="text-align: right">8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">long double&lt;/td>
+ &lt;td style="text-align: right">16&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">(unsigned) char&lt;/td>
+ &lt;td style="text-align: right">1&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">bool&lt;/td>
+ &lt;td style="text-align: right">1&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table>
 &lt;p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是 16 为地址，指针即为 2 个字节，现在一般是 32 位系统，所以是 4 个字节，以后 64 位，则就为 8 个字节。&lt;/p>
 &lt;blockquote>

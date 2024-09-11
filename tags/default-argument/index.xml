@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default-Argument on 水阙</title><link>https://guyueshui.github.io/tags/default-argument/</link><description>Recent content in Default-Argument on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 25 Jun 2024 01:19:32 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/default-argument/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 中的默认参数简介</title><link>https://guyueshui.github.io/post/cpp-default-argument/</link><pubDate>Wed, 14 Sep 2022 13:23:39 +0800</pubDate><guid>https://guyueshui.github.io/post/cpp-default-argument/</guid><description>Minimal example 1 2 3 4 5 6 7 int foo(int x, int y=1) { return x + y; } int main() { cout &amp;lt;&amp;lt; foo(5); // call foo(5, 1) return 0; } 分离编译带来的隐患 如果函数声明和定义分离，此时就有一个 pitfall。由于</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default-Argument on 水阙</title><link>https://guyueshui.github.io/tags/default-argument/</link><description>Recent content in Default-Argument on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/default-argument/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 中的默认参数简介</title><link>https://guyueshui.github.io/post/cpp-default-argument/</link><pubDate>Wed, 14 Sep 2022 13:23:39 +0800</pubDate><guid>https://guyueshui.github.io/post/cpp-default-argument/</guid><description>&lt;h2 id="minimal-example">Minimal example&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">foo&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">foo&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// call foo(5, 1)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="分离编译带来的隐患">分离编译带来的隐患&lt;/h2>
+&lt;p>如果函数声明和定义分离，此时就有一个 pitfall。由于默认参数可以定义在函数声明（declaration）中，也可以定义在函数定义（definition）中。&lt;/p></description></item></channel></rss>

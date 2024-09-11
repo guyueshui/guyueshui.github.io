@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on 水阙</title><link>https://guyueshui.github.io/tags/reference/</link><description>Recent content in Reference on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 25 Jun 2024 01:19:32 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 使用指北</title><link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate><guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid><description>&lt;p>本文主要引用 &lt;a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang&lt;/a> 的博客。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on 水阙</title><link>https://guyueshui.github.io/tags/reference/</link><description>Recent content in Reference on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 使用指北</title><link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate><guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid><description>&lt;p>本文主要引用 &lt;a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/">Liam Huang&lt;/a> 的博客。&lt;/p>
 &lt;h2 id="系统相关">系统相关&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -26,4 +26,17 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /proc/loadavg &lt;span class="c1"># 查看系统负载&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>This article needs polish, do not truely trust it! Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference. General Pattern A vim operation consists of three parts, namely [OPERATOR][NUMBER][MOTION] where OPERATOR - what you want to do? This mainly covers copy, cut, paste, etc. NUMBER - how many times do you want?</description></item></channel></rss>
+&lt;/div></description></item><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p>&lt;font color="red">This article needs polish, do not truely trust it!&lt;/font>&lt;/p>
+&lt;p>Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.&lt;/p>
+&lt;!-- more -->
+&lt;h2 id="general-pattern">General Pattern&lt;/h2>
+&lt;p>A vim operation consists of three parts, namely&lt;/p>
+&lt;pre tabindex="0">&lt;code>[OPERATOR][NUMBER][MOTION]
+&lt;/code>&lt;/pre>&lt;p>where&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>OPERATOR&lt;/code> - what you want to do? This mainly covers copy, cut, paste, etc.&lt;/li>
+&lt;li>&lt;code>NUMBER&lt;/code> - how many times do you want? It&amp;rsquo;s nothing but repeating the operation &lt;code>NUMBER&lt;/code> times, and it&amp;rsquo;s &lt;strong>optional&lt;/strong>.&lt;/li>
+&lt;li>&lt;code>MOTION&lt;/code> - where do you want to go? This point out the scope where the &lt;code>OPERATOR&lt;/code> applies.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Note: order does not matter sometimes.&lt;/p></description></item></channel></rss>

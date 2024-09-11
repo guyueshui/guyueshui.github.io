@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折腾 on 水阙</title><link>https://guyueshui.github.io/tags/%E6%8A%98%E8%85%BE/</link><description>Recent content in 折腾 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 01 Apr 2020 23:01:36 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>Gnome 应用启动缓慢</title><link>https://guyueshui.github.io/post/gnome-app-slow-start/</link><pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate><guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid><description>先看环境： $ neofetch -` yychi@MiBook-Air .o+` ---------------- `ooo/ OS: Arch Linux x86_64 `+oooo: Host: TM1604 XMAKB3M0P0202 `+oooooo: Kernel: 5.5.13-arch2-1 -+oooooo+: Uptime: 5 mins `/:-:++oooo+: Packages: 1153 (pacman) `/++++/+++++++: Shell: zsh 5.8 `/++++++++++++++: Resolution: 1920x1080 `/+++ooooooooooooo/` WM: i3 ./ooosssso++osssssso+` Theme: Adwaita [GTK2] .oossssso-````/ossssss+` Icons: Adwaita [GTK2] -osssssso. :ssssssso. Terminal: urxvt :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折腾 on 水阙</title><link>https://guyueshui.github.io/tags/%E6%8A%98%E8%85%BE/</link><description>Recent content in 折腾 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 01 Apr 2020 23:01:36 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>Gnome 应用启动缓慢</title><link>https://guyueshui.github.io/post/gnome-app-slow-start/</link><pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate><guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid><description>&lt;p>先看环境：&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ neofetch
+ -` yychi@MiBook-Air 
+ .o+` ---------------- 
+ `ooo/ OS: Arch Linux x86_64 
+ `+oooo: Host: TM1604 XMAKB3M0P0202 
+ `+oooooo: Kernel: 5.5.13-arch2-1 
+ -+oooooo+: Uptime: 5 mins 
+ `/:-:++oooo+: Packages: 1153 (pacman) 
+ `/++++/+++++++: Shell: zsh 5.8 
+ `/++++++++++++++: Resolution: 1920x1080 
+ `/+++ooooooooooooo/` WM: i3 
+ ./ooosssso++osssssso+` Theme: Adwaita [GTK2] 
+ .oossssso-````/ossssss+` Icons: Adwaita [GTK2] 
+ -osssssso. :ssssssso. Terminal: urxvt 
+ :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline 
+ /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz 
+ `/ossssso+/:- -:/+osssso+- GPU: NVIDIA GeForce MX150 
+ `+sso+:-` `.-/+oso: GPU: Intel HD Graphics 620 
+ `++:. `-/+/ Memory: 1608MiB / 7881MiB 
+ .` `/
+&lt;/code>&lt;/pre>&lt;p>再看问题：Gnome 系软件（gedit, baobab, nautilus 等）启动龟速，通常需要等待 10-30s.&lt;/p></description></item></channel></rss>
