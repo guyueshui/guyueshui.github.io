@@ -8,8 +8,8 @@ comment: false
 ## Site Extra
 
 - [Categories](/categories/)
-- [Tags](/tags/)
-- [Personal Manual](https://pmanual.readthedocs.io)
+- [Tags](/tags/)：本站标签。
+- [Personal Manual](https://pmanual.readthedocs.io)：个人参考手册。
 
 ## My Advisor
 
