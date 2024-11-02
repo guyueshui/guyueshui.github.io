@@ -1,7 +1,6 @@
 ---
 title: "V3Ray 的配置笔记"
 date: 2021-12-07T22:05:42+08:00
-lastmod: 2023-02-24 18:56
 keywords: []
 categories: [Notes]
 tags: []

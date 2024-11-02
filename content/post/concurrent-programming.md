@@ -1,6 +1,6 @@
 ---
 title: "多线程学习笔记"
-date: Thu Aug 29 2019
+date: 2019-08-29
 lastmod: 2019-08-29T21:40:23+08:00
 keywords: []
 categories: [Notes]

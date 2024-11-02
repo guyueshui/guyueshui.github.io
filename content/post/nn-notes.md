@@ -1,6 +1,6 @@
 ---
 title: "Nueral Network Learning Notes"
-date: Tue Oct 29 2019
+date: 2019-10-29
 lastmod: 2019-10-29T10:45:03+08:00
 keywords: []
 categories: [notes]

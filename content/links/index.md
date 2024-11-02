@@ -56,6 +56,7 @@ comment: false
 - [SpaceVim](https://spacevim.org/cn/)
 - [WebGlSamples](https://webglsamples.org/aquarium/aquarium.html): browser performance test
 - 图床：[路过](https://imgchr.com/)、[sm.ms](https://sm.ms/)
+- [双拼练习 @ BlueSky](https://api.ihint.me/shuang/)：怎么我当时学的时候没发现这个网站👿！我学的时候靠的是一张键位图作为输入法背景，也差不多吧～
 
 ### 修身养性
 

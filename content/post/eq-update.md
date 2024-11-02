@@ -1,6 +1,6 @@
 ---
 title: "Eq Update"
-date: Thu Jan 23 2020
+date: 2020-01-23
 lastmod: 2020-01-23T23:32:17+08:00
 keywords: []
 categories: []

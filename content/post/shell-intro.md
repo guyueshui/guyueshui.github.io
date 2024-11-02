@@ -1,6 +1,6 @@
 ---
 title: "Brief Introduction to Shell Script"
-date: Fri Nov 22 2019
+date: 2019-11-22
 lastmod: 2019-11-22T16:59:46+08:00
 categories: [Notes]
 tags: [shell]
