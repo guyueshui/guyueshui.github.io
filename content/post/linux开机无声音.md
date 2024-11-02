@@ -1,15 +1,16 @@
 ---
 title: "Linux 开机无声音"
 date: 2022-03-26T18:45:16+08:00
-lastmod: 2022-03-26T18:45:16+08:00
 keywords: []
-categories: [linux]
-tags: []
+categories: [tech]
+tags: [linux,audio]
 draft: false
 mathjax: false
 
 ---
 
+开机后扬声器无声音
+---
 
 问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。
 
@@ -213,7 +214,48 @@ pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:ana
 
 这个问题暂时解决到这里，等以后有时间看能否完全解决！
 
-当天更新：重启之后发现不用重新再走一遍上述流程，可以看到"active profile: <output:hdmi-stereo-extra1+input:analog-stereo>"已经持久化改变了。那么这个问题就算解决啦！
+当天更新：重启之后发现不用重新再走一遍上述流程，可以看到"active profile: \<output:hdmi-stereo-extra1+input:analog-stereo\>"已经持久化改变了。那么这个问题就算解决啦！
+
+USB 耳机无声音
+---
+
+起因：入了个 usb 耳机，然后插上电脑（archlinux）无效果。电脑自带扬声器和 3.5mm 耳机孔都是好好工作的，然而插了 usb 耳机后好像没插一样。
+
+先看下 lsusb 排除下物理连接问题
+```shell
+yychi@~> lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 04f2:b5a3 Chicony Electronics Co., Ltd XiaoMi USB 2.0 Webcam
+Bus 001 Device 003: ID 04f3:0c1a Elan Microelectronics Corp. ELAN:Fingerprint
+Bus 001 Device 004: ID 8087:0a2b Intel Corp. Bluetooth wireless interface
+Bus 001 Device 009: ID 0b0e:0313 GN Netcom Jabra EVOLVE 30 II # usb headphone
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+
+按照上述经验怀疑是 card-profile 的问题。是不是情景模式不对呢？最后发现和上次不一样，上次普通耳机和外置扬声器用的一张声卡。这次 usb 耳机用的自带声卡，所以需要切换成自带声卡，且调对情景模式。
+
+> 现在用 pipewire 替代 pulse-audio，其对应的配置命令行为`pactl`
+
+```bash
+yychi@~> pactl list cards short
+45	alsa_card.pci-0000_00_1f.3	alsa # 自带声卡
+576	alsa_card.usb-GN_Audio_A_S_Jabra_EVOLVE_30_II_0005EDED3F4A09-00	alsa # usb耳机声卡
+
+pactl set-card-profile alsa_card.usb-GN_Audio_A_S_Jabra_EVOLVE_30_II_0005EDED3F4A09-00 pro-audio  # 设置正确的情景模式
+# 切换声卡，即设置默认输入输出
+pactl set-default-sink alsa_output.usb-GN_Audio_A_S_Jabra_EVOLVE_30_II_0005EDED3F4A09-00.pro-output-0 # 设置默认输出
+pactl set-default-source alsa_input.usb-GN_Audio_A_S_Jabra_EVOLVE_30_II_0005EDED3F4A09-00.pro-input-0 # 设置默认输入
+```
+
+一番折腾，最终成功让 usb 耳机出声。
+
+一些命令：
+
+| 命令                                                        | 含义      |
+| ---------------------------------------------------------- | ----------- |
+| pactl list cards [short]                                   | 列出可用声卡          |
+| pactl get-default-sink/source                              | 获取默认输出/输入     |
+| pactl set-card-profile <card-name\/index> \<card-profile\> | 给指定声卡设置情景模式 |
 
 ## References
 
