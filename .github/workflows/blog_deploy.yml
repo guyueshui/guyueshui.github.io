@@ -22,6 +22,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
+          # perform a deep clone, see: https://gohugo.io/methods/page/gitinfo/#hosting-considerations
+          fetch-depth: 0
 
       ## Too hard to pass!
       # - name: AutoCorrect
