@@ -29,9 +29,9 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   priority = 0.5
   filename = "sitemap.xml"
 
-[frontmatter]
-  # see: https://io-oi.me/tech/hugo-vs-hexo/#%E5%85%B6%E5%AE%83%E6%96%B9%E9%9D%A2
-  lastmod = ["lastmod", ":git", ":default", ":fileModTime"] # ':default`必命中，因此最后一个不会命中
+# [frontmatter]
+#   # see: https://io-oi.me/tech/hugo-vs-hexo/#%E5%85%B6%E5%AE%83%E6%96%B9%E9%9D%A2
+#   lastmod = ["lastmod", ":git", ":default", ":fileModTime"] # ':default`必命中，因此最后一个不会命中
 
 
 # [permalinks]
@@ -95,6 +95,9 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   moreMeta = false
   # Syntax highlighting by highlight.js
   highlightInClient = false
+
+  # used when enableGitInfo = true
+  gitRepo = "https://github.com/guyueshui/guyueshui.github.io"
 
   # Some global options
   # you can also close or open something in front matter for a single post, 
