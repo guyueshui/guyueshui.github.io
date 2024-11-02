@@ -21,7 +21,7 @@ thread1.join()+------+
 不存在，一个函数内部多少指令，在多线程的情况下，很难保证可以全部的顺序的原子的执行完成。</p><h2 id=from-shuos-blog>From Shuo&rsquo;s blog</h2><p>依据《Java 并发编程实践》/《Java Concurrency in Practice》一书，一个线程安全的 class 应当满足三个条件：</p><ul><li>从多个线程访问时，其表现出正确的行为</li><li>无论操作系统如何调度这些线程，无论这些线程的执行顺序如何交织</li><li>调用端代码无需额外的同步或其他协调动作</li></ul><p>对象构造要做到线程安全，惟一的要求是在构造期间不要泄露 this 指针，即</p><ul><li>不要在构造函数中注册任何回调</li><li>也不要在构造函数中把 this 传给跨线程的对象</li><li>即便在构造函数的最后一行也不行</li></ul><p>作为 class 数据成员的 Mutex 只能用于同步本 class 的其他数据成员的读和写，它不能保护安全地析构。因为成员 mutex 的生命期最多与对象一样长，而析构动作可说是发生在对象身故之后（或者身亡之时）。另外，对于基类对象，那么调用到基类析构函数的时候，派生类对象的那部分已经析构了，那么基类对象拥有的 mutex 不能保护整个析构过程。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>August 29, 2019
-<a href=/commit/b00533836aa55f71ef4e6b7c7bfcb4752a04ebb9 title="[fix] warnings of hugo deprecated settings">(b005338)</a></span></p><p class=copyright-item><span class=item-title>License</span>
+<a href=https://github.com/guyueshui/guyueshui.github.io/commit/00511fb148c2a3709bd7a0b2f5a6d7038c41a291 title="[fix] add gitRepo for git info, now url of commit should work">(00511fb)</a></span></p><p class=copyright-item><span class=item-title>License</span>
 <span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/>多线程</a>
 <a href=/tags/%E5%B9%B6%E5%8F%91/>并发</a></div><nav class=post-nav><a class=prev href=/post/design-pattern-notes/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">设计模式学习笔记</span>
