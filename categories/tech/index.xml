@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p>一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 02 Nov 2024 18:50:22 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p>一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p>
 &lt;p>前些日子，我的 RedmiK40S MIUI13 突然给我自动更新至 MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是 MIUI 版本的提升，更是 Android 12 到 13 的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在 a12 上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上 XDA 找 ROM，随便下了几个，准备动手。&lt;/p></description></item><item><title>Swap 扩容</title><link>https://guyueshui.github.io/post/extend-swap/</link><pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate><guid>https://guyueshui.github.io/post/extend-swap/</guid><description>&lt;!--
 由于涉及到磁盘分区，一般来说 swap 分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
 
@@ -30,7 +30,8 @@ swapon /dev/swap_partition
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="分离编译带来的隐患">分离编译带来的隐患&lt;/h2>
-&lt;p>如果函数声明和定义分离，此时就有一个 pitfall。由于默认参数可以定义在函数声明（declaration）中，也可以定义在函数定义（definition）中。&lt;/p></description></item><item><title>使用 Yield 实现 Python 协程</title><link>https://guyueshui.github.io/post/python-coroutine-with-yield/</link><pubDate>Sun, 20 Mar 2022 20:44:58 +0800</pubDate><guid>https://guyueshui.github.io/post/python-coroutine-with-yield/</guid><description>&lt;p>考虑如下代码：&lt;/p>
+&lt;p>如果函数声明和定义分离，此时就有一个 pitfall。由于默认参数可以定义在函数声明（declaration）中，也可以定义在函数定义（definition）中。&lt;/p></description></item><item><title>Linux 开机无声音</title><link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link><pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate><guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid><description>&lt;h2 id="开机后扬声器无声音">开机后扬声器无声音&lt;/h2>
+&lt;p>问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。&lt;/p></description></item><item><title>使用 Yield 实现 Python 协程</title><link>https://guyueshui.github.io/post/python-coroutine-with-yield/</link><pubDate>Sun, 20 Mar 2022 20:44:58 +0800</pubDate><guid>https://guyueshui.github.io/post/python-coroutine-with-yield/</guid><description>&lt;p>考虑如下代码：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -176,41 +177,41 @@ swapon /dev/swap_partition
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">TYPE&lt;/th>
+ &lt;th>TYPE&lt;/th>
  &lt;th style="text-align: right">Bytes&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">(unsigned) int&lt;/td>
+ &lt;td>(unsigned) int&lt;/td>
  &lt;td style="text-align: right">4&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">(unsigned) short&lt;/td>
+ &lt;td>(unsigned) short&lt;/td>
  &lt;td style="text-align: right">2&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">(unsigned) long&lt;/td>
+ &lt;td>(unsigned) long&lt;/td>
  &lt;td style="text-align: right">8&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">float&lt;/td>
+ &lt;td>float&lt;/td>
  &lt;td style="text-align: right">4&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">double&lt;/td>
+ &lt;td>double&lt;/td>
  &lt;td style="text-align: right">8&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">long double&lt;/td>
+ &lt;td>long double&lt;/td>
  &lt;td style="text-align: right">16&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">(unsigned) char&lt;/td>
+ &lt;td>(unsigned) char&lt;/td>
  &lt;td style="text-align: right">1&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">bool&lt;/td>
+ &lt;td>bool&lt;/td>
  &lt;td style="text-align: right">1&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -1417,7 +1418,22 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">g++ main.cpp -g -O0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;code>-O0&lt;/code>指定编译器的优化级别为 0，即不优化。&lt;/p></description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置">字体设置&lt;/h2>
+&lt;/div>&lt;p>&lt;code>-O0&lt;/code>指定编译器的优化级别为 0，即不优化。&lt;/p></description></item><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>&lt;p>&lt;font color="red">Declaration: this article is in long time editing&amp;hellip;&lt;/font>&lt;/p>
+&lt;hr>
+&lt;p>Here comes some beautiful recursive solutions to some problems.&lt;/p>
+&lt;h2 id="examples">Examples&lt;/h2>
+&lt;p>Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.&lt;/p>
+&lt;h3 id="fibonacci-numbers">Fibonacci Numbers&lt;/h3>
+&lt;p>The first comes very famous Fibonacci Numbers, which is a sequence of
+0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip;
+The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).
+$$
+\text{fib}(n) = \begin{cases}
+n, &amp;amp;\text{ if } n \le 1 \newline
+\text{fib}(n-1) + \text{fib}(n-2), &amp;amp;\text{ if } n &amp;gt; 1.
+\end{cases}
+$$
+That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:&lt;/p></description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置">字体设置&lt;/h2>
 &lt;p>在导言区引入&lt;code>fontspec&lt;/code>包：&lt;code>\usepackage{fontspec}&lt;/code>&lt;/p>
 &lt;p>使用如下命令自定义字体：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

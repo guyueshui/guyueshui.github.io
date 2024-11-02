@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on 水阙</title><link>https://guyueshui.github.io/categories/notes/</link><description>Recent content in Notes on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Sep 2024 14:57:54 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members">Static members&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on 水阙</title><link>https://guyueshui.github.io/categories/notes/</link><description>Recent content in Notes on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 02 Nov 2024 18:50:22 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members">Static members&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -75,7 +75,7 @@
 &lt;/code>&lt;/pre>&lt;p>再看问题：Gnome 系软件（gedit, baobab, nautilus 等）启动龟速，通常需要等待 10-30s.&lt;/p></description></item><item><title>Metapost 学习笔记</title><link>https://guyueshui.github.io/post/metapost/</link><pubDate>Tue, 31 Mar 2020 09:20:44 +0800</pubDate><guid>https://guyueshui.github.io/post/metapost/</guid><description>&lt;p>想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动 orz&amp;hellip;&lt;/p>
 &lt;p>&lt;img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3812944475,2492602811&amp;amp;fm=26&amp;amp;gp=0.jpg" alt="">&lt;/p>
 &lt;p>闲话少叙，开始学习！&lt;/p></description></item><item><title>转义字符到底是什么</title><link>https://guyueshui.github.io/post/what-is-escape-character/</link><pubDate>Wed, 18 Mar 2020 22:41:06 +0800</pubDate><guid>https://guyueshui.github.io/post/what-is-escape-character/</guid><description>&lt;p>转义字符到底是啥？&lt;/p>
-&lt;p>实不相瞒我就是因为不知道才写下这篇文章，不，准确的说是这篇笔记 orz，既然是笔记，无所谓抄不抄了。每次说到转义字符，多少有点模糊，所以不如记下这篇笔记，以后忘了直接翻出来看看，复习起来要快一些。&lt;/p></description></item><item><title>Brief Introduction to Shell Script</title><link>https://guyueshui.github.io/post/shell-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/shell-intro/</guid><description>&lt;p>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. I just take
+&lt;p>实不相瞒我就是因为不知道才写下这篇文章，不，准确的说是这篇笔记 orz，既然是笔记，无所谓抄不抄了。每次说到转义字符，多少有点模糊，所以不如记下这篇笔记，以后忘了直接翻出来看看，复习起来要快一些。&lt;/p></description></item><item><title>Brief Introduction to Shell Script</title><link>https://guyueshui.github.io/post/shell-intro/</link><pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/shell-intro/</guid><description>&lt;p>This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. I just take
 some most important things out of the book.&lt;/p>
 &lt;h2 id="expansion">Expansion&lt;/h2>
 &lt;p>Each time you type a command line and press the &lt;kbd>Enter&lt;/kbd> key, bash
@@ -92,7 +92,7 @@ Just look an example:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Why not display an asterisk? That&amp;rsquo;s &lt;strong>expansion&lt;/strong>! &lt;code>*&lt;/code> &lt;em>expands&lt;/em> to all files in
-current directory.&lt;/p></description></item><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>&lt;p>Hello here.&lt;/p>
+current directory.&lt;/p></description></item><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>&lt;p>Hello here.&lt;/p>
 &lt;h2 id="cnn">CNN&lt;/h2>
 &lt;h3 id="conv-layer">Conv Layer&lt;/h3>
 &lt;p>Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.&lt;/p>
@@ -101,14 +101,14 @@ current directory.&lt;/p></description></item><item><title>Nueral Network Learni
 &lt;li>a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).&lt;/li>
 &lt;li>each filter convolving with the input will produce an activation map, two filters will produce two, etc.&lt;/li>
 &lt;/ul>
-&lt;p>The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong>activation map&lt;/strong>) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p></description></item><item><title>服务端开发预备知识</title><link>https://guyueshui.github.io/post/server-develop-preliminaries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid><description>&lt;h2 id="操作系统">操作系统&lt;/h2>
+&lt;p>The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong>activation map&lt;/strong>) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p></description></item><item><title>服务端开发预备知识</title><link>https://guyueshui.github.io/post/server-develop-preliminaries/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid><description>&lt;h2 id="操作系统">操作系统&lt;/h2>
 &lt;blockquote>
 &lt;p>摘自《程序员面试白皮书》&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="进程-vs线程">进程 vs.线程&lt;/h3>
-&lt;p>进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p></description></item><item><title>设计模式学习笔记</title><link>https://guyueshui.github.io/post/design-pattern-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/design-pattern-notes/</guid><description>&lt;p>如无特殊声明：本文所有 UML 图均出自《图说设计模式》。在此特别鸣谢！&lt;/p>
+&lt;p>进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p></description></item><item><title>设计模式学习笔记</title><link>https://guyueshui.github.io/post/design-pattern-notes/</link><pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/design-pattern-notes/</guid><description>&lt;p>如无特殊声明：本文所有 UML 图均出自《图说设计模式》。在此特别鸣谢！&lt;/p>
 &lt;h2 id="singleton">Singleton&lt;/h2>
-&lt;p>单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例的调用均返回同一个对象，保证不会被意外析构。&lt;/p></description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>&lt;p>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。&lt;/p>
+&lt;p>单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例的调用均返回同一个对象，保证不会被意外析构。&lt;/p></description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>&lt;p>开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。&lt;/p>
 &lt;blockquote>
 &lt;p>注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢迎指正！&lt;/p></description></item><item><title>博客迁移记录</title><link>https://guyueshui.github.io/post/blog-trans/</link><pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate><guid>https://guyueshui.github.io/post/blog-trans/</guid><description>&lt;p>终于还是干了！很早以前就有了这个想法，起初使用 &lt;a href="https://hexo.io">Hexo&lt;/a> 搭的博客，折腾了一段时间，选了一个不错的主题 &lt;a href="https://github.com/Molunerfinn/hexo-theme-melody">Melody&lt;/a>。一切都进行的很好，直到有一天又发现 &lt;a href="https://gohugo.io">Hugo&lt;/a> 这么个东西，登时就忍不住了，不是说原来的不好，二十 Hugo 太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开 html 一样。相比之下 Hexo 的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了 Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：&lt;/p></description></item><item><title>位域结构体简介</title><link>https://guyueshui.github.io/post/bit-field-struct/</link><pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate><guid>https://guyueshui.github.io/post/bit-field-struct/</guid><description>&lt;p>最近实习接触到一个新的知识点，C/C++ 的位域结构体。&lt;/p>
 &lt;p>以下开始摘抄自：&lt;a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html">here&lt;/a>&lt;/p>
@@ -117,22 +117,7 @@ current directory.&lt;/p></description></item><item><title>Nueral Network Learni
 &lt;p>Q: &lt;code>std::vector&lt;/code> push_back 的复杂度是多少？
 A: O(1), amortized constant.&lt;/p>
 &lt;p>Q: vector 从 1 到 n push n 个元素，假设发生扩容时按两倍增长，写出复杂度关于 n 的表达式？
-A: 不会。&lt;/p></description></item><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>&lt;p>&lt;font color="red">Declaration: this article is in long time editing&amp;hellip;&lt;/font>&lt;/p>
-&lt;hr>
-&lt;p>Here comes some beautiful recursive solutions to some problems.&lt;/p>
-&lt;h2 id="examples">Examples&lt;/h2>
-&lt;p>Some of the problems have a very nice recursive structure, we can deal with them just using one step recursion.&lt;/p>
-&lt;h3 id="fibonacci-numbers">Fibonacci Numbers&lt;/h3>
-&lt;p>The first comes very famous Fibonacci Numbers, which is a sequence of
-0, 1, 1, 2, 3, 5, 8, 13 &amp;hellip;
-The structure is easily captured, if we use $\text{fib}(n)$ to denote the $n^{\text{th}}$ Fibonacci Number (n is assumed to start from 0).
-$$
-\text{fib}(n) = \begin{cases}
-n, &amp;amp;\text{ if } n \le 1 \newline
-\text{fib}(n-1) + \text{fib}(n-2), &amp;amp;\text{ if } n &amp;gt; 1.
-\end{cases}
-$$
-That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:&lt;/p></description></item><item><title>神奇的位运算</title><link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link><pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid><description>&lt;p>In editing&amp;hellip;&lt;/p>
+A: 不会。&lt;/p></description></item><item><title>神奇的位运算</title><link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link><pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid><description>&lt;p>In editing&amp;hellip;&lt;/p>
 &lt;h2 id="必备知识">必备知识&lt;/h2>
 &lt;p>首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/computercode.html&lt;/p></description></item><item><title>A collection of some coding problems</title><link>https://guyueshui.github.io/post/coding-problems/</link><pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate><guid>https://guyueshui.github.io/post/coding-problems/</guid><description>&lt;h1 id="场景题">场景题&lt;/h1>
 &lt;h2 id="题一最高得分">题一：最高得分&lt;/h2>
