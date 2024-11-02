@@ -1,7 +1,6 @@
 ---
 title: A collection of some coding problems 
 date: 2019-04-07 19:31:59
-lastmod: 2019-09-01
 categories: ['Notes']
 tags: [算法, 动态规划, 编程]
 mathjax: true

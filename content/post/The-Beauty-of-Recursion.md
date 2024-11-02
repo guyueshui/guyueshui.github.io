@@ -1,8 +1,7 @@
 ---
 title: The Beauty of Recursion
 date: 2019-04-23 09:08:28
-lastmod: 2019-10-29
-categories: ['Notes']
+categories: [tech]
 tags: ['recursion','programming thought']
 mathjax: true
 ---

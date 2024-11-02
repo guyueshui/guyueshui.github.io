@@ -6,6 +6,7 @@ title = "水阙"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
+enableGitInfo = true
 theme = "even"
 footnoteReturnLinkContents = "↩"
 
@@ -28,7 +29,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [frontmatter]
   # see: https://io-oi.me/tech/hugo-vs-hexo/#%E5%85%B6%E5%AE%83%E6%96%B9%E9%9D%A2
-  lastmod = ["lastmod", ":fileModTime", ":git", ":default"]
+  lastmod = ["lastmod", ":git", ":default", ":fileModTime"] # ':default`必命中，因此最后一个不会命中
 
 
 # [permalinks]
