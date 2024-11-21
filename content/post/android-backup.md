@@ -151,16 +151,29 @@ for folder in ${folers_to_sync[*]}; do
     echo; echo # for two newlines
 done
 ```
-修改变量`folders_to_sync`来配置你的同步文件夹，如果文件夹里面没有新增，则此操作会很快。此操作仅会同步手机端新增的文件到 PC.
+修改变量`folders_to_sync`来配置你的同步文件夹，如果文件夹里面没有新增，则此操作会很快。此操作仅会同步手机端新增的文件到 PC. 猛击[这里][6]获取最新脚本，文中的可能更新不及时，但也能用用。
 
 
 本段原帖参考我的[issue][5].
+
+四、特殊应用备份
+---------------
+
+有些应用提供了备份还原机制，而且使用上面的备份方法还原出来会有些问题；有些没法用上面的方法，用了还原了也不好使（如 Termux）。对于这些，就要特殊问题特殊对待了。
+
+- AquaMail 自带账户和应用备份，用它的就好；
+- Termux 提供了 tar 备份机制，参考官方[Wiki][7].
+
+这里提供一个脚本使用起来更加方便，猛击[这里][8]获取。
 
 [1]: https://wiki.termux.com/wiki/Main_Page
 [2]: https://github.com/guyueshui/backup_script/blob/dev/yychi/
 [3]: https://github.com/YAWAsau/backup_script
 [4]: https://github.com/NeoApplications/Neo-Backup
 [5]: https://github.com/guyueshui/guyueshui.github.io/issues/20
+[6]: https://github.com/guyueshui/dotfiles/blob/master/bin/rsync_phone.sh
+[7]: https://wiki.termux.com/wiki/Backing_up_Termux
+[8]: https://github.com/guyueshui/dotfiles/blob/master/bin/termux-backup.sh
 
 总结
 ----

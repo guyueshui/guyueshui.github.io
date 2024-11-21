@@ -410,7 +410,7 @@ results in true if the result of the arithmetic evaluation is non-zero.
 [me@linuxbox ~]$ if ((1)); then echo "It is true."; fi
 It is true.
 [me@linuxbox ~]$ if ((0)); then echo "It is true."; fi
-[me@linuxbox ~]$]
+[me@linuxbox ~]$
 ```
 
 ## Shell function

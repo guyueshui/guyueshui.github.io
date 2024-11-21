@@ -153,6 +153,25 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 2. https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/?newsletter_popup=1
 3. https://forum.xda-developers.com/t/how-to-fix-unable-to-mount-data-internal-storage-0mb-in-twrp-permanently.3830897/
 
+### 被迫刷机
+
+2024 年 11 月 19 夜，由于 xplore（一款很好用的文件管理器，可称塞班时代的遗珠）卡顿，实际上算不上卡顿，我猜是触发了系统的 bug，哪哪都不对劲，具体表现为打开 xplore 卡死，连带大返回都卡，然后恢复正常，可以使用其他应用。强制关掉 xplore 重新开依然如此，而且我还发现开 SDMaid 虽然能开，但里面的扫描一直卡在 0%. 这种场景之前也有过，必须重启才能恢复，所以我想是系统的 bug, 毕竟第三方 ROM -- [PixelPlusUI](https://ppui.site/device/munch) ([XDA](https://xdaforums.com/t/closed-rom-13-munch-pixelplusui-official-aosp.4543117/)). 不过这个 ROM 已经算很稳定的了，自带 Google 套件，在稳定性和可定制性上做到了很好的折中。
+
+重点来了，于是乎我就重启嘛。可能是太久没见 Recovery 的原因（这个 rom 已经稳定用了一年又九个月），我鬼使神差地重启进入 twrp recovery，然后心想着来都来了，清下缓存再重启把。本来勾一个 cache 分区就行了，再次鬼使神差地多勾选了一个 **meta** 分区（虽然不知道它是干嘛的）。结果清完之后直接重启卡 twrp 了，进不去系统了。而且进了 twrp 还 data 分区解密失败。玩球了，数据又要丢了。
+
+其实在准备刷机前，要先把手机密码都清掉，防止 twrp 解密分区失败的，但我这次压根没想刷机。所以带着密码删了清了 meta 分区，结果再次进 twrp，data 分区已经解不出来了。杯具了 orz
+
+本次刷机遇到以下问题
+
+- 格式化 data 分区失败，因为挂载失败，data 分区（系统应用，用户应用及其数据）是加密状态，此时只能选更改文件系统，再改回来，改回来之后惊奇的发现 internal data 分区（文档、照片、音乐、视频等）也被清掉了，直接还给我一台新机！🌿
+- 刷入 rom 之后，好几次还是卡 recovery，后来好了，不知道是不是操作步骤的问题。
+- 刷入 rom 成功开机后，再次回到 recovery 刷 magisk，刷完继续卡 recovery，只能重刷。
+- 重刷之后误操作切换了 slot，导致 `fastboot boot <twrp.img>` 执行失败（见 troubleshooting），这是真的惊悚，从来没遇到过，一度以为真的要成砖了，还好在 xda 找到了类似情况。
+- adb/fastboot 设备无权限。
+
+谨此记录。
+
+
 ## 3. Troubleshooting
 
 ---------------------
@@ -187,6 +206,19 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 拔掉手机线重新插入，再用 `adb devices` 列举一遍，就应该可以了。
 
 > Note: 另外可以尝试使用 root 权限执行命令： `sudo adb` 和 `sudo fastboot`
+
+**`fastboot boot recovery.img`报错 FAILED (remote: 'Failed to load/authenticate boot image: Load Error')**
+
+这是由于意外切换了a/b slot，即本来 active 的是 a slot，被误操作切换成 b 了，所以 fastboot 执行不下去，切回来就可以。执行
+
+```
+# try this
+fastboot set_active a
+# or
+fastboot set_active b
+```
+
+see: https://xdaforums.com/t/troubles-reinstalling-twrp-failed-to-load-authenticate-boot-image-load-error.3926815/
 
 
 ## Reference
