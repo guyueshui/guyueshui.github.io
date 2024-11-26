@@ -171,14 +171,79 @@ internal storage        # 个人资料存储：包含照片视频音乐等所有
 
 谨此记录。
 
+### 总结
 
-## 3. Troubleshooting
+以前刷机，顶多是换 ROM 导致的系统设置数据冲突，此时需要清掉 data 分区，重新配置用户 app. 随着 android 版本提升，安全等级的提高，最近几次刷机过程中总会碰到 data 分区被锁的情况。一旦被锁，极难救回，往往不得不格式化 data 分区甚至 internal storage，面临丢失数据的痛苦。
+
+![](https://cdn.appuals.com/wp-content/uploads/2024/10/twrp-unable-to-mount-storage-1536x864.png)
+
+> What usually happens is that your data is automatically **encrypted by default**. This isn’t a a one-off case for a particular set of devices, since encrypting internal memory was mandated for devices launching with **Android 6.0**, or later.
+
+> Why Does TWRP Require a Screen Lock to Decrypt Data?
+>
+> TWRP requires the screen lock before decrypting internal storage because of how Android handles device encryption. Android uses either full-disk encryption (FDE) or file-based encryption (FBE), and the decryption key for both of these systems is tied to your password, PIN, or pattern.
+>
+> For the recovery to access that encrypted data, it needs your screen lock. Without this lock, the decryption key isn't locked behind the authentication methods. This is why removing the screen lock may help in accessing your device's internal storage.
+
+切记，如果要刷机，第一件事就是把屏幕锁去掉。
+
+
+## 3. 技巧
+
+### 提取当前 ROM 的 boot.img
+
+From xda:
+
+1. Go to recovery.
+2. Open recovery terminal.
+3. Enter: Code: `dd if=/dev/block/bootdevice/by-name/boot of=/sdcard/boot.img`.
+4. Press enter to confirm the command.
+5. Reboot to system.
+
+如此即可在用户内存根目录（`/sdcard`）生成 boot.img.
+
+注意：recovery 模式下，`/dev/block/bootdevice/by-name/`目录下才会有`boot`文件。而对于[a/b设备](https://source.android.com/docs/core/ota/ab)，它正是实际 slot 的软链接。
+
+```shell
+munch:/dev/block/bootdevice/by-name # file boot
+boot: symbolic link to /dev/block/bootdevice/by-name/boot_b
+```
+
+任何模式下，可以通过下面的命令获取 active slot：
+```shell
+munch:/dev/block/bootdevice/by-name # getprop ro.boot.slot_suffix
+_b
+```
+可见当前 active 的是 slot b.
+
+也可以直接提取到电脑上，手机（开机状态或者 recovery 都行）连上电脑，adb 通的情况下，
+```
+adb pull /dev/block/bootdevice/by-name/boot_b boot.img
+```
+即可在当前文件夹提取 boot.img. 这里面包含 ramfs，更多请参考 ref #3.
+
+From https://stackoverflow.com/a/21173939
+
+> boot.img contains the kernel and ramdisk, critical files necessary to load the device before the filesystem can be mounted.
+
+From reference #4,
+
+> A *ramdisk* is basically a small filesystem containing the core files needed to initialize the system. It includes the critical init process, as well as init.rc, which is where you can set many system-wide properties.
+
+### 如何查看你的手机会不会锁 data 分区
+
+![abcadjustimg size](/img/posted/phone_encrypted.png "encrypted phone")
+
+打开设置搜索“加密与凭据”如见“加密手机”选项显示“已加密”则表示你的 data 分区会被自动加密。
+
+
+## 4. Troubleshooting
 
 ---------------------
 
 **`adb` 或 `fastboot` 报错：insufficient permission / permission denied**
 
-请按照 [https://developer.android.com/studio/run/device](https://developer.android.com/studio/run/device) 提示操作，唯一需要注意的是 USB 供应商 ID. 可以用 `lsusb` 来判断。
+请按照 https://developer.android.com/studio/run/device 提示操作，唯一需要注意的是 USB 供应商 ID. 可以用 `lsusb` 来判断。
 
 连接手机之前：
 ```
@@ -223,5 +288,9 @@ see: https://xdaforums.com/t/troubles-reinstalling-twrp-failed-to-load-authentic
 
 ## Reference
 
-- [在硬件设备上运行应用](https://developer.android.com/studio/run/device)
-- [fastboot and adb not working with sudo](https://stackoverflow.com/questions/27017453/fastboot-and-adb-not-working-with-sudo/28127944#28127944)
+1. [在硬件设备上运行应用](https://developer.android.com/studio/run/device)
+2. [fastboot and adb not working with sudo](https://stackoverflow.com/questions/27017453/fastboot-and-adb-not-working-with-sudo/28127944#28127944)
+3. [Boot Image Extraction Guide](https://gist.github.com/gitclone-url/a1f693b64d8f8701ec24477a2ccaab87)
+4. [HOWTO: Unpack, Edit, and Repack Boot Images | XDA Forums](https://xdaforums.com/t/howto-unpack-edit-and-repack-boot-images.443994/)
+5. [How to Fix TWRP Unable to Mount Storage, Internal Storage 0MB](https://appuals.com/how-to-fix-twrp-unable-to-mount-storage-internal-storage-0mb/#h-why-can-t-twrp-access-my-internal-storage)
+6. [How to disable Android Full Disk Encryption](https://jomo.tv/remove-android-device-encryption)

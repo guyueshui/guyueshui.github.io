@@ -77,6 +77,8 @@ rsync 应该有这个功能。那么思路有二：
 1. 手机端安装 Termux 使用 rsync，PC 端开 ssh server，手机端向 PC 端推；
 2. 手机端开 ssh server，PC 端使用 rsync 从手机端拉数据。
 
+**方案 2**
+
 显然后者更方便，因为手机上操作 rsync（操作命令行）显然不如电脑方便。再者说来，第二种方法是以手机为中心，任何时候，手机端开启 ssh server，那么任何电脑装一下 rsync 就能和手机同步数据。如果是电脑插上硬盘，那么随便换电脑，只要插上备份硬盘就可以一直保证同步的两端是一致的。
 
 手机端安装 SSHelper（参考 https://askubuntu.com/a/343740），PC 上配置 ssh 免密登陆，
@@ -98,7 +100,6 @@ u0_a299@localhost:~$
 
 ```bash
 #!/bin/bash
-
 cat << COMMENT
 This script is used to backup some folders from mobile phone to here (the 
 directory of a backup disk). To achieve this, you should
@@ -112,9 +113,6 @@ See: https://askubuntu.com/a/343740
 COMMENT
 
 set -e # exit when error
-
-#exit 23
-
 folers_to_sync=(
     Pictures
     Snapseed
@@ -144,7 +142,6 @@ notify() {
     echo "--- $1"
 }
 
-
 for folder in ${folers_to_sync[*]}; do
     notify "sync folder $folder"
     sync_folder $folder
@@ -155,6 +152,17 @@ done
 
 
 本段原帖参考我的[issue][5].
+
+**方案 1**
+
+虽说在电脑上操作命令行更加顺手，但有了我这脚本 -- [rsync_phone.sh][6]的加持，在手机上使用方案 1 也未尝不可。此外，由于 rsync 的工作机制，传输的的**双方都需要安装 rsync**. 那我还不如在手机上直接推送了。使用方法和方案 1 类似，首先在电脑上开启 sshd，在手机上配置免密登陆，然后再配置一下 `.ssh/config` 设置一下别名，达到别名直登的效果。
+
+然后直接一条命令即可完成手机向远端推送备份的工作。
+
+```
+./rsync_phone.sh backup
+```
+
 
 四、特殊应用备份
 ---------------
