@@ -11,6 +11,13 @@ mathjax: false
 
 在此记录一下我自己用过的非常棒的小软件。
 
+有必要维护一个自己使用的软件列表。
+
+套用一下 suckless 的 slogan，
+
+> Everything sucks, we just suck less.
+> <div style="text-align:right">-- suckless.org</div>
+
 ## 下载
 
 - [aria2c][2]: 命令行下载工具，支持下载种子、磁力等。有 RPC 模式，配合 WebUI 使用更佳。参考[简介](/tricks/#aria2c)。
@@ -19,6 +26,8 @@ mathjax: false
 
 - [mpv][3]: 命令行多媒体播放器，拥有较强的扩展性和自定义的空间，另外我自己体验上来看比 mplayer 要流畅，mplayer 在我的机子上有丢帧，而 mpv 无明显丢帧。
 - [mpd/mpc][9]: 音乐播放，没有界面。mpd 作为服务端，mpc 作为客户端，占用内存非常低。
+- [OBS stuido][16]: 录屏软件，大而全，跨平台。虽然较大，但实践证明是兼容性最好的，在 linux 上也好使。可以正常录制扬声器和麦克风。
+- [SimpleScreenRecorder][17]: 录屏软件，配置比 obs 少但也够用。
 
 ## 文档
 
@@ -29,6 +38,11 @@ mathjax: false
 - [flameshot][1]: gnome-screenshot 的替代品，支持截图后标记，复制到剪贴板；平台：Linux
     - `flameshot gui`: 直接打开截屏功能，更多参考`flameshot -h`.
 - [peek][11]: 小巧易用的录屏软件，支持录制 gif, mp4, webm 等格式。
+
+## 看图
+
+- [imv][14]: feh 的替代，支持多种格式（包括 gif[^a]）。界面简洁只有一个图片框和 feh 一样，但是有必要的信息显示（overlay）。简洁党的最爱。
+- [ImageViewer][15]: 纯 Qt 的图片查看器，简约不简陋。
 
 ## 效率
 
@@ -42,6 +56,14 @@ mathjax: false
 ## 学习
 
 - [GoldenDict][6]: 离线词典，支持在线页面查词，接有道，维基等，可以看做是 Linux 上的 Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。
+
+## 笔记
+
+- [Obsidian][18]: markdown 笔记软件，也可做个人知识库管理（过于方法论）。卖点有二，一是支持[双向链接][19]，并由此牵扯出一套方法论；二是你的数据你做主，一切笔记皆本地 markdown 文件。你拥有完全的掌控权，即便以后不用它，也很容易迁移到别的软件。对个人永久免费（付费版提供笔记同步、发布服务）。可玩性很强，太过知名，教程软文一搜一大把，还须记住记住本心为宜：我最初是为什么要用它来着？
+
+## 锁屏
+
+- [slock][20]: suckless 出品，极简的锁屏软件。简单到什么程度呢？配置文件都没有，直接下源码改头文件来[配置][21]。
 
 ## VSCode 插件
 
@@ -59,8 +81,12 @@ vadimcn.vscode-lldb                    # c++ debug
 vscodevim.vim
 ```
 
-See: https://zhuanlan.zhihu.com/p/566365173.
+VSCode C++ 开发配置参考：
 
+1. [快速搭建一个 C++ Playground][22]
+2. https://zhuanlan.zhihu.com/p/566365173
+
+<!--
 > 首先，当把鼠标停在某个函数，然后点击右键，会发现它多出了非常熟悉的选项。
 > 
 > 接着来试一下符号跳转，按住 Control，然后鼠标左键，就可以对函数进行跳转。
@@ -71,9 +97,11 @@ See: https://zhuanlan.zhihu.com/p/566365173.
 > 
 > 这里比较少，就只有 main，可以多加两个函数：int fun1(){} 和 Void fun2(){}。再试试，就会发现它这里就有了三个标识符。
 > 
-> 除了能在当前文件中搜索外，还可以使用 # 来在全局搜索：Control+P，输入 #print 可以搜索 print，选择后，可以来到 studio 这个文件下。
+> 除了能在当前文件中搜索外，还可以使用 # 来在全局搜索：Control+P，输入 #print 可以搜索 print，选择后，可以来到 studio 这个文件下。 -->
 
-[1]: https://flameshot.js.org/#/
+[^a]: Gif 支持依赖 libnsgif，这个库从 0.2.1 到 1.0.0 的升级太过不兼容，对外接口都改了。导致 imv 的编译依赖指定版本`< 1.0.0`. 只能本地安装低版本依赖，自己编译。
+
+[1]: https://flameshot.org
 [2]: https://aria2.github.io
 [3]: https://mpv.io
 [4]: https://launchpad.net/xpad
@@ -86,3 +114,12 @@ See: https://zhuanlan.zhihu.com/p/566365173.
 [11]: https://github.com/phw/peek
 [12]: https://www.voidtools.com/zh-cn/
 [13]: http://qttabbar.wikidot.com/
+[14]: https://git.sr.ht/~exec64/imv
+[15]: https://github.com/AlienCowEatCake/ImageViewer
+[16]: https://obsproject.com/
+[17]: https://github.com/MaartenBaert/ssr
+[18]: https://obsidian.md/
+[19]: https://sspai.com/post/67996
+[20]: https://tools.suckless.org/slock/
+[21]: https://github.com/guyueshui/slock
+[22]: https://pmanual.readthedocs.io/zh-cn/latest/docs/uncategorized/cpp-playground.html
