@@ -1,0 +1,153 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>痛的少一些！Windows - 水阙</title>
+<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="Windows 痛点例举，
+祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。 静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！ 万年难用的资源管理器，不带标签页，窗口开一堆。 开发上来说，编译工具链体验比不上 linux. 虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.140.2 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/suckless-windows/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.4db6eefa019323deeb0f96ac97b0195c6875d5cb6a98e30c1e245d54b43d54bc.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/suckless-windows/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="痛的少一些！Windows"><meta property="og:description" content="Windows 痛点例举，
+祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。 静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！ 万年难用的资源管理器，不带标签页，窗口开一堆。 开发上来说，编译工具链体验比不上 linux. 虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2025-01-08T20:36:52+08:00"><meta property="article:modified_time" content="2025-01-09T21:28:49+08:00"><meta property="article:tag" content="Msys2"><meta property="article:tag" content="Windows"><meta property="article:tag" content="Suckless"><meta itemprop=name content="痛的少一些！Windows"><meta itemprop=description content="Windows 痛点例举，
+祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。 静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！ 万年难用的资源管理器，不带标签页，窗口开一堆。 开发上来说，编译工具链体验比不上 linux. 虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。"><meta itemprop=datePublished content="2025-01-08T20:36:52+08:00"><meta itemprop=dateModified content="2025-01-09T21:28:49+08:00"><meta itemprop=wordCount content="2989"><meta itemprop=keywords content="Msys2,Windows,Suckless"><meta name=twitter:card content="summary"><meta name=twitter:title content="痛的少一些！Windows"><meta name=twitter:description content="Windows 痛点例举，
+祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。 静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！ 万年难用的资源管理器，不带标签页，窗口开一堆。 开发上来说，编译工具链体验比不上 linux. 虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/search/><li class=mobile-menu-item>Search</li></a><a href=/links/><li class=mobile-menu-item>More</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/search/>Search</a></li><li class=menu-item><a class=menu-item-link href=/links/>More</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>痛的少一些！Windows</h1><div class=post-meta><span class=post-time>January 8, 2025 </span><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#安装-msys2>安装 MSYS2</a><ul><li><a href=#mingwclangucrt>MinGW、Clang、UCRT？</a></li><li><a href=#一点配置>一点配置</a></li></ul></li><li><a href=#安装-everything>安装 Everything</a></li><li><a href=#安装-qttabbar>安装 QtTabBar</a></li><li><a href=#微软拼音添加小鹤双拼>微软拼音添加小鹤双拼</a></li><li><a href=#另辟蹊径之-linux-虚拟机>另辟蹊径之 linux 虚拟机</a><ul><li><a href=#配置端口转发>配置端口转发</a></li><li><a href=#配置固定-ip>配置固定 IP</a></li><li><a href=#配置-ssh-别名>配置 ssh 别名</a></li></ul></li><li><a href=#小结>小结</a></li></ul></nav></div></div><div class=post-content><p>Windows 痛点例举，</p><ul><li>祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。</li><li>静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！</li><li>万年难用的资源管理器，不带标签页，窗口开一堆。</li><li>开发上来说，编译工具链体验比不上 linux.</li></ul><p>虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。</p><h2 id=安装-msys2>安装 MSYS2</h2><p>如果你在 windows 上做开发，必定会装 git bash，而它提供的终端就是 MINGW（Minimalist GNU for Windows）。它的主要作用是提供 windows 版本的 gcc 编译工具链。它自带了一些 linux 基础命令，仅仅是基础。所以 <a href=https://www.msys2.org/>MSYS2</a> 出现了，它在 MINGW 的基础上，提供了更多的命令，并且自带了一个著名的包管理器—<a href=https://wiki.archlinux.org/title/Pacman>Pacman</a>. 没错，正是 Archlinux 的包管理器。如此一来便可以在在 windows 上使用相同的 linux 命令行，而这些都是适配原生 windows 的，并非虚拟机或者子系统之类的。并且想要啥软件包，直接通过 pacman 安装也非常方便。</p><h3 id=mingwclangucrt>MinGW、Clang、UCRT？</h3><p>安装完之后，会产生多个 launcher，选择哪个呢？<a href=https://www.msys2.org/docs/environments/>这里</a>有详细的对比。其实就是工具链和运行时库的区别。一般用 gcc 建议选择 MINGW64，用 llvm 建议使用 CLANG64.</p><h3 id=一点配置>一点配置</h3><p>网上的配置<a href=https://www.cnblogs.com/wswind/p/10650126.html>帖子</a>还是比较多的，这里简单列举几个常用的。</p><h4 id=修改镜像>修改镜像</h4><p><code>/etc/pacman.d</code>文件夹里面包含几个 mirrorlist，新版的 MSYS2 里面默认已经有中科大源。直接编辑将其提前即可。。</p><pre tabindex=0><code>Server = http://mirrors.ustc.edu.cn/msys2/
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/
+</code></pre><h4 id=禁用某些源>禁用某些源</h4><p>编辑/etc/pacman.conf，注释掉不想要的源。</p><blockquote><p>vim 和 zsh 在 mingw 里面，mingw64 和 clang64 里面都没有。</p></blockquote><p>参考：https://my.oschina.net/zuozhihua/blog/8757266</p><h4 id=继承环境变量>继承环境变量</h4><p>如果你之前安装过 git bash，现在你的电脑里面应该有两套 mingw（一个 git bash 安装的，一个是 MSYS2 安装的）。Git bash 里面自带 vim. 而 MSYS2 里面可以通过包管理器安装 vim. 然而重要的是 windows 系统程序的路径需要继承下来，这样可以方便的在 mingw 里面直接调用 windows 程序例如</p><ul><li>notepad.exe：记事本</li><li>cmd：命令提示符</li><li>explorer：文件管理器</li></ul><p>要继承 windows 系统环境变量，找到 MSYS2 的安装目录（例如，D:\msys64）下有 mingw64.ini，将里面的</p><pre tabindex=0><code>MSYS2_PATH_TYPE=inherit
+</code></pre><p>取消注释，再次打开 mingw64 即可继承系统环境变量。</p><blockquote><p>上面只改了 MinGW64 的 launcher，如要改其他可如法炮制。</p></blockquote><h4 id=更改默认-shell>更改默认 shell</h4><p>launcher.ini（例如 mingw64.ini）里面添加环境变量</p><pre tabindex=0><code>SHELL=/usr/bin/zsh
+</code></pre><p>参考：https://superuser.com/questions/961699/change-default-shell-on-msys2</p><h4 id=添加到-vscdoe-集成终端>添加到 vscdoe 集成终端</h4><p>设置里面加上，参考：https://gist.github.com/dhkatz/106891324c9624074a84d11e2691144b</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;terminal.integrated.defaultProfile.windows&#34;</span><span class=p>:</span> <span class=s2>&#34;MSYS2 MINGW64&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;terminal.integrated.profiles.windows&#34;</span><span class=p>:{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;MSYS2 MINGW64&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;D:\\msys64\\usr\\bin\\bash.exe&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;args&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;--login&#34;</span><span class=p>,</span> <span class=s2>&#34;-i&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;env&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&#34;MSYSTEM&#34;</span><span class=p>:</span> <span class=s2>&#34;MINGW64&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&#34;CHERE_INVOKING&#34;</span><span class=p>:</span> <span class=s2>&#34;1&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&#34;MSYS2_PATH_TYPE&#34;</span><span class=p>:</span> <span class=s2>&#34;inherit&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;PowerShell&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;source&#34;</span><span class=p>:</span> <span class=s2>&#34;PowerShell&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;icon&#34;</span><span class=p>:</span> <span class=s2>&#34;terminal-powershell&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;Command Prompt&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;${env:windir}\\Sysnative\\cmd.exe&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s2>&#34;${env:windir}\\System32\\cmd.exe&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;args&#34;</span><span class=p>:</span> <span class=p>[],</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;icon&#34;</span><span class=p>:</span> <span class=s2>&#34;terminal-cmd&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;Git Bash&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;source&#34;</span><span class=p>:</span> <span class=s2>&#34;Git Bash&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=安装-everything>安装 Everything</h2><p>Everything 是一个 windows 文件搜索程序，搜索速度快，轻量易用，支持正则表达式。完爆 windows 资源管理器自带的搜索功能。直接至官网下载安装即可。</p><h2 id=安装-qttabbar>安装 QtTabBar</h2><p><a href=http://qttabbar.wikidot.com/>QtTabBar</a>是一款 windows 资源管理器扩展工具。之前说了，windows 自带的文件管理器不支持标签页。这才有了 QtTabBar. 值得一提的功能点：</p><ul><li>深度资源管理器标签支持，甚至控制面板都是一个标签页的事儿。</li><li>支持用户自定义组，放置常用路径（类似于书签）。</li><li>支持多语言，官网下载翻译包即可。</li><li>桌面快捷操作。桌面双击即可触发浮动菜单，常用路径一键即达。</li><li>不俗的文件预览功能。鼠标悬停即可预览目录、图片、视屏等。预览图片真的很实用！</li></ul><h2 id=微软拼音添加小鹤双拼>微软拼音添加小鹤双拼</h2><p>作为双拼爱好者，当初去知乎吸收了一下各种双拼方案对比，决定学小鹤，至今已经忘记它有啥优缺点了，反正用着挺好就是了。</p><p>方案来自互联网。在 CMD 中直接粘贴</p><pre tabindex=0><code>reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d &#34;小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt&#34; /f
+</code></pre><p>PS，微软大法好！在曾经的 XP 时代，搜狗拼音还是很好用的，如今已是臃肿不堪。后来一直在找替代，知道微软拼音横空出世。至此 windows 输入法无需再纠结。其界面节约，打字流畅，又支持添加小鹤双拼，已经很够用了！</p><h2 id=另辟蹊径之-linux-虚拟机>另辟蹊径之 linux 虚拟机</h2><p>无论是 WSL 还是 MSYS2，启动起来都有些卡，而且换 zsh 之后就更卡了。目前还不清楚原因，所以才有了这种尝试。Windows 下可以使用 virtualbox 安装一个 linux 虚拟机，然后开启 sshd，配置好端口转发（或者虚拟网卡）即可在宿主机上 ssh 连接虚拟机，体验上和 linux 远程开发机相差无几。</p><p>使用 VirtualBox 安装一个 Archlinux 虚拟机重点步骤：</p><ol><li>安装 VirtualBox</li><li>下载 archlinux 镜像（LiveCD）</li><li>从镜像启动虚拟机，执行安装流程，这一步参考 archwiki 中的 installation guide</li></ol><p>值得注意的是，虚拟磁盘创建分区的时候，建议直接选择<a href=https://wiki.archlinux.org/title/Partitioning#Example_layouts>MBR 分区表</a>。我一开始选择 GPT 分区表，多挂载一个 boot 分区，反复装了 3 次，装完启动引导重启都提示找不到可启动的设备。反正是虚拟机，也不用考虑引导多个系统，直接 MBR 分区表，还可以少挂载一个 boot 分区。</p><p>装完之后安装一些常用软件，</p><ul><li>vim</li><li>zsh</li><li>openssh</li><li><strong>NetworkManager</strong></li></ul><blockquote><p>LiveCD 里面网络配置是开箱即用的，但这并不表示装好的系统网络配置和 LiveCD 一样。当你兴奋地重启进新系统之后，很可能发现里面没网。因此，一定要在安装过程中（arch-chroot）把<a href=https://wiki.archlinux.org/title/Network_configuration#Network_managers>网络管理器</a>的包装好。</p></blockquote><p>启动进新系统之后，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl start NetworkManager.service  <span class=c1># 启动网络管理器</span>
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> NetworkManager.service <span class=c1># 设为自动启动</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=配置端口转发>配置端口转发</h3><p>系统启动之后，不必装图形界面。直接启动一个 ssh sever，然后在 windows 上 ssh 连上即可。使用体验和远程 Linux 开发机一致。但宿主机（Host）和虚拟机（VM）的网络不一定直接相通，还须做一点配置。</p><p>端口转发配置参考<a href=https://www.cnblogs.com/phoebus-ma/p/18219807>SSH 连接 NAT 网络模式 VirtualBox 虚拟机</a>。</p><p><img src=https://oscimg.oschina.net/oscnet/74b6fb8a7d1a0b05b644a38bba037cdfd8e.jpg alt></p><h3 id=配置固定-ip>配置固定 IP</h3><p>端口转发配置简单易用，但有一个小缺点。每次暴露一个端口，都需要新增一条规则。比如我转发 22 端口给 ssh，那我 sftp 的 23 端口呢？这时候又得新增一条规则，比较麻烦。</p><p>我们可以通过增加一张虚拟网卡，配置静态 IP 地址和主机网络互通。此后直接访问这个 IP 带端口即可访问虚拟机。配置参考<a href=https://www.cnblogs.com/arisskz6/p/16983492.html>Win10 宿主机 ssh 连接 VirtualBox 里的 archlinux 虚拟机</a>。</p><p>需要注意一点，配置接口（interface）静态地址并使之持久化生效是网络管理器的职责。所以一定要通过网络管理器的接口设置 IP 地址。之前安装的 NetworkManager 提供<code>nmcli</code>命令行配置工具。详细用法参考<a href=https://wiki.archlinux.org/title/NetworkManager#Edit_a_connection>NetworkManager - ArchWiki</a>.</p><p>使用示例，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yychi@~/bin&gt; nmcli dev
+</span></span><span class=line><span class=cl>DEVICE          TYPE      STATE         CONNECTION 
+</span></span><span class=line><span class=cl>wlp2s0          wifi      已连接        LovelyLife 
+</span></span><span class=line><span class=cl>lo              loopback  连接（外部）  lo
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>yychi@~/bin&gt; nmcli connection
+</span></span><span class=line><span class=cl>NAME                  UUID                                  TYPE      DEVICE 
+</span></span><span class=line><span class=cl>LovelyLife            92506e38-1823-4f66-1a89-75a62ecabe74  wifi      wlp2s0 
+</span></span><span class=line><span class=cl>lo                    7e2fe31d-8ba1-1823-ad29-239857601abb  loopback  lo     
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>yychi@~/bin&gt; nmcli connection edit <span class=nv>LovelyLife</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>===</span><span class=p>|</span> nmcli 交互式连接编辑器 <span class=p>|</span><span class=o>===</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>正在编辑已有的连接 <span class=s2>&#34;802-11-wireless&#34;</span>：<span class=s2>&#34;LovelyLife&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>输入 <span class=s2>&#34;help&#34;</span> 或 <span class=s2>&#34;?&#34;</span> 查看可用的命令。
+</span></span><span class=line><span class=cl>输入 <span class=s2>&#34;print&#34;</span> 来显示所有的连接属性。
+</span></span><span class=line><span class=cl>输入 <span class=s2>&#34;describe [&lt;设置&gt;.&lt;属性&gt;]&#34;</span> 来获得详细的属性描述。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>您可编辑下列设置：connection, 802-11-wireless <span class=o>(</span>wifi<span class=o>)</span>, 802-11-wireless-security <span class=o>(</span>wifi-sec<span class=o>)</span>, 802-1x, ethtool, match, ipv4, ipv6, hostname, link, tc, proxy
+</span></span><span class=line><span class=cl>nmcli&gt; <span class=nb>set</span> ipv4.addresses 192.168.56.100/24
+</span></span><span class=line><span class=cl>nmcli&gt; <span class=nb>set</span> ipv4.gateway 192.168.56.1
+</span></span><span class=line><span class=cl>nmcli&gt; save 
+</span></span><span class=line><span class=cl>persistent  temporary   
+</span></span><span class=line><span class=cl>nmcli&gt; save persistent 
+</span></span><span class=line><span class=cl>成功地更新了连接 <span class=s2>&#34;MeijmTenda&#34;</span> <span class=o>(</span>ab876b5a-a02e-43c5-8d65-8da29891b0c1<span class=o>)</span>。
+</span></span></code></pre></td></tr></table></div></div><h3 id=配置-ssh-别名>配置 ssh 别名</h3><p>在宿主机（Host）上配置，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=line><span class=cl><span class=c1># FILE:~/.ssh/config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=na>Host varch</span>
+</span></span><span class=line><span class=cl>    <span class=na>HostName 192.168.56.100</span>
+</span></span><span class=line><span class=cl>    <span class=na>User xxxx</span>
+</span></span></code></pre></td></tr></table></div></div><p>此后就可以直接<code>ssh varch</code>了。</p><h2 id=小结>小结</h2><p>至此，我在 windows 上安装了一些小工具、配置了一个可用的 linux 环境。与我个人来说，大幅提升了 windows 的易用性。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>January 9, 2025
+<a href=https://github.com/guyueshui/guyueshui.github.io/commit/cf8aac6f63387d0bdbd6e5c17241a6b830075497 title="new article: suckless on windows">(cf8aac6f)</a></span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/msys2/>msys2</a>
+<a href=/tags/windows/>windows</a>
+<a href=/tags/suckless/>suckless</a></div><nav class=post-nav><a class=next href=/post/android-backup/><span class="next-text nav-default">Android 手机备份攻略</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://giscus.app/client.js data-repo=guyueshui/guyueshui.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkxNDI4MTY5NTE=" data-category=Ideas data-category-id=DIC_kwDOCIM2t84CW4nN data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a><a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
+2018 -
+2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

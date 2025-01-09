@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Msys2 on 水阙</title><link>https://guyueshui.github.io/tags/msys2/</link><description>Recent content in Msys2 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 09 Jan 2025 21:28:49 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/msys2/index.xml" rel="self" type="application/rss+xml"/><item><title>痛的少一些！Windows</title><link>https://guyueshui.github.io/post/suckless-windows/</link><pubDate>Wed, 08 Jan 2025 20:36:52 +0800</pubDate><guid>https://guyueshui.github.io/post/suckless-windows/</guid><description>&lt;p>Windows 痛点例举，&lt;/p>
+&lt;ul>
+&lt;li>祖传蓝屏（这一点在 XP 上尤为严重，win7 以上已经少见许多）。&lt;/li>
+&lt;li>静默更新。悄悄下载更新，强制更新，莫名其妙跳出来说要更新，关机时强迫更新。恶心的默认策略！&lt;/li>
+&lt;li>万年难用的资源管理器，不带标签页，窗口开一堆。&lt;/li>
+&lt;li>开发上来说，编译工具链体验比不上 linux.&lt;/li>
+&lt;/ul>
+&lt;p>虽然 Windows 很难用，但并不妨碍它桌面市场占用率第一的地位。在生活或者工作中，我还是无法避免地被动使用 windows. 因此，我希望通过一些简单定制，让我的使用体验能好一些。&lt;/p></description></item></channel></rss>
