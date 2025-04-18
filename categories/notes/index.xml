@@ -41,8 +41,7 @@
 &lt;/ol></description></item><item><title>A point of python metaclass</title><link>https://guyueshui.github.io/post/python-metaclass/</link><pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate><guid>https://guyueshui.github.io/post/python-metaclass/</guid><description>&lt;h2 id="create-class-dynamically">Create &lt;code>class&lt;/code> dynamically&lt;/h2>
 &lt;p>Python doc says:&lt;/p>
 &lt;blockquote>
-&lt;p>By default, classes are constructed using &lt;code>type()&lt;/code>. The class body is executed in a new namespace and the class name is bound locally to the result of &lt;code>type(name, bases, namespace)&lt;/code>.&lt;/p>
-&lt;/blockquote>
+&lt;p>By default, classes are constructed using &lt;code>type()&lt;/code>. The class body is executed in a new namespace and the class name is bound locally to the result of &lt;code>type(name, bases, namespace)&lt;/code>.&lt;/p>&lt;/blockquote>
 &lt;p>That&amp;rsquo;s means, a &lt;code>class&lt;/code> statement is equivalent to the call of &lt;code>type&lt;/code> method with three arguments:&lt;/p>
 &lt;ul>
 &lt;li>name: name of the class&lt;/li>
@@ -103,8 +102,7 @@ current directory.&lt;/p></description></item><item><title>Nueral Network Learni
 &lt;/ul>
 &lt;p>The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong>activation map&lt;/strong>) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p></description></item><item><title>服务端开发预备知识</title><link>https://guyueshui.github.io/post/server-develop-preliminaries/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid><description>&lt;h2 id="操作系统">操作系统&lt;/h2>
 &lt;blockquote>
-&lt;p>摘自《程序员面试白皮书》&lt;/p>
-&lt;/blockquote>
+&lt;p>摘自《程序员面试白皮书》&lt;/p>&lt;/blockquote>
 &lt;h3 id="进程-vs线程">进程 vs.线程&lt;/h3>
 &lt;p>进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p></description></item><item><title>设计模式学习笔记</title><link>https://guyueshui.github.io/post/design-pattern-notes/</link><pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/design-pattern-notes/</guid><description>&lt;p>如无特殊声明：本文所有 UML 图均出自《图说设计模式》。在此特别鸣谢！&lt;/p>
 &lt;h2 id="singleton">Singleton&lt;/h2>

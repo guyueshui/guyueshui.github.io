@@ -144,8 +144,7 @@
 &lt;/table>
 &lt;p>指针占几个字节 指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是 16 为地址，指针即为 2 个字节，现在一般是 32 位系统，所以是 4 个字节，以后 64 位，则就为 8 个字节。&lt;/p>
 &lt;blockquote>
-&lt;p>NOTE: 类成员函数指针一般为普通指针的两倍大小。&lt;/p>
-&lt;/blockquote>
+&lt;p>NOTE: 类成员函数指针一般为普通指针的两倍大小。&lt;/p>&lt;/blockquote>
 &lt;p>literal &lt;code>5.0&lt;/code>类型为&lt;code>double&lt;/code>，&lt;code>5.0f&lt;/code>类型为&lt;code>float&lt;/code>。不加&lt;code>f&lt;/code>后缀默认&lt;code>double&lt;/code>.&lt;/p>
 &lt;h2 id="静态成员的初始化">静态成员的初始化&lt;/h2>
 &lt;p>当一个类包含静态成员时，最好的做法是在类中声明，在类外初始化。由于静态成员是所有对象共享的，如果在类内初始化，则每个对象构造时，都要执行一遍静态成员的初始化，这无疑是一种浪费。&lt;/p>
@@ -283,8 +282,7 @@ Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbol
 &lt;p>To help provide more specificity, C++11 introduced the keyword &lt;code>constexpr&lt;/code>, which ensures that a constant must be a compile-time constant.&lt;/p>
 &lt;blockquote>
 &lt;p>Any variable that should not be modifiable after initialization and whose initializer is known at compile-time should be declared as &lt;code>constexpr&lt;/code>.&lt;/p>
-&lt;p>Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as &lt;code>const&lt;/code>.&lt;/p>
-&lt;/blockquote>
+&lt;p>Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as &lt;code>const&lt;/code>.&lt;/p>&lt;/blockquote>
 &lt;p>Note that literals are also implicitly constexpr, as the value of a literal is known at compile-time.&lt;/p>
 &lt;p>A &lt;strong>constant expression&lt;/strong> is an expression that can be evaluated at compile-time. For example:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -342,8 +340,7 @@ Cf. &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbol
 &lt;/div>
 &lt;/div>&lt;p>Whenever the preprocessor encounters this directive, any further occurrence of &lt;em>identifier&lt;/em> is replaced by &lt;em>substitution_text&lt;/em>. The identifier is traditionally typed in all capital letters, using underscores to represent spaces.&lt;/p>
 &lt;blockquote>
-&lt;p>Avoid using #define to create symbolic constants macros. Use const or constexpr variables instead.&lt;/p>
-&lt;/blockquote>
+&lt;p>Avoid using #define to create symbolic constants macros. Use const or constexpr variables instead.&lt;/p>&lt;/blockquote>
 &lt;p>Macros can have naming conflicts with normal code. For example:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -735,15 +732,13 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;img src="header2.png" alt="compile main.cpp only">&lt;/p>
 &lt;p>但谁又能保证只有一个文件&lt;code>#include &amp;quot;add.h&amp;quot;&lt;/code>呢？所以头文件中应该只包含声明，而不应该包含实现。&lt;/p>
 &lt;blockquote>
-&lt;p>The primary purpose of a header file is to propagate declarations to code files.&lt;/p>
-&lt;/blockquote>
+&lt;p>The primary purpose of a header file is to propagate declarations to code files.&lt;/p>&lt;/blockquote>
 &lt;p>Key insight: Header files allow us to put declarations in one location and then import them wherever we need them. This can save a lot of typing in multi-file programs.&lt;/p>
 &lt;p>Header files should generally not contain function and variable definitions, so as not to violate the one definition rule. An exception is made for symbolic constants (which we cover in lesson &lt;a href="https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbolic-constants/">4.15 &amp;ndash; Symbolic constants: const and constexpr variables&lt;/a>).&lt;/p>
 &lt;p>&lt;strong>标准库自动链接&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>注意：clang 不会自动链接，需要手动链接
-&lt;code>clang main.cpp -lstdc++&lt;/code>&lt;/p>
-&lt;/blockquote>
+&lt;code>clang main.cpp -lstdc++&lt;/code>&lt;/p>&lt;/blockquote>
 &lt;p>When it comes to functions and variables, it’s worth keeping in mind that header files typically only contain function and variable declarations, not function and variable definitions (otherwise a violation of the one definition rule could result). std::cout is forward declared in the iostream header, but defined as part of the C++ standard library, which is automatically linked into your program during the linker phase.&lt;/p>
 &lt;p>&lt;img src="cout.png" alt="cout">&lt;/p>
 &lt;p>&lt;strong>The #include order of header files&lt;/strong>&lt;/p>
@@ -1208,8 +1203,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;h2 id="inline-function">Inline function&lt;/h2>
 &lt;p>考虑如下场景，有一段代码很独立，适合抽成一个函数，但你又担心函数调用开销，此时 inline function 就是你的最佳选择。关于合适使用 inline function，下面这段话给了一定的意见：&lt;/p>
 &lt;blockquote>
-&lt;p>For functions that are large and/or perform complex tasks, the overhead of the function call is typically insignificant compared to the amount of time the function takes to run. However, for small functions, the overhead costs can be larger than the time needed to actually execute the function’s code! In cases where a small function is called often, using a function can result in a significant performance penalty over writing the same code in-place.&lt;/p>
-&lt;/blockquote>
+&lt;p>For functions that are large and/or perform complex tasks, the overhead of the function call is typically insignificant compared to the amount of time the function takes to run. However, for small functions, the overhead costs can be larger than the time needed to actually execute the function’s code! In cases where a small function is called often, using a function can result in a significant performance penalty over writing the same code in-place.&lt;/p>&lt;/blockquote>
 &lt;p>Inline function 的好处包括：&lt;/p>
 &lt;ol>
 &lt;li>没有函数调用的开销&lt;/li>
@@ -1217,8 +1211,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;/ol>
 &lt;p>However, inline expansion has its own potential cost: if the body of the function being expanded takes more instructions than the function call being replaced, then each inline expansion will cause the executable to grow larger. Larger executables tend to be slower (due to not fitting as well in caches).&lt;/p>
 &lt;blockquote>
-&lt;p>注意：inline 只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。&lt;/p>
-&lt;/blockquote>
+&lt;p>注意：inline 只是对编译器的一个建议，是否会真的展开取决于编译器的优化策略。&lt;/p>&lt;/blockquote>
 &lt;p>However, in modern C++, the &lt;code>inline&lt;/code> keyword is no longer used to request that a function be expanded inline. There are quite a few reasons for this:&lt;/p>
 &lt;ul>
 &lt;li>Using &lt;code>inline&lt;/code> to request inline expansion is a form of premature optimization, and misuse could actually harm performance.&lt;/li>
@@ -1233,8 +1226,7 @@ Object-like macros can be defined in one of two ways:&lt;/p>
 &lt;blockquote>
 &lt;p>Allowing functions with a constexpr return type to be evaluated at either compile-time or runtime was allowed so that a single function can serve both cases. Otherwise, you’d need to have separate functions (a constexpr version and a non-constexpr version) &amp;ndash; and since return type isn’t considered in function overload resolution, you’d have to name the functions different things!&lt;/p>
 &lt;p>A constexpr function that is eligible to be evaluated at compile-time will only be evaluated at compile-time if the return value is used where a constant expression is required. Otherwise, compile-time evaluation is not guaranteed.&lt;/p>
-&lt;p>Thus, a constexpr function is better thought of as “can be used in a constant expression”, not “will be evaluated at compile-time”.&lt;/p>
-&lt;/blockquote>
+&lt;p>Thus, a constexpr function is better thought of as “can be used in a constant expression”, not “will be evaluated at compile-time”.&lt;/p>&lt;/blockquote>
 &lt;h2 id="unnamed-namespace">Unnamed namespace&lt;/h2>
 &lt;p>An &lt;strong>unnamed namespace&lt;/strong> (also called an &lt;strong>anonymous namespace&lt;/strong>) is a namespace that is defined without a name, like so:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

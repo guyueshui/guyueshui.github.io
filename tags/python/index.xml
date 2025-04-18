@@ -104,8 +104,7 @@
 &lt;/div>&lt;p>以上代码的运行结果为：&lt;/p></description></item><item><title>A point of python metaclass</title><link>https://guyueshui.github.io/post/python-metaclass/</link><pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate><guid>https://guyueshui.github.io/post/python-metaclass/</guid><description>&lt;h2 id="create-class-dynamically">Create &lt;code>class&lt;/code> dynamically&lt;/h2>
 &lt;p>Python doc says:&lt;/p>
 &lt;blockquote>
-&lt;p>By default, classes are constructed using &lt;code>type()&lt;/code>. The class body is executed in a new namespace and the class name is bound locally to the result of &lt;code>type(name, bases, namespace)&lt;/code>.&lt;/p>
-&lt;/blockquote>
+&lt;p>By default, classes are constructed using &lt;code>type()&lt;/code>. The class body is executed in a new namespace and the class name is bound locally to the result of &lt;code>type(name, bases, namespace)&lt;/code>.&lt;/p>&lt;/blockquote>
 &lt;p>That&amp;rsquo;s means, a &lt;code>class&lt;/code> statement is equivalent to the call of &lt;code>type&lt;/code> method with three arguments:&lt;/p>
 &lt;ul>
 &lt;li>name: name of the class&lt;/li>
