@@ -98,6 +98,23 @@ git clone --bare <git-repo-url> $HOME/.mydotfiles
 config checkout
 ```
 
+## 6. 更新配置
+
+在配置文件有更新时，要管理和提交更新。对于这种 bare 仓库，一般软件看 diff 不是那么直观。因为默认都是那种仓库目录带`.git`文件夹的。想一想我们创建的命令别名，
+```bash
+$ which config
+config: aliased to /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
+```
+
+因此，我们要看 diff，就要把这里的两个参数给传递给 git 软件。这其实很简单，我们以 [tig](https://github.com/jonas/tig/issues/994) 为例：
+
+```bash
+GIT_DIR=/path/to/repo GIT_WORK_TREE=/path/to/worktree tig
+GIT_DIR=/path/to/repo GIT_WORK_TREE=/path/to/worktree code ~ # 使用 vscode
+```
+
+即可。
+
 
 ## Reference
 
