@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>刷机 on 水阙</title><link>https://guyueshui.github.io/tags/%E5%88%B7%E6%9C%BA/</link><description>Recent content in 刷机 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 18 Sep 2018 23:00:05 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E5%88%B7%E6%9C%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Android 刷机的一般步骤</title><link>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</link><pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate><guid>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</guid><description>&lt;h2 id="1-事前准备">1. 事前准备&lt;/h2>
-&lt;hr>
-&lt;p>先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p></description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p>首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p>
-&lt;h2 id="规格参数">规格参数&lt;/h2>
-&lt;ul>
-&lt;li>WAN(10/100Mbps)&lt;/li>
-&lt;li>LAN(10/100Mbps)*2&lt;/li>
-&lt;li>双频：2.4GHz:300Mbps+5GHz:867Mbps&lt;/li>
-&lt;li>USB2.0 接口&lt;/li>
-&lt;li>外置天线*2&lt;/li>
-&lt;li>天线增益：3dBi&lt;/li>
-&lt;li>128MB 内存&lt;/li>
-&lt;/ul>
-&lt;!-- more -->
-&lt;h2 id="资源">资源&lt;/h2>
-&lt;ul>
-&lt;li>PandoraBox 下载源：&lt;a href="http://downloads.pandorabox.com.cn/">http://downloads.pandorabox.com.cn&lt;/a>&lt;/li>
-&lt;li>旧版 (2015 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/">设备代号 Lenovo-Y1_RY-1S&lt;/a>&lt;/li>
-&lt;li>新版 (2017 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin">newifi-mini&lt;/a> 附&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt">Changelog&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>刷机 on 水阙</title><link>https://guyueshui.github.io/tags/%E5%88%B7%E6%9C%BA/</link><description>Recent content in 刷机 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 18 Sep 2018 23:00:05 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E5%88%B7%E6%9C%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Android 刷机的一般步骤</title><link>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</link><pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate><guid>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</guid><description>&lt;h2 id="1-事前准备"&gt;1. 事前准备&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
+&lt;h2 id="规格参数"&gt;规格参数&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;WAN(10/100Mbps)&lt;/li&gt;
+&lt;li&gt;LAN(10/100Mbps)*2&lt;/li&gt;
+&lt;li&gt;双频：2.4GHz:300Mbps+5GHz:867Mbps&lt;/li&gt;
+&lt;li&gt;USB2.0 接口&lt;/li&gt;
+&lt;li&gt;外置天线*2&lt;/li&gt;
+&lt;li&gt;天线增益：3dBi&lt;/li&gt;
+&lt;li&gt;128MB 内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="资源"&gt;资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PandoraBox 下载源：&lt;a href="http://downloads.pandorabox.com.cn/"&gt;http://downloads.pandorabox.com.cn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;旧版 (2015 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/"&gt;设备代号 Lenovo-Y1_RY-1S&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新版 (2017 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin"&gt;newifi-mini&lt;/a&gt; 附&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p&gt;</description></item></channel></rss>

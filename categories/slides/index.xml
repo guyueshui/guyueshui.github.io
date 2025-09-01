@@ -1,60 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 水阙</title><link>https://guyueshui.github.io/categories/slides/</link><description>Recent content in Slides on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 08 May 2022 22:40:49 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>CCC</title><link>https://guyueshui.github.io/slide/ccc/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/ccc/</guid><description>&lt;h1 id="hello-world">Hello world!&lt;/h1>
-&lt;p>This is my first slide.&lt;/p>
-&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 水阙</title><link>https://guyueshui.github.io/categories/slides/</link><description>Recent content in Slides on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 08 May 2022 22:40:49 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>CCC</title><link>https://guyueshui.github.io/slide/ccc/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/ccc/</guid><description>&lt;h1 id="hello-world"&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is my first slide.&lt;/p&gt;
+&lt;hr&gt;
 
 
-&lt;section data-shortcode-section>
-&lt;h1 id="hello-mars">Hello Mars!&lt;/h1>
-&lt;p>This is my second slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-1">Vertical slide 1&lt;/h1>
-&lt;p>This is verticle slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-2">Vertical slide 2&lt;/h1>
+&lt;section data-shortcode-section&gt;
+&lt;h1 id="hello-mars"&gt;Hello Mars!&lt;/h1&gt;
+&lt;p&gt;This is my second slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-1"&gt;Vertical slide 1&lt;/h1&gt;
+&lt;p&gt;This is verticle slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-2"&gt;Vertical slide 2&lt;/h1&gt;
 
-&lt;/section></description></item><item><title>Demo Slides</title><link>https://guyueshui.github.io/slide/aaa/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/aaa/</guid><description>&lt;h1 id="hello-world">Hello world!&lt;/h1>
-&lt;p>This is my first &lt;code>slide&lt;/code>.&lt;/p>
-&lt;p>$e=mc^2$&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-&lt;hr>
+&lt;/section&gt;</description></item><item><title>Demo Slides</title><link>https://guyueshui.github.io/slide/aaa/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/aaa/</guid><description>&lt;h1 id="hello-world"&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is my first &lt;code&gt;slide&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;$e=mc^2$&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
 
 
-&lt;section data-shortcode-section>
-&lt;h1 id="hello-mars">Hello Mars!&lt;/h1>
-&lt;p>This is my second slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-1">Vertical slide 1&lt;/h1>
-&lt;p>This is verticle slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-2">Vertical slide 2&lt;/h1>
+&lt;section data-shortcode-section&gt;
+&lt;h1 id="hello-mars"&gt;Hello Mars!&lt;/h1&gt;
+&lt;p&gt;This is my second slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-1"&gt;Vertical slide 1&lt;/h1&gt;
+&lt;p&gt;This is verticle slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-2"&gt;Vertical slide 2&lt;/h1&gt;
 
-&lt;/section></description></item></channel></rss>
+&lt;/section&gt;</description></item></channel></rss>

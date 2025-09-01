@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cnn on 水阙</title><link>https://guyueshui.github.io/tags/cnn/</link><description>Recent content in Cnn on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 02 Nov 2024 17:39:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml"/><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>&lt;p>Hello here.&lt;/p>
-&lt;h2 id="cnn">CNN&lt;/h2>
-&lt;h3 id="conv-layer">Conv Layer&lt;/h3>
-&lt;p>Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.&lt;/p>
-&lt;ul>
-&lt;li>take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B.&lt;/li>
-&lt;li>a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).&lt;/li>
-&lt;li>each filter convolving with the input will produce an activation map, two filters will produce two, etc.&lt;/li>
-&lt;/ul>
-&lt;p>The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong>activation map&lt;/strong>) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cnn on 水阙</title><link>https://guyueshui.github.io/tags/cnn/</link><description>Recent content in Cnn on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 02 Nov 2024 17:39:45 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml"/><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>&lt;p&gt;Hello here.&lt;/p&gt;
+&lt;h2 id="cnn"&gt;CNN&lt;/h2&gt;
+&lt;h3 id="conv-layer"&gt;Conv Layer&lt;/h3&gt;
+&lt;p&gt;Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B.&lt;/li&gt;
+&lt;li&gt;a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).&lt;/li&gt;
+&lt;li&gt;each filter convolving with the input will produce an activation map, two filters will produce two, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong&gt;activation map&lt;/strong&gt;) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p&gt;</description></item></channel></rss>

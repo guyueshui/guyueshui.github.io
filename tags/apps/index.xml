@@ -1,86 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apps on 水阙</title><link>https://guyueshui.github.io/tags/apps/</link><description>Recent content in Apps on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 25 Dec 2024 20:26:40 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/apps/index.xml" rel="self" type="application/rss+xml"/><item><title>小内存机器的自我救赎</title><link>https://guyueshui.github.io/post/nice-softwares/</link><pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nice-softwares/</guid><description>&lt;p>在此记录一下我自己用过的非常棒的小软件。&lt;/p>
-&lt;p>有必要维护一个自己使用的软件列表。&lt;/p>
-&lt;p>套用一下 suckless 的 slogan，&lt;/p>
-&lt;blockquote>
-&lt;p>Everything sucks, we just suck less.&lt;/p>
-&lt;div style="text-align:right">-- suckless.org&lt;/div>&lt;/blockquote>
-&lt;h2 id="下载">下载&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://aria2.github.io">aria2c&lt;/a>: 命令行下载工具，支持下载种子、磁力等。有 RPC 模式，配合 WebUI 使用更佳。参考&lt;a href="https://guyueshui.github.io/tricks/#aria2c">简介&lt;/a>。&lt;/li>
-&lt;/ul>
-&lt;h2 id="多媒体">多媒体&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://mpv.io">mpv&lt;/a>: 命令行多媒体播放器，拥有较强的扩展性和自定义的空间，另外我自己体验上来看比 mplayer 要流畅，mplayer 在我的机子上有丢帧，而 mpv 无明显丢帧。&lt;/li>
-&lt;li>&lt;a href="https://www.musicpd.org/">mpd/mpc&lt;/a>: 音乐播放，没有界面。mpd 作为服务端，mpc 作为客户端，占用内存非常低。&lt;/li>
-&lt;li>&lt;a href="https://obsproject.com/">OBS stuido&lt;/a>: 录屏软件，大而全，跨平台。虽然较大，但实践证明是兼容性最好的，在 linux 上也好使。可以正常录制扬声器和麦克风。&lt;/li>
-&lt;li>&lt;a href="https://github.com/MaartenBaert/ssr">SimpleScreenRecorder&lt;/a>: 录屏软件，配置比 obs 少但也够用。&lt;/li>
-&lt;/ul>
-&lt;h2 id="文档">文档&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://pwmt.org/projects/zathura/">zathura&lt;/a>: A vim-like pdf reader. vim 系快捷键，小而轻，但功能也相对较少。&lt;/li>
-&lt;/ul>
-&lt;h2 id="截图">截图&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://flameshot.org">flameshot&lt;/a>: gnome-screenshot 的替代品，支持截图后标记，复制到剪贴板；平台：Linux
-&lt;ul>
-&lt;li>&lt;code>flameshot gui&lt;/code>: 直接打开截屏功能，更多参考&lt;code>flameshot -h&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="https://github.com/phw/peek">peek&lt;/a>: 小巧易用的录屏软件，支持录制 gif, mp4, webm 等格式。&lt;/li>
-&lt;/ul>
-&lt;h2 id="看图">看图&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://git.sr.ht/~exec64/imv">imv&lt;/a>: feh 的替代，支持多种格式（包括 gif&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>）。界面简洁只有一个图片框和 feh 一样，但是有必要的信息显示（overlay）。简洁党的最爱。&lt;/li>
-&lt;li>&lt;a href="https://github.com/AlienCowEatCake/ImageViewer">ImageViewer&lt;/a>: 纯 Qt 的图片查看器，简约不简陋。&lt;/li>
-&lt;/ul>
-&lt;h2 id="效率">效率&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://launchpad.net/xpad">xpad&lt;/a>: 小而轻的桌面便签。&lt;/li>
-&lt;li>&lt;a href="https://taskwarrior.org/">Taskwarrior&lt;/a>: A command-line todo manager，不要因为它的强大而忘记使用它的初衷。&lt;/li>
-&lt;li>&lt;a href="https://github.com/ranger/ranger">ranger&lt;/a>: File manager in terminal，三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。&lt;/li>
-&lt;li>&lt;a href="https://github.com/davatorium/rofi">rofi&lt;/a>: dmenu 替代品，窗口切换，应用启动器，简约大方，纯文本构成。&lt;/li>
-&lt;li>&lt;a href="https://www.voidtools.com/zh-cn/">Everything&lt;/a>: windows 平台，免费且简单易用的全局搜索器，该有的都有。&lt;/li>
-&lt;li>&lt;a href="http://qttabbar.wikidot.com/">QTTabBar&lt;/a>: 众所周知，windows 文件管理器十分难用，尤其是不支持 tab，所以，它来了。&lt;/li>
-&lt;/ul>
-&lt;h2 id="学习">学习&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="http://goldendict.org/">GoldenDict&lt;/a>: 离线词典，支持在线页面查词，接有道，维基等，可以看做是 Linux 上的 Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。&lt;/li>
-&lt;/ul>
-&lt;h2 id="笔记">笔记&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://obsidian.md/">Obsidian&lt;/a>: markdown 笔记软件，也可做个人知识库管理（过于方法论）。卖点有二，一是支持&lt;a href="https://sspai.com/post/67996">双向链接&lt;/a>，并由此牵扯出一套方法论；二是你的数据你做主，一切笔记皆本地 markdown 文件。你拥有完全的掌控权，即便以后不用它，也很容易迁移到别的软件。对个人永久免费（付费版提供笔记同步、发布服务）。可玩性很强，太过知名，教程软文一搜一大把，还须记住记住本心为宜：我最初是为什么要用它来着？&lt;/li>
-&lt;/ul>
-&lt;h2 id="锁屏">锁屏&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://tools.suckless.org/slock/">slock&lt;/a>: suckless 出品，极简的锁屏软件。简单到什么程度呢？配置文件都没有，直接下源码改头文件来&lt;a href="https://github.com/guyueshui/slock">配置&lt;/a>。&lt;/li>
-&lt;/ul>
-&lt;h2 id="vscode-插件">VSCode 插件&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ code --list-extensions
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bungcip.better-toml
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tomoki1207.pdf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">huacnlee.autocorrect &lt;span class="c1"># 修正中英混合排版的问题&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">huizhou.githd &lt;span class="c1"># git history, blame on single file&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mhutchie.git-graph &lt;span class="c1"># git graph&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">KylinIDETeam.cmake-intellisence
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">llvm-vs-code-extensions.vscode-clangd &lt;span class="c1"># c++ dev&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">twxs.cmake &lt;span class="c1"># cmake syntax support&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vadimcn.vscode-lldb &lt;span class="c1"># c++ debug&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vscodevim.vim
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>VSCode C++ 开发配置参考：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apps on 水阙</title><link>https://guyueshui.github.io/tags/apps/</link><description>Recent content in Apps on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 25 Dec 2024 20:26:40 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/apps/index.xml" rel="self" type="application/rss+xml"/><item><title>小内存机器的自我救赎</title><link>https://guyueshui.github.io/post/nice-softwares/</link><pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nice-softwares/</guid><description>&lt;p&gt;在此记录一下我自己用过的非常棒的小软件。&lt;/p&gt;
+&lt;p&gt;有必要维护一个自己使用的软件列表。&lt;/p&gt;
+&lt;p&gt;套用一下 suckless 的 slogan，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everything sucks, we just suck less.&lt;/p&gt;
+&lt;div style="text-align:right"&gt;-- suckless.org&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id="下载"&gt;下载&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aria2.github.io"&gt;aria2c&lt;/a&gt;: 命令行下载工具，支持下载种子、磁力等。有 RPC 模式，配合 WebUI 使用更佳。参考&lt;a href="https://guyueshui.github.io/tricks/#aria2c"&gt;简介&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="多媒体"&gt;多媒体&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mpv.io"&gt;mpv&lt;/a&gt;: 命令行多媒体播放器，拥有较强的扩展性和自定义的空间，另外我自己体验上来看比 mplayer 要流畅，mplayer 在我的机子上有丢帧，而 mpv 无明显丢帧。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.musicpd.org/"&gt;mpd/mpc&lt;/a&gt;: 音乐播放，没有界面。mpd 作为服务端，mpc 作为客户端，占用内存非常低。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://obsproject.com/"&gt;OBS stuido&lt;/a&gt;: 录屏软件，大而全，跨平台。虽然较大，但实践证明是兼容性最好的，在 linux 上也好使。可以正常录制扬声器和麦克风。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/MaartenBaert/ssr"&gt;SimpleScreenRecorder&lt;/a&gt;: 录屏软件，配置比 obs 少但也够用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="文档"&gt;文档&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pwmt.org/projects/zathura/"&gt;zathura&lt;/a&gt;: A vim-like pdf reader. vim 系快捷键，小而轻，但功能也相对较少。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="截图"&gt;截图&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://flameshot.org"&gt;flameshot&lt;/a&gt;: gnome-screenshot 的替代品，支持截图后标记，复制到剪贴板；平台：Linux
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;flameshot gui&lt;/code&gt;: 直接打开截屏功能，更多参考&lt;code&gt;flameshot -h&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/phw/peek"&gt;peek&lt;/a&gt;: 小巧易用的录屏软件，支持录制 gif, mp4, webm 等格式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="看图"&gt;看图&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://git.sr.ht/~exec64/imv"&gt;imv&lt;/a&gt;: feh 的替代，支持多种格式（包括 gif&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;）。界面简洁只有一个图片框和 feh 一样，但是有必要的信息显示（overlay）。简洁党的最爱。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/AlienCowEatCake/ImageViewer"&gt;ImageViewer&lt;/a&gt;: 纯 Qt 的图片查看器，简约不简陋。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="效率"&gt;效率&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://launchpad.net/xpad"&gt;xpad&lt;/a&gt;: 小而轻的桌面便签。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://taskwarrior.org/"&gt;Taskwarrior&lt;/a&gt;: A command-line todo manager，不要因为它的强大而忘记使用它的初衷。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ranger/ranger"&gt;ranger&lt;/a&gt;: File manager in terminal，三页分栏显示文件树，支持文件预览（需安装对应依赖），支持自定义命令，书签等。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/davatorium/rofi"&gt;rofi&lt;/a&gt;: dmenu 替代品，窗口切换，应用启动器，简约大方，纯文本构成。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.voidtools.com/zh-cn/"&gt;Everything&lt;/a&gt;: windows 平台，免费且简单易用的全局搜索器，该有的都有。&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://qttabbar.wikidot.com/"&gt;QTTabBar&lt;/a&gt;: 众所周知，windows 文件管理器十分难用，尤其是不支持 tab，所以，它来了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="学习"&gt;学习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://goldendict.org/"&gt;GoldenDict&lt;/a&gt;: 离线词典，支持在线页面查词，接有道，维基等，可以看做是 Linux 上的 Eudic，支持多种离线字典格式，支持自定义快捷键查找剪贴板中的单词。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="笔记"&gt;笔记&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://obsidian.md/"&gt;Obsidian&lt;/a&gt;: markdown 笔记软件，也可做个人知识库管理（过于方法论）。卖点有二，一是支持&lt;a href="https://sspai.com/post/67996"&gt;双向链接&lt;/a&gt;，并由此牵扯出一套方法论；二是你的数据你做主，一切笔记皆本地 markdown 文件。你拥有完全的掌控权，即便以后不用它，也很容易迁移到别的软件。对个人永久免费（付费版提供笔记同步、发布服务）。可玩性很强，太过知名，教程软文一搜一大把，还须记住记住本心为宜：我最初是为什么要用它来着？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="锁屏"&gt;锁屏&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://tools.suckless.org/slock/"&gt;slock&lt;/a&gt;: suckless 出品，极简的锁屏软件。简单到什么程度呢？配置文件都没有，直接下源码改头文件来&lt;a href="https://github.com/guyueshui/slock"&gt;配置&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="vscode-插件"&gt;VSCode 插件&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ code --list-extensions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bungcip.better-toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tomoki1207.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;huacnlee.autocorrect &lt;span class="c1"&gt;# 修正中英混合排版的问题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;huizhou.githd &lt;span class="c1"&gt;# git history, blame on single file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mhutchie.git-graph &lt;span class="c1"&gt;# git graph&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;KylinIDETeam.cmake-intellisence
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;llvm-vs-code-extensions.vscode-clangd &lt;span class="c1"&gt;# c++ dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;twxs.cmake &lt;span class="c1"&gt;# cmake syntax support&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vadimcn.vscode-lldb &lt;span class="c1"&gt;# c++ debug&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vscodevim.vim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;VSCode C++ 开发配置参考：&lt;/p&gt;</description></item></channel></rss>

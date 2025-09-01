@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>个性化 on 水阙</title><link>https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/</link><description>Recent content in 个性化 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 30 May 2023 01:20:02 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>博客迁移记录</title><link>https://guyueshui.github.io/post/blog-trans/</link><pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate><guid>https://guyueshui.github.io/post/blog-trans/</guid><description>&lt;p>终于还是干了！很早以前就有了这个想法，起初使用 &lt;a href="https://hexo.io">Hexo&lt;/a> 搭的博客，折腾了一段时间，选了一个不错的主题 &lt;a href="https://github.com/Molunerfinn/hexo-theme-melody">Melody&lt;/a>。一切都进行的很好，直到有一天又发现 &lt;a href="https://gohugo.io">Hugo&lt;/a> 这么个东西，登时就忍不住了，不是说原来的不好，二十 Hugo 太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开 html 一样。相比之下 Hexo 的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了 Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：&lt;/p></description></item><item><title>Polybar 的配置笔记</title><link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate><guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p>前略。&lt;/p>
-&lt;p>今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量，稳定的，可定制的窗口管理工具。至于为什么换 i3？去知乎吸收一下各个管理器间的哲学就知道了。以前从 Windows 转 Linux，也是这么过来的，知乎真是个好地方！&lt;/p></description></item><item><title>Melody 主题的一些个人更改</title><link>https://guyueshui.github.io/post/melody-theme-customization/</link><pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate><guid>https://guyueshui.github.io/post/melody-theme-customization/</guid><description>&lt;h2 id="更改字体">更改字体&lt;/h2>
-&lt;p>Melody 主题字体配置文件在 &lt;code>$BLOG/themes/melody/source/css/var.styl&lt;/code>，其中 &lt;code>$BLOG&lt;/code> 为 Hexo 博客根目录。截取一段如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-styl" data-lang="styl">&lt;span class="line">&lt;span class="cl">&lt;span class="o">//&lt;/span> &lt;span class="err">Global&lt;/span> &lt;span class="err">Variables&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$font-size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">16px&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$font-color&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">#1F2D3D&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$rem&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">20px&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$font-family&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">Martel&lt;/span> &lt;span class="err">Sans&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Spectral&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Lato&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Helvetica&lt;/span> &lt;span class="err">Neue&lt;/span> &lt;span class="k">For&lt;/span> &lt;span class="err">Number&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="err">apple&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="err">system&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">BlinkMacSystemFont&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Segoe&lt;/span> &lt;span class="err">UI&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Roboto&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">PingFang&lt;/span> &lt;span class="err">SC&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Hiragino&lt;/span> &lt;span class="err">Sans&lt;/span> &lt;span class="err">GB&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Microsoft&lt;/span> &lt;span class="err">YaHei&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Helvetica&lt;/span> &lt;span class="err">Neue&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Helvetica&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Arial&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">sans&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="err">ser&lt;/span>&lt;span class="k">if&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$code-font&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">Monaco&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">consolas&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Menlo&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">&amp;#34;PingFang&lt;/span> &lt;span class="err">SC&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">&amp;#34;Microsoft&lt;/span> &lt;span class="err">YaHei&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">monospace&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="err">Helvetica&lt;/span> &lt;span class="err">Neue&lt;/span> &lt;span class="k">For&lt;/span> &lt;span class="err">Number&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$text-line-height&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">2&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这样的话就可以使用自定义的字体 Martel Sans 了。但是这仅限于在本地使用，因为别人的计算机中可能没有这个字体。所以必须制定网页去哪儿加载这个字体。一个方法是，将你系统的字体文件复制到博客根目录的 &lt;code>source/fonts&lt;/code> 文件夹。&lt;/p></description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p>首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p>
-&lt;h2 id="规格参数">规格参数&lt;/h2>
-&lt;ul>
-&lt;li>WAN(10/100Mbps)&lt;/li>
-&lt;li>LAN(10/100Mbps)*2&lt;/li>
-&lt;li>双频：2.4GHz:300Mbps+5GHz:867Mbps&lt;/li>
-&lt;li>USB2.0 接口&lt;/li>
-&lt;li>外置天线*2&lt;/li>
-&lt;li>天线增益：3dBi&lt;/li>
-&lt;li>128MB 内存&lt;/li>
-&lt;/ul>
-&lt;!-- more -->
-&lt;h2 id="资源">资源&lt;/h2>
-&lt;ul>
-&lt;li>PandoraBox 下载源：&lt;a href="http://downloads.pandorabox.com.cn/">http://downloads.pandorabox.com.cn&lt;/a>&lt;/li>
-&lt;li>旧版 (2015 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/">设备代号 Lenovo-Y1_RY-1S&lt;/a>&lt;/li>
-&lt;li>新版 (2017 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin">newifi-mini&lt;/a> 附&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt">Changelog&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>个性化 on 水阙</title><link>https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/</link><description>Recent content in 个性化 on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 30 May 2023 01:20:02 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>博客迁移记录</title><link>https://guyueshui.github.io/post/blog-trans/</link><pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate><guid>https://guyueshui.github.io/post/blog-trans/</guid><description>&lt;p&gt;终于还是干了！很早以前就有了这个想法，起初使用 &lt;a href="https://hexo.io"&gt;Hexo&lt;/a&gt; 搭的博客，折腾了一段时间，选了一个不错的主题 &lt;a href="https://github.com/Molunerfinn/hexo-theme-melody"&gt;Melody&lt;/a&gt;。一切都进行的很好，直到有一天又发现 &lt;a href="https://gohugo.io"&gt;Hugo&lt;/a&gt; 这么个东西，登时就忍不住了，不是说原来的不好，二十 Hugo 太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开 html 一样。相比之下 Hexo 的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了 Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：&lt;/p&gt;</description></item><item><title>Polybar 的配置笔记</title><link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate><guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;前略。&lt;/p&gt;
+&lt;p&gt;今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量，稳定的，可定制的窗口管理工具。至于为什么换 i3？去知乎吸收一下各个管理器间的哲学就知道了。以前从 Windows 转 Linux，也是这么过来的，知乎真是个好地方！&lt;/p&gt;</description></item><item><title>Melody 主题的一些个人更改</title><link>https://guyueshui.github.io/post/melody-theme-customization/</link><pubDate>Wed, 19 Dec 2018 14:31:24 +0000</pubDate><guid>https://guyueshui.github.io/post/melody-theme-customization/</guid><description>&lt;h2 id="更改字体"&gt;更改字体&lt;/h2&gt;
+&lt;p&gt;Melody 主题字体配置文件在 &lt;code&gt;$BLOG/themes/melody/source/css/var.styl&lt;/code&gt;，其中 &lt;code&gt;$BLOG&lt;/code&gt; 为 Hexo 博客根目录。截取一段如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-styl" data-lang="styl"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="err"&gt;Global&lt;/span&gt; &lt;span class="err"&gt;Variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$font-size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;16px&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$font-color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mh"&gt;#1F2D3D&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;20px&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$font-family&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;Martel&lt;/span&gt; &lt;span class="err"&gt;Sans&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Spectral&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Lato&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Helvetica&lt;/span&gt; &lt;span class="err"&gt;Neue&lt;/span&gt; &lt;span class="k"&gt;For&lt;/span&gt; &lt;span class="err"&gt;Number&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;apple&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;system&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;BlinkMacSystemFont&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Segoe&lt;/span&gt; &lt;span class="err"&gt;UI&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Roboto&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;PingFang&lt;/span&gt; &lt;span class="err"&gt;SC&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Hiragino&lt;/span&gt; &lt;span class="err"&gt;Sans&lt;/span&gt; &lt;span class="err"&gt;GB&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Microsoft&lt;/span&gt; &lt;span class="err"&gt;YaHei&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Helvetica&lt;/span&gt; &lt;span class="err"&gt;Neue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Helvetica&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Arial&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;sans&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;ser&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$code-font&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;Monaco&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;consolas&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Menlo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#34;PingFang&lt;/span&gt; &lt;span class="err"&gt;SC&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#34;Microsoft&lt;/span&gt; &lt;span class="err"&gt;YaHei&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;monospace&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;Helvetica&lt;/span&gt; &lt;span class="err"&gt;Neue&lt;/span&gt; &lt;span class="k"&gt;For&lt;/span&gt; &lt;span class="err"&gt;Number&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$text-line-height&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样的话就可以使用自定义的字体 Martel Sans 了。但是这仅限于在本地使用，因为别人的计算机中可能没有这个字体。所以必须制定网页去哪儿加载这个字体。一个方法是，将你系统的字体文件复制到博客根目录的 &lt;code&gt;source/fonts&lt;/code&gt; 文件夹。&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
+&lt;h2 id="规格参数"&gt;规格参数&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;WAN(10/100Mbps)&lt;/li&gt;
+&lt;li&gt;LAN(10/100Mbps)*2&lt;/li&gt;
+&lt;li&gt;双频：2.4GHz:300Mbps+5GHz:867Mbps&lt;/li&gt;
+&lt;li&gt;USB2.0 接口&lt;/li&gt;
+&lt;li&gt;外置天线*2&lt;/li&gt;
+&lt;li&gt;天线增益：3dBi&lt;/li&gt;
+&lt;li&gt;128MB 内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="资源"&gt;资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PandoraBox 下载源：&lt;a href="http://downloads.pandorabox.com.cn/"&gt;http://downloads.pandorabox.com.cn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;旧版 (2015 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/"&gt;设备代号 Lenovo-Y1_RY-1S&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新版 (2017 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin"&gt;newifi-mini&lt;/a&gt; 附&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p&gt;</description></item></channel></rss>

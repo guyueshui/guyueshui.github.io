@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on 水阙</title><link>https://guyueshui.github.io/tags/vim/</link><description>Recent content in Vim on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 20 Dec 2018 19:17:54 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p>&lt;font color="red">This article needs polish, do not truely trust it!&lt;/font>&lt;/p>
-&lt;p>Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.&lt;/p>
-&lt;!-- more -->
-&lt;h2 id="general-pattern">General Pattern&lt;/h2>
-&lt;p>A vim operation consists of three parts, namely&lt;/p>
-&lt;pre tabindex="0">&lt;code>[OPERATOR][NUMBER][MOTION]
-&lt;/code>&lt;/pre>&lt;p>where&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>OPERATOR&lt;/code> - what you want to do? This mainly covers copy, cut, paste, etc.&lt;/li>
-&lt;li>&lt;code>NUMBER&lt;/code> - how many times do you want? It&amp;rsquo;s nothing but repeating the operation &lt;code>NUMBER&lt;/code> times, and it&amp;rsquo;s &lt;strong>optional&lt;/strong>.&lt;/li>
-&lt;li>&lt;code>MOTION&lt;/code> - where do you want to go? This point out the scope where the &lt;code>OPERATOR&lt;/code> applies.&lt;/li>
-&lt;/ul>
-&lt;blockquote>
-&lt;p>Note: order does not matter sometimes.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on 水阙</title><link>https://guyueshui.github.io/tags/vim/</link><description>Recent content in Vim on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 20 Dec 2018 19:17:54 +0000</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p&gt;&lt;font color="red"&gt;This article needs polish, do not truely trust it!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="general-pattern"&gt;General Pattern&lt;/h2&gt;
+&lt;p&gt;A vim operation consists of three parts, namely&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;[OPERATOR][NUMBER][MOTION]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;where&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;OPERATOR&lt;/code&gt; - what you want to do? This mainly covers copy, cut, paste, etc.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NUMBER&lt;/code&gt; - how many times do you want? It&amp;rsquo;s nothing but repeating the operation &lt;code&gt;NUMBER&lt;/code&gt; times, and it&amp;rsquo;s &lt;strong&gt;optional&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MOTION&lt;/code&gt; - where do you want to go? This point out the scope where the &lt;code&gt;OPERATOR&lt;/code&gt; applies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: order does not matter sometimes.&lt;/p&gt;</description></item></channel></rss>

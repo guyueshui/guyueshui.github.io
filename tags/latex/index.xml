@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Latex on 水阙</title><link>https://guyueshui.github.io/tags/latex/</link><description>Recent content in Latex on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 29 Jan 2024 00:24:19 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>一个 really simple 的 LaTeX 宏包</title><link>https://guyueshui.github.io/post/tex-sty-basic/</link><pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate><guid>https://guyueshui.github.io/post/tex-sty-basic/</guid><description>&lt;p>众所周知，LaTeX 是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起 MS Word，简直不知道高到哪里去。就拿最近写论文的事来说，我先用 TeX 码好字，然后要投的那个刊需要用 Word 提交。转格式转了我一下午带一晚上，太痛苦了。深刻的体会到什么叫自以为是，MS Word 自作聪明地给你调格式。当你敲下回车之后，天知道它又会自动帮你做些什么？！&lt;/p></description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置">字体设置&lt;/h2>
-&lt;p>在导言区引入&lt;code>fontspec&lt;/code>包：&lt;code>\usepackage{fontspec}&lt;/code>&lt;/p>
-&lt;p>使用如下命令自定义字体：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-tex" data-lang="tex">&lt;span class="line">&lt;span class="cl">&lt;span class="c">% 西文默认字体，排版主字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="k">\setmainfont&lt;/span>&lt;span class="nb">{}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">% 西文无称线字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="k">\setsansfont&lt;/span>&lt;span class="nb">{}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">% 西文等宽字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="k">\setmonofont&lt;/span>&lt;span class="nb">{}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">% 数学公式字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="k">\setmathfont&lt;/span>&lt;span class="nb">{}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">% 中文主字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="k">\setCJKmainfont&lt;/span>[
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Path = fonts/zh&lt;span class="nb">_&lt;/span>cn/ ,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> BoldFont = HYQiHei-70S.ttf ,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ItalicFont = HYKaiTiS.ttf ,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> SmallCapsFont = HYQiHei-70S.ttf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ]&lt;span class="nb">{&lt;/span>HYQiHei-45S.ttf&lt;span class="nb">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;!-- more -->
-&lt;blockquote>
-&lt;p>Note:&lt;/p></description></item><item><title>在 Beamer 中使用参考文献</title><link>https://guyueshui.github.io/post/use-reference-in-beamer/</link><pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate><guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid><description>&lt;p>&lt;font color="red">Needs polish!&lt;/font>&lt;/p>
-&lt;p>前略。&lt;/p>
-&lt;p>Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code>\cite&lt;/code>，搞得我走了不少弯路（其实是可以的）。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Latex on 水阙</title><link>https://guyueshui.github.io/tags/latex/</link><description>Recent content in Latex on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 29 Jan 2024 00:24:19 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>一个 really simple 的 LaTeX 宏包</title><link>https://guyueshui.github.io/post/tex-sty-basic/</link><pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate><guid>https://guyueshui.github.io/post/tex-sty-basic/</guid><description>&lt;p&gt;众所周知，LaTeX 是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起 MS Word，简直不知道高到哪里去。就拿最近写论文的事来说，我先用 TeX 码好字，然后要投的那个刊需要用 Word 提交。转格式转了我一下午带一晚上，太痛苦了。深刻的体会到什么叫自以为是，MS Word 自作聪明地给你调格式。当你敲下回车之后，天知道它又会自动帮你做些什么？！&lt;/p&gt;</description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置"&gt;字体设置&lt;/h2&gt;
+&lt;p&gt;在导言区引入&lt;code&gt;fontspec&lt;/code&gt;包：&lt;code&gt;\usepackage{fontspec}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用如下命令自定义字体：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-tex" data-lang="tex"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 西文默认字体，排版主字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="k"&gt;\setmainfont&lt;/span&gt;&lt;span class="nb"&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 西文无称线字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="k"&gt;\setsansfont&lt;/span&gt;&lt;span class="nb"&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 西文等宽字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="k"&gt;\setmonofont&lt;/span&gt;&lt;span class="nb"&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 数学公式字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="k"&gt;\setmathfont&lt;/span&gt;&lt;span class="nb"&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 中文主字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&lt;/span&gt;&lt;span class="k"&gt;\setCJKmainfont&lt;/span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; Path = fonts/zh&lt;span class="nb"&gt;_&lt;/span&gt;cn/ ,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; BoldFont = HYQiHei-70S.ttf ,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ItalicFont = HYKaiTiS.ttf ,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; SmallCapsFont = HYQiHei-70S.ttf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ]&lt;span class="nb"&gt;{&lt;/span&gt;HYQiHei-45S.ttf&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- more --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note:&lt;/p&gt;</description></item><item><title>在 Beamer 中使用参考文献</title><link>https://guyueshui.github.io/post/use-reference-in-beamer/</link><pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate><guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Needs polish!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;前略。&lt;/p&gt;
+&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description></item></channel></rss>

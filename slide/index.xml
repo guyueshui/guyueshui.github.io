@@ -1,122 +1,122 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 水阙</title><link>https://guyueshui.github.io/slide/</link><description>Recent content in Slides on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 08 May 2022 22:40:49 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/slide/index.xml" rel="self" type="application/rss+xml"/><item><title>Bbb</title><link>https://guyueshui.github.io/slide/bbb/</link><pubDate>Mon, 23 Mar 2020 15:56:44 +0800</pubDate><guid>https://guyueshui.github.io/slide/bbb/</guid><description>&lt;h1 id="the-title">The Title&lt;/h1>
-&lt;p>&lt;big>Sub Title&lt;/big>&lt;/p>
-&lt;p>Yychi | SIST&lt;/p>
-&lt;hr>
-&lt;h2 id="slide-2">Slide 2&lt;/h2>
-&lt;p>here comes $e=mc^2$.&lt;/p>
-&lt;p>$$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 水阙</title><link>https://guyueshui.github.io/slide/</link><description>Recent content in Slides on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 08 May 2022 22:40:49 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/slide/index.xml" rel="self" type="application/rss+xml"/><item><title>Bbb</title><link>https://guyueshui.github.io/slide/bbb/</link><pubDate>Mon, 23 Mar 2020 15:56:44 +0800</pubDate><guid>https://guyueshui.github.io/slide/bbb/</guid><description>&lt;h1 id="the-title"&gt;The Title&lt;/h1&gt;
+&lt;p&gt;&lt;big&gt;Sub Title&lt;/big&gt;&lt;/p&gt;
+&lt;p&gt;Yychi | SIST&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="slide-2"&gt;Slide 2&lt;/h2&gt;
+&lt;p&gt;here comes $e=mc^2$.&lt;/p&gt;
+&lt;p&gt;$$
 \mathbb{T} \mapsto A
-$$&lt;/p></description></item><item><title>CCC</title><link>https://guyueshui.github.io/slide/ccc/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/ccc/</guid><description>&lt;h1 id="hello-world">Hello world!&lt;/h1>
-&lt;p>This is my first slide.&lt;/p>
-&lt;hr>
+$$&lt;/p&gt;</description></item><item><title>CCC</title><link>https://guyueshui.github.io/slide/ccc/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/ccc/</guid><description>&lt;h1 id="hello-world"&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is my first slide.&lt;/p&gt;
+&lt;hr&gt;
 
 
-&lt;section data-shortcode-section>
-&lt;h1 id="hello-mars">Hello Mars!&lt;/h1>
-&lt;p>This is my second slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-1">Vertical slide 1&lt;/h1>
-&lt;p>This is verticle slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-2">Vertical slide 2&lt;/h1>
+&lt;section data-shortcode-section&gt;
+&lt;h1 id="hello-mars"&gt;Hello Mars!&lt;/h1&gt;
+&lt;p&gt;This is my second slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-1"&gt;Vertical slide 1&lt;/h1&gt;
+&lt;p&gt;This is verticle slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-2"&gt;Vertical slide 2&lt;/h1&gt;
 
-&lt;/section></description></item><item><title>Demo Slides</title><link>https://guyueshui.github.io/slide/aaa/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/aaa/</guid><description>&lt;h1 id="hello-world">Hello world!&lt;/h1>
-&lt;p>This is my first &lt;code>slide&lt;/code>.&lt;/p>
-&lt;p>$e=mc^2$&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-&lt;hr>
-
-
-&lt;section data-shortcode-section>
-&lt;h1 id="hello-mars">Hello Mars!&lt;/h1>
-&lt;p>This is my second slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-1">Vertical slide 1&lt;/h1>
-&lt;p>This is verticle slide.&lt;/p>
-&lt;hr>
-&lt;h1 id="vertical-slide-2">Vertical slide 2&lt;/h1>
-
-&lt;/section></description></item><item><title>Tf Quick Start</title><link>https://guyueshui.github.io/slide/tf-quick-start/</link><pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/tf-quick-start/</guid><description>&lt;h2 id="introduction-to-tensorflow">Introduction to TensorFlow&lt;/h2>
-&lt;p>A Quick Start&lt;/p>
-&lt;p>&lt;small>Yychi Fyu @SIST, ShanghaiTech&lt;/small>&lt;/p>
-&lt;!-- .slide: data-background="" -->
-&lt;hr>
-&lt;h2 id="outline">Outline&lt;/h2>
-&lt;ol>
-&lt;li>TF Primitives
-&lt;ul>
-&lt;li>tensor&lt;/li>
-&lt;li>graphs&lt;/li>
-&lt;li>session&lt;/li>
-&lt;li>variable&lt;/li>
-&lt;li>placeholder&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>An Example&lt;/li>
-&lt;/ol>
-&lt;hr>
+&lt;/section&gt;</description></item><item><title>Demo Slides</title><link>https://guyueshui.github.io/slide/aaa/</link><pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/aaa/</guid><description>&lt;h1 id="hello-world"&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is my first &lt;code&gt;slide&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;$e=mc^2$&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
 
 
-&lt;section data-shortcode-section>
-&lt;h3 id="high-level-overview">High-level overview&lt;/h3>
-&lt;p>Computation Graph: The structure of TF.&lt;/p>
-&lt;ul>
-&lt;li>operators as nodes&lt;/li>
-&lt;li>tensors as links&lt;/li>
-&lt;/ul>
-&lt;img src="https://s2.ax1x.com/2019/05/05/Ewocp4.png" width=300 alt="computation graph" />
-&lt;hr>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">tensorflow&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">tf&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">W&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">constant&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">]])&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">constant&lt;/span>&lt;span class="p">([[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]])&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">b&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">constant&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">matmul&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">W&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;pre tabindex="0">&lt;code>Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32)
-&lt;/code>&lt;/pre>&lt;p>The above codes &amp;ldquo;describe&amp;rdquo; a computation graph:
-&lt;img src="https://s2.ax1x.com/2019/05/05/EwLKXQ.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;big>How can we actually see a &lt;code>tensor&lt;/code>?&lt;/big>&lt;/p></description></item></channel></rss>
+&lt;section data-shortcode-section&gt;
+&lt;h1 id="hello-mars"&gt;Hello Mars!&lt;/h1&gt;
+&lt;p&gt;This is my second slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-1"&gt;Vertical slide 1&lt;/h1&gt;
+&lt;p&gt;This is verticle slide.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="vertical-slide-2"&gt;Vertical slide 2&lt;/h1&gt;
+
+&lt;/section&gt;</description></item><item><title>Tf Quick Start</title><link>https://guyueshui.github.io/slide/tf-quick-start/</link><pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/slide/tf-quick-start/</guid><description>&lt;h2 id="introduction-to-tensorflow"&gt;Introduction to TensorFlow&lt;/h2&gt;
+&lt;p&gt;A Quick Start&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Yychi Fyu @SIST, ShanghaiTech&lt;/small&gt;&lt;/p&gt;
+&lt;!-- .slide: data-background="" --&gt;
+&lt;hr&gt;
+&lt;h2 id="outline"&gt;Outline&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;TF Primitives
+&lt;ul&gt;
+&lt;li&gt;tensor&lt;/li&gt;
+&lt;li&gt;graphs&lt;/li&gt;
+&lt;li&gt;session&lt;/li&gt;
+&lt;li&gt;variable&lt;/li&gt;
+&lt;li&gt;placeholder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An Example&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h3 id="high-level-overview"&gt;High-level overview&lt;/h3&gt;
+&lt;p&gt;Computation Graph: The structure of TF.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;operators as nodes&lt;/li&gt;
+&lt;li&gt;tensors as links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src="https://s2.ax1x.com/2019/05/05/Ewocp4.png" width=300 alt="computation graph" /&gt;
+&lt;hr&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;W&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;matmul&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;Tensor(&amp;#34;add_5:0&amp;#34;, shape=(1, 1), dtype=int32)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The above codes &amp;ldquo;describe&amp;rdquo; a computation graph:
+&lt;img src="https://s2.ax1x.com/2019/05/05/EwLKXQ.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;big&gt;How can we actually see a &lt;code&gt;tensor&lt;/code&gt;?&lt;/big&gt;&lt;/p&gt;</description></item></channel></rss>
