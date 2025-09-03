@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>水阙</title><link>https://guyueshui.github.io/</link><description>Recent content on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 06 Jul 2025 16:30:01 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>遇见 ChiliChill</title><link>https://guyueshui.github.io/post/met-chilichill/</link><pubDate>Fri, 18 Apr 2025 21:27:03 +0800</pubDate><guid>https://guyueshui.github.io/post/met-chilichill/</guid><description>&lt;p&gt;“世界上有两种人，一种是喜欢 ChiliChill 的，一种是还没听过 ChiliChill 的。”&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>水阙</title><link>https://guyueshui.github.io/</link><description>Recent content on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 03 Sep 2025 21:46:26 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>析构函数与 override</title><link>https://guyueshui.github.io/post/override-destructor/</link><pubDate>Wed, 03 Sep 2025 21:40:03 +0800</pubDate><guid>https://guyueshui.github.io/post/override-destructor/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;virtual&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;override&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面三个关键字在继承体系中起着重要作用。&lt;code&gt;virtual&lt;/code&gt;不用多说，声明虚函数必备的关键字。&lt;code&gt;override&lt;/code&gt;和&lt;code&gt;final&lt;/code&gt;是 C++11 中引入的，二者的作用其实更多是提醒开发者自己，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我正在重写一个虚函数&lt;/li&gt;
+&lt;li&gt;我正在重写一个虚函数，并且不希望再被派生类重写这个函数&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>遇见 ChiliChill</title><link>https://guyueshui.github.io/post/met-chilichill/</link><pubDate>Fri, 18 Apr 2025 21:27:03 +0800</pubDate><guid>https://guyueshui.github.io/post/met-chilichill/</guid><description>&lt;p&gt;“世界上有两种人，一种是喜欢 ChiliChill 的，一种是还没听过 ChiliChill 的。”&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://guyueshui.github.io/img/posted/chilichill.png" style="width: 60%;"&gt;&lt;/img&gt;
 &lt;div class='align-center' style="font-size:smaller; font-family: serif; margin-top: -0.5em"&gt;
  logo
