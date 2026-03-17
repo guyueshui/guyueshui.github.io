@@ -44,3 +44,24 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           PUBLISH_BRANCH: master
           PUBLISH_DIR: ./public
+
+  notify-homelab:
+    needs: blog-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook to remote server
+        run: |
+          PAYLOAD='{
+            "repo": "${{ github.repository }}",
+            "ref": "${{ github.ref }}",
+            "sha": "${{ github.sha }}",
+            "event_name": "${{ github.event_name }}",
+            "job": "${{ github.job }}",
+            "status": "success"
+          }'
+          curl -X POST "${{ secrets.WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Signature: sha256=$(echo -n "$PAYLOAD" | \
+              openssl dgst -sha256 -hmac '${{ secrets.WEBHOOK_SECRET }}' | \
+              sed 's/^.* //')" \
+            -d "$PAYLOAD"
