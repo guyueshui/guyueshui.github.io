@@ -1,5 +1,6 @@
 # site settings
 baseURL = "https://guyueshui.github.io"
+# relativeURLs = true
 languageCode = "en"
 defaultContentLanguage = "en" # en / zh-cn / ... (This field determines which i18n file to use)
 title = "水阙"
@@ -38,25 +39,29 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 #   post = "/:year/:month/:title/"
 
 [[menu.main]]
+  name = "Vault"
+  weight = 1
+  url = "https://guyueshui.github.io/quartz"
+[[menu.main]]
   name = "Search"
   weight = 2
   identifier = "search"
-  url = "/search/"
+  pageRef = "/search"
 [[menu.main]]
   name = "More"
   weight = 3
   identifier = "more"
-  url = "/links/"
+  pageRef = "/links"
 [[menu.main]]
   name = "Archives"
   weight = 4
   identifier = "archives"
-  url = "/post/"
+  pageRef = "/post"
 [[menu.main]]
   name = "Sketch"
   weight = 6
   identifier = "sketch"
-  url = "/sketch/"
+  pageRef = "/sketch"
 ## remove this entry since i have better manaul site at https://pmanual.rtfd.io
 # [[menu.main]]
 #   name = "Tricks"
@@ -67,7 +72,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   name = "About"
   weight = 7
   identifier = "about"
-  url = "/about/"
+  pageRef = "/about"
 
 # [blackfriday]
 #   # translate new line into linebreaks
