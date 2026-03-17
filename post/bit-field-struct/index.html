@@ -1,7 +1,7 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>位域结构体简介 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="最近实习接触到一个新的知识点，C/C++ 的位域结构体。
 以下开始摘抄自：here
 位段 (bit-field) 是以位为单位来定义结构体 (或联合体) 中的成员变量所占的空间。含有位段的结构体 (联合体) 称为位段结构。采用位段结构既能够节省空间，又方便于操作。
-"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.149.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/bit-field-struct/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.d70690ffa8f6f6f22c0e62cb71d66e67705dd030e9bcb57e066e4adb9823988c.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/bit-field-struct/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="位域结构体简介"><meta property="og:description" content="最近实习接触到一个新的知识点，C/C++ 的位域结构体。
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.158.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/bit-field-struct/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.4aabaa30f54e143d0f286b885a73095acd04b599eea1e15f982ec896f5aeb090.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/bit-field-struct/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="位域结构体简介"><meta property="og:description" content="最近实习接触到一个新的知识点，C/C++ 的位域结构体。
 以下开始摘抄自：here
 位段 (bit-field) 是以位为单位来定义结构体 (或联合体) 中的成员变量所占的空间。含有位段的结构体 (联合体) 称为位段结构。采用位段结构既能够节省空间，又方便于操作。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-08-06T20:43:02+00:00"><meta property="article:modified_time" content="2023-05-30T01:20:02+08:00"><meta property="article:tag" content="Cpp"><meta property="article:tag" content="结构体"><meta property="article:tag" content="位运算"><meta itemprop=name content="位域结构体简介"><meta itemprop=description content="最近实习接触到一个新的知识点，C/C++ 的位域结构体。
 以下开始摘抄自：here
@@ -26,7 +26,7 @@
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=c1>// sizeof(A): 4
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>A</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>A</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>a</span><span class=p>:</span> <span class=mi>12</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>b</span><span class=p>:</span> <span class=mi>10</span><span class=p>;</span>
@@ -34,7 +34,7 @@
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(B): 12
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>B</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>B</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=n>a</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=n>b</span><span class=p>;</span>
@@ -106,48 +106,48 @@
 </span><span class=lnt>64
 </span><span class=lnt>65
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(A): 4
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>A</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>A</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>a</span><span class=p>:</span> <span class=mi>4</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>b</span><span class=p>:</span> <span class=mi>3</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>c</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(B): 12
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>B</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>B</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=n>a</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=n>b</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=n>c</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(C): 8
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>C</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>C</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>a</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=o>:</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>c</span><span class=p>:</span> <span class=mi>2</span><span class=p>;</span>  <span class=c1>// 不会和 a 凑在一起，新开一个字节存
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>};</span>
+</span></span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(D): 12
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>D</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>D</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>a</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span><span class=o>:</span> <span class=mi>0</span><span class=p>;</span>    <span class=c1>// 隔断
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>uint32_t</span><span class=o>:</span> <span class=mi>6</span><span class=p>;</span>    <span class=c1>// 开启新的位域存储单元
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>uint32_t</span> <span class=nl>d</span><span class=p>:</span> <span class=mi>32</span><span class=p>;</span> <span class=c1>// 前一个位域不够放，开启新的存放单元
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>};</span>
+</span></span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span><span class=o>:</span> <span class=mi>6</span><span class=p>;</span>    <span class=c1>// 开启新的位域存储单元
+</span></span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>d</span><span class=p>:</span> <span class=mi>32</span><span class=p>;</span> <span class=c1>// 前一个位域不够放，开启新的存放单元
+</span></span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof(E): 4
 </span></span></span><span class=line><span class=cl><span class=c1>// 内存分布简图
 </span></span></span><span class=line><span class=cl><span class=c1>// 0000 0000 0000 0000
 </span></span></span><span class=line><span class=cl><span class=c1>// a--- b--- cd-------
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>E</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>E</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>a</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>char</span> <span class=n>b</span><span class=p>;</span>        <span class=c1>// 隔断
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>uint32_t</span> <span class=nl>c</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span> <span class=c1>// 在下一个存储单元
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>uint32_t</span> <span class=nl>d</span><span class=p>:</span> <span class=mi>15</span><span class=p>;</span> <span class=c1>// 四个成员刚好占用 32bits，即 4 个字节
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>};</span>
+</span></span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>c</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span> <span class=c1>// 在下一个存储单元
+</span></span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>d</span><span class=p>:</span> <span class=mi>15</span><span class=p>;</span> <span class=c1>// 四个成员刚好占用 32bits，即 4 个字节
+</span></span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>template</span> <span class=o>&lt;</span><span class=k>typename</span> <span class=n>T</span><span class=o>&gt;</span>
 </span></span><span class=line><span class=cl><span class=kt>void</span> <span class=n>Print</span><span class=p>(</span><span class=k>const</span> <span class=n>T</span><span class=o>&amp;</span><span class=p>)</span>
@@ -156,7 +156,7 @@
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// test
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+</span></span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=n>A</span> <span class=n>a</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=n>B</span> <span class=n>b</span><span class=p>;</span>
@@ -164,11 +164,11 @@
 </span></span><span class=line><span class=cl>  <span class=n>D</span> <span class=n>d</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=n>E</span> <span class=n>e</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>a</span><span class=p>);</span> <span class=c1>// 4
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>Print</span><span class=p>(</span><span class=n>b</span><span class=p>);</span> <span class=c1>// 12
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>Print</span><span class=p>(</span><span class=n>c</span><span class=p>);</span> <span class=c1>// 8
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>Print</span><span class=p>(</span><span class=n>d</span><span class=p>);</span> <span class=c1>// 12
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>Print</span><span class=p>(</span><span class=n>e</span><span class=p>);</span> <span class=c1>// 4
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>b</span><span class=p>);</span> <span class=c1>// 12
+</span></span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>c</span><span class=p>);</span> <span class=c1>// 8
+</span></span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>d</span><span class=p>);</span> <span class=c1>// 12
+</span></span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>e</span><span class=p>);</span> <span class=c1>// 4
+</span></span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>以下测试用法：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -201,11 +201,11 @@
 </span><span class=lnt>29
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
 </span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;cstdio&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// sizeof: 4
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>TcpMsgHead</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>TcpMsgHead</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>length</span><span class=p>:</span> <span class=mi>16</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>uint32_t</span> <span class=nl>flags</span><span class=p>:</span> <span class=mi>8</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kt>int</span>      <span class=nl>num</span><span class=p>:</span> <span class=mi>8</span><span class=p>;</span>
@@ -219,12 +219,12 @@
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// test
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+</span></span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=n>TcpMsgHead</span> <span class=n>head</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=n>head</span><span class=p>.</span><span class=n>length</span> <span class=o>=</span> <span class=mh>0xffff</span><span class=p>;</span> <span class=c1>// 2^16 - 1 = 65535
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>head</span><span class=p>.</span><span class=n>flags</span> <span class=o>=</span> <span class=mh>0xff</span><span class=p>;</span>    <span class=c1>// 2^8 - 1 = 255
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>head</span><span class=p>.</span><span class=n>num</span> <span class=o>=</span> <span class=mh>0xff</span><span class=p>;</span>
+</span></span></span><span class=line><span class=cl>  <span class=n>head</span><span class=p>.</span><span class=n>flags</span> <span class=o>=</span> <span class=mh>0xff</span><span class=p>;</span>    <span class=c1>// 2^8 - 1 = 255
+</span></span></span><span class=line><span class=cl>  <span class=n>head</span><span class=p>.</span><span class=n>num</span> <span class=o>=</span> <span class=mh>0xff</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=n>Print</span><span class=p>(</span><span class=n>head</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
@@ -258,4 +258,4 @@ Ycm 提示这里发生了隐式截断。255 被截断成了 -1. 如果换成 0x1
 <span class=theme-info>Theme -
 <a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
 2018 -
-2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

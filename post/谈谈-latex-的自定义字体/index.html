@@ -1,7 +1,7 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>快速自定义 LaTeX 排版字体 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="字体设置 在导言区引入fontspec包：\usepackage{fontspec}
 使用如下命令自定义字体：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 % 西文默认字体，排版主字体 \setmainfont{} % 西文无称线字体 \setsansfont{} % 西文等宽字体 \setmonofont{} % 数学公式字体 \setmathfont{} % 中文主字体 \setCJKmainfont[ Path = fonts/zh_cn/ , BoldFont = HYQiHei-70S.ttf , ItalicFont = HYKaiTiS.ttf , SmallCapsFont = HYQiHei-70S.ttf ]{HYQiHei-45S.ttf} Note:
-"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.149.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.d70690ffa8f6f6f22c0e62cb71d66e67705dd030e9bcb57e066e4adb9823988c.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="快速自定义 LaTeX 排版字体"><meta property="og:description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec}
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.158.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.4aabaa30f54e143d0f286b885a73095acd04b599eea1e15f982ec896f5aeb090.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><meta property="og:url" content="https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="快速自定义 LaTeX 排版字体"><meta property="og:description" content="字体设置 在导言区引入fontspec包：\usepackage{fontspec}
 使用如下命令自定义字体：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 % 西文默认字体，排版主字体 \setmainfont{} % 西文无称线字体 \setsansfont{} % 西文等宽字体 \setmonofont{} % 数学公式字体 \setmathfont{} % 中文主字体 \setCJKmainfont[ Path = fonts/zh_cn/ , BoldFont = HYQiHei-70S.ttf , ItalicFont = HYKaiTiS.ttf , SmallCapsFont = HYQiHei-70S.ttf ]{HYQiHei-45S.ttf} Note:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-03-08T15:41:10+00:00"><meta property="article:modified_time" content="2021-03-01T00:00:00+00:00"><meta property="article:tag" content="排版"><meta property="article:tag" content="Latex"><meta property="article:tag" content="字体"><meta itemprop=name content="快速自定义 LaTeX 排版字体"><meta itemprop=description content="字体设置 在导言区引入fontspec包：\usepackage{fontspec}
 使用如下命令自定义字体：
@@ -29,19 +29,19 @@
 </span><span class=lnt>18
 </span><span class=lnt>19
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=c>% 西文默认字体，排版主字体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\setmainfont</span><span class=nb>{}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\setmainfont</span><span class=nb>{}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% 西文无称线字体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\setsansfont</span><span class=nb>{}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\setsansfont</span><span class=nb>{}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% 西文等宽字体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\setmonofont</span><span class=nb>{}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\setmonofont</span><span class=nb>{}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% 数学公式字体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\setmathfont</span><span class=nb>{}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\setmathfont</span><span class=nb>{}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% 中文主字体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\setCJKmainfont</span>[
+</span></span></span><span class=line><span class=cl><span class=k>\setCJKmainfont</span>[
 </span></span><span class=line><span class=cl>    Path = fonts/zh<span class=nb>_</span>cn/ ,
 </span></span><span class=line><span class=cl>    BoldFont = HYQiHei-70S.ttf ,
 </span></span><span class=line><span class=cl>    ItalicFont = HYKaiTiS.ttf ,
@@ -57,12 +57,12 @@
 </span><span class=lnt>8
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\setCJKmainfont</span>[
 </span></span><span class=line><span class=cl>    Path = ./fonts/zh<span class=nb>_</span>cn/ , <span class=c>% specify the file location
-</span></span></span><span class=line><span class=cl><span class=c></span>    Extension = .ttf , <span class=c>% specify the file suffix [opt]
-</span></span></span><span class=line><span class=cl><span class=c></span>                       <span class=c>% or add them manually
-</span></span></span><span class=line><span class=cl><span class=c></span>    BoldFont = HYQiHei-70S.ttf, <span class=c>% &#39;.ttf&#39; can be dropped if 
-</span></span></span><span class=line><span class=cl><span class=c></span>                                <span class=c>% &#39;Extension&#39; is specified
-</span></span></span><span class=line><span class=cl><span class=c></span>    ItalicFont = HYKaiTiS.ttf,  <span class=c>% similarly
-</span></span></span><span class=line><span class=cl><span class=c></span>]<span class=nb>{</span>HYQiHei-45S.ttf<span class=nb>}</span>              <span class=c>% set default font to 汉仪旗黑
+</span></span></span><span class=line><span class=cl>    Extension = .ttf , <span class=c>% specify the file suffix [opt]
+</span></span></span><span class=line><span class=cl>                       <span class=c>% or add them manually
+</span></span></span><span class=line><span class=cl>    BoldFont = HYQiHei-70S.ttf, <span class=c>% &#39;.ttf&#39; can be dropped if 
+</span></span></span><span class=line><span class=cl>                                <span class=c>% &#39;Extension&#39; is specified
+</span></span></span><span class=line><span class=cl>    ItalicFont = HYKaiTiS.ttf,  <span class=c>% similarly
+</span></span></span><span class=line><span class=cl>]<span class=nb>{</span>HYQiHei-45S.ttf<span class=nb>}</span>              <span class=c>% set default font to 汉仪旗黑
 </span></span></span></code></pre></td></tr></table></div></div><p><img src=https://s2.ax1x.com/2019/03/11/ACHzeH.png alt>
 <img src=https://s2.ax1x.com/2019/03/11/ACbE6S.png alt>
 从上面两张图可以看出，中文字体不像西文，是没有对应的斜体和粗体的。所以只能用其他字体替代，通过改变字体的方式达到伪斜体，伪粗体的效果。</p><p><strong>设置字体别名</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -84,9 +84,9 @@
 </span></span></span><span class=line><span class=cl><span class=c>%\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
 </span></span></span><span class=line><span class=cl><span class=c>%\setCJKfamilyfont{zhli}{LiSu}
 </span></span></span><span class=line><span class=cl><span class=c>%\setCJKfamilyfont{zhyou}{YouYuan}
-</span></span></span><span class=line><span class=cl><span class=c></span>
+</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>\newcommand*</span><span class=nb>{</span><span class=k>\songti</span><span class=nb>}{</span><span class=k>\CJKfamily</span><span class=nb>{</span>zhsong<span class=nb>}}</span>   <span class=c>% 宋体
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\newcommand*</span><span class=nb>{</span><span class=k>\heiti</span><span class=nb>}{</span><span class=k>\CJKfamily</span><span class=nb>{</span>zhhei<span class=nb>}}</span>     <span class=c>% 黑体
+</span></span></span><span class=line><span class=cl><span class=k>\newcommand*</span><span class=nb>{</span><span class=k>\heiti</span><span class=nb>}{</span><span class=k>\CJKfamily</span><span class=nb>{</span>zhhei<span class=nb>}}</span>     <span class=c>% 黑体
 </span></span></span><span class=line><span class=cl><span class=c>%\newcommand*{\kaishu}{\CJKfamily{zhkai}}   % 楷书
 </span></span></span><span class=line><span class=cl><span class=c>%\newcommand*{\fangsong}{\CJKfamily{zhfs}}  % 仿宋
 </span></span></span><span class=line><span class=cl><span class=c>%\newcommand*{\lishu}{\CJKfamily{zhli}}     % 隶书
@@ -110,17 +110,17 @@
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=c>% oneline
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\leftline</span><span class=nb>{</span>左对齐<span class=nb>}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\leftline</span><span class=nb>{</span>左对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\centerline</span><span class=nb>{</span>居中对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\rightline</span><span class=nb>{</span>右对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% multiline
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\flushleft</span><span class=nb>{</span>左对齐<span class=nb>}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\flushleft</span><span class=nb>{</span>左对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\center</span><span class=nb>{</span>居中对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\flushright</span><span class=nb>{</span>右对齐<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% or
-</span></span></span><span class=line><span class=cl><span class=c></span><span class=k>\begin</span><span class=nb>{</span>flushright/center/flushleft<span class=nb>}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>flushright/center/flushleft<span class=nb>}</span>
 </span></span><span class=line><span class=cl>    some text...
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>flushright/center/flushleft<span class=nb>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=页面版式>页面版式</h3><p>页面版式包括页眉页脚，以下两个命令可以设置页面版式：</p><ul><li><code>\pagestyle</code>：设置当前页及后续页版式</li><li><code>\thispagestyle</code>：设置当前页的版式</li></ul><p>可选版式包括</p><ul><li>empty：无页眉页脚</li><li>plain：无页眉，页脚为居中页码</li><li>headings：页眉为章节标题，无页脚</li><li>myheadings：自定义页眉，无页脚</li></ul><p>使用<code>\thispagestyle{empty}</code>可将当前页的页眉页脚关闭。</p><h2 id=references>References</h2><ol><li><a href=https://zhuanlan.zhihu.com/p/138408387>LaTeX 系列笔记 (5)-行距</a></li></ol></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
@@ -138,4 +138,4 @@
 <span class=theme-info>Theme -
 <a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
 2018 -
-2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

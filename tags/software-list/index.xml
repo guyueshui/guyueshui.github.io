@@ -3,7 +3,8 @@
 &lt;p&gt;套用一下 suckless 的 slogan，&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Everything sucks, we just suck less.&lt;/p&gt;
-&lt;div style="text-align:right"&gt;-- suckless.org&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div style="text-align:right"&gt;-- suckless.org&lt;/div&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="下载"&gt;下载&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://aria2.github.io"&gt;aria2c&lt;/a&gt;: 命令行下载工具，支持下载种子、磁力等。有 RPC 模式，配合 WebUI 使用更佳。参考&lt;a href="https://guyueshui.github.io/tricks/#aria2c"&gt;简介&lt;/a&gt;。&lt;/li&gt;
