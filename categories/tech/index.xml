@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Mar 2026 21:06:42 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p&gt;一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Mar 2026 21:18:56 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p&gt;一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p&gt;
 &lt;p&gt;前些日子，我的 RedmiK40S MIUI13 突然给我自动更新至 MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是 MIUI 版本的提升，更是 Android 12 到 13 的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在 a12 上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上 XDA 找 ROM，随便下了几个，准备动手。&lt;/p&gt;</description></item><item><title>Swap 扩容</title><link>https://guyueshui.github.io/post/extend-swap/</link><pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate><guid>https://guyueshui.github.io/post/extend-swap/</guid><description>&lt;!--
 由于涉及到磁盘分区，一般来说 swap 分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
 
@@ -248,7 +248,9 @@ current directory.&lt;/p&gt;</description></item><item><title>Nueral Network Lea
 &lt;p&gt;摘自《程序员面试白皮书》&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="进程-vs线程"&gt;进程 vs.线程&lt;/h3&gt;
-&lt;p&gt;进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p&gt;</description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>&lt;p&gt;开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。&lt;/p&gt;
+&lt;p&gt;进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p&gt;</description></item><item><title>设计模式学习笔记</title><link>https://guyueshui.github.io/post/design-pattern-notes/</link><pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/design-pattern-notes/</guid><description>&lt;p&gt;如无特殊声明：本文所有 UML 图均出自《图说设计模式》。在此特别鸣谢！&lt;/p&gt;
+&lt;h2 id="singleton"&gt;Singleton&lt;/h2&gt;
+&lt;p&gt;单例模式解决了全局变量的问题，全局只能创建一个实例，保证任何请求该实例的调用均返回同一个对象，保证不会被意外析构。&lt;/p&gt;</description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>&lt;p&gt;开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢迎指正！&lt;/p&gt;</description></item><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p&gt;诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p&gt;
 &lt;h2 id="reactor-vs-proactor"&gt;Reactor v.s. Proactor&lt;/h2&gt;
@@ -1534,7 +1536,14 @@ Object-like macros can be defined in one of two ways:&lt;/p&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;g++ main.cpp -g -O0
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为 0，即不优化。&lt;/p&gt;</description></item><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Declaration: this article is in long time editing&amp;hellip;&lt;/font&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;-O0&lt;/code&gt;指定编译器的优化级别为 0，即不优化。&lt;/p&gt;</description></item><item><title>位域结构体简介</title><link>https://guyueshui.github.io/post/bit-field-struct/</link><pubDate>Tue, 06 Aug 2019 20:43:02 +0000</pubDate><guid>https://guyueshui.github.io/post/bit-field-struct/</guid><description>&lt;p&gt;最近实习接触到一个新的知识点，C/C++ 的位域结构体。&lt;/p&gt;
+&lt;p&gt;以下开始摘抄自：&lt;a href="https://www.cnblogs.com/dolphin0520/archive/2011/10/14/2212590.html"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;位段 (bit-field) 是以位为单位来定义结构体 (或联合体) 中的成员变量所占的空间。含有位段的结构体 (联合体) 称为位段结构。采用位段结构既能够节省空间，又方便于操作。&lt;/p&gt;</description></item><item><title>面试经历及笔记</title><link>https://guyueshui.github.io/post/interview-notes/</link><pubDate>Mon, 08 Jul 2019 20:14:17 +0000</pubDate><guid>https://guyueshui.github.io/post/interview-notes/</guid><description>&lt;p&gt;总结一下这几个月的面试经历中被问到的问题，虽说问得都很浅，但是，问深了我也不会呀！&lt;/p&gt;
+&lt;h2 id="c-相关"&gt;C++ 相关&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;std::vector&lt;/code&gt; push_back 的复杂度是多少？
+A: O(1), amortized constant.&lt;/p&gt;
+&lt;p&gt;Q: vector 从 1 到 n push n 个元素，假设发生扩容时按两倍增长，写出复杂度关于 n 的表达式？
+A: 不会。&lt;/p&gt;</description></item><item><title>The Beauty of Recursion</title><link>https://guyueshui.github.io/post/the-beauty-of-recursion/</link><pubDate>Tue, 23 Apr 2019 09:08:28 +0000</pubDate><guid>https://guyueshui.github.io/post/the-beauty-of-recursion/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Declaration: this article is in long time editing&amp;hellip;&lt;/font&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Here comes some beautiful recursive solutions to some problems.&lt;/p&gt;
 &lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
@@ -1549,7 +1558,25 @@ n, &amp;amp;\text{ if } n \le 1 \newline
 \text{fib}(n-1) + \text{fib}(n-2), &amp;amp;\text{ if } n &amp;gt; 1.
 \end{cases}
 $$
-That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:&lt;/p&gt;</description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置"&gt;字体设置&lt;/h2&gt;
+That is why we can write easily a procedure to compute the fibs. If we use MIT Scheme, we can write as follows:&lt;/p&gt;</description></item><item><title>神奇的位运算</title><link>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</link><pubDate>Mon, 08 Apr 2019 10:35:16 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</guid><description>&lt;p&gt;In editing&amp;hellip;&lt;/p&gt;
+&lt;h2 id="必备知识"&gt;必备知识&lt;/h2&gt;
+&lt;p&gt;首先要对原码、反码、补码有一定理解，推荐阅读此文：https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/computercode.html&lt;/p&gt;</description></item><item><title>A collection of some coding problems</title><link>https://guyueshui.github.io/post/coding-problems/</link><pubDate>Sun, 07 Apr 2019 19:31:59 +0000</pubDate><guid>https://guyueshui.github.io/post/coding-problems/</guid><description>&lt;h1 id="场景题"&gt;场景题&lt;/h1&gt;
+&lt;h2 id="题一最高得分"&gt;题一：最高得分&lt;/h2&gt;
+&lt;p&gt;一个长度为$N$的序列，玩家每次只能从头部或尾部拿数字，不能从中间拿。拿走的数字依次从左到右排列在自己面前。拿完$N$个数字之后，游戏结束。此时$N$个数字在玩家面前组成一个新的排列，这个数列每相邻两个数字之差的绝对值之和为玩家最终得分。假设玩家前面的$N$个数字从左到右标号为 $n_1,n_2, \dots, n_N$，则最终得分$S$的计算方式如下：
+$$
+S = \text{abs}(n_1-n_2) + \text{abs}(n_2-n_3) + \cdots + \text{abs}(n_{N-1} - n_N).
+$$&lt;/p&gt;</description></item><item><title>瞎说 KMP 算法</title><link>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</link><pubDate>Thu, 04 Apr 2019 00:05:41 +0000</pubDate><guid>https://guyueshui.github.io/post/%E7%9E%8E%E8%AF%B4kmp%E7%AE%97%E6%B3%95/</guid><description>&lt;p&gt;前天做百度笔试，没想到居然出往年的题！哼！更惨的是出了我也不会！我以为只是一个简简单单的字符串匹配，没想到要动用这么难懂的算法。说起来算法导论上也有，只是之前没看到那里。所以，总结一下：我本有好多次机会学习它，然而一次都没有把握。:(&lt;/p&gt;</description></item><item><title>初尝 C++ 类设计</title><link>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</link><pubDate>Tue, 02 Apr 2019 21:31:40 +0000</pubDate><guid>https://guyueshui.github.io/post/%E5%88%9D%E5%B0%9D-c-%E7%B1%BB%E8%AE%BE%E8%AE%A1/</guid><description>&lt;p&gt;最近在准备笔试，于是在各种网站上刷题嘛。期间做了百度某年的一道 &lt;a href="http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3821&amp;amp;konwledgeId=40"&gt;编程题&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小 B 最近对电子表格产生了浓厚的兴趣，她觉得电子表格很神奇，功能远比她想象的强大。她正在研究的是单元格的坐标编号，她发现表格单元一般是按列编号的，第 1 列编号为 A，第 2 列为 B，以此类推，第 26 列为 Z。之后是两位字符编号的，第 27 列编号为 AA，第 28 列为 AB，第 52 列编号为 AZ。之后则是三位、四位、五位……字母编号的，规则类似。&lt;/p&gt;</description></item><item><title>LeetCode: Sum of Two Integers</title><link>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</link><pubDate>Tue, 26 Mar 2019 14:53:51 +0000</pubDate><guid>https://guyueshui.github.io/post/leetcode-sum-of-two-integers/</guid><description>&lt;p&gt;记录一下 LeetCode 做的一道题。要求实现两个整数的加法，但不能使用内置的&lt;code&gt;+&lt;/code&gt;或&lt;code&gt;-&lt;/code&gt;. 原题地址：https://leetcode.com/problems/sum-of-two-integers/&lt;/p&gt;</description></item><item><title>浅谈 Logistic 回归</title><link>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</link><pubDate>Fri, 15 Mar 2019 22:59:39 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%B5%85%E8%B0%88-logistic-%E5%9B%9E%E5%BD%92/</guid><description>&lt;p&gt;In editing&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Logistic 回归属于分类模型！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="从最小二乘说起"&gt;从最小二乘说起&lt;/h2&gt;
+&lt;h2 id="线性回归"&gt;线性回归&lt;/h2&gt;
+&lt;h2 id="概率解释"&gt;概率解释&lt;/h2&gt;
+&lt;h2 id="sigmoid-函数的引入"&gt;Sigmoid 函数的引入&lt;/h2&gt;
+&lt;p&gt;如果把我比作一张白纸，在我的知识储备中，现在只有线性回归。但是要处理分类问题，我该怎么办？没办法，先考虑一个二分类问题，$y \in {0,1}$，我们准备霸王硬上弓，用回归模型套上去！
+$$
+y = h_{\theta}(x)
+$$&lt;/p&gt;</description></item><item><title>快速自定义 LaTeX 排版字体</title><link>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link><pubDate>Fri, 08 Mar 2019 15:41:10 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%B0%88%E8%B0%88-latex-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid><description>&lt;h2 id="字体设置"&gt;字体设置&lt;/h2&gt;
 &lt;p&gt;在导言区引入&lt;code&gt;fontspec&lt;/code&gt;包：&lt;code&gt;\usepackage{fontspec}&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;使用如下命令自定义字体：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1598,10 +1625,44 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 &lt;/div&gt;
 &lt;/div&gt;&lt;!-- more --&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note:&lt;/p&gt;</description></item><item><title>Polybar 的配置笔记</title><link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate><guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;前略。&lt;/p&gt;
-&lt;p&gt;今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量，稳定的，可定制的窗口管理工具。至于为什么换 i3？去知乎吸收一下各个管理器间的哲学就知道了。以前从 Windows 转 Linux，也是这么过来的，知乎真是个好地方！&lt;/p&gt;</description></item><item><title>在 Beamer 中使用参考文献</title><link>https://guyueshui.github.io/post/use-reference-in-beamer/</link><pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate><guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Needs polish!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;Note:&lt;/p&gt;</description></item><item><title>Linux 使用指北</title><link>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 07 Mar 2019 19:22:02 +0000</pubDate><guid>https://guyueshui.github.io/post/linux-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E9%80%9F%E6%9F%A5/</guid><description>&lt;p&gt;本文主要引用 &lt;a href="https://liam.page/2016/11/06/Linux-Info-Cheatsheet/"&gt;Liam Huang&lt;/a&gt; 的博客。&lt;/p&gt;
+&lt;h2 id="系统相关"&gt;系统相关&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lsb_release -a &lt;span class="c1"&gt;# 查看操作系统版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;head -n &lt;span class="m"&gt;1&lt;/span&gt; /etc/issue &lt;span class="c1"&gt;# 查看操作系统版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat /proc/version &lt;span class="c1"&gt;# 查看操作系统内核信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;uname -a &lt;span class="c1"&gt;# 查看操作系统内核信息、CPU 信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat /proc/cpuinfo &lt;span class="c1"&gt;# 查看 CPU 信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hostname &lt;span class="c1"&gt;# 查看计算机名字&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;env &lt;span class="c1"&gt;# 列出环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lsmod &lt;span class="c1"&gt;# 列出加载的内核模块&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;uptime &lt;span class="c1"&gt;# 查看系统运行时间、负载、用户数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat /proc/loadavg &lt;span class="c1"&gt;# 查看系统负载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Polybar 的配置笔记</title><link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate><guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;前略。&lt;/p&gt;
+&lt;p&gt;今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量，稳定的，可定制的窗口管理工具。至于为什么换 i3？去知乎吸收一下各个管理器间的哲学就知道了。以前从 Windows 转 Linux，也是这么过来的，知乎真是个好地方！&lt;/p&gt;</description></item><item><title>Matrix Factorization</title><link>https://guyueshui.github.io/post/matrix-factorization/</link><pubDate>Thu, 03 Jan 2019 21:07:38 +0000</pubDate><guid>https://guyueshui.github.io/post/matrix-factorization/</guid><description>&lt;h2 id="preliminaries"&gt;Preliminaries&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt;: A matrix $A \in M_n$ is &lt;em&gt;normal&lt;/em&gt; if $AA^∗ = A^∗A$, that is, if $A$ commutes with its conjugate transpose.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt;: A complex matrix $A$ is &lt;em&gt;unitary&lt;/em&gt; if $AA^∗ = I$ or $A^∗A = I$, and a real matrix $B$ is &lt;em&gt;orthogonal&lt;/em&gt; if $BB^T = I$ or $B^TB = I$.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.loli.net/2019/01/03/5c2e1178ec116.png" alt="Image adapted from Meyer&amp;rsquo;s book"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;There is no so-called &amp;ldquo;orthonormal&amp;rdquo; matrix. There is just an orthogonal matrix whose rows or columns are orthonormal vectors.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>在 Beamer 中使用参考文献</title><link>https://guyueshui.github.io/post/use-reference-in-beamer/</link><pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate><guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Needs polish!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;前略。&lt;/p&gt;
-&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description></item><item><title>常用结论的证明记录</title><link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link><pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid><description>&lt;h2 id="高斯分布的微分熵"&gt;高斯分布的微分熵&lt;/h2&gt;
+&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description></item><item><title>Exponential Distribution</title><link>https://guyueshui.github.io/post/exponetial-distribution/</link><pubDate>Tue, 25 Dec 2018 22:21:49 +0000</pubDate><guid>https://guyueshui.github.io/post/exponetial-distribution/</guid><description>&lt;h2 id="story"&gt;Story&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Exponential distribution is the continuous counterpart to the &lt;a href="file://./Geometric-Distribution.md"&gt;Geometric distribution&lt;/a&gt;. The story of the Exponential distribution is analogous, but we are now waiting for a success in continuous time, where successes arrive at a rate of $\lambda$ successes per unit of time. The average number of successes in a time interval of length $t$ is $\lambda t$, though the actual number of successes varies randomly. An Exponential random variable represents the waiting time until the first arrival of a success.&lt;/p&gt;</description></item><item><title>常用结论的证明记录</title><link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link><pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid><description>&lt;h2 id="高斯分布的微分熵"&gt;高斯分布的微分熵&lt;/h2&gt;
 &lt;p&gt;$X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$，其微分熵推导过程如下：&lt;/p&gt;</description></item><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p&gt;&lt;font color="red"&gt;This article needs polish, do not truely trust it!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -1639,7 +1700,23 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这样的话就可以使用自定义的字体 Martel Sans 了。但是这仅限于在本地使用，因为别人的计算机中可能没有这个字体。所以必须制定网页去哪儿加载这个字体。一个方法是，将你系统的字体文件复制到博客根目录的 &lt;code&gt;source/fonts&lt;/code&gt; 文件夹。&lt;/p&gt;</description></item><item><title>HTML 美化 Markdown 排版</title><link>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</link><pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate><guid>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</guid><description>&lt;p&gt;&lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;Markdown&lt;/a&gt; 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来说说在使用 Markdown 排版的时候，如何引入一点 HTML 的技巧来帮助我们排版的更加好看。&lt;/p&gt;</description></item><item><title>使用 Git 管理配置文件</title><link>https://guyueshui.github.io/post/manage-dotfiles-by-git/</link><pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate><guid>https://guyueshui.github.io/post/manage-dotfiles-by-git/</guid><description>&lt;p&gt;对于 Linux 用户，在 &lt;code&gt;$HOME&lt;/code&gt; 文件夹下，一般都有大量的隐藏文件，形如&lt;code&gt;.conf&lt;/code&gt;,&lt;code&gt;.xxxrc&lt;/code&gt;等，这些都是程序的配置文件。很多人也许花了一个下午，一天，甚至一个星期，折腾某某程序的配置文件。如果这些轻易丢失了，那就是浪费生命了！所以，如何将这些文件备份，成了很多人必须要问的一个问题。&lt;/p&gt;</description></item><item><title>Android 刷机的一般步骤</title><link>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</link><pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate><guid>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</guid><description>&lt;h2 id="1-事前准备"&gt;1. 事前准备&lt;/h2&gt;
 &lt;hr&gt;
-&lt;p&gt;先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p&gt;</description></item><item><title>记一次重装 Linux</title><link>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link><pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid><description>&lt;p&gt;放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 &lt;code&gt;startx&lt;/code&gt; 启动 gnome-session 失败。几经解决未果，只好重装！&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
+&lt;p&gt;先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p&gt;</description></item><item><title>记一次重装 Linux</title><link>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link><pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid><description>&lt;p&gt;放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 &lt;code&gt;startx&lt;/code&gt; 启动 gnome-session 失败。几经解决未果，只好重装！&lt;/p&gt;</description></item><item><title>最大熵对应的概率分布</title><link>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</link><pubDate>Wed, 01 Aug 2018 18:02:36 +0000</pubDate><guid>https://guyueshui.github.io/post/%E6%9C%80%E5%A4%A7%E7%86%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83/</guid><description>&lt;h2 id="最大熵定理"&gt;最大熵定理&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;设 $X \sim p(x)$ 是一个连续型随机变量，其微分熵定义为&lt;/em&gt;
+$$
+h(X) = - \int p(x)\log p(x) dx
+$$
+&lt;em&gt;其中，$\log$ 一般取自然对数 $\ln$, 单位为 奈特（nats）。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;考虑如下优化问题：
+$$
+\begin{array}{ll}
+&amp;amp;\underset{p}{\text{Maximize}} &amp;amp; \displaystyle h(p) = - \int_S p(x)\log p(x) dx \newline
+&amp;amp;\text{Subject to} &amp;amp;\displaystyle \int_S p(x) dx = 1 \newline
+&amp;amp;~ &amp;amp; p(x) \ge 0 \newline
+&amp;amp;~ &amp;amp; \displaystyle \int_S p(x) f_i(x) dx = \alpha_i, ~i=1,2,3,\dots,n
+\end{array}
+$$
+其中，集合 $S$ 是随机变量的 support，即其所有可能的取值。我们意图找到这样的概率分布 $p$, 他满足所有的约束（前两条是概率公理的约束，最后一条叫做矩约束，在模型中有时会假设随机变量的矩为常数），并且能够使得熵最大。将上述优化问题写成标准形式：&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
 &lt;h2 id="规格参数"&gt;规格参数&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;WAN(10/100Mbps)&lt;/li&gt;
@@ -1657,4 +1734,4 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 &lt;li&gt;旧版 (2015 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox/Lenovo-Y1_RY-1S/"&gt;设备代号 Lenovo-Y1_RY-1S&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;新版 (2017 年 1 月)：&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-newifi-mini-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin"&gt;newifi-mini&lt;/a&gt; 附&lt;a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/changelog-16.10-stable.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;我用旧版安装 shadowsocks 时碰到很多问题，一时无解于是刷了新版，顺便说一下新版网页端是 Material Design，很好看。&lt;/p&gt;</description></item><item><title>使用 Tar 备份 Archlinux</title><link>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</link><pubDate>Sat, 10 Sep 2016 19:00:57 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%BD%BF%E7%94%A8tar%E5%A4%87%E4%BB%BDarchlinux/</guid><description>&lt;p&gt;Linux 需要备份吗？本身 Linux 系统的稳定性就是一流，文件系统也不易产生碎片，只要不是硬盘突然崩掉了，你可以有 100 种方法来修复系统的各种问题而不用重装系统。但是恰好我不是多么熟练的 Linux 使用者，每次出问题也是自己在网上边查边解决，有时候也会遇到那种查了几天也没能解决的问题，所以重装 Linux 这样的情景也会时常发生。那么，如果事先做了备份，这时候就能起到很大的作用了。&lt;/p&gt;</description></item></channel></rss>
