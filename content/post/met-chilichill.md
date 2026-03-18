@@ -3,7 +3,7 @@ title: "遇见 ChiliChill"
 date: 2025-04-18T21:27:03+08:00
 keywords: []
 categories: [life]
-tags: [life, music]
+tags: [music]
 mathjax: false
 
 ---

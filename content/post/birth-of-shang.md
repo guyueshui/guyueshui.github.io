@@ -3,7 +3,7 @@ title: "喜女"
 date: 2022-11-06T19:00:00+08:00
 keywords: []
 toc: false
-categories: [随笔]
+categories: [life]
 tags: [诗词曲赋]
 contentCopyright: Origin
 author: 易之
