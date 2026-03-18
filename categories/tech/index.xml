@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 06 Jul 2025 16:30:01 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p&gt;一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 水阙</title><link>https://guyueshui.github.io/categories/tech/</link><description>Recent content in Tech on 水阙</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Mar 2026 21:06:42 +0800</lastBuildDate><atom:link href="https://guyueshui.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>从零开始构建家庭共享存储</title><link>https://guyueshui.github.io/post/share-storage-with-family/</link><pubDate>Tue, 14 Mar 2023 09:24:57 +0800</pubDate><guid>https://guyueshui.github.io/post/share-storage-with-family/</guid><description>&lt;p&gt;一切都要从前几天给手机刷新 ROM，导致数据丢失说起。&lt;/p&gt;
 &lt;p&gt;前些日子，我的 RedmiK40S MIUI13 突然给我自动更新至 MIUI14，这违背了我的意愿。但这还不至于让我动刷机的年头，毕竟年事已高，不再那么想折腾手机。可这次更新，不单单是 MIUI 版本的提升，更是 Android 12 到 13 的版本升级。这直接导致了我的钛备份闪退了，并且使用钛备份还原在 a12 上备份的应用，如果勾选还原应用数据，则必然导致对应应用闪退。应用备份出了问题我是无法接受的。于是，开始上 XDA 找 ROM，随便下了几个，准备动手。&lt;/p&gt;</description></item><item><title>Swap 扩容</title><link>https://guyueshui.github.io/post/extend-swap/</link><pubDate>Fri, 24 Feb 2023 21:07:16 +0800</pubDate><guid>https://guyueshui.github.io/post/extend-swap/</guid><description>&lt;!--
 由于涉及到磁盘分区，一般来说 swap 分区在安装系统的时候就要确定。一般建议为总内存大小的一半。
 
@@ -30,8 +30,50 @@ swapon /dev/swap_partition
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id="分离编译带来的隐患"&gt;分离编译带来的隐患&lt;/h2&gt;
-&lt;p&gt;如果函数声明和定义分离，此时就有一个 pitfall。由于默认参数可以定义在函数声明（declaration）中，也可以定义在函数定义（definition）中。&lt;/p&gt;</description></item><item><title>Linux 开机无声音</title><link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link><pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate><guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid><description>&lt;h2 id="开机后扬声器无声音"&gt;开机后扬声器无声音&lt;/h2&gt;
-&lt;p&gt;问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。&lt;/p&gt;</description></item><item><title>使用 Yield 实现 Python 协程</title><link>https://guyueshui.github.io/post/python-coroutine-with-yield/</link><pubDate>Sun, 20 Mar 2022 20:44:58 +0800</pubDate><guid>https://guyueshui.github.io/post/python-coroutine-with-yield/</guid><description>&lt;p&gt;考虑如下代码：&lt;/p&gt;
+&lt;p&gt;如果函数声明和定义分离，此时就有一个 pitfall。由于默认参数可以定义在函数声明（declaration）中，也可以定义在函数定义（definition）中。&lt;/p&gt;</description></item><item><title>C++ 中的 static 关键字</title><link>https://guyueshui.github.io/post/static-in-cpp/</link><pubDate>Thu, 21 Apr 2022 23:52:04 +0800</pubDate><guid>https://guyueshui.github.io/post/static-in-cpp/</guid><description>&lt;h2 id="static-members"&gt;Static members&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c++" data-lang="c++"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// non-static member (i.e., `data` is not visible in `fun1`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="n"&gt;fun1&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;fun2&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;private&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;sata&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fun1&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// valid, equivalent to the following
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;fun1&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;静态成员不能访问非静态成员（因为静态成员独立与类的实例（即对象）而存在，为了在没有对象被创建的情况下，静态成员还是可以使用，所以不能访问非静态成员。）&lt;/li&gt;
+&lt;li&gt;同理，类的任何对象不包含静态数据成员&lt;/li&gt;
+&lt;li&gt;静态成员不与对象，不与&lt;code&gt;this&lt;/code&gt;指针发生交互，作为结果，静态成员函数不能声明为&lt;code&gt;const&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可以通过类的对象调用静态成员函数，但此调用跟对象的状态并无关系，也就是说换个对象来调用是等价的，都等价于使用类名加域作用符来调用&lt;/li&gt;
+&lt;li&gt;静态成员一般定义在类的外部，因为每个对象都共享静态成员，避免多次定义&lt;/li&gt;
+&lt;li&gt;View static member as a normal function that has nothing to do with the class, except you must use &lt;code&gt;::&lt;/code&gt; to access static members&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Linux 开机无声音</title><link>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</link><pubDate>Sat, 26 Mar 2022 18:45:16 +0800</pubDate><guid>https://guyueshui.github.io/post/linux%E5%BC%80%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3/</guid><description>&lt;h2 id="开机后扬声器无声音"&gt;开机后扬声器无声音&lt;/h2&gt;
+&lt;p&gt;问题描述：个人笔记本电脑长久以来都有一个问题，开机之后扬声器没声音，从应用层看毫无问题，所有音乐视频照常播放，能调音量，就是没声音。必须插一下耳机，耳机里有声音。然后再拔出耳机，外部扬声器也有声音了。因此使用起来并无大碍，只需要准备一个耳机，开机之后插拔一下即可。&lt;/p&gt;</description></item><item><title>Linux 笔记本触摸板水平滚动问题</title><link>https://guyueshui.github.io/post/touchpad-horiz-scroll/</link><pubDate>Fri, 25 Mar 2022 23:03:59 +0800</pubDate><guid>https://guyueshui.github.io/post/touchpad-horiz-scroll/</guid><description>&lt;p&gt;自打使用 linux 系统以来，触摸板这块的体验一只是个痛点：只支持基本的点击，双指垂直滚动。很久以来我就一直想要触摸板水平滚动的功能。今天终于实现了！&lt;/p&gt;
+&lt;h2 id="synaptics"&gt;Synaptics&lt;/h2&gt;
+&lt;p&gt;其实很久以前就照抄过一份&lt;code&gt;xf86-input-synaptics&lt;/code&gt;驱动程序的触摸板配置：&lt;/p&gt;</description></item><item><title>使用 Yield 实现 Python 协程</title><link>https://guyueshui.github.io/post/python-coroutine-with-yield/</link><pubDate>Sun, 20 Mar 2022 20:44:58 +0800</pubDate><guid>https://guyueshui.github.io/post/python-coroutine-with-yield/</guid><description>&lt;p&gt;考虑如下代码：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
@@ -134,7 +176,81 @@ swapon /dev/swap_partition
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;fa&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;以上代码的运行结果为：&lt;/p&gt;</description></item><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p&gt;诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;以上代码的运行结果为：&lt;/p&gt;</description></item><item><title>A point of python metaclass</title><link>https://guyueshui.github.io/post/python-metaclass/</link><pubDate>Sun, 12 Dec 2021 12:55:45 +0800</pubDate><guid>https://guyueshui.github.io/post/python-metaclass/</guid><description>&lt;h2 id="create-class-dynamically"&gt;Create &lt;code&gt;class&lt;/code&gt; dynamically&lt;/h2&gt;
+&lt;p&gt;Python doc says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;By default, classes are constructed using &lt;code&gt;type()&lt;/code&gt;. The class body is executed in a new namespace and the class name is bound locally to the result of &lt;code&gt;type(name, bases, namespace)&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That&amp;rsquo;s means, a &lt;code&gt;class&lt;/code&gt; statement is equivalent to the call of &lt;code&gt;type&lt;/code&gt; method with three arguments:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: name of the class&lt;/li&gt;
+&lt;li&gt;bases: tuple of the parent class (for inheritance, can be empty)&lt;/li&gt;
+&lt;li&gt;attrs: dictionary containing attributes names and values.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, the following classes are identical:&lt;/p&gt;</description></item><item><title>V3Ray 的配置笔记</title><link>https://guyueshui.github.io/post/build-your-ladder/</link><pubDate>Tue, 07 Dec 2021 22:05:42 +0800</pubDate><guid>https://guyueshui.github.io/post/build-your-ladder/</guid><description>&lt;p&gt;学生时代曾为整个课题组的师生搭建过一个梯子，稳定运行两年多，最近突然爬不上去了。
+寻思是哪里出了问题，经过一番定位，原来是之前的免费域名到期了。遂于昨晚开启修补
+之旅，无奈运气不太好，每一环节都出了问题，最终搞到凌晨 3 点才重新爬上了梯子。&lt;/p&gt;</description></item><item><title>Python Iterables</title><link>https://guyueshui.github.io/post/python-iterables/</link><pubDate>Sun, 21 Feb 2021 22:26:30 +0800</pubDate><guid>https://guyueshui.github.io/post/python-iterables/</guid><description>&lt;p&gt;Python 的迭代器（iterator）、生成器（generator）、可迭代对象（iterable），虽是老生常谈，但我毕竟要记录一下自己的见解，因有此篇。&lt;/p&gt;</description></item><item><title>Linux 的休眠</title><link>https://guyueshui.github.io/post/linux-hibernate/</link><pubDate>Mon, 13 Jul 2020 22:44:33 +0800</pubDate><guid>https://guyueshui.github.io/post/linux-hibernate/</guid><description>&lt;p&gt;先区分一下两个名词：睡眠（sleep）和休眠（hibernate）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;睡眠：将工作镜像写入内存（RAM），以便快速恢复。内存读写很快，所以睡眠的特点就是“睡得快”和“醒得快”。对于笔记本来说，合上盖子就睡了，打开盖子你的工作区间即刻就能恢复，很是方便。但是睡眠有一个缺点，就是要给内存供电，一旦断电，你的镜像数据就会丢失，工作区间将不复存在。当然这来自于内存的固有特点，建议百度 RAM。&lt;/li&gt;
+&lt;li&gt;休眠：将工作镜像写入硬盘（disk，ROM），这样你也可以恢复工作区间。只是睡下去和醒过来的时间比内存慢不少。但是，它有一个好处就是断电了也不会丢失数据。当你再次开机，系统就会从硬盘里面读取镜像，恢复你的工作区间。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>一个 really simple 的 LaTeX 宏包</title><link>https://guyueshui.github.io/post/tex-sty-basic/</link><pubDate>Sun, 26 Apr 2020 09:25:09 +0800</pubDate><guid>https://guyueshui.github.io/post/tex-sty-basic/</guid><description>&lt;p&gt;众所周知，LaTeX 是一个高效易用的排版软件，基本上只要找到合适的模板，剩下的就只剩码字了。比起 MS Word，简直不知道高到哪里去。就拿最近写论文的事来说，我先用 TeX 码好字，然后要投的那个刊需要用 Word 提交。转格式转了我一下午带一晚上，太痛苦了。深刻的体会到什么叫自以为是，MS Word 自作聪明地给你调格式。当你敲下回车之后，天知道它又会自动帮你做些什么？！&lt;/p&gt;</description></item><item><title>Gnome 应用启动缓慢</title><link>https://guyueshui.github.io/post/gnome-app-slow-start/</link><pubDate>Wed, 01 Apr 2020 23:01:36 +0800</pubDate><guid>https://guyueshui.github.io/post/gnome-app-slow-start/</guid><description>&lt;p&gt;先看环境：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;$ neofetch
+ -` yychi@MiBook-Air 
+ .o+` ---------------- 
+ `ooo/ OS: Arch Linux x86_64 
+ `+oooo: Host: TM1604 XMAKB3M0P0202 
+ `+oooooo: Kernel: 5.5.13-arch2-1 
+ -+oooooo+: Uptime: 5 mins 
+ `/:-:++oooo+: Packages: 1153 (pacman) 
+ `/++++/+++++++: Shell: zsh 5.8 
+ `/++++++++++++++: Resolution: 1920x1080 
+ `/+++ooooooooooooo/` WM: i3 
+ ./ooosssso++osssssso+` Theme: Adwaita [GTK2] 
+ .oossssso-````/ossssss+` Icons: Adwaita [GTK2] 
+ -osssssso. :ssssssso. Terminal: urxvt 
+ :osssssss/ osssso+++. Terminal Font: DejaVu Sans Mono for Powerline 
+ /ossssssss/ +ssssooo/- CPU: Intel i5-7200U (4) @ 3.100GHz 
+ `/ossssso+/:- -:/+osssso+- GPU: NVIDIA GeForce MX150 
+ `+sso+:-` `.-/+oso: GPU: Intel HD Graphics 620 
+ `++:. `-/+/ Memory: 1608MiB / 7881MiB 
+ .` `/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再看问题：Gnome 系软件（gedit, baobab, nautilus 等）启动龟速，通常需要等待 10-30s.&lt;/p&gt;</description></item><item><title>Metapost 学习笔记</title><link>https://guyueshui.github.io/post/metapost/</link><pubDate>Tue, 31 Mar 2020 09:20:44 +0800</pubDate><guid>https://guyueshui.github.io/post/metapost/</guid><description>&lt;p&gt;想必你也有过这样的疑问，中学数学书上的那些精美的作图是如何画出来的？一直以来，我都想学习一门绘图语言，只是久久未能行动 orz&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3812944475,2492602811&amp;amp;fm=26&amp;amp;gp=0.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;闲话少叙，开始学习！&lt;/p&gt;</description></item><item><title>转义字符到底是什么</title><link>https://guyueshui.github.io/post/what-is-escape-character/</link><pubDate>Wed, 18 Mar 2020 22:41:06 +0800</pubDate><guid>https://guyueshui.github.io/post/what-is-escape-character/</guid><description>&lt;p&gt;转义字符到底是啥？&lt;/p&gt;
+&lt;p&gt;实不相瞒我就是因为不知道才写下这篇文章，不，准确的说是这篇笔记 orz，既然是笔记，无所谓抄不抄了。每次说到转义字符，多少有点模糊，所以不如记下这篇笔记，以后忘了直接翻出来看看，复习起来要快一些。&lt;/p&gt;</description></item><item><title>Brief Introduction to Shell Script</title><link>https://guyueshui.github.io/post/shell-intro/</link><pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/shell-intro/</guid><description>&lt;p&gt;This article is mainly refered to &amp;ldquo;The Linux Command Line&amp;rdquo;&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. I just take
+some most important things out of the book.&lt;/p&gt;
+&lt;h2 id="expansion"&gt;Expansion&lt;/h2&gt;
+&lt;p&gt;Each time you type a command line and press the &lt;kbd&gt;Enter&lt;/kbd&gt; key, bash
+performs several processes upon the text before it carries out your command.
+Just look an example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;me@linuxbox ~&lt;span class="o"&gt;]&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Desktop Documents ls-output.txt Music Pictures Public Templates Videos
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Why not display an asterisk? That&amp;rsquo;s &lt;strong&gt;expansion&lt;/strong&gt;! &lt;code&gt;*&lt;/code&gt; &lt;em&gt;expands&lt;/em&gt; to all files in
+current directory.&lt;/p&gt;</description></item><item><title>Nueral Network Learning Notes</title><link>https://guyueshui.github.io/post/nn-notes/</link><pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/nn-notes/</guid><description>&lt;p&gt;Hello here.&lt;/p&gt;
+&lt;h2 id="cnn"&gt;CNN&lt;/h2&gt;
+&lt;h3 id="conv-layer"&gt;Conv Layer&lt;/h3&gt;
+&lt;p&gt;Conv Layer is usually decreasing the input size, i.e., the output size may less or equal than input.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;take a volume as input: height x weight x depth, e.g., 32x32x3. Typically think an image having three channels: R, G, B.&lt;/li&gt;
+&lt;li&gt;a filter has the same depth as the input volume, e.g., 5x5x3 (since the filter always has a same depth as input vloume, the depth of the filter is sometimes omitted).&lt;/li&gt;
+&lt;li&gt;each filter convolving with the input will produce an activation map, two filters will produce two, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The result of the convolution at each location is just a scalar number (the result of taking a dot product between the filter and a small chunk of the image, i.e., $5\times 5 \times 3 = 75$-dimensional dot product + bias: $w^\top x + b$), which totally yields a 2D matrix (called &lt;strong&gt;activation map&lt;/strong&gt;) as the filter sliding over the image. For example, 32x32x3 image convolved by 5x5x3 filter will yield a 28x28 activation map.&lt;/p&gt;</description></item><item><title>服务端开发预备知识</title><link>https://guyueshui.github.io/post/server-develop-preliminaries/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/server-develop-preliminaries/</guid><description>&lt;h2 id="操作系统"&gt;操作系统&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘自《程序员面试白皮书》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="进程-vs线程"&gt;进程 vs.线程&lt;/h3&gt;
+&lt;p&gt;进程（process）与线程（thread）最大的区别是进程拥有自己的地址空间，某进程内的线程对于其他的进程不可见，即进程 A 不能通过传地址的方式直接读写进程 B 的存储区域。进程之间的通信需要通过进程间通信（Inter-process communication, IPC）。与之相对的，同一进程的各线程间可以直接通过传递地址或全局变量的方式传递信息。&lt;/p&gt;</description></item><item><title>多线程学习笔记</title><link>https://guyueshui.github.io/post/concurrent-programming/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/concurrent-programming/</guid><description>&lt;p&gt;开一篇多线程学习笔记，记录下在实习过程中遇到的一些简单问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：这是一篇以学习笔记，难免有误，主要写给自己参考。请酌情判别，如有错误，也欢迎指正！&lt;/p&gt;</description></item><item><title>C++ 学习笔记</title><link>https://guyueshui.github.io/post/cpp-learn/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://guyueshui.github.io/post/cpp-learn/</guid><description>&lt;p&gt;诚如是，Life is too short to learn c++. 此篇记录一些我在学习 cpp 过程中遇到的一些知识点，仅作记录并梳理之效。里面可能会有大量参考其他网络博客，如有侵权，请联系我删除之。&lt;/p&gt;
 &lt;h2 id="reactor-vs-proactor"&gt;Reactor v.s. Proactor&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;epll/wait: reactor 模式，不停轮询，发现有事做，就做！&lt;/li&gt;
@@ -1408,7 +1524,7 @@ Object-like macros can be defined in one of two ways:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the above snippet, fcnPtr is a pointer to a function that has no parameters and returns an integer. fcnPtr can point to any function that matches this type.&lt;/p&gt;
 &lt;p&gt;To make a const function pointer, the const goes after the asterisk:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;fcnPtr&lt;/span&gt;&lt;span class="p"&gt;)();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you put the const before the int, then that would indicate the function being pointed to would return a const int.&lt;/p&gt;</description></item><item><title>GDB 基本用法</title><link>https://guyueshui.github.io/post/basic-gdb-usages/</link><pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate><guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid><description>&lt;p&gt;废话以后有时间再加。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you put the const before the int, then that would indicate the function being pointed to would return a const int.&lt;/p&gt;</description></item><item><title>博客迁移记录</title><link>https://guyueshui.github.io/post/blog-trans/</link><pubDate>Sun, 25 Aug 2019 16:00:50 +0800</pubDate><guid>https://guyueshui.github.io/post/blog-trans/</guid><description>&lt;p&gt;终于还是干了！很早以前就有了这个想法，起初使用 &lt;a href="https://hexo.io"&gt;Hexo&lt;/a&gt; 搭的博客，折腾了一段时间，选了一个不错的主题 &lt;a href="https://github.com/Molunerfinn/hexo-theme-melody"&gt;Melody&lt;/a&gt;。一切都进行的很好，直到有一天又发现 &lt;a href="https://gohugo.io"&gt;Hugo&lt;/a&gt; 这么个东西，登时就忍不住了，不是说原来的不好，二十 Hugo 太特么快了，无论是渲染速度还是博客生成，几乎就像是在本地打开 html 一样。相比之下 Hexo 的生成速度就显得很慢了，思来想去，博客应该更多关注内容，之前那个配置的有些花哨了，现在换了 Hugo，也使用了一个比较简单的主题，相比之下更轻量，打开速度更快，以后就该专注于内容了。这里烧纸纪念下一下我之前的皮肤：&lt;/p&gt;</description></item><item><title>GDB 基本用法</title><link>https://guyueshui.github.io/post/basic-gdb-usages/</link><pubDate>Sun, 18 Aug 2019 16:14:24 +0000</pubDate><guid>https://guyueshui.github.io/post/basic-gdb-usages/</guid><description>&lt;p&gt;废话以后有时间再加。&lt;/p&gt;
 &lt;p&gt;首先编译时开启调试选项：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1485,7 +1601,8 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 &lt;p&gt;Note:&lt;/p&gt;</description></item><item><title>Polybar 的配置笔记</title><link>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 16 Jan 2019 21:33:17 +0000</pubDate><guid>https://guyueshui.github.io/post/polybar-%E7%9A%84%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;前略。&lt;/p&gt;
 &lt;p&gt;今年早些时候，从 Gnome 换到 i3，原因是因为原来的 gnome 被我弄崩溃了。一时难以解决，又想到之前好几次隐约感觉到 gnome 的不稳定，一气之下决定换一个轻量，稳定的，可定制的窗口管理工具。至于为什么换 i3？去知乎吸收一下各个管理器间的哲学就知道了。以前从 Windows 转 Linux，也是这么过来的，知乎真是个好地方！&lt;/p&gt;</description></item><item><title>在 Beamer 中使用参考文献</title><link>https://guyueshui.github.io/post/use-reference-in-beamer/</link><pubDate>Thu, 03 Jan 2019 16:05:47 +0000</pubDate><guid>https://guyueshui.github.io/post/use-reference-in-beamer/</guid><description>&lt;p&gt;&lt;font color="red"&gt;Needs polish!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;前略。&lt;/p&gt;
-&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description></item><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p&gt;&lt;font color="red"&gt;This article needs polish, do not truely trust it!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;Beamer 引用参考文献与文章类似，只是一开始听说 beamer 不支持 &lt;code&gt;\cite&lt;/code&gt;，搞得我走了不少弯路（其实是可以的）。&lt;/p&gt;</description></item><item><title>常用结论的证明记录</title><link>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</link><pubDate>Thu, 20 Dec 2018 19:18:29 +0000</pubDate><guid>https://guyueshui.github.io/post/%E4%B8%80%E4%BA%9B%E6%8E%A8%E5%AF%BC/</guid><description>&lt;h2 id="高斯分布的微分熵"&gt;高斯分布的微分熵&lt;/h2&gt;
+&lt;p&gt;$X \sim \mathcal{N}(\mu, \sigma^2)~$，$\displaystyle f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$，其微分熵推导过程如下：&lt;/p&gt;</description></item><item><title>Vim Quick Reference</title><link>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link><pubDate>Thu, 20 Dec 2018 19:17:54 +0000</pubDate><guid>https://guyueshui.github.io/post/vim%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid><description>&lt;p&gt;&lt;font color="red"&gt;This article needs polish, do not truely trust it!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;Vim is so-called the god of editors, but not so friendly to new users. Today we will cover some techniques and trick of vim, for further reference.&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h2 id="general-pattern"&gt;General Pattern&lt;/h2&gt;
@@ -1522,7 +1639,7 @@ That is why we can write easily a procedure to compute the fibs. If we use MIT S
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这样的话就可以使用自定义的字体 Martel Sans 了。但是这仅限于在本地使用，因为别人的计算机中可能没有这个字体。所以必须制定网页去哪儿加载这个字体。一个方法是，将你系统的字体文件复制到博客根目录的 &lt;code&gt;source/fonts&lt;/code&gt; 文件夹。&lt;/p&gt;</description></item><item><title>HTML 美化 Markdown 排版</title><link>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</link><pubDate>Sun, 16 Dec 2018 00:04:38 +0000</pubDate><guid>https://guyueshui.github.io/post/html-%E7%BE%8E%E5%8C%96-markdown-%E6%8E%92%E7%89%88/</guid><description>&lt;p&gt;&lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;Markdown&lt;/a&gt; 是一门轻量标记型语言，因其简单易用而受众甚广。但是正因其简单，故而也有一部分局限性（虽然说它保留的即是最常用、最基本的排版功能）。本文就来说说在使用 Markdown 排版的时候，如何引入一点 HTML 的技巧来帮助我们排版的更加好看。&lt;/p&gt;</description></item><item><title>使用 Git 管理配置文件</title><link>https://guyueshui.github.io/post/manage-dotfiles-by-git/</link><pubDate>Fri, 16 Nov 2018 10:32:19 +0000</pubDate><guid>https://guyueshui.github.io/post/manage-dotfiles-by-git/</guid><description>&lt;p&gt;对于 Linux 用户，在 &lt;code&gt;$HOME&lt;/code&gt; 文件夹下，一般都有大量的隐藏文件，形如&lt;code&gt;.conf&lt;/code&gt;,&lt;code&gt;.xxxrc&lt;/code&gt;等，这些都是程序的配置文件。很多人也许花了一个下午，一天，甚至一个星期，折腾某某程序的配置文件。如果这些轻易丢失了，那就是浪费生命了！所以，如何将这些文件备份，成了很多人必须要问的一个问题。&lt;/p&gt;</description></item><item><title>Android 刷机的一般步骤</title><link>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</link><pubDate>Tue, 18 Sep 2018 23:00:05 +0000</pubDate><guid>https://guyueshui.github.io/post/android%E5%88%B7%E6%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</guid><description>&lt;h2 id="1-事前准备"&gt;1. 事前准备&lt;/h2&gt;
 &lt;hr&gt;
-&lt;p&gt;先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
+&lt;p&gt;先想好为什么要刷机？想清楚了吗？真的想清楚了吗！好的，接下来我们要做的事应该是打开一堆网页，一堆对应自己机型的刷机教程帖，还要做好重要数据备份，确保“不成功，也不能成仁”。好的，那就开始吧：&lt;/p&gt;</description></item><item><title>记一次重装 Linux</title><link>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link><pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate><guid>https://guyueshui.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid><description>&lt;p&gt;放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 &lt;code&gt;startx&lt;/code&gt; 启动 gnome-session 失败。几经解决未果，只好重装！&lt;/p&gt;</description></item><item><title>Newifi Mini 安装 PandoraBox</title><link>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</link><pubDate>Tue, 21 Feb 2017 16:01:55 +0000</pubDate><guid>https://guyueshui.github.io/post/newifi-mini%E5%AE%89%E8%A3%85pandorabox/</guid><description>&lt;p&gt;首先 Newifi mini 是一款很小巧美观的路由器，颜值即是正义嘛。再加上性价比高，易于刷写第三方系统，所以嘛，值得一买。&lt;/p&gt;
 &lt;h2 id="规格参数"&gt;规格参数&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;WAN(10/100Mbps)&lt;/li&gt;
