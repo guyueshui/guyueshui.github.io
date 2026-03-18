@@ -1,7 +1,7 @@
 ---
 title: 瞎说 KMP 算法
 date: 2019-04-04 00:05:41
-categories: ['Notes']
+categories: [tech]
 tags: [算法，模式匹配]
 ---
 

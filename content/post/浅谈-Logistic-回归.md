@@ -1,7 +1,7 @@
 ---
 title: 浅谈 Logistic 回归
 date: 2019-03-15 22:59:39
-categories: ['Notes']
+categories: [tech]
 tags: ['math', 机器学习]
 mathjax: true
 

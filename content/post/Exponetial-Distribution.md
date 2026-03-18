@@ -2,7 +2,7 @@
 title: Exponential Distribution
 date: 2018-12-25 22:21:49
 lastmod: 2019-08-25
-categories: ['Notes']
+categories: [tech]
 tags: ['math', 'probability']
 mathjax: true
 

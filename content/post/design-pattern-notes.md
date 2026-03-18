@@ -3,7 +3,7 @@ title: "设计模式学习笔记"
 date: 2019-09-02
 lastmod: 2019-09-02T11:05:10+08:00
 keywords: ['设计模式']
-categories: ['Notes']
+categories: [tech]
 tags: [设计模式]
 mathjax: false
 

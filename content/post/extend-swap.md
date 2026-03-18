@@ -2,8 +2,8 @@
 title: "Swap 扩容"
 date: 2023-02-24T21:07:16+08:00
 keywords: []
-categories: [tech, linux]
-tags: []
+categories: [tech]
+tags: [linux]
 draft: false
 mathjax: false
 

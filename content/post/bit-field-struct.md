@@ -1,7 +1,7 @@
 ---
 title: 位域结构体简介
 date: 2019-08-06 20:43:02
-categories: ['Notes']
+categories: [tech]
 tags: [cpp, 结构体, 位运算]
 
 ---

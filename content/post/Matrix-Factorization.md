@@ -1,7 +1,7 @@
 ---
 title: Matrix Factorization
 date: 2019-01-03 21:07:38
-categories: ['Notes']
+categories: [tech]
 tags: ['math','algebra']
 mathjax: true
 ---

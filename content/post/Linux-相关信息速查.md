@@ -2,8 +2,8 @@
 title: Linux 使用指北
 date: 2019-03-07 19:22:02
 lastmod: 2019-09-16
-categories: ['Linux']
-tags: [常用命令,'reference']
+categories: [tech]
+tags: [常用命令,reference,linux]
 
 ---
 

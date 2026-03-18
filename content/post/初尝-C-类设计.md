@@ -1,7 +1,7 @@
 ---
 title: 初尝 C++ 类设计
 date: 2019-04-02 21:31:40
-categories: ['Notes']
+categories: [tech]
 tags: ['cpp']
 ---
 

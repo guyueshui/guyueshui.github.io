@@ -1,7 +1,7 @@
 ---
 title: 面试经历及笔记
 date: 2019-07-08 20:14:17
-categories: ['Notes']
+categories: [tech]
 tags: ['interview']
 mathjax: true
 
