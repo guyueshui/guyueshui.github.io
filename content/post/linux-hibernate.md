@@ -2,8 +2,8 @@
 title: "Linux 的休眠"
 date: 2020-07-13T22:44:33+08:00
 keywords: []
-categories: [linux]
-tags: [hibernate]
+categories: [tech]
+tags: [hibernate,linux]
 draft: false
 mathjax: false
 

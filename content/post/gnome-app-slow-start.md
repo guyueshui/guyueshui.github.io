@@ -3,8 +3,8 @@ title: "Gnome 应用启动缓慢"
 date: 2020-04-01T23:01:36+08:00
 lastmod: 2020-04-01T23:01:36+08:00
 keywords: []
-categories: [Notes]
-tags: [折腾]
+categories: [tech]
+tags: [折腾,linux]
 draft: false
 mathjax: false
 

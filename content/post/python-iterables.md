@@ -3,7 +3,7 @@ title: "Python Iterables"
 date: 2021-02-21T22:26:30+08:00
 lastmod: 2021-02-21T22:26:30+08:00
 keywords: []
-categories: [notes]
+categories: [tech]
 tags: [python]
 draft: false
 mathjax: false

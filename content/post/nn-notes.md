@@ -3,7 +3,7 @@ title: "Nueral Network Learning Notes"
 date: 2019-10-29
 lastmod: 2019-10-29T10:45:03+08:00
 keywords: []
-categories: [notes]
+categories: [tech]
 tags: [cnn]
 mathjax: true
 

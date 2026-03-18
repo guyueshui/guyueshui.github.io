@@ -2,7 +2,7 @@
 title: "博客迁移记录"
 date: 2019-08-25T16:00:50+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [字体, 美化, 个性化]
 mathjax: false
 

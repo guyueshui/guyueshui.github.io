@@ -3,7 +3,7 @@ title: "C++ 中的 static 关键字"
 date: 2022-04-21T23:52:04+08:00
 lastmod: 2022-04-21T23:52:04+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [cpp,]
 draft: false
 mathjax: false

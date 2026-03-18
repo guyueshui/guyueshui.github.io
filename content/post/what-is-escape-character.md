@@ -3,7 +3,7 @@ title: "转义字符到底是什么"
 date: 2020-03-18T22:41:06+08:00
 lastmod: 2020-03-18T22:41:06+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [转义]
 mathjax: false
 

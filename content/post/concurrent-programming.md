@@ -3,7 +3,7 @@ title: "多线程学习笔记"
 date: 2019-08-29
 lastmod: 2019-08-29T21:40:23+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [多线程, 并发]
 mathjax: false
 

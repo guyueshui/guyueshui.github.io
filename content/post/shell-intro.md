@@ -2,7 +2,7 @@
 title: "Brief Introduction to Shell Script"
 date: 2019-11-22
 lastmod: 2019-11-22T16:59:46+08:00
-categories: [Notes]
+categories: [tech]
 tags: [shell]
 mathjax: false
 

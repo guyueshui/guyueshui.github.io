@@ -3,7 +3,7 @@ title: "一个 really simple 的 LaTeX 宏包"
 date: 2020-04-26T09:25:09+08:00
 lastmod: 2021-03-11
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [排版,latex]
 draft: false
 mathjax: false

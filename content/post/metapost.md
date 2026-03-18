@@ -3,7 +3,7 @@ title: "Metapost 学习笔记"
 date: 2020-03-31T09:20:44+08:00
 lastmod: 2020-03-31T09:20:44+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: [metapost, 作图]
 draft: false
 mathjax: false

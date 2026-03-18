@@ -2,7 +2,7 @@
 title: "V3Ray 的配置笔记"
 date: 2021-12-07T22:05:42+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: []
 mathjax: false
 

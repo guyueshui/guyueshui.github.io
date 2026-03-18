@@ -3,8 +3,8 @@ title: "Linux 笔记本触摸板水平滚动问题"
 date: 2022-03-25T23:03:59+08:00
 lastmod: 2022-03-25T23:03:59+08:00
 keywords: []
-categories: [linux]
-tags: []
+categories: [tech]
+tags: [linux]
 draft: false
 mathjax: false
 

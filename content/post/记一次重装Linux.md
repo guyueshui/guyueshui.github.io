@@ -1,7 +1,8 @@
 ---
 title: 记一次重装 Linux
 date: 2018-08-13 10:07:05
-categories: [linux] 
+categories: [tech]
+tags: [linux]
 
 ---
 

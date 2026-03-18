@@ -3,7 +3,7 @@ title: "A point of python metaclass"
 date: 2021-12-12T12:55:45+08:00
 lastmod: 2021-12-12T12:55:45+08:00
 keywords: [metaclass]
-categories: [Notes]
+categories: [tech]
 tags: [python]
 mathjax: false
 

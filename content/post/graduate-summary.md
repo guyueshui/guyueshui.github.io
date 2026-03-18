@@ -3,7 +3,7 @@ title: "毕业总结"
 date: 2020-08-08T23:47:48+08:00
 lastmod: 2020-08-08T23:47:48+08:00
 keywords: []
-categories: [Notes]
+categories: [tech]
 tags: []
 draft: true
 mathjax: false
