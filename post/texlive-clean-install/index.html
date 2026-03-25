@@ -1,0 +1,121 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Texlive 精简安装 - 水阙</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Yychi"><meta name=description content="时隔多年，竟然需要再次安装 Texlive 了。上一次装还是上学那会儿，在中科大镜像网站下载 texlive-xxxx.iso，挂载到本地进行安装。当时就是完全安装，也不知道哪个可以不装，不装会否影响使用等等。所以一股脑全量安装，装完大概占用小 10GB 空间吧，还是很重量级的！好在前段时间搜索教程发现可以精简安装，遂决定动手试试。
+"><meta name=keywords content="水阙,yychi"><meta name=generator content="Hugo 0.159.0 with theme even"><link rel=canonical href=https://guyueshui.github.io/post/texlive-clean-install/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.f805e9dfc23776466708ff9554e052e8079ac64e20c374bc49fe463d6f8514ab.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=/css/even-custom.css><link rel=preconnect href=https://chinese-fonts-cdn.deno.dev><link rel=stylesheet href=https://chinese-fonts-cdn.deno.dev/packages/syst/dist/SourceHanSerifCN/result.css><meta property="og:url" content="https://guyueshui.github.io/post/texlive-clean-install/"><meta property="og:site_name" content="水阙"><meta property="og:title" content="Texlive 精简安装"><meta property="og:description" content="时隔多年，竟然需要再次安装 Texlive 了。上一次装还是上学那会儿，在中科大镜像网站下载 texlive-xxxx.iso，挂载到本地进行安装。当时就是完全安装，也不知道哪个可以不装，不装会否影响使用等等。所以一股脑全量安装，装完大概占用小 10GB 空间吧，还是很重量级的！好在前段时间搜索教程发现可以精简安装，遂决定动手试试。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-03-24T22:30:28+08:00"><meta property="article:modified_time" content="2026-03-25T14:01:30+08:00"><meta property="article:tag" content="Tex"><meta itemprop=name content="Texlive 精简安装"><meta itemprop=description content="时隔多年，竟然需要再次安装 Texlive 了。上一次装还是上学那会儿，在中科大镜像网站下载 texlive-xxxx.iso，挂载到本地进行安装。当时就是完全安装，也不知道哪个可以不装，不装会否影响使用等等。所以一股脑全量安装，装完大概占用小 10GB 空间吧，还是很重量级的！好在前段时间搜索教程发现可以精简安装，遂决定动手试试。"><meta itemprop=datePublished content="2026-03-24T22:30:28+08:00"><meta itemprop=dateModified content="2026-03-25T14:01:30+08:00"><meta itemprop=wordCount content="1132"><meta itemprop=keywords content="Tex"><meta name=twitter:card content="summary"><meta name=twitter:title content="Texlive 精简安装"><meta name=twitter:description content="时隔多年，竟然需要再次安装 Texlive 了。上一次装还是上学那会儿，在中科大镜像网站下载 texlive-xxxx.iso，挂载到本地进行安装。当时就是完全安装，也不知道哪个可以不装，不装会否影响使用等等。所以一股脑全量安装，装完大概占用小 10GB 空间吧，还是很重量级的！好在前段时间搜索教程发现可以精简安装，遂决定动手试试。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Yychi's Blog</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=https://guyueshui.github.io/quartz><li class=mobile-menu-item>Vault</li></a><a href=/search/><li class=mobile-menu-item>Search</li></a><a href=/links/><li class=mobile-menu-item>More</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/sketch/><li class=mobile-menu-item>Sketch</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Yychi's Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=https://guyueshui.github.io/quartz>Vault</a></li><li class=menu-item><a class=menu-item-link href=/search/>Search</a></li><li class=menu-item><a class=menu-item-link href=/links/>More</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/sketch/>Sketch</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Texlive 精简安装</h1><div class=post-meta><span class=post-time>March 24, 2026</span><div class=post-category><a href=/categories/tech/>tech</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> times read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#细化步骤>细化步骤</a></li><li><a href=#tips>Tips</a></li><li><a href=#附录>附录</a><ul><li><a href=#texliveprofile>texlive.profile</a></li><li><a href=#常用宏包>常用宏包</a></li></ul></li><li><a href=#references>References</a></li></ul></nav></div></div><div class=post-content><p>时隔多年，竟然需要再次安装 Texlive 了。上一次装还是上学那会儿，在中科大镜像网站下载 texlive-xxxx.iso，挂载到本地进行安装。当时就是完全安装，也不知道哪个可以不装，不装会否影响使用等等。所以一股脑全量安装，装完大概占用小 10GB 空间吧，还是很重量级的！好在前段时间搜索教程发现可以精简安装，遂决定动手试试。</p><p>其实 texlive 官方提供的安装脚本已经非常好用。精简安装其实就是根据自己的使用场景，去掉一些不太可能用得上的包。这次选择了网络安装，而非下载 iso 文件。其实网络安装就是将安装脚本下载下来，然后运行脚本，根据 TUI 的配置，然后后台连接指定镜像网站下载选中的包。配置本身并不复杂，而且选好之后可以将配置保存成一个叫<code>texlive.profile</code>的文件，安装脚本支持从这个文件中读取配置，进行安装。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 读取profile中的配置进行安装</span>
+</span></span><span class=line><span class=cl>./install-tl --profile texlive.profile
+</span></span></code></pre></td></tr></table></div></div><h2 id=细化步骤>细化步骤</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>curl -LO https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+</span></span><span class=line><span class=cl>tar -zxvf install-tl-unx.tar.gz
+</span></span><span class=line><span class=cl><span class=nb>cd</span> install-tl-*  <span class=c1># 目录具体名称包含日期</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 指定镜像、安装目录、不安装src tree</span>
+</span></span><span class=line><span class=cl>./install-tl --repository<span class=o>=</span>https://mirrors.shanghaitech.edu.cn/CTAN/systems/texlive/tlnet --texdir<span class=o>=</span>~/.texlive --no-src-install
+</span></span></code></pre></td></tr></table></div></div><p>然后进入 tui 界面，直接按 C 进入 collection 选择模式，取消勾选下列选项<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><pre tabindex=0><code>deghijkstuvwxyznoABCEHIKLMNS
+</code></pre><p>按<code>I</code>进行安装。最后一步将可执行文件链接到系统目录可能要提权，安装完后可以执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 在系统path中创建软链接，通常是/usr/local/bin</span>
+</span></span><span class=line><span class=cl>sudo TEXLIVE_INSATLL_PATH/bin/tlmgr path add
+</span></span><span class=line><span class=cl>tmlgr option showall <span class=c1># 查看相关信息</span>
+</span></span></code></pre></td></tr></table></div></div><p>安装完成后空间占用~1.3GB，比起全量安装小太多了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ <span class=nb>cd</span> ~/.texlive
+</span></span><span class=line><span class=cl>$ du -hd1
+</span></span><span class=line><span class=cl>197M    ./bin
+</span></span><span class=line><span class=cl>967M    ./texmf-dist
+</span></span><span class=line><span class=cl>35M     ./tlpkg
+</span></span><span class=line><span class=cl>8.0K    ./texmf-config
+</span></span><span class=line><span class=cl>33M     ./texmf-var
+</span></span><span class=line><span class=cl>116K    ./texmf-local
+</span></span><span class=line><span class=cl>1.3G    .
+</span></span></code></pre></td></tr></table></div></div><h2 id=tips>Tips</h2><p>安装完成后，安装目录<code>~/.texlive</code>中会包含，</p><ul><li>install-tl.log：安装日志，里面包含启动命令，texlive 环境变量，及所有安装的宏包信息，非常有用。可以指导下次安装。</li><li>tlpkg/textlive.profile：之前提到的安装配置，如果有这个文件，直接运行<code>./install-tl -profile texlive.profile</code>即可安装（镜像链接还是要额外指定的），无需进入 tui 界面。</li></ul><p>后续如果有升级，装包，卸载，备份的需求，均可以使用自带的包管理器<code>tlmgr</code>实现。详询</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>tlmgr --help <span class=p>|</span> less
+</span></span></code></pre></td></tr></table></div></div><h2 id=附录>附录</h2><h3 id=texliveprofile>texlive.profile</h3><pre tabindex=0><code># texlive.profile written on Thu Mar 19 14:05:24 2026 UTC
+# It will NOT be updated and reflects only the
+# installation profile at installation time.
+selected_scheme scheme-custom
+TEXDIR /home/yychi/.texlive
+TEXMFCONFIG ~/.texlive2026/texmf-config
+TEXMFHOME ~/texmf
+TEXMFLOCAL /home/yychi/.texlive/texmf-local
+TEXMFSYSCONFIG /home/yychi/.texlive/texmf-config
+TEXMFSYSVAR /home/yychi/.texlive/texmf-var
+TEXMFVAR ~/.texlive2026/texmf-var
+binary_x86_64-linux 1
+collection-basic 1
+collection-bibtexextra 1
+collection-binextra 1
+collection-fontsrecommended 1
+collection-langchinese 1
+collection-langcjk 1
+collection-langenglish 1
+collection-latex 1
+collection-latexrecommended 1
+collection-mathscience 1
+collection-pictures 1
+collection-plaingeneric 1
+collection-xetex 1
+instopt_adjustpath 1
+instopt_adjustrepo 1
+instopt_letter 0
+instopt_portable 0
+instopt_write18_restricted 1
+tlpdbopt_autobackup 1
+tlpdbopt_backupdir tlpkg/backups
+tlpdbopt_create_formats 1
+tlpdbopt_desktop_integration 1
+tlpdbopt_file_assocs 1
+tlpdbopt_generate_updmap 0
+tlpdbopt_install_docfiles 0
+tlpdbopt_install_srcfiles 0
+tlpdbopt_post_code 1
+tlpdbopt_sys_bin /usr/local/bin
+tlpdbopt_sys_info /usr/local/info
+tlpdbopt_sys_man /usr/local/man
+tlpdbopt_w32_multi_user 1
+</code></pre><h3 id=常用宏包>常用宏包</h3><p>使用 tlmgr 单独安装的，会在日志文件<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>中留下记录。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ grep install texmf-var/web2c/tlmgr.log <span class=p>|</span> awk <span class=s1>&#39;{print $NF}&#39;</span>
+</span></span><span class=line><span class=cl>graphbox
+</span></span><span class=line><span class=cl>wrapfig
+</span></span><span class=line><span class=cl>makecell
+</span></span><span class=line><span class=cl>titlesec
+</span></span><span class=line><span class=cl>tcolorbox
+</span></span><span class=line><span class=cl>multirow
+</span></span><span class=line><span class=cl>fontawesome
+</span></span><span class=line><span class=cl>realscripts
+</span></span><span class=line><span class=cl>enumitem
+</span></span></code></pre></td></tr></table></div></div><h2 id=references>References</h2><ul><li><a href=https://bithesis.bitnp.net/guide/getting-started.html#%E7%B2%BE%E7%AE%80%E5%AE%89%E8%A3%85%E5%86%85%E5%AE%B9>北京理工大学社区论文模板教程</a></li><li>谢益辉的安装脚本：https://gist.github.com/yihui/7ae1144e45063c4957e5c1f6f67039f4</li><li><a href=https://tug.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf>https://tug.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf</a></li><li>主要参考：https://www.cnblogs.com/eslzzyl/p/17358405.html</li></ul><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://www.cnblogs.com/eslzzyl/p/17358405.html>https://www.cnblogs.com/eslzzyl/p/17358405.html</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>通常是 <code>~/.texlive/texmf-var/web2c/tlmgr.log</code>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Yychi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>March 25, 2026
+<a href=https://github.com/guyueshui/guyueshui.github.io/commit/c612925f70a8bfe4f706b1323ee43709fd9e01e8 title="new article: texlive clean install">(c612925f)</a></span></p><p class=copyright-item><span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/tex/>tex</a></div><nav class=post-nav><a class=next href=/post/meaning-of-surfing/><span class="next-text nav-default">网上冲浪的意义</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://giscus.app/client.js data-repo=guyueshui/guyueshui.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkxNDI4MTY5NTE=" data-category=Ideas data-category-id=DIC_kwDOCIM2t84CW4nN data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:guyueshui002@gmail.com class="iconfont icon-email" title=email></a><a href=https://github.com/guyueshui class="iconfont icon-github" title=github></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span><span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
+2018 -
+2026<span class=heart><i class="iconfont icon-heart"></i></span><span>Yychi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
