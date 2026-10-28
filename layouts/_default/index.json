@@ -1,13 +1,20 @@
-{{- $.Scratch.Add "index" slice -}}
+{{- $index := slice -}}
 {{- range .Site.RegularPages -}}
-    {{- $.Scratch.Add "index" 
-        (dict
-            "title" .Title
-            "tags" .Params.tags
-            "categories" .Params.categories
-            "contents" .Plain
-            "permalink" .Permalink
-        )
+  {{- if and (ne .Params.searchExclude true) (ne .Layout "search") (ne .Type "search") -}}
+    {{- $content := .Plain | htmlUnescape | replaceRE "\\s+" " " -}}
+    {{- $summary := .Summary | plainify | htmlUnescape | replaceRE "\\s+" " " -}}
+    {{- $index = $index | append (dict
+        "title" .Title
+        "url" .RelPermalink
+        "permalink" .Permalink
+        "date" (.Date.Format "2006-01-02")
+        "timestamp" (.Date.Unix)
+        "tags" .Params.tags
+        "categories" .Params.categories
+        "summary" $summary
+        "content" $content
+      )
     -}}
+  {{- end -}}
 {{- end -}}
-{{- $.Scratch.Get "index" | jsonify -}}
+{{- $index | jsonify -}}

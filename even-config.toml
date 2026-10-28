@@ -40,11 +40,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [[menu.main]]
   name = "Vault"
-  weight = 1
+  weight = 2
   url = "https://guyueshui.github.io/quartz"
 [[menu.main]]
   name = "Search"
-  weight = 2
+  weight = 1
   identifier = "search"
   pageRef = "/search"
 [[menu.main]]
@@ -131,8 +131,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   # Link custom CSS and JS assets
   # (relative to /static/css and /static/js respectively)
-  customCSS = ["even-custom.css"]
-  customJS = []
+  customCSS = ["even-custom.css", "search.css"]
+  customJS = ["search.js"]
 
   [params.publicCDN] # load these files from public cdn 启用公共CDN，需自行定义
     enable = true
